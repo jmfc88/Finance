@@ -123,9 +123,9 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 2 — universo dinámico desde Wikipedia |
+| `fase1_screening.py` | 3 — sin lotes ni acumulación, pasada completa desde cero cada vez |
 | `fase2_scoring.py` | 2 — traduce el resumen al español |
-| `ranking-github-actions.yml` | 3 — sin cron, pandas+deep-translator, git add corregido |
+| `ranking-github-actions.yml` | 5 — sin progreso.json, git pull antes de push |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
