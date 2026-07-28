@@ -1,5 +1,5 @@
 """
-VERSION: 6 (28/07/2026) - universo ajustado al filtro real de índices de la
+VERSION: 7 (28/07/2026) - universo ajustado al filtro real de índices de la
 app de Trade Republic (capturas del usuario): añadidos DJIA, MDAX, NASDAQ-100,
 Nikkei225, SDAX, SMI, TecDAX y ATX. MSCI World y Russell 2000 quedan fuera:
 demasiados componentes y sin tabla fiable en Wikipedia para extraerlos bien;
@@ -56,27 +56,47 @@ BETA_MINIMA = 1.5  # movimiento fuerte, coherente con el perfil agresivo
 # Ámsterdam, Bruselas, Lisboa, Milán, Zúrich, Viena, Tokio...).
 # Esta lista está ajustada al filtro real de índices que ofrece la app
 # de Trade Republic (capturas de pantalla del usuario, 28/07/2026).
-INDICES = {
-    "SP500":       {"url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", "columnas": ["Symbol"], "sufijo": ""},
-    "NASDAQ100":   {"url": "https://en.wikipedia.org/wiki/Nasdaq-100", "columnas": ["Ticker"], "sufijo": ""},
-    "DJIA":        {"url": "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average", "columnas": ["Symbol"], "sufijo": ""},
-    "IBEX35":      {"url": "https://en.wikipedia.org/wiki/IBEX_35", "columnas": ["Ticker", "Símbolo"], "sufijo": ".MC"},
-    "DAX":         {"url": "https://en.wikipedia.org/wiki/DAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
-    "MDAX":        {"url": "https://en.wikipedia.org/wiki/MDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
-    "SDAX":        {"url": "https://en.wikipedia.org/wiki/SDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
-    "TECDAX":      {"url": "https://en.wikipedia.org/wiki/TecDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
-    "FTSE100":     {"url": "https://en.wikipedia.org/wiki/FTSE_100_Index", "columnas": ["Ticker"], "sufijo": ".L"},
-    "CAC40":       {"url": "https://en.wikipedia.org/wiki/CAC_40", "columnas": ["Ticker"], "sufijo": ".PA"},
-    "AEX":         {"url": "https://en.wikipedia.org/wiki/AEX_index", "columnas": ["Ticker"], "sufijo": ".AS"},
-    "BEL20":       {"url": "https://en.wikipedia.org/wiki/BEL_20", "columnas": ["Ticker"], "sufijo": ".BR"},
-    "PSI20":       {"url": "https://en.wikipedia.org/wiki/PSI-20", "columnas": ["Ticker"], "sufijo": ".LS"},
-    "FTSEMIB":     {"url": "https://en.wikipedia.org/wiki/FTSE_MIB", "columnas": ["Ticker"], "sufijo": ".MI"},
-    "SMI":         {"url": "https://en.wikipedia.org/wiki/Swiss_Market_Index", "columnas": ["Ticker"], "sufijo": ".SW"},
-    "ATX":         {"url": "https://en.wikipedia.org/wiki/ATX_(stock_market_index)", "columnas": ["Ticker", "Symbol"], "sufijo": ".VI"},
-    "NIKKEI225":   {"url": "https://en.wikipedia.org/wiki/Nikkei_225", "columnas": ["Code", "Ticker"], "sufijo": ".T"},
-    "EUROSTOXX50": {"url": "https://en.wikipedia.org/wiki/EURO_STOXX_50", "columnas": ["Ticker"], "sufijo": ""},
-}
 
+
+# Universo expandido y adaptado al catálogo real de Trade Republic (Actualizado 2026)
+INDICES = {
+    # --- ESTADOS UNIDOS Y CANADÁ ---
+    "SP500":       {"url": "https://wikipedia.org", "columnas": ["Symbol"], "sufijo": ""},
+    "NASDAQ100":   {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ""},
+    "DJIA":        {"url": "https://wikipedia.org", "columnas": ["Symbol"], "sufijo": ""},
+    "SP400":       {"url": "https://wikipedia.org", "columnas": ["Ticker symbol", "Symbol"], "sufijo": ""},
+    "TSX60":       {"url": "https://wikipedia.org", "columnas": ["Symbol", "Ticker"], "sufijo": ".TO"},
+
+    # --- ALEMANIA (Núcleo Trade Republic) ---
+    "DAX":         {"url": "https://wikipedia.org", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "MDAX":        {"url": "https://wikipedia.org", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "SDAX":        {"url": "https://wikipedia.org", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "TECDAX":      {"url": "https://wikipedia.org", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+
+    # --- EUROPA OCCIDENTAL Y SUR ---
+    "FTSE100":     {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".L"},
+    "CAC40":       {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".PA"},
+    "CAC_NEXT20":  {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".PA"},
+    "IBEX35":      {"url": "https://wikipedia.org", "columnas": ["Ticker", "Símbolo"], "sufijo": ".MC"},
+    "FTSEMIB":     {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".MI"},
+    "PSI20":       {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".LS"},
+
+    # --- REINO ANEXO (Países Bajos, Bélgica, Suiza, Austria) ---
+    "AEX":         {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".AS"},
+    "BEL20":       {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".BR"},
+    "SMI":         {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ".SW"},
+    "ATX":         {"url": "https://wikipedia.org", "columnas": ["Ticker", "Symbol"], "sufijo": ".VI"},
+
+    # --- EUROPA NÓRDICA (Altamente transaccionada en TR) ---
+    "OMXS30":      {"url": "https://wikipedia.org", "columnas": ["Ticker", "Symbol"], "sufijo": ".ST"},
+    "OMXC25":      {"url": "https://wikipedia.org", "columnas": ["Ticker", "Symbol"], "sufijo": ".CO"},
+    "OMXH25":      {"url": "https://wikipedia.org", "columnas": ["Ticker", "Symbol"], "sufijo": ".HE"},
+
+    # --- PACÍFICO E INTERNACIONAL ---
+    "ASX200":      {"url": "https://wikipedia.org", "columnas": ["Ticker", "Code"], "sufijo": ".AX"},
+    "EUROSTOXX50": {"url": "https://wikipedia.org", "columnas": ["Ticker"], "sufijo": ""},
+    "NIKKEI225":   {"url": "https://wikipedia.org", "columnas": ["Code", "Ticker"], "sufijo": ".T"}
+}
 
 def limpiar_ticker(valor, sufijo):
     t = str(valor).strip()
@@ -125,6 +145,19 @@ def construir_universo():
         json.dump(cache, f, indent=2, ensure_ascii=False)
 
     universo = sorted(set(t for lista in cache.values() for t in lista))
+
+    # --- INYECCIÓN MANUAL DE MERCADOS INTERNACIONALES (MÉXICO Y BRASIL) ---
+    # Debido a la ausencia de tablas estables de tickers en Wikipedia para estos dos países,
+    # se inyectan directamente los activos más transaccionados de sus bolsas para Trade Republic.
+    MERCADOS_EMERGENTES = [
+        # México (.MX)
+        "AMX B.MX", "WALMEX.MX", "FEMSAUBD.MX", "GMEXICOB.MX", "CEMEXCPO.MX", "GFNORTEO.MX", "ALPEKA.MX", "ALSEA.MX",
+        # Brasil (.SA)
+        "PETR4.SA", "VALE3.SA", "ITUB4.SA", "BBDC4.SA", "ABEV3.SA"
+    ]
+    universo.extend(MERCADOS_EMERGENTES)
+    universo = sorted(set(universo))
+
     if not universo:
         # último recurso, solo si Wikipedia falla del todo Y no hay caché previa
         universo = ["OUST", "RDW", "BKSY", "IONQ", "QUBT", "RKLB", "GRF", "ASTS", "PL", "BBAI", "SOUN"]
@@ -145,7 +178,7 @@ def evaluar_ticker(ticker):
             "candidato_fuerte": candidato_fuerte,
             "recomendacion": recomendacion,
             "beta": beta,
-            "precio": info.get("currentPrice") or info.get("regularMarketPrice"),
+            "precio": info.get("currentPrice") or info.get("regularMarketPrice")
         }
     except Exception:
         return None
@@ -172,5 +205,3 @@ def ejecutar():
     print(f"Candidatos fuertes encontrados esta pasada: {len(candidatos)}")
 
 
-if __name__ == "__main__":
-    ejecutar()
