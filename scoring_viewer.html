@@ -240,13 +240,13 @@
 <script>
 async function cargarConfigGuardada() {
   try {
-    const r = await window.storage.get('github-repo');
-    if (r && r.value) document.getElementById('input-repo').value = r.value;
-  } catch (e) { /* no había nada guardado, normal la primera vez */ }
+    const repo = localStorage.getItem('github-repo');
+    if (repo) document.getElementById('input-repo').value = repo;
+  } catch (e) { /* el navegador bloquea el guardado, no pasa nada grave */ }
 }
 
 async function guardarConfig(repo) {
-  try { await window.storage.set('github-repo', repo); } catch (e) { console.error('No se pudo guardar el repo', e); }
+  try { localStorage.setItem('github-repo', repo); } catch (e) { console.error('No se pudo guardar el repo', e); }
 }
 
 function formatearFecha(iso) {
@@ -369,21 +369,21 @@ function renderProgreso(capital) {
 
 async function cargarCapitalGuardado() {
   try {
-    const r = await window.storage.get('capital-actual');
-    if (r && r.value) {
-      const capital = parseFloat(r.value);
+    const valor = localStorage.getItem('capital-actual');
+    if (valor) {
+      const capital = parseFloat(valor);
       document.getElementById('input-capital').value = capital;
       renderProgreso(capital);
+      return;
     }
-  } catch (e) {
-    renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
-  }
+  } catch (e) { /* el navegador bloquea el guardado, no pasa nada grave */ }
+  renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
 }
 
 async function guardarCapital() {
   const valor = parseFloat(document.getElementById('input-capital').value);
   if (isNaN(valor) || valor < 0) return;
-  try { await window.storage.set('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
+  try { localStorage.setItem('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
   renderProgreso(valor);
 }
 
