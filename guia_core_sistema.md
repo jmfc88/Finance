@@ -123,13 +123,13 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 3 — sin lotes ni acumulación, pasada completa desde cero cada vez |
-| `fase2_scoring.py` | 2 — traduce el resumen al español |
+| `fase1_screening.py` | 4 — añade User-Agent a Wikipedia (evita 403 Forbidden) |
+| `fase2_scoring.py` | 4 — añade RSI, tendencia técnica (SMA50/200) y tendencia de analistas mes a mes |
 | `ranking-github-actions.yml` | 5 — sin progreso.json, git pull antes de push |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 2 — localStorage |
+| `scoring_viewer.html` | 5 — tarjetas con tendencia técnica, RSI y tendencia de analistas |
 | `simulador.html` | 2 — localStorage |
 | `posiciones.json` | 1 |
 
