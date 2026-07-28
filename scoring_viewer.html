@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuaderno de candidatas</title>
+<style>
+  :root{
+    --paper:#F2EEE3;
+    --paper-line:#DCD5C2;
+    --ink:#1B2430;
+    --ink-soft:#5B6472;
+    --green:#2F5233;
+    --brick:#8C3B2E;
+    --brick-bg:#F1E3DE;
+    --gold:#B8860B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--paper-line) 28px),
+      var(--paper);
+    color:var(--ink);
+    font-family: Georgia, 'Iowan Old Style', serif;
+    min-height:100vh;
+    padding-bottom:60px;
+  }
+  header{
+    padding:20px 18px 12px;
+    border-bottom:2px solid var(--ink);
+  }
+  h1{
+    margin:0;
+    font-size:22px;
+    letter-spacing:0.02em;
+  }
+  .sub{
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .config{
+    display:flex;
+    gap:6px;
+    margin-top:14px;
+    flex-wrap:wrap;
+  }
+  .config input{
+    flex:1;
+    min-width:160px;
+    padding:9px 10px;
+    border:1px solid var(--ink-soft);
+    background:#fff;
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    border-radius:2px;
+  }
+  button{
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    padding:9px 14px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+  }
+  button:active{opacity:0.8;}
+  main{padding:16px;}
+  .estado{
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:20px 4px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    position:relative;
+    animation: aparece 0.25s ease-out;
+  }
+  @keyframes aparece{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+  .card.top{ border:2px solid var(--gold); }
+  .badge-top{
+    position:absolute;
+    top:-10px;
+    right:12px;
+    background:var(--gold);
+    color:#fff;
+    font-family: ui-monospace, monospace;
+    font-size:10px;
+    letter-spacing:0.05em;
+    padding:3px 8px;
+    border-radius:2px;
+  }
+  .fila-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .ticker{
+    font-size:19px;
+    font-weight:bold;
+  }
+  .sector{
+    font-family: ui-monospace, monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .score{
+    font-family: ui-monospace, monospace;
+    font-size:22px;
+    font-weight:bold;
+  }
+  .score.pos{color:var(--green);}
+  .score.neg{color:var(--brick);}
+  .datos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 14px;
+    margin-top:10px;
+    font-family: ui-monospace, monospace;
+    font-size:12.5px;
+  }
+  .datos .label{color:var(--ink-soft);}
+  .resumen{
+    margin-top:10px;
+    font-size:13.5px;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  details{margin-top:20px;}
+  summary{
+    font-family: ui-monospace, monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    cursor:pointer;
+  }
+  .descarte{
+    font-family: ui-monospace, monospace;
+    font-size:12px;
+    padding:8px 10px;
+    background:var(--brick-bg);
+    border-left:3px solid var(--brick);
+    margin-top:8px;
+    border-radius:2px;
+  }
+  .progreso{
+    background:#fff;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    padding:14px 16px;
+    margin:16px;
+    margin-bottom:0;
+  }
+  .progreso-cabecera{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:8px;
+  }
+  .progreso-titulo{
+    font-size:15px;
+    font-weight:bold;
+  }
+  .progreso-nivel{
+    font-family: ui-monospace, monospace;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:0.03em;
+  }
+  .barra-fondo{
+    background:var(--paper-line);
+    border-radius:4px;
+    height:10px;
+    overflow:hidden;
+  }
+  .barra-relleno{
+    background:var(--green);
+    height:100%;
+    transition:width 0.4s ease-out;
+  }
+  .progreso-detalle{
+    font-family: ui-monospace, monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .progreso-config{
+    display:flex;
+    gap:6px;
+    margin-top:12px;
+  }
+  .progreso-config input{
+    width:110px;
+    padding:8px 9px;
+    border:1px solid var(--ink-soft);
+    background:#fff;
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    border-radius:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cuaderno de candidatas</h1>
+  <div class="sub" id="fecha-actualizacion">sin datos todavía</div>
+  <div class="config">
+    <input id="input-repo" placeholder="usuario/repositorio (GitHub)" autocapitalize="off" autocorrect="off">
+    <button id="btn-cargar">Traer lista</button>
+  </div>
+</header>
+
+<section class="progreso" id="panel-progreso">
+  <div class="progreso-cabecera">
+    <div class="progreso-titulo">Progreso hacia escalar posiciones</div>
+    <div class="progreso-nivel" id="nivel-actual">nivel 1</div>
+  </div>
+  <div class="barra-fondo"><div class="barra-relleno" id="barra-progreso" style="width:0%"></div></div>
+  <div class="progreso-detalle" id="detalle-progreso">Introduce tu capital actual para ver en qué nivel estás.</div>
+  <div class="progreso-config">
+    <input id="input-capital" type="number" placeholder="capital €" inputmode="decimal">
+    <button id="btn-guardar-capital">Guardar</button>
+  </div>
+</section>
+
+<main id="contenido">
+  <div class="estado">Escribe tu repositorio de GitHub arriba (ej: joseluismanuel/trading-bot) y pulsa "Traer lista".</div>
+</main>
+
+<script>
+async function cargarConfigGuardada() {
+  try {
+    const r = await window.storage.get('github-repo');
+    if (r && r.value) document.getElementById('input-repo').value = r.value;
+  } catch (e) { /* no había nada guardado, normal la primera vez */ }
+}
+
+async function guardarConfig(repo) {
+  try { await window.storage.set('github-repo', repo); } catch (e) { console.error('No se pudo guardar el repo', e); }
+}
+
+function formatearFecha(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString('es-ES', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+  } catch(e) { return iso; }
+}
+
+function renderTarjeta(c, esTop) {
+  const scoreClass = c.score >= 0 ? 'pos' : 'neg';
+  const potencial = (c.precio_objetivo_medio && c.precio_actual)
+    ? (((c.precio_objetivo_medio - c.precio_actual) / c.precio_actual) * 100).toFixed(1) + '%'
+    : '—';
+  return `
+    <div class="card ${esTop ? 'top' : ''}">
+      ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
+      <div class="fila-top">
+        <div>
+          <div class="ticker">${c.ticker}</div>
+          <div class="sector">${c.sector || 'sector n/d'}</div>
+        </div>
+        <div class="score ${scoreClass}">${c.score}</div>
+      </div>
+      <div class="datos">
+        <div><span class="label">precio:</span> ${c.precio_actual}$</div>
+        <div><span class="label">consenso:</span> ${c.consenso || '—'}</div>
+        <div><span class="label">potencial:</span> ${potencial}</div>
+        <div><span class="label">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
+        <div><span class="label">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
+      </div>
+      ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
+    </div>
+  `;
+}
+
+function renderDescartadas(lista) {
+  if (!lista || lista.length === 0) return '';
+  const items = lista.map(d => `<div class="descarte">${d.ticker}: ${d.motivo}</div>`).join('');
+  return `
+    <details>
+      <summary>Ver descartadas (${lista.length})</summary>
+      ${items}
+    </details>
+  `;
+}
+
+async function traerLista() {
+  const repo = document.getElementById('input-repo').value.trim();
+  const contenido = document.getElementById('contenido');
+  if (!repo || !repo.includes('/')) {
+    contenido.innerHTML = '<div class="estado">Falta el repositorio. Formato: usuario/repositorio</div>';
+    return;
+  }
+  await guardarConfig(repo);
+  contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
+
+  const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json`;
+  try {
+    const resp = await fetch(url, { cache: 'no-store' });
+    if (!resp.ok) {
+      contenido.innerHTML = `<div class="estado">No se encontró candidatos_rankeados.json en ese repo (${resp.status}). Revisa que el nombre sea correcto y que el bot ya haya corrido al menos una vez.</div>`;
+      return;
+    }
+    const data = await resp.json();
+    document.getElementById('fecha-actualizacion').textContent = 'última actualización del bot: ' + formatearFecha(data.generado);
+
+    if (!data.ranking || data.ranking.length === 0) {
+      contenido.innerHTML = '<div class="estado">Sin candidatas válidas ahora mismo.</div>' + renderDescartadas(data.descartados);
+      return;
+    }
+
+    const tarjetas = data.ranking.map((c, i) => renderTarjeta(c, i === 0)).join('');
+    contenido.innerHTML = tarjetas + renderDescartadas(data.descartados);
+  } catch (e) {
+    contenido.innerHTML = '<div class="estado">Error al conectar con GitHub. Comprueba tu conexión e inténtalo de nuevo.</div>';
+  }
+}
+
+const NIVELES = [
+  { nivel: 1, desde: 0,     posiciones: 1 },
+  { nivel: 2, desde: 500,   posiciones: 2 },
+  { nivel: 3, desde: 1000,  posiciones: 3 },
+  { nivel: 4, desde: 2000,  posiciones: 4 },
+  { nivel: 5, desde: 4000,  posiciones: 5 },
+];
+
+function calcularProgreso(capital) {
+  let actual = NIVELES[0];
+  let siguiente = null;
+  for (let i = 0; i < NIVELES.length; i++) {
+    if (capital >= NIVELES[i].desde) {
+      actual = NIVELES[i];
+      siguiente = NIVELES[i + 1] || null;
+    }
+  }
+  if (!siguiente) {
+    return { actual, siguiente: null, porcentaje: 100 };
+  }
+  const rango = siguiente.desde - actual.desde;
+  const avance = capital - actual.desde;
+  const porcentaje = Math.max(0, Math.min(100, (avance / rango) * 100));
+  return { actual, siguiente, porcentaje };
+}
+
+function renderProgreso(capital) {
+  const { actual, siguiente, porcentaje } = calcularProgreso(capital);
+  document.getElementById('nivel-actual').textContent = `nivel ${actual.nivel} · ${actual.posiciones} posición${actual.posiciones > 1 ? 'es' : ''}`;
+  document.getElementById('barra-progreso').style.width = porcentaje.toFixed(0) + '%';
+
+  if (siguiente) {
+    const falta = (siguiente.desde - capital).toFixed(2);
+    document.getElementById('detalle-progreso').textContent =
+      `${capital}€ · te faltan ${falta}€ para el nivel ${siguiente.nivel} (${siguiente.posiciones} posiciones)`;
+  } else {
+    document.getElementById('detalle-progreso').textContent =
+      `${capital}€ · nivel máximo definido alcanzado, puedes seguir escalando posiciones con criterio propio`;
+  }
+}
+
+async function cargarCapitalGuardado() {
+  try {
+    const r = await window.storage.get('capital-actual');
+    if (r && r.value) {
+      const capital = parseFloat(r.value);
+      document.getElementById('input-capital').value = capital;
+      renderProgreso(capital);
+    }
+  } catch (e) {
+    renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
+  }
+}
+
+async function guardarCapital() {
+  const valor = parseFloat(document.getElementById('input-capital').value);
+  if (isNaN(valor) || valor < 0) return;
+  try { await window.storage.set('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
+  renderProgreso(valor);
+}
+
+document.getElementById('btn-cargar').addEventListener('click', traerLista);
+document.getElementById('btn-guardar-capital').addEventListener('click', guardarCapital);
+cargarConfigGuardada();
+cargarCapitalGuardado();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de operaciones</title>
+<style>
+  :root{
+    --paper:#F2EEE3;
+    --paper-line:#DCD5C2;
+    --ink:#1B2430;
+    --ink-soft:#5B6472;
+    --green:#2F5233;
+    --green-bg:#E4EBE0;
+    --brick:#8C3B2E;
+    --brick-bg:#F1E3DE;
+    --gold:#B8860B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--paper-line) 28px),
+      var(--paper);
+    color:var(--ink);
+    font-family: Georgia, 'Iowan Old Style', serif;
+    min-height:100vh;
+    padding-bottom:60px;
+  }
+  header{ padding:20px 18px 12px; border-bottom:2px solid var(--ink); }
+  h1{ margin:0; font-size:22px; }
+  .sub{ font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft); margin-top:4px; }
+  section.panel{
+    background:#fff;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    padding:14px 16px;
+    margin:16px;
+  }
+  h2{ font-size:15px; margin:0 0 10px; }
+  .fila{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  label{ font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft); display:block; margin-bottom:3px; }
+  input, select{
+    width:100%;
+    padding:8px 9px;
+    border:1px solid var(--ink-soft);
+    background:#fff;
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    border-radius:2px;
+  }
+  .campo{ flex:1; min-width:110px; }
+  button{
+    font-family: ui-monospace, monospace;
+    font-size:13px;
+    padding:9px 14px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    margin-top:6px;
+  }
+  button:active{ opacity:0.8; }
+  .resultado{
+    font-family: ui-monospace, monospace;
+    font-size:13.5px;
+    margin-top:10px;
+    padding:10px;
+    background:var(--green-bg);
+    border-left:3px solid var(--green);
+    border-radius:2px;
+  }
+  .resultado.mal{ background:var(--brick-bg); border-left-color:var(--brick); }
+  table{ width:100%; border-collapse:collapse; font-family: ui-monospace, monospace; font-size:12px; margin-top:8px; }
+  th, td{ text-align:left; padding:6px 4px; border-bottom:1px solid var(--paper-line); }
+  th{ color:var(--ink-soft); font-weight:normal; }
+  .pos{ color:var(--green); }
+  .neg{ color:var(--brick); }
+  .resumen-fiscal{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 14px;
+    font-family: ui-monospace, monospace;
+    font-size:12.5px;
+    margin-top:10px;
+  }
+  .resumen-fiscal .label{ color:var(--ink-soft); }
+  .nota{ font-family: ui-monospace, monospace; font-size:11px; color:var(--ink-soft); margin-top:8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Simulador de operaciones</h1>
+  <div class="sub">break-even · stop-loss · ledger FIFO · fiscal — historial guardado</div>
+</header>
+
+<!-- BREAK-EVEN -->
+<section class="panel">
+  <h2>1. Punto de equilibrio (break-even)</h2>
+  <div class="fila">
+    <div class="campo"><label>Precio de compra</label><input id="be-precio" type="number" step="0.01"></div>
+    <div class="campo"><label>Acciones</label><input id="be-acciones" type="number" step="1"></div>
+  </div>
+  <button onclick="calcularBreakEven()">Calcular</button>
+  <div class="resultado" id="be-resultado" style="display:none;"></div>
+</section>
+
+<!-- STOP LOSS CON BENEFICIO NETO GARANTIZADO -->
+<section class="panel">
+  <h2>2. Stop-loss con beneficio neto garantizado</h2>
+  <div class="fila">
+    <div class="campo"><label>Precio de compra</label><input id="sl-precio" type="number" step="0.01"></div>
+    <div class="campo"><label>Acciones</label><input id="sl-acciones" type="number" step="1"></div>
+  </div>
+  <div class="fila">
+    <div class="campo"><label>Beneficio neto mínimo a proteger (€)</label><input id="sl-beneficio" type="number" step="0.01" value="0"></div>
+  </div>
+  <button onclick="calcularStopLoss()">Calcular precio de stop-loss</button>
+  <div class="resultado" id="sl-resultado" style="display:none;"></div>
+</section>
+
+<!-- TRAILING STOP CON HISTORIAL -->
+<section class="panel">
+  <h2>3. Trailing stop dinámico</h2>
+  <div class="fila">
+    <div class="campo"><label>Precio máximo alcanzado</label><input id="ts-maximo" type="number" step="0.01"></div>
+    <div class="campo"><label>% de caída permitido</label><input id="ts-porcentaje" type="number" step="0.1" value="8"></div>
+  </div>
+  <button onclick="registrarTrailing()">Calcular y guardar en historial</button>
+  <div class="resultado" id="ts-resultado" style="display:none;"></div>
+  <table id="ts-historial"><thead><tr><th>Fecha</th><th>Máximo</th><th>Stop calculado</th></tr></thead><tbody></tbody></table>
+</section>
+
+<!-- LEDGER FIFO -->
+<section class="panel">
+  <h2>4. Registro de operaciones (FIFO)</h2>
+  <div class="fila">
+    <div class="campo"><label>Tipo</label>
+      <select id="op-tipo"><option value="compra">Compra</option><option value="venta">Venta</option></select>
+    </div>
+    <div class="campo"><label>Ticker</label><input id="op-ticker" type="text" style="text-transform:uppercase;"></div>
+  </div>
+  <div class="fila">
+    <div class="campo"><label>Precio</label><input id="op-precio" type="number" step="0.01"></div>
+    <div class="campo"><label>Acciones</label><input id="op-acciones" type="number" step="1"></div>
+    <div class="campo"><label>Fecha</label><input id="op-fecha" type="date"></div>
+  </div>
+  <button onclick="registrarOperacion()">Registrar operación</button>
+  <table id="ledger-tabla"><thead><tr><th>Fecha</th><th>Tipo</th><th>Ticker</th><th>Precio</th><th>Acc.</th><th>Neto</th></tr></thead><tbody></tbody></table>
+
+  <h2 style="margin-top:16px;">Resumen fiscal acumulado</h2>
+  <div class="resumen-fiscal" id="resumen-fiscal"></div>
+  <div class="nota">Comisión: 1€ compra + 1€ venta. Impuesto: 19% plano sobre la ganancia (simplificado; Hacienda aplica tramos progresivos a partir de ciertos importes). 10% de cada ganancia neta cerrada se aparta como ahorro intocable.</div>
+</section>
+
+<script>
+const COMISION_COMPRA = 1.0;
+const COMISION_VENTA = 1.0;
+const TAX_RATE = 0.19;
+const AHORRO_RATE = 0.10;
+
+function calcularBreakEven() {
+  const precio = parseFloat(document.getElementById('be-precio').value);
+  const acciones = parseFloat(document.getElementById('be-acciones').value);
+  const div = document.getElementById('be-resultado');
+  if (!precio || !acciones) { div.style.display='none'; return; }
+  const comisiones = COMISION_COMPRA + COMISION_VENTA;
+  const breakEven = precio + (comisiones / acciones);
+  div.style.display = 'block';
+  div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)}$ (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión)`;
+}
+
+function calcularStopLoss() {
+  const precio = parseFloat(document.getElementById('sl-precio').value);
+  const acciones = parseFloat(document.getElementById('sl-acciones').value);
+  const netoDeseado = parseFloat(document.getElementById('sl-beneficio').value) || 0;
+  const div = document.getElementById('sl-resultado');
+  if (!precio || !acciones) { div.style.display='none'; return; }
+  const comisiones = COMISION_COMPRA + COMISION_VENTA;
+  // neto = (venta - compra)*acciones - comisiones - 0.19*max(ganancia_bruta_antes_imp,0)
+  // resolviendo para venta cuando netoDeseado >= 0:
+  const gananciaBrutaNecesaria = (netoDeseado + comisiones) / (1 - TAX_RATE);
+  const precioVenta = precio + (gananciaBrutaNecesaria / acciones);
+  div.style.display = 'block';
+  div.textContent = `Precio de venta necesario para ${netoDeseado}€ netos: ${precioVenta.toFixed(4)}$`;
+}
+
+async function registrarTrailing() {
+  const maximo = parseFloat(document.getElementById('ts-maximo').value);
+  const porcentaje = parseFloat(document.getElementById('ts-porcentaje').value);
+  const div = document.getElementById('ts-resultado');
+  if (!maximo || !porcentaje) { div.style.display='none'; return; }
+  const stop = maximo * (1 - porcentaje / 100);
+  div.style.display = 'block';
+  div.textContent = `Stop-loss calculado: ${stop.toFixed(4)}$ (${porcentaje}% por debajo del máximo)`;
+
+  const historial = await cargarHistorialTrailing();
+  historial.push({ fecha: new Date().toISOString().slice(0,16).replace('T',' '), maximo, stop: stop.toFixed(4) });
+  await window.storage.set('trailing-historial', JSON.stringify(historial));
+  renderTrailing(historial);
+}
+
+async function cargarHistorialTrailing() {
+  try {
+    const r = await window.storage.get('trailing-historial');
+    return r && r.value ? JSON.parse(r.value) : [];
+  } catch (e) { return []; }
+}
+
+function renderTrailing(historial) {
+  const tbody = document.querySelector('#ts-historial tbody');
+  tbody.innerHTML = historial.slice().reverse().map(h =>
+    `<tr><td>${h.fecha}</td><td>${h.maximo}</td><td>${h.stop}</td></tr>`
+  ).join('');
+}
+
+async function cargarLedger() {
+  try {
+    const r = await window.storage.get('ledger-operaciones');
+    return r && r.value ? JSON.parse(r.value) : [];
+  } catch (e) { return []; }
+}
+
+async function guardarLedger(ledger) {
+  await window.storage.set('ledger-operaciones', JSON.stringify(ledger));
+}
+
+function calcularNetoVenta(compra, venta, acciones) {
+  const bruto = (venta - compra) * acciones;
+  const gananciaAntesImp = bruto - (COMISION_COMPRA + COMISION_VENTA);
+  const impuesto = Math.max(gananciaAntesImp, 0) * TAX_RATE;
+  return gananciaAntesImp - impuesto;
+}
+
+async function registrarOperacion() {
+  const tipo = document.getElementById('op-tipo').value;
+  const ticker = document.getElementById('op-ticker').value.trim().toUpperCase();
+  const precio = parseFloat(document.getElementById('op-precio').value);
+  const acciones = parseInt(document.getElementById('op-acciones').value);
+  const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
+
+  if (!ticker || !precio || !acciones) return;
+
+  const ledger = await cargarLedger();
+  let neto = null;
+
+  if (tipo === 'venta') {
+    // FIFO: busca compras abiertas más antiguas de ese ticker
+    let restante = acciones;
+    for (const op of ledger) {
+      if (op.tipo === 'compra' && op.ticker === ticker && op.acciones_restantes > 0 && restante > 0) {
+        const usar = Math.min(op.acciones_restantes, restante);
+        op.acciones_restantes -= usar;
+        restante -= usar;
+        const netoParcial = calcularNetoVenta(op.precio, precio, usar);
+        neto = (neto || 0) + netoParcial;
+      }
+    }
+  }
+
+  ledger.push({
+    tipo, ticker, precio, acciones, fecha,
+    acciones_restantes: tipo === 'compra' ? acciones : 0,
+    neto: neto !== null ? Number(neto.toFixed(2)) : null,
+  });
+
+  await guardarLedger(ledger);
+  renderLedger(ledger);
+  renderResumenFiscal(ledger);
+
+  document.getElementById('op-ticker').value = '';
+  document.getElementById('op-precio').value = '';
+  document.getElementById('op-acciones').value = '';
+}
+
+function renderLedger(ledger) {
+  const tbody = document.querySelector('#ledger-tabla tbody');
+  tbody.innerHTML = ledger.slice().reverse().map(op => `
+    <tr>
+      <td>${op.fecha}</td>
+      <td>${op.tipo}</td>
+      <td>${op.ticker}</td>
+      <td>${op.precio}</td>
+      <td>${op.acciones}</td>
+      <td class="${op.neto === null ? '' : (op.neto >= 0 ? 'pos' : 'neg')}">${op.neto !== null ? op.neto + '€' : '—'}</td>
+    </tr>
+  `).join('');
+}
+
+function renderResumenFiscal(ledger) {
+  const ventas = ledger.filter(op => op.tipo === 'venta' && op.neto !== null);
+  const totalNeto = ventas.reduce((s, op) => s + op.neto, 0);
+  const totalComisiones = ledger.length * 1; // aprox: 1€ por cada operación registrada
+  const ahorro = Math.max(totalNeto, 0) * AHORRO_RATE;
+  const reinvertible = totalNeto - ahorro;
+
+  document.getElementById('resumen-fiscal').innerHTML = `
+    <div><span class="label">Ganancia neta acumulada:</span></div><div class="${totalNeto>=0?'pos':'neg'}">${totalNeto.toFixed(2)}€</div>
+    <div><span class="label">Ahorro (10%) intocable:</span></div><div>${ahorro.toFixed(2)}€</div>
+    <div><span class="label">Reinvertible (90%):</span></div><div>${reinvertible.toFixed(2)}€</div>
+    <div><span class="label">Operaciones registradas:</span></div><div>${ledger.length}</div>
+  `;
+}
+
+async function inicializar() {
+  const historial = await cargarHistorialTrailing();
+  renderTrailing(historial);
+  const ledger = await cargarLedger();
+  renderLedger(ledger);
+  renderResumenFiscal(ledger);
+}
+
+inicializar();
+</script>
+
+</body>
+</html>
