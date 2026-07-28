@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VERSION: 3 (28/07/2026) - leyenda de términos + equivalente en euros -->
+<!-- VERSION: 5 (28/07/2026) - añade tendencia técnica, RSI y tendencia de analistas por tarjeta -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -308,14 +308,20 @@ function renderTarjeta(c, esTop) {
           <div class="ticker">${c.ticker}</div>
           <div class="sector">${c.sector || 'sector n/d'}</div>
         </div>
-        <div class="score ${scoreClass}">${c.score}</div>
+        <div style="text-align:right;">
+          <div class="score ${scoreClass}">${c.score}</div>
+          <div style="font-family: ui-monospace, monospace; font-size:9.5px; color:var(--ink-soft);">nota (0-100)</div>
+        </div>
       </div>
       <div class="datos">
-        <div><span class="label">precio:</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
-        <div><span class="label">consenso:</span> ${c.consenso || '—'}</div>
-        <div><span class="label">potencial:</span> ${potencial}</div>
-        <div><span class="label">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
-        <div><span class="label">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
+        <div><span class="label">precio (cotización actual):</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
+        <div><span class="label">consenso (opinión analistas):</span> ${c.consenso || '—'}</div>
+        <div><span class="label">potencial (subida esperada):</span> ${potencial}</div>
+        <div><span class="label">momentum 30d (cambio último mes):</span> ${c.momentum_30d_pct ?? '—'}%</div>
+        <div><span class="label">dispersión (acuerdo entre analistas):</span> ${c.dispersion_pct ?? '—'}%</div>
+        <div><span class="label">tendencia técnica (vs. su media):</span> ${c.tendencia_tecnica || '—'}</div>
+        <div><span class="label">RSI 14 (sobrecompra/rebote):</span> ${c.rsi_14 ?? '—'}</div>
+        <div><span class="label">analistas (últimos 3 meses):</span> ${c.tendencia_analistas || '—'}</div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
     </div>
