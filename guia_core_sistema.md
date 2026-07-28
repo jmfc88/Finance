@@ -29,7 +29,7 @@ Cuando vendes:
 ## Piezas activas
 
 ### 1. `fase1_screening.py`
-**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, IBEX35, DAX, FTSE100, CAC40 y EuroStoxx50 directamente de Wikipedia (no es una lista fija que se quede vieja). Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Luego busca en todo ese universo consenso de analistas de compra + beta alto. Guarda los candidatos fuertes en `candidatos_fase1.json`.
+**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, NASDAQ-100, DJIA, IBEX35, DAX, MDAX, SDAX, TecDAX, FTSE100, CAC40, AEX, BEL20, PSI20, FTSE MIB, SMI, ATX, Nikkei225 y EuroStoxx50 directamente de Wikipedia — ajustado al filtro real de índices de la app de Trade Republic (comprobado con capturas del usuario). Quedan fuera MSCI World y Russell 2000 (demasiados componentes, sin tabla fiable en Wikipedia) y los sub-índices franceses CAC Large/Mid/NEXT/SMALL (sin fuente clara). Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Luego busca en todo ese universo consenso de analistas de compra + beta alto. Guarda los candidatos fuertes en `candidatos_fase1.json`.
 **Cómo se usa:** no se toca a mano. Lo ejecuta `ranking-github-actions.yml` cuando tú lo lanzas.
 
 ### 2. `fase2_scoring.py`
@@ -41,7 +41,7 @@ Cuando vendes:
 **Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Cuando quieras datos frescos: pestaña "Actions" en la app de GitHub → seleccionas el workflow → botón "Run workflow". Tarda 1-2 minutos.
 
 ### 4. `scoring_viewer.html`
-**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio, consenso, potencial, momentum y motivo si fue descartada. Incluye el panel de progreso de capital (nivel actual, cuánto te falta para poder abrir más posiciones).
+**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio (en $ y su equivalente en €), consenso, potencial, momentum, dispersión, tendencia técnica (vs. su media de 50/200 sesiones), RSI y tendencia de analistas a 3 meses. Cada término tiene un tooltip tocable con su explicación. Incluye el panel de progreso de capital (nivel actual, cuánto te falta para poder abrir más posiciones).
 **Cómo se usa:**
 - La primera vez, escribe tu `usuario/repositorio` de GitHub y pulsa "Traer lista" (se guarda solo).
 - Cada vez que quieras comprar: ábrelo, pulsa "Traer lista", decide.
@@ -85,18 +85,16 @@ Cuando vendes:
 **Repositorio:** `jmfc88/Finance` (público, necesario para que GitHub Pages sea gratis).
 
 **Ya hecho:**
-- ✅ Repo creado
-- ✅ Subidos: `fase1_screening.py`, `bot1_noticias.py`, `fase2_scoring.py`, `bot.py`, `scoring_viewer.html`, `simulador.html`, `posiciones.json`, `guia_core_sistema.md`
-- ✅ Subidos a `.github/workflows/`: `ranking-github-actions.yml`, `bot-stoploss-github-actions.yml`
-
-**Pendiente:**
-- ⬜ Crear el secreto `NTFY_TOPIC` (repo → Settings → Secrets and variables → Actions → New repository secret)
-- ⬜ Instalar la app **ntfy** en el móvil y suscribirte al mismo nombre de canal que pusiste en el secreto
-- ⬜ Activar GitHub Pages (repo → Settings → Pages → rama `main` → Save) para poder abrir `scoring_viewer.html` y `simulador.html` como webs desde el móvil, en:
+- ✅ Repo creado, archivos y workflows subidos
+- ✅ Secreto `NTFY_TOPIC` creado, app ntfy instalada y suscrita
+- ✅ GitHub Pages activo:
   - `https://jmfc88.github.io/Finance/scoring_viewer.html`
   - `https://jmfc88.github.io/Finance/simulador.html`
-- ⬜ En `scoring_viewer.html`, escribir `jmfc88/Finance` la primera vez que lo abras
-- ⬜ Primer lanzamiento manual de `ranking-github-actions.yml` (Actions → Run workflow) para generar el primer `candidatos_rankeados.json`
+- ✅ Permisos de escritura de Actions corregidos (Read and write)
+- ✅ Primer ranking generado y comprobado con éxito, universo dinámico funcionando
+
+**Pendiente:**
+- ⬜ Elegir la primera candidata real y comprarla en Trade Republic (empieza tu primera simulación)
 
 ---
 
@@ -123,13 +121,13 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 4 — añade User-Agent a Wikipedia (evita 403 Forbidden) |
+| `fase1_screening.py` | 6 — universo ajustado al filtro real de índices de la app de Trade Republic |
 | `fase2_scoring.py` | 4 — añade RSI, tendencia técnica (SMA50/200) y tendencia de analistas mes a mes |
 | `ranking-github-actions.yml` | 5 — sin progreso.json, git pull antes de push |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 5 — tarjetas con tendencia técnica, RSI y tendencia de analistas |
+| `scoring_viewer.html` | 6 — tooltips tocables por término en vez de texto largo |
 | `simulador.html` | 2 — localStorage |
 | `posiciones.json` | 1 |
 
