@@ -1,4 +1,4 @@
-# VERSION: 3 (28/07/2026) - sin cron (bajo demanda), pandas+deep-translator, git add corregido
+# VERSION: 4 (28/07/2026) - git pull antes de push para evitar conflicto si el repo cambió mientras corría
 name: Actualizar ranking de candidatas
 
 on:
@@ -29,4 +29,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add candidatos_fase1.json candidatos_rankeados.json progreso.json universo_tickers.json universo_por_indice.json
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
+          git pull --rebase origin main
           git push
