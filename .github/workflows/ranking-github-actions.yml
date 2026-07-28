@@ -1,8 +1,10 @@
-# VERSION: 5 (28/07/2026) - sin progreso.json (fase1 ya no trocea en lotes, pasada completa cada vez)
+# VERSION: 6 (28/07/2026) - cambia rebase por merge con estrategia "ours": los
+# archivos generados se regeneran enteros cada vez, asÃ­ que si hay conflicto
+# se queda siempre con la versiÃ³n reciÃ©n generada, sin atascarse
 name: Actualizar ranking de candidatas
 
 on:
-  workflow_dispatch: {}   # solo corre cuando tú lo lanzas a mano, nunca solo
+  workflow_dispatch: {}   # solo corre cuando tÃº lo lanzas a mano, nunca solo
 
 jobs:
   actualizar-ranking:
@@ -29,5 +31,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
-          git pull --rebase origin main
+          git pull origin main --no-rebase -X ours
           git push
