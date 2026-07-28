@@ -1,6 +1,5 @@
 """
-VERSION: 3 (28/07/2026) - sin troceo en lotes ni acumulación: cada ejecución
-analiza el universo completo de una vez y genera la lista desde cero
+VERSION: 4 (28/07/2026) - añade User-Agent a las peticiones a Wikipedia (evita 403 Forbidden)
 
 FASE 1 - SCREENING CUANTITATIVO
 ==========================================
@@ -29,11 +28,13 @@ Solo se ejecuta bajo demanda (workflow_dispatch), nunca en cron.
 """
 
 import json
+import io
 import os
 import re
 import time
 
 import pandas as pd
+import requests
 import yfinance as yf
 
 UNIVERSO_FILE = "universo_tickers.json"
@@ -67,8 +68,13 @@ def limpiar_ticker(valor, sufijo):
     return t
 
 
+CABECERAS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+
+
 def obtener_indice(nombre, cfg):
-    tablas = pd.read_html(cfg["url"])
+    resp = requests.get(cfg["url"], headers=CABECERAS, timeout=20)
+    resp.raise_for_status()
+    tablas = pd.read_html(io.StringIO(resp.text))
     for tabla in tablas:
         for col in cfg["columnas"]:
             if col in tabla.columns:
