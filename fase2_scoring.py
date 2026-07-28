@@ -1,6 +1,7 @@
 """
-VERSION: 4 (28/07/2026) - añade RSI, tendencia técnica (SMA50/200) y tendencia
-de recomendaciones de analistas mes a mes, con peso menor sobre el score
+VERSION: 6 (28/07/2026) - el resumen prioriza contexto real (mínimo 2 frases
+completas) sobre un tope rígido de caracteres, para que siempre tenga
+sentido por sí mismo en vez de quedarse corto o a medias
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -34,6 +35,31 @@ def traducir(texto):
         return GoogleTranslator(source="en", target="es").translate(texto[:1000])
     except Exception:
         return texto  # si falla la traducción, mejor mostrar el original en inglés que nada
+
+
+def recortar_resumen(texto, minimo=180, maximo=420):
+    """Construye el resumen acumulando frases completas hasta tener
+    contexto real (mínimo de caracteres orientativo, normalmente 2 frases),
+    nunca a medias. El máximo es solo un tope de seguridad para el caso
+    raro de una frase kilométrica; se prioriza que el resumen tenga
+    sentido por sí mismo antes que ajustarse a un número exacto."""
+    if not texto:
+        return ""
+
+    frases = [f.strip() for f in texto.split(". ") if f.strip()]
+    resultado = ""
+    for frase in frases:
+        resultado = f"{resultado}{frase}. " if resultado else f"{frase}. "
+        if len(resultado) >= minimo:
+            break
+
+    resultado = resultado.strip()
+
+    if len(resultado) > maximo:
+        # caso raro: ni la primera frase cabe en el tope de seguridad
+        resultado = resultado[:maximo].rsplit(" ", 1)[0].rstrip(",;:") + "..."
+
+    return resultado
 
 
 def dias_hasta_resultados(ticker_obj):
@@ -236,7 +262,7 @@ def evaluar(ticker):
             "sma200": sma200,
             "tendencia_analistas": tendencia_analistas_valor,
             "sector": info.get("sector"),
-            "resumen_negocio": traducir(info.get("longBusinessSummary") or "")[:280],
+            "resumen_negocio": recortar_resumen(traducir(info.get("longBusinessSummary") or "")),
         }
     except Exception as e:
         return {"ticker": ticker, "descartado": True, "motivo": f"Error de datos: {e}"}
