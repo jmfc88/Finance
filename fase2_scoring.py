@@ -1,5 +1,5 @@
 """
-VERSION: 2 (28/07/2026) - traduce el resumen de negocio al español
+VERSION: 3 (28/07/2026) - corregido bug: faltaba la definición de dias_hasta_resultados
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -33,6 +33,9 @@ def traducir(texto):
         return GoogleTranslator(source="en", target="es").translate(texto[:1000])
     except Exception:
         return texto  # si falla la traducción, mejor mostrar el original en inglés que nada
+
+
+def dias_hasta_resultados(ticker_obj):
     """Devuelve None si no hay fecha, o número de días naturales hasta la próxima publicación."""
     try:
         cal = ticker_obj.calendar
@@ -174,3 +177,4 @@ def ejecutar():
 
 if __name__ == "__main__":
     ejecutar()
+    
