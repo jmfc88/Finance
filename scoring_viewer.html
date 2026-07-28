@@ -304,7 +304,7 @@ async function traerLista() {
   await guardarConfig(repo);
   contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
 
-  const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json`;
+  const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json?t=${Date.now()}`;
   try {
     const resp = await fetch(url, { cache: 'no-store' });
     if (!resp.ok) {
