@@ -1,26 +1,29 @@
 """
-VERSION: 2 (28/07/2026) - universo dinámico desde Wikipedia, ya no lista fija
+VERSION: 3 (28/07/2026) - sin troceo en lotes ni acumulación: cada ejecución
+analiza el universo completo de una vez y genera la lista desde cero
 
 FASE 1 - SCREENING CUANTITATIVO
 ==========================================
-Recorre en lotes el universo de tickers de los índices principales
-(S&P500, IBEX35, DAX, FTSE100, CAC40, EuroStoxx50) buscando:
+Recorre TODO el universo de tickers de los índices principales
+(S&P500, IBEX35, DAX, FTSE100, CAC40, EuroStoxx50) en una sola pasada,
+buscando:
   - Consenso de analistas de compra (buy / strong_buy)
   - Beta alto (movimiento fuerte, criterio agresivo de Jose Manuel)
 
-El universo YA NO es una lista fija: se reconstruye en cada ejecución
-leyendo los componentes actuales de cada índice desde Wikipedia (tablas
-mantenidas por la comunidad, se actualizan solas cuando cambia un índice).
-Así la lista no se queda vieja en 6 meses o un año.
+El universo se reconstruye en cada ejecución leyendo los componentes
+actuales de cada índice desde Wikipedia (tablas mantenidas por la
+comunidad, se actualizan solas cuando cambia un índice). Así la lista
+no se queda vieja en 6 meses o un año.
 
 Si Wikipedia falla para un índice concreto ese día (cambio de formato,
 caída temporal...), se mantiene el último listado bueno conocido de ese
 índice guardado en universo_por_indice.json, en vez de romper todo el
 proceso.
 
-Guarda progreso entre ejecuciones (por si el universo es grande y se
-corta en varios "Run workflow"), y acumula los candidatos fuertes en
-candidatos_fase1.json, que luego consume fase2_scoring.py.
+Cada ejecución empieza la lista de candidatos DESDE CERO (no acumula
+entre ejecuciones), para que siempre refleje el estado actual del
+mercado y no arrastre para siempre nombres que dejaron de cumplir el
+criterio.
 
 Solo se ejecuta bajo demanda (workflow_dispatch), nunca en cron.
 """
@@ -35,11 +38,9 @@ import yfinance as yf
 
 UNIVERSO_FILE = "universo_tickers.json"
 CACHE_INDICES_FILE = "universo_por_indice.json"
-PROGRESO_FILE = "progreso.json"
 CANDIDATOS_FILE = "candidatos_fase1.json"
 
-LOTE_TAMANO = 300
-PAUSA_ENTRE_PETICIONES = 1.0
+PAUSA_ENTRE_PETICIONES = 0.3
 BETA_MINIMA = 1.5  # movimiento fuerte, coherente con el perfil agresivo
 
 # Fuente: tablas de Wikipedia mantenidas por la comunidad para cada índice.
@@ -108,25 +109,6 @@ def construir_universo():
     return universo
 
 
-def cargar_progreso():
-    if os.path.exists(PROGRESO_FILE):
-        with open(PROGRESO_FILE, "r", encoding="utf-8") as f:
-            return json.load(f).get("posicion", 0)
-    return 0
-
-
-def guardar_progreso(posicion):
-    with open(PROGRESO_FILE, "w", encoding="utf-8") as f:
-        json.dump({"posicion": posicion}, f)
-
-
-def cargar_candidatos():
-    if os.path.exists(CANDIDATOS_FILE):
-        with open(CANDIDATOS_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-
 def evaluar_ticker(ticker):
     try:
         info = yf.Ticker(ticker).info
@@ -144,38 +126,24 @@ def evaluar_ticker(ticker):
 
 
 def ejecutar():
-    # Solo se reconstruye el universo completo desde Wikipedia al empezar
-    # una vuelta nueva (posición 0), no en cada lote, para no repetir
-    # peticiones de más si el universo es grande y se corta en varias tandas.
-    posicion = cargar_progreso()
-    if posicion == 0 or not os.path.exists(UNIVERSO_FILE):
-        universo = construir_universo()
-    else:
-        with open(UNIVERSO_FILE, "r", encoding="utf-8") as f:
-            universo = json.load(f)
-
+    universo = construir_universo()
     total = len(universo)
-    candidatos = cargar_candidatos()
+    print(f"Universo total a analizar: {total} tickers")
 
-    lote = universo[posicion: posicion + LOTE_TAMANO]
-    print(f"Procesando {len(lote)} tickers ({posicion} a {posicion + len(lote)} de {total})")
+    candidatos = {}  # se empieza de cero cada vez, no se arrastran ejecuciones anteriores
 
-    for ticker in lote:
+    for i, ticker in enumerate(universo, start=1):
         resultado = evaluar_ticker(ticker)
         if resultado and resultado["candidato_fuerte"]:
             candidatos[ticker] = resultado
+        if i % 50 == 0:
+            print(f"  procesados {i}/{total}...")
         time.sleep(PAUSA_ENTRE_PETICIONES)
-
-    nueva_posicion = posicion + len(lote)
-    if nueva_posicion >= total:
-        nueva_posicion = 0  # reinicia el ciclo (y reconstruirá el universo de nuevo la próxima vez)
-
-    guardar_progreso(nueva_posicion)
 
     with open(CANDIDATOS_FILE, "w", encoding="utf-8") as f:
         json.dump(candidatos, f, indent=2, ensure_ascii=False)
 
-    print(f"Candidatos fuertes acumulados: {len(candidatos)}")
+    print(f"Candidatos fuertes encontrados esta pasada: {len(candidatos)}")
 
 
 if __name__ == "__main__":
