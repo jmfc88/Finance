@@ -1,0 +1,32 @@
+name: Vigilancia de stop-loss
+
+on:
+  schedule:
+    - cron: '*/30 13-21 * * 1-5'   # cada 30 min, horario de mercado US, lunes a viernes
+  workflow_dispatch: {}
+
+jobs:
+  vigilar-stop-loss:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install yfinance requests
+
+      - name: Vigilar posiciones abiertas
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python bot.py
+
+      - name: Guardar estado de posiciones
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add posiciones.json
+          git diff --staged --quiet || git commit -m "actualiza stop-loss dinámico"
+          git push
