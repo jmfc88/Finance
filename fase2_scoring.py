@@ -1,5 +1,6 @@
 """
-VERSION: 3 (28/07/2026) - corregido bug: faltaba la definición de dias_hasta_resultados
+VERSION: 4 (28/07/2026) - añade RSI, tendencia técnica (SMA50/200) y tendencia
+de recomendaciones de analistas mes a mes, con peso menor sobre el score
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -55,12 +56,85 @@ def dias_hasta_resultados(ticker_obj):
         return None
 
 
-def calcular_score(info, momentum_30d, dispersion_pct):
+def calcular_rsi(cierres, periodo=14):
+    """RSI 14: mide si el precio está sobrecomprado (>70) o en zona de rebote (<30)."""
+    try:
+        delta = cierres.diff()
+        ganancia = delta.clip(lower=0)
+        perdida = -delta.clip(upper=0)
+        media_ganancia = ganancia.rolling(periodo).mean()
+        media_perdida = perdida.rolling(periodo).mean()
+        rs = media_ganancia / media_perdida
+        rsi = 100 - (100 / (1 + rs))
+        valor = rsi.iloc[-1]
+        return round(valor, 1) if valor == valor else None  # valor == valor descarta NaN
+    except Exception:
+        return None
+
+
+def tendencia_tecnica(hist, precio_actual):
+    """Compara el precio actual con sus medias de 50 y 200 sesiones."""
+    try:
+        if len(hist) < 50:
+            return None, None, None
+        sma50 = round(hist["Close"].rolling(50).mean().iloc[-1], 2)
+        sma200 = round(hist["Close"].rolling(200).mean().iloc[-1], 2) if len(hist) >= 200 else None
+
+        if sma200 is not None:
+            if precio_actual > sma50 > sma200:
+                tendencia = "alcista"
+            elif precio_actual < sma50 < sma200:
+                tendencia = "bajista"
+            else:
+                tendencia = "mixta"
+        else:
+            tendencia = "alcista" if precio_actual > sma50 else "bajista"
+
+        return tendencia, sma50, sma200
+    except Exception:
+        return None, None, None
+
+
+def tendencia_analistas(ticker_obj):
+    """Compara las recomendaciones de analistas de hoy contra las de hace 3 meses:
+    ¿están mejorando, empeorando o estables? No es solo la foto fija de hoy."""
+    try:
+        rec = ticker_obj.recommendations
+        if rec is None or rec.empty:
+            return None
+        pesos = {"strongBuy": 2, "buy": 1, "hold": 0, "sell": -1, "strongSell": -2}
+
+        def puntuar(fila):
+            return sum(fila.get(k, 0) * w for k, w in pesos.items())
+
+        fila_actual = rec[rec["period"] == "0m"]
+        fila_hace3m = rec[rec["period"] == "-3m"]
+        if fila_actual.empty or fila_hace3m.empty:
+            return None
+
+        total_analistas = sum(fila_actual.iloc[0].get(k, 0) for k in pesos)
+        if total_analistas == 0:
+            return None
+
+        diferencia = puntuar(fila_actual.iloc[0]) - puntuar(fila_hace3m.iloc[0])
+        if diferencia > 1:
+            return "mejorando"
+        elif diferencia < -1:
+            return "empeorando"
+        else:
+            return "estable"
+    except Exception:
+        return None
+
+
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None):
     """
     Score de 0 a 100. Pondera:
     - Consenso de analistas (peso bajo, es la señal más ruidosa)
     - Dispersión entre precio objetivo alto/bajo (a MENOS dispersión, más fiable el consenso)
     - Momentum reciente (evita comprar algo que ya se ha desplomado o que está sobrecomprado)
+    - Tendencia técnica (SMA50/200) y tendencia de recomendaciones (mes a mes), peso menor:
+      son un empujón/freno sobre el resto, no el criterio principal.
     """
     score = 0
 
@@ -101,6 +175,18 @@ def calcular_score(info, momentum_30d, dispersion_pct):
         potencial = (target - precio) / precio * 100
         score += min(max(potencial / 4, -10), 25)  # tope +25 para no dejar que un dato exagerado domine
 
+    # Tendencia técnica: pequeño empujón/freno, no domina el score
+    if tendencia_tec == "alcista":
+        score += 5
+    elif tendencia_tec == "bajista":
+        score -= 5
+
+    # Tendencia de recomendaciones mes a mes: igual, empujón/freno menor
+    if tendencia_analistas_valor == "mejorando":
+        score += 5
+    elif tendencia_analistas_valor == "empeorando":
+        score -= 5
+
     return round(score, 1)
 
 
@@ -118,10 +204,14 @@ def evaluar(ticker):
             return {"ticker": ticker, "descartado": True,
                     "motivo": f"Resultados en {dias_resultados} días - evento binario, se evita"}
 
-        hist = t.history(period="35d")
+        hist = t.history(period="220d")  # suficiente para SMA200, RSI y momentum de 30 días
         momentum_30d = None
-        if len(hist) > 5:
-            momentum_30d = round((hist["Close"].iloc[-1] / hist["Close"].iloc[0] - 1) * 100, 1)
+        if len(hist) > 22:
+            momentum_30d = round((hist["Close"].iloc[-1] / hist["Close"].iloc[-22] - 1) * 100, 1)
+
+        rsi_14 = calcular_rsi(hist["Close"]) if len(hist) > 14 else None
+        tendencia_tec, sma50, sma200 = tendencia_tecnica(hist, precio)
+        tendencia_analistas_valor = tendencia_analistas(t)
 
         target_alto = info.get("targetHighPrice")
         target_bajo = info.get("targetLowPrice")
@@ -129,7 +219,7 @@ def evaluar(ticker):
         if target_alto and target_bajo and target_bajo > 0:
             dispersion_pct = round((target_alto - target_bajo) / target_bajo * 100, 1)
 
-        score = calcular_score(info, momentum_30d, dispersion_pct)
+        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor)
 
         return {
             "ticker": ticker,
@@ -140,6 +230,11 @@ def evaluar(ticker):
             "precio_objetivo_medio": info.get("targetMeanPrice"),
             "dispersion_pct": dispersion_pct,
             "momentum_30d_pct": momentum_30d,
+            "rsi_14": rsi_14,
+            "tendencia_tecnica": tendencia_tec,
+            "sma50": sma50,
+            "sma200": sma200,
+            "tendencia_analistas": tendencia_analistas_valor,
             "sector": info.get("sector"),
             "resumen_negocio": traducir(info.get("longBusinessSummary") or "")[:280],
         }
@@ -177,4 +272,3 @@ def ejecutar():
 
 if __name__ == "__main__":
     ejecutar()
-    
