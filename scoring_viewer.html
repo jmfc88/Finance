@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VERSION: 5 (28/07/2026) - añade tendencia técnica, RSI y tendencia de analistas por tarjeta -->
+<!-- VERSION: 6 (28/07/2026) - tooltips tocables por término, explicaciones mejoradas (momentum, dispersión, RSI) -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -170,6 +170,32 @@
   .euro{
     color:var(--ink-soft);
   }
+  .term{
+    border-bottom:1px dotted var(--ink-soft);
+    cursor:pointer;
+    position:relative;
+  }
+  .term::after{
+    content:"ⓘ";
+    font-size:9px;
+    vertical-align:super;
+    color:var(--gold);
+    margin-left:2px;
+  }
+  #tooltip{
+    position:fixed;
+    max-width:260px;
+    background:var(--ink);
+    color:var(--paper);
+    font-family: ui-monospace, monospace;
+    font-size:11.5px;
+    line-height:1.4;
+    padding:8px 10px;
+    border-radius:3px;
+    z-index:1000;
+    display:none;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  }
   .progreso{
     background:#fff;
     border:1px solid var(--ink);
@@ -236,15 +262,7 @@
     <input id="input-repo" placeholder="usuario/repositorio (GitHub)" autocapitalize="off" autocorrect="off">
     <button id="btn-cargar">Traer lista</button>
   </div>
-  <details class="leyenda">
-    <summary>¿Qué significa cada dato?</summary>
-    <div class="leyenda-item"><b>score:</b> la nota final de 0 a 100, combina todo lo demás. Es solo un orden entre candidatas, no un porcentaje de nada.</div>
-    <div class="leyenda-item"><b>consenso:</b> lo que opinan los analistas que siguen esa empresa (comprar, mantener, vender...).</div>
-    <div class="leyenda-item"><b>potencial:</b> cuánto podría subir el precio hasta el objetivo medio de esos analistas. Es su opinión, no una promesa.</div>
-    <div class="leyenda-item"><b>momentum 30d:</b> cuánto ha subido o bajado el precio en el último mes.</div>
-    <div class="leyenda-item"><b>dispersión:</b> cuánto se pelean los analistas sobre el precio objetivo. Baja = bastante de acuerdo, fíate más del potencial. Alta = discrepancias grandes, tómatelo con más pinzas.</div>
-    <div class="leyenda-item"><b>precio:</b> en dólares, porque son empresas que cotizan en EE.UU. Al lado te muestro el equivalente en euros de hoy, orientativo — Trade Republic hace su propia conversión al comprar.</div>
-  </details>
+  <div class="sub" style="margin-top:6px;">toca cualquier término con ⓘ para ver qué significa</div>
 </header>
 
 <section class="progreso" id="panel-progreso">
@@ -263,6 +281,8 @@
 <main id="contenido">
   <div class="estado">Escribe tu repositorio de GitHub arriba (ej: joseluismanuel/trading-bot) y pulsa "Traer lista".</div>
 </main>
+
+<div id="tooltip"></div>
 
 <script>
 let tasaUSDEUR = null;
@@ -310,18 +330,18 @@ function renderTarjeta(c, esTop) {
         </div>
         <div style="text-align:right;">
           <div class="score ${scoreClass}">${c.score}</div>
-          <div style="font-family: ui-monospace, monospace; font-size:9.5px; color:var(--ink-soft);">nota (0-100)</div>
+          <div style="font-family: ui-monospace, monospace; font-size:9.5px; color:var(--ink-soft);" class="term" data-tip="Puntuación total combinando todos los datos de esta tarjeta">nota (0-100)</div>
         </div>
       </div>
       <div class="datos">
-        <div><span class="label">precio (cotización actual):</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
-        <div><span class="label">consenso (opinión analistas):</span> ${c.consenso || '—'}</div>
-        <div><span class="label">potencial (subida esperada):</span> ${potencial}</div>
-        <div><span class="label">momentum 30d (cambio último mes):</span> ${c.momentum_30d_pct ?? '—'}%</div>
-        <div><span class="label">dispersión (acuerdo entre analistas):</span> ${c.dispersion_pct ?? '—'}%</div>
-        <div><span class="label">tendencia técnica (vs. su media):</span> ${c.tendencia_tecnica || '—'}</div>
-        <div><span class="label">RSI 14 (sobrecompra/rebote):</span> ${c.rsi_14 ?? '—'}</div>
-        <div><span class="label">analistas (últimos 3 meses):</span> ${c.tendencia_analistas || '—'}</div>
+        <div><span class="label term" data-tip="Precio de mercado ahora mismo, en dólares">precio:</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
+        <div><span class="label term" data-tip="Opinión media de los analistas: comprar, mantener o vender">consenso:</span> ${c.consenso || '—'}</div>
+        <div><span class="label term" data-tip="Subida esperada hasta el precio objetivo de analistas">potencial:</span> ${potencial}</div>
+        <div><span class="label term" data-tip="Cuánto ha subido o bajado el precio en el último mes">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
+        <div><span class="label term" data-tip="Cuánto discrepan los analistas sobre el precio objetivo">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
+        <div><span class="label term" data-tip="Compara el precio con su media de 50 y 200 sesiones">tendencia técnica:</span> ${c.tendencia_tecnica || '—'}</div>
+        <div><span class="label term" data-tip="Por encima de 70: subió muy rápido. Por debajo de 30: cayó muy rápido">RSI 14:</span> ${c.rsi_14 ?? '—'}</div>
+        <div><span class="label term" data-tip="Si los analistas mejoran o empeoran su opinión en 3 meses">analistas:</span> ${c.tendencia_analistas || '—'}</div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
     </div>
@@ -438,6 +458,25 @@ document.getElementById('btn-guardar-capital').addEventListener('click', guardar
 cargarConfigGuardada();
 cargarCapitalGuardado();
 obtenerTasaCambio();
+
+// Tooltips tocables: delegación de eventos porque las tarjetas se generan dinámicamente
+const tooltip = document.getElementById('tooltip');
+document.addEventListener('click', (e) => {
+  const term = e.target.closest('.term');
+  if (term) {
+    tooltip.textContent = term.dataset.tip;
+    const rect = term.getBoundingClientRect();
+    tooltip.style.display = 'block';
+    const arriba = rect.top > 100; // si hay sitio arriba, lo ponemos arriba del término
+    tooltip.style.top = arriba ? (rect.top - tooltip.offsetHeight - 8) + 'px' : (rect.bottom + 8) + 'px';
+    let izquierda = rect.left;
+    if (izquierda + 260 > window.innerWidth) izquierda = window.innerWidth - 270;
+    tooltip.style.left = Math.max(8, izquierda) + 'px';
+    e.stopPropagation();
+  } else {
+    tooltip.style.display = 'none';
+  }
+});
 </script>
 
 </body>
