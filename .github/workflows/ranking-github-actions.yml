@@ -1,4 +1,4 @@
-# VERSION: 4 (28/07/2026) - git pull antes de push para evitar conflicto si el repo cambió mientras corría
+# VERSION: 5 (28/07/2026) - sin progreso.json (fase1 ya no trocea en lotes, pasada completa cada vez)
 name: Actualizar ranking de candidatas
 
 on:
@@ -27,7 +27,7 @@ jobs:
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add candidatos_fase1.json candidatos_rankeados.json progreso.json universo_tickers.json universo_por_indice.json
+          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
           git pull --rebase origin main
           git push
