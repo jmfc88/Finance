@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VERSION: 2 (28/07/2026) - localStorage en vez de window.storage -->
+<!-- VERSION: 3 (28/07/2026) - leyenda de términos + equivalente en euros -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -153,6 +153,23 @@
     margin-top:8px;
     border-radius:2px;
   }
+  .leyenda{
+    margin-top:12px;
+    font-family: ui-monospace, monospace;
+    font-size:12px;
+  }
+  .leyenda summary{
+    color:var(--ink-soft);
+    cursor:pointer;
+  }
+  .leyenda-item{
+    padding:6px 0;
+    border-bottom:1px solid var(--paper-line);
+    line-height:1.4;
+  }
+  .euro{
+    color:var(--ink-soft);
+  }
   .progreso{
     background:#fff;
     border:1px solid var(--ink);
@@ -219,6 +236,15 @@
     <input id="input-repo" placeholder="usuario/repositorio (GitHub)" autocapitalize="off" autocorrect="off">
     <button id="btn-cargar">Traer lista</button>
   </div>
+  <details class="leyenda">
+    <summary>¿Qué significa cada dato?</summary>
+    <div class="leyenda-item"><b>score:</b> la nota final de 0 a 100, combina todo lo demás. Es solo un orden entre candidatas, no un porcentaje de nada.</div>
+    <div class="leyenda-item"><b>consenso:</b> lo que opinan los analistas que siguen esa empresa (comprar, mantener, vender...).</div>
+    <div class="leyenda-item"><b>potencial:</b> cuánto podría subir el precio hasta el objetivo medio de esos analistas. Es su opinión, no una promesa.</div>
+    <div class="leyenda-item"><b>momentum 30d:</b> cuánto ha subido o bajado el precio en el último mes.</div>
+    <div class="leyenda-item"><b>dispersión:</b> cuánto se pelean los analistas sobre el precio objetivo. Baja = bastante de acuerdo, fíate más del potencial. Alta = discrepancias grandes, tómatelo con más pinzas.</div>
+    <div class="leyenda-item"><b>precio:</b> en dólares, porque son empresas que cotizan en EE.UU. Al lado te muestro el equivalente en euros de hoy, orientativo — Trade Republic hace su propia conversión al comprar.</div>
+  </details>
 </header>
 
 <section class="progreso" id="panel-progreso">
@@ -239,6 +265,18 @@
 </main>
 
 <script>
+let tasaUSDEUR = null;
+
+async function obtenerTasaCambio() {
+  try {
+    const resp = await fetch('https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR');
+    const data = await resp.json();
+    tasaUSDEUR = data.rates?.EUR || null;
+  } catch (e) {
+    tasaUSDEUR = null; // si falla, simplemente no se muestra el equivalente en euros
+  }
+}
+
 async function cargarConfigGuardada() {
   try {
     const repo = localStorage.getItem('github-repo');
@@ -273,7 +311,7 @@ function renderTarjeta(c, esTop) {
         <div class="score ${scoreClass}">${c.score}</div>
       </div>
       <div class="datos">
-        <div><span class="label">precio:</span> ${c.precio_actual}$</div>
+        <div><span class="label">precio:</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
         <div><span class="label">consenso:</span> ${c.consenso || '—'}</div>
         <div><span class="label">potencial:</span> ${potencial}</div>
         <div><span class="label">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
@@ -303,6 +341,7 @@ async function traerLista() {
     return;
   }
   await guardarConfig(repo);
+  if (tasaUSDEUR === null) await obtenerTasaCambio();
   contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
 
   const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json?t=${Date.now()}`;
@@ -392,6 +431,7 @@ document.getElementById('btn-cargar').addEventListener('click', traerLista);
 document.getElementById('btn-guardar-capital').addEventListener('click', guardarCapital);
 cargarConfigGuardada();
 cargarCapitalGuardado();
+obtenerTasaCambio();
 </script>
 
 </body>
