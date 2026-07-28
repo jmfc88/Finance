@@ -1,11 +1,16 @@
 """
-VERSION: 4 (28/07/2026) - añade User-Agent a las peticiones a Wikipedia (evita 403 Forbidden)
+VERSION: 6 (28/07/2026) - universo ajustado al filtro real de índices de la
+app de Trade Republic (capturas del usuario): añadidos DJIA, MDAX, NASDAQ-100,
+Nikkei225, SDAX, SMI, TecDAX y ATX. MSCI World y Russell 2000 quedan fuera:
+demasiados componentes y sin tabla fiable en Wikipedia para extraerlos bien;
+los sub-índices franceses (CAC Large/Mid/NEXT/SMALL) igual, sin fuente clara.
 
 FASE 1 - SCREENING CUANTITATIVO
 ==========================================
 Recorre TODO el universo de tickers de los índices principales
-(S&P500, IBEX35, DAX, FTSE100, CAC40, EuroStoxx50) en una sola pasada,
-buscando:
+(S&P500, DAX, FTSE100, CAC40, IBEX35, Nikkei225, EuroStoxx50, AEX, BEL20,
+PSI20, FTSE MIB, DJIA, MDAX, SDAX, TecDAX, SMI, ATX, NASDAQ-100) en una
+sola pasada, buscando:
   - Consenso de analistas de compra (buy / strong_buy)
   - Beta alto (movimiento fuerte, criterio agresivo de Jose Manuel)
 
@@ -47,13 +52,28 @@ BETA_MINIMA = 1.5  # movimiento fuerte, coherente con el perfil agresivo
 # Fuente: tablas de Wikipedia mantenidas por la comunidad para cada índice.
 # "columnas" prueba varios nombres posibles porque no todas las páginas
 # usan el mismo encabezado. "sufijo" es el que necesita yfinance para
-# identificar la bolsa correcta (Madrid, Fráncfort, Londres, París...).
+# identificar la bolsa correcta (Madrid, Fráncfort, Londres, París,
+# Ámsterdam, Bruselas, Lisboa, Milán, Zúrich, Viena, Tokio...).
+# Esta lista está ajustada al filtro real de índices que ofrece la app
+# de Trade Republic (capturas de pantalla del usuario, 28/07/2026).
 INDICES = {
     "SP500":       {"url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", "columnas": ["Symbol"], "sufijo": ""},
+    "NASDAQ100":   {"url": "https://en.wikipedia.org/wiki/Nasdaq-100", "columnas": ["Ticker"], "sufijo": ""},
+    "DJIA":        {"url": "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average", "columnas": ["Symbol"], "sufijo": ""},
     "IBEX35":      {"url": "https://en.wikipedia.org/wiki/IBEX_35", "columnas": ["Ticker", "Símbolo"], "sufijo": ".MC"},
     "DAX":         {"url": "https://en.wikipedia.org/wiki/DAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "MDAX":        {"url": "https://en.wikipedia.org/wiki/MDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "SDAX":        {"url": "https://en.wikipedia.org/wiki/SDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
+    "TECDAX":      {"url": "https://en.wikipedia.org/wiki/TecDAX", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ""},
     "FTSE100":     {"url": "https://en.wikipedia.org/wiki/FTSE_100_Index", "columnas": ["Ticker"], "sufijo": ".L"},
     "CAC40":       {"url": "https://en.wikipedia.org/wiki/CAC_40", "columnas": ["Ticker"], "sufijo": ".PA"},
+    "AEX":         {"url": "https://en.wikipedia.org/wiki/AEX_index", "columnas": ["Ticker"], "sufijo": ".AS"},
+    "BEL20":       {"url": "https://en.wikipedia.org/wiki/BEL_20", "columnas": ["Ticker"], "sufijo": ".BR"},
+    "PSI20":       {"url": "https://en.wikipedia.org/wiki/PSI-20", "columnas": ["Ticker"], "sufijo": ".LS"},
+    "FTSEMIB":     {"url": "https://en.wikipedia.org/wiki/FTSE_MIB", "columnas": ["Ticker"], "sufijo": ".MI"},
+    "SMI":         {"url": "https://en.wikipedia.org/wiki/Swiss_Market_Index", "columnas": ["Ticker"], "sufijo": ".SW"},
+    "ATX":         {"url": "https://en.wikipedia.org/wiki/ATX_(stock_market_index)", "columnas": ["Ticker", "Symbol"], "sufijo": ".VI"},
+    "NIKKEI225":   {"url": "https://en.wikipedia.org/wiki/Nikkei_225", "columnas": ["Code", "Ticker"], "sufijo": ".T"},
     "EUROSTOXX50": {"url": "https://en.wikipedia.org/wiki/EURO_STOXX_50", "columnas": ["Ticker"], "sufijo": ""},
 }
 
