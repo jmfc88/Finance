@@ -1,4 +1,6 @@
 """
+VERSION: 2 (28/07/2026) - universo dinámico desde Wikipedia, ya no lista fija
+
 FASE 1 - SCREENING CUANTITATIVO
 ==========================================
 Recorre en lotes el universo de tickers de los índices principales
