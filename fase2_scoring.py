@@ -1,4 +1,6 @@
 """
+VERSION: 2 (28/07/2026) - traduce el resumen de negocio al español
+
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
 Coge candidatos_fase1.json (salida del screening cuantitativo) y les
@@ -15,6 +17,7 @@ import time
 from datetime import datetime, timedelta
 
 import yfinance as yf
+from deep_translator import GoogleTranslator
 
 ENTRADA = "candidatos_fase1.json"
 SALIDA = "candidatos_rankeados.json"
@@ -23,7 +26,13 @@ PRECIO_MAXIMO = 200  # criterio de Jose Manuel: nada de fracciones, nada por enc
 PAUSA_ENTRE_PETICIONES = 1.5
 
 
-def dias_hasta_resultados(ticker_obj):
+def traducir(texto):
+    if not texto:
+        return ""
+    try:
+        return GoogleTranslator(source="en", target="es").translate(texto[:1000])
+    except Exception:
+        return texto  # si falla la traducción, mejor mostrar el original en inglés que nada
     """Devuelve None si no hay fecha, o número de días naturales hasta la próxima publicación."""
     try:
         cal = ticker_obj.calendar
@@ -129,7 +138,7 @@ def evaluar(ticker):
             "dispersion_pct": dispersion_pct,
             "momentum_30d_pct": momentum_30d,
             "sector": info.get("sector"),
-            "resumen_negocio": (info.get("longBusinessSummary") or "")[:280],
+            "resumen_negocio": traducir(info.get("longBusinessSummary") or "")[:280],
         }
     except Exception as e:
         return {"ticker": ticker, "descartado": True, "motivo": f"Error de datos: {e}"}
