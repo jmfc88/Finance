@@ -1,4 +1,6 @@
 """
+VERSION: 1 (28/07/2026) - primera versión
+
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
 Trade Republic no tiene trailing stop nativo, así que este bot lo
