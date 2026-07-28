@@ -1,4 +1,6 @@
 """
+VERSION: 1 (28/07/2026) - primera versión
+
 BOT 1 - NOTICIAS (sentimiento)
 ==========================================
 Lee candidatos_fase1.json y para cada ticker consulta sus noticias
