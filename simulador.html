@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 6 (29/07/2026) - al confirmar el registro, break-even y stop-loss
-(secciones 2 y 3) se calculan solos con los mismos datos; la 4 (trailing)
-se deja para que el usuario decida el % y pulse el botón -->
+<!-- VERSION: 11 (29/07/2026) - añade editar y borrar en cada fila del historial,
+con recálculo completo del FIFO tras cualquier edición o borrado para que
+las cifras nunca queden descuadradas -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -102,6 +102,9 @@ se deja para que el usuario decida el % y pulse el botón -->
 <!-- LEDGER FIFO — primero, es el paso real del día a día -->
 <section class="panel">
   <h2>1. Registro de operaciones (FIFO)</h2>
+  <div id="aviso-edicion" class="resultado mal" style="display:none; margin-bottom:10px;">
+    Estás editando una operación existente. <a href="#" onclick="cancelarEdicion(); return false;" style="color:var(--brick); text-decoration:underline;">Cancelar edición</a>
+  </div>
   <div class="fila">
     <div class="campo"><label>Tipo</label>
       <select id="op-tipo" oninput="calcularVista()"><option value="compra">Compra</option><option value="venta">Venta</option></select>
@@ -118,7 +121,7 @@ se deja para que el usuario decida el % y pulse el botón -->
     <div class="campo"><label>ISIN (opcional — pégalo desde el visor de candidatas si lo tiene)</label><input id="op-isin" type="text" placeholder="ej: CA33544P2081"></div>
   </div>
   <div class="resultado" id="vista-previa-calculo" style="display:none;"></div>
-  <button onclick="pedirConfirmacion()">Registrar operación</button>
+  <button id="boton-registrar" onclick="pedirConfirmacion()">Registrar operación</button>
 
   <div id="caja-confirmacion" style="display:none; margin-top:12px; padding:12px; border:2px solid var(--gold); border-radius:3px; background:#fffbf0;">
     <div id="resumen-confirmacion" style="font-family: ui-monospace, monospace; font-size:13px; line-height:1.6;"></div>
@@ -128,7 +131,7 @@ se deja para que el usuario decida el % y pulse el botón -->
     </div>
   </div>
 
-  <table id="ledger-tabla"><thead><tr><th>Fecha</th><th>Tipo</th><th>Ticker</th><th>Precio</th><th>Acc.</th><th>Neto</th></tr></thead><tbody></tbody></table>
+  <table id="ledger-tabla"><thead><tr><th>Fecha</th><th>Tipo</th><th>Ticker</th><th>Precio</th><th>Acc.</th><th>Neto</th><th></th></tr></thead><tbody></tbody></table>
 
   <h2 style="margin-top:16px;">Resumen fiscal acumulado</h2>
   <div class="resumen-fiscal" id="resumen-fiscal"></div>
@@ -139,39 +142,38 @@ se deja para que el usuario decida el % y pulse el botón -->
 <section class="panel">
   <h2>2. Punto de equilibrio (break-even)</h2>
   <div class="fila">
-    <div class="campo"><label>Precio de compra</label><input id="be-precio" type="number" step="0.01"></div>
-    <div class="campo"><label>Acciones</label><input id="be-acciones" type="number" step="1"></div>
+    <div class="campo"><label>Precio de compra</label><input id="be-precio" type="number" step="0.01" oninput="calcularBreakEven()"></div>
+    <div class="campo"><label>Acciones</label><input id="be-acciones" type="number" step="1" oninput="calcularBreakEven()"></div>
   </div>
-  <button onclick="calcularBreakEven()">Calcular</button>
   <div class="resultado" id="be-resultado" style="display:none;"></div>
 </section>
 
 <!-- STOP LOSS CON BENEFICIO NETO GARANTIZADO -->
 <section class="panel">
-  <h2>3. Stop-loss con beneficio neto garantizado</h2>
+  <h2>3. Stop-loss inicial (pérdida máxima permitida)</h2>
   <div class="fila">
-    <div class="campo"><label>Precio de compra</label><input id="sl-precio" type="number" step="0.01"></div>
-    <div class="campo"><label>Acciones</label><input id="sl-acciones" type="number" step="1"></div>
+    <div class="campo"><label>Precio de compra</label><input id="sl-precio" type="number" step="0.01" oninput="calcularStopLossPresets()"></div>
+    <div class="campo"><label>Acciones</label><input id="sl-acciones" type="number" step="1" oninput="calcularStopLossPresets()"></div>
   </div>
-  <div class="fila">
-    <div class="campo"><label>Beneficio neto mínimo a proteger (€)</label><input id="sl-beneficio" type="number" step="0.01" value="0" oninput="calcularStopLoss()"></div>
-  </div>
-  <button onclick="calcularStopLoss()">Calcular precio de stop-loss</button>
-  <div class="resultado" id="sl-resultado" style="display:none;"></div>
+  <div class="nota" style="margin-top:0;">Pérdida máxima ya incluyendo las comisiones (1€ compra + 1€ venta). Pon este precio como stop-loss inicial en Trade Republic al abrir la posición.</div>
+  <div id="sl-presets" class="resultado" style="display:none;"></div>
 </section>
 
-<!-- TRAILING STOP CON HISTORIAL -->
+<!-- POSICIONES ABIERTAS: lista clicable para registrar la venta -->
 <section class="panel">
-  <h2>4. Trailing stop dinámico</h2>
-  <div class="fila">
-    <div class="campo"><label>Precio máximo alcanzado</label><input id="ts-maximo" type="number" step="0.01"></div>
-    <div class="campo"><label>% de caída permitido</label><input id="ts-porcentaje" type="number" step="0.1" value="8"></div>
-  </div>
-  <button onclick="registrarTrailing()">Calcular y guardar en historial</button>
-  <div class="resultado" id="ts-resultado" style="display:none;"></div>
-  <table id="ts-historial"><thead><tr><th>Fecha</th><th>Máximo</th><th>Stop calculado</th></tr></thead><tbody></tbody></table>
+  <h2>4. Posiciones abiertas</h2>
+  <div class="nota" style="margin-top:0; margin-bottom:10px;">Toca una posición para ver su break-even y stop-loss recalculados con el precio real de compra (útil si no te acuerdas, aunque no vayas a vender todavía). Usa el botón "Vender esta posición" cuando sí quieras registrar la venta.</div>
+  <div id="posiciones-abiertas"></div>
 </section>
 
+<!-- GRÁFICO DE GANANCIAS -->
+<section class="panel">
+  <h2>5. Evolución de ganancias</h2>
+  <canvas id="grafico-ganancias" style="max-height:280px;"></canvas>
+  <div class="nota" id="grafico-vacio" style="display:none;">Todavía no hay ventas cerradas para dibujar el gráfico.</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 const COMISION_COMPRA = 1.0;
 const COMISION_VENTA = 1.0;
@@ -189,48 +191,24 @@ function calcularBreakEven() {
   div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)}$ (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión)`;
 }
 
-function calcularStopLoss() {
+function calcularStopLossPresets() {
   const precio = parseFloat(document.getElementById('sl-precio').value);
   const acciones = parseFloat(document.getElementById('sl-acciones').value);
-  const netoDeseado = parseFloat(document.getElementById('sl-beneficio').value) || 0;
-  const div = document.getElementById('sl-resultado');
-  if (!precio || !acciones) { div.style.display='none'; return; }
+  const div = document.getElementById('sl-presets');
+  if (!precio || !acciones) { div.style.display = 'none'; return; }
+
   const comisiones = COMISION_COMPRA + COMISION_VENTA;
-  // neto = (venta - compra)*acciones - comisiones - 0.19*max(ganancia_bruta_antes_imp,0)
-  // resolviendo para venta cuando netoDeseado >= 0:
-  const gananciaBrutaNecesaria = (netoDeseado + comisiones) / (1 - TAX_RATE);
-  const precioVenta = precio + (gananciaBrutaNecesaria / acciones);
+  const importeInvertido = precio * acciones;
+  const porcentajes = [10, 12.5, 15];
+
+  const filas = porcentajes.map(pct => {
+    const perdidaMaxima = importeInvertido * (pct / 100);
+    const precioVenta = precio - ((perdidaMaxima - comisiones) / acciones);
+    return `<div>−${pct}% → stop-loss en <b>${precioVenta.toFixed(4)}$</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
+  }).join('');
+
   div.style.display = 'block';
-  div.textContent = `Precio de venta necesario para ${netoDeseado}€ netos: ${precioVenta.toFixed(4)}$`;
-}
-
-async function registrarTrailing() {
-  const maximo = parseFloat(document.getElementById('ts-maximo').value);
-  const porcentaje = parseFloat(document.getElementById('ts-porcentaje').value);
-  const div = document.getElementById('ts-resultado');
-  if (!maximo || !porcentaje) { div.style.display='none'; return; }
-  const stop = maximo * (1 - porcentaje / 100);
-  div.style.display = 'block';
-  div.textContent = `Stop-loss calculado: ${stop.toFixed(4)}$ (${porcentaje}% por debajo del máximo)`;
-
-  const historial = await cargarHistorialTrailing();
-  historial.push({ fecha: new Date().toISOString().slice(0,16).replace('T',' '), maximo, stop: stop.toFixed(4) });
-  try { localStorage.setItem('trailing-historial', JSON.stringify(historial)); } catch (e) { console.error('No se pudo guardar el historial', e); }
-  renderTrailing(historial);
-}
-
-async function cargarHistorialTrailing() {
-  try {
-    const guardado = localStorage.getItem('trailing-historial');
-    return guardado ? JSON.parse(guardado) : [];
-  } catch (e) { return []; }
-}
-
-function renderTrailing(historial) {
-  const tbody = document.querySelector('#ts-historial tbody');
-  tbody.innerHTML = historial.slice().reverse().map(h =>
-    `<tr><td>${h.fecha}</td><td>${h.maximo}</td><td>${h.stop}</td></tr>`
-  ).join('');
+  div.innerHTML = `Sobre ${importeInvertido.toFixed(2)}€ invertidos:<br>${filas}`;
 }
 
 async function cargarLedger() {
@@ -262,14 +240,13 @@ function calcularVista() {
   if (precio) {
     document.getElementById('be-precio').value = precio;
     document.getElementById('sl-precio').value = precio;
-    if (!document.getElementById('ts-maximo').value) {
-      document.getElementById('ts-maximo').value = precio;
-    }
   }
   if (acciones) {
     document.getElementById('be-acciones').value = acciones;
     document.getElementById('sl-acciones').value = acciones;
   }
+  calcularBreakEven();
+  calcularStopLossPresets();
 
   if (!precio || !acciones) { div.style.display = 'none'; return; }
 
@@ -282,6 +259,8 @@ function calcularVista() {
     div.textContent = `Al confirmar, se calculará el beneficio neto contra tus compras abiertas de este ticker (FIFO).`;
   }
 }
+
+let editandoIndice = null;
 
 function pedirConfirmacion() {
   const tipo = document.getElementById('op-tipo').value;
@@ -299,7 +278,7 @@ function pedirConfirmacion() {
 
   const importe = (precio * acciones).toFixed(2);
   document.getElementById('resumen-confirmacion').innerHTML = `
-    <b>Revisa antes de guardar:</b><br>
+    <b>${editandoIndice !== null ? 'Revisa los cambios antes de guardar' : 'Revisa antes de guardar'}:</b><br>
     Tipo: ${tipo}<br>
     Ticker: ${ticker}${nombre ? ' — ' + nombre : ''}<br>
     ${isin ? 'ISIN: ' + isin + '<br>' : ''}
@@ -318,16 +297,19 @@ function cancelarConfirmacion() {
 }
 
 async function confirmarRegistro() {
-  // Guardamos estos valores ANTES de que registrarOperacion() vacíe los campos
+  // Guardamos estos valores ANTES de que se vacíen los campos
   const precio = document.getElementById('op-precio').value;
   const acciones = document.getElementById('op-acciones').value;
 
-  await registrarOperacion();
+  if (editandoIndice !== null) {
+    await guardarEdicion();
+  } else {
+    await registrarOperacion();
+  }
   document.getElementById('caja-confirmacion').style.display = 'none';
   document.getElementById('vista-previa-calculo').style.display = 'none';
 
   // Con lo que acabas de registrar, calculamos solas las secciones 2 y 3.
-  // La 4 (trailing) se deja para que decidas tú el % y pulses el botón.
   if (precio && acciones) {
     document.getElementById('be-precio').value = precio;
     document.getElementById('be-acciones').value = acciones;
@@ -335,12 +317,35 @@ async function confirmarRegistro() {
 
     document.getElementById('sl-precio').value = precio;
     document.getElementById('sl-acciones').value = acciones;
-    calcularStopLoss();
-
-    if (!document.getElementById('ts-maximo').value) {
-      document.getElementById('ts-maximo').value = precio;
-    }
+    calcularStopLossPresets();
   }
+}
+
+/** Recorre el ledger en orden de fecha y vuelve a emparejar ventas con
+ * compras FIFO desde cero. Se usa tras editar o borrar cualquier
+ * operación, para que las cifras nunca queden descuadradas. */
+function recalcularFIFO(ledger) {
+  const ordenado = ledger.slice().sort((a, b) => (a.fecha || '').localeCompare(b.fecha || ''));
+  ordenado.forEach(op => {
+    if (op.tipo === 'compra') op.acciones_restantes = op.acciones;
+    else op.neto = null;
+  });
+  ordenado.forEach(venta => {
+    if (venta.tipo !== 'venta') return;
+    let restante = venta.acciones;
+    let neto = null;
+    for (const compra of ordenado) {
+      if (compra.tipo === 'compra' && compra.ticker === venta.ticker && compra.acciones_restantes > 0 && restante > 0) {
+        const usar = Math.min(compra.acciones_restantes, restante);
+        compra.acciones_restantes -= usar;
+        restante -= usar;
+        const parcial = calcularNetoVenta(compra.precio, venta.precio, usar);
+        neto = (neto || 0) + parcial;
+      }
+    }
+    venta.neto = neto !== null ? Number(neto.toFixed(2)) : null;
+  });
+  return ledger;
 }
 
 async function registrarOperacion() {
@@ -355,28 +360,13 @@ async function registrarOperacion() {
   if (!ticker || !precio || !acciones) return;
 
   const ledger = await cargarLedger();
-  let neto = null;
-
-  if (tipo === 'venta') {
-    // FIFO: busca compras abiertas más antiguas de ese ticker
-    let restante = acciones;
-    for (const op of ledger) {
-      if (op.tipo === 'compra' && op.ticker === ticker && op.acciones_restantes > 0 && restante > 0) {
-        const usar = Math.min(op.acciones_restantes, restante);
-        op.acciones_restantes -= usar;
-        restante -= usar;
-        const netoParcial = calcularNetoVenta(op.precio, precio, usar);
-        neto = (neto || 0) + netoParcial;
-      }
-    }
-  }
-
   ledger.push({
     tipo, ticker, nombre, isin, precio, acciones, fecha,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
-    neto: neto !== null ? Number(neto.toFixed(2)) : null,
+    neto: null,
   });
 
+  recalcularFIFO(ledger);
   await guardarLedger(ledger);
   renderLedger(ledger);
   renderResumenFiscal(ledger);
@@ -388,9 +378,79 @@ async function registrarOperacion() {
   document.getElementById('op-acciones').value = '';
 }
 
+function iniciarEdicion(index) {
+  const op = ledgerActual[index];
+  if (!op) return;
+  document.getElementById('op-tipo').value = op.tipo;
+  document.getElementById('op-ticker').value = op.ticker;
+  document.getElementById('op-nombre').value = op.nombre || '';
+  document.getElementById('op-isin').value = op.isin || '';
+  document.getElementById('op-precio').value = op.precio;
+  document.getElementById('op-acciones').value = op.acciones;
+  document.getElementById('op-fecha').value = op.fecha;
+
+  editandoIndice = index;
+  document.getElementById('boton-registrar').textContent = 'Guardar cambios';
+  document.getElementById('aviso-edicion').style.display = 'block';
+  calcularVista();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function cancelarEdicion() {
+  editandoIndice = null;
+  document.getElementById('boton-registrar').textContent = 'Registrar operación';
+  document.getElementById('aviso-edicion').style.display = 'none';
+  document.getElementById('op-ticker').value = '';
+  document.getElementById('op-nombre').value = '';
+  document.getElementById('op-isin').value = '';
+  document.getElementById('op-precio').value = '';
+  document.getElementById('op-acciones').value = '';
+  document.getElementById('vista-previa-calculo').style.display = 'none';
+}
+
+async function guardarEdicion() {
+  const tipo = document.getElementById('op-tipo').value;
+  const ticker = document.getElementById('op-ticker').value.trim().toUpperCase();
+  const nombre = document.getElementById('op-nombre').value.trim();
+  const isin = document.getElementById('op-isin').value.trim().toUpperCase();
+  const precio = parseFloat(document.getElementById('op-precio').value);
+  const acciones = parseInt(document.getElementById('op-acciones').value);
+  const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
+
+  if (!ticker || !precio || !acciones || editandoIndice === null) return;
+
+  const ledger = await cargarLedger();
+  ledger[editandoIndice] = {
+    tipo, ticker, nombre, isin, precio, acciones, fecha,
+    acciones_restantes: tipo === 'compra' ? acciones : 0,
+    neto: null,
+  };
+
+  recalcularFIFO(ledger);
+  await guardarLedger(ledger);
+  renderLedger(ledger);
+  renderResumenFiscal(ledger);
+
+  cancelarEdicion();
+}
+
+async function eliminarOperacion(index) {
+  if (!confirm('¿Seguro que quieres eliminar esta operación? No se puede deshacer, y puede afectar al cálculo de ventas ya registradas de este mismo ticker.')) return;
+  const ledger = await cargarLedger();
+  ledger.splice(index, 1);
+  recalcularFIFO(ledger);
+  await guardarLedger(ledger);
+  renderLedger(ledger);
+  renderResumenFiscal(ledger);
+}
+
+let ledgerActual = [];
+
 function renderLedger(ledger) {
+  ledgerActual = ledger;
   const tbody = document.querySelector('#ledger-tabla tbody');
-  tbody.innerHTML = ledger.slice().reverse().map(op => `
+  const filas = ledger.map((op, idx) => ({ op, idx })).reverse();
+  tbody.innerHTML = filas.map(({ op, idx }) => `
     <tr>
       <td>${op.fecha}</td>
       <td>${op.tipo}</td>
@@ -398,6 +458,10 @@ function renderLedger(ledger) {
       <td>${op.precio}</td>
       <td>${op.acciones}</td>
       <td class="${op.neto === null ? '' : (op.neto >= 0 ? 'pos' : 'neg')}">${op.neto !== null ? op.neto + '€' : '—'}</td>
+      <td style="white-space:nowrap;">
+        <button onclick="iniciarEdicion(${idx})" style="font-size:10px; padding:4px 6px;">editar</button>
+        <button onclick="eliminarOperacion(${idx})" style="font-size:10px; padding:4px 6px; background:var(--brick);">borrar</button>
+      </td>
     </tr>
   `).join('');
 }
@@ -405,28 +469,4 @@ function renderLedger(ledger) {
 function renderResumenFiscal(ledger) {
   const ventas = ledger.filter(op => op.tipo === 'venta' && op.neto !== null);
   const totalNeto = ventas.reduce((s, op) => s + op.neto, 0);
-  const totalComisiones = ledger.length * 1; // aprox: 1€ por cada operación registrada
-  const ahorro = Math.max(totalNeto, 0) * AHORRO_RATE;
-  const reinvertible = totalNeto - ahorro;
-
-  document.getElementById('resumen-fiscal').innerHTML = `
-    <div><span class="label">Ganancia neta acumulada:</span></div><div class="${totalNeto>=0?'pos':'neg'}">${totalNeto.toFixed(2)}€</div>
-    <div><span class="label">Ahorro (10%) intocable:</span></div><div>${ahorro.toFixed(2)}€</div>
-    <div><span class="label">Reinvertible (90%):</span></div><div>${reinvertible.toFixed(2)}€</div>
-    <div><span class="label">Operaciones registradas:</span></div><div>${ledger.length}</div>
-  `;
-}
-
-async function inicializar() {
-  const historial = await cargarHistorialTrailing();
-  renderTrailing(historial);
-  const ledger = await cargarLedger();
-  renderLedger(ledger);
-  renderResumenFiscal(ledger);
-}
-
-inicializar();
-</script>
-
-</body>
-</html>
+  const totalComisiones = ledger.length * 1; // aprox
