@@ -1,8 +1,7 @@
 """
-VERSION: 8 (29/07/2026) - CORRECCIÓN CRÍTICA: momentum/RSI/SMA50/SMA200
-podían salir como NaN, que no es JSON válido y rompía la carga del visor
-por completo (en cualquier navegador, no era un problema de red). Ahora
-se convierten a null. Añadido allow_nan=False como red de seguridad.
+VERSION: 9 (29/07/2026) - añade nombre completo de la empresa e ISIN (cuando
+Yahoo Finance lo tenga disponible) para poder copiarlo directo al simulador
+sin tener que buscarlo a mano
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -234,6 +233,19 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     return round(score, 1)
 
 
+def obtener_isin(ticker_obj):
+    """Busca el ISIN vía yfinance. No siempre está disponible (depende del
+    mercado y de si Yahoo Finance lo tiene indexado), por eso puede salir
+    null - en ese caso el usuario simplemente no rellena ese campo."""
+    try:
+        isin = ticker_obj.isin
+        if isin and isin != "-":
+            return isin
+    except Exception:
+        pass
+    return None
+
+
 def evaluar(ticker):
     try:
         t = yf.Ticker(ticker)
@@ -256,6 +268,7 @@ def evaluar(ticker):
         rsi_14 = calcular_rsi(hist["Close"]) if len(hist) > 14 else None
         tendencia_tec, sma50, sma200 = tendencia_tecnica(hist, precio)
         tendencia_analistas_valor = tendencia_analistas(t)
+        isin = obtener_isin(t)
 
         target_alto = info.get("targetHighPrice")
         target_bajo = info.get("targetLowPrice")
@@ -268,6 +281,8 @@ def evaluar(ticker):
         return {
             "ticker": ticker,
             "descartado": False,
+            "nombre_empresa": info.get("longName") or info.get("shortName"),
+            "isin": isin,
             "precio_actual": limpio(precio),
             "score": limpio(score),
             "consenso": info.get("recommendationKey"),
