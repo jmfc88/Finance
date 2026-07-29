@@ -1,10 +1,10 @@
 # VERSION: 6 (28/07/2026) - cambia rebase por merge con estrategia "ours": los
-# archivos generados se regeneran enteros cada vez, asÃ­ que si hay conflicto
-# se queda siempre con la versiÃ³n reciÃ©n generada, sin atascarse
+# archivos generados se regeneran enteros cada vez, así que si hay conflicto
+# se queda siempre con la versión recién generada, sin atascarse
 name: Actualizar ranking de candidatas
 
 on:
-  workflow_dispatch: {}   # solo corre cuando tÃº lo lanzas a mano, nunca solo
+  workflow_dispatch: {}   # solo corre cuando tú lo lanzas a mano, nunca solo
 
 jobs:
   actualizar-ranking:
