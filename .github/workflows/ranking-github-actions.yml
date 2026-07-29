@@ -1,6 +1,5 @@
-# VERSION: 6 (28/07/2026) - cambia rebase por merge con estrategia "ours": los
-# archivos generados se regeneran enteros cada vez, así que si hay conflicto
-# se queda siempre con la versión recién generada, sin atascarse
+# VERSION: 7 (29/07/2026) - añade un resumen final con los enlaces clicables
+# a las dos webs, para no tener que copiarlos ni pedirlos cada vez
 name: Actualizar ranking de candidatas
 
 on:
@@ -33,3 +32,10 @@ jobs:
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
           git pull origin main --no-rebase -X ours
           git push
+
+      - name: Enlaces directos
+        run: |
+          echo "## Ranking listo ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 [Abrir Cuaderno de candidatas](https://jmfc88.github.io/Finance/scoring_viewer.html)" >> $GITHUB_STEP_SUMMARY
+          echo "- 📒 [Abrir Simulador de operaciones](https://jmfc88.github.io/Finance/simulador.html)" >> $GITHUB_STEP_SUMMARY
