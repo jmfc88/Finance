@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VERSION: 7 (29/07/2026) - reintento automático (3 intentos) al traer el ranking, para fallos de conexión puntuales -->
+<!-- VERSION: 9 (29/07/2026) - el ISIN se marca como orientativo (puede no coincidir con el listado real de Trade Republic si la empresa cotiza en varias bolsas) -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -320,6 +320,8 @@ function renderTarjeta(c, esTop) {
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
     ? (((c.precio_objetivo_medio - c.precio_actual) / c.precio_actual) * 100).toFixed(1) + '%'
     : '—';
+  const nombre = c.nombre_empresa || c.ticker;
+  const datosCopiar = `${c.ticker} | ${nombre}${c.isin ? ' | ISIN orientativo (verificar en TR): ' + c.isin : ''} | ${c.precio_actual}$`;
   return `
     <div class="card ${esTop ? 'top' : ''}">
       ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
@@ -333,6 +335,9 @@ function renderTarjeta(c, esTop) {
           <div style="font-family: ui-monospace, monospace; font-size:9.5px; color:var(--ink-soft);" class="term" data-tip="Puntuación total combinando todos los datos de esta tarjeta">nota (0-100)</div>
         </div>
       </div>
+      <div style="font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft); margin-top:2px;">
+        ${nombre}${c.isin ? ` · ISIN orientativo: ${c.isin} <span style="color:var(--brick);">(verifica el de Trade Republic al comprar)</span>` : ' · ISIN no disponible'}
+      </div>
       <div class="datos">
         <div><span class="label term" data-tip="Precio de mercado ahora mismo, en dólares">precio:</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
         <div><span class="label term" data-tip="Opinión media de los analistas: comprar, mantener o vender">consenso:</span> ${c.consenso || '—'}</div>
@@ -344,8 +349,20 @@ function renderTarjeta(c, esTop) {
         <div><span class="label term" data-tip="Si los analistas mejoran o empeoran su opinión en 3 meses">analistas:</span> ${c.tendencia_analistas || '—'}</div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
+      <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
     </div>
   `;
+}
+
+async function copiarDatos(boton, texto) {
+  try {
+    await navigator.clipboard.writeText(texto);
+    const original = boton.textContent;
+    boton.textContent = '✓ Copiado';
+    setTimeout(() => { boton.textContent = original; }, 1500);
+  } catch (e) {
+    alert('No se pudo copiar automáticamente. Datos: ' + texto);
+  }
 }
 
 function renderDescartadas(lista) {
