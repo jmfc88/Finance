@@ -1,6 +1,8 @@
 """
-VERSION: 7 (28/07/2026) - añade precio mínimo de 0.05 para excluir solo penny
-stocks casi a cero, no acciones baratas en general (a petición del usuario)
+VERSION: 8 (29/07/2026) - CORRECCIÓN CRÍTICA: momentum/RSI/SMA50/SMA200
+podían salir como NaN, que no es JSON válido y rompía la carga del visor
+por completo (en cualquier navegador, no era un problema de red). Ahora
+se convierten a null. Añadido allow_nan=False como red de seguridad.
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -80,6 +82,22 @@ def dias_hasta_resultados(ticker_obj):
         return (fecha.date() - datetime.now().date()).days
     except Exception:
         return None
+
+
+def limpio(valor):
+    """Convierte NaN o infinito a None. JSON estándar no admite NaN, y si se
+    cuela en el archivo, rompe el JSON.parse() del navegador por completo
+    (no carga nada, aunque el resto del archivo esté bien)."""
+    if valor is None:
+        return None
+    try:
+        if valor != valor:  # NaN nunca es igual a sí mismo, es el truco estándar para detectarlo
+            return None
+        if valor in (float("inf"), float("-inf")):
+            return None
+    except TypeError:
+        pass
+    return valor
 
 
 def calcular_rsi(cierres, periodo=14):
@@ -250,16 +268,16 @@ def evaluar(ticker):
         return {
             "ticker": ticker,
             "descartado": False,
-            "precio_actual": precio,
-            "score": score,
+            "precio_actual": limpio(precio),
+            "score": limpio(score),
             "consenso": info.get("recommendationKey"),
-            "precio_objetivo_medio": info.get("targetMeanPrice"),
-            "dispersion_pct": dispersion_pct,
-            "momentum_30d_pct": momentum_30d,
-            "rsi_14": rsi_14,
+            "precio_objetivo_medio": limpio(info.get("targetMeanPrice")),
+            "dispersion_pct": limpio(dispersion_pct),
+            "momentum_30d_pct": limpio(momentum_30d),
+            "rsi_14": limpio(rsi_14),
             "tendencia_tecnica": tendencia_tec,
-            "sma50": sma50,
-            "sma200": sma200,
+            "sma50": limpio(sma50),
+            "sma200": limpio(sma200),
             "tendencia_analistas": tendencia_analistas_valor,
             "sector": info.get("sector"),
             "resumen_negocio": recortar_resumen(traducir(info.get("longBusinessSummary") or "")),
@@ -291,7 +309,7 @@ def ejecutar():
     }
 
     with open(SALIDA, "w", encoding="utf-8") as f:
-        json.dump(salida, f, indent=2, ensure_ascii=False)
+        json.dump(salida, f, indent=2, ensure_ascii=False, allow_nan=False)
 
     print(f"Ranking generado: {len(validos)} candidatas válidas, {len(descartados)} descartadas.")
 
