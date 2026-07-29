@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 4 (29/07/2026) - reordenado: el registro de operaciones pasa a ser
-la sección 1 (es el paso real del día a día), las calculadoras bajan como apoyo -->
+<!-- VERSION: 6 (29/07/2026) - al confirmar el registro, break-even y stop-loss
+(secciones 2 y 3) se calculan solos con los mismos datos; la 4 (trailing)
+se deja para que el usuario decida el % y pulse el botón -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -153,7 +154,7 @@ la sección 1 (es el paso real del día a día), las calculadoras bajan como apo
     <div class="campo"><label>Acciones</label><input id="sl-acciones" type="number" step="1"></div>
   </div>
   <div class="fila">
-    <div class="campo"><label>Beneficio neto mínimo a proteger (€)</label><input id="sl-beneficio" type="number" step="0.01" value="0"></div>
+    <div class="campo"><label>Beneficio neto mínimo a proteger (€)</label><input id="sl-beneficio" type="number" step="0.01" value="0" oninput="calcularStopLoss()"></div>
   </div>
   <button onclick="calcularStopLoss()">Calcular precio de stop-loss</button>
   <div class="resultado" id="sl-resultado" style="display:none;"></div>
@@ -256,6 +257,20 @@ function calcularVista() {
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const div = document.getElementById('vista-previa-calculo');
 
+  // Autorellena las calculadoras de apoyo de abajo, para no tener que
+  // volver a escribir lo mismo si el usuario baja a usarlas.
+  if (precio) {
+    document.getElementById('be-precio').value = precio;
+    document.getElementById('sl-precio').value = precio;
+    if (!document.getElementById('ts-maximo').value) {
+      document.getElementById('ts-maximo').value = precio;
+    }
+  }
+  if (acciones) {
+    document.getElementById('be-acciones').value = acciones;
+    document.getElementById('sl-acciones').value = acciones;
+  }
+
   if (!precio || !acciones) { div.style.display = 'none'; return; }
 
   if (tipo === 'compra') {
@@ -303,9 +318,29 @@ function cancelarConfirmacion() {
 }
 
 async function confirmarRegistro() {
+  // Guardamos estos valores ANTES de que registrarOperacion() vacíe los campos
+  const precio = document.getElementById('op-precio').value;
+  const acciones = document.getElementById('op-acciones').value;
+
   await registrarOperacion();
   document.getElementById('caja-confirmacion').style.display = 'none';
   document.getElementById('vista-previa-calculo').style.display = 'none';
+
+  // Con lo que acabas de registrar, calculamos solas las secciones 2 y 3.
+  // La 4 (trailing) se deja para que decidas tú el % y pulses el botón.
+  if (precio && acciones) {
+    document.getElementById('be-precio').value = precio;
+    document.getElementById('be-acciones').value = acciones;
+    calcularBreakEven();
+
+    document.getElementById('sl-precio').value = precio;
+    document.getElementById('sl-acciones').value = acciones;
+    calcularStopLoss();
+
+    if (!document.getElementById('ts-maximo').value) {
+      document.getElementById('ts-maximo').value = precio;
+    }
+  }
 }
 
 async function registrarOperacion() {
