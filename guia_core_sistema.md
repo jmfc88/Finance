@@ -29,16 +29,16 @@ Cuando vendes:
 ## Piezas activas
 
 ### 1. `fase1_screening.py`
-**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, NASDAQ-100, DJIA, IBEX35, DAX, MDAX, SDAX, TecDAX, FTSE100, CAC40, AEX, BEL20, PSI20, FTSE MIB, SMI, ATX, Nikkei225 y EuroStoxx50 directamente de Wikipedia — ajustado al filtro real de índices de la app de Trade Republic (comprobado con capturas del usuario). Quedan fuera MSCI World y Russell 2000 (demasiados componentes, sin tabla fiable en Wikipedia) y los sub-índices franceses CAC Large/Mid/NEXT/SMALL (sin fuente clara). Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Luego busca en todo ese universo consenso de analistas de compra + beta alto. Guarda los candidatos fuertes en `candidatos_fase1.json`.
+**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, NASDAQ-100, DJIA, TSX60 (Canadá), IBEX35, DAX, MDAX, SDAX, TecDAX, FTSE100, CAC40, AEX, BEL20, PSI20, FTSE MIB, SMI, ATX, OMXS30 (Suecia), OMXC25 (Dinamarca), OMXH25 (Finlandia), Nikkei225 y EuroStoxx50 directamente de Wikipedia — ajustado al filtro real de índices y países de la app de Trade Republic (comprobado con capturas del usuario), con columnas y formato de ticker verificados a mano. También incluye ASX200 (Australia), IPC (México) e Ibovespa (Brasil) como intento — sus páginas de Wikipedia no parecen tener tabla de tickers limpia, así que probablemente no aporten candidatas hasta revisarlos con más calma, pero no rompen nada si fallan. Quedan fuera MSCI World y Russell 2000 (demasiados componentes, sin tabla fiable) y los sub-índices franceses CAC Large/Mid/NEXT/SMALL. Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Luego busca en todo ese universo consenso de analistas de compra + beta alto. Guarda los candidatos fuertes en `candidatos_fase1.json`.
 **Cómo se usa:** no se toca a mano. Lo ejecuta `ranking-github-actions.yml` cuando tú lo lanzas.
 
 ### 2. `fase2_scoring.py`
-**Qué hace:** coge `candidatos_fase1.json` y le pone un score real (0-100) combinando consenso, dispersión entre analistas, momentum de 30 días y potencial de subida. Descarta automáticamente las que publican resultados en menos de 5 días (riesgo de evento binario) y las que superan ~200€/acción. Traduce el resumen del negocio al español. Genera `candidatos_rankeados.json`.
+**Qué hace:** coge `candidatos_fase1.json` y le pone un score real (0-100) combinando consenso, dispersión entre analistas, momentum de 30 días y potencial de subida, más un empujón/freno menor por tendencia técnica (SMA50/200) y tendencia de recomendaciones de analistas a 3 meses. Descarta automáticamente las que publican resultados en menos de 5 días (riesgo de evento binario) y las que superan ~200€/acción. Traduce el resumen del negocio al español, acumulando frases completas hasta tener contexto real (normalmente 2 frases) en vez de un tope rígido de caracteres — nunca a medias, siempre con sentido propio. Genera `candidatos_rankeados.json`.
 **Cómo se usa:** tampoco se toca a mano, corre junto al anterior en el mismo workflow.
 
 ### 3. `ranking-github-actions.yml`
-**Qué hace:** el workflow de GitHub Actions que ejecuta 1 y 2 y sube los resultados a tu repo. Solo corre cuando tú lo lanzas — sin cron, sin coste automático.
-**Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Cuando quieras datos frescos: pestaña "Actions" en la app de GitHub → seleccionas el workflow → botón "Run workflow". Tarda 1-2 minutos.
+**Qué hace:** el workflow de GitHub Actions que ejecuta 1 y 2 y sube los resultados a tu repo. Solo corre cuando tú lo lanzas — sin cron, sin coste automático. Al guardar, usa `merge` con estrategia `ours` (no `rebase`) para los archivos generados: como se regeneran enteros cada vez, si hay conflicto se queda con la versión recién creada sin atascarse.
+**Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Cuando quieras datos frescos: pestaña "Actions" en la app de GitHub → seleccionas el workflow → botón "Run workflow". Tarda unos minutos.
 
 ### 4. `scoring_viewer.html`
 **Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio (en $ y su equivalente en €), consenso, potencial, momentum, dispersión, tendencia técnica (vs. su media de 50/200 sesiones), RSI y tendencia de analistas a 3 meses. Cada término tiene un tooltip tocable con su explicación. Incluye el panel de progreso de capital (nivel actual, cuánto te falta para poder abrir más posiciones).
@@ -105,7 +105,7 @@ Cuando vendes:
 3. **Abre `scoring_viewer.html`** (vía GitHub Pages, una vez activado): escribe `jmfc88/Finance`, pulsa "Traer lista". Revisa el ranking y las descartadas.
 4. **Mete tu capital (200€) en el panel de progreso** del visor y guarda, para ver tu nivel de partida.
 5. **Elige tu candidata** del ranking, teniendo en cuenta precio (<200€, acción entera) y que no publique resultados pronto.
-6. **Compra en Trade Republic** (modo automático, 1€ comisión).
+6. **Busca la empresa por NOMBRE en Trade Republic** (no pegues el ticker con sufijo del visor, ej. `.AX`, `.TO`) y **compra** (modo automático, 1€ comisión). ⚠️ Si el precio que ves en Trade Republic no se parece al del visor (ni con la conversión de divisa), es que la empresa cotiza en varias bolsas a la vez y TR usa un listado distinto al del visor — sigue siendo la misma empresa, simplemente confírmalo por el nombre antes de comprar.
 7. **Registra la compra en `simulador.html`** (precio real, comisión, fecha).
 8. **Añade la posición a `posiciones.json`** en GitHub (ticker, precio de compra, acciones, % de trailing) para que `bot.py` empiece a vigilarla.
 9. **Cuando `bot.py` te avise por ntfy** de que el stop-loss ha saltado: vendes en Trade Republic.
@@ -121,13 +121,13 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 6 — universo ajustado al filtro real de índices de la app de Trade Republic |
-| `fase2_scoring.py` | 4 — añade RSI, tendencia técnica (SMA50/200) y tendencia de analistas mes a mes |
-| `ranking-github-actions.yml` | 5 — sin progreso.json, git pull antes de push |
+| `fase1_screening.py` | 8 — columnas de TSX60/OMXC25 verificadas y corregidas, conversión espacio→guión |
+| `fase2_scoring.py` | 8 — CRÍTICO: corregido NaN que rompía la carga del visor en cualquier navegador |
+| `ranking-github-actions.yml` | 6 — merge con estrategia "ours" en vez de rebase (evita atascos por conflicto) |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 6 — tooltips tocables por término en vez de texto largo |
+| `scoring_viewer.html` | 7 — reintento automático (3 intentos) ante fallos de conexión |
 | `simulador.html` | 2 — localStorage |
 | `posiciones.json` | 1 |
 
