@@ -48,8 +48,8 @@ Cuando vendes:
 - Cada vez que tu capital cambie: actualiza el número en "capital €" y pulsa "Guardar".
 
 ### 5. `simulador.html`
-**Qué hace:** tu cuaderno de cuentas. Break-even, stop-loss con beneficio neto garantizado, trailing stop dinámico con historial, ledger FIFO de operaciones y resumen fiscal (comisiones, 19% Hacienda, coste prorateado del asesor, ganancia neta real).
-**Cómo se usa:** aquí registras cada compra y cada venta, a mano, copiando el precio real de Trade Republic. El historial queda guardado permanentemente.
+**Qué hace:** tu cuaderno de cuentas. Break-even, stop-loss con beneficio neto garantizado, trailing stop dinámico con historial, ledger FIFO de operaciones (con nombre e ISIN opcional, para cruzarlo luego con el informe fiscal de Trade Republic) y resumen fiscal (comisiones, 19% Hacienda, coste prorateado del asesor, ganancia neta real).
+**Cómo se usa:** aquí registras cada compra y cada venta. Al pulsar "Registrar operación" te enseña un resumen para revisar antes de guardar — solo se guarda de verdad al pulsar "Confirmar y guardar". El historial queda guardado permanentemente.
 
 ### 6. `bot.py`
 **Qué hace:** vigila el precio de tus posiciones abiertas y calcula el stop-loss/trailing stop dinámico (Trade Republic no tiene esta función). Cuando salta, te avisa por notificación al móvil vía ntfy.sh — esta es la única notificación que quieres, porque te protege de perder dinero.
@@ -128,7 +128,7 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
 | `scoring_viewer.html` | 7 — reintento automático (3 intentos) ante fallos de conexión |
-| `simulador.html` | 2 — localStorage |
+| `simulador.html` | 3 — nombre/ISIN + confirmación en dos pasos antes de guardar |
 | `posiciones.json` | 1 |
 
 ---
