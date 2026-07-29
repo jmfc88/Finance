@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VERSION: 6 (28/07/2026) - tooltips tocables por término, explicaciones mejoradas (momentum, dispersión, RSI) -->
+<!-- VERSION: 7 (29/07/2026) - reintento automático (3 intentos) al traer el ranking, para fallos de conexión puntuales -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -371,8 +371,26 @@ async function traerLista() {
   contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
 
   const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json?t=${Date.now()}`;
+
+  let resp = null;
+  for (let intento = 1; intento <= 3; intento++) {
+    try {
+      resp = await fetch(url, { cache: 'no-store' });
+      break;
+    } catch (e) {
+      if (intento < 3) {
+        contenido.innerHTML = `<div class="estado">Fallo de conexión, reintentando (${intento}/3)...</div>`;
+        await new Promise(r => setTimeout(r, 1200));
+      }
+    }
+  }
+
+  if (!resp) {
+    contenido.innerHTML = '<div class="estado">No se pudo conectar con GitHub tras 3 intentos. Comprueba tu conexión y pulsa "Traer lista" de nuevo.</div>';
+    return;
+  }
+
   try {
-    const resp = await fetch(url, { cache: 'no-store' });
     if (!resp.ok) {
       contenido.innerHTML = `<div class="estado">No se encontró candidatos_rankeados.json en ese repo (${resp.status}). Revisa que el nombre sea correcto y que el bot ya haya corrido al menos una vez.</div>`;
       return;
@@ -388,7 +406,7 @@ async function traerLista() {
     const tarjetas = data.ranking.map((c, i) => renderTarjeta(c, i === 0)).join('');
     contenido.innerHTML = tarjetas + renderDescartadas(data.descartados);
   } catch (e) {
-    contenido.innerHTML = '<div class="estado">Error al conectar con GitHub. Comprueba tu conexión e inténtalo de nuevo.</div>';
+    contenido.innerHTML = '<div class="estado">Se recibió una respuesta pero no se pudo interpretar. Vuelve a intentarlo.</div>';
   }
 }
 
@@ -481,4 +499,3 @@ document.addEventListener('click', (e) => {
 
 </body>
 </html>
-
