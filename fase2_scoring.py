@@ -1,7 +1,6 @@
 """
-VERSION: 6 (28/07/2026) - el resumen prioriza contexto real (mínimo 2 frases
-completas) sobre un tope rígido de caracteres, para que siempre tenga
-sentido por sí mismo en vez de quedarse corto o a medias
+VERSION: 7 (28/07/2026) - añade precio mínimo de 0.05 para excluir solo penny
+stocks casi a cero, no acciones baratas en general (a petición del usuario)
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -25,6 +24,7 @@ ENTRADA = "candidatos_fase1.json"
 SALIDA = "candidatos_rankeados.json"
 DIAS_MINIMOS_ANTES_DE_RESULTADOS = 5
 PRECIO_MAXIMO = 200  # criterio de Jose Manuel: nada de fracciones, nada por encima de ~200€
+PRECIO_MINIMO = 0.05  # excluye solo penny stocks casi a cero, no acciones baratas en general
 PAUSA_ENTRE_PETICIONES = 1.5
 
 
@@ -222,7 +222,7 @@ def evaluar(ticker):
         info = t.info
 
         precio = info.get("currentPrice") or info.get("regularMarketPrice")
-        if not precio or precio > PRECIO_MAXIMO:
+        if not precio or precio > PRECIO_MAXIMO or precio < PRECIO_MINIMO:
             return None  # fuera de presupuesto para acción entera
 
         dias_resultados = dias_hasta_resultados(t)
