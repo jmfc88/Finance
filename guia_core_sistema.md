@@ -122,13 +122,13 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 | Archivo | Versión actual |
 |---|---|
 | `fase1_screening.py` | 8 — columnas de TSX60/OMXC25 verificadas y corregidas, conversión espacio→guión |
-| `fase2_scoring.py` | 8 — CRÍTICO: corregido NaN que rompía la carga del visor en cualquier navegador |
+| `fase2_scoring.py` | 9 — añade nombre completo e ISIN por candidata |
 | `ranking-github-actions.yml` | 6 — merge con estrategia "ours" en vez de rebase (evita atascos por conflicto) |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 7 — reintento automático (3 intentos) ante fallos de conexión |
-| `simulador.html` | 3 — nombre/ISIN + confirmación en dos pasos antes de guardar |
+| `scoring_viewer.html` | 9 — el ISIN se marca como orientativo (verificar en TR) |
+| `simulador.html` | 6 — al confirmar, break-even y stop-loss se calculan solos |
 | `posiciones.json` | 1 |
 
 ---
