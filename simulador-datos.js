@@ -1,4 +1,3 @@
-
 // VERSION: 1 (29/07/2026) - lógica compartida entre simulador.html e historial.html
 // Se guarda en un archivo aparte para que ambas páginas usen EXACTAMENTE el
 // mismo cálculo (evita que se desincronicen si se edita solo una).
