@@ -41,15 +41,23 @@ Cuando vendes:
 **Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Cuando quieras datos frescos: pestaña "Actions" en la app de GitHub → seleccionas el workflow → botón "Run workflow". Tarda unos minutos.
 
 ### 4. `scoring_viewer.html`
-**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio (en $ y su equivalente en €), consenso, potencial, momentum, dispersión, tendencia técnica (vs. su media de 50/200 sesiones), RSI y tendencia de analistas a 3 meses. Cada término tiene un tooltip tocable con su explicación. Incluye el panel de progreso de capital (nivel actual, cuánto te falta para poder abrir más posiciones).
+**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio (en $ y su equivalente en €), consenso, potencial, momentum, dispersión, tendencia técnica (vs. su media de 50/200 sesiones), RSI y tendencia de analistas a 3 meses. Cada término tiene un tooltip tocable con su explicación. Incluye el panel de progreso de capital, un enlace directo "Lanzar actualización en GitHub →" (a la página de Actions, con tu propia sesión, sin claves guardadas) y el timestamp real de cuándo se lanzó la última ejecución (vía API pública de GitHub).
 **Cómo se usa:**
 - La primera vez, escribe tu `usuario/repositorio` de GitHub y pulsa "Traer lista" (se guarda solo).
 - Cada vez que quieras comprar: ábrelo, pulsa "Traer lista", decide.
 - Cada vez que tu capital cambie: actualiza el número en "capital €" y pulsa "Guardar".
 
 ### 5. `simulador.html`
-**Qué hace:** tu cuaderno de cuentas. Break-even, stop-loss con beneficio neto garantizado, trailing stop dinámico con historial, ledger FIFO de operaciones (con nombre e ISIN opcional, para cruzarlo luego con el informe fiscal de Trade Republic) y resumen fiscal (comisiones, 19% Hacienda, coste prorateado del asesor, ganancia neta real).
-**Cómo se usa:** aquí registras cada compra y cada venta. Al pulsar "Registrar operación" te enseña un resumen para revisar antes de guardar — solo se guarda de verdad al pulsar "Confirmar y guardar". El historial queda guardado permanentemente.
+**Qué hace:** tu cuaderno de cuentas. Registro de operaciones (FIFO, con nombre e ISIN opcional), break-even automático, stop-loss inicial con 3 presets fijos (10%, 12,5%, 15% de pérdida máxima, comisiones incluidas), lista de posiciones abiertas clicable (ver cálculos o vender), últimas 5 operaciones en tarjetas clicables (tocar para desplegar editar/borrar), gráfico de ganancia neta acumulada, y resumen fiscal al final.
+**Cómo se usa:** registras la compra en la sección 1 — el break-even y los 3 presets de stop-loss se calculan solos al confirmar. Para revisar o corregir operaciones antiguas, pulsa "Ver historial completo →".
+
+### 5b. `historial.html`
+**Qué hace:** página aparte (mismo repo, mismo localStorage) con el listado completo de todas las operaciones, en tarjetas clicables — tocar una despliega editar y borrar debajo, sin tablas anchas ni scroll horizontal. Al editar o borrar, recalcula el FIFO completo para que las cifras no queden descuadradas.
+**Cómo se usa:** se llega desde el enlace "Ver historial completo →" en `simulador.html`, o directamente en `https://jmfc88.github.io/Finance/historial.html`.
+
+### 5c. `simulador-datos.js`
+**Qué hace:** lógica compartida entre `simulador.html` e `historial.html` (constantes de comisión/impuesto, acceso al ledger, cálculo de neto y recálculo FIFO), para que las dos páginas usen exactamente el mismo cálculo y no se desincronicen.
+**Cómo se usa:** no se toca a mano, ambas páginas lo cargan automáticamente.
 
 ### 6. `bot.py`
 **Qué hace:** vigila el precio de tus posiciones abiertas y calcula el stop-loss/trailing stop dinámico (Trade Republic no tiene esta función). Cuando salta, te avisa por notificación al móvil vía ntfy.sh — esta es la única notificación que quieres, porque te protege de perder dinero.
@@ -94,6 +102,7 @@ Cuando vendes:
 - ✅ Primer ranking generado y comprobado con éxito, universo dinámico funcionando
 
 **Pendiente:**
+- ⬜ Subir `historial.html` y `simulador-datos.js` (archivos nuevos, raíz del repo, junto a `simulador.html`)
 - ⬜ Elegir la primera candidata real y comprarla en Trade Republic (empieza tu primera simulación)
 
 ---
@@ -123,12 +132,14 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 |---|---|
 | `fase1_screening.py` | 8 — columnas de TSX60/OMXC25 verificadas y corregidas, conversión espacio→guión |
 | `fase2_scoring.py` | 9 — añade nombre completo e ISIN por candidata |
-| `ranking-github-actions.yml` | 6 — merge con estrategia "ours" en vez de rebase (evita atascos por conflicto) |
+| `ranking-github-actions.yml` | 7 — resumen final con enlaces clicables a las dos webs |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
 | `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 9 — el ISIN se marca como orientativo (verificar en TR) |
-| `simulador.html` | 6 — al confirmar, break-even y stop-loss se calculan solos |
+| `scoring_viewer.html` | 10 — enlace directo a GitHub Actions + timestamp real de lanzamiento |
+| `simulador.html` | 15 — corrige recálculo al vender, Tipo vuelve solo a "Compra" tras cada registro |
+| `historial.html` | 2 — tarjetas clicables con editar/borrar desplegable, sin scroll horizontal |
+| `simulador-datos.js` | 1 — página nueva: lógica compartida entre simulador e historial |
 | `posiciones.json` | 1 |
 
 ---
