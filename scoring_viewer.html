@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION: 10 (29/07/2026) - añade enlace directo a GitHub Actions para
-lanzar el workflow con tu propia sesión (sin claves guardadas), y el
-timestamp real de cuándo se lanzó la última ejecución (vía API pública) -->
+<!-- VERSION: 12 (29/07/2026) - el aviso de catalizador ya no exige precio
+confirmado, avisa por lo buenos que son los resultados en sí -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -100,6 +99,16 @@ timestamp real de cuándo se lanzó la última ejecución (vía API pública) --
     letter-spacing:0.05em;
     padding:3px 8px;
     border-radius:2px;
+  }
+  .badge-catalizador{
+    display:inline-block;
+    background:var(--brick);
+    color:#fff;
+    font-family: ui-monospace, monospace;
+    font-size:11px;
+    padding:4px 8px;
+    border-radius:2px;
+    margin-bottom:8px;
   }
   .fila-top{
     display:flex;
@@ -335,6 +344,7 @@ function renderTarjeta(c, esTop) {
   return `
     <div class="card ${esTop ? 'top' : ''}">
       ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
+      ${c.catalizador_resultados ? `<div class="badge-catalizador">🔥 Resultados muy buenos hace ${c.catalizador_resultados.dias_desde === 0 ? 'unas horas' : c.catalizador_resultados.dias_desde + ' día(s)'}: ganó un ${c.catalizador_resultados.sorpresa_pct}% más de lo que esperaban los analistas.${c.catalizador_resultados.variacion_pct !== null ? ` El precio se ha movido un ${c.catalizador_resultados.variacion_pct}% desde entonces — revisa tú si sigue siendo buena entrada o si ya ha subido demasiado.` : ' Todavía no hay datos de cómo ha reaccionado el precio.'}</div>` : ''}
       <div class="fila-top">
         <div>
           <div class="ticker">${c.ticker}</div>
