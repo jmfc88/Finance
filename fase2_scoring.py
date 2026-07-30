@@ -1,7 +1,8 @@
 """
-VERSION: 9 (29/07/2026) - añade nombre completo de la empresa e ISIN (cuando
-Yahoo Finance lo tenga disponible) para poder copiarlo directo al simulador
-sin tener que buscarlo a mano
+VERSION: 11 (29/07/2026) - quita la exigencia de que el precio ya haya subido
+para marcar el catalizador: ahora avisa por lo buenos que son los resultados
+en sí (sorpresa >10%), sin esperar a que el precio ya haya reaccionado —
+si esperáramos esa confirmación, avisaríamos justo cuando ya se ha inflado
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -79,6 +80,51 @@ def dias_hasta_resultados(ticker_obj):
         if hasattr(fecha, "to_pydatetime"):
             fecha = fecha.to_pydatetime()
         return (fecha.date() - datetime.now().date()).days
+    except Exception:
+        return None
+
+
+def catalizador_resultados_recientes(ticker_obj, hist):
+    """Si la empresa publicó resultados en el último día o dos y fueron
+    MUY buenos (sorpresa alta sobre lo esperado), lo marcamos como
+    catalizador reciente — a propósito SIN exigir que el precio ya haya
+    subido: si esperáramos esa confirmación, avisaríamos justo cuando ya
+    se ha inflado, que es lo contrario de lo que se busca (entrar antes
+    de que suba, no perseguirlo después). El dato de variación de precio
+    se incluye solo como información de contexto, no como filtro."""
+    try:
+        fechas = ticker_obj.get_earnings_dates(limit=8)
+        if fechas is None or fechas.empty:
+            return None
+
+        ahora = datetime.now(fechas.index.tz) if fechas.index.tz is not None else datetime.now()
+        pasadas = fechas[fechas.index <= ahora]
+        if pasadas.empty:
+            return None
+
+        fecha_resultado = pasadas.index[0]
+        dias_desde = (ahora.date() - fecha_resultado.date()).days
+        if dias_desde < 0 or dias_desde > 2:
+            return None  # o es futuro, o ya ha pasado demasiado tiempo
+
+        sorpresa = pasadas.iloc[0].get("Surprise(%)")
+        if sorpresa is None or sorpresa <= 10:
+            return None  # umbral más exigente: "muy buenos", no solo "algo mejor"
+
+        # Variación de precio SOLO informativa, no descarta ni exige nada
+        variacion = None
+        posiciones_necesarias = dias_desde + 2
+        if hist is not None and len(hist) >= posiciones_necesarias:
+            precio_antes = hist["Close"].iloc[-posiciones_necesarias]
+            precio_ahora = hist["Close"].iloc[-1]
+            if precio_antes and precio_antes > 0:
+                variacion = round((precio_ahora - precio_antes) / precio_antes * 100, 1)
+
+        return {
+            "dias_desde": dias_desde,
+            "sorpresa_pct": round(float(sorpresa), 1),
+            "variacion_pct": variacion,
+        }
     except Exception:
         return None
 
@@ -269,6 +315,7 @@ def evaluar(ticker):
         tendencia_tec, sma50, sma200 = tendencia_tecnica(hist, precio)
         tendencia_analistas_valor = tendencia_analistas(t)
         isin = obtener_isin(t)
+        catalizador = catalizador_resultados_recientes(t, hist)
 
         target_alto = info.get("targetHighPrice")
         target_bajo = info.get("targetLowPrice")
@@ -277,6 +324,8 @@ def evaluar(ticker):
             dispersion_pct = round((target_alto - target_bajo) / target_bajo * 100, 1)
 
         score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor)
+        if catalizador:
+            score += 12  # empujón notable pero que no domine el resto del método
 
         return {
             "ticker": ticker,
@@ -289,6 +338,7 @@ def evaluar(ticker):
             "precio_objetivo_medio": limpio(info.get("targetMeanPrice")),
             "dispersion_pct": limpio(dispersion_pct),
             "momentum_30d_pct": limpio(momentum_30d),
+            "catalizador_resultados": catalizador,
             "rsi_14": limpio(rsi_14),
             "tendencia_tecnica": tendencia_tec,
             "sma50": limpio(sma50),
