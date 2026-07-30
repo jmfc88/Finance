@@ -1,9 +1,15 @@
-# VERSION: 7 (29/07/2026) - añade un resumen final con los enlaces clicables
-# a las dos webs, para no tener que copiarlos ni pedirlos cada vez
+# VERSION: 9 (29/07/2026) - tres ejecuciones automáticas al día (7, 12 y 14
+# hora española aprox.) para pillar resultados publicados antes de la
+# apertura de mercado en distintos momentos de la mañana, + botón manual.
+# En invierno (CET) se desplazan una hora porque el cron es en UTC fijo.
 name: Actualizar ranking de candidatas
 
 on:
-  workflow_dispatch: {}   # solo corre cuando tú lo lanzas a mano, nunca solo
+  schedule:
+    - cron: '0 5 * * *'    # 7:00 España (verano)
+    - cron: '0 10 * * *'   # 12:00 España (verano)
+    - cron: '0 12 * * *'   # 14:00 España (verano)
+  workflow_dispatch: {}   # y también cuando tú lo lanzas a mano
 
 jobs:
   actualizar-ranking:
