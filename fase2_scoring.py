@@ -1,8 +1,8 @@
 """
-VERSION: 11 (29/07/2026) - quita la exigencia de que el precio ya haya subido
-para marcar el catalizador: ahora avisa por lo buenos que son los resultados
-en sí (sorpresa >10%), sin esperar a que el precio ya haya reaccionado —
-si esperáramos esa confirmación, avisaríamos justo cuando ya se ha inflado
+VERSION: 12 (31/07/2026) - CORRECCIÓN CRÍTICA: la sorpresa de beneficios podía
+venir como NaN (no None) de Yahoo Finance, y mi comprobación no lo detectaba
+— se colaba y rompía el guardado del JSON entero (exit code 1, el ranking
+no se actualizaba aunque el workflow terminase). Ahora se detecta y limpia.
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -108,8 +108,8 @@ def catalizador_resultados_recientes(ticker_obj, hist):
             return None  # o es futuro, o ya ha pasado demasiado tiempo
 
         sorpresa = pasadas.iloc[0].get("Surprise(%)")
-        if sorpresa is None or sorpresa <= 10:
-            return None  # umbral más exigente: "muy buenos", no solo "algo mejor"
+        if sorpresa is None or sorpresa != sorpresa or sorpresa <= 10:
+            return None  # sorpresa != sorpresa detecta NaN, que no es lo mismo que None y se colaba
 
         # Variación de precio SOLO informativa, no descarta ni exige nada
         variacion = None
@@ -122,8 +122,8 @@ def catalizador_resultados_recientes(ticker_obj, hist):
 
         return {
             "dias_desde": dias_desde,
-            "sorpresa_pct": round(float(sorpresa), 1),
-            "variacion_pct": variacion,
+            "sorpresa_pct": limpio(round(float(sorpresa), 1)),
+            "variacion_pct": limpio(variacion),
         }
     except Exception:
         return None
