@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<!-- VERSION: 14 (29/07/2026) - "Últimas operaciones" pasa a ser su propia sección
-(nuevo punto 5, entre posiciones abiertas y el gráfico), como lista de
-tarjetas clicables con editar/borrar desplegable en vez de tabla con scroll -->
+<!-- VERSION: 15 (29/07/2026) - corrige: "Vender esta posición" ahora sí recalcula
+break-even/stop-loss con el precio de compra real; el Tipo vuelve solo a
+"Compra" tras cada registro o al cancelar una edición, para no dejarlo
+pegado en "Venta" por error; resaltado visual fuerte cuando está en modo
+Venta -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -219,6 +221,9 @@ function calcularStopLossPresets() {
  
 function calcularVista() {
   const tipo = document.getElementById('op-tipo').value;
+  const selectorTipo = document.getElementById('op-tipo');
+  selectorTipo.style.background = tipo === 'venta' ? 'var(--brick-bg)' : '#fff';
+  selectorTipo.style.fontWeight = tipo === 'venta' ? 'bold' : 'normal';
   const precio = parseFloat(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const div = document.getElementById('vista-previa-calculo');
@@ -341,6 +346,7 @@ async function registrarOperacion() {
   document.getElementById('op-isin').value = '';
   document.getElementById('op-precio').value = '';
   document.getElementById('op-acciones').value = '';
+  document.getElementById('op-tipo').value = 'compra'; // vuelve al valor por defecto, para no dejarlo pegado en "venta"
 }
  
 function iniciarEdicion(index) {
@@ -370,6 +376,7 @@ function cancelarEdicion() {
   document.getElementById('op-isin').value = '';
   document.getElementById('op-precio').value = '';
   document.getElementById('op-acciones').value = '';
+  document.getElementById('op-tipo').value = 'compra';
   document.getElementById('vista-previa-calculo').style.display = 'none';
 }
  
@@ -483,7 +490,7 @@ function renderPosicionesAbiertas(ledger) {
         </div>
       </div>
       <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
-        <button onclick="iniciarVentaDesde('${op.ticker}', '${(op.nombre || '').replace(/'/g, "\\'")}', ${op.acciones_restantes})" style="font-size:12px;">Vender esta posición</button>
+        <button onclick="iniciarVentaDesde('${op.ticker}', '${(op.nombre || '').replace(/'/g, "\\'")}', ${op.acciones_restantes}, ${op.precio})" style="font-size:12px;">Vender esta posición</button>
         <button onclick="iniciarEdicion(${idx})" style="font-size:12px;">Editar</button>
         <button onclick="eliminarOperacion(${idx})" style="font-size:12px; background:var(--brick);">Borrar</button>
       </div>
@@ -501,7 +508,7 @@ function verCalculosDesde(precio, acciones) {
   document.getElementById('be-precio').closest('section').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
  
-function iniciarVentaDesde(ticker, nombre, accionesDisponibles) {
+function iniciarVentaDesde(ticker, nombre, accionesDisponibles, precioCompra) {
   document.getElementById('op-tipo').value = 'venta';
   document.getElementById('op-ticker').value = ticker;
   document.getElementById('op-nombre').value = nombre || '';
@@ -509,6 +516,17 @@ function iniciarVentaDesde(ticker, nombre, accionesDisponibles) {
   document.getElementById('op-precio').value = '';
   document.getElementById('op-fecha').value = '';
   document.getElementById('vista-previa-calculo').style.display = 'none';
+ 
+  // Recalcula break-even y stop-loss con el precio de compra real de esta
+  // posición, para que no se queden con el último valor calculado antes.
+  document.getElementById('be-precio').value = precioCompra;
+  document.getElementById('be-acciones').value = accionesDisponibles;
+  document.getElementById('sl-precio').value = precioCompra;
+  document.getElementById('sl-acciones').value = accionesDisponibles;
+  calcularBreakEven();
+  calcularStopLossPresets();
+  calcularVista();
+ 
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setTimeout(() => document.getElementById('op-precio').focus(), 400);
 }
@@ -575,4 +593,3 @@ inicializar();
  
 </body>
 </html>
- 
