@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!-- VERSION: 12 (29/07/2026) - el aviso de catalizador ya no exige precio
-confirmado, avisa por lo buenos que son los resultados en sí -->
+<!-- VERSION: 15 (31/07/2026) - corrige la moneda mostrada según el mercado
+real del ticker (antes siempre ponía $ y una conversión a € que no tenía
+sentido para acciones que ya cotizan en euros); marca claramente "sin
+cambio de divisa" para las europeas -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -334,13 +336,25 @@ function formatearFecha(iso) {
   } catch(e) { return iso; }
 }
 
+function obtenerMoneda(ticker) {
+  const sufijosEuro = ['.MC', '.DE', '.PA', '.AS', '.BR', '.LS', '.MI', '.VI', '.HE'];
+  if (sufijosEuro.some(s => ticker.endsWith(s))) return { simbolo: '€', esEuro: true, esUSD: false };
+  if (ticker.endsWith('.L')) return { simbolo: '£', esEuro: false, esUSD: false };
+  if (ticker.endsWith('.TO')) return { simbolo: 'C$', esEuro: false, esUSD: false };
+  if (ticker.endsWith('.AX')) return { simbolo: 'A$', esEuro: false, esUSD: false };
+  if (ticker.endsWith('.T')) return { simbolo: '¥', esEuro: false, esUSD: false };
+  if (ticker.endsWith('.ST') || ticker.endsWith('.CO')) return { simbolo: ' (SEK/DKK)', esEuro: false, esUSD: false };
+  return { simbolo: '$', esEuro: false, esUSD: true }; // sin sufijo = EE.UU.
+}
+
 function renderTarjeta(c, esTop) {
   const scoreClass = c.score >= 0 ? 'pos' : 'neg';
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
     ? (((c.precio_objetivo_medio - c.precio_actual) / c.precio_actual) * 100).toFixed(1) + '%'
     : '—';
   const nombre = c.nombre_empresa || c.ticker;
-  const datosCopiar = `${c.ticker} | ${nombre}${c.isin ? ' | ISIN orientativo (verificar en TR): ' + c.isin : ''} | ${c.precio_actual}$`;
+  const moneda = obtenerMoneda(c.ticker);
+  const datosCopiar = `${c.ticker} | ${nombre}${c.isin ? ' | ISIN orientativo (verificar en TR): ' + c.isin : ''} | ${c.precio_actual}${moneda.simbolo}`;
   return `
     <div class="card ${esTop ? 'top' : ''}">
       ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
@@ -359,7 +373,7 @@ function renderTarjeta(c, esTop) {
         ${nombre}${c.isin ? ` · ISIN orientativo: ${c.isin} <span style="color:var(--brick);">(verifica el de Trade Republic al comprar)</span>` : ' · ISIN no disponible'}
       </div>
       <div class="datos">
-        <div><span class="label term" data-tip="Precio de mercado ahora mismo, en dólares">precio:</span> ${c.precio_actual}$ ${tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€)</span>` : ''}</div>
+        <div><span class="label term" data-tip="Precio de mercado ahora mismo">precio:</span> ${c.precio_actual}${moneda.simbolo} ${moneda.esEuro ? '<span class="euro">(sin cambio de divisa ✓)</span>' : (moneda.esUSD && tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€, cambio de divisa)</span>` : '<span class="euro">(otra divisa, revisa el cambio)</span>')}</div>
         <div><span class="label term" data-tip="Opinión media de los analistas: comprar, mantener o vender">consenso:</span> ${c.consenso || '—'}</div>
         <div><span class="label term" data-tip="Subida esperada hasta el precio objetivo de analistas">potencial:</span> ${potencial}</div>
         <div><span class="label term" data-tip="Cuánto ha subido o bajado el precio en el último mes">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
@@ -367,6 +381,7 @@ function renderTarjeta(c, esTop) {
         <div><span class="label term" data-tip="Compara el precio con su media de 50 y 200 sesiones">tendencia técnica:</span> ${c.tendencia_tecnica || '—'}</div>
         <div><span class="label term" data-tip="Por encima de 70: subió muy rápido. Por debajo de 30: cayó muy rápido">RSI 14:</span> ${c.rsi_14 ?? '—'}</div>
         <div><span class="label term" data-tip="Si los analistas mejoran o empeoran su opinión en 3 meses">analistas:</span> ${c.tendencia_analistas || '—'}</div>
+        <div><span class="label term" data-tip="Cuántos de los analistas de verdad recomiendan vender, no solo la etiqueta media">reparto real:</span> ${c.consenso_real ? `${c.consenso_real.pct_strong_buy}% compra fuerte, ${c.consenso_real.pct_vender}% vender (${c.consenso_real.total_analistas} analistas)` : '—'}</div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
       <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
@@ -406,9 +421,18 @@ async function consultarUltimoLanzamiento(repo) {
     if (!run) { div.style.display = 'none'; return; }
 
     const lanzado = formatearFecha(run.run_started_at || run.created_at);
-    let texto = `última vez que le diste: ${lanzado}`;
-    if (run.status === 'completed' && run.updated_at) {
+    const esAutomatico = run.event === 'schedule';
+    let texto = esAutomatico ? `última ejecución automática: ${lanzado}` : `última vez que le diste tú: ${lanzado}`;
+    div.className = 'sub';
+
+    if (run.status === 'completed') {
       texto += ` · terminó: ${formatearFecha(run.updated_at)}`;
+      if (run.conclusion === 'success') {
+        texto += ' ✅';
+      } else {
+        texto += ` ❌ (${run.conclusion || 'falló'} — revisa el log en Actions antes de fiarte del ranking)`;
+        div.style.color = 'var(--brick)';
+      }
     } else if (run.status === 'in_progress' || run.status === 'queued') {
       texto += ' · todavía en marcha...';
     }
@@ -533,38 +557,4 @@ async function cargarCapitalGuardado() {
   renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
 }
 
-async function guardarCapital() {
-  const valor = parseFloat(document.getElementById('input-capital').value);
-  if (isNaN(valor) || valor < 0) return;
-  try { localStorage.setItem('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
-  renderProgreso(valor);
-}
-
-document.getElementById('btn-cargar').addEventListener('click', traerLista);
-document.getElementById('btn-guardar-capital').addEventListener('click', guardarCapital);
-cargarConfigGuardada();
-cargarCapitalGuardado();
-obtenerTasaCambio();
-
-// Tooltips tocables: delegación de eventos porque las tarjetas se generan dinámicamente
-const tooltip = document.getElementById('tooltip');
-document.addEventListener('click', (e) => {
-  const term = e.target.closest('.term');
-  if (term) {
-    tooltip.textContent = term.dataset.tip;
-    const rect = term.getBoundingClientRect();
-    tooltip.style.display = 'block';
-    const arriba = rect.top > 100; // si hay sitio arriba, lo ponemos arriba del término
-    tooltip.style.top = arriba ? (rect.top - tooltip.offsetHeight - 8) + 'px' : (rect.bottom + 8) + 'px';
-    let izquierda = rect.left;
-    if (izquierda + 260 > window.innerWidth) izquierda = window.innerWidth - 270;
-    tooltip.style.left = Math.max(8, izquierda) + 'px';
-    e.stopPropagation();
-  } else {
-    tooltip.style.display = 'none';
-  }
-});
-</script>
-
-</body>
-</html>
+a
