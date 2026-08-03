@@ -1,14 +1,18 @@
-# VERSION: 9 (29/07/2026) - tres ejecuciones automáticas al día (7, 12 y 14
-# hora española aprox.) para pillar resultados publicados antes de la
-# apertura de mercado en distintos momentos de la mañana, + botón manual.
-# En invierno (CET) se desplazan una hora porque el cron es en UTC fijo.
+# VERSION: 11 (31/07/2026) - amplía a 7 ejecuciones automáticas al día
+# (5:11, 7:11, 10:11, 12:11, 14:11, 16:11, 18:11 hora española), para que
+# si GitHub se salta alguna (pasa, no da garantía de disparo con carga
+# alta), sea mucho más probable que la siguiente sí se coja
 name: Actualizar ranking de candidatas
 
 on:
   schedule:
-    - cron: '0 5 * * *'    # 7:00 España (verano)
-    - cron: '0 10 * * *'   # 12:00 España (verano)
-    - cron: '0 12 * * *'   # 14:00 España (verano)
+    - cron: '11 3 * * *'    # 05:11 España (verano)
+    - cron: '11 5 * * *'    # 07:11 España (verano)
+    - cron: '11 8 * * *'    # 10:11 España (verano)
+    - cron: '11 10 * * *'   # 12:11 España (verano)
+    - cron: '11 12 * * *'   # 14:11 España (verano)
+    - cron: '11 14 * * *'   # 16:11 España (verano)
+    - cron: '11 16 * * *'   # 18:11 España (verano)
   workflow_dispatch: {}   # y también cuando tú lo lanzas a mano
 
 jobs:
@@ -43,5 +47,3 @@ jobs:
         run: |
           echo "## Ranking listo ✅" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- 📊 [Abrir Cuaderno de candidatas](https://jmfc88.github.io/Finance/scoring_viewer.html)" >> $GITHUB_STEP_SUMMARY
-          echo "- 📒 [Abrir Simulador de operaciones](https://jmfc88.github.io/Finance/simulador.html)" >> $GITHUB_STEP_SUMMARY
