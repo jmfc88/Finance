@@ -1,8 +1,9 @@
 """
-VERSION: 15 (03/08/2026) - CORRECCIÓN CRÍTICA: el total de analistas venía
-como numpy.int64 (no int nativo de Python) desde pandas, y json.dump no
-sabe serializarlo — rompía el guardado entero (exit code 1). Convertido
-a int() nativo.
+VERSION: 17 (03/08/2026) - añade muestra mínima de 5 analistas para el
+consenso real: por debajo de eso, la tabla de reparto de Yahoo suele estar
+incompleta (detectado con RELX/REN.AS: solo 2 analistas en la tabla pese a
+tener consenso "strong_buy" agregado bien poblado) y no se aplica ni
+bonus ni penalización, se ignora
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -19,6 +20,7 @@ import json
 import time
 from datetime import datetime, timedelta
 
+import numpy as np
 import yfinance as yf
 from deep_translator import GoogleTranslator
 
@@ -216,6 +218,11 @@ def tendencia_analistas(ticker_obj):
         return None
 
 
+MUESTRA_MINIMA_ANALISTAS = 5  # por debajo de esto, la tabla de reparto de
+# Yahoo suele estar incompleta (aunque el consenso agregado sí tenga más
+# analistas reales detrás) — no fiable para excluir ni dar empujón
+
+
 def calcular_consenso_real(ticker_obj):
     """Mira el REPARTO real de analistas por categoría (no solo la etiqueta
     media que da Yahoo), en % sobre el total para que funcione igual con
@@ -239,6 +246,8 @@ def calcular_consenso_real(ticker_obj):
         total = int(strong_buy + buy + hold + sell + strong_sell)
         if total == 0:
             return None
+        if total < MUESTRA_MINIMA_ANALISTAS:
+            return {"excluida": False, "empujon": 0, "muestra_insuficiente": True, "total_analistas": total}
 
         pct_strong_buy = strong_buy / total * 100
         pct_buy_o_mas = (strong_buy + buy) / total * 100
@@ -421,6 +430,22 @@ def evaluar(ticker):
         return {"ticker": ticker, "descartado": True, "motivo": f"Error de datos: {e}"}
 
 
+def convertir_tipos_numpy(obj):
+    """Red de seguridad GENÉRICA: pandas/yfinance a veces devuelven números
+    en formato numpy (int64, float64, bool_...) en vez de tipos nativos de
+    Python, y json.dump no sabe convertirlos por sí solo. En vez de cazar
+    cada campo nuevo uno a uno cada vez que aparece, esto los convierte
+    automáticamente a su equivalente nativo de Python, sea cual sea el
+    campo donde se cuele."""
+    if isinstance(obj, np.integer):
+        return int(obj)
+    if isinstance(obj, np.floating):
+        return float(obj)
+    if isinstance(obj, np.bool_):
+        return bool(obj)
+    raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
+
+
 def ejecutar():
     with open(ENTRADA, "r", encoding="utf-8") as f:
         candidatos_fase1 = json.load(f)
@@ -444,7 +469,7 @@ def ejecutar():
     }
 
     with open(SALIDA, "w", encoding="utf-8") as f:
-        json.dump(salida, f, indent=2, ensure_ascii=False, allow_nan=False)
+        json.dump(salida, f, indent=2, ensure_ascii=False, allow_nan=False, default=convertir_tipos_numpy)
 
     print(f"Ranking generado: {len(validos)} candidatas válidas, {len(descartados)} descartadas.")
 
