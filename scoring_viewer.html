@@ -557,4 +557,38 @@ async function cargarCapitalGuardado() {
   renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
 }
 
-a
+async function guardarCapital() {
+  const valor = parseFloat(document.getElementById('input-capital').value);
+  if (isNaN(valor) || valor < 0) return;
+  try { localStorage.setItem('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
+  renderProgreso(valor);
+}
+
+document.getElementById('btn-cargar').addEventListener('click', traerLista);
+document.getElementById('btn-guardar-capital').addEventListener('click', guardarCapital);
+cargarConfigGuardada();
+cargarCapitalGuardado();
+obtenerTasaCambio();
+
+// Tooltips tocables: delegación de eventos porque las tarjetas se generan dinámicamente
+const tooltip = document.getElementById('tooltip');
+document.addEventListener('click', (e) => {
+  const term = e.target.closest('.term');
+  if (term) {
+    tooltip.textContent = term.dataset.tip;
+    const rect = term.getBoundingClientRect();
+    tooltip.style.display = 'block';
+    const arriba = rect.top > 100; // si hay sitio arriba, lo ponemos arriba del término
+    tooltip.style.top = arriba ? (rect.top - tooltip.offsetHeight - 8) + 'px' : (rect.bottom + 8) + 'px';
+    let izquierda = rect.left;
+    if (izquierda + 260 > window.innerWidth) izquierda = window.innerWidth - 270;
+    tooltip.style.left = Math.max(8, izquierda) + 'px';
+    e.stopPropagation();
+  } else {
+    tooltip.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
