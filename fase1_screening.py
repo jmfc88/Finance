@@ -1,5 +1,8 @@
 """
-VERSION: 8 (28/07/2026) - verificación real de las páginas de Wikipedia
+VERSION: 9 (31/07/2026) - relaja el filtro de beta para acciones en euros
+(IBEX35, DAX, CAC40, AEX, etc.): ya no exige movimiento fuerte, solo
+consenso de compra, porque no generan cambio de divisa y así entran
+también empresas consolidadas (ej. BBVA) si tienen un catalizador puntual
 añadidas en la v7: corregidas las columnas de TSX60 (Symbol, no Ticker) y
 OMXC25 (Ticker symbol); añadida conversión de espacio a guión en tickers
 (ej. "MAERSK A" -> "MAERSK-A") para que Yahoo Finance los reconozca.
@@ -50,6 +53,13 @@ CANDIDATOS_FILE = "candidatos_fase1.json"
 
 PAUSA_ENTRE_PETICIONES = 0.3
 BETA_MINIMA = 1.5  # movimiento fuerte, coherente con el perfil agresivo
+
+# Sufijos de mercados en euros: aquí no exigimos beta alto, porque no
+# generan cambio de divisa (compras y vendes en €, sin perder céntimos
+# en la conversión) y queremos que entren también empresas consolidadas
+# (ej. BBVA) que puntualmente tengan un catalizador bueno, aunque su
+# beta habitual sea bajo por ser maduras y estables.
+SUFIJOS_EUR = (".MC", ".DE", ".PA", ".AS", ".BR", ".LS", ".MI", ".VI", ".HE")
 
 # Fuente: tablas de Wikipedia mantenidas por la comunidad para cada índice.
 # "columnas" prueba varios nombres posibles porque no todas las páginas
@@ -152,6 +162,10 @@ def evaluar_ticker(ticker):
         recomendacion = (info.get("recommendationKey") or "").lower()
         beta = info.get("beta") or 0
         candidato_fuerte = recomendacion in ("buy", "strong_buy") and beta >= BETA_MINIMA
+        if ticker.endswith(SUFIJOS_EUR):
+            # sin cambio de divisa: basta con el consenso de compra, no
+            # exigimos movimiento fuerte (dejaría fuera a toda empresa madura)
+            candidato_fuerte = recomendacion in ("buy", "strong_buy")
         return {
             "candidato_fuerte": candidato_fuerte,
             "recomendacion": recomendacion,
