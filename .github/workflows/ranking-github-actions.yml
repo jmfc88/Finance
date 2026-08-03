@@ -47,3 +47,5 @@ jobs:
         run: |
           echo "## Ranking listo ✅" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 [Abrir Cuaderno de candidatas](https://jmfc88.github.io/Finance/scoring_viewer.html)" >> $GITHUB_STEP_SUMMARY
+          echo "- 📒 [Abrir Simulador de operaciones](https://jmfc88.github.io/Finance/simulador.html)" >> $GITHUB_STEP_SUMMARY
