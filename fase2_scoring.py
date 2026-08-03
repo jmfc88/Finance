@@ -1,8 +1,6 @@
 """
-VERSION: 12 (31/07/2026) - CORRECCIÓN CRÍTICA: la sorpresa de beneficios podía
-venir como NaN (no None) de Yahoo Finance, y mi comprobación no lo detectaba
-— se colaba y rompía el guardado del JSON entero (exit code 1, el ranking
-no se actualizaba aunque el workflow terminase). Ahora se detecta y limpia.
+VERSION: 14 (31/07/2026) - añade empujón por cotizar en euros (sin cambio de
+divisa: no pierdes céntimos al comprar/vender), marcado también en la salida
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -216,7 +214,62 @@ def tendencia_analistas(ticker_obj):
         return None
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None):
+def calcular_consenso_real(ticker_obj):
+    """Mira el REPARTO real de analistas por categoría (no solo la etiqueta
+    media que da Yahoo), en % sobre el total para que funcione igual con
+    6 analistas que con 40. Devuelve si hay que excluir la candidata por
+    demasiada discrepancia, y cuánto empujón extra merece si no."""
+    try:
+        rec = ticker_obj.recommendations
+        if rec is None or rec.empty:
+            return None
+
+        fila_actual = rec[rec["period"] == "0m"]
+        if fila_actual.empty:
+            return None
+        fila = fila_actual.iloc[0]
+
+        strong_buy = fila.get("strongBuy", 0)
+        buy = fila.get("buy", 0)
+        hold = fila.get("hold", 0)
+        sell = fila.get("sell", 0)
+        strong_sell = fila.get("strongSell", 0)
+        total = strong_buy + buy + hold + sell + strong_sell
+        if total == 0:
+            return None
+
+        pct_strong_buy = strong_buy / total * 100
+        pct_buy_o_mas = (strong_buy + buy) / total * 100
+        pct_vender = (sell + strong_sell) / total * 100
+
+        if pct_vender >= 30:
+            return {"excluida": True, "pct_vender": limpio(round(pct_vender, 1)), "total_analistas": total}
+
+        if pct_vender >= 20:
+            empujon = -15
+        elif pct_vender >= 10:
+            empujon = -8
+        elif pct_strong_buy >= 90:
+            empujon = 20
+        elif pct_buy_o_mas >= 90:
+            empujon = 12
+        elif pct_strong_buy >= 75:
+            empujon = 8
+        else:
+            empujon = 0
+
+        return {
+            "excluida": False,
+            "empujon": empujon,
+            "pct_strong_buy": limpio(round(pct_strong_buy, 1)),
+            "pct_vender": limpio(round(pct_vender, 1)),
+            "total_analistas": total,
+        }
+    except Exception:
+        return None
+
+
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0):
     """
     Score de 0 a 100. Pondera:
     - Consenso de analistas (peso bajo, es la señal más ruidosa)
@@ -276,6 +329,9 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     elif tendencia_analistas_valor == "empeorando":
         score -= 5
 
+    # Consenso real por reparto de categorías (no solo la etiqueta media)
+    score += empujon_consenso_real
+
     return round(score, 1)
 
 
@@ -306,6 +362,11 @@ def evaluar(ticker):
             return {"ticker": ticker, "descartado": True,
                     "motivo": f"Resultados en {dias_resultados} días - evento binario, se evita"}
 
+        consenso_real = calcular_consenso_real(t)
+        if consenso_real and consenso_real.get("excluida"):
+            return {"ticker": ticker, "descartado": True,
+                    "motivo": f"{consenso_real['pct_vender']}% de los analistas recomienda vender - discrepancia real, se evita"}
+
         hist = t.history(period="220d")  # suficiente para SMA200, RSI y momentum de 30 días
         momentum_30d = None
         if len(hist) > 22:
@@ -323,9 +384,14 @@ def evaluar(ticker):
         if target_alto and target_bajo and target_bajo > 0:
             dispersion_pct = round((target_alto - target_bajo) / target_bajo * 100, 1)
 
-        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor)
+        empujon_consenso_real = consenso_real.get("empujon", 0) if consenso_real else 0
+        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor, empujon_consenso_real)
         if catalizador:
             score += 12  # empujón notable pero que no domine el resto del método
+
+        cotiza_en_euros = ticker.endswith((".MC", ".DE", ".PA", ".AS", ".BR", ".LS", ".MI", ".VI", ".HE"))
+        if cotiza_en_euros:
+            score += 8  # sin cambio de divisa: no pierdes céntimos en la conversión al comprar/vender
 
         return {
             "ticker": ticker,
@@ -339,6 +405,8 @@ def evaluar(ticker):
             "dispersion_pct": limpio(dispersion_pct),
             "momentum_30d_pct": limpio(momentum_30d),
             "catalizador_resultados": catalizador,
+            "consenso_real": consenso_real,
+            "cotiza_en_euros": cotiza_en_euros,
             "rsi_14": limpio(rsi_14),
             "tendencia_tecnica": tendencia_tec,
             "sma50": limpio(sma50),
