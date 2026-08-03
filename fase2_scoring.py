@@ -1,6 +1,8 @@
 """
-VERSION: 14 (31/07/2026) - añade empujón por cotizar en euros (sin cambio de
-divisa: no pierdes céntimos al comprar/vender), marcado también en la salida
+VERSION: 15 (03/08/2026) - CORRECCIÓN CRÍTICA: el total de analistas venía
+como numpy.int64 (no int nativo de Python) desde pandas, y json.dump no
+sabe serializarlo — rompía el guardado entero (exit code 1). Convertido
+a int() nativo.
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -234,7 +236,7 @@ def calcular_consenso_real(ticker_obj):
         hold = fila.get("hold", 0)
         sell = fila.get("sell", 0)
         strong_sell = fila.get("strongSell", 0)
-        total = strong_buy + buy + hold + sell + strong_sell
+        total = int(strong_buy + buy + hold + sell + strong_sell)
         if total == 0:
             return None
 
