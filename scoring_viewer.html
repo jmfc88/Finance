@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!-- VERSION: 16 (03/08/2026) - muestra "muestra insuficiente" en vez de
-porcentajes engañosos cuando hay menos de 5 analistas en la tabla de reparto -->
+<!-- VERSION: 17 (03/08/2026) - rediseño de legibilidad: momentum, tendencia
+técnica y RSI ahora en texto claro (bueno/malo/estable) en vez de solo
+números o palabras técnicas; reparto real como frase completa; quitada la
+fila "analistas" (tendencia 3 meses) que no aportaba -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -345,6 +347,27 @@ function obtenerMoneda(ticker) {
   return { simbolo: '$', esEuro: false, esUSD: true }; // sin sufijo = EE.UU.
 }
 
+function textoMomentum(pct) {
+  if (pct === null || pct === undefined) return { texto: '—', clase: '' };
+  if (pct > 5) return { texto: `bueno (+${pct}% el último mes)`, clase: 'pos' };
+  if (pct < -5) return { texto: `malo (${pct}% el último mes)`, clase: 'neg' };
+  return { texto: `estable (${pct}% el último mes)`, clase: '' };
+}
+
+function textoTendenciaTecnica(t) {
+  if (t === 'alcista') return { texto: 'buena señal — el precio está por encima de su media habitual', clase: 'pos' };
+  if (t === 'bajista') return { texto: 'mala señal — el precio está por debajo de su media habitual', clase: 'neg' };
+  if (t === 'mixta') return { texto: 'señales mezcladas, sin tendencia clara por ahora', clase: '' };
+  return { texto: '—', clase: '' };
+}
+
+function textoRSI(rsi) {
+  if (rsi === null || rsi === undefined) return { texto: '—', clase: '' };
+  if (rsi > 70) return { texto: `subió muy rápido, podría frenarse (${rsi})`, clase: 'neg' };
+  if (rsi < 30) return { texto: `cayó muy rápido, podría rebotar (${rsi})`, clase: 'pos' };
+  return { texto: `ritmo normal (${rsi})`, clase: '' };
+}
+
 function renderTarjeta(c, esTop) {
   const scoreClass = c.score >= 0 ? 'pos' : 'neg';
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
@@ -353,6 +376,9 @@ function renderTarjeta(c, esTop) {
   const nombre = c.nombre_empresa || c.ticker;
   const moneda = obtenerMoneda(c.ticker);
   const datosCopiar = `${c.ticker} | ${nombre}${c.isin ? ' | ISIN orientativo (verificar en TR): ' + c.isin : ''} | ${c.precio_actual}${moneda.simbolo}`;
+  const momentum = textoMomentum(c.momentum_30d_pct);
+  const tecnica = textoTendenciaTecnica(c.tendencia_tecnica);
+  const rsi = textoRSI(c.rsi_14);
   return `
     <div class="card ${esTop ? 'top' : ''}">
       ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
@@ -373,13 +399,12 @@ function renderTarjeta(c, esTop) {
       <div class="datos">
         <div><span class="label term" data-tip="Precio de mercado ahora mismo">precio:</span> ${c.precio_actual}${moneda.simbolo} ${moneda.esEuro ? '<span class="euro">(sin cambio de divisa ✓)</span>' : (moneda.esUSD && tasaUSDEUR ? `<span class="euro">(~${(c.precio_actual * tasaUSDEUR).toFixed(2)}€, cambio de divisa)</span>` : '<span class="euro">(otra divisa, revisa el cambio)</span>')}</div>
         <div><span class="label term" data-tip="Opinión media de los analistas: comprar, mantener o vender">consenso:</span> ${c.consenso || '—'}</div>
-        <div><span class="label term" data-tip="Subida esperada hasta el precio objetivo de analistas">potencial:</span> ${potencial}</div>
-        <div><span class="label term" data-tip="Cuánto ha subido o bajado el precio en el último mes">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
+        <div><span class="label term" data-tip="Cuántos de los analistas de verdad recomiendan vender, no solo la etiqueta media">reparto real:</span> ${c.consenso_real ? (c.consenso_real.muestra_insuficiente ? `muestra insuficiente (solo ${c.consenso_real.total_analistas} analistas, se ignora)` : `de ${c.consenso_real.total_analistas} analistas: <span class="pos">${c.consenso_real.pct_strong_buy}% compra fuerte</span>${c.consenso_real.pct_vender > 0 ? ` · <span class="neg">${c.consenso_real.pct_vender}% vender</span>` : ' · 0% vender'}`) : '—'}</div>
+        <div><span class="label term" data-tip="Precio objetivo medio de los analistas, normalmente pensado a ~12 meses vista — es su opinión, no una garantía">potencial:</span> ${potencial}</div>
+        <div><span class="label term" data-tip="Cómo se ha movido el precio en el último mes">momentum:</span> <span class="${momentum.clase}">${momentum.texto}</span></div>
         <div><span class="label term" data-tip="Cuánto discrepan los analistas sobre el precio objetivo">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
-        <div><span class="label term" data-tip="Compara el precio con su media de 50 y 200 sesiones">tendencia técnica:</span> ${c.tendencia_tecnica || '—'}</div>
-        <div><span class="label term" data-tip="Por encima de 70: subió muy rápido. Por debajo de 30: cayó muy rápido">RSI 14:</span> ${c.rsi_14 ?? '—'}</div>
-        <div><span class="label term" data-tip="Si los analistas mejoran o empeoran su opinión en 3 meses">analistas:</span> ${c.tendencia_analistas || '—'}</div>
-        <div><span class="label term" data-tip="Cuántos de los analistas de verdad recomiendan vender, no solo la etiqueta media">reparto real:</span> ${c.consenso_real ? (c.consenso_real.muestra_insuficiente ? `muestra insuficiente (${c.consenso_real.total_analistas} analistas, se ignora)` : `${c.consenso_real.pct_strong_buy}% compra fuerte, ${c.consenso_real.pct_vender}% vender (${c.consenso_real.total_analistas} analistas)`) : '—'}</div>
+        <div><span class="label term" data-tip="Compara el precio actual con su media de las últimas 50 y 200 sesiones">tendencia técnica:</span> <span class="${tecnica.clase}">${tecnica.texto}</span></div>
+        <div><span class="label term" data-tip="Mide si el precio ha subido o bajado demasiado rápido últimamente">ritmo (RSI):</span> <span class="${rsi.clase}">${rsi.texto}</span></div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
       <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
