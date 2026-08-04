@@ -1,8 +1,10 @@
 """
-VERSION: 18 (03/08/2026) - fusiona bot1_noticias.py dentro del score
-automático: cada candidata lleva ya su sentimiento de noticias (Yahoo
-Finance + Google News, palabras clave en inglés/español), con empujón
-moderado en el score (tope ±10 para que no domine el resto del método)
+VERSION: 19 (04/08/2026) - dos arreglos: (1) tendencia técnica exigía un
+orden encadenado precio > sma50 > sma200 demasiado estricto, casi todo
+caía en "mixta" — ahora mira precio vs. cada media por separado; (2)
+Google News traía páginas de datos financieros (TradingView, Simply Wall
+St...) mezcladas con noticias reales — ahora se filtran por fuente y por
+contenido (métricas sueltas tipo EBITDA/forward P/E)
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -166,7 +168,14 @@ def calcular_rsi(cierres, periodo=14):
 
 
 def tendencia_tecnica(hist, precio_actual):
-    """Compara el precio actual con sus medias de 50 y 200 sesiones."""
+    """Compara el precio actual con sus medias de 50 y 200 sesiones.
+    Antes exigía el orden encadenado precio > sma50 > sma200 (cruce dorado
+    exacto) para "alcista" — eso hacía que casi cualquier caso normal
+    cayera en "mixta", incluso con el precio claramente por encima de
+    ambas medias. Ahora mira cada media por separado: alcista = por
+    encima de las dos, bajista = por debajo de las dos, mixta = solo
+    cuando de verdad está entre medias (señal mixta real, no un cruce
+    ligeramente desordenado)."""
     try:
         if len(hist) < 50:
             return None, None, None
@@ -174,9 +183,9 @@ def tendencia_tecnica(hist, precio_actual):
         sma200 = round(hist["Close"].rolling(200).mean().iloc[-1], 2) if len(hist) >= 200 else None
 
         if sma200 is not None:
-            if precio_actual > sma50 > sma200:
+            if precio_actual > sma50 and precio_actual > sma200:
                 tendencia = "alcista"
-            elif precio_actual < sma50 < sma200:
+            elif precio_actual < sma50 and precio_actual < sma200:
                 tendencia = "bajista"
             else:
                 tendencia = "mixta"
@@ -257,21 +266,47 @@ def sentimiento_titular(titular):
     return puntos
 
 
+FUENTES_NO_NOTICIA = {
+    "tradingview", "simply wall st", "stockanalysis", "stockanalysis.org",
+    "marketbeat", "gurufocus", "insider monkey", "barchart", "investing.com markets",
+}
+
+
+def parece_pagina_de_datos(titulo):
+    """Filtro adicional por contenido: algunas páginas de datos (ratios,
+    métricas sueltas) se cuelan con fuentes no listadas arriba. Si el
+    título es solo una métrica financiera suelta, probablemente no es
+    una noticia de verdad."""
+    t = titulo.lower()
+    metricas_sueltas = ["ebitda", "forward p/e", "price to earnings", "enterprise value"]
+    return any(m in t for m in metricas_sueltas)
+
+
 def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
-    """Busca en el RSS de Google News (gratis, sin clave). Si falla (sin
+    """Busca en el RSS de Google News (gratis, sin clave). Filtra fuentes
+    que son páginas de datos financieros (TradingView, Simply Wall St...)
+    en vez de prensa real, porque Google News las indexa igual que
+    noticias y se colaban mezcladas con titulares de verdad. Si falla (sin
     conexión, cambio de formato, etc.) devuelve vacío, sin romper el resto."""
     try:
         url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl=es-419&gl=ES&ceid=ES:es"
         resp = requests.get(url, headers=CABECERAS_NOTICIAS, timeout=10)
         resp.raise_for_status()
         raiz = ET.fromstring(resp.content)
-        items = raiz.findall(".//item")[:maximo]
+        items = raiz.findall(".//item")[: maximo * 2]  # pedimos de más, porque filtramos después
         resultado = []
         for item in items:
             titulo = (item.findtext("title") or "").strip()
             fuente = (item.findtext("source") or "").strip()
-            if titulo:
-                resultado.append({"titulo": titulo, "fuente": fuente})
+            if not titulo:
+                continue
+            if fuente.lower() in FUENTES_NO_NOTICIA:
+                continue
+            if parece_pagina_de_datos(titulo):
+                continue
+            resultado.append({"titulo": titulo, "fuente": fuente})
+            if len(resultado) >= maximo:
+                break
         return resultado
     except Exception:
         return []
