@@ -1,12 +1,9 @@
-// VERSION: 1 (29/07/2026) - lógica compartida entre simulador.html e historial.html
-// Se guarda en un archivo aparte para que ambas páginas usen EXACTAMENTE el
-// mismo cálculo (evita que se desincronicen si se edita solo una).
-
 // VERSION: 2 (29/07/2026) - añade sincronización opcional entre dispositivos:
 // si hay un repo + token de GitHub configurados, cada guardado sube también
 // un archivo ledger.json al repo, y cada carga lo trae primero de ahí (con
 // copia local de respaldo por si no hay conexión). Sin token, funciona
 // exactamente igual que antes (solo local, por dispositivo).
+// (Base: v1 lógica compartida entre simulador.html e historial.html)
 
 const COMISION_COMPRA = 1.0;
 const COMISION_VENTA = 1.0;
