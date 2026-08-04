@@ -1,5 +1,7 @@
 """
-VERSION: 1 (28/07/2026) - primera versión
+VERSION: 2 (04/08/2026) - avisa también cuando el stop-loss SUBE (no solo
+cuando salta), con notificación no urgente distinta, para tener visibilidad
+del trailing sin tener que mirar posiciones.json a mano en GitHub
 
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
@@ -63,14 +65,18 @@ def beneficio_neto(precio_compra, precio_venta, acciones):
     return round(ganancia_antes_impuesto - impuesto, 2)
 
 
-def notificar(titulo, mensaje):
+def notificar(titulo, mensaje, urgente=True):
     if not NTFY_TOPIC:
         print(f"[SIN NTFY_TOPIC] {titulo}: {mensaje}")
         return
     requests.post(
         f"https://ntfy.sh/{NTFY_TOPIC}",
         data=mensaje.encode("utf-8"),
-        headers={"Title": titulo, "Priority": "urgent", "Tags": "warning"},
+        headers={
+            "Title": titulo,
+            "Priority": "urgent" if urgente else "default",
+            "Tags": "warning" if urgente else "chart_with_upwards_trend",
+        },
     )
 
 
@@ -79,18 +85,26 @@ def procesar_posicion(pos):
     if not precio_actual:
         return pos, False
 
+    stop_anterior = pos.get("stop_loss_actual", 0)
+
     # Actualiza el máximo alcanzado y sube el stop-loss si corresponde (nunca baja)
     if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
         pos["maximo_alcanzado"] = precio_actual
         nuevo_stop = round(precio_actual * (1 - pos["trailing_pct"] / 100), 2)
-        if nuevo_stop > pos.get("stop_loss_actual", 0):
+        if nuevo_stop > stop_anterior:
             pos["stop_loss_actual"] = nuevo_stop
+            notificar(
+                f"📈 {pos['ticker']} sube — sube tu stop-loss",
+                f"Nuevo máximo: {precio_actual}$. Sube tu stop-loss en Trade Republic de "
+                f"{stop_anterior}$ a {nuevo_stop}$ (protege más ganancia ya conseguida).",
+                urgente=False,
+            )
 
     salto = precio_actual <= pos.get("stop_loss_actual", 0)
     if salto:
         neto = beneficio_neto(pos["precio_compra"], precio_actual, pos["acciones"])
         notificar(
-            f"VENDE {pos['ticker']} - stop-loss activado",
+            f"🔴 VENDE {pos['ticker']} - stop-loss activado",
             f"Precio actual: {precio_actual}$. Stop-loss: {pos['stop_loss_actual']}$. "
             f"Beneficio neto estimado si vendes ahora: {neto}€. Ejecuta la venta en Trade Republic.",
         )
