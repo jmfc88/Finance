@@ -375,7 +375,124 @@ function renderTarjeta(c, esTop) {
         <div><span class="label term" data-tip="Opinión media de los analistas: comprar, mantener o vender">consenso:</span> ${c.consenso || '—'}</div>
         <div><span class="label term" data-tip="Subida esperada hasta el precio objetivo de analistas">potencial:</span> ${potencial}</div>
         <div><span class="label term" data-tip="Cuánto ha subido o bajado el precio en el último mes">momentum 30d:</span> ${c.momentum_30d_pct ?? '—'}%</div>
-        <div><span class="label term" data-tip="Cuánto discrepan los analistas sobre el precio objetivo">dispersión:</span> ${c.content://downloads/all_downloads/1012
+        <div><span class="label term" data-tip="Cuánto discrepan los analistas sobre el precio objetivo">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
+        <div><span class="label term" data-tip="Compara el precio con su media de 50 y 200 sesiones">tendencia técnica:</span> ${c.tendencia_tecnica || '—'}</div>
+        <div><span class="label term" data-tip="Por encima de 70: subió muy rápido. Por debajo de 30: cayó muy rápido">RSI 14:</span> ${c.rsi_14 ?? '—'}</div>
+        <div><span class="label term" data-tip="Si los analistas mejoran o empeoran su opinión en 3 meses">analistas:</span> ${c.tendencia_analistas || '—'}</div>
+        <div><span class="label term" data-tip="Cuántos de los analistas de verdad recomiendan vender, no solo la etiqueta media">reparto real:</span> ${c.consenso_real ? (c.consenso_real.muestra_insuficiente ? `muestra insuficiente (${c.consenso_real.total_analistas} analistas, se ignora)` : `${c.consenso_real.pct_strong_buy}% compra fuerte, ${c.consenso_real.pct_vender}% vender (${c.consenso_real.total_analistas} analistas)`) : '—'}</div>
+      </div>
+      ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
+      <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
+    </div>
+  `;
+}
+
+async function copiarDatos(boton, texto) {
+  try {
+    await navigator.clipboard.writeText(texto);
+    const original = boton.textContent;
+    boton.textContent = '✓ Copiado';
+    setTimeout(() => { boton.textContent = original; }, 1500);
+  } catch (e) {
+    alert('No se pudo copiar automáticamente. Datos: ' + texto);
+  }
+}
+
+function renderDescartadas(lista) {
+  if (!lista || lista.length === 0) return '';
+  const items = lista.map(d => `<div class="descarte">${d.ticker}: ${d.motivo}</div>`).join('');
+  return `
+    <details>
+      <summary>Ver descartadas (${lista.length})</summary>
+      ${items}
+    </details>
+  `;
+}
+
+async function consultarUltimoLanzamiento(repo) {
+  const div = document.getElementById('fecha-lanzamiento');
+  try {
+    const resp = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/ranking-github-actions.yml/runs?per_page=1`);
+    if (!resp.ok) { div.style.display = 'none'; return; }
+    const data = await resp.json();
+    const run = data.workflow_runs && data.workflow_runs[0];
+    if (!run) { div.style.display = 'none'; return; }
+
+    const lanzado = formatearFecha(run.run_started_at || run.created_at);
+    const esAutomatico = run.event === 'schedule';
+    let texto = esAutomatico ? `última ejecución automática: ${lanzado}` : `última vez que le diste tú: ${lanzado}`;
+    div.className = 'sub';
+
+    if (run.status === 'completed') {
+      texto += ` · terminó: ${formatearFecha(run.updated_at)}`;
+      if (run.conclusion === 'success') {
+        texto += ' ✅';
+      } else {
+        texto += ` ❌ (${run.conclusion || 'falló'} — revisa el log en Actions antes de fiarte del ranking)`;
+        div.style.color = 'var(--brick)';
+      }
+    } else if (run.status === 'in_progress' || run.status === 'queued') {
+      texto += ' · todavía en marcha...';
+    }
+    div.textContent = texto;
+    div.style.display = 'block';
+  } catch (e) {
+    div.style.display = 'none'; // si falla, no pasa nada, simplemente no se muestra
+  }
+}
+
+async function traerLista() {
+  const repo = document.getElementById('input-repo').value.trim();
+  const contenido = document.getElementById('contenido');
+  if (!repo || !repo.includes('/')) {
+    contenido.innerHTML = '<div class="estado">Falta el repositorio. Formato: usuario/repositorio</div>';
+    return;
+  }
+  await guardarConfig(repo);
+
+  // Enlace directo a la página de GitHub Actions para lanzar el workflow
+  // con tu propia sesión — nada de claves guardadas en el móvil.
+  const linkActions = document.getElementById('link-actions');
+  linkActions.href = `https://github.com/${repo}/actions/workflows/ranking-github-actions.yml`;
+  linkActions.style.display = 'inline-block';
+
+  consultarUltimoLanzamiento(repo);
+
+  if (tasaUSDEUR === null) await obtenerTasaCambio();
+  contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
+
+  const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json?t=${Date.now()}`;
+
+  let resp = null;
+  for (let intento = 1; intento <= 3; intento++) {
+    try {
+      resp = await fetch(url, { cache: 'no-store' });
+      break;
+    } catch (e) {
+      if (intento < 3) {
+        contenido.innerHTML = `<div class="estado">Fallo de conexión, reintentando (${intento}/3)...</div>`;
+        await new Promise(r => setTimeout(r, 1200));
+      }
+    }
+  }
+
+  if (!resp) {
+    contenido.innerHTML = '<div class="estado">No se pudo conectar con GitHub tras 3 intentos. Comprueba tu conexión y pulsa "Traer lista" de nuevo.</div>';
+    return;
+  }
+
+  try {
+    if (!resp.ok) {
+      contenido.innerHTML = `<div class="estado">No se encontró candidatos_rankeados.json en ese repo (${resp.status}). Revisa que el nombre sea correcto y que el bot ya haya corrido al menos una vez.</div>`;
+      return;
+    }
+    const data = await resp.json();
+    document.getElementById('fecha-actualizacion').textContent = 'última actualización del bot: ' + formatearFecha(data.generado);
+
+    if (!data.ranking || data.ranking.length === 0) {
+      contenido.innerHTML = '<div class="estado">Sin candidatas válidas ahora mismo.</div>' + renderDescartadas(data.descartados);
+      return;
+    }
 
     const tarjetas = data.ranking.map((c, i) => renderTarjeta(c, i === 0)).join('');
     contenido.innerHTML = tarjetas + renderDescartadas(data.descartados);
