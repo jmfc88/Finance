@@ -1,10 +1,7 @@
 """
-VERSION: 19 (04/08/2026) - dos arreglos: (1) tendencia técnica exigía un
-orden encadenado precio > sma50 > sma200 demasiado estricto, casi todo
-caía en "mixta" — ahora mira precio vs. cada media por separado; (2)
-Google News traía páginas de datos financieros (TradingView, Simply Wall
-St...) mezcladas con noticias reales — ahora se filtran por fuente y por
-contenido (métricas sueltas tipo EBITDA/forward P/E)
+VERSION: 20 (04/08/2026) - filtra también TradingKey y cualquier titular
+con formato de cotización en bruto (2+ barras verticales tipo
+"TICKER|Nombre|Precio:X|Variación %:Y"), detectado en REN.AS
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -269,7 +266,16 @@ def sentimiento_titular(titular):
 FUENTES_NO_NOTICIA = {
     "tradingview", "simply wall st", "stockanalysis", "stockanalysis.org",
     "marketbeat", "gurufocus", "insider monkey", "barchart", "investing.com markets",
+    "tradingkey",
 }
+
+
+def parece_cotizacion_en_bruto(titulo):
+    """Algunas fuentes de datos formatean el titular como una cotización
+    en tabla: "TICKER|Nombre|Precio:X|Variación %:Y" — eso no es una
+    noticia redactada, es un volcado de datos. Dos o más barras verticales
+    es la señal: una noticia real casi nunca lleva ese formato."""
+    return titulo.count("|") >= 2
 
 
 def parece_pagina_de_datos(titulo):
@@ -280,7 +286,6 @@ def parece_pagina_de_datos(titulo):
     t = titulo.lower()
     metricas_sueltas = ["ebitda", "forward p/e", "price to earnings", "enterprise value"]
     return any(m in t for m in metricas_sueltas)
-
 
 def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
     """Busca en el RSS de Google News (gratis, sin clave). Filtra fuentes
@@ -303,6 +308,8 @@ def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
             if fuente.lower() in FUENTES_NO_NOTICIA:
                 continue
             if parece_pagina_de_datos(titulo):
+                continue
+            if parece_cotizacion_en_bruto(titulo):
                 continue
             resultado.append({"titulo": titulo, "fuente": fuente})
             if len(resultado) >= maximo:
