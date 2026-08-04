@@ -1,9 +1,8 @@
 """
-VERSION: 17 (03/08/2026) - añade muestra mínima de 5 analistas para el
-consenso real: por debajo de eso, la tabla de reparto de Yahoo suele estar
-incompleta (detectado con RELX/REN.AS: solo 2 analistas en la tabla pese a
-tener consenso "strong_buy" agregado bien poblado) y no se aplica ni
-bonus ni penalización, se ignora
+VERSION: 18 (03/08/2026) - fusiona bot1_noticias.py dentro del score
+automático: cada candidata lleva ya su sentimiento de noticias (Yahoo
+Finance + Google News, palabras clave en inglés/español), con empujón
+moderado en el score (tope ±10 para que no domine el resto del método)
 
 FASE 2 - SCORING Y RANKING DE CANDIDATOS
 ==========================================
@@ -18,9 +17,12 @@ Salida:   candidatos_rankeados.json -> lista ordenada de mejor a peor
 
 import json
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
+from urllib.parse import quote
 
 import numpy as np
+import requests
 import yfinance as yf
 from deep_translator import GoogleTranslator
 
@@ -223,6 +225,89 @@ MUESTRA_MINIMA_ANALISTAS = 5  # por debajo de esto, la tabla de reparto de
 # analistas reales detrás) — no fiable para excluir ni dar empujón
 
 
+MAX_NOTICIAS_POR_TICKER = 5
+MAX_NOTICIAS_GOOGLE = 5
+CABECERAS_NOTICIAS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+
+PALABRAS_POSITIVAS = [
+    "upgrade", "beat", "record", "growth", "contract", "surge", "soar",
+    "raises", "buy rating", "strong", "profit", "expand", "win", "partnership",
+    # español, porque Google News en español devuelve titulares en español
+    "mejora", "sube", "récord", "crecimiento", "contrato", "dispara", "eleva",
+    "recomendación de compra", "fuerte", "beneficio", "expande", "gana", "acuerdo",
+]
+PALABRAS_NEGATIVAS = [
+    "downgrade", "miss", "loss", "lawsuit", "investigation", "recall",
+    "cuts", "sell rating", "weak", "delay", "dilution", "bankruptcy", "fraud",
+    # español
+    "rebaja", "cae", "pérdida", "demanda judicial", "investigación", "retirada",
+    "recorta", "recomendación de venta", "débil", "retraso", "dilución", "quiebra", "fraude",
+]
+
+
+def sentimiento_titular(titular):
+    t = titular.lower()
+    puntos = 0
+    for palabra in PALABRAS_POSITIVAS:
+        if palabra in t:
+            puntos += 1
+    for palabra in PALABRAS_NEGATIVAS:
+        if palabra in t:
+            puntos -= 1
+    return puntos
+
+
+def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
+    """Busca en el RSS de Google News (gratis, sin clave). Si falla (sin
+    conexión, cambio de formato, etc.) devuelve vacío, sin romper el resto."""
+    try:
+        url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl=es-419&gl=ES&ceid=ES:es"
+        resp = requests.get(url, headers=CABECERAS_NOTICIAS, timeout=10)
+        resp.raise_for_status()
+        raiz = ET.fromstring(resp.content)
+        items = raiz.findall(".//item")[:maximo]
+        resultado = []
+        for item in items:
+            titulo = (item.findtext("title") or "").strip()
+            fuente = (item.findtext("source") or "").strip()
+            if titulo:
+                resultado.append({"titulo": titulo, "fuente": fuente})
+        return resultado
+    except Exception:
+        return []
+
+
+def analizar_noticias(ticker_obj, ticker, nombre):
+    """Combina noticias de Yahoo Finance y Google News, con sentimiento por
+    palabras clave. Devuelve el total y hasta 3 titulares (los que más pesan,
+    para no inflar el tamaño del archivo con 150+ candidatas)."""
+    try:
+        titulares = []
+        sentimiento_total = 0
+
+        try:
+            noticias_yahoo = ticker_obj.news[:MAX_NOTICIAS_POR_TICKER]
+        except Exception:
+            noticias_yahoo = []
+        for n in noticias_yahoo:
+            titulo = n.get("title", "")
+            if not titulo:
+                continue
+            puntos = sentimiento_titular(titulo)
+            sentimiento_total += puntos
+            titulares.append({"titulo": titulo, "fuente": "Yahoo Finance", "sentimiento": puntos})
+
+        for n in buscar_google_news(nombre or ticker):
+            puntos = sentimiento_titular(n["titulo"])
+            sentimiento_total += puntos
+            titulares.append({"titulo": n["titulo"], "fuente": n["fuente"] or "Google News", "sentimiento": puntos})
+
+        titulares.sort(key=lambda t: abs(t["sentimiento"]), reverse=True)
+        return {"sentimiento_total": sentimiento_total, "titulares": titulares[:3]}
+    except Exception:
+        return {"sentimiento_total": 0, "titulares": []}
+
+
 def calcular_consenso_real(ticker_obj):
     """Mira el REPARTO real de analistas por categoría (no solo la etiqueta
     media que da Yahoo), en % sobre el total para que funcione igual con
@@ -404,10 +489,15 @@ def evaluar(ticker):
         if cotiza_en_euros:
             score += 8  # sin cambio de divisa: no pierdes céntimos en la conversión al comprar/vender
 
+        nombre_empresa_valor = info.get("longName") or info.get("shortName")
+        noticias = analizar_noticias(t, ticker, nombre_empresa_valor)
+        empujon_noticias = max(-10, min(10, noticias["sentimiento_total"] * 2))  # tope para que no domine el resto
+        score += empujon_noticias
+
         return {
             "ticker": ticker,
             "descartado": False,
-            "nombre_empresa": info.get("longName") or info.get("shortName"),
+            "nombre_empresa": nombre_empresa_valor,
             "isin": isin,
             "precio_actual": limpio(precio),
             "score": limpio(score),
@@ -418,6 +508,7 @@ def evaluar(ticker):
             "catalizador_resultados": catalizador,
             "consenso_real": consenso_real,
             "cotiza_en_euros": cotiza_en_euros,
+            "noticias": noticias,
             "rsi_14": limpio(rsi_14),
             "tendencia_tecnica": tendencia_tec,
             "sma50": limpio(sma50),
