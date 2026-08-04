@@ -29,19 +29,19 @@ Cuando vendes:
 ## Piezas activas
 
 ### 1. `fase1_screening.py`
-**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, NASDAQ-100, DJIA, TSX60 (Canadá), IBEX35, DAX, MDAX, SDAX, TecDAX, FTSE100, CAC40, AEX, BEL20, PSI20, FTSE MIB, SMI, ATX, OMXS30 (Suecia), OMXC25 (Dinamarca), OMXH25 (Finlandia), Nikkei225 y EuroStoxx50 directamente de Wikipedia — ajustado al filtro real de índices y países de la app de Trade Republic (comprobado con capturas del usuario), con columnas y formato de ticker verificados a mano. También incluye ASX200 (Australia), IPC (México) e Ibovespa (Brasil) como intento — sus páginas de Wikipedia no parecen tener tabla de tickers limpia, así que probablemente no aporten candidatas hasta revisarlos con más calma, pero no rompen nada si fallan. Quedan fuera MSCI World y Russell 2000 (demasiados componentes, sin tabla fiable) y los sub-índices franceses CAC Large/Mid/NEXT/SMALL. Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Luego busca en todo ese universo consenso de analistas de compra + beta alto. Guarda los candidatos fuertes en `candidatos_fase1.json`.
-**Cómo se usa:** no se toca a mano. Lo ejecuta `ranking-github-actions.yml` cuando tú lo lanzas.
+**Qué hace:** reconstruye el universo de tickers en cada ejecución leyendo los componentes ACTUALES de S&P500, NASDAQ-100, DJIA, TSX60 (Canadá), IBEX35, DAX, MDAX, SDAX, TecDAX, FTSE100, CAC40, AEX, BEL20, PSI20, FTSE MIB, SMI, ATX, OMXS30 (Suecia), OMXC25 (Dinamarca), OMXH25 (Finlandia), Nikkei225 y EuroStoxx50 directamente de Wikipedia. También incluye ASX200 (Australia), IPC (México) e Ibovespa (Brasil) como intento — sus páginas de Wikipedia no parecen tener tabla de tickers limpia. Quedan fuera MSCI World y Russell 2000. Si un índice falla puntualmente, usa el último listado bueno conocido de ese índice. Busca en todo ese universo consenso de analistas de compra + beta alto (movimiento fuerte) — **excepto en acciones que cotizan en euros** (IBEX35, DAX, CAC40, AEX, BEL20, PSI20, FTSE MIB, ATX, EuroStoxx50), donde basta el consenso de compra sin exigir beta alto, porque no generan cambio de divisa y así entran también empresas consolidadas (ej. BBVA) si tienen un catalizador puntual bueno. Guarda los candidatos fuertes en `candidatos_fase1.json`.
+**Cómo se usa:** no se toca a mano. Lo ejecuta `ranking-github-actions.yml` cuando tú lo lanzas o en sus horarios automáticos.
 
 ### 2. `fase2_scoring.py`
-**Qué hace:** coge `candidatos_fase1.json` y le pone un score real (0-100) combinando consenso, dispersión entre analistas, momentum de 30 días y potencial de subida, más un empujón/freno menor por tendencia técnica (SMA50/200) y tendencia de recomendaciones de analistas a 3 meses. Descarta automáticamente las que publican resultados en menos de 5 días (riesgo de evento binario) y las que superan ~200€/acción. Traduce el resumen del negocio al español, acumulando frases completas hasta tener contexto real (normalmente 2 frases) en vez de un tope rígido de caracteres — nunca a medias, siempre con sentido propio. Genera `candidatos_rankeados.json`.
+**Qué hace:** coge `candidatos_fase1.json` y le pone un score real (0-100) combinando: consenso real por reparto de categorías de analistas (strongBuy/buy/hold/sell/strongSell en % del total, con muestra mínima de 5 analistas — excluye candidatas con ≥30% recomendando vender, penaliza 10-29%, da empujón extra por unanimidad real en strong_buy puro o combinado con buy), dispersión entre analistas, momentum de 30 días, potencial de subida, tendencia técnica (SMA50/200), tendencia de recomendaciones a 3 meses, catalizador reciente de resultados (sorpresa >10% en 1-2 días), empujón por cotizar en euros (sin cambio de divisa), y **sentimiento de noticias** (Yahoo Finance + Google News, palabras clave en inglés/español, empujón con tope ±10). Descarta automáticamente las que publican resultados en menos de 5 días y las que están fuera de 0,05€-200€. Traduce el resumen del negocio al español. Genera `candidatos_rankeados.json`.
 **Cómo se usa:** tampoco se toca a mano, corre junto al anterior en el mismo workflow.
 
 ### 3. `ranking-github-actions.yml`
-**Qué hace:** el workflow de GitHub Actions que ejecuta 1 y 2 y sube los resultados a tu repo. Solo corre cuando tú lo lanzas — sin cron, sin coste automático. Al guardar, usa `merge` con estrategia `ours` (no `rebase`) para los archivos generados: como se regeneran enteros cada vez, si hay conflicto se queda con la versión recién creada sin atascarse.
-**Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Cuando quieras datos frescos: pestaña "Actions" en la app de GitHub → seleccionas el workflow → botón "Run workflow". Tarda unos minutos.
+**Qué hace:** el workflow de GitHub Actions que ejecuta 1 y 2 y sube los resultados a tu repo. Corre solo 7 veces al día (5:11, 7:11, 10:11, 12:11, 14:11, 16:11 y 18:11 hora española) y también cuando tú lo lanzas a mano. Al guardar, usa `merge` con estrategia `ours` (no `rebase`) para los archivos generados: como se regeneran enteros cada vez, si hay conflicto se queda con la versión recién creada sin atascarse.
+**Cómo se usa:** se sube una vez al repo (carpeta `.github/workflows/`). Corre solo en sus horarios; si quieres datos frescos al momento, pestaña "Actions" → seleccionas el workflow → botón "Run workflow".
 
 ### 4. `scoring_viewer.html`
-**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda (tú decides cuándo mirarlo, nada empuja hacia ti) y muestra cada candidata con score, precio (en $ y su equivalente en €), consenso, potencial, momentum, dispersión, tendencia técnica (vs. su media de 50/200 sesiones), RSI y tendencia de analistas a 3 meses. Cada término tiene un tooltip tocable con su explicación. Incluye el panel de progreso de capital, un enlace directo "Lanzar actualización en GitHub →" (a la página de Actions, con tu propia sesión, sin claves guardadas) y el timestamp real de cuándo se lanzó la última ejecución (vía API pública de GitHub).
+**Qué hace:** tu punto de entrada real. Trae el ranking del repo bajo demanda y muestra cada candidata con score, precio (en su moneda real — €, $, £, C$, A$, ¥... con aviso claro de si genera cambio de divisa o no), consenso, reparto real de analistas (como frase legible: "de 16 analistas: 31.2% compra fuerte · 0% vender"), potencial (con tooltip aclarando que es a ~12 meses vista según analistas, no garantizado), momentum/tendencia técnica/RSI en texto claro (bueno/malo/estable, no jerga técnica ni solo números), sentimiento de noticias con los titulares más relevantes, y badge de catalizador reciente de resultados. Cada término tiene un tooltip tocable. Incluye el panel de progreso de capital, enlace directo "Lanzar actualización en GitHub →" y el timestamp de la última ejecución, con ✅/❌ si falló.
 **Cómo se usa:**
 - La primera vez, escribe tu `usuario/repositorio` de GitHub y pulsa "Traer lista" (se guarda solo).
 - Cada vez que quieras comprar: ábrelo, pulsa "Traer lista", decide.
@@ -56,16 +56,16 @@ Cuando vendes:
 **Cómo se usa:** se llega desde el enlace "Ver historial completo →" en `simulador.html`, o directamente en `https://jmfc88.github.io/Finance/historial.html`.
 
 ### 5c. `simulador-datos.js`
-**Qué hace:** lógica compartida entre `simulador.html` e `historial.html` (constantes de comisión/impuesto, acceso al ledger, cálculo de neto y recálculo FIFO), para que las dos páginas usen exactamente el mismo cálculo y no se desincronicen.
-**Cómo se usa:** no se toca a mano, ambas páginas lo cargan automáticamente.
+**Qué hace:** lógica compartida entre `simulador.html` e `historial.html` (constantes de comisión/impuesto, acceso al ledger, cálculo de neto y recálculo FIFO). Además, si hay un repo + token de GitHub configurados (panel "Sincronización entre dispositivos" en `simulador.html`), cada guardado sube también `ledger.json` al repo, y cada carga lo trae de ahí primero — así el historial se ve igual en el móvil y en el PC. Sin token, sigue funcionando exactamente igual que antes (solo local, por dispositivo).
+**Cómo se usa:** el cálculo no se toca a mano, ambas páginas lo cargan automáticamente. La sincronización se activa una vez desde el panel en `simulador.html` (repo + token de GitHub con permiso "Contents: Read and write" limitado a este repo).
 
 ### 6. `bot.py`
 **Qué hace:** vigila el precio de tus posiciones abiertas y calcula el stop-loss/trailing stop dinámico (Trade Republic no tiene esta función). Cuando salta, te avisa por notificación al móvil vía ntfy.sh — esta es la única notificación que quieres, porque te protege de perder dinero.
 **Cómo se usa:** corre en GitHub Actions en segundo plano mientras tengas posiciones abiertas. Tú solo reaccionas cuando te avisa: entras a Trade Republic y vendes.
 
 ### 7. `bot1_noticias.py`
-**Qué hace:** analiza sentimiento de noticias solo de las candidatas que ya pasaron la fase 1, como capa extra de contexto antes de decidir.
-**Cómo se usa:** complementario, se consulta si quieres una segunda opinión antes de comprar una candidata concreta.
+**Qué hace:** analiza sentimiento de noticias (Yahoo Finance + Google News, palabras clave en inglés/español). **Ya no hace falta usarlo aparte** — esta misma lógica está fusionada dentro de `fase2_scoring.py` (v18+) y corre automáticamente para cada candidata del ranking.
+**Cómo se usa:** se deja solo por si algún día quieres consultar noticias de un ticker que no esté en el ranking actual, fuera del flujo normal. No forma parte del workflow automático (y ya no necesita formar parte, porque su función ya está cubierta).
 
 ### 8. `bot-stoploss-github-actions.yml`
 **Qué hace:** el workflow que ejecuta `bot.py` cada 30 minutos en horario de mercado US, automáticamente, sin que tengas que lanzarlo tú.
@@ -130,16 +130,16 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 8 — columnas de TSX60/OMXC25 verificadas y corregidas, conversión espacio→guión |
-| `fase2_scoring.py` | 9 — añade nombre completo e ISIN por candidata |
-| `ranking-github-actions.yml` | 7 — resumen final con enlaces clicables a las dos webs |
+| `fase1_screening.py` | 9 — relaja el filtro de beta para acciones en euros (sin cambio de divisa) |
+| `fase2_scoring.py` | 18 — fusiona bot1_noticias.py, ahora automático para cada candidata |
+| `ranking-github-actions.yml` | 11 — 7 ejecuciones automáticas al día (5:11 a 18:11) por si GitHub se salta alguna |
 | `bot-stoploss-github-actions.yml` | 1 |
 | `bot.py` | 1 |
-| `bot1_noticias.py` | 1 |
-| `scoring_viewer.html` | 10 — enlace directo a GitHub Actions + timestamp real de lanzamiento |
-| `simulador.html` | 15 — corrige recálculo al vender, Tipo vuelve solo a "Compra" tras cada registro |
+| `bot1_noticias.py` | 3 — ya no hace falta usarlo, su lógica vive dentro de fase2_scoring.py |
+| `scoring_viewer.html` | 18 — muestra sentimiento de noticias y titulares por tarjeta |
+| `simulador.html` | 16 — panel de sincronización entre dispositivos vía GitHub (repo + token) |
 | `historial.html` | 2 — tarjetas clicables con editar/borrar desplegable, sin scroll horizontal |
-| `simulador-datos.js` | 1 — página nueva: lógica compartida entre simulador e historial |
+| `simulador-datos.js` | 2 — sincronización opcional: lee/escribe ledger.json en GitHub si hay repo+token |
 | `posiciones.json` | 1 |
 
 ---
