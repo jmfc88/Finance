@@ -86,13 +86,13 @@ desplegable, en vez de tabla con scroll horizontal -->
 </style>
 </head>
 <body>
- 
+
 <header>
   <h1>Historial completo</h1>
   <div class="sub">todas las operaciones registradas, editar y borrar</div>
   <a class="volver" href="simulador.html">← Volver al simulador</a>
 </header>
- 
+
 <section class="panel" id="panel-edicion" style="display:none;">
   <h2>Editando operación</h2>
   <div class="fila">
@@ -113,22 +113,22 @@ desplegable, en vez de tabla con scroll horizontal -->
   <button onclick="guardarEdicion()" style="background:var(--green);">Guardar cambios</button>
   <button onclick="cancelarEdicion()" style="background:var(--brick);">Cancelar</button>
 </section>
- 
+
 <section class="panel">
   <h2>Todas las operaciones</h2>
   <div id="listado-operaciones"></div>
 </section>
- 
+
 <script src="simulador-datos.js"></script>
 <script>
 let ledgerActual = [];
 let editandoIndice = null;
- 
+
 function toggleGestionOp(id) {
   const el = document.getElementById(id);
   if (el) el.style.display = (el.style.display === 'none' || !el.style.display) ? 'flex' : 'none';
 }
- 
+
 function renderLedger(ledger) {
   ledgerActual = ledger;
   const cont = document.getElementById('listado-operaciones');
@@ -155,7 +155,7 @@ function renderLedger(ledger) {
     </div>
   `).join('');
 }
- 
+
 function iniciarEdicion(index) {
   const op = ledgerActual[index];
   if (!op) return;
@@ -170,12 +170,12 @@ function iniciarEdicion(index) {
   document.getElementById('panel-edicion').style.display = 'block';
   document.getElementById('panel-edicion').scrollIntoView({ behavior: 'smooth' });
 }
- 
+
 function cancelarEdicion() {
   editandoIndice = null;
   document.getElementById('panel-edicion').style.display = 'none';
 }
- 
+
 async function guardarEdicion() {
   if (editandoIndice === null) return;
   const tipo = document.getElementById('op-tipo').value;
@@ -185,12 +185,12 @@ async function guardarEdicion() {
   const precio = parseFloat(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value;
- 
+
   if (!ticker || !precio || !acciones || !fecha) {
     alert('Faltan datos: revisa ticker, precio, acciones y fecha.');
     return;
   }
- 
+
   const ledger = await cargarLedger();
   ledger[editandoIndice] = {
     tipo, ticker, nombre, isin, precio, acciones, fecha,
@@ -202,7 +202,7 @@ async function guardarEdicion() {
   renderLedger(ledger);
   cancelarEdicion();
 }
- 
+
 async function eliminarOperacion(index) {
   if (!confirm('¿Seguro que quieres eliminar esta operación? No se puede deshacer, y puede afectar al cálculo de ventas ya registradas de este mismo ticker.')) return;
   const ledger = await cargarLedger();
@@ -211,14 +211,14 @@ async function eliminarOperacion(index) {
   await guardarLedger(ledger);
   renderLedger(ledger);
 }
- 
+
 async function inicializar() {
   const ledger = await cargarLedger();
   renderLedger(ledger);
 }
- 
+
 inicializar();
 </script>
- 
+
 </body>
 </html>
