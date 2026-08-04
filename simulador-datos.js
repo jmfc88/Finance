@@ -1,14 +1,25 @@
-// VERSION: 2 (29/07/2026) - añade sincronización opcional entre dispositivos:
-// si hay un repo + token de GitHub configurados, cada guardado sube también
-// un archivo ledger.json al repo, y cada carga lo trae primero de ahí (con
-// copia local de respaldo por si no hay conexión). Sin token, funciona
-// exactamente igual que antes (solo local, por dispositivo).
-// (Base: v1 lógica compartida entre simulador.html e historial.html)
+// VERSION: 4 (04/08/2026) - ajusta el valor por defecto del coste de cambio
+// de divisa a 1,2% (antes 1%), a petición del usuario
 
 const COMISION_COMPRA = 1.0;
 const COMISION_VENTA = 1.0;
 const TAX_RATE = 0.19;
 const AHORRO_RATE = 0.10;
+const COSTE_FX_PCT_DEFECTO = 1.2; // % estimado de coste de cambio de divisa
+// (Trade Republic no lo publica como línea aparte, va dentro del margen de
+// ejecución; fuentes externas lo sitúan entre 0,14% y 0,5-1% según el caso.
+// Se usa 1% por defecto como colchón de seguridad, ajustable por el usuario.)
+
+function obtenerCosteFXConfigurado() {
+  try {
+    const valor = localStorage.getItem('coste-fx-pct');
+    return valor !== null ? parseFloat(valor) : COSTE_FX_PCT_DEFECTO;
+  } catch (e) { return COSTE_FX_PCT_DEFECTO; }
+}
+
+function guardarCosteFXConfigurado(pct) {
+  try { localStorage.setItem('coste-fx-pct', String(pct)); } catch (e) { console.error('No se pudo guardar el coste FX', e); }
+}
 const LEDGER_PATH = 'ledger.json';
 
 function obtenerRepoConfigurado() {
