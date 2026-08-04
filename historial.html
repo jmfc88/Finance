@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION: 2 (29/07/2026) - lista de tarjetas clicables con editar/borrar
-desplegable, en vez de tabla con scroll horizontal -->
+<!-- VERSION: 3 (04/08/2026) - mismo arreglo que simulador.html: el campo de
+precio al editar era type="number" y rechazaba la coma decimal -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -103,7 +103,7 @@ desplegable, en vez de tabla con scroll horizontal -->
     <div class="campo"><label>Nombre de la empresa</label><input id="op-nombre" type="text"></div>
   </div>
   <div class="fila">
-    <div class="campo"><label>Precio</label><input id="op-precio" type="number" step="0.01"></div>
+    <div class="campo"><label>Precio</label><input id="op-precio" type="text" inputmode="decimal" placeholder="ej: 23,77"></div>
     <div class="campo"><label>Acciones</label><input id="op-acciones" type="number" step="1"></div>
     <div class="campo"><label>Fecha</label><input id="op-fecha" type="date"></div>
   </div>
@@ -121,6 +121,11 @@ desplegable, en vez de tabla con scroll horizontal -->
 
 <script src="simulador-datos.js"></script>
 <script>
+function parseNumeroEs(texto) {
+  if (texto === null || texto === undefined) return NaN;
+  return parseFloat(String(texto).replace(',', '.').trim());
+}
+
 let ledgerActual = [];
 let editandoIndice = null;
 
@@ -182,7 +187,7 @@ async function guardarEdicion() {
   const ticker = document.getElementById('op-ticker').value.trim().toUpperCase();
   const nombre = document.getElementById('op-nombre').value.trim();
   const isin = document.getElementById('op-isin').value.trim().toUpperCase();
-  const precio = parseFloat(document.getElementById('op-precio').value);
+  const precio = parseNumeroEs(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value;
 
