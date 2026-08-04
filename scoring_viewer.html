@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 17 (03/08/2026) - rediseño de legibilidad: momentum, tendencia
-técnica y RSI ahora en texto claro (bueno/malo/estable) en vez de solo
-números o palabras técnicas; reparto real como frase completa; quitada la
-fila "analistas" (tendencia 3 meses) que no aportaba -->
+<!-- VERSION: 18 (03/08/2026) - muestra el sentimiento de noticias (Yahoo +
+Google News) y los titulares más relevantes en cada tarjeta, ahora que
+viene integrado en el score automático -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -407,6 +406,15 @@ function renderTarjeta(c, esTop) {
         <div><span class="label term" data-tip="Mide si el precio ha subido o bajado demasiado rápido últimamente">ritmo (RSI):</span> <span class="${rsi.clase}">${rsi.texto}</span></div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
+      ${c.noticias && c.noticias.titulares && c.noticias.titulares.length > 0 ? `
+        <div style="margin-top:10px; font-family: ui-monospace, monospace; font-size:11.5px;">
+          <span class="label term" data-tip="Sentimiento de titulares recientes de Yahoo Finance y Google News, por palabras clave">noticias:</span>
+          <span class="${c.noticias.sentimiento_total > 0 ? 'pos' : (c.noticias.sentimiento_total < 0 ? 'neg' : '')}">${c.noticias.sentimiento_total > 0 ? 'tono positivo' : (c.noticias.sentimiento_total < 0 ? 'tono negativo' : 'tono neutro')}</span>
+          <ul style="margin:4px 0 0; padding-left:18px; color:var(--ink-soft);">
+            ${c.noticias.titulares.map(t => `<li>${t.titulo} <span style="font-size:10px;">(${t.fuente})</span></li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
       <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
     </div>
   `;
