@@ -1,9 +1,10 @@
-# VERSION: 1 (28/07/2026) - primera versión
+# VERSION: 2 (04/08/2026) - de cada 30 a cada 15 minutos, y ahora también
+# avisa (no solo actualiza en silencio) cuando el stop-loss sube
 name: Vigilancia de stop-loss
 
 on:
   schedule:
-    - cron: '*/30 13-21 * * 1-5'   # cada 30 min, horario de mercado US, lunes a viernes
+    - cron: '*/15 13-21 * * 1-5'   # cada 15 min, horario de mercado US, lunes a viernes
   workflow_dispatch: {}
 
 jobs:
@@ -31,4 +32,3 @@ jobs:
           git add posiciones.json
           git diff --staged --quiet || git commit -m "actualiza stop-loss dinámico"
           git push
-
