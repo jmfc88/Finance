@@ -1,4 +1,10 @@
 """
+VERSION: 3 (03/08/2026) - AVISO: esta lógica ya está fusionada dentro de
+fase2_scoring.py (v18+), donde corre automáticamente para cada candidata
+del ranking. Este archivo suelto ya NO hace falta ejecutarlo aparte — se
+deja aquí solo por si algún día quieres consultar noticias de un ticker
+que no esté en el ranking actual, fuera del flujo normal.
+
 VERSION: 2 (31/07/2026) - añade búsqueda en Google News (RSS gratis, sin
 clave) junto a las de Yahoo Finance, para pillar también prensa como
 Expansión, Reuters o Bloomberg cuando cubran alguna candidata. Añadidas
