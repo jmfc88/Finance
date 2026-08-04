@@ -2655,7 +2655,7 @@
       "sma200": 20.6,
       "tendencia_analistas": null,
       "sector": "Basic Materials",
-      "resumen_negocio": "Semapa - Sociedade de Investimento e Gestão, SGPS, S.A., a través de sus filiales, se dedica a la producción y comercialización de celulosa, papeles y tisúes para imprenta y escritura en Portugal, resto de Europa, Estados Unidos, África, Asia y Oceanía."
+      "resumen_negocio": "Semapa - Sociedade de Investimento e Gestão, SGPS, S.A., through its subsidiaries, engages in the production and sale of pulp, printing and writing papers, and tissues in Portugal, the rest of Europe, the United States, Africa, Asia, and Oceania."
     },
     {
       "ticker": "ITX.MC",
@@ -3185,9 +3185,9 @@
       "resumen_negocio": "Leonardo S.p.a., empresa industrial y tecnológica, está presente en los sectores de helicópteros, electrónica y seguridad de defensa, soluciones y ciberseguridad, aeronaves, aeroestructuras y espacio en Italia, Reino Unido, resto de Europa, Estados Unidos de América e internacionalmente."
     },
     {
-      "ticker": "EOS.AX",
+      "ticker": "CPR.MI",
       "descartado": false,
-      "nombre_empresa": "Electro Optic Systems Holdings Limited",
+      "nombre_empresa": "Davide Campari-Milano N.V.",
       "isin": null,
       "precio_actual": 7.56,
       "score": 60.1,
@@ -3199,8 +3199,9 @@
       "consenso_real": {
         "excluida": false,
         "empujon": 0,
-        "muestra_insuficiente": true,
-        "total_analistas": 4
+        "pct_strong_buy": 14.3,
+        "pct_vender": 4.8,
+        "total_analistas": 21
       },
       "cotiza_en_euros": false,
       "noticias": {
@@ -3225,11 +3226,155 @@
       },
       "rsi_14": 43.6,
       "tendencia_tecnica": "mixta",
-      "sma50": 8.99,
-      "sma200": 8.25,
+      "sma50": 5.56,
+      "sma200": 5.82,
+      "tendencia_analistas": "estable",
+      "sector": "Consumer Defensive",
+      "resumen_negocio": "Davide Campari-Milano N.V., junto con sus filiales, comercializa bebidas alcohólicas y no alcohólicas en América, Europa, Oriente Medio, África y Asia-Pacífico. Ofrece una gama de productos, que incluyen aperitivos, vodka, whisky, ron, agave, coñac y champán bajo las marcas Aperol, Campari, Picon, Cynar, Sarti Rosa, Campari Soda, Crodino, Aperol Spritz RTE, Wild Turkey, Appleton Estate, Wray and Nephew, The..."
+    },
+    {
+      "ticker": "EDPR.LS",
+      "descartado": false,
+      "nombre_empresa": "EDP Renewables, S.A.",
+      "isin": null,
+      "precio_actual": 13.57,
+      "score": 49.2,
+      "consenso": "buy",
+      "precio_objetivo_medio": 14.75435,
+      "dispersion_pct": 89.5,
+      "momentum_30d_pct": -3.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 17.4,
+        "pct_vender": 8.7,
+        "total_analistas": 23
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-EDP RENEWABLES, S.A. La sociedad remite información financiera del primer semestre de 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-EDP RENEWABLES, S.A. La sociedad remite información financiera del primer semestre de 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "EDP Renewables SA (EDPR) Precio & Cotización Acciones | Negocia Ahora - Capital.com",
+            "fuente": "Capital.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 42.4,
+      "tendencia_tecnica": "mixta",
+      "sma50": 13.9,
+      "sma200": 13.1,
+      "tendencia_analistas": null,
+      "sector": "Utilities",
+      "resumen_negocio": "EDP ​​Renovables, S.A. desarrolla su actividad en el negocio de las energías renovables en Europa, Norteamérica, Sudamérica y Asia Pacífico. La empresa participa en la planificación, construcción, operación y mantenimiento de plantas de generación de energía utilizando fuentes de energía renovables, incluidas la energía eólica y solar."
+    },
+    {
+      "ticker": "FER.MC",
+      "descartado": false,
+      "nombre_empresa": "Ferrovial N.V.",
+      "isin": null,
+      "precio_actual": 57.66,
+      "score": 49.1,
+      "consenso": "buy",
+      "precio_objetivo_medio": 62.41136,
+      "dispersion_pct": 77.8,
+      "momentum_30d_pct": -3.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 22.7,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-FERROVIAL N.V. Ferrovial remite una versión actualizada de la presentación para inversores de fecha[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Ferrovial: El beneficio supera las previsiones por el alza de los peajes, pero el tráfico se estanca - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Perfil del bono XS329955524: indicadores clave - TradingView",
+            "fuente": "TradingView",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 62.7,
+      "tendencia_tecnica": "mixta",
+      "sma50": 57.94,
+      "sma200": 57.08,
       "tendencia_analistas": null,
       "sector": "Industrials",
-      "resumen_negocio": "Electro Optic Systems Holdings Limited se dedica al desarrollo, fabricación y venta de telescopios y domos, sistemas de seguimiento láser por satélite, sistemas de armas remotas y armas de alto láser."
+      "resumen_negocio": "Ferrovial N.V., junto con sus filiales, se dedica al desarrollo, construcción y operación de autopistas y aeropuertos en Estados Unidos, Polonia, España, Reino Unido, Canadá e internacionalmente."
+    },
+    {
+      "ticker": "MBG.DE",
+      "descartado": false,
+      "nombre_empresa": "Mercedes-Benz Group AG",
+      "isin": null,
+      "precio_actual": 47.46,
+      "score": 49.1,
+      "consenso": "buy",
+      "precio_objetivo_medio": 57.15909,
+      "dispersion_pct": 108.1,
+      "momentum_30d_pct": 5.9,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 17.4,
+        "pct_vender": 8.7,
+        "total_analistas": 23
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "MERCEDES-BENZ GROUP : Jefferies mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Mercedes-Benz gana 2.519 millones en el primer semestre, un 6,3% menos, por la caída de sus ventas en China - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "MERCEDES-BENZ GROUP : recomendación de compra de Deutsche Bank - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 72.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 46.69,
+      "sma200": 51.28,
+      "tendencia_analistas": null,
+      "sector": "Consumer Cyclical",
+      "resumen_negocio": "Mercedes-Benz Group AG opera como empresa automotriz en Europa, Alemania, América del Norte, Estados Unidos, Asia, China e internacionalmente. Opera a través de los segmentos de automóviles Mercedes-Benz, furgonetas Mercedes-Benz y servicios financieros Mercedes-Benz."
     },
     {
       "ticker": "AZM.MI",
@@ -6974,6 +7119,102 @@
       "resumen_negocio": "Koninklijke KPN N.V. ofrece servicios de telecomunicaciones y tecnología de la información (TI) en los Países Bajos. La compañía opera a través de los segmentos de Consumo, Negocios, Mayorista y Redes, y Operaciones y TI."
     },
     {
+      "ticker": "RNO.PA",
+      "descartado": false,
+      "nombre_empresa": "Renault SA",
+      "isin": null,
+      "precio_actual": 27.82,
+      "score": 43.0,
+      "consenso": "buy",
+      "precio_objetivo_medio": 37.835,
+      "dispersion_pct": 159.2,
+      "momentum_30d_pct": 7.2,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 10.0,
+        "total_analistas": 20
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "El Grupo Renault gana 705 millones de euros hasta junio apoyado en el alza de las ventas y la reducción de costes - elespanol.com",
+            "fuente": "elespanol.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "RENAULT SA : Recibe una recomendación de compra del JP Morgan - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "RENAULT SA : Jefferies permanece neutral - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 65.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 26.98,
+      "sma200": 29.32,
+      "tendencia_analistas": "estable",
+      "sector": "Consumer Cyclical",
+      "resumen_negocio": "Renault SA se dedica al diseño, fabricación, venta, reparación, mantenimiento y arrendamiento de vehículos de motor en Europa, Eurasia, África, Medio Oriente, Asia Pacífico y América."
+    },
+    {
+      "ticker": "BN.PA",
+      "descartado": false,
+      "nombre_empresa": "Danone S.A.",
+      "isin": null,
+      "precio_actual": 67.64,
+      "score": 42.6,
+      "consenso": "buy",
+      "precio_objetivo_medio": 80.02273,
+      "dispersion_pct": 53.2,
+      "momentum_30d_pct": -8.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -8,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 13.6,
+        "total_analistas": 22
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": -1,
+        "titulares": [
+          {
+            "titulo": "¿Por qué cae hoy la acción de Danone? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Danone finalise la création de sa joint-venture avec Arcor - TradingView",
+            "fuente": "TradingView",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Danone S.A. presenta sus resultados financieros correspondientes al primer semestre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 34.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 68.45,
+      "sma200": 69.49,
+      "tendencia_analistas": "estable",
+      "sector": "Consumer Defensive",
+      "resumen_negocio": "Danone S.A. opera en la industria de alimentos y bebidas en Europa, Ucrania, América del Norte, China, Norte de Asia, Oceanía, América Latina, resto de Asia, África, Turquía, Medio Oriente y la Comunidad de Estados Independientes."
+    },
+    {
       "ticker": "REP.MC",
       "descartado": false,
       "nombre_empresa": "Repsol, S.A.",
@@ -8216,6 +8457,102 @@
       "tendencia_tecnica": "mixta",
       "sma50": 20.66,
       "sma200": 19.76,
+      "tendencia_analistas": null,
+      "sector": "Utilities",
+      "resumen_negocio": "Solaria Energía y Medio Ambiente, S.A., junto con sus filiales, genera energía solar fotovoltaica. Posee, gestiona y opera una cartera de aproximadamente 14.200 MW de plantas fotovoltaicas en España, Italia, Portugal, Uruguay y Grecia."
+    },
+    {
+      "ticker": "ARES",
+      "descartado": false,
+      "nombre_empresa": "Ares Management Corporation",
+      "isin": "US03990B1017",
+      "precio_actual": 138.57,
+      "score": 30.1,
+      "consenso": "buy",
+      "precio_objetivo_medio": 144.77779,
+      "dispersion_pct": 37.7,
+      "momentum_30d_pct": null,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 22.2,
+        "pct_vender": 0.0,
+        "total_analistas": 18
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Ares Management eleva su beneficio y sus ingresos en el segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Ares Management Corp reports results for the quarter ended June 30 - Earnings Summary - TradingView",
+            "fuente": "TradingView",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Ares Management cierra 8.200 millones de dólares en préstamos directos en el segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": null,
+      "tendencia_tecnica": "mixta",
+      "sma50": null,
+      "sma200": null,
+      "tendencia_analistas": "estable",
+      "sector": "Financial Services",
+      "resumen_negocio": "Ares Management Corporation opera como gestor de activos alternativo. Su segmento Direct Lending Group ofrece soluciones financieras a pequeñas y medianas empresas. El segmento de Private Equity Group de la compañía se especializa en empresas tempranas, de recuperación, de mediana empresa, de empresas tardías, recapitalización, capital de crecimiento, mercado intermedio, entresuelo, adquisiciones en dificultades y..."
+    },
+    {
+      "ticker": "SLR.MC",
+      "descartado": false,
+      "nombre_empresa": "Solaria Energía y Medio Ambiente, S.A.",
+      "isin": null,
+      "precio_actual": 16.365,
+      "score": 29.8,
+      "consenso": "buy",
+      "precio_objetivo_medio": 23.44667,
+      "dispersion_pct": 75.0,
+      "momentum_30d_pct": -16.8,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -8,
+        "pct_strong_buy": 13.3,
+        "pct_vender": 13.3,
+        "total_analistas": 15
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Solaria convoca su Junta General Ordinaria de Accionistas tras un ejercicio récord y refuerza su estrategia de crecimiento – Solaria - Solaria – Energía y Medio Ambiente",
+            "fuente": "Solaria – Energía y Medio Ambiente",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Las acciones de Solaria caen más de un 5% en la sesión de hoy. ¿Qué está ocurriendo? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-SOLARIA ENERGIA Y MEDIOAMBIENTE, S.A. Solaria comunica que ha obtenido la declaración de impacto[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 30.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 20.65,
+      "sma200": 19.75,
       "tendencia_analistas": null,
       "sector": "Utilities",
       "resumen_negocio": "Solaria Energía y Medio Ambiente, S.A., junto con sus filiales, genera energía solar fotovoltaica. Posee, gestiona y opera una cartera de aproximadamente 14.200 MW de plantas fotovoltaicas en España, Italia, Portugal, Uruguay y Grecia."
