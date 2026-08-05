@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 18 (04/08/2026) - añade coste estimado de cambio de divisa (%,
-configurable, 1% por defecto) para operaciones que no son en euros: un
-checkbox "¿Hubo cambio de divisa?" en registro, break-even y stop-loss,
-que ajusta el precio de equilibrio y el stop-loss real. Se guarda con
-cada operación (cambio_divisa) y se restaura al editar/ver/vender -->
+<!-- VERSION: 19 (05/08/2026) - añade botón "Cargar datos ahora" (faltaba una
+forma manual de re-sincronizar); recoge el panel de coste de divisa en un
+desplegable (ya configurado, no hace falta verlo cada vez) -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -111,7 +109,10 @@ cada operación (cambio_divisa) y se restaura al editar/ver/vender -->
     <div class="campo"><label>Repositorio (usuario/repo)</label><input id="sync-repo" type="text" placeholder="jmfc88/Finance"></div>
     <div class="campo"><label>Token de GitHub (opcional)</label><input id="sync-token" type="password" placeholder="pega aquí tu token"></div>
   </div>
-  <button onclick="guardarSincronizacion()">Guardar</button>
+  <div style="display:flex; gap:8px;">
+    <button onclick="guardarSincronizacion()">Guardar</button>
+    <button onclick="cargarDatosManual()" style="background:var(--green);">Cargar datos ahora</button>
+  </div>
   <div class="resultado" id="sync-estado" style="display:none;"></div>
   <details style="margin-top:10px;">
     <summary style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft); cursor:pointer;">¿Cómo creo el token? (una vez, 2 minutos)</summary>
@@ -124,19 +125,17 @@ cada operación (cambio_divisa) y se restaura al editar/ver/vender -->
       Para revocarlo en cualquier momento: misma página de "Fine-grained tokens" → tu token → "Delete".
     </div>
   </details>
-</section>
-
-<!-- COSTE DE CAMBIO DE DIVISA (opcional) -->
-<section class="panel">
-  <h2>Coste de cambio de divisa (opcional)</h2>
-  <div class="nota" style="margin-top:0; margin-bottom:10px;">
-    Trade Republic no publica este coste como línea aparte — va escondido dentro del margen de ejecución cuando compras algo que no cotiza en euros (EE.UU., Canadá, Australia...). Fuentes externas lo sitúan entre 0,14% y 0,5-1%. Por defecto se asume 1% como colchón de seguridad; ajústalo si con el tiempo ves que la realidad es otra.
-  </div>
-  <div class="fila">
-    <div class="campo"><label>% asumido</label><input id="fx-coste-pct" type="text" inputmode="decimal" placeholder="1"></div>
-  </div>
-  <button onclick="guardarCosteFX()">Guardar</button>
-  <div class="resultado" id="fx-estado" style="display:none;"></div>
+  <details style="margin-top:10px;">
+    <summary style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft); cursor:pointer;">Ajustes avanzados: coste de cambio de divisa</summary>
+    <div class="nota" style="margin-top:8px;">
+      Trade Republic no publica este coste como línea aparte — va escondido dentro del margen de ejecución cuando compras algo que no cotiza en euros. Ya está configurado; solo tócalo si quieres cambiar el % asumido.
+    </div>
+    <div class="fila" style="margin-top:8px;">
+      <div class="campo"><label>% asumido</label><input id="fx-coste-pct" type="text" inputmode="decimal" placeholder="1"></div>
+    </div>
+    <button onclick="guardarCosteFX()">Guardar</button>
+    <div class="resultado" id="fx-estado" style="display:none;"></div>
+  </details>
 </section>
 
 <!-- LEDGER FIFO — primero, es el paso real del día a día -->
@@ -407,7 +406,74 @@ async function registrarOperacion() {
   recalcularFIFO(ledger);
   await guardarLedger(ledger);
   ledgerActual = ledger;
-renderUltimasOperaciones(ledger);
+  renderUltimasOperaciones(ledger);
+  renderResumenFiscal(ledger);
+
+  document.getElementById('op-ticker').value = '';
+  document.getElementById('op-nombre').value = '';
+  document.getElementById('op-isin').value = '';
+  document.getElementById('op-precio').value = '';
+  document.getElementById('op-acciones').value = '';
+  document.getElementById('op-tipo').value = 'compra'; // vuelve al valor por defecto, para no dejarlo pegado en "venta"
+  document.getElementById('op-cambio-divisa').checked = false;
+}
+
+function iniciarEdicion(index) {
+  const op = ledgerActual[index];
+  if (!op) return;
+  document.getElementById('op-tipo').value = op.tipo;
+  document.getElementById('op-ticker').value = op.ticker;
+  document.getElementById('op-nombre').value = op.nombre || '';
+  document.getElementById('op-isin').value = op.isin || '';
+  document.getElementById('op-precio').value = op.precio;
+  document.getElementById('op-acciones').value = op.acciones;
+  document.getElementById('op-fecha').value = op.fecha;
+  document.getElementById('op-cambio-divisa').checked = !!op.cambio_divisa;
+
+  editandoIndice = index;
+  document.getElementById('boton-registrar').textContent = 'Guardar cambios';
+  document.getElementById('aviso-edicion').style.display = 'block';
+  calcularVista();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function cancelarEdicion() {
+  editandoIndice = null;
+  document.getElementById('boton-registrar').textContent = 'Registrar operación';
+  document.getElementById('aviso-edicion').style.display = 'none';
+  document.getElementById('op-ticker').value = '';
+  document.getElementById('op-nombre').value = '';
+  document.getElementById('op-isin').value = '';
+  document.getElementById('op-precio').value = '';
+  document.getElementById('op-acciones').value = '';
+  document.getElementById('op-tipo').value = 'compra';
+  document.getElementById('op-cambio-divisa').checked = false;
+  document.getElementById('vista-previa-calculo').style.display = 'none';
+}
+
+async function guardarEdicion() {
+  const tipo = document.getElementById('op-tipo').value;
+  const ticker = document.getElementById('op-ticker').value.trim().toUpperCase();
+  const nombre = document.getElementById('op-nombre').value.trim();
+  const isin = document.getElementById('op-isin').value.trim().toUpperCase();
+  const precio = parseNumeroEs(document.getElementById('op-precio').value);
+  const acciones = parseInt(document.getElementById('op-acciones').value);
+  const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
+  const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
+
+  if (!ticker || !precio || !acciones || editandoIndice === null) return;
+
+  const ledger = await cargarLedger();
+  ledger[editandoIndice] = {
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
+    acciones_restantes: tipo === 'compra' ? acciones : 0,
+    neto: null,
+  };
+
+  recalcularFIFO(ledger);
+  await guardarLedger(ledger);
+  ledgerActual = ledger;
+  renderUltimasOperaciones(ledger);
   renderResumenFiscal(ledger);
 
   cancelarEdicion();
@@ -636,6 +702,17 @@ function guardarCosteFX() {
   div.textContent = `Guardado: se asumirá un ${pct}% de coste de cambio de divisa en compras que no sean en euros.`;
   calcularBreakEven();
   calcularStopLossPresets();
+}
+
+async function cargarDatosManual() {
+  const div = document.getElementById('sync-estado');
+  div.style.display = 'block';
+  div.textContent = 'Cargando y fusionando datos...';
+  const ledger = await cargarLedger();
+  ledgerActual = ledger;
+  renderUltimasOperaciones(ledger);
+  renderResumenFiscal(ledger);
+  div.textContent = `Hecho: ${ledger.length} operaciones cargadas (locales + GitHub fusionadas).`;
 }
 
 async function inicializar() {
