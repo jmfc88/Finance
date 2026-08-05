@@ -1,9 +1,12 @@
 """
-VERSION: 3 (04/08/2026) - añade el segundo método de stop-loss: escalones de
-+5% de beneficio desde el punto de equilibrio (precio compra + comisiones +
-cambio de divisa si aplica). Cada escalón nuevo avisa la ganancia Y sube el
-stop-loss ORIGINAL por ese mismo múltiplo. Convive con el trailing continuo
-de siempre — el stop-loss real es siempre el más protector de los dos.
+VERSION: 4 (05/08/2026) - CORRECCIÓN CRÍTICA: Yahoo Finance da el precio en
+la divisa real de cotización (ej. CAD para tickers .TO), no en euros. El
+bot comparaba ese precio directamente contra el punto de equilibrio en
+euros — unidades distintas, la comparación no tenía sentido matemático, y
+por eso nunca saltaban las notificaciones de subida de stop-loss para
+posiciones con cambio de divisa. Ahora se detecta la divisa real (info de
+Yahoo, no solo el checkbox) y se convierte con un tipo de cambio en vivo
+antes de cualquier comparación. Mensajes también corregidos de $ a €.
 
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
@@ -86,6 +89,23 @@ def notificar(titulo, mensaje, urgente=True):
     )
 
 
+def obtener_tasa_cambio(moneda_origen):
+    """Convierte cualquier divisa a euros con una API gratuita sin clave.
+    Si falla, devuelve None — en ese caso NO se procesa la posición esta
+    vez (mejor no comparar nada, que comparar mal)."""
+    if moneda_origen == "EUR":
+        return 1.0
+    try:
+        resp = requests.get(
+            f"https://api.frankfurter.dev/v1/latest?base={moneda_origen}&symbols=EUR",
+            timeout=10,
+        )
+        resp.raise_for_status()
+        return resp.json().get("rates", {}).get("EUR")
+    except Exception:
+        return None
+
+
 def procesar_posicion(pos):
     """Calcula el stop-loss con DOS métodos que conviven a la vez, y se
     queda siempre con el más protector (el más alto) de los dos — nunca
@@ -101,13 +121,26 @@ def procesar_posicion(pos):
     actual) por ese mismo múltiplo — así, pasados suficientes escalones,
     el peor caso deja de ser perder dinero y pasa a ser ganar algo seguro.
     """
-    precio_actual = yf.Ticker(pos["ticker"]).info.get("currentPrice")
-    if not precio_actual:
+    info = yf.Ticker(pos["ticker"]).info
+    precio_nativo = info.get("currentPrice")
+    if not precio_nativo:
         return pos, False
+
+    # CRÍTICO: Yahoo da el precio en la divisa real de cotización (ej. CAD
+    # para tickers .TO), no en euros. Compararlo directamente contra un
+    # punto de equilibrio en euros sería comparar unidades distintas.
+    # Se detecta la divisa real (no solo el checkbox) y se convierte con
+    # un tipo de cambio en vivo antes de cualquier cálculo.
+    moneda = info.get("currency", "EUR")
+    tasa = obtener_tasa_cambio(moneda)
+    if tasa is None:
+        print(f"No se pudo obtener el tipo de cambio {moneda}->EUR, se salta {pos['ticker']} esta vez")
+        return pos, False
+    precio_actual = round(precio_nativo * tasa, 4)
 
     stop_anterior = pos.get("stop_loss_actual", 0)
     stop_inicial = pos.get("stop_loss_inicial", stop_anterior)
-    cambio_divisa = pos.get("cambio_divisa", False)
+    cambio_divisa = pos.get("cambio_divisa", False) or moneda != "EUR"
 
     # --- Método 1: trailing continuo (el de siempre) ---
     if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
@@ -131,8 +164,8 @@ def procesar_posicion(pos):
             stop_escalones = round(stop_inicial * (1 + 0.05 * escalon_nuevo), 2)
             aviso_ganancia = (
                 f"💰 {pos['ticker']}: ganando ~{escalon_nuevo * 5}%",
-                f"Precio actual {precio_actual}$, un {escalon_nuevo * 5}% por encima de tu punto de "
-                f"equilibrio ({precio_ganancia:.2f}$). Tu stop-loss sube a {stop_escalones}$.",
+                f"Precio actual {precio_actual}€, un {escalon_nuevo * 5}% por encima de tu punto de "
+                f"equilibrio ({precio_ganancia:.2f}€). Tu stop-loss sube a {stop_escalones}€.",
             )
 
     pos["escalon_actual"] = escalon_nuevo
@@ -147,8 +180,8 @@ def procesar_posicion(pos):
         else:
             notificar(
                 f"📈 {pos['ticker']} sube — sube tu stop-loss",
-                f"Nuevo máximo: {precio_actual}$. Sube tu stop-loss en Trade Republic de "
-                f"{stop_anterior}$ a {nuevo_stop}$ (protege más ganancia ya conseguida).",
+                f"Nuevo máximo: {precio_actual}€. Sube tu stop-loss en Trade Republic de "
+                f"{stop_anterior}€ a {nuevo_stop}€ (protege más ganancia ya conseguida).",
                 urgente=False,
             )
 
@@ -157,7 +190,7 @@ def procesar_posicion(pos):
         neto = beneficio_neto(pos["precio_compra"], precio_actual, pos["acciones"])
         notificar(
             f"🔴 VENDE {pos['ticker']} - stop-loss activado",
-            f"Precio actual: {precio_actual}$. Stop-loss: {pos['stop_loss_actual']}$. "
+            f"Precio actual: {precio_actual}€. Stop-loss: {pos['stop_loss_actual']}€. "
             f"Beneficio neto estimado si vendes ahora: {neto}€. Ejecuta la venta en Trade Republic.",
         )
     return pos, salto
