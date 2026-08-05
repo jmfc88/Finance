@@ -1,7 +1,9 @@
 """
-VERSION: 2 (04/08/2026) - avisa también cuando el stop-loss SUBE (no solo
-cuando salta), con notificación no urgente distinta, para tener visibilidad
-del trailing sin tener que mirar posiciones.json a mano en GitHub
+VERSION: 3 (04/08/2026) - añade el segundo método de stop-loss: escalones de
++5% de beneficio desde el punto de equilibrio (precio compra + comisiones +
+cambio de divisa si aplica). Cada escalón nuevo avisa la ganancia Y sube el
+stop-loss ORIGINAL por ese mismo múltiplo. Convive con el trailing continuo
+de siempre — el stop-loss real es siempre el más protector de los dos.
 
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
@@ -31,6 +33,7 @@ NTFY_TOPIC = os.environ.get("NTFY_TOPIC")
 COMISION_COMPRA = 1.0
 COMISION_VENTA = 1.0
 TAX_RATE = 0.19
+COSTE_FX_PCT = 1.2  # % estimado de coste de cambio de divisa (igual que en el simulador)
 
 # Ejemplo de posiciones.json:
 # [
@@ -39,8 +42,11 @@ TAX_RATE = 0.19
 #     "precio_compra": 41.30,
 #     "acciones": 3,
 #     "stop_loss_actual": 39.50,     # se actualiza solo, solo puede subir
-#     "trailing_pct": 8,             # % por debajo del máximo alcanzado
-#     "maximo_alcanzado": 45.10
+#     "stop_loss_inicial": 39.50,    # el que pusiste al abrir la posición, NO se toca nunca
+#     "trailing_pct": 8,             # % por debajo del máximo alcanzado (método 1)
+#     "maximo_alcanzado": 45.10,
+#     "cambio_divisa": false,        # true si la acción no cotiza en euros
+#     "escalon_actual": 0            # cuántos escalones de +5% de beneficio ya se han disparado
 #   }
 # ]
 
@@ -81,18 +87,64 @@ def notificar(titulo, mensaje, urgente=True):
 
 
 def procesar_posicion(pos):
+    """Calcula el stop-loss con DOS métodos que conviven a la vez, y se
+    queda siempre con el más protector (el más alto) de los dos — nunca
+    con el más bajo, y nunca baja respecto al que ya había:
+
+    Método 1 (el de siempre): trailing continuo, baja del máximo precio
+    alcanzado según trailing_pct.
+
+    Método 2 (nuevo): escalones de +5% de beneficio desde el punto de
+    equilibrio (precio de compra + comisiones + cambio de divisa si
+    aplica). Cada vez que el precio supera un escalón nuevo (5%, 10%,
+    15%...), avisa de la ganancia Y sube el stop-loss ORIGINAL (no el
+    actual) por ese mismo múltiplo — así, pasados suficientes escalones,
+    el peor caso deja de ser perder dinero y pasa a ser ganar algo seguro.
+    """
     precio_actual = yf.Ticker(pos["ticker"]).info.get("currentPrice")
     if not precio_actual:
         return pos, False
 
     stop_anterior = pos.get("stop_loss_actual", 0)
+    stop_inicial = pos.get("stop_loss_inicial", stop_anterior)
+    cambio_divisa = pos.get("cambio_divisa", False)
 
-    # Actualiza el máximo alcanzado y sube el stop-loss si corresponde (nunca baja)
+    # --- Método 1: trailing continuo (el de siempre) ---
     if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
         pos["maximo_alcanzado"] = precio_actual
-        nuevo_stop = round(precio_actual * (1 - pos["trailing_pct"] / 100), 2)
-        if nuevo_stop > stop_anterior:
-            pos["stop_loss_actual"] = nuevo_stop
+    stop_trailing = round(pos.get("maximo_alcanzado", pos["precio_compra"]) * (1 - pos["trailing_pct"] / 100), 2)
+
+    # --- Método 2: escalones de beneficio del 5% desde el punto de equilibrio ---
+    comisiones = COMISION_COMPRA + COMISION_VENTA
+    coste_fx = pos["precio_compra"] * (COSTE_FX_PCT / 100) if cambio_divisa else 0
+    precio_ganancia = pos["precio_compra"] + coste_fx + (comisiones / pos["acciones"])
+
+    escalon_anterior = pos.get("escalon_actual", 0)
+    escalon_nuevo = escalon_anterior
+    stop_escalones = stop_anterior
+    aviso_ganancia = None
+
+    if precio_actual > precio_ganancia:
+        escalon_calculado = int((precio_actual / precio_ganancia - 1) // 0.05)
+        if escalon_calculado > escalon_anterior:
+            escalon_nuevo = escalon_calculado
+            stop_escalones = round(stop_inicial * (1 + 0.05 * escalon_nuevo), 2)
+            aviso_ganancia = (
+                f"💰 {pos['ticker']}: ganando ~{escalon_nuevo * 5}%",
+                f"Precio actual {precio_actual}$, un {escalon_nuevo * 5}% por encima de tu punto de "
+                f"equilibrio ({precio_ganancia:.2f}$). Tu stop-loss sube a {stop_escalones}$.",
+            )
+
+    pos["escalon_actual"] = escalon_nuevo
+
+    # El stop-loss real es siempre el MÁS PROTECTOR de los dos métodos, y nunca baja
+    nuevo_stop = max(stop_anterior, stop_trailing, stop_escalones)
+
+    if nuevo_stop > stop_anterior:
+        pos["stop_loss_actual"] = nuevo_stop
+        if aviso_ganancia:
+            notificar(aviso_ganancia[0], aviso_ganancia[1], urgente=False)
+        else:
             notificar(
                 f"📈 {pos['ticker']} sube — sube tu stop-loss",
                 f"Nuevo máximo: {precio_actual}$. Sube tu stop-loss en Trade Republic de "
