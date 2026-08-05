@@ -1,8 +1,14 @@
 """
-VERSION: 9 (31/07/2026) - relaja el filtro de beta para acciones en euros
-(IBEX35, DAX, CAC40, AEX, etc.): ya no exige movimiento fuerte, solo
-consenso de compra, porque no generan cambio de divisa y así entran
-también empresas consolidadas (ej. BBVA) si tienen un catalizador puntual
+VERSION: 11 (05/08/2026) - revisión a fondo de los 9 índices que devolvían
+0 tickers: (1) NASDAQ100 apuntaba al artículo general del índice, no al
+listado de empresas — corregida la URL y ampliadas las columnas aceptadas;
+(2) IPC_MEXICO quitado, no existe tabla de constituyentes en Wikipedia,
+llevaba fallando desde el principio sin remedio; (3) red de seguridad
+genérica en obtener_indice(): si ninguno de los nombres de columna
+configurados coincide, busca cualquier columna que contenga "ticker",
+"symbol" o "code", para autocorregir futuros cambios de formato en
+Wikipedia sin tener que perseguirlos uno a uno (afecta a MDAX, SDAX,
+TECDAX, BEL20, IBOVESPA, NIKKEI225)
 añadidas en la v7: corregidas las columnas de TSX60 (Symbol, no Ticker) y
 OMXC25 (Ticker symbol); añadida conversión de espacio a guión en tickers
 (ej. "MAERSK A" -> "MAERSK-A") para que Yahoo Finance los reconozca.
@@ -39,6 +45,7 @@ Solo se ejecuta bajo demanda (workflow_dispatch), nunca en cron.
 
 import json
 import io
+import logging
 import os
 import re
 import time
@@ -46,6 +53,10 @@ import time
 import pandas as pd
 import requests
 import yfinance as yf
+
+logging.getLogger("yfinance").setLevel(logging.CRITICAL)  # silencia el ruido de
+# tickers que genuinamente no existen en Yahoo (ya se descartan solos, sin
+# romper nada) — solo tapa el log, no oculta fallos reales del propio script
 
 UNIVERSO_FILE = "universo_tickers.json"
 CACHE_INDICES_FILE = "universo_por_indice.json"
@@ -71,7 +82,7 @@ SUFIJOS_EUR = (".MC", ".DE", ".PA", ".AS", ".BR", ".LS", ".MI", ".VI", ".HE")
 # la app de Trade Republic (capturas de pantalla del usuario, 28/07/2026).
 INDICES = {
     "SP500":       {"url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", "columnas": ["Symbol"], "sufijo": ""},
-    "NASDAQ100":   {"url": "https://en.wikipedia.org/wiki/Nasdaq-100", "columnas": ["Ticker"], "sufijo": ""},
+    "NASDAQ100":   {"url": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies", "columnas": ["Ticker", "Symbol"], "sufijo": ""},
     "DJIA":        {"url": "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average", "columnas": ["Symbol"], "sufijo": ""},
     "TSX60":       {"url": "https://en.wikipedia.org/wiki/S%26P/TSX_60", "columnas": ["Symbol"], "sufijo": ".TO"},
     "IBEX35":      {"url": "https://en.wikipedia.org/wiki/IBEX_35", "columnas": ["Ticker", "Símbolo"], "sufijo": ".MC"},
@@ -86,16 +97,22 @@ INDICES = {
     "PSI20":       {"url": "https://en.wikipedia.org/wiki/PSI-20", "columnas": ["Ticker"], "sufijo": ".LS"},
     "FTSEMIB":     {"url": "https://en.wikipedia.org/wiki/FTSE_MIB", "columnas": ["Ticker"], "sufijo": ".MI"},
     "SMI":         {"url": "https://en.wikipedia.org/wiki/Swiss_Market_Index", "columnas": ["Ticker"], "sufijo": ".SW"},
-    "ATX":         {"url": "https://en.wikipedia.org/wiki/ATX_(stock_market_index)", "columnas": ["Ticker", "Symbol"], "sufijo": ".VI"},
+    "ATX":         {"url": "https://en.wikipedia.org/wiki/Austrian_Traded_Index", "columnas": ["Ticker", "Symbol"], "sufijo": ".VI"},
     "OMXS30":      {"url": "https://en.wikipedia.org/wiki/OMX_Stockholm_30", "columnas": ["Ticker", "Symbol"], "sufijo": ".ST"},
     "OMXC25":      {"url": "https://en.wikipedia.org/wiki/OMX_Copenhagen_25", "columnas": ["Ticker symbol", "Ticker"], "sufijo": ".CO"},
     "OMXH25":      {"url": "https://en.wikipedia.org/wiki/OMX_Helsinki_25", "columnas": ["Ticker", "Symbol"], "sufijo": ".HE"},
     "ASX200":      {"url": "https://en.wikipedia.org/wiki/S%26P/ASX_200", "columnas": ["Code", "Ticker"], "sufijo": ".AX"},
-    "IPC_MEXICO":  {"url": "https://en.wikipedia.org/wiki/S%26P/BMV_IPC", "columnas": ["Ticker", "Symbol"], "sufijo": ".MX"},
+    # IPC_MEXICO quitado: no existe una página de Wikipedia con tabla de
+    # constituyentes para el S&P/BMV IPC — llevaba fallando desde el
+    # principio (0 tickers siempre) sin ninguna vía real de arreglo.
     "IBOVESPA":    {"url": "https://en.wikipedia.org/wiki/Ibovespa", "columnas": ["Ticker", "Código", "Code"], "sufijo": ".SA"},
     "NIKKEI225":   {"url": "https://en.wikipedia.org/wiki/Nikkei_225", "columnas": ["Code", "Ticker"], "sufijo": ".T"},
     "EUROSTOXX50": {"url": "https://en.wikipedia.org/wiki/EURO_STOXX_50", "columnas": ["Ticker"], "sufijo": ""},
 }
+
+
+TODOS_LOS_SUFIJOS = (".TO", ".MC", ".L", ".PA", ".AS", ".BR", ".LS", ".MI", ".SW",
+                     ".VI", ".ST", ".CO", ".HE", ".AX", ".MX", ".SA", ".T")
 
 
 def limpiar_ticker(valor, sufijo):
@@ -103,8 +120,21 @@ def limpiar_ticker(valor, sufijo):
     t = re.sub(r"\[.*?\]", "", t)  # quita notas al pie tipo [1]
     if not t or t.lower() == "nan":
         return None
-    t = t.replace(" ", "-")  # ej: "MAERSK A" -> "MAERSK-A" (formato que espera Yahoo Finance)
-    if sufijo and not t.endswith(sufijo):
+
+    # Si ya trae un sufijo de bolsa reconocible, no le añadimos otro encima.
+    # Pasa con empresas que cotizan en varias bolsas a la vez (ej. ArcelorMittal
+    # aparece en la tabla del CAC40 como "MT.AS", porque cotiza de verdad en
+    # Ámsterdam) — añadirle ".PA" encima generaba un ticker roto: "MT.AS.PA".
+    if any(t.endswith(s) for s in TODOS_LOS_SUFIJOS):
+        return t.replace(" ", "-")
+
+    t = t.replace(" ", "-")  # ej: "MAERSK A" -> "MAERSK-A"
+    # Acciones de doble clase con punto propio (BT.A, CCL.B, CTC.A, GIB.A,
+    # BIP.UN...): si no convertimos ese punto a guion, el sufijo de después
+    # crea un ticker roto de doble punto ("BT.A" + ".L" = "BT.A.L", no existe;
+    # el real en Yahoo es "BT-A.L").
+    t = t.replace(".", "-")
+    if sufijo:
         t = t + sufijo
     return t
 
@@ -116,6 +146,8 @@ def obtener_indice(nombre, cfg):
     resp = requests.get(cfg["url"], headers=CABECERAS, timeout=20)
     resp.raise_for_status()
     tablas = pd.read_html(io.StringIO(resp.text))
+
+    # Primer intento: los nombres de columna exactos que configuramos a mano
     for tabla in tablas:
         for col in cfg["columnas"]:
             if col in tabla.columns:
@@ -123,6 +155,20 @@ def obtener_indice(nombre, cfg):
                 tickers = [t for t in tickers if t]
                 if tickers:
                     return tickers
+
+    # Segundo intento (red de seguridad): si Wikipedia cambió el nombre exacto
+    # de la columna, busca cualquiera que contenga "ticker", "symbol" o "code"
+    # en el nombre — evita tener que perseguir cada cambio de formato a mano.
+    palabras_clave = ("ticker", "symbol", "código", "codigo", "code")
+    for tabla in tablas:
+        for col in tabla.columns:
+            col_texto = str(col).lower()
+            if any(p in col_texto for p in palabras_clave):
+                tickers = [limpiar_ticker(v, cfg["sufijo"]) for v in tabla[col].tolist()]
+                tickers = [t for t in tickers if t]
+                if len(tickers) >= 5:  # con menos, probablemente es una columna equivocada
+                    return tickers
+
     raise ValueError(f"No se encontró una columna de ticker reconocible para {nombre}")
 
 
@@ -199,4 +245,3 @@ def ejecutar():
 
 if __name__ == "__main__":
     ejecutar()
-
