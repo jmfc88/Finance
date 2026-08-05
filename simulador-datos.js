@@ -1,5 +1,8 @@
-// VERSION: 4 (04/08/2026) - ajusta el valor por defecto del coste de cambio
-// de divisa a 1,2% (antes 1%), a petición del usuario
+// VERSION: 5 (05/08/2026) - CORRECCIÓN CRÍTICA: cargarLedger() ya no deja que
+// la copia de GitHub borre sin más lo que hay en local — ahora FUSIONA
+// ambas (sin duplicar) y sube la fusión de vuelta si hacía falta. Antes,
+// si un dispositivo guardaba algo local antes de tener el token puesto,
+// una recarga posterior con GitHub desactualizado podía borrar esos datos.
 
 const COMISION_COMPRA = 1.0;
 const COMISION_VENTA = 1.0;
@@ -37,23 +40,44 @@ function guardarTokenConfigurado(token) {
   } catch (e) { console.error('No se pudo guardar el token', e); }
 }
 
+function claveOperacion(op) {
+  // Identifica una operación de forma única, para poder fusionar sin duplicar
+  return `${op.tipo}|${op.ticker}|${op.fecha}|${op.precio}|${op.acciones}`;
+}
+
+function fusionarLedgers(local, remoto) {
+  const mapa = new Map();
+  [...local, ...remoto].forEach(op => mapa.set(claveOperacion(op), op));
+  return Array.from(mapa.values());
+}
+
 async function cargarLedger() {
+  let local = [];
+  try {
+    const guardado = localStorage.getItem('ledger-operaciones');
+    local = guardado ? JSON.parse(guardado) : [];
+  } catch (e) { /* no pasa nada */ }
+
   const repo = obtenerRepoConfigurado();
   if (repo) {
     try {
       const resp = await fetch(`https://raw.githubusercontent.com/${repo}/main/${LEDGER_PATH}?t=${Date.now()}`, { cache: 'no-store' });
       if (resp.ok) {
         const remoto = await resp.json();
-        try { localStorage.setItem('ledger-operaciones', JSON.stringify(remoto)); } catch (e) { /* no pasa nada, se queda la copia anterior */ }
-        return remoto;
+        const fusionado = fusionarLedgers(local, remoto);
+        recalcularFIFO(fusionado);
+        try { localStorage.setItem('ledger-operaciones', JSON.stringify(fusionado)); } catch (e) { /* no pasa nada */ }
+        // Si local tenía algo que GitHub no tenía todavía, subimos la fusión
+        // para que quede sincronizado — así ningún dispositivo pierde datos.
+        if (fusionado.length !== remoto.length) {
+          await guardarLedger(fusionado);
+        }
+        return fusionado;
       }
       // 404 = todavía no existe el archivo en el repo (normal la primera vez), sigue con lo local
     } catch (e) { /* sin conexión: sigue con la copia local de respaldo */ }
   }
-  try {
-    const guardado = localStorage.getItem('ledger-operaciones');
-    return guardado ? JSON.parse(guardado) : [];
-  } catch (e) { return []; }
+  return local;
 }
 
 async function guardarLedger(ledger) {
