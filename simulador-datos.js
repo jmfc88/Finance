@@ -124,4 +124,3 @@ function recalcularFIFO(ledger) {
   });
   return ledger;
 }
-
