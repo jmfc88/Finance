@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- VERSION: 17 (04/08/2026) - CORRECCIÓN IMPORTANTE: los campos de precio
-eran type="number", que rechaza la coma decimal (23,77) aunque se vea
-escrita en pantalla — por dentro el navegador la trataba como vacía, y
-"Registrar operación" fallaba en silencio sin mostrar el aviso de
-confirmación. Ahora son texto con teclado decimal, aceptan coma o punto -->
+<!-- VERSION: 18 (04/08/2026) - añade coste estimado de cambio de divisa (%,
+configurable, 1% por defecto) para operaciones que no son en euros: un
+checkbox "¿Hubo cambio de divisa?" en registro, break-even y stop-loss,
+que ajusta el precio de equilibrio y el stop-loss real. Se guarda con
+cada operación (cambio_divisa) y se restaura al editar/ver/vender -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -126,6 +126,19 @@ confirmación. Ahora son texto con teclado decimal, aceptan coma o punto -->
   </details>
 </section>
 
+<!-- COSTE DE CAMBIO DE DIVISA (opcional) -->
+<section class="panel">
+  <h2>Coste de cambio de divisa (opcional)</h2>
+  <div class="nota" style="margin-top:0; margin-bottom:10px;">
+    Trade Republic no publica este coste como línea aparte — va escondido dentro del margen de ejecución cuando compras algo que no cotiza en euros (EE.UU., Canadá, Australia...). Fuentes externas lo sitúan entre 0,14% y 0,5-1%. Por defecto se asume 1% como colchón de seguridad; ajústalo si con el tiempo ves que la realidad es otra.
+  </div>
+  <div class="fila">
+    <div class="campo"><label>% asumido</label><input id="fx-coste-pct" type="text" inputmode="decimal" placeholder="1"></div>
+  </div>
+  <button onclick="guardarCosteFX()">Guardar</button>
+  <div class="resultado" id="fx-estado" style="display:none;"></div>
+</section>
+
 <!-- LEDGER FIFO — primero, es el paso real del día a día -->
 <section class="panel">
   <h2>1. Registro de operaciones (FIFO)</h2>
@@ -147,6 +160,12 @@ confirmación. Ahora son texto con teclado decimal, aceptan coma o punto -->
   <div class="fila">
     <div class="campo"><label>ISIN (opcional — pégalo desde el visor de candidatas si lo tiene)</label><input id="op-isin" type="text" placeholder="ej: CA33544P2081"></div>
   </div>
+  <div class="fila">
+    <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px;">
+      <input id="op-cambio-divisa" type="checkbox" onchange="calcularVista()">
+      ¿Hubo cambio de divisa? (acciones de EE.UU., Canadá, Australia... no en euros)
+    </label>
+  </div>
   <div class="resultado" id="vista-previa-calculo" style="display:none;"></div>
   <button id="boton-registrar" onclick="pedirConfirmacion()">Registrar operación</button>
 
@@ -166,6 +185,10 @@ confirmación. Ahora son texto con teclado decimal, aceptan coma o punto -->
     <div class="campo"><label>Precio de compra</label><input id="be-precio" type="text" inputmode="decimal" placeholder="ej: 23,77" oninput="calcularBreakEven()"></div>
     <div class="campo"><label>Acciones</label><input id="be-acciones" type="number" step="1" oninput="calcularBreakEven()"></div>
   </div>
+  <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px; margin-top:4px;">
+    <input id="be-cambio-divisa" type="checkbox" onchange="calcularBreakEven()">
+    ¿Cambio de divisa?
+  </label>
   <div class="resultado" id="be-resultado" style="display:none;"></div>
 </section>
 
@@ -176,7 +199,11 @@ confirmación. Ahora son texto con teclado decimal, aceptan coma o punto -->
     <div class="campo"><label>Precio de compra</label><input id="sl-precio" type="text" inputmode="decimal" placeholder="ej: 23,77" oninput="calcularStopLossPresets()"></div>
     <div class="campo"><label>Acciones</label><input id="sl-acciones" type="number" step="1" oninput="calcularStopLossPresets()"></div>
   </div>
-  <div class="nota" style="margin-top:0;">Pérdida máxima ya incluyendo las comisiones (1€ compra + 1€ venta). Pon este precio como stop-loss inicial en Trade Republic al abrir la posición.</div>
+  <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px; margin-top:4px;">
+    <input id="sl-cambio-divisa" type="checkbox" onchange="calcularStopLossPresets()">
+    ¿Cambio de divisa?
+  </label>
+  <div class="nota" style="margin-top:6px;">Pérdida máxima ya incluyendo las comisiones (1€ compra + 1€ venta)<span id="sl-nota-fx"></span>. Pon este precio como stop-loss inicial en Trade Republic al abrir la posición.</div>
   <div id="sl-presets" class="resultado" style="display:none;"></div>
 </section>
 
@@ -225,10 +252,13 @@ function calcularBreakEven() {
   const div = document.getElementById('be-resultado');
   if (!precio || !acciones) { div.style.display='none'; return; }
   const comisiones = COMISION_COMPRA + COMISION_VENTA;
-  const breakEven = precio + (comisiones / acciones);
+  const hayCambioDivisa = document.getElementById('be-cambio-divisa').checked;
+  const costeFX = hayCambioDivisa ? precio * (obtenerCosteFXConfigurado() / 100) : 0;
+  const breakEven = precio + costeFX + (comisiones / acciones);
   div.style.display = 'block';
-  div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)}$ (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión)`;
+  div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)}$ (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión${hayCambioDivisa ? ` y el ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : ''})`;
 }
+
 function calcularStopLossPresets() {
   const precio = parseNumeroEs(document.getElementById('sl-precio').value);
   const acciones = parseFloat(document.getElementById('sl-acciones').value);
@@ -237,11 +267,15 @@ function calcularStopLossPresets() {
 
   const comisiones = COMISION_COMPRA + COMISION_VENTA;
   const importeInvertido = precio * acciones;
+  const hayCambioDivisa = document.getElementById('sl-cambio-divisa').checked;
+  const costeFXAbsoluto = hayCambioDivisa ? importeInvertido * (obtenerCosteFXConfigurado() / 100) : 0;
   const porcentajes = [10, 12.5, 15];
+
+  document.getElementById('sl-nota-fx').textContent = hayCambioDivisa ? ` + ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : '';
 
   const filas = porcentajes.map(pct => {
     const perdidaMaxima = importeInvertido * (pct / 100);
-    const precioVenta = precio - ((perdidaMaxima - comisiones) / acciones);
+    const precioVenta = precio - ((perdidaMaxima - comisiones - costeFXAbsoluto) / acciones);
     return `<div>−${pct}% → stop-loss en <b>${precioVenta.toFixed(4)}$</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
   }).join('');
 
@@ -256,6 +290,7 @@ function calcularVista() {
   selectorTipo.style.fontWeight = tipo === 'venta' ? 'bold' : 'normal';
   const precio = parseNumeroEs(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
+  const hayCambioDivisa = document.getElementById('op-cambio-divisa').checked;
   const div = document.getElementById('vista-previa-calculo');
 
   // Autorellena las calculadoras de apoyo de abajo, para no tener que
@@ -268,15 +303,18 @@ function calcularVista() {
     document.getElementById('be-acciones').value = acciones;
     document.getElementById('sl-acciones').value = acciones;
   }
+  document.getElementById('be-cambio-divisa').checked = hayCambioDivisa;
+  document.getElementById('sl-cambio-divisa').checked = hayCambioDivisa;
   calcularBreakEven();
   calcularStopLossPresets();
 
   if (!precio || !acciones) { div.style.display = 'none'; return; }
 
   if (tipo === 'compra') {
-    const breakEven = precio + ((COMISION_COMPRA + COMISION_VENTA) / acciones);
+    const costeFX = hayCambioDivisa ? precio * (obtenerCosteFXConfigurado() / 100) : 0;
+    const breakEven = precio + costeFX + ((COMISION_COMPRA + COMISION_VENTA) / acciones);
     div.style.display = 'block';
-    div.textContent = `Coste total: ${(precio * acciones + COMISION_COMPRA).toFixed(2)}€ · break-even de venta: ${breakEven.toFixed(4)}$`;
+    div.textContent = `Coste total: ${(precio * acciones + COMISION_COMPRA).toFixed(2)}€ · break-even de venta: ${breakEven.toFixed(4)}$${hayCambioDivisa ? ' (incluye cambio de divisa estimado)' : ''}`;
   } else {
     div.style.display = 'block';
     div.textContent = `Al confirmar, se calculará el beneficio neto contra tus compras abiertas de este ticker (FIFO).`;
@@ -355,12 +393,13 @@ async function registrarOperacion() {
   const precio = parseNumeroEs(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
+  const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
 
   if (!ticker || !precio || !acciones) return;
 
   const ledger = await cargarLedger();
   ledger.push({
-    tipo, ticker, nombre, isin, precio, acciones, fecha,
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
   });
@@ -368,70 +407,7 @@ async function registrarOperacion() {
   recalcularFIFO(ledger);
   await guardarLedger(ledger);
   ledgerActual = ledger;
-  renderUltimasOperaciones(ledger);
-  renderResumenFiscal(ledger);
-
-  document.getElementById('op-ticker').value = '';
-  document.getElementById('op-nombre').value = '';
-  document.getElementById('op-isin').value = '';
-  document.getElementById('op-precio').value = '';
-  document.getElementById('op-acciones').value = '';
-  document.getElementById('op-tipo').value = 'compra'; // vuelve al valor por defecto, para no dejarlo pegado en "venta"
-}
-
-function iniciarEdicion(index) {
-  const op = ledgerActual[index];
-  if (!op) return;
-  document.getElementById('op-tipo').value = op.tipo;
-  document.getElementById('op-ticker').value = op.ticker;
-  document.getElementById('op-nombre').value = op.nombre || '';
-  document.getElementById('op-isin').value = op.isin || '';
-  document.getElementById('op-precio').value = op.precio;
-  document.getElementById('op-acciones').value = op.acciones;
-  document.getElementById('op-fecha').value = op.fecha;
-
-  editandoIndice = index;
-  document.getElementById('boton-registrar').textContent = 'Guardar cambios';
-  document.getElementById('aviso-edicion').style.display = 'block';
-  calcularVista();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function cancelarEdicion() {
-  editandoIndice = null;
-  document.getElementById('boton-registrar').textContent = 'Registrar operación';
-  document.getElementById('aviso-edicion').style.display = 'none';
-  document.getElementById('op-ticker').value = '';
-  document.getElementById('op-nombre').value = '';
-  document.getElementById('op-isin').value = '';
-  document.getElementById('op-precio').value = '';
-  document.getElementById('op-acciones').value = '';
-  document.getElementById('op-tipo').value = 'compra';
-  document.getElementById('vista-previa-calculo').style.display = 'none';
-}
-
-async function guardarEdicion() {
-  const tipo = document.getElementById('op-tipo').value;
-  const ticker = document.getElementById('op-ticker').value.trim().toUpperCase();
-  const nombre = document.getElementById('op-nombre').value.trim();
-  const isin = document.getElementById('op-isin').value.trim().toUpperCase();
-  const precio = parseNumeroEs(document.getElementById('op-precio').value);
-  const acciones = parseInt(document.getElementById('op-acciones').value);
-  const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
-
-  if (!ticker || !precio || !acciones || editandoIndice === null) return;
-
-  const ledger = await cargarLedger();
-  ledger[editandoIndice] = {
-    tipo, ticker, nombre, isin, precio, acciones, fecha,
-    acciones_restantes: tipo === 'compra' ? acciones : 0,
-    neto: null,
-  };
-
-  recalcularFIFO(ledger);
-  await guardarLedger(ledger);
-  ledgerActual = ledger;
-  renderUltimasOperaciones(ledger);
+renderUltimasOperaciones(ledger);
   renderResumenFiscal(ledger);
 
   cancelarEdicion();
@@ -510,7 +486,7 @@ function renderPosicionesAbiertas(ledger) {
   }
   cont.innerHTML = abiertas.map(({ op, idx }) => `
     <div style="padding:10px 12px; border:1px solid var(--ink); border-radius:3px; margin-bottom:8px; background:#fff;">
-      <div onclick="verCalculosDesde(${op.precio}, ${op.acciones_restantes})" style="cursor:pointer;">
+      <div onclick="verCalculosDesde(${op.precio}, ${op.acciones_restantes}, ${!!op.cambio_divisa})" style="cursor:pointer;">
         <div style="display:flex; justify-content:space-between;">
           <b>${op.ticker}</b>
           <span style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">toca para ver break-even / stop-loss ▸</span>
@@ -520,7 +496,7 @@ function renderPosicionesAbiertas(ledger) {
         </div>
       </div>
       <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
-        <button onclick="iniciarVentaDesde('${op.ticker}', '${(op.nombre || '').replace(/'/g, "\\'")}', ${op.acciones_restantes}, ${op.precio})" style="font-size:12px;">Vender esta posición</button>
+        <button onclick="iniciarVentaDesde('${op.ticker}', '${(op.nombre || '').replace(/'/g, "\\'")}', ${op.acciones_restantes}, ${op.precio}, ${!!op.cambio_divisa})" style="font-size:12px;">Vender esta posición</button>
         <button onclick="iniciarEdicion(${idx})" style="font-size:12px;">Editar</button>
         <button onclick="eliminarOperacion(${idx})" style="font-size:12px; background:var(--brick);">Borrar</button>
       </div>
@@ -528,31 +504,36 @@ function renderPosicionesAbiertas(ledger) {
   `).join('');
 }
 
-function verCalculosDesde(precio, acciones) {
+function verCalculosDesde(precio, acciones, cambioDivisa) {
   document.getElementById('be-precio').value = precio;
   document.getElementById('be-acciones').value = acciones;
+  document.getElementById('be-cambio-divisa').checked = !!cambioDivisa;
   document.getElementById('sl-precio').value = precio;
   document.getElementById('sl-acciones').value = acciones;
+  document.getElementById('sl-cambio-divisa').checked = !!cambioDivisa;
   calcularBreakEven();
   calcularStopLossPresets();
   document.getElementById('be-precio').closest('section').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function iniciarVentaDesde(ticker, nombre, accionesDisponibles, precioCompra) {
+function iniciarVentaDesde(ticker, nombre, accionesDisponibles, precioCompra, cambioDivisa) {
   document.getElementById('op-tipo').value = 'venta';
   document.getElementById('op-ticker').value = ticker;
   document.getElementById('op-nombre').value = nombre || '';
   document.getElementById('op-acciones').value = accionesDisponibles;
   document.getElementById('op-precio').value = '';
   document.getElementById('op-fecha').value = '';
+  document.getElementById('op-cambio-divisa').checked = !!cambioDivisa;
   document.getElementById('vista-previa-calculo').style.display = 'none';
 
   // Recalcula break-even y stop-loss con el precio de compra real de esta
   // posición, para que no se queden con el último valor calculado antes.
   document.getElementById('be-precio').value = precioCompra;
   document.getElementById('be-acciones').value = accionesDisponibles;
+  document.getElementById('be-cambio-divisa').checked = !!cambioDivisa;
   document.getElementById('sl-precio').value = precioCompra;
   document.getElementById('sl-acciones').value = accionesDisponibles;
+  document.getElementById('sl-cambio-divisa').checked = !!cambioDivisa;
   calcularBreakEven();
   calcularStopLossPresets();
   calcularVista();
@@ -638,8 +619,28 @@ function guardarSincronizacion() {
   }
 }
 
+function cargarCosteFXGuardado() {
+  document.getElementById('fx-coste-pct').value = obtenerCosteFXConfigurado();
+}
+
+function guardarCosteFX() {
+  const pct = parseNumeroEs(document.getElementById('fx-coste-pct').value);
+  const div = document.getElementById('fx-estado');
+  if (isNaN(pct) || pct < 0) {
+    div.style.display = 'block';
+    div.textContent = 'Pon un número válido (ej: 1 o 0,5).';
+    return;
+  }
+  guardarCosteFXConfigurado(pct);
+  div.style.display = 'block';
+  div.textContent = `Guardado: se asumirá un ${pct}% de coste de cambio de divisa en compras que no sean en euros.`;
+  calcularBreakEven();
+  calcularStopLossPresets();
+}
+
 async function inicializar() {
   cargarSincronizacionGuardada();
+  cargarCosteFXGuardado();
   const ledger = await cargarLedger();
   ledgerActual = ledger;
   renderUltimasOperaciones(ledger);
