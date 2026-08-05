@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION: 3 (04/08/2026) - mismo arreglo que simulador.html: el campo de
-precio al editar era type="number" y rechazaba la coma decimal -->
+<!-- VERSION: 4 (04/08/2026) - añade el checkbox de cambio de divisa al editar,
+para que no se pierda ese dato al guardar cambios desde esta página -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -110,6 +110,10 @@ precio al editar era type="number" y rechazaba la coma decimal -->
   <div class="fila">
     <div class="campo"><label>ISIN (opcional)</label><input id="op-isin" type="text"></div>
   </div>
+  <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px; margin-bottom:8px;">
+    <input id="op-cambio-divisa" type="checkbox">
+    ¿Hubo cambio de divisa?
+  </label>
   <button onclick="guardarEdicion()" style="background:var(--green);">Guardar cambios</button>
   <button onclick="cancelarEdicion()" style="background:var(--brick);">Cancelar</button>
 </section>
@@ -171,6 +175,7 @@ function iniciarEdicion(index) {
   document.getElementById('op-precio').value = op.precio;
   document.getElementById('op-acciones').value = op.acciones;
   document.getElementById('op-fecha').value = op.fecha;
+  document.getElementById('op-cambio-divisa').checked = !!op.cambio_divisa;
   editandoIndice = index;
   document.getElementById('panel-edicion').style.display = 'block';
   document.getElementById('panel-edicion').scrollIntoView({ behavior: 'smooth' });
@@ -190,6 +195,7 @@ async function guardarEdicion() {
   const precio = parseNumeroEs(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value;
+  const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
 
   if (!ticker || !precio || !acciones || !fecha) {
     alert('Faltan datos: revisa ticker, precio, acciones y fecha.');
@@ -198,7 +204,7 @@ async function guardarEdicion() {
 
   const ledger = await cargarLedger();
   ledger[editandoIndice] = {
-    tipo, ticker, nombre, isin, precio, acciones, fecha,
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
   };
