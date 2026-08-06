@@ -1,12 +1,11 @@
 """
-VERSION: 4 (05/08/2026) - CORRECCIÓN CRÍTICA: Yahoo Finance da el precio en
-la divisa real de cotización (ej. CAD para tickers .TO), no en euros. El
-bot comparaba ese precio directamente contra el punto de equilibrio en
-euros — unidades distintas, la comparación no tenía sentido matemático, y
-por eso nunca saltaban las notificaciones de subida de stop-loss para
-posiciones con cambio de divisa. Ahora se detecta la divisa real (info de
-Yahoo, no solo el checkbox) y se convierte con un tipo de cambio en vivo
-antes de cualquier comparación. Mensajes también corregidos de $ a €.
+VERSION: 7 (06/08/2026) - CONECTA bot.py con el ledger del simulador: antes
+de vigilar, lee ledger.json (ya está en el repo gracias a la sincronización
+del simulador) y reconcilia posiciones.json solo — añade las posiciones
+nuevas que detecte abiertas (con un stop-loss de referencia, preset 12,5%,
+y avisa para que lo revises) y quita las que ya se hayan vendido del todo.
+Ya no hace falta editar posiciones.json a mano cada vez que compras o
+vendes algo en el simulador.
 
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
@@ -31,6 +30,7 @@ import requests
 import yfinance as yf
 
 POSICIONES_FILE = "posiciones.json"
+LEDGER_FILE = "ledger.json"
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC")
 
 COMISION_COMPRA = 1.0
@@ -66,6 +66,81 @@ def guardar_posiciones(posiciones):
         json.dump(posiciones, f, indent=2, ensure_ascii=False)
 
 
+def calcular_stop_loss_inicial(precio_compra, acciones, cambio_divisa, pct=12.5):
+    """Mismo cálculo que el simulador: pérdida máxima X% sobre lo invertido,
+    comisiones y coste de cambio de divisa incluidos. Se usa como valor de
+    referencia automático al detectar una posición nueva — el usuario puede
+    ajustarlo luego editando posiciones.json si no es el preset que quería."""
+    comisiones = COMISION_COMPRA + COMISION_VENTA
+    coste_fx = precio_compra * (COSTE_FX_PCT / 100) if cambio_divisa else 0
+    importe_invertido = precio_compra * acciones
+    perdida_maxima = importe_invertido * (pct / 100)
+    return round(precio_compra - ((perdida_maxima - comisiones - coste_fx) / acciones), 4)
+
+
+def reconciliar_con_ledger(posiciones):
+    """Lee ledger.json (el registro del simulador) y ajusta posiciones.json
+    solo, sin que el usuario tenga que editarlo a mano: añade las posiciones
+    abiertas nuevas que detecte, y quita las que ya se hayan vendido del
+    todo. Si ledger.json no existe o no se puede leer, sigue con lo que
+    hubiera en posiciones.json tal cual, sin romper nada."""
+    if not os.path.exists(LEDGER_FILE):
+        return posiciones
+
+    try:
+        with open(LEDGER_FILE, "r", encoding="utf-8") as f:
+            ledger = json.load(f)
+    except Exception:
+        return posiciones
+
+    # Acciones netas abiertas por ticker, según el ledger (FIFO ya resuelto
+    # por el simulador: acciones_restantes de cada compra)
+    abiertas = {}
+    for op in ledger:
+        if op.get("tipo") != "compra" or op.get("acciones_restantes", 0) <= 0:
+            continue
+        t = op["ticker"]
+        if t not in abiertas:
+            abiertas[t] = {"acciones": 0, "coste_total": 0, "cambio_divisa": op.get("cambio_divisa", False)}
+        abiertas[t]["acciones"] += op["acciones_restantes"]
+        abiertas[t]["coste_total"] += op["acciones_restantes"] * op["precio"]
+
+    posiciones_por_ticker = {p["ticker"]: p for p in posiciones}
+
+    # Quita del vigilante las que ya no están abiertas en el ledger (vendidas del todo)
+    for ticker in list(posiciones_por_ticker):
+        if ticker not in abiertas:
+            print(f"{ticker}: ya no aparece abierta en el ledger, se quita de la vigilancia.")
+            del posiciones_por_ticker[ticker]
+
+    # Añade las que están abiertas en el ledger pero el bot todavía no vigilaba
+    for ticker, datos in abiertas.items():
+        if ticker in posiciones_por_ticker:
+            continue
+        precio_compra = round(datos["coste_total"] / datos["acciones"], 4)
+        stop_inicial = calcular_stop_loss_inicial(precio_compra, datos["acciones"], datos["cambio_divisa"])
+        posiciones_por_ticker[ticker] = {
+            "ticker": ticker,
+            "precio_compra": precio_compra,
+            "acciones": datos["acciones"],
+            "cambio_divisa": datos["cambio_divisa"],
+            "stop_loss_inicial": stop_inicial,
+            "stop_loss_actual": stop_inicial,
+            "trailing_pct": 8,
+            "maximo_alcanzado": precio_compra,
+            "escalon_actual": 0,
+        }
+        notificar(
+            f"[NUEVA POSICIÓN] {ticker}",
+            f"Detectada en el ledger, no estaba en la vigilancia. Precio de compra: {precio_compra}€, "
+            f"{datos['acciones']} acciones. Stop-loss inicial puesto por defecto (preset 12,5%) en "
+            f"{stop_inicial}€ — revísalo y ajústalo si querías otro nivel.",
+            urgente=False,
+        )
+
+    return list(posiciones_por_ticker.values())
+
+
 def beneficio_neto(precio_compra, precio_venta, acciones):
     bruto = (precio_venta - precio_compra) * acciones
     comisiones = COMISION_COMPRA + COMISION_VENTA
@@ -78,15 +153,23 @@ def notificar(titulo, mensaje, urgente=True):
     if not NTFY_TOPIC:
         print(f"[SIN NTFY_TOPIC] {titulo}: {mensaje}")
         return
-    requests.post(
-        f"https://ntfy.sh/{NTFY_TOPIC}",
-        data=mensaje.encode("utf-8"),
-        headers={
-            "Title": titulo,
-            "Priority": "urgent" if urgente else "default",
-            "Tags": "warning" if urgente else "chart_with_upwards_trend",
-        },
-    )
+    # Se usa el formato JSON de ntfy (no las cabeceras HTTP normales) porque
+    # las cabeceras solo admiten un juego de caracteres muy limitado (Latin-1)
+    # y los emojis (💰📈🔴🎯) rompían el envío con un UnicodeEncodeError.
+    try:
+        requests.post(
+            "https://ntfy.sh/",
+            json={
+                "topic": NTFY_TOPIC,
+                "title": titulo,
+                "message": mensaje,
+                "priority": 5 if urgente else 3,
+                "tags": ["warning"] if urgente else ["chart_with_upwards_trend"],
+            },
+            timeout=10,
+        )
+    except Exception as e:
+        print(f"No se pudo enviar la notificación ({titulo}): {e}")
 
 
 def obtener_tasa_cambio(moneda_origen):
@@ -163,7 +246,7 @@ def procesar_posicion(pos):
             escalon_nuevo = escalon_calculado
             stop_escalones = round(stop_inicial * (1 + 0.05 * escalon_nuevo), 2)
             aviso_ganancia = (
-                f"💰 {pos['ticker']}: ganando ~{escalon_nuevo * 5}%",
+                f"[GANANCIA] {pos['ticker']}: ganando ~{escalon_nuevo * 5}%",
                 f"Precio actual {precio_actual}€, un {escalon_nuevo * 5}% por encima de tu punto de "
                 f"equilibrio ({precio_ganancia:.2f}€). Tu stop-loss sube a {stop_escalones}€.",
             )
@@ -179,7 +262,7 @@ def procesar_posicion(pos):
             notificar(aviso_ganancia[0], aviso_ganancia[1], urgente=False)
         else:
             notificar(
-                f"📈 {pos['ticker']} sube — sube tu stop-loss",
+                f"[SUBE STOP-LOSS] {pos['ticker']}",
                 f"Nuevo máximo: {precio_actual}€. Sube tu stop-loss en Trade Republic de "
                 f"{stop_anterior}€ a {nuevo_stop}€ (protege más ganancia ya conseguida).",
                 urgente=False,
@@ -189,7 +272,7 @@ def procesar_posicion(pos):
     if salto:
         neto = beneficio_neto(pos["precio_compra"], precio_actual, pos["acciones"])
         notificar(
-            f"🔴 VENDE {pos['ticker']} - stop-loss activado",
+            f"[VENDE] {pos['ticker']} - stop-loss activado",
             f"Precio actual: {precio_actual}€. Stop-loss: {pos['stop_loss_actual']}€. "
             f"Beneficio neto estimado si vendes ahora: {neto}€. Ejecuta la venta en Trade Republic.",
         )
@@ -198,7 +281,10 @@ def procesar_posicion(pos):
 
 def ejecutar():
     posiciones = cargar_posiciones()
+    posiciones = reconciliar_con_ledger(posiciones)
+
     if not posiciones:
+        guardar_posiciones(posiciones)  # guarda por si la reconciliación vació la lista (todo vendido)
         print("No hay posiciones abiertas que vigilar.")
         return
 
