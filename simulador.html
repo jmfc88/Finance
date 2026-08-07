@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<!-- VERSION: 19 (05/08/2026) - añade botón "Cargar datos ahora" (faltaba una
-forma manual de re-sincronizar); recoge el panel de coste de divisa en un
-desplegable (ya configurado, no hace falta verlo cada vez) -->
+<!DOCTYPE html> 
+<!-- VERSION: 20 (06/08/2026) - los presets de stop-loss (sección 3) cambian de
+10/12,5/15% a 7,5/10/12,5%, con las mismas etiquetas que ahora usa bot.py
+([CUIDADO], [PIENSA], [VENDE]) — para ver en el simulador exactamente los
+mismos niveles que vigila el bot -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -268,14 +269,18 @@ function calcularStopLossPresets() {
   const importeInvertido = precio * acciones;
   const hayCambioDivisa = document.getElementById('sl-cambio-divisa').checked;
   const costeFXAbsoluto = hayCambioDivisa ? importeInvertido * (obtenerCosteFXConfigurado() / 100) : 0;
-  const porcentajes = [10, 12.5, 15];
+  const niveles = [
+    { pct: 7.5, etiqueta: '[CUIDADO] aviso suave' },
+    { pct: 10, etiqueta: '[PIENSA] piensa si vender' },
+    { pct: 12.5, etiqueta: '[VENDE] tu stop-loss real' },
+  ];
 
   document.getElementById('sl-nota-fx').textContent = hayCambioDivisa ? ` + ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : '';
 
-  const filas = porcentajes.map(pct => {
+  const filas = niveles.map(({ pct, etiqueta }) => {
     const perdidaMaxima = importeInvertido * (pct / 100);
     const precioVenta = precio - ((perdidaMaxima - comisiones - costeFXAbsoluto) / acciones);
-    return `<div>−${pct}% → stop-loss en <b>${precioVenta.toFixed(4)}$</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
+    return `<div>−${pct}% ${etiqueta} → <b>${precioVenta.toFixed(4)}$</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
   }).join('');
 
   div.style.display = 'block';
