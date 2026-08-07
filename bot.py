@@ -1,11 +1,9 @@
 """
-VERSION: 7 (06/08/2026) - CONECTA bot.py con el ledger del simulador: antes
-de vigilar, lee ledger.json (ya está en el repo gracias a la sincronización
-del simulador) y reconcilia posiciones.json solo — añade las posiciones
-nuevas que detecte abiertas (con un stop-loss de referencia, preset 12,5%,
-y avisa para que lo revises) y quita las que ya se hayan vendido del todo.
-Ya no hace falta editar posiciones.json a mano cada vez que compras o
-vendes algo en el simulador.
+VERSION: 8 (06/08/2026) - añade avisos tempranos de pérdida: -7,5%
+"[CUIDADO]" y -10% "[PIENSA]", antes del stop-loss real (normalmente
+-12,5%, que ya existía como "[VENDE]"). Cada nivel avisa una sola vez,
+misma fórmula que los presets del simulador (comisiones + cambio de
+divisa incluidos), para que los tres niveles sean consistentes entre sí.
 
 BOT DE STOP-LOSS DINÁMICO
 ==========================================
@@ -129,6 +127,7 @@ def reconciliar_con_ledger(posiciones):
             "trailing_pct": 8,
             "maximo_alcanzado": precio_compra,
             "escalon_actual": 0,
+            "avisos_perdida_disparados": [],
         }
         notificar(
             f"[NUEVA POSICIÓN] {ticker}",
@@ -155,7 +154,7 @@ def notificar(titulo, mensaje, urgente=True):
         return
     # Se usa el formato JSON de ntfy (no las cabeceras HTTP normales) porque
     # las cabeceras solo admiten un juego de caracteres muy limitado (Latin-1)
-    # y los emojis (💰📈🔴🎯) rompían el envío con un UnicodeEncodeError.
+    # y los emojis () rompían el envío con un UnicodeEncodeError.
     try:
         requests.post(
             "https://ntfy.sh/",
@@ -170,7 +169,6 @@ def notificar(titulo, mensaje, urgente=True):
         )
     except Exception as e:
         print(f"No se pudo enviar la notificación ({titulo}): {e}")
-
 
 def obtener_tasa_cambio(moneda_origen):
     """Convierte cualquier divisa a euros con una API gratuita sin clave.
@@ -224,6 +222,26 @@ def procesar_posicion(pos):
     stop_anterior = pos.get("stop_loss_actual", 0)
     stop_inicial = pos.get("stop_loss_inicial", stop_anterior)
     cambio_divisa = pos.get("cambio_divisa", False) or moneda != "EUR"
+
+    # --- Método 3: avisos tempranos de pérdida (-7,5% y -10%), antes del
+    # stop-loss real (normalmente -12,5%). Cada nivel avisa una sola vez. ---
+    avisos_disparados = set(pos.get("avisos_perdida_disparados", []))
+    niveles_aviso_perdida = [
+        (7.5, "[CUIDADO]", "está bajando. Nada urgente todavía, solo un ojo."),
+        (10.0, "[PIENSA]", "ya llevas aproximadamente un -10% sobre lo invertido. Piensa si vender ahora o esperar a ver si se recupera."),
+    ]
+    for pct, etiqueta, texto in niveles_aviso_perdida:
+        if pct in avisos_disparados:
+            continue
+        umbral = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, pct)
+        if precio_actual <= umbral:
+            avisos_disparados.add(pct)
+            notificar(
+                f"{etiqueta} {pos['ticker']}",
+                f"Precio actual {precio_actual}€. {pos['ticker']} {texto}",
+                urgente=False,
+            )
+    pos["avisos_perdida_disparados"] = sorted(avisos_disparados)
 
     # --- Método 1: trailing continuo (el de siempre) ---
     if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
@@ -302,3 +320,4 @@ def ejecutar():
 
 if __name__ == "__main__":
     ejecutar()
+
