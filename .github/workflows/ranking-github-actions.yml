@@ -1,18 +1,17 @@
-# VERSION: 11 (31/07/2026) - amplía a 7 ejecuciones automáticas al día
-# (5:11, 7:11, 10:11, 12:11, 14:11, 16:11, 18:11 hora española), para que
-# si GitHub se salta alguna (pasa, no da garantía de disparo con carga
-# alta), sea mucho más probable que la siguiente sí se coja
+# VERSION: 12 (06/08/2026) - añade la Fase 3 (profundización con Google News
+# más específico, solo sobre las mejores 25 candidatas) y reduce a 6
+# ejecuciones al día, más espaciadas (4, 7, 10, 13, 16, 19h España), para
+# dar tiempo a la pasada extra sin solaparse con la siguiente
 name: Actualizar ranking de candidatas
 
 on:
   schedule:
-    - cron: '11 3 * * *'    # 05:11 España (verano)
+    - cron: '11 2 * * *'    # 04:11 España (verano)
     - cron: '11 5 * * *'    # 07:11 España (verano)
     - cron: '11 8 * * *'    # 10:11 España (verano)
-    - cron: '11 10 * * *'   # 12:11 España (verano)
-    - cron: '11 12 * * *'   # 14:11 España (verano)
+    - cron: '11 11 * * *'   # 13:11 España (verano)
     - cron: '11 14 * * *'   # 16:11 España (verano)
-    - cron: '11 16 * * *'   # 18:11 España (verano)
+    - cron: '11 17 * * *'   # 19:11 España (verano)
   workflow_dispatch: {}   # y también cuando tú lo lanzas a mano
 
 jobs:
@@ -26,13 +25,16 @@ jobs:
           python-version: '3.11'
 
       - name: Instalar dependencias
-        run: pip install yfinance pandas lxml deep-translator
+        run: pip install yfinance pandas lxml deep-translator requests
 
       - name: Fase 1 - Screening (lote)
         run: python fase1_screening.py
 
       - name: Fase 2 - Scoring y ranking
         run: python fase2_scoring.py
+
+      - name: Fase 3 - Profundización (solo las mejores 25)
+        run: python fase3_profundizar.py
 
       - name: Guardar resultados
         run: |
