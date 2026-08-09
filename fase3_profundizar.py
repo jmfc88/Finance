@@ -1,4 +1,16 @@
 """
+VERSION: 3 (06/08/2026) - rediseño según lo pedido: si CONFIRMA (neutro o
+positivo) no se tocan ni el score ni el orden, solo se marca "verificado".
+Si CONTRADICE (encuentra algo claramente negativo pese al score alto), se
+resta puntos con tope ±20 — mueve de posición, pero nunca la descarta.
+Antes sumaba puntos también en el caso positivo; ya no.
+
+VERSION: 2 (06/08/2026) - amplía el margen de ajuste de ±8 a ±30: antes era
+un empujón tan pequeño que casi nunca cambiaba el orden del ranking. Ahora,
+si esta pasada encuentra algo fuerte (varias noticias muy negativas o muy
+positivas), sí puede redefinir de verdad la posición de la candidata, no
+solo maquillar el número.
+
 VERSION: 1 (06/08/2026) - segunda pasada automática, solo sobre las mejores
 candidatas del ranking que ya generó fase2_scoring.py (no las 150+, sería
 demasiado lento). Hace búsquedas de Google News más específicas
@@ -22,7 +34,10 @@ ARCHIVO = "candidatos_rankeados.json"
 TOP_N_A_PROFUNDIZAR = 25  # solo las mejores, para no disparar el tiempo de ejecución
 MAX_NOTICIAS_POR_CONSULTA = 4
 PAUSA_ENTRE_PETICIONES = 0.6
-EMPUJON_MAXIMO = 8  # tope, para que esta pasada afine sin dominar el score
+AJUSTE_MAXIMO_NEGATIVO = 20  # tope de cuánto puede restar una contradicción —
+# mueve de posición en el ranking, pero no la destroza por una sola noticia
+# suelta. Si CONFIRMA (neutro o positivo) no se suma nada, solo se marca
+# como verificada — la confirmación no es un motivo para subir puntos.
 
 CABECERAS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
@@ -99,14 +114,26 @@ def profundizar_candidata(candidata):
         time.sleep(PAUSA_ENTRE_PETICIONES)
 
     titulares_adicionales.sort(key=lambda t: abs(t["sentimiento"]), reverse=True)
-    empujon = max(-EMPUJON_MAXIMO, min(EMPUJON_MAXIMO, sentimiento_adicional * 2))
+
+    if sentimiento_adicional < 0:
+        # Contradice la puntuación: está entre las mejores (score alto de
+        # fase 2) pero esta búsqueda más a fondo encuentra noticias
+        # claramente negativas. Se resta, nunca se descarta del todo.
+        verificado = False
+        ajuste = max(-AJUSTE_MAXIMO_NEGATIVO, sentimiento_adicional * 3)
+        candidata["score"] = round(candidata["score"] + ajuste, 1)
+    else:
+        # Confirma (neutro o positivo): no se toca el score ni el orden,
+        # solo se marca como verificada.
+        verificado = True
+        ajuste = 0
 
     candidata["profundizacion"] = {
         "sentimiento_adicional": sentimiento_adicional,
-        "empujon": empujon,
+        "verificado": verificado,
+        "ajuste": ajuste,
         "titulares_adicionales": titulares_adicionales[:3],
     }
-    candidata["score"] = round(candidata["score"] + empujon, 1)
     return candidata
 
 
