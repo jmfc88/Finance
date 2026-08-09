@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 18 (03/08/2026) - muestra el sentimiento de noticias (Yahoo +
-Google News) y los titulares más relevantes en cada tarjeta, ahora que
-viene integrado en el score automático -->
+<!-- VERSION: 19 (06/08/2026) - añade el bloque de titulares de la Fase 3
+(profundización: búsquedas más específicas solo para las mejores 25
+candidatas) -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -360,6 +360,7 @@ function textoTendenciaTecnica(t) {
   return { texto: '—', clase: '' };
 }
 
+
 function textoRSI(rsi) {
   if (rsi === null || rsi === undefined) return { texto: '—', clase: '' };
   if (rsi > 70) return { texto: `subió muy rápido, podría frenarse (${rsi})`, clase: 'neg' };
@@ -412,6 +413,14 @@ function renderTarjeta(c, esTop) {
           <span class="${c.noticias.sentimiento_total > 0 ? 'pos' : (c.noticias.sentimiento_total < 0 ? 'neg' : '')}">${c.noticias.sentimiento_total > 0 ? 'tono positivo' : (c.noticias.sentimiento_total < 0 ? 'tono negativo' : 'tono neutro')}</span>
           <ul style="margin:4px 0 0; padding-left:18px; color:var(--ink-soft);">
             ${c.noticias.titulares.map(t => `<li>${t.titulo} <span style="font-size:10px;">(${t.fuente})</span></li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+      ${c.profundizacion && c.profundizacion.titulares_adicionales && c.profundizacion.titulares_adicionales.length > 0 ? `
+        <div style="margin-top:10px; font-family: ui-monospace, monospace; font-size:11.5px;">
+          <span class="label term" data-tip="Segunda pasada: búsquedas más específicas (analistas, previsión) solo para las mejores candidatas">profundización:</span>
+          <ul style="margin:4px 0 0; padding-left:18px; color:var(--ink-soft);">
+            ${c.profundizacion.titulares_adicionales.map(t => `<li>${t.titulo} <span style="font-size:10px;">(${t.fuente})</span></li>`).join('')}
           </ul>
         </div>
       ` : ''}
