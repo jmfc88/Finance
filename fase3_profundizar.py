@@ -1,4 +1,11 @@
 """
+VERSION: 4 (06/08/2026) - dos arreglos de calidad detectados con RELX: (1)
+deduplicación entre las dos búsquedas (antes el mismo artículo podía
+contar dos veces si aparecía en ambas); (2) filtro de relevancia: descarta
+titulares que no mencionan de verdad el nombre de la empresa (detectado un
+artículo de Bloomberg sobre bancos europeos que no tenía nada que ver con
+RELX, pero Google News lo devolvió por coincidencia floja).
+
 VERSION: 3 (06/08/2026) - rediseño según lo pedido: si CONFIRMA (neutro o
 positivo) no se tocan ni el score ni el orden, solo se marca "verificado".
 Si CONTRADICE (encuentra algo claramente negativo pese al score alto), se
@@ -100,18 +107,49 @@ def buscar_google_news(consulta, maximo=MAX_NOTICIAS_POR_CONSULTA):
         return []
 
 
+PALABRAS_GENERICAS_EMPRESA = {
+    "s.a.", "sa", "plc", "inc", "inc.", "nv", "n.v.", "sgps", "ag", "spa",
+    "s.p.a.", "corp", "corp.", "ltd", "ltd.", "co", "co.", "group",
+    "holding", "holdings", "s.a", "sociedad", "società", "société",
+}
+
+
+def es_relevante(titulo, nombre_empresa):
+    """Filtra artículos que no mencionan de verdad la empresa — a veces
+    Google News devuelve resultados de mercado general poco relacionados
+    aunque la búsqueda incluyera el nombre exacto (detectado con RELX:
+    salió un artículo de Bloomberg sobre bancos europeos que no tenía
+    nada que ver con la empresa)."""
+    palabras = [p.strip(",.") for p in nombre_empresa.split()
+                if p.strip(",.").lower() not in PALABRAS_GENERICAS_EMPRESA]
+    if not palabras:
+        return True  # si no queda ninguna palabra útil del nombre, no filtramos por si acaso
+    return palabras[0].lower() in titulo.lower()
+
+
 def profundizar_candidata(candidata):
     nombre = candidata.get("nombre_empresa") or candidata["ticker"]
     consultas = [f"{nombre} analistas", f"{nombre} previsión"]
 
-    sentimiento_adicional = 0
-    titulares_adicionales = []
+    vistos = set()
+    encontrados = []
     for consulta in consultas:
         for n in buscar_google_news(consulta):
-            puntos = sentimiento_titular(n["titulo"])
-            sentimiento_adicional += puntos
-            titulares_adicionales.append({"titulo": n["titulo"], "fuente": n["fuente"], "sentimiento": puntos})
+            clave = n["titulo"].strip().lower()
+            if clave in vistos:
+                continue  # mismo artículo devuelto por las dos búsquedas, no se cuenta dos veces
+            if not es_relevante(n["titulo"], nombre):
+                continue  # no menciona de verdad la empresa, se descarta
+            vistos.add(clave)
+            encontrados.append(n)
         time.sleep(PAUSA_ENTRE_PETICIONES)
+
+    sentimiento_adicional = 0
+    titulares_adicionales = []
+    for n in encontrados:
+        puntos = sentimiento_titular(n["titulo"])
+        sentimiento_adicional += puntos
+        titulares_adicionales.append({"titulo": n["titulo"], "fuente": n["fuente"], "sentimiento": puntos})
 
     titulares_adicionales.sort(key=lambda t: abs(t["sentimiento"]), reverse=True)
 
