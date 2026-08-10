@@ -1,4 +1,9 @@
 """
+VERSION: 5 (06/08/2026) - contradicción con más peso: tope de -20 a -40, y
+multiplicador de 3 a 4 por titular negativo — una contradicción real es
+peligrosa y tiene que poder hundir a una candidata de verdad, no un tirón
+de orejas simbólico.
+
 VERSION: 4 (06/08/2026) - dos arreglos de calidad detectados con RELX: (1)
 deduplicación entre las dos búsquedas (antes el mismo artículo podía
 contar dos veces si aparecía en ambas); (2) filtro de relevancia: descarta
@@ -41,10 +46,11 @@ ARCHIVO = "candidatos_rankeados.json"
 TOP_N_A_PROFUNDIZAR = 25  # solo las mejores, para no disparar el tiempo de ejecución
 MAX_NOTICIAS_POR_CONSULTA = 4
 PAUSA_ENTRE_PETICIONES = 0.6
-AJUSTE_MAXIMO_NEGATIVO = 20  # tope de cuánto puede restar una contradicción —
-# mueve de posición en el ranking, pero no la destroza por una sola noticia
-# suelta. Si CONFIRMA (neutro o positivo) no se suma nada, solo se marca
-# como verificada — la confirmación no es un motivo para subir puntos.
+AJUSTE_MAXIMO_NEGATIVO = 40  # una contradicción es peligrosa de verdad — con
+# esto puede tirar a una candidata de estar entre las mejores a la parte
+# baja del listado, no un tirón de orejas simbólico. Si CONFIRMA (neutro o
+# positivo) no se suma nada, solo se marca como verificada — la
+# confirmación no es un motivo para subir puntos.
 
 CABECERAS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
@@ -158,7 +164,7 @@ def profundizar_candidata(candidata):
         # fase 2) pero esta búsqueda más a fondo encuentra noticias
         # claramente negativas. Se resta, nunca se descarta del todo.
         verificado = False
-        ajuste = max(-AJUSTE_MAXIMO_NEGATIVO, sentimiento_adicional * 3)
+        ajuste = max(-AJUSTE_MAXIMO_NEGATIVO, sentimiento_adicional * 4)
         candidata["score"] = round(candidata["score"] + ajuste, 1)
     else:
         # Confirma (neutro o positivo): no se toca el score ni el orden,
