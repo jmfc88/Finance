@@ -1,4 +1,9 @@
 """
+VERSION: 21 (11/08/2026) - añade eToro a la lista negra de fuentes
+(consistencia con fase3_profundizar.py) y peso doble (×2) a prensa
+económica de referencia (Reuters, Bloomberg, FT, WSJ, The Economist,
+Barron's) en las noticias de Google News.
+
 VERSION: 20 (04/08/2026) - filtra también TradingKey y cualquier titular
 con formato de cotización en bruto (2+ barras verticales tipo
 "TICKER|Nombre|Precio:X|Variación %:Y"), detectado en REN.AS
@@ -266,8 +271,18 @@ def sentimiento_titular(titular):
 FUENTES_NO_NOTICIA = {
     "tradingview", "simply wall st", "stockanalysis", "stockanalysis.org",
     "marketbeat", "gurufocus", "insider monkey", "barchart", "investing.com markets",
-    "tradingkey",
+    "tradingkey", "etoro",
 }
+
+FUENTES_PREMIUM = {
+    "reuters", "bloomberg", "financial times", "the wall street journal",
+    "wsj", "bloomberg businessweek", "the economist", "barron's", "barrons",
+}
+
+def peso_fuente(fuente):
+    """Da el doble de peso a prensa económica de referencia (Reuters,
+    Bloomberg, FT, WSJ...) frente al resto de fuentes de periodismo real."""
+    return 2 if any(p in fuente.lower() for p in FUENTES_PREMIUM) else 1
 
 
 def parece_cotizacion_en_bruto(titulo):
@@ -286,6 +301,7 @@ def parece_pagina_de_datos(titulo):
     t = titulo.lower()
     metricas_sueltas = ["ebitda", "forward p/e", "price to earnings", "enterprise value"]
     return any(m in t for m in metricas_sueltas)
+
 
 def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
     """Busca en el RSS de Google News (gratis, sin clave). Filtra fuentes
@@ -340,7 +356,7 @@ def analizar_noticias(ticker_obj, ticker, nombre):
             titulares.append({"titulo": titulo, "fuente": "Yahoo Finance", "sentimiento": puntos})
 
         for n in buscar_google_news(nombre or ticker):
-            puntos = sentimiento_titular(n["titulo"])
+            puntos = sentimiento_titular(n["titulo"]) * peso_fuente(n["fuente"] or "")
             sentimiento_total += puntos
             titulares.append({"titulo": n["titulo"], "fuente": n["fuente"] or "Google News", "sentimiento": puntos})
 
