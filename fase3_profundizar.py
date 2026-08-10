@@ -1,4 +1,16 @@
 """
+VERSION: 7 (11/08/2026) - añade peso doble (×2) a prensa económica de
+referencia (Reuters, Bloomberg, Financial Times, WSJ, The Economist,
+Barron's) cuando aparecen — Google News sigue decidiendo solo qué fuentes
+salen, esto solo hace que su opinión cuente más cuando sí aparecen.
+
+VERSION: 6 (11/08/2026) - añade eToro a la lista negra de fuentes (páginas
+de plantilla tipo "noticias y previsiones de los analistas" para cada
+listado de la empresa, no noticias redactadas — detectado con RELX
+apareciendo dos veces vía REN.NV y RELX-ADR). También añadido un filtro
+por patrón de título como red de seguridad genérica, por si otra fuente
+usa la misma plantilla.
+
 VERSION: 5 (06/08/2026) - contradicción con más peso: tope de -20 a -40, y
 multiplicador de 3 a 4 por titular negativo — una contradicción real es
 peligrosa y tiene que poder hundir a una candidata de verdad, no un tirón
@@ -57,7 +69,7 @@ CABECERAS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi
 FUENTES_NO_NOTICIA = {
     "tradingview", "simply wall st", "stockanalysis", "stockanalysis.org",
     "marketbeat", "gurufocus", "insider monkey", "barchart", "investing.com markets",
-    "tradingkey",
+    "tradingkey", "etoro",
 }
 
 PALABRAS_POSITIVAS = [
@@ -79,9 +91,26 @@ def sentimiento_titular(titular):
     return sum(1 for p in PALABRAS_POSITIVAS if p in t) - sum(1 for p in PALABRAS_NEGATIVAS if p in t)
 
 
+FUENTES_PREMIUM = {
+    "reuters", "bloomberg", "financial times", "the wall street journal",
+    "wsj", "bloomberg businessweek", "the economist", "barron's", "barrons",
+}
+
+
+def peso_fuente(fuente):
+    """Da el doble de peso a prensa económica de referencia (Reuters,
+    Bloomberg, FT, WSJ...) frente al resto de fuentes de periodismo real —
+    no las prioriza en cuáles aparecen (eso lo decide Google News solo,
+    no elegimos nosotros de una lista cerrada), solo pesa más su opinión
+    cuando sí aparecen."""
+    return 2 if any(p in fuente.lower() for p in FUENTES_PREMIUM) else 1
+
+
 def parece_pagina_de_datos(titulo):
     t = titulo.lower()
-    return any(m in t for m in ("ebitda", "forward p/e", "price to earnings", "enterprise value"))
+    metricas = ("ebitda", "forward p/e", "price to earnings", "enterprise value")
+    plantillas_genericas = ("noticias y previsiones de los analistas",)  # patrón de página de perfil, no una noticia redactada
+    return any(m in t for m in metricas) or any(p in t for p in plantillas_genericas)
 
 
 def parece_cotizacion_en_bruto(titulo):
@@ -153,7 +182,7 @@ def profundizar_candidata(candidata):
     sentimiento_adicional = 0
     titulares_adicionales = []
     for n in encontrados:
-        puntos = sentimiento_titular(n["titulo"])
+        puntos = sentimiento_titular(n["titulo"]) * peso_fuente(n["fuente"])
         sentimiento_adicional += puntos
         titulares_adicionales.append({"titulo": n["titulo"], "fuente": n["fuente"], "sentimiento": puntos})
 
