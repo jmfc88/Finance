@@ -1,4 +1,11 @@
 """
+VERSION: 9 (11/08/2026) - añade Opción B (Stooq, gratis y sin clave) si
+Yahoo Finance falla o no da precio — antes, una caída puntual de Yahoo
+dejaba la posición sin vigilar esa pasada sin más remedio. Solo cubre
+tickers de EE.UU. sin sufijo (el mapeo a Stooq para otras bolsas no es
+fiable). También envuelto en try/except el propio yf.Ticker().info por si
+Yahoo cae del todo, no solo si devuelve precio vacío.
+
 VERSION: 8 (06/08/2026) - añade avisos tempranos de pérdida: -7,5%
 "[CUIDADO]" y -10% "[PIENSA]", antes del stop-loss real (normalmente
 -12,5%, que ya existía como "[VENDE]"). Cada nivel avisa una sola vez,
@@ -154,7 +161,7 @@ def notificar(titulo, mensaje, urgente=True):
         return
     # Se usa el formato JSON de ntfy (no las cabeceras HTTP normales) porque
     # las cabeceras solo admiten un juego de caracteres muy limitado (Latin-1)
-    # y los emojis () rompían el envío con un UnicodeEncodeError.
+    # y los emojis (💰📈🔴🎯) rompían el envío con un UnicodeEncodeError.
     try:
         requests.post(
             "https://ntfy.sh/",
@@ -169,6 +176,7 @@ def notificar(titulo, mensaje, urgente=True):
         )
     except Exception as e:
         print(f"No se pudo enviar la notificación ({titulo}): {e}")
+
 
 def obtener_tasa_cambio(moneda_origen):
     """Convierte cualquier divisa a euros con una API gratuita sin clave.
@@ -187,6 +195,33 @@ def obtener_tasa_cambio(moneda_origen):
         return None
 
 
+def obtener_precio_respaldo_stooq(ticker):
+    """Opción B si Yahoo Finance falla o no da precio: Stooq, gratis y sin
+    clave. Solo se usa para tickers de EE.UU. sin sufijo (ej. "AAPL") —
+    para el resto de bolsas (.TO, .AX, .MC...) el mapeo de tickers entre
+    Yahoo y Stooq no es lo bastante fiable como para confiar en él a
+    ciegas, así que ahí simplemente no hay respaldo por ahora. Devuelve
+    (precio, moneda) o (None, None) si falla."""
+    if "." in ticker:
+        return None, None  # tiene sufijo de bolsa no-US, sin mapeo fiable a Stooq
+    try:
+        resp = requests.get(
+            f"https://stooq.com/q/l/?s={ticker.lower()}.us&f=sd2t2ohlcv&h&e=csv",
+            timeout=10,
+        )
+        resp.raise_for_status()
+        lineas = resp.text.strip().splitlines()
+        if len(lineas) < 2:
+            return None, None
+        campos = lineas[1].split(",")
+        precio = float(campos[6])  # columna "Close"
+        if precio <= 0:
+            return None, None
+        return precio, "USD"
+    except Exception:
+        return None, None
+
+
 def procesar_posicion(pos):
     """Calcula el stop-loss con DOS métodos que conviven a la vez, y se
     queda siempre con el más protector (el más alto) de los dos — nunca
@@ -202,17 +237,29 @@ def procesar_posicion(pos):
     actual) por ese mismo múltiplo — así, pasados suficientes escalones,
     el peor caso deja de ser perder dinero y pasa a ser ganar algo seguro.
     """
-    info = yf.Ticker(pos["ticker"]).info
-    precio_nativo = info.get("currentPrice")
+    try:
+        info = yf.Ticker(pos["ticker"]).info
+        precio_nativo = info.get("currentPrice")
+        moneda = info.get("currency", "EUR")
+    except Exception:
+        precio_nativo, moneda = None, "EUR"
+
     if not precio_nativo:
-        return pos, False
+        # Yahoo Finance ha fallado (caída puntual, símbolo no encontrado esa
+        # vez...). Antes de rendirnos, probamos la Opción B con Stooq.
+        precio_nativo, moneda_respaldo = obtener_precio_respaldo_stooq(pos["ticker"])
+        if precio_nativo:
+            moneda = moneda_respaldo
+            print(f"{pos['ticker']}: Yahoo Finance falló, usado el precio de respaldo de Stooq.")
+        else:
+            print(f"{pos['ticker']}: no se pudo obtener precio ni de Yahoo ni de Stooq, se salta esta vez.")
+            return pos, False
 
     # CRÍTICO: Yahoo da el precio en la divisa real de cotización (ej. CAD
     # para tickers .TO), no en euros. Compararlo directamente contra un
     # punto de equilibrio en euros sería comparar unidades distintas.
     # Se detecta la divisa real (no solo el checkbox) y se convierte con
     # un tipo de cambio en vivo antes de cualquier cálculo.
-    moneda = info.get("currency", "EUR")
     tasa = obtener_tasa_cambio(moneda)
     if tasa is None:
         print(f"No se pudo obtener el tipo de cambio {moneda}->EUR, se salta {pos['ticker']} esta vez")
@@ -320,4 +367,3 @@ def ejecutar():
 
 if __name__ == "__main__":
     ejecutar()
-
