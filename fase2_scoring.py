@@ -1,4 +1,9 @@
 """
+VERSION: 22 (11/08/2026) - sentimiento con detección de negaciones ("no
+batieron expectativas" ya no cuenta como positivo, se invierte el signo)
+y vocabulario ampliado en español (supera/superó/batió/decepciona) para
+que casos reales como este sí se detecten bien.
+
 VERSION: 21 (11/08/2026) - añade eToro a la lista negra de fuentes
 (consistencia con fase3_profundizar.py) y peso doble (×2) a prensa
 económica de referencia (Reuters, Bloomberg, FT, WSJ, The Economist,
@@ -246,6 +251,7 @@ PALABRAS_POSITIVAS = [
     # español, porque Google News en español devuelve titulares en español
     "mejora", "sube", "récord", "crecimiento", "contrato", "dispara", "eleva",
     "recomendación de compra", "fuerte", "beneficio", "expande", "gana", "acuerdo",
+    "supera", "superó", "superaron", "bate el", "batió", "batieron",
 ]
 PALABRAS_NEGATIVAS = [
     "downgrade", "miss", "loss", "lawsuit", "investigation", "recall",
@@ -253,18 +259,44 @@ PALABRAS_NEGATIVAS = [
     # español
     "rebaja", "cae", "pérdida", "demanda judicial", "investigación", "retirada",
     "recorta", "recomendación de venta", "débil", "retraso", "dilución", "quiebra", "fraude",
+    "decepciona", "decepcionan", "no logra", "no logró", "no alcanza",
 ]
 
 
+NEGACIONES = (
+    " no ", " not ", " sin ", " nunca ", " tampoco ", " ni ", " apenas ",
+    "didn't ", "doesn't ", "won't ", "isn't ", "aren't ", "n't ",
+)
+VENTANA_NEGACION = 18  # caracteres a mirar hacia atrás desde la palabra clave
+
+
+def _hay_negacion_antes(texto, posicion):
+    contexto = texto[max(0, posicion - VENTANA_NEGACION):posicion]
+    return any(neg in contexto for neg in NEGACIONES)
+
+
 def sentimiento_titular(titular):
-    t = titular.lower()
+    """Cuenta palabras clave, pero mirando si hay una negación justo antes
+    (ej. "no batieron expectativas") — si la hay, se invierte el signo en
+    vez de contar la palabra tal cual."""
+    t = f" {titular.lower()} "
     puntos = 0
     for palabra in PALABRAS_POSITIVAS:
-        if palabra in t:
-            puntos += 1
+        inicio = 0
+        while True:
+            idx = t.find(palabra, inicio)
+            if idx == -1:
+                break
+            puntos += -1 if _hay_negacion_antes(t, idx) else 1
+            inicio = idx + len(palabra)
     for palabra in PALABRAS_NEGATIVAS:
-        if palabra in t:
-            puntos -= 1
+        inicio = 0
+        while True:
+            idx = t.find(palabra, inicio)
+            if idx == -1:
+                break
+            puntos += 1 if _hay_negacion_antes(t, idx) else -1
+            inicio = idx + len(palabra)
     return puntos
 
 
@@ -278,6 +310,7 @@ FUENTES_PREMIUM = {
     "reuters", "bloomberg", "financial times", "the wall street journal",
     "wsj", "bloomberg businessweek", "the economist", "barron's", "barrons",
 }
+
 
 def peso_fuente(fuente):
     """Da el doble de peso a prensa económica de referencia (Reuters,
