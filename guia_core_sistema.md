@@ -131,9 +131,9 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 | Archivo | Versión actual |
 |---|---|
 | `fase1_screening.py` | 11 — corrige NASDAQ100 (URL apuntaba al artículo general), quita IPC_MEXICO (sin tabla), red de seguridad genérica para detectar columnas de ticker |
-| `fase2_scoring.py` | 22 — sentimiento con negaciones ("no batieron" ya no cuenta positivo) |
+| `fase2_scoring.py` | 23 — búsquedas en español E inglés, ya no forzado solo a español |
 | `ranking-github-actions.yml` | 13 — añade historial_scoring.json al git add |
-| `fase3_profundizar.py` | 8 — sentimiento con negaciones + histórico acumulado de puntuaciones |
+| `fase3_profundizar.py` | 9 — búsquedas en español E inglés (duplica peticiones por candidata) |
 | `bot-stoploss-github-actions.yml` | 2 — de cada 30 a cada 15 minutos |
 | `bot.py` | 9 — Opción B con Stooq si Yahoo Finance falla (solo tickers US sin sufijo) |
 | `bot1_noticias.py` | 3 — ya no hace falta usarlo, su lógica vive dentro de fase2_scoring.py |
