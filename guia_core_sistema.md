@@ -60,8 +60,8 @@ Cuando vendes:
 **Cómo se usa:** el cálculo no se toca a mano, ambas páginas lo cargan automáticamente. La sincronización se activa una vez desde el panel en `simulador.html` (repo + token de GitHub con permiso "Contents: Read and write" limitado a este repo).
 
 ### 6. `bot.py`
-**Qué hace:** vigila el precio de tus posiciones abiertas y calcula el stop-loss/trailing stop dinámico (Trade Republic no tiene esta función). Cuando salta, te avisa por notificación al móvil vía ntfy.sh — esta es la única notificación que quieres, porque te protege de perder dinero.
-**Cómo se usa:** corre en GitHub Actions en segundo plano mientras tengas posiciones abiertas. Tú solo reaccionas cuando te avisa: entras a Trade Republic y vendes.
+**Qué hace:** vigila el precio de tus posiciones abiertas cada 15 minutos (horario de mercado US) y calcula el stop-loss con DOS métodos que conviven a la vez, quedándose siempre con el más protector (más alto): (1) trailing continuo de siempre, baja del máximo precio alcanzado según `trailing_pct`; (2) escalones de +5% de beneficio desde el punto de equilibrio (precio compra + comisiones + cambio de divisa si `cambio_divisa: true`) — cada escalón nuevo avisa la ganancia y sube el stop-loss ORIGINAL (`stop_loss_inicial`) por ese mismo múltiplo. **Antes de vigilar, lee `ledger.json` (el registro del simulador) y reconcilia `posiciones.json` solo**: añade las posiciones nuevas que detecte abiertas (con un stop-loss de referencia automático, preset 12,5%, y te avisa para que lo revises) y quita las que ya hayas vendido del todo — ya no hace falta editar `posiciones.json` a mano cada vez. Notificaciones en texto plano, sin emojis (rompían el envío): `[GANANCIA]` y `[SUBE STOP-LOSS]` no urgentes, `[VENDE]` urgente cuando salta.
+**Cómo se usa:** corre en GitHub Actions en segundo plano, sin que tengas que tocar nada — solo asegúrate de que la sincronización del simulador esté activa (repo + token), para que `ledger.json` exista en el repo. Si el stop-loss automático que pone por defecto (12,5%) no es el que querías, edita `posiciones.json` y ajusta `stop_loss_inicial`/`stop_loss_actual` a mano esa vez. Tú reaccionas a las notificaciones: subes el stop-loss en Trade Republic cuando avisa que subió, y vendes cuando avisa que saltó.
 
 ### 7. `bot1_noticias.py`
 **Qué hace:** analiza sentimiento de noticias (Yahoo Finance + Google News, palabras clave en inglés/español). **Ya no hace falta usarlo aparte** — esta misma lógica está fusionada dentro de `fase2_scoring.py` (v18+) y corre automáticamente para cada candidata del ranking.
@@ -130,16 +130,17 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 
 | Archivo | Versión actual |
 |---|---|
-| `fase1_screening.py` | 9 — relaja el filtro de beta para acciones en euros (sin cambio de divisa) |
-| `fase2_scoring.py` | 18 — fusiona bot1_noticias.py, ahora automático para cada candidata |
-| `ranking-github-actions.yml` | 11 — 7 ejecuciones automáticas al día (5:11 a 18:11) por si GitHub se salta alguna |
-| `bot-stoploss-github-actions.yml` | 1 |
-| `bot.py` | 1 |
+| `fase1_screening.py` | 11 — corrige NASDAQ100 (URL apuntaba al artículo general), quita IPC_MEXICO (sin tabla), red de seguridad genérica para detectar columnas de ticker |
+| `fase2_scoring.py` | 22 — sentimiento con negaciones ("no batieron" ya no cuenta positivo) |
+| `ranking-github-actions.yml` | 13 — añade historial_scoring.json al git add |
+| `fase3_profundizar.py` | 8 — sentimiento con negaciones + histórico acumulado de puntuaciones |
+| `bot-stoploss-github-actions.yml` | 2 — de cada 30 a cada 15 minutos |
+| `bot.py` | 9 — Opción B con Stooq si Yahoo Finance falla (solo tickers US sin sufijo) |
 | `bot1_noticias.py` | 3 — ya no hace falta usarlo, su lógica vive dentro de fase2_scoring.py |
-| `scoring_viewer.html` | 18 — muestra sentimiento de noticias y titulares por tarjeta |
-| `simulador.html` | 16 — panel de sincronización entre dispositivos vía GitHub (repo + token) |
-| `historial.html` | 2 — tarjetas clicables con editar/borrar desplegable, sin scroll horizontal |
-| `simulador-datos.js` | 2 — sincronización opcional: lee/escribe ledger.json en GitHub si hay repo+token |
+| `scoring_viewer.html` | 20 — muestra "✓ verificado" o "⚠ contradice la puntuación" |
+| `simulador.html` | 20 — presets de stop-loss alineados con el bot: 7,5/10/12,5% |
+| `historial.html` | 4 — checkbox de cambio de divisa también al editar |
+| `simulador-datos.js` | 5 — CRÍTICO: fusiona local+GitHub al cargar, ya no borra datos sin sincronizar |
 | `posiciones.json` | 1 |
 
 ---
