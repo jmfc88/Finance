@@ -1,3 +1,6 @@
+# VERSION: 13 (11/08/2026) - añade historial_scoring.json al git add, para
+# que el histórico acumulado de puntuaciones (nuevo en fase3) se guarde de
+# verdad en el repo cada vez
 # VERSION: 12 (06/08/2026) - añade la Fase 3 (profundización con Google News
 # más específico, solo sobre las mejores 25 candidatas) y reduce a 6
 # ejecuciones al día, más espaciadas (4, 7, 10, 13, 16, 19h España), para
@@ -40,7 +43,7 @@ jobs:
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json
+          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json historial_scoring.json
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
           git pull origin main --no-rebase -X ours
           git push
