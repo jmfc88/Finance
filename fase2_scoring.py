@@ -1,4 +1,10 @@
 """
+VERSION: 23 (11/08/2026) - las búsquedas de Google News ya no se fuerzan a
+español (hl=es-419&gl=ES) — ahora se busca en español E inglés y se
+combinan los resultados, deduplicando entre los dos. El idioma de los
+titulares no es una limitación del proyecto: si hay más cobertura en
+inglés (Reuters, Bloomberg, WSJ...), ahora también se recoge.
+
 VERSION: 22 (11/08/2026) - sentimiento con detección de negaciones ("no
 batieron expectativas" ya no cuenta como positivo, se invierte el signo)
 y vocabulario ampliado en español (supera/superó/batió/decepciona) para
@@ -336,14 +342,20 @@ def parece_pagina_de_datos(titulo):
     return any(m in t for m in metricas_sueltas)
 
 
-def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE):
-    """Busca en el RSS de Google News (gratis, sin clave). Filtra fuentes
-    que son páginas de datos financieros (TradingView, Simply Wall St...)
-    en vez de prensa real, porque Google News las indexa igual que
-    noticias y se colaban mezcladas con titulares de verdad. Si falla (sin
-    conexión, cambio de formato, etc.) devuelve vacío, sin romper el resto."""
+def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE, idioma="es"):
+    """Busca en el RSS de Google News (gratis, sin clave). idioma: 'es'
+    (España) o 'en' (internacional/inglés) — se llama a esta función con
+    los dos por separado y se combinan los resultados, para no perder
+    cobertura de prensa en inglés (Reuters, Bloomberg, WSJ...) solo por
+    buscar en español; el idioma de los titulares no es una limitación
+    del proyecto, se traen tal cual vengan. Filtra fuentes que son
+    páginas de datos financieros (TradingView, Simply Wall St...) en vez
+    de prensa real, porque Google News las indexa igual que noticias y se
+    colaban mezcladas con titulares de verdad. Si falla (sin conexión,
+    cambio de formato, etc.) devuelve vacío, sin romper el resto."""
+    hl, gl, ceid = ("en-US", "US", "US:en") if idioma == "en" else ("es-419", "ES", "ES:es")
     try:
-        url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl=es-419&gl=ES&ceid=ES:es"
+        url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl={hl}&gl={gl}&ceid={ceid}"
         resp = requests.get(url, headers=CABECERAS_NOTICIAS, timeout=10)
         resp.raise_for_status()
         raiz = ET.fromstring(resp.content)
@@ -388,10 +400,16 @@ def analizar_noticias(ticker_obj, ticker, nombre):
             sentimiento_total += puntos
             titulares.append({"titulo": titulo, "fuente": "Yahoo Finance", "sentimiento": puntos})
 
-        for n in buscar_google_news(nombre or ticker):
-            puntos = sentimiento_titular(n["titulo"]) * peso_fuente(n["fuente"] or "")
-            sentimiento_total += puntos
-            titulares.append({"titulo": n["titulo"], "fuente": n["fuente"] or "Google News", "sentimiento": puntos})
+        vistos_google = set()
+        for idioma in ("es", "en"):
+            for n in buscar_google_news(nombre or ticker, idioma=idioma):
+                clave = n["titulo"].strip().lower()
+                if clave in vistos_google:
+                    continue  # mismo artículo devuelto por las dos búsquedas de idioma
+                vistos_google.add(clave)
+                puntos = sentimiento_titular(n["titulo"]) * peso_fuente(n["fuente"] or "")
+                sentimiento_total += puntos
+                titulares.append({"titulo": n["titulo"], "fuente": n["fuente"] or "Google News", "sentimiento": puntos})
 
         titulares.sort(key=lambda t: abs(t["sentimiento"]), reverse=True)
         return {"sentimiento_total": sentimiento_total, "titulares": titulares[:3]}
