@@ -1,4 +1,11 @@
 """
+VERSION: 8 (11/08/2026) - dos mejoras: (1) sentimiento con detección de
+negaciones y vocabulario ampliado en español, igual que fase2_scoring.py;
+(2) guarda un histórico acumulado (historial_scoring.json) con snapshot
+de las mejores candidatas en cada pasada, para poder cruzar más adelante
+contra tus compras/ventas reales y validar si el score de verdad predice
+algo — antes no quedaba ningún rastro histórico del ranking.
+
 VERSION: 7 (11/08/2026) - añade peso doble (×2) a prensa económica de
 referencia (Reuters, Bloomberg, Financial Times, WSJ, The Economist,
 Barron's) cuando aparecen — Google News sigue decidiendo solo qué fuentes
@@ -50,11 +57,15 @@ Entrada/salida: el mismo candidatos_rankeados.json que genera fase2_scoring.py
 import json
 import time
 import xml.etree.ElementTree as ET
+from datetime import datetime
 from urllib.parse import quote
 
 import requests
 
 ARCHIVO = "candidatos_rankeados.json"
+HISTORICO = "historial_scoring.json"
+TOP_N_HISTORICO = 30  # cuántas candidatas se guardan cada vez en el histórico
+MAX_ENTRADAS_HISTORICO = 20000  # límite de seguridad para que el archivo no crezca sin fin
 TOP_N_A_PROFUNDIZAR = 25  # solo las mejores, para no disparar el tiempo de ejecución
 MAX_NOTICIAS_POR_CONSULTA = 4
 PAUSA_ENTRE_PETICIONES = 0.6
@@ -77,18 +88,53 @@ PALABRAS_POSITIVAS = [
     "raises", "buy rating", "strong", "profit", "expand", "win", "partnership",
     "mejora", "sube", "récord", "crecimiento", "contrato", "dispara", "eleva",
     "recomendación de compra", "fuerte", "beneficio", "expande", "gana", "acuerdo",
+    "supera", "superó", "superaron", "bate el", "batió", "batieron",
 ]
 PALABRAS_NEGATIVAS = [
     "downgrade", "miss", "loss", "lawsuit", "investigation", "recall",
     "cuts", "sell rating", "weak", "delay", "dilution", "bankruptcy", "fraud",
     "rebaja", "cae", "pérdida", "demanda judicial", "investigación", "retirada",
     "recorta", "recomendación de venta", "débil", "retraso", "dilución", "quiebra", "fraude",
+    "decepciona", "decepcionan", "no logra", "no logró", "no alcanza",
 ]
 
 
+NEGACIONES = (
+    " no ", " not ", " sin ", " nunca ", " tampoco ", " ni ", " apenas ",
+    "didn't ", "doesn't ", "won't ", "isn't ", "aren't ", "n't ",
+)
+VENTANA_NEGACION = 18  # caracteres a mirar hacia atrás desde la palabra clave
+
+
+def _hay_negacion_antes(texto, posicion):
+    contexto = texto[max(0, posicion - VENTANA_NEGACION):posicion]
+    return any(neg in contexto for neg in NEGACIONES)
+
+
 def sentimiento_titular(titular):
-    t = titular.lower()
-    return sum(1 for p in PALABRAS_POSITIVAS if p in t) - sum(1 for p in PALABRAS_NEGATIVAS if p in t)
+    """Cuenta palabras clave, pero mirando si hay una negación justo antes
+    (ej. "no batieron expectativas") — si la hay, se invierte el signo en
+    vez de contar la palabra tal cual. No es NLP de verdad, pero es mucho
+    mejor que contar palabras sueltas sin ningún contexto."""
+    t = f" {titular.lower()} "
+    puntos = 0
+    for palabra in PALABRAS_POSITIVAS:
+        inicio = 0
+        while True:
+            idx = t.find(palabra, inicio)
+            if idx == -1:
+                break
+            puntos += -1 if _hay_negacion_antes(t, idx) else 1
+            inicio = idx + len(palabra)
+    for palabra in PALABRAS_NEGATIVAS:
+        inicio = 0
+        while True:
+            idx = t.find(palabra, inicio)
+            if idx == -1:
+                break
+            puntos += 1 if _hay_negacion_antes(t, idx) else -1
+            inicio = idx + len(palabra)
+    return puntos
 
 
 FUENTES_PREMIUM = {
@@ -210,6 +256,44 @@ def profundizar_candidata(candidata):
     return candidata
 
 
+def guardar_historico(ranking):
+    """Guarda un snapshot con marca de tiempo de las mejores candidatas de
+    esta pasada, SIN tocar ni sobreescribir lo anterior — se acumula. Esto
+    es lo que en el futuro nos permite responder de verdad "¿las candidatas
+    con score alto rindieron mejor?": cruzando este histórico con las
+    fechas y precios reales de tus compras/ventas en el ledger."""
+    try:
+        with open(HISTORICO, "r", encoding="utf-8") as f:
+            historico = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        historico = []
+
+    ahora = datetime.now().isoformat()
+    for c in ranking[:TOP_N_HISTORICO]:
+        historico.append({
+            "fecha_hora": ahora,
+            "ticker": c["ticker"],
+            "score": c["score"],
+            "precio": c.get("precio_actual"),
+            "consenso": c.get("consenso"),
+            "momentum_30d_pct": c.get("momentum_30d_pct"),
+            "dispersion_pct": c.get("dispersion_pct"),
+            "tendencia_tecnica": c.get("tendencia_tecnica"),
+            "rsi_14": c.get("rsi_14"),
+            "cotiza_en_euros": c.get("cotiza_en_euros"),
+            "catalizador_resultados": c.get("catalizador_resultados") is not None,
+            "profundizacion_verificado": (c.get("profundizacion") or {}).get("verificado"),
+        })
+
+    if len(historico) > MAX_ENTRADAS_HISTORICO:
+        historico = historico[-MAX_ENTRADAS_HISTORICO:]  # recorta lo más viejo si se dispara
+
+    with open(HISTORICO, "w", encoding="utf-8") as f:
+        json.dump(historico, f, indent=2, ensure_ascii=False, allow_nan=False)
+
+    print(f"Histórico actualizado: {len(historico)} snapshots acumulados en total.")
+
+
 def ejecutar():
     with open(ARCHIVO, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -232,6 +316,8 @@ def ejecutar():
 
     with open(ARCHIVO, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False, allow_nan=False)
+
+    guardar_historico(nuevo_ranking)
 
     print(f"Profundización completa: {len(a_profundizar)} candidatas revisadas con búsquedas adicionales.")
 
