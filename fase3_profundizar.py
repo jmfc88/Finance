@@ -1,4 +1,9 @@
 """
+VERSION: 9 (11/08/2026) - búsquedas en español E inglés (antes solo
+español), deduplicando entre los dos. Ojo: dobla el número de peticiones
+por candidata (2 consultas × 2 idiomas = 4), así que esta fase tarda algo
+más que antes.
+
 VERSION: 8 (11/08/2026) - dos mejoras: (1) sentimiento con detección de
 negaciones y vocabulario ampliado en español, igual que fase2_scoring.py;
 (2) guarda un histórico acumulado (historial_scoring.json) con snapshot
@@ -163,9 +168,10 @@ def parece_cotizacion_en_bruto(titulo):
     return titulo.count("|") >= 2
 
 
-def buscar_google_news(consulta, maximo=MAX_NOTICIAS_POR_CONSULTA):
+def buscar_google_news(consulta, maximo=MAX_NOTICIAS_POR_CONSULTA, idioma="es"):
+    hl, gl, ceid = ("en-US", "US", "US:en") if idioma == "en" else ("es-419", "ES", "ES:es")
     try:
-        url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl=es-419&gl=ES&ceid=ES:es"
+        url = f"https://news.google.com/rss/search?q={quote(consulta)}&hl={hl}&gl={gl}&ceid={ceid}"
         resp = requests.get(url, headers=CABECERAS, timeout=10)
         resp.raise_for_status()
         raiz = ET.fromstring(resp.content)
@@ -215,15 +221,16 @@ def profundizar_candidata(candidata):
     vistos = set()
     encontrados = []
     for consulta in consultas:
-        for n in buscar_google_news(consulta):
-            clave = n["titulo"].strip().lower()
-            if clave in vistos:
-                continue  # mismo artículo devuelto por las dos búsquedas, no se cuenta dos veces
-            if not es_relevante(n["titulo"], nombre):
-                continue  # no menciona de verdad la empresa, se descarta
-            vistos.add(clave)
-            encontrados.append(n)
-        time.sleep(PAUSA_ENTRE_PETICIONES)
+        for idioma in ("es", "en"):
+            for n in buscar_google_news(consulta, idioma=idioma):
+                clave = n["titulo"].strip().lower()
+                if clave in vistos:
+                    continue  # mismo artículo devuelto por otra búsqueda/idioma, no se cuenta dos veces
+                if not es_relevante(n["titulo"], nombre):
+                    continue  # no menciona de verdad la empresa, se descarta
+                vistos.add(clave)
+                encontrados.append(n)
+            time.sleep(PAUSA_ENTRE_PETICIONES)
 
     sentimiento_adicional = 0
     titulares_adicionales = []
