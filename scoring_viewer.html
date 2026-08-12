@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 20 (06/08/2026) - muestra la etiqueta "✓ verificado" o "⚠
-contradice la puntuación" de la Fase 3, en vez de solo los titulares -->
+<!-- VERSION: 21 (11/08/2026) - muestra solo las primeras 25 candidatas por
+defecto (las que la Fase 3 profundiza de verdad), con botón "Ver X
+candidatas más" para cargar el resto sin volver a pedir el archivo -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -365,7 +366,6 @@ function textoRSI(rsi) {
   if (rsi < 30) return { texto: `cayó muy rápido, podría rebotar (${rsi})`, clase: 'pos' };
   return { texto: `ritmo normal (${rsi})`, clase: '' };
 }
-
 function renderTarjeta(c, esTop) {
   const scoreClass = c.score >= 0 ? 'pos' : 'neg';
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
@@ -539,11 +539,27 @@ async function traerLista() {
       return;
     }
 
-    const tarjetas = data.ranking.map((c, i) => renderTarjeta(c, i === 0)).join('');
-    contenido.innerHTML = tarjetas + renderDescartadas(data.descartados);
+    const LIMITE_INICIAL = 25; // coincide con las que la Fase 3 profundiza de verdad
+    const primeras = data.ranking.slice(0, LIMITE_INICIAL);
+    const resto = data.ranking.slice(LIMITE_INICIAL);
+
+    const tarjetas = primeras.map((c, i) => renderTarjeta(c, i === 0)).join('');
+    const botonMas = resto.length > 0
+      ? `<button id="btn-ver-mas" onclick="verMasCandidatas()" style="width:100%; margin:8px 0 16px;">Ver ${resto.length} candidatas más</button>`
+      : '';
+
+    contenido.innerHTML = tarjetas + botonMas + '<div id="resto-candidatas"></div>' + renderDescartadas(data.descartados);
+
+    window._restoCandidatas = resto; // se guarda para pintarlo al pulsar el botón, sin volver a pedir el archivo
   } catch (e) {
     contenido.innerHTML = '<div class="estado">Se recibió una respuesta pero no se pudo interpretar. Vuelve a intentarlo.</div>';
   }
+}
+
+function verMasCandidatas() {
+  const resto = window._restoCandidatas || [];
+  document.getElementById('resto-candidatas').innerHTML = resto.map(c => renderTarjeta(c, false)).join('');
+  document.getElementById('btn-ver-mas').remove();
 }
 
 const NIVELES = [
