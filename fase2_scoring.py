@@ -1,4 +1,10 @@
 """
+VERSION: 24 (11/08/2026) - el escalón de "compra fuerte + compra ≥90%
+combinado" ya no da un +12 fijo diera igual el reparto interno — ahora
+escala entre +8 y +12 según cuánta "compra fuerte" hay de verdad (no solo
+"compra" normal). Detectado con EXO.AS (12,5% compra fuerte) y UNI.MI
+(40%) llevándose exactamente el mismo empujón pese a convicción distinta.
+
 VERSION: 23 (11/08/2026) - las búsquedas de Google News ya no se fuerzan a
 español (hl=es-419&gl=ES) — ahora se busca en español E inglés y se
 combinan los resultados, deduplicando entre los dos. El idioma de los
@@ -241,7 +247,6 @@ def tendencia_analistas(ticker_obj):
     except Exception:
         return None
 
-
 MUESTRA_MINIMA_ANALISTAS = 5  # por debajo de esto, la tabla de reparto de
 # Yahoo suele estar incompleta (aunque el consenso agregado sí tenga más
 # analistas reales detrás) — no fiable para excluir ni dar empujón
@@ -457,7 +462,13 @@ def calcular_consenso_real(ticker_obj):
         elif pct_strong_buy >= 90:
             empujon = 20
         elif pct_buy_o_mas >= 90:
-            empujon = 12
+            # Antes era un +12 fijo diera igual el reparto interno — pero
+            # 12,5% de "compra fuerte" (mayormente "compra" normal) no
+            # tiene la misma convicción real que 40%. Ahora escala entre
+            # 8 (poca convicción, mayormente "compra" normal) y 12 (a
+            # partir de 50% de "compra fuerte", ya se considera alta
+            # convicción dentro de este escalón).
+            empujon = round(8 + 4 * min(pct_strong_buy, 50) / 50, 1)
         elif pct_strong_buy >= 75:
             empujon = 8
         else:
