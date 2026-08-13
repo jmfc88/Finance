@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 21 (11/08/2026) - muestra solo las primeras 25 candidatas por
-defecto (las que la Fase 3 profundiza de verdad), con botón "Ver X
-candidatas más" para cargar el resto sin volver a pedir el archivo -->
+<!-- VERSION: 23 (11/08/2026) - restaura el caso "unas horas" (la ventana del
+catalizador volvió a 0-4 días); el texto de momentum ahora distingue si un
+movimiento fuerte sigue activo o ya se ha calmado, usando momentum_5d -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -346,11 +346,26 @@ function obtenerMoneda(ticker) {
   return { simbolo: '$', esEuro: false, esUSD: true }; // sin sufijo = EE.UU.
 }
 
-function textoMomentum(pct) {
-  if (pct === null || pct === undefined) return { texto: '—', clase: '' };
-  if (pct > 5) return { texto: `bueno (+${pct}% el último mes)`, clase: 'pos' };
-  if (pct < -5) return { texto: `malo (${pct}% el último mes)`, clase: 'neg' };
-  return { texto: `estable (${pct}% el último mes)`, clase: '' };
+function textoMomentum(pct30, pct5) {
+  if (pct30 === null || pct30 === undefined) return { texto: '—', clase: '' };
+
+  if (pct30 > 25) {
+    if (pct5 !== null && pct5 !== undefined && pct5 > 8) {
+      return { texto: `todavía disparándose ahora mismo (+${pct30}% el mes, +${pct5}% últimos días) — mal momento para entrar, sería perseguir el precio`, clase: 'neg' };
+    }
+    return { texto: `subió mucho (+${pct30}% el mes) pero ya se ha calmado — sigue "cara", valórala con calma`, clase: '' };
+  }
+
+  if (pct30 < -15) {
+    if (pct5 !== null && pct5 !== undefined && pct5 < -8) {
+      return { texto: `todavía cayendo ahora mismo (${pct30}% el mes, ${pct5}% últimos días) — cuchillo cayendo, mal momento`, clase: 'neg' };
+    }
+    return { texto: `cayó fuerte (${pct30}% el mes) pero ya se ha estabilizado — posible rebote, salvo mala noticia detrás`, clase: 'pos' };
+  }
+
+  if (pct30 > 5) return { texto: `bueno (+${pct30}% el último mes)`, clase: 'pos' };
+  if (pct30 < -5) return { texto: `malo (${pct30}% el último mes)`, clase: 'neg' };
+  return { texto: `estable (${pct30}% el último mes)`, clase: '' };
 }
 
 function textoTendenciaTecnica(t) {
@@ -366,6 +381,7 @@ function textoRSI(rsi) {
   if (rsi < 30) return { texto: `cayó muy rápido, podría rebotar (${rsi})`, clase: 'pos' };
   return { texto: `ritmo normal (${rsi})`, clase: '' };
 }
+
 function renderTarjeta(c, esTop) {
   const scoreClass = c.score >= 0 ? 'pos' : 'neg';
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
@@ -374,7 +390,7 @@ function renderTarjeta(c, esTop) {
   const nombre = c.nombre_empresa || c.ticker;
   const moneda = obtenerMoneda(c.ticker);
   const datosCopiar = `${c.ticker} | ${nombre}${c.isin ? ' | ISIN orientativo (verificar en TR): ' + c.isin : ''} | ${c.precio_actual}${moneda.simbolo}`;
-  const momentum = textoMomentum(c.momentum_30d_pct);
+  const momentum = textoMomentum(c.momentum_30d_pct, c.momentum_5d_pct);
   const tecnica = textoTendenciaTecnica(c.tendencia_tecnica);
   const rsi = textoRSI(c.rsi_14);
   return `
