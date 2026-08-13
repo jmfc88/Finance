@@ -1,4 +1,26 @@
 """
+VERSION: 27 (11/08/2026) - dos cambios: (1) corrige la ventana del
+catalizador de resultados, de 1-4 días de vuelta a 0-4 (el usuario se
+había equivocado al pedir 1-4); (2) rediseña el bloque de momentum:
+añade momentum_5d para distinguir si un movimiento fuerte (>+25% o
+<-15% en el mes) sigue activo ahora mismo o ya se ha calmado — una
+caída fuerte YA ESTABILIZADA se trata como posible rebote (+15), no
+como cuchillo cayendo (+0); una subida fuerte YA CALMADA mantiene el
++5 de antes, pero si sigue disparándose ahora mismo baja a +0.
+
+VERSION: 26 (11/08/2026) - tres ajustes de calibración a petición del
+usuario: (1) potencial ahora alcanza el tope +25 con 75% de subida
+esperada, no 100% (divisor 4→3); (2) catalizador de resultados: ventana
+cambiada de 0-2 días a 1-4 días; (3) tendencia de recomendaciones (3
+meses) sube de ±5 a ±10.
+
+VERSION: 25 (11/08/2026) - añade un factor de confianza por tamaño de
+muestra al empujón de "compra fuerte": con menos de 10 analistas totales,
+un mismo % es menos fiable estadísticamente que con 10+, así que se reduce
+proporcionalmente (confianza plena a partir de 10 analistas). También sube
+el umbral del techo del empujón de 50% a 75% de compra fuerte. Con esto,
+"4 de 10" (mismo 40%, más gente detrás) pesa casi el doble que "2 de 5".
+
 VERSION: 24 (11/08/2026) - el escalón de "compra fuerte + compra ≥90%
 combinado" ya no da un +12 fijo diera igual el reparto interno — ahora
 escala entre +8 y +12 según cuánta "compra fuerte" hay de verdad (no solo
@@ -129,7 +151,7 @@ def catalizador_resultados_recientes(ticker_obj, hist):
 
         fecha_resultado = pasadas.index[0]
         dias_desde = (ahora.date() - fecha_resultado.date()).days
-        if dias_desde < 0 or dias_desde > 2:
+        if dias_desde < 0 or dias_desde > 4:
             return None  # o es futuro, o ya ha pasado demasiado tiempo
 
         sorpresa = pasadas.iloc[0].get("Surprise(%)")
@@ -246,6 +268,7 @@ def tendencia_analistas(ticker_obj):
             return "estable"
     except Exception:
         return None
+
 
 MUESTRA_MINIMA_ANALISTAS = 5  # por debajo de esto, la tabla de reparto de
 # Yahoo suele estar incompleta (aunque el consenso agregado sí tenga más
@@ -462,13 +485,17 @@ def calcular_consenso_real(ticker_obj):
         elif pct_strong_buy >= 90:
             empujon = 20
         elif pct_buy_o_mas >= 90:
-            # Antes era un +12 fijo diera igual el reparto interno — pero
-            # 12,5% de "compra fuerte" (mayormente "compra" normal) no
-            # tiene la misma convicción real que 40%. Ahora escala entre
-            # 8 (poca convicción, mayormente "compra" normal) y 12 (a
-            # partir de 50% de "compra fuerte", ya se considera alta
-            # convicción dentro de este escalón).
-            empujon = round(8 + 4 * min(pct_strong_buy, 50) / 50, 1)
+            # Dos ajustes sobre el +12 fijo original: (1) escala según
+            # cuánta "compra fuerte" hay de verdad, no solo "compra"
+            # normal — el techo (12) ahora se alcanza a partir del 75%
+            # de compra fuerte, no del 50%; (2) además, se pesa por el
+            # tamaño de la muestra: con menos de 10 analistas en total,
+            # un mismo % es menos fiable estadísticamente (podría ser
+            # casualidad) que con 10 o más, así que se reduce
+            # proporcionalmente hasta llegar a confianza plena en 10.
+            confianza_muestra = min(1.0, total / 10)
+            empujon_base = 8 + 4 * min(pct_strong_buy, 75) / 75
+            empujon = round(empujon_base * confianza_muestra, 1)
         elif pct_strong_buy >= 75:
             empujon = 8
         else:
@@ -485,7 +512,7 @@ def calcular_consenso_real(ticker_obj):
         return None
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0):
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None):
     """
     Score de 0 a 100. Pondera:
     - Consenso de analistas (peso bajo, es la señal más ruidosa)
@@ -520,18 +547,34 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     # Momentum: castiga tanto caídas fuertes recientes como subidas parabólicas ya agotadas
     if momentum_30d is not None:
         if -15 <= momentum_30d <= 25:
-            score += 20
+            score += 20  # rango normal, sin movimiento extremo en ningún sentido
         elif momentum_30d > 25:
-            score += 5  # ya ha subido mucho, entrar ahora es peor punto de entrada
+            # Subida fuerte en el mes. Si sigue disparándose ahora mismo
+            # (últimos 5 días también muy fuertes), perseguirla es el peor
+            # punto de entrada. Si ya se ha calmado, sigue "cara" pero al
+            # menos no se está alejando más del precio de entrada.
+            if momentum_5d is not None and momentum_5d > 8:
+                score += 0  # todavía disparándose, mal momento para entrar
+            else:
+                score += 5  # ya se ha calmado, se puede valorar con más calma
         else:
-            score += 0  # cayendo con fuerza, cuchillo cayendo
+            # Caída fuerte en el mes (<-15%). Si sigue cayendo ahora mismo
+            # (últimos 5 días también muy negativos), es un cuchillo
+            # cayendo de verdad — mal momento. Pero si la caída ya pasó y
+            # se ha estabilizado, lo normal es que tienda a recuperar su
+            # precio habitual salvo que haya una noticia muy mala detrás
+            # — eso sí puede ser una buena entrada.
+            if momentum_5d is not None and momentum_5d < -8:
+                score += 0  # todavía en caída libre
+            else:
+                score += 15  # la caída ya pasó y se ha estabilizado, posible rebote
 
     # Potencial de subida hasta precio objetivo medio
     target = info.get("targetMeanPrice")
     precio = info.get("currentPrice") or info.get("regularMarketPrice")
     if target and precio and precio > 0:
         potencial = (target - precio) / precio * 100
-        score += min(max(potencial / 4, -10), 25)  # tope +25 para no dejar que un dato exagerado domine
+        score += min(max(potencial / 3, -10), 25)  # tope +25 alcanzado en 75% de potencial (antes 100%)
 
     # Tendencia técnica: pequeño empujón/freno, no domina el score
     if tendencia_tec == "alcista":
@@ -539,11 +582,11 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     elif tendencia_tec == "bajista":
         score -= 5
 
-    # Tendencia de recomendaciones mes a mes: igual, empujón/freno menor
+    # Tendencia de recomendaciones mes a mes
     if tendencia_analistas_valor == "mejorando":
-        score += 5
+        score += 10
     elif tendencia_analistas_valor == "empeorando":
-        score -= 5
+        score -= 10
 
     # Consenso real por reparto de categorías (no solo la etiqueta media)
     score += empujon_consenso_real
@@ -588,6 +631,10 @@ def evaluar(ticker):
         if len(hist) > 22:
             momentum_30d = round((hist["Close"].iloc[-1] / hist["Close"].iloc[-22] - 1) * 100, 1)
 
+        momentum_5d = None
+        if len(hist) > 6:
+            momentum_5d = round((hist["Close"].iloc[-1] / hist["Close"].iloc[-6] - 1) * 100, 1)
+
         rsi_14 = calcular_rsi(hist["Close"]) if len(hist) > 14 else None
         tendencia_tec, sma50, sma200 = tendencia_tecnica(hist, precio)
         tendencia_analistas_valor = tendencia_analistas(t)
@@ -601,7 +648,7 @@ def evaluar(ticker):
             dispersion_pct = round((target_alto - target_bajo) / target_bajo * 100, 1)
 
         empujon_consenso_real = consenso_real.get("empujon", 0) if consenso_real else 0
-        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor, empujon_consenso_real)
+        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor, empujon_consenso_real, momentum_5d)
         if catalizador:
             score += 12  # empujón notable pero que no domine el resto del método
 
@@ -625,6 +672,7 @@ def evaluar(ticker):
             "precio_objetivo_medio": limpio(info.get("targetMeanPrice")),
             "dispersion_pct": limpio(dispersion_pct),
             "momentum_30d_pct": limpio(momentum_30d),
+            "momentum_5d_pct": limpio(momentum_5d),
             "catalizador_resultados": catalizador,
             "consenso_real": consenso_real,
             "cotiza_en_euros": cotiza_en_euros,
