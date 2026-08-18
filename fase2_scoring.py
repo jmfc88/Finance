@@ -1,4 +1,11 @@
 """
+VERSION: 28 (11/08/2026) - unifica el consenso real en una sola fórmula
+continua que empieza en 60% de consenso combinado (antes el premio fuerte
+solo empezaba en 90%, dejando un hueco enorme sin recompensa entre 75% y
+90%). Escala de +10 a +25 según lo amplio del consenso Y la convicción
+real (compra fuerte), a partes iguales, pesado también por tamaño de
+muestra. Sustituye a los escalones sueltos de 75%/90% anteriores.
+
 VERSION: 27 (11/08/2026) - dos cambios: (1) corrige la ventana del
 catalizador de resultados, de 1-4 días de vuelta a 0-4 (el usuario se
 había equivocado al pedir 1-4); (2) rediseña el bloque de momentum:
@@ -236,7 +243,6 @@ def tendencia_tecnica(hist, precio_actual):
         return tendencia, sma50, sma200
     except Exception:
         return None, None, None
-
 
 def tendencia_analistas(ticker_obj):
     """Compara las recomendaciones de analistas de hoy contra las de hace 3 meses:
@@ -482,22 +488,23 @@ def calcular_consenso_real(ticker_obj):
             empujon = -15
         elif pct_vender >= 10:
             empujon = -8
-        elif pct_strong_buy >= 90:
-            empujon = 20
-        elif pct_buy_o_mas >= 90:
-            # Dos ajustes sobre el +12 fijo original: (1) escala según
-            # cuánta "compra fuerte" hay de verdad, no solo "compra"
-            # normal — el techo (12) ahora se alcanza a partir del 75%
-            # de compra fuerte, no del 50%; (2) además, se pesa por el
-            # tamaño de la muestra: con menos de 10 analistas en total,
-            # un mismo % es menos fiable estadísticamente (podría ser
-            # casualidad) que con 10 o más, así que se reduce
-            # proporcionalmente hasta llegar a confianza plena en 10.
+        elif pct_buy_o_mas >= 60:
+            # Cruzar el 60% de consenso combinado (compra fuerte + compra
+            # normal) ya es difícil de conseguir en la práctica — que
+            # tantos analistas coincidan no es lo normal. Por eso, en vez
+            # de premiar solo a partir del 90% (dejando un hueco enorme
+            # entre "nada" y "premio fuerte"), ahora escala de forma
+            # continua desde el 60%: entre 10 puntos (justo en el 60%,
+            # mayormente "compra" normal) y 25 (100% de consenso con alta
+            # convicción real) — mitad por lo amplio del consenso, mitad
+            # por cuánta "compra fuerte" hay de verdad. Se pesa también
+            # por el tamaño de muestra: con menos de 10 analistas, un
+            # mismo % es menos fiable estadísticamente.
+            factor_consenso = (pct_buy_o_mas - 60) / 40  # 0 en 60%, 1 en 100%
+            factor_conviccion = min(pct_strong_buy, 75) / 75  # 0 a 1
             confianza_muestra = min(1.0, total / 10)
-            empujon_base = 8 + 4 * min(pct_strong_buy, 75) / 75
+            empujon_base = 10 + 15 * (0.5 * factor_consenso + 0.5 * factor_conviccion)
             empujon = round(empujon_base * confianza_muestra, 1)
-        elif pct_strong_buy >= 75:
-            empujon = 8
         else:
             empujon = 0
 
@@ -687,6 +694,7 @@ def evaluar(ticker):
         }
     except Exception as e:
         return {"ticker": ticker, "descartado": True, "motivo": f"Error de datos: {e}"}
+
 
 
 def convertir_tipos_numpy(obj):
