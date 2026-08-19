@@ -131,13 +131,13 @@ Cada archivo activo tiene un comentario de versión en su primera línea (`VERSI
 | Archivo | Versión actual |
 |---|---|
 | `fase1_screening.py` | 11 — corrige NASDAQ100 (URL apuntaba al artículo general), quita IPC_MEXICO (sin tabla), red de seguridad genérica para detectar columnas de ticker |
-| `fase2_scoring.py` | 23 — búsquedas en español E inglés, ya no forzado solo a español |
+| `fase2_scoring.py` | 30 — corrige ruido de coma flotante en el score, desempate alfabético |
 | `ranking-github-actions.yml` | 13 — añade historial_scoring.json al git add |
-| `fase3_profundizar.py` | 9 — búsquedas en español E inglés (duplica peticiones por candidata) |
+| `fase3_profundizar.py` | 10 — desempate alfabético también aquí |
 | `bot-stoploss-github-actions.yml` | 2 — de cada 30 a cada 15 minutos |
 | `bot.py` | 9 — Opción B con Stooq si Yahoo Finance falla (solo tickers US sin sufijo) |
 | `bot1_noticias.py` | 3 — ya no hace falta usarlo, su lógica vive dentro de fase2_scoring.py |
-| `scoring_viewer.html` | 20 — muestra "✓ verificado" o "⚠ contradice la puntuación" |
+| `scoring_viewer.html` | 23 — restaura "unas horas", texto de momentum distingue activo vs calmado |
 | `simulador.html` | 20 — presets de stop-loss alineados con el bot: 7,5/10/12,5% |
 | `historial.html` | 4 — checkbox de cambio de divisa también al editar |
 | `simulador-datos.js` | 5 — CRÍTICO: fusiona local+GitHub al cargar, ya no borra datos sin sincronizar |
