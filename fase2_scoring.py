@@ -1,4 +1,11 @@
 """
+VERSION: 30 (19/08/2026) - dos arreglos: (1) CORRECCIÓN de ruido de coma
+flotante en el score (visto en la práctica: "64.10000000000001" en vez de
+"64.1") — catalizador/euros/noticias se sumaban DESPUÉS del redondeo
+interno de calcular_score() sin volver a redondear el resultado final;
+(2) en caso de empate exacto de score, desempata por nombre de empresa
+A-Z (antes el orden entre empatados no estaba definido).
+
 VERSION: 29 (19/08/2026) - CORRECCIÓN IMPORTANTE: el score podía superar
 100 (visto en la práctica: Lottomatica dio 104,3), porque la suma de los
 máximos de los 10 factores daba 155, no 100. Reescalado TODO
@@ -422,7 +429,6 @@ def buscar_google_news(consulta, maximo=MAX_NOTICIAS_GOOGLE, idioma="es"):
         return resultado
     except Exception:
         return []
-
 def analizar_noticias(ticker_obj, ticker, nombre):
     """Combina noticias de Yahoo Finance y Google News, con sentimiento por
     palabras clave. Devuelve el total y hasta 3 titulares (los que más pesan,
@@ -684,6 +690,9 @@ def evaluar(ticker):
         noticias = analizar_noticias(t, ticker, nombre_empresa_valor)
         empujon_noticias = max(-6.5, min(6.5, noticias["sentimiento_total"] * 1.3))  # tope para que no domine el resto
         score += empujon_noticias
+        score = round(score, 1)  # redondeo final — catalizador/euros/noticias se suman DESPUÉS del
+        # redondeo interno de calcular_score(), y sumar varios decimales seguidos sin volver a
+        # redondear genera ruido de coma flotante (ej. "64.10000000000001" en vez de "64.1")
 
         return {
             "ticker": ticker,
@@ -741,7 +750,10 @@ def ejecutar():
         time.sleep(PAUSA_ENTRE_PETICIONES)
 
     validos = [r for r in resultados if not r.get("descartado")]
-    validos.sort(key=lambda x: x["score"], reverse=True)
+    # Orden principal por score (de más a menos); si empatan exactamente
+    # (mismo score tras redondear), desempata por nombre de empresa A-Z
+    validos.sort(key=lambda x: (x.get("nombre_empresa") or x["ticker"]).lower())
+    validos.sort(key=lambda x: x["score"], reverse=True)  # estable: conserva el orden alfabético dentro de cada empate
 
     descartados = [r for r in resultados if r.get("descartado")]
 
