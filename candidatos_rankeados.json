@@ -1453,8 +1453,8 @@
         "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "Acuerdo histórico entre los Yankees y Apollo Global Management por $2.600 millones - voz.us",
-            "fuente": "voz.us",
+            "titulo": "BPER cierra el mejor semestre de su historia y eleva sus previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
             "sentimiento": 1
           },
           {
@@ -1475,7 +1475,78 @@
       "sma200": 126.99,
       "tendencia_analistas": "mejorando",
       "sector": "Financial Services",
-      "resumen_negocio": "Apollo Global Management, Inc. es una firma de capital privado que se especializa en inversiones en crédito, capital privado, infraestructura, secundaria y mercados inmobiliarios.",
+      "resumen_negocio": "BPER Banca SpA se dedica a la prestación de productos y servicios bancarios para particulares, empresas y profesionales en Italia e internacionalmente. Ofrece cuentas corrientes y de ahorro, préstamos, hipotecas, seguros y seguridad social, y banca digital y servicios relacionados; tarjetas; y productos y servicios de inversión y ahorro.",
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Profit at Italy's BPER boosted by stronger fees after Pop Sondrio merger - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "BPER cierra el mejor semestre de su historia y eleva sus previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "BPER Banca rebajada a \"mantener\" por Deutsche Bank tras sus resultados del primer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          }
+        ]
+      }
+    },
+    {
+      "ticker": "SAMPO.HE",
+      "descartado": false,
+      "nombre_empresa": "Sampo Oyj",
+      "isin": null,
+      "precio_actual": 9.57,
+      "score": 53.4,
+      "consenso": "buy",
+      "precio_objetivo_medio": 10.55688,
+      "dispersion_pct": 20.9,
+      "momentum_30d_pct": -1.3,
+      "momentum_5d_pct": -0.1,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Goldman Sachs eleva el precio objetivo de Sampo hasta los 10,80 EUR y reitera su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Sampo Oyj : OP Corporate Bank mantiene una recomendación de compra. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sampo recompra 1,27 millones de acciones en la semana 33 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 48.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.4,
+      "sma200": 9.24,
+      "tendencia_analistas": "estable",
+      "sector": "Financial Services",
+      "resumen_negocio": "Sampo Oyj, junto con sus filiales, ofrece productos y servicios de seguros distintos de los de vida en Finlandia, Suecia, Noruega, Dinamarca, Estonia, Lituania, Letonia, España, Gibraltar, Alemania, Países Bajos, Francia y Reino Unido.",
       "profundizacion": {
         "sentimiento_adicional": 2,
         "verificado": true,
@@ -2311,7 +2382,7 @@
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 4,
+        "sentimiento_total": 3,
         "titulares": [
           {
             "titulo": "Grifols, S.A. (GRFS) Sees Strong Biopharma Growth Led by Gamunex and Yimmugo - finance.yahoo.com",
@@ -3335,20 +3406,15 @@
         "empujon": 7.5,
         "pct_strong_buy": 30.4,
         "pct_vender": 0.0,
-        "total_analistas": 23
+        "total_analistas": 22
       },
-      "cotiza_en_euros": true,
+      "cotiza_en_euros": false,
       "noticias": {
-        "sentimiento_total": 2,
+        "sentimiento_total": 1,
         "titulares": [
           {
-            "titulo": "EssilorLuxottica Société Anonyme (ENXTPA:EL) Could Be 34% Below Fair Value Following Half Year Growth - simplywall.st",
-            "fuente": "simplywall.st",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "EssilorLuxottica (ENXTPA:EL) Stock Could Be Trading At A Discount Following Its 39% Slump - Yahoo Finance",
-            "fuente": "Yahoo Finance",
+            "titulo": "Cobre Panamá supera revisión clave para reapertura de mina - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
             "sentimiento": 1
           },
           {
@@ -4087,8 +4153,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Poste Italiane reorganiza su estructura en tres grandes áreas de negocio - MarketScreener España",
-            "fuente": "MarketScreener España",
+            "titulo": "Noticia: El Gobierno analizó junto a First Quantum Minerals el plan de trabajo de la empresa - Gobierno de la Provincia de Salta, Argentina",
+            "fuente": "Gobierno de la Provincia de Salta, Argentina",
             "sentimiento": 0
           }
         ]
@@ -4102,9 +4168,9 @@
       "resumen_negocio": "Poste Italiane S.p.A. ofrece productos y servicios postales, logísticos, financieros y de seguros en Italia. La empresa opera a través de cuatro segmentos: Correo, Paquetería y Distribución; Servicios PostePay; Servicios Financieros; y Servicios de Seguros."
     },
     {
-      "ticker": "PRX.AS",
+      "ticker": "ABI.BR",
       "descartado": false,
-      "nombre_empresa": "Prosus N.V.",
+      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
       "isin": null,
       "precio_actual": 37.895,
       "score": 38.800000000000004,
@@ -4119,14 +4185,19 @@
         "empujon": 7.4,
         "pct_strong_buy": 29.4,
         "pct_vender": 0.0,
-        "total_analistas": 17
+        "total_analistas": 25
       },
       "cotiza_en_euros": true,
       "noticias": {
         "sentimiento_total": 2,
         "titulares": [
           {
-            "titulo": "Prosus N.V. : Barclays mantiene su recomendación de compra - MarketScreener España",
+            "titulo": "Valor razonable de InvestingPro detectó ganancia del 55% en AB InBev Por Investing.com - Investing.com México",
+            "fuente": "Investing.com México",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "RBC eleva el precio objetivo y las previsiones de AB InBev tras unos resultados semestrales \"solidos\" - MarketScreener España",
             "fuente": "MarketScreener España",
             "sentimiento": 1
           },
@@ -4147,8 +4218,8 @@
       "sma50": 38.98,
       "sma200": 44.89,
       "tendencia_analistas": "empeorando",
-      "sector": "Consumer Cyclical",
-      "resumen_negocio": "Prosus N.V. se dedica a los negocios de comercio electrónico e Internet en Asia, Europa, América Latina, América del Norte e internacionalmente. Opera plataformas de Internet, como anuncios clasificados, pagos y fintech, comercio electrónico, entrega de alimentos, tecnología educativa, comercio electrónico, empresas, tencent y otras plataformas."
+      "sector": "Financial Services",
+      "resumen_negocio": "Intesa Sanpaolo S.p.A. se dedica al suministro de diversos productos y servicios financieros en Italia, Europa Central y del Este, Oriente Medio y el Norte de África. Opera a través de seis segmentos: Banca dei Territori, IMI Corporate & Investment Banking, Bancos Internacionales, Gestión de Activos, Banca Privada y Seguros."
     },
     {
       "ticker": "COL.MC",
@@ -5835,7 +5906,7 @@
         "pct_vender": 16.7,
         "total_analistas": 6
       },
-      "cotiza_en_euros": true,
+      "cotiza_en_euros": false,
       "noticias": {
         "sentimiento_total": 0,
         "titulares": [
