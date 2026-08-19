@@ -1,4 +1,7 @@
 """
+VERSION: 10 (19/08/2026) - en caso de empate exacto de score tras la
+profundización, desempata por nombre de empresa A-Z (igual que fase2).
+
 VERSION: 9 (11/08/2026) - búsquedas en español E inglés (antes solo
 español), deduplicando entre los dos. Ojo: dobla el número de peticiones
 por candidata (2 consultas × 2 idiomas = 4), así que esta fase tarda algo
@@ -318,7 +321,8 @@ def ejecutar():
         profundizadas.append(profundizar_candidata(candidata))
         print(f"  profundizado {i}/{len(a_profundizar)}: {candidata['ticker']}")
 
-    nuevo_ranking = sorted(profundizadas + resto, key=lambda c: c["score"], reverse=True)
+    todas = sorted(profundizadas + resto, key=lambda c: (c.get("nombre_empresa") or c["ticker"]).lower())
+    nuevo_ranking = sorted(todas, key=lambda c: c["score"], reverse=True)  # estable: conserva alfabético dentro de cada empate
     data["ranking"] = nuevo_ranking
 
     with open(ARCHIVO, "w", encoding="utf-8") as f:
