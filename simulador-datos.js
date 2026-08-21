@@ -1,11 +1,46 @@
+// VERSION: 7 (21/08/2026) - añade comisión de compra/venta CONFIGURABLE
+// (obtenerComisionCompraConfigurada/obtenerComisionVentaConfigurada), para
+// precargar el campo del registro con el valor correcto sin tener que
+// escribirlo cada vez. Las constantes COMISION_COMPRA/VENTA se quedan
+// como respaldo fijo histórico, solo para operaciones antiguas guardadas
+// antes de que existiera el campo "comisión" — no se tocan nunca.
+
+// VERSION: 6 (21/08/2026) - calcularNetoVenta() usa ahora la comisión real
+// guardada en cada operación (compra y venta), en vez de asumir siempre la
+// constante global — con respaldo a la constante para operaciones antiguas
+// que no tengan ese dato todavía.
+
 // VERSION: 5 (05/08/2026) - CORRECCIÓN CRÍTICA: cargarLedger() ya no deja que
 // la copia de GitHub borre sin más lo que hay en local — ahora FUSIONA
 // ambas (sin duplicar) y sube la fusión de vuelta si hacía falta. Antes,
 // si un dispositivo guardaba algo local antes de tener el token puesto,
 // una recarga posterior con GitHub desactualizado podía borrar esos datos.
 
-const COMISION_COMPRA = 1.0;
-const COMISION_VENTA = 1.0;
+const COMISION_COMPRA = 1.0; // histórico fijo — respaldo SOLO para operaciones
+const COMISION_VENTA = 1.0;  // antiguas guardadas antes de que existiera el campo "comisión"; no tocar
+
+function obtenerComisionCompraConfigurada() {
+  try {
+    const valor = localStorage.getItem('comision-compra-defecto');
+    return valor !== null ? parseFloat(valor) : COMISION_COMPRA;
+  } catch (e) { return COMISION_COMPRA; }
+}
+
+function guardarComisionCompraConfigurada(valor) {
+  try { localStorage.setItem('comision-compra-defecto', String(valor)); } catch (e) { console.error('No se pudo guardar la comisión de compra', e); }
+}
+
+function obtenerComisionVentaConfigurada() {
+  try {
+    const valor = localStorage.getItem('comision-venta-defecto');
+    return valor !== null ? parseFloat(valor) : COMISION_VENTA;
+  } catch (e) { return COMISION_VENTA; }
+}
+
+function guardarComisionVentaConfigurada(valor) {
+  try { localStorage.setItem('comision-venta-defecto', String(valor)); } catch (e) { console.error('No se pudo guardar la comisión de venta', e); }
+}
+
 const TAX_RATE = 0.19;
 const AHORRO_RATE = 0.10;
 const COSTE_FX_PCT_DEFECTO = 1.2; // % estimado de coste de cambio de divisa
@@ -115,9 +150,11 @@ async function guardarLedger(ledger) {
   }
 }
 
-function calcularNetoVenta(compra, venta, acciones) {
+function calcularNetoVenta(compra, venta, acciones, comisionCompra, comisionVenta) {
+  const cComp = comisionCompra !== undefined && comisionCompra !== null ? comisionCompra : COMISION_COMPRA;
+  const cVent = comisionVenta !== undefined && comisionVenta !== null ? comisionVenta : COMISION_VENTA;
   const bruto = (venta - compra) * acciones;
-  const gananciaAntesImp = bruto - (COMISION_COMPRA + COMISION_VENTA);
+  const gananciaAntesImp = bruto - (cComp + cVent);
   const impuesto = Math.max(gananciaAntesImp, 0) * TAX_RATE;
   return gananciaAntesImp - impuesto;
 }
@@ -140,7 +177,7 @@ function recalcularFIFO(ledger) {
         const usar = Math.min(compra.acciones_restantes, restante);
         compra.acciones_restantes -= usar;
         restante -= usar;
-        const parcial = calcularNetoVenta(compra.precio, venta.precio, usar);
+        const parcial = calcularNetoVenta(compra.precio, venta.precio, usar, compra.comision, venta.comision);
         neto = (neto || 0) + parcial;
       }
     }
