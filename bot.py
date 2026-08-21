@@ -1,4 +1,9 @@
 """
+VERSION: 10 (20/08/2026) - añade el Método 4: aviso al CIERRE de mercado si
+la posición sigue por debajo del -7,5% (usa el "marketState" de Yahoo, así
+no hace falta programar a mano el horario de cada bolsa), y un único
+recordatorio a la siguiente APERTURA si cerró en pérdida el día anterior.
+
 VERSION: 9 (11/08/2026) - añade Opción B (Stooq, gratis y sin clave) si
 Yahoo Finance falla o no da precio — antes, una caída puntual de Yahoo
 dejaba la posición sin vigilar esa pasada sin más remedio. Solo cubre
@@ -30,6 +35,7 @@ Salida:   posiciones.json actualizado (nuevo stop-loss si ha subido)
 
 import json
 import os
+from datetime import datetime
 
 import requests
 import yfinance as yf
@@ -135,6 +141,8 @@ def reconciliar_con_ledger(posiciones):
             "maximo_alcanzado": precio_compra,
             "escalon_actual": 0,
             "avisos_perdida_disparados": [],
+            "ultimo_cierre_notificado": None,
+            "recordatorio_apertura_pendiente": False,
         }
         notificar(
             f"[NUEVA POSICIÓN] {ticker}",
@@ -289,6 +297,40 @@ def procesar_posicion(pos):
                 urgente=False,
             )
     pos["avisos_perdida_disparados"] = sorted(avisos_disparados)
+
+    # --- Método 4: aviso al cierre de mercado si sigues en pérdida
+    # significativa, y recordatorio a la siguiente apertura. Usa el
+    # "marketState" que da Yahoo (REGULAR/CLOSED/PRE/POST...), así no hace
+    # falta programar a mano el horario de cada bolsa (Madrid, EE.UU.,
+    # Milán... cada una cierra a una hora distinta). ---
+    market_state = ""
+    try:
+        market_state = (info.get("marketState") or "").upper()
+    except Exception:
+        pass
+    hoy = datetime.now().date().isoformat()
+
+    if market_state == "CLOSED":
+        umbral_cierre = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, 7.5)
+        if precio_actual <= umbral_cierre and pos.get("ultimo_cierre_notificado") != hoy:
+            notificar(
+                f"[CIERRE MERCADO] {pos['ticker']}",
+                f"Tu inversión en {pos['ticker']} ha cerrado el mercado por debajo del -7,5% "
+                f"(precio actual: {precio_actual}€). Estate pendiente en la próxima apertura.",
+                urgente=False,
+            )
+            pos["ultimo_cierre_notificado"] = hoy
+            pos["recordatorio_apertura_pendiente"] = True
+    elif pos.get("recordatorio_apertura_pendiente"):
+        # El mercado ha vuelto a abrir (o está en pre-apertura) después de
+        # haber cerrado en pérdida — un único recordatorio, luego se apaga.
+        notificar(
+            f"[RECORDATORIO] {pos['ticker']} — mercado abierto de nuevo",
+            f"Ayer cerró en pérdida significativa (por debajo del -7,5%). Precio actual: {precio_actual}€. "
+            f"Al loro con esta posición ahora que vuelve a cotizar.",
+            urgente=False,
+        )
+        pos["recordatorio_apertura_pendiente"] = False
 
     # --- Método 1: trailing continuo (el de siempre) ---
     if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
