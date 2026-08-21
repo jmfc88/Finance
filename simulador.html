@@ -1,8 +1,10 @@
-<!DOCTYPE html> 
-<!-- VERSION: 20 (06/08/2026) - los presets de stop-loss (sección 3) cambian de
-10/12,5/15% a 7,5/10/12,5%, con las mismas etiquetas que ahora usa bot.py
-([CUIDADO], [PIENSA], [VENDE]) — para ver en el simulador exactamente los
-mismos niveles que vigila el bot -->
+<!DOCTYPE html>
+<!-- VERSION: 23 (21/08/2026) - añade panel "Ajustes avanzados: comisión de
+Trade Republic" (comisión de compra/venta configurable, una vez, como ya
+existía para el % de cambio de divisa) — el campo de comisión de cada
+operación se precarga con este valor, así no hay que escribirlo cada vez.
+Si algún día Trade Republic cambia su tarifa, se actualiza aquí una sola
+vez y afecta solo a las operaciones nuevas, nunca a las ya guardadas -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -137,6 +139,18 @@ mismos niveles que vigila el bot -->
     <button onclick="guardarCosteFX()">Guardar</button>
     <div class="resultado" id="fx-estado" style="display:none;"></div>
   </details>
+  <details style="margin-top:10px;">
+    <summary style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft); cursor:pointer;">Ajustes avanzados: comisión de Trade Republic</summary>
+    <div class="nota" style="margin-top:8px;">
+      Ahora mismo Trade Republic cobra 1€ por comprar y 1€ por vender. Si algún día eso cambia, ajústalo aquí UNA vez — a partir de ahí, cada operación nueva vendrá precargada con el valor correcto, sin que tengas que escribirlo cada vez. Las operaciones ya guardadas no se ven afectadas.
+    </div>
+    <div class="fila" style="margin-top:8px;">
+      <div class="campo"><label>Comisión de compra</label><input id="comision-compra-defecto" type="text" inputmode="decimal" placeholder="1"></div>
+      <div class="campo"><label>Comisión de venta</label><input id="comision-venta-defecto" type="text" inputmode="decimal" placeholder="1"></div>
+    </div>
+    <button onclick="guardarComisionesDefecto()">Guardar</button>
+    <div class="resultado" id="comision-estado" style="display:none;"></div>
+  </details>
 </section>
 
 <!-- LEDGER FIFO — primero, es el paso real del día a día -->
@@ -159,6 +173,7 @@ mismos niveles que vigila el bot -->
   </div>
   <div class="fila">
     <div class="campo"><label>ISIN (opcional — pégalo desde el visor de candidatas si lo tiene)</label><input id="op-isin" type="text" placeholder="ej: CA33544P2081"></div>
+    <div class="campo"><label>Comisión real cobrada</label><input id="op-comision" type="text" inputmode="decimal" placeholder="1"></div>
   </div>
   <div class="fila">
     <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px;">
@@ -292,6 +307,15 @@ function calcularVista() {
   const selectorTipo = document.getElementById('op-tipo');
   selectorTipo.style.background = tipo === 'venta' ? 'var(--brick-bg)' : '#fff';
   selectorTipo.style.fontWeight = tipo === 'venta' ? 'bold' : 'normal';
+
+  // Precarga la comisión con el valor por defecto (editable, por si algún
+  // día Trade Republic cambia su tarifa o hay una promoción puntual) —
+  // solo si el campo está vacío, para no pisar lo que ya haya escrito.
+  const campoComision = document.getElementById('op-comision');
+  if (!campoComision.value) {
+    campoComision.value = tipo === 'venta' ? obtenerComisionVentaConfigurada() : obtenerComisionCompraConfigurada();
+  }
+
   const precio = parseNumeroEs(document.getElementById('op-precio').value);
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const hayCambioDivisa = document.getElementById('op-cambio-divisa').checked;
@@ -398,12 +422,14 @@ async function registrarOperacion() {
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
   const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
+  const comisionInput = parseNumeroEs(document.getElementById('op-comision').value);
+  const comision = isNaN(comisionInput) ? (tipo === 'venta' ? obtenerComisionVentaConfigurada() : obtenerComisionCompraConfigurada()) : comisionInput;
 
   if (!ticker || !precio || !acciones) return;
 
   const ledger = await cargarLedger();
   ledger.push({
-    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa, comision,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
   });
@@ -419,6 +445,7 @@ async function registrarOperacion() {
   document.getElementById('op-isin').value = '';
   document.getElementById('op-precio').value = '';
   document.getElementById('op-acciones').value = '';
+  document.getElementById('op-comision').value = '';
   document.getElementById('op-tipo').value = 'compra'; // vuelve al valor por defecto, para no dejarlo pegado en "venta"
   document.getElementById('op-cambio-divisa').checked = false;
 }
@@ -434,6 +461,9 @@ function iniciarEdicion(index) {
   document.getElementById('op-acciones').value = op.acciones;
   document.getElementById('op-fecha').value = op.fecha;
   document.getElementById('op-cambio-divisa').checked = !!op.cambio_divisa;
+  document.getElementById('op-comision').value = op.comision !== undefined && op.comision !== null
+    ? op.comision
+    : (op.tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA);
 
   editandoIndice = index;
   document.getElementById('boton-registrar').textContent = 'Guardar cambios';
@@ -453,6 +483,7 @@ function cancelarEdicion() {
   document.getElementById('op-acciones').value = '';
   document.getElementById('op-tipo').value = 'compra';
   document.getElementById('op-cambio-divisa').checked = false;
+  document.getElementById('op-comision').value = '';
   document.getElementById('vista-previa-calculo').style.display = 'none';
 }
 
@@ -465,12 +496,14 @@ async function guardarEdicion() {
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
   const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
+  const comisionInput = parseNumeroEs(document.getElementById('op-comision').value);
+  const comision = isNaN(comisionInput) ? (tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA) : comisionInput;
 
   if (!ticker || !precio || !acciones || editandoIndice === null) return;
 
   const ledger = await cargarLedger();
   ledger[editandoIndice] = {
-    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa, comision,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
   };
@@ -531,15 +564,21 @@ function renderUltimasOperaciones(ledger) {
 function renderResumenFiscal(ledger) {
   const ventas = ledger.filter(op => op.tipo === 'venta' && op.neto !== null);
   const totalNeto = ventas.reduce((s, op) => s + op.neto, 0);
-  const totalComisiones = ledger.length * 1; // aprox: 1€ por cada operación registrada
+  const totalComisiones = ledger.reduce((s, op) => {
+    const c = op.comision !== undefined && op.comision !== null
+      ? op.comision
+      : (op.tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA);
+    return s + c;
+  }, 0);
   const ahorro = Math.max(totalNeto, 0) * AHORRO_RATE;
   const reinvertible = totalNeto - ahorro;
 
   document.getElementById('resumen-fiscal').innerHTML = `
     <div><span class="label">Ganancia neta acumulada:</span></div><div class="${totalNeto>=0?'pos':'neg'}">${totalNeto.toFixed(2)}€</div>
+    <div><span class="label">Comisiones pagadas:</span></div><div>${totalComisiones.toFixed(2)}€</div>
     <div><span class="label">Ahorro (10%) intocable:</span></div><div>${ahorro.toFixed(2)}€</div>
     <div><span class="label">Reinvertible (90%):</span></div><div>${reinvertible.toFixed(2)}€</div>
-    <div><span class="label">Operaciones registradas:</span></div><div>${ledger.length}</div>
+    <div><span class="label">Operaciones cerradas:</span></div><div>${ventas.length}</div>
   `;
 
   renderPosicionesAbiertas(ledger);
@@ -709,6 +748,26 @@ function guardarCosteFX() {
   calcularStopLossPresets();
 }
 
+function cargarComisionesDefectoGuardadas() {
+  document.getElementById('comision-compra-defecto').value = obtenerComisionCompraConfigurada();
+  document.getElementById('comision-venta-defecto').value = obtenerComisionVentaConfigurada();
+}
+
+function guardarComisionesDefecto() {
+  const compra = parseNumeroEs(document.getElementById('comision-compra-defecto').value);
+  const venta = parseNumeroEs(document.getElementById('comision-venta-defecto').value);
+  const div = document.getElementById('comision-estado');
+  if (isNaN(compra) || compra < 0 || isNaN(venta) || venta < 0) {
+    div.style.display = 'block';
+    div.textContent = 'Pon un número válido en las dos (ej: 1 o 1,5).';
+    return;
+  }
+  guardarComisionCompraConfigurada(compra);
+  guardarComisionVentaConfigurada(venta);
+  div.style.display = 'block';
+  div.textContent = `Guardado: ${compra}€ al comprar, ${venta}€ al vender — a partir de ahora, cada operación nueva viene precargada así.`;
+}
+
 async function cargarDatosManual() {
   const div = document.getElementById('sync-estado');
   div.style.display = 'block';
@@ -723,6 +782,7 @@ async function cargarDatosManual() {
 async function inicializar() {
   cargarSincronizacionGuardada();
   cargarCosteFXGuardado();
+  cargarComisionesDefectoGuardadas();
   const ledger = await cargarLedger();
   ledgerActual = ledger;
   renderUltimasOperaciones(ledger);
