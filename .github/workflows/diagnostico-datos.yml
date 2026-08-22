@@ -1,0 +1,33 @@
+# VERSION: 1 (23/08/2026) - lanza diagnostico_datos.py a mano para averiguar
+# por que las acciones europeas no traen historico de precios. No toca ningun
+# archivo del repo: solo imprime el resultado. Se puede borrar cuando el
+# problema este resuelto.
+name: Diagnostico de datos
+
+on:
+  workflow_dispatch: {}   # solo a mano, no tiene sentido programarlo
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install yfinance pandas
+
+      - name: Probar formas de pedir el historico
+        run: python diagnostico_datos.py 2>&1 | tee resultado.txt
+
+      - name: Dejarlo escrito en el resumen de la ejecucion
+        if: always()
+        run: |
+          echo '## Diagnostico de datos de precio' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat resultado.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
