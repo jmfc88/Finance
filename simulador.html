@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!-- VERSION: 25 (23/08/2026) - enlaza el cuaderno de candidatas con el
+registro de compras. Al registrar una COMPRA aparece un desplegable con las
+tarjetas de los últimos 5 días (las que guarda historial_tarjetas.json), con
+la más parecida ya preseleccionada por ticker o por nombre. Al confirmar, esa
+tarjeta se copia entera y para siempre a tarjetas_compras.json, junto con el
+puesto que ocupaba en el ranking y los días que pasaron entre que salió la
+tarjeta y la compra. Esto es lo que permitirá saber, dentro de unos meses, si
+un score alto acertó más que uno medio. Siempre se puede elegir "Sin tarjeta"
+para compras hechas fuera del sistema. -->
 <!-- VERSION: 24 (21/08/2026) - cada tarjeta de "Últimas operaciones" muestra
 ahora el desglose completo: precio × acciones + / − comisión = total. Antes
 la comisión se guardaba pero no aparecía en ningún sitio visible -->
@@ -158,10 +167,10 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
   </div>
   <div class="fila">
     <div class="campo"><label>Tipo</label>
-      <select id="op-tipo" oninput="calcularVista()"><option value="compra">Compra</option><option value="venta">Venta</option></select>
+      <select id="op-tipo" oninput="calcularVista(); actualizarVisibilidadTarjeta();"><option value="compra">Compra</option><option value="venta">Venta</option></select>
     </div>
-    <div class="campo"><label>Ticker</label><input id="op-ticker" type="text" style="text-transform:uppercase;"></div>
-    <div class="campo"><label>Nombre de la empresa</label><input id="op-nombre" type="text" placeholder="ej: First Quantum Minerals"></div>
+    <div class="campo"><label>Ticker</label><input id="op-ticker" type="text" style="text-transform:uppercase;" oninput="autoseleccionarTarjeta()"></div>
+    <div class="campo"><label>Nombre de la empresa</label><input id="op-nombre" type="text" placeholder="ej: First Quantum Minerals" oninput="autoseleccionarTarjeta()"></div>
   </div>
   <div class="fila">
     <div class="campo"><label>Precio</label><input id="op-precio" type="text" inputmode="decimal" placeholder="ej: 23,77" oninput="calcularVista()"></div>
@@ -177,6 +186,15 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
       <input id="op-cambio-divisa" type="checkbox" onchange="calcularVista()">
       ¿Hubo cambio de divisa? (acciones de EE.UU., Canadá, Australia... no en euros)
     </label>
+  </div>
+  <div class="fila" id="fila-tarjeta">
+    <div class="campo" style="flex:1 1 100%;">
+      <label>Tarjeta del cuaderno que llevó a esta compra</label>
+      <select id="op-tarjeta" onchange="mostrarTarjetaElegida()">
+        <option value="">Sin tarjeta (compra fuera del sistema)</option>
+      </select>
+      <div id="detalle-tarjeta" style="display:none; margin-top:6px; padding:8px 10px; border-left:3px solid var(--gold); background:#fffbf0; font-family: ui-monospace, monospace; font-size:12px; line-height:1.55;"></div>
+    </div>
   </div>
   <div class="resultado" id="vista-previa-calculo" style="display:none;"></div>
   <button id="boton-registrar" onclick="pedirConfirmacion()">Registrar operación</button>
@@ -346,6 +364,91 @@ function calcularVista() {
   }
 }
 
+/* ===================== ENLACE CON EL CUADERNO (v25) ===================== */
+
+let tarjetasDisponibles = [];
+
+async function prepararTarjetas() {
+  tarjetasDisponibles = await cargarTarjetasDisponibles();
+  const sel = document.getElementById('op-tarjeta');
+  const fila = document.getElementById('fila-tarjeta');
+
+  if (!tarjetasDisponibles.length) {
+    /* Pantalla vacía como indicación, no como disculpa: dice qué falta y qué hacer */
+    fila.style.display = 'none';
+    return;
+  }
+
+  sel.innerHTML = '<option value="">Sin tarjeta (compra fuera del sistema)</option>';
+  tarjetasDisponibles.forEach((t, i) => {
+    const opt = document.createElement('option');
+    opt.value = String(i);
+    const pos = t.mejor_posicion ? `nº${t.mejor_posicion}` : '';
+    opt.textContent = `${t.fecha} · ${pos} ${t.nombre} (${t.ticker}) · ${t.score}`;
+    sel.appendChild(opt);
+  });
+  actualizarVisibilidadTarjeta();
+}
+
+/* La tarjeta solo tiene sentido en una compra: una venta no la origina el
+cuaderno, la origina el stop-loss o la decisión de cerrar. */
+function actualizarVisibilidadTarjeta() {
+  const fila = document.getElementById('fila-tarjeta');
+  if (!fila) return;
+  const esCompra = document.getElementById('op-tipo').value === 'compra';
+  fila.style.display = (esCompra && tarjetasDisponibles.length) ? '' : 'none';
+  if (!esCompra) {
+    document.getElementById('op-tarjeta').value = '';
+    document.getElementById('detalle-tarjeta').style.display = 'none';
+  }
+}
+
+/* Preselecciona la tarjeta más probable en cuanto hay ticker o nombre, pero
+sin pisar una elección hecha a mano. El emparejamiento automático falla justo
+en las empresas con varias cotizaciones, así que solo sugiere. */
+function autoseleccionarTarjeta() {
+  const sel = document.getElementById('op-tarjeta');
+  if (!sel || sel.dataset.tocadoAMano === 'si' || !tarjetasDisponibles.length) return;
+  const ticker = document.getElementById('op-ticker').value;
+  const nombre = document.getElementById('op-nombre').value;
+  const i = sugerirTarjeta(tarjetasDisponibles, ticker, nombre);
+  sel.value = i === -1 ? '' : String(i);
+  mostrarTarjetaElegida(true);
+}
+
+function tarjetaSeleccionada() {
+  const v = document.getElementById('op-tarjeta').value;
+  return v === '' ? null : tarjetasDisponibles[parseInt(v)];
+}
+
+function mostrarTarjetaElegida(esAutomatica) {
+  const sel = document.getElementById('op-tarjeta');
+  if (!esAutomatica) sel.dataset.tocadoAMano = 'si';
+
+  const div = document.getElementById('detalle-tarjeta');
+  const t = tarjetaSeleccionada();
+  if (!t) { div.style.display = 'none'; return; }
+
+  const c = t.tarjeta || {};
+  const fechaCompra = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
+  const dias = diasEntre(t.fecha, fechaCompra);
+  const veces = (t.apariciones || []).length;
+
+  const lineas = [];
+  lineas.push(`<b>${t.nombre}</b> · puntuación ${t.score}${t.mejor_posicion ? ' · puesto nº' + t.mejor_posicion : ''}`);
+  lineas.push(`Tarjeta del ${t.fecha}${veces ? ` (vista ${veces} ${veces === 1 ? 'vez' : 'veces'} ese día)` : ''}`);
+  if (dias !== null) lineas.push(`Han pasado ${dias} ${dias === 1 ? 'día' : 'días'} desde la tarjeta hasta esta compra`);
+  if (c.precio_actual != null) lineas.push(`Precio en la tarjeta: ${c.precio_actual}`);
+  if (c.regimen_mercado) lineas.push(`Mercado ese día: ${c.regimen_mercado}`);
+  if (c.catalizador_resultados) lineas.push('Tenía catalizador de resultados');
+  if ((c.profundizacion || {}).verificado) lineas.push('Verificada en la segunda pasada');
+  if (esAutomatica) lineas.push('<i>Preseleccionada automáticamente — cámbiala si no es la correcta.</i>');
+
+  div.innerHTML = lineas.join('<br>');
+  div.style.display = 'block';
+}
+
+
 let editandoIndice = null;
 
 function pedirConfirmacion() {
@@ -363,6 +466,14 @@ function pedirConfirmacion() {
   }
 
   const importe = (precio * acciones).toFixed(2);
+
+  /* La tarjeta se enseña aquí a propósito: es el último momento para corregir
+  un emparejamiento equivocado, y una vez guardado ya no se vuelve a pedir. */
+  const tSel = (tipo === 'compra') ? tarjetaSeleccionada() : null;
+  const resumenTarjeta = tSel
+    ? `Tarjeta: ${tSel.nombre} del ${tSel.fecha}${tSel.mejor_posicion ? ' (nº' + tSel.mejor_posicion + ')' : ''}, puntuación ${tSel.score}<br>`
+    : (tipo === 'compra' && tarjetasDisponibles.length ? 'Tarjeta: ninguna — esta compra se registrará sin enlace al cuaderno<br>' : '');
+
   document.getElementById('resumen-confirmacion').innerHTML = `
     <b>${editandoIndice !== null ? 'Revisa los cambios antes de guardar' : 'Revisa antes de guardar'}:</b><br>
     Tipo: ${tipo}<br>
@@ -372,6 +483,7 @@ function pedirConfirmacion() {
     Acciones: ${acciones}<br>
     Fecha: ${fecha}<br>
     Importe (sin comisión): ${importe}€<br>
+    ${resumenTarjeta}
     <br>¿Es correcto? Si algo está mal, pulsa "Cancelar" y corrígelo arriba.
   `;
   document.getElementById('caja-confirmacion').style.display = 'block';
@@ -425,14 +537,32 @@ async function registrarOperacion() {
   if (!ticker || !precio || !acciones) return;
 
   const ledger = await cargarLedger();
-  ledger.push({
+  const operacion = {
     tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa, comision,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
-  });
+  };
+
+  /* El enlace con el cuaderno se guarda SOLO en compras y SOLO al crearlas.
+  Va en tarjetas_compras.json, que no se borra nunca — historial_tarjetas.json
+  perderá esta tarjeta en unos días, así que esta es la única oportunidad de
+  conservarla. */
+  const tarjetaElegida = (tipo === 'compra') ? tarjetaSeleccionada() : null;
+  if (tarjetaElegida) {
+    operacion.tarjeta_fecha = tarjetaElegida.fecha;
+    operacion.tarjeta_huella = tarjetaElegida.huella;
+    operacion.tarjeta_posicion = tarjetaElegida.mejor_posicion;
+    operacion.tarjeta_score = tarjetaElegida.score;
+    operacion.dias_desde_tarjeta = diasEntre(tarjetaElegida.fecha, fecha);
+  }
+
+  ledger.push(operacion);
 
   recalcularFIFO(ledger);
   await guardarLedger(ledger);
+  if (tarjetaElegida) {
+    await guardarEnlaceTarjeta(operacion, tarjetaElegida);
+  }
   ledgerActual = ledger;
   renderUltimasOperaciones(ledger);
   renderResumenFiscal(ledger);
@@ -445,6 +575,10 @@ async function registrarOperacion() {
   document.getElementById('op-comision').value = '';
   document.getElementById('op-tipo').value = 'compra'; // vuelve al valor por defecto, para no dejarlo pegado en "venta"
   document.getElementById('op-cambio-divisa').checked = false;
+  const selT = document.getElementById('op-tarjeta');
+  if (selT) { selT.value = ''; delete selT.dataset.tocadoAMano; }
+  const detT = document.getElementById('detalle-tarjeta');
+  if (detT) detT.style.display = 'none';
 }
 
 function iniciarEdicion(index) {
@@ -779,6 +913,7 @@ async function inicializar() {
   ledgerActual = ledger;
   renderUltimasOperaciones(ledger);
   renderResumenFiscal(ledger);
+  await prepararTarjetas();
 }
 
 inicializar();
