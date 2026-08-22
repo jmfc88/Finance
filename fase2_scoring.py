@@ -1,4 +1,31 @@
 """
+VERSION: 31 (23/08/2026) - tres mejoras adoptadas del proyecto abierto
+RyanJHamby/stock-screener, todas dentro del mismo presupuesto de 100 puntos
+(el maximo teorico NO cambia):
+
+(1) REGIMEN DE MERCADO. Antes una candidata puntuaba igual con todo el
+    mercado subiendo que con todo el mercado desplomandose. Ahora, una vez
+    por ejecucion, se mira el estado del EuroStoxx50 y del S&P500 (precio vs
+    SMA50/SMA200 y pendiente de la SMA50) y cada candidata recibe el regimen
+    del mercado que le corresponde: favorable 0, neutro -3, adverso -8. Como
+    el caso favorable no suma nada, el maximo sigue siendo 100.
+
+(2) FUERZA RELATIVA. El momentum era absoluto: subir un 5% puntuaba igual
+    con el indice plano que con el indice subiendo un 12% (donde en realidad
+    se esta quedando atras). El presupuesto de momentum (12,9) se reparte
+    ahora en 8,9 de momentum propio + 4,0 de fuerza relativa frente al
+    indice de su mercado. Suma identica.
+
+(3) PUNTUACION LINEAL en vez de escalones, en dispersion y momentum. Los
+    escalones creaban acantilados absurdos (dispersion 29,9% valia 16,1 y
+    30,1% valia 9,7 — casi 7 puntos por dos decimas). Ahora la puntuacion
+    baja de forma continua. Los topes maximos y minimos son los mismos.
+
+Ademas cada candidata sale etiquetada con version_scoring, para que al
+analizar el historico se pueda distinguir lo puntuado con v30 de lo
+puntuado con v31 y no se mezclen dos metodos distintos en la misma
+estadistica.
+
 VERSION: 30 (19/08/2026) - dos arreglos: (1) CORRECCIÓN de ruido de coma
 flotante en el score (visto en la práctica: "64.10000000000001" en vez de
 "64.1") — catalizador/euros/noticias se sumaban DESPUÉS del redondeo
@@ -98,6 +125,14 @@ DIAS_MINIMOS_ANTES_DE_RESULTADOS = 5
 PRECIO_MAXIMO = 200  # criterio de Jose Manuel: nada de fracciones, nada por encima de ~200€
 PRECIO_MINIMO = 0.05  # excluye solo penny stocks casi a cero, no acciones baratas en general
 PAUSA_ENTRE_PETICIONES = 1.5
+VERSION_SCORING = 31
+
+# Indices de referencia para el regimen de mercado y la fuerza relativa.
+# Cada candidata se compara con el indice de SU mercado: no tiene sentido
+# medir a una espanola contra el S&P500.
+INDICE_EURO = "^STOXX50E"
+INDICE_USA = "^GSPC"
+PENALIZACION_REGIMEN = {"favorable": 0.0, "neutro": -3.0, "adverso": -8.0}
 
 
 def traducir(texto):
@@ -537,7 +572,115 @@ def calcular_consenso_real(ticker_obj):
         return None
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None):
+_cache_indices = {}
+
+
+def estado_indice(simbolo):
+    """Estado de un indice de referencia, calculado UNA sola vez por
+    ejecucion y reutilizado para todas las candidatas de ese mercado.
+
+    Devuelve (regimen, momentum_30d):
+      - "favorable": el indice esta por encima de sus dos medias y la de 50
+        sesiones sube -> el viento sopla a favor
+      - "adverso": el indice esta por debajo de la media de 200 sesiones o
+        la de 50 cae con claridad -> comprar aqui tiene la probabilidad en
+        contra por mucho que la accion concreta pinte bien
+      - "neutro": ni una cosa ni la otra
+      - "desconocido": no hay datos suficientes; en ese caso NO se penaliza
+        nada, porque castigar por falta de datos seria castigar al azar
+    """
+    if simbolo in _cache_indices:
+        return _cache_indices[simbolo]
+
+    resultado = ("desconocido", None)
+    try:
+        hist = yf.Ticker(simbolo).history(period="220d")
+        if len(hist) > 200:
+            cierres = hist["Close"]
+            actual = cierres.iloc[-1]
+            sma50 = cierres.rolling(50).mean().iloc[-1]
+            sma200 = cierres.rolling(200).mean().iloc[-1]
+            sma50_hace_un_mes = cierres.rolling(50).mean().iloc[-22]
+            pendiente50 = (sma50 / sma50_hace_un_mes - 1) * 100
+            momentum = round((actual / cierres.iloc[-22] - 1) * 100, 1)
+
+            if actual > sma50 and actual > sma200 and pendiente50 > 0:
+                regimen = "favorable"
+            elif actual < sma200 or pendiente50 < -1.5:
+                regimen = "adverso"
+            else:
+                regimen = "neutro"
+            resultado = (regimen, momentum)
+    except Exception:
+        pass  # sin datos del indice, se sigue adelante sin penalizar
+
+    _cache_indices[simbolo] = resultado
+    return resultado
+
+
+def indice_de_referencia(cotiza_en_euros):
+    return INDICE_EURO if cotiza_en_euros else INDICE_USA
+
+
+def puntos_dispersion(dispersion_pct):
+    """Antes: escalones en 30/60/100 que creaban saltos de casi 7 puntos por
+    dos decimas de diferencia. Ahora baja de forma continua desde el maximo
+    (16,1 con dispersion <=20%) hasta 0 (dispersion >=110%). Mismos topes."""
+    if dispersion_pct is None:
+        return 0.0
+    proporcion = (110 - dispersion_pct) / 90  # 1 en el 20%, 0 en el 110%
+    return round(16.1 * min(max(proporcion, 0.0), 1.0), 2)
+
+
+def puntos_momentum(momentum_30d, momentum_5d):
+    """Momentum propio de la accion, ahora continuo (maximo 8,9; antes 12,9,
+    porque 4,0 se han movido a fuerza relativa).
+
+    La logica de fondo es la misma de siempre y no cambia:
+      - Dentro del rango normal (-15% a +25% en el mes): puntuacion plena.
+      - Subida parabolica: cuanto mas se ha disparado y mas siga
+        disparandose AHORA MISMO (momentum de 5 dias), peor punto de entrada.
+      - Caida fuerte: si sigue cayendo es un cuchillo cayendo; si ya se ha
+        estabilizado es una posible entrada de rebote.
+    Lo que cambia es que el paso entre "sigue disparado" y "ya se ha
+    calmado" es un degradado, no un interruptor en +8% / -8%."""
+    MAX = 8.9
+    if momentum_30d is None:
+        return 0.0
+    if -15 <= momentum_30d <= 25:
+        return MAX
+
+    if momentum_30d > 25:
+        # 1 justo en el +25%, 0 a partir del +65%
+        atenuacion = min(max(1 - (momentum_30d - 25) / 40, 0.0), 1.0)
+        # 1 = ya calmado (5d <= -8), 0 = todavia disparandose (5d >= +8)
+        calmado = 1.0 if momentum_5d is None else min(max((8 - momentum_5d) / 16, 0.0), 1.0)
+        return round(MAX * atenuacion * (0.05 + 0.55 * calmado), 2)
+
+    # Caida fuerte (<-15%)
+    # 1 justo en el -15%, no baja de 0,3 por muy grande que sea el desplome
+    atenuacion = min(max(1 - (-15 - momentum_30d) / 45, 0.3), 1.0)
+    # 1 = ya estabilizada (5d >= +8), 0 = todavia en caida libre (5d <= -8)
+    estabilizada = 1.0 if momentum_5d is None else min(max((momentum_5d + 8) / 16, 0.0), 1.0)
+    return round(MAX * atenuacion * (0.05 + 0.95 * estabilizada), 2)
+
+
+def puntos_fuerza_relativa(fuerza_relativa):
+    """Factor NUEVO (maximo 4,0, minimo -2,0): cuanto lo hace la accion por
+    encima o por debajo de su indice en el ultimo mes.
+
+    Motivo: subir un 5% no significa lo mismo con el indice plano que con el
+    indice subiendo un 12% — en el segundo caso la accion se esta quedando
+    atras aunque en absoluto suba. El momentum de arriba no distingue esos
+    dos casos; este factor si."""
+    if fuerza_relativa is None:
+        return 0.0
+    # +10 puntos porcentuales por encima del indice = tope; -10 = suelo
+    proporcion = min(max(fuerza_relativa / 10, -1.0), 1.0)
+    return round(4.0 * proporcion if proporcion >= 0 else 2.0 * proporcion, 2)
+
+
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None):
     """
     Score de 0 a 100 de verdad — reescalado (11/08/2026) para que la suma
     de los máximos de los 10 factores dé exactamente 100 (antes sumaban
@@ -562,41 +705,15 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     }
     score += puntos_consenso.get(recomendacion, 0)
 
-    # Menos dispersión = consenso más fiable = más puntos
-    if dispersion_pct is not None:
-        if dispersion_pct < 30:
-            score += 16.1
-        elif dispersion_pct < 60:
-            score += 9.7
-        elif dispersion_pct < 100:
-            score += 3.2
-        else:
-            score += 0  # dispersión enorme = el "consenso" no significa nada
+    # Menos dispersión = consenso más fiable = más puntos.
+    # v31: continuo en vez de escalones (ver puntos_dispersion).
+    score += puntos_dispersion(dispersion_pct)
 
-    # Momentum: castiga tanto caídas fuertes recientes como subidas parabólicas ya agotadas
-    if momentum_30d is not None:
-        if -15 <= momentum_30d <= 25:
-            score += 12.9  # rango normal, sin movimiento extremo en ningún sentido
-        elif momentum_30d > 25:
-            # Subida fuerte en el mes. Si sigue disparándose ahora mismo
-            # (últimos 5 días también muy fuertes), perseguirla es el peor
-            # punto de entrada. Si ya se ha calmado, sigue "cara" pero al
-            # menos no se está alejando más del precio de entrada.
-            if momentum_5d is not None and momentum_5d > 8:
-                score += 0  # todavía disparándose, mal momento para entrar
-            else:
-                score += 3.2  # ya se ha calmado, se puede valorar con más calma
-        else:
-            # Caída fuerte en el mes (<-15%). Si sigue cayendo ahora mismo
-            # (últimos 5 días también muy negativos), es un cuchillo
-            # cayendo de verdad — mal momento. Pero si la caída ya pasó y
-            # se ha estabilizado, lo normal es que tienda a recuperar su
-            # precio habitual salvo que haya una noticia muy mala detrás
-            # — eso sí puede ser una buena entrada.
-            if momentum_5d is not None and momentum_5d < -8:
-                score += 0  # todavía en caída libre
-            else:
-                score += 9.7  # la caída ya pasó y se ha estabilizado, posible rebote
+    # Momentum propio de la acción (v31: continuo, máximo 8,9)
+    score += puntos_momentum(momentum_30d, momentum_5d)
+
+    # Fuerza relativa frente al índice de su mercado (v31, nuevo: máx +4,0)
+    score += puntos_fuerza_relativa(fuerza_relativa)
 
     # Potencial de subida hasta precio objetivo medio — mismo 75% para
     # alcanzar el tope que antes, solo que el tope ahora es 16.1 en vez de 25
@@ -620,6 +737,11 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
 
     # Consenso real por reparto de categorías (no solo la etiqueta media)
     score += empujon_consenso_real
+
+    # Régimen de mercado (v31): resta cuando el mercado entero rema en
+    # contra. El caso favorable suma 0, así que el máximo teórico sigue
+    # siendo exactamente 100. Si el régimen es desconocido, no penaliza.
+    score += PENALIZACION_REGIMEN.get(regimen, 0.0)
 
     return round(score, 1)
 
@@ -678,11 +800,24 @@ def evaluar(ticker):
             dispersion_pct = round((target_alto - target_bajo) / target_bajo * 100, 1)
 
         empujon_consenso_real = consenso_real.get("empujon", 0) if consenso_real else 0
-        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec, tendencia_analistas_valor, empujon_consenso_real, momentum_5d)
+
+        # v31: el índice de referencia depende del mercado de la acción, así
+        # que hay que saber si cotiza en euros ANTES de puntuar (antes esto
+        # se calculaba después, solo para el bonus de divisa).
+        cotiza_en_euros = ticker.endswith((".MC", ".DE", ".PA", ".AS", ".BR", ".LS", ".MI", ".VI", ".HE"))
+        indice = indice_de_referencia(cotiza_en_euros)
+        regimen, momentum_indice = estado_indice(indice)
+
+        fuerza_relativa = None
+        if momentum_30d is not None and momentum_indice is not None:
+            fuerza_relativa = round(momentum_30d - momentum_indice, 1)
+
+        score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec,
+                               tendencia_analistas_valor, empujon_consenso_real, momentum_5d,
+                               fuerza_relativa, regimen)
         if catalizador:
             score += 7.7  # empujón notable pero que no domine el resto del método
 
-        cotiza_en_euros = ticker.endswith((".MC", ".DE", ".PA", ".AS", ".BR", ".LS", ".MI", ".VI", ".HE"))
         if cotiza_en_euros:
             score += 5.2  # sin cambio de divisa: no pierdes céntimos en la conversión al comprar/vender
 
@@ -706,6 +841,10 @@ def evaluar(ticker):
             "dispersion_pct": limpio(dispersion_pct),
             "momentum_30d_pct": limpio(momentum_30d),
             "momentum_5d_pct": limpio(momentum_5d),
+            "fuerza_relativa_pct": limpio(fuerza_relativa),
+            "regimen_mercado": regimen,
+            "indice_referencia": indice,
+            "version_scoring": VERSION_SCORING,
             "catalizador_resultados": catalizador,
             "consenso_real": consenso_real,
             "cotiza_en_euros": cotiza_en_euros,
@@ -759,6 +898,13 @@ def ejecutar():
 
     salida = {
         "generado": datetime.now().isoformat(),
+        "version_scoring": VERSION_SCORING,
+        "regimen_mercado": {
+            "euro": {"indice": INDICE_EURO, "estado": estado_indice(INDICE_EURO)[0],
+                     "momentum_30d_pct": estado_indice(INDICE_EURO)[1]},
+            "usa": {"indice": INDICE_USA, "estado": estado_indice(INDICE_USA)[0],
+                    "momentum_30d_pct": estado_indice(INDICE_USA)[1]},
+        },
         "ranking": validos,
         "descartados": descartados,
     }
