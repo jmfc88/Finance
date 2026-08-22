@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- VERSION: 4 (04/08/2026) - añade el checkbox de cambio de divisa al editar,
-para que no se pierda ese dato al guardar cambios desde esta página -->
+<!-- VERSION: 6 (21/08/2026) - misma tarjeta con desglose completo (precio ×
+acciones + / − comisión = total) que simulador.html -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -109,6 +109,7 @@ para que no se pierda ese dato al guardar cambios desde esta página -->
   </div>
   <div class="fila">
     <div class="campo"><label>ISIN (opcional)</label><input id="op-isin" type="text"></div>
+    <div class="campo"><label>Comisión real cobrada</label><input id="op-comision" type="text" inputmode="decimal" placeholder="1"></div>
   </div>
   <label style="display:flex; align-items:center; gap:6px; font-family: ui-monospace, monospace; font-size:12.5px; margin-bottom:8px;">
     <input id="op-cambio-divisa" type="checkbox">
@@ -154,7 +155,7 @@ function renderLedger(ledger) {
           <span style="font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft);">${op.tipo} · ${op.fecha}</span>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">
-          ${op.nombre ? op.nombre + ' · ' : ''}${op.precio}$ × ${op.acciones} acc.${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}
+          ${op.nombre ? op.nombre + ' · ' : ''}${op.precio}$ × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}
         </div>
       </div>
       <div id="gestion-op-${idx}" style="display:none; margin-top:8px; gap:6px;">
@@ -176,6 +177,9 @@ function iniciarEdicion(index) {
   document.getElementById('op-acciones').value = op.acciones;
   document.getElementById('op-fecha').value = op.fecha;
   document.getElementById('op-cambio-divisa').checked = !!op.cambio_divisa;
+  document.getElementById('op-comision').value = op.comision !== undefined && op.comision !== null
+    ? op.comision
+    : (op.tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA);
   editandoIndice = index;
   document.getElementById('panel-edicion').style.display = 'block';
   document.getElementById('panel-edicion').scrollIntoView({ behavior: 'smooth' });
@@ -196,6 +200,8 @@ async function guardarEdicion() {
   const acciones = parseInt(document.getElementById('op-acciones').value);
   const fecha = document.getElementById('op-fecha').value;
   const cambioDivisa = document.getElementById('op-cambio-divisa').checked;
+  const comisionInput = parseNumeroEs(document.getElementById('op-comision').value);
+  const comision = isNaN(comisionInput) ? (tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA) : comisionInput;
 
   if (!ticker || !precio || !acciones || !fecha) {
     alert('Faltan datos: revisa ticker, precio, acciones y fecha.');
@@ -204,7 +210,7 @@ async function guardarEdicion() {
 
   const ledger = await cargarLedger();
   ledger[editandoIndice] = {
-    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa,
+    tipo, ticker, nombre, isin, precio, acciones, fecha, cambio_divisa: cambioDivisa, comision,
     acciones_restantes: tipo === 'compra' ? acciones : 0,
     neto: null,
   };
