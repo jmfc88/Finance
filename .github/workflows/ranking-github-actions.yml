@@ -1,3 +1,7 @@
+# VERSION: 14 (23/08/2026) - añade historial_tarjetas.json al git add: es la
+# ventana deslizante de 5 días con el contenido completo de las tarjetas, que
+# el simulador necesita leer para enlazar una compra con la tarjeta que la
+# motivó. Sin esta línea el archivo se genera en la ejecución pero se pierde.
 # VERSION: 13 (11/08/2026) - añade historial_scoring.json al git add, para
 # que el histórico acumulado de puntuaciones (nuevo en fase3) se guarde de
 # verdad en el repo cada vez
@@ -43,7 +47,7 @@ jobs:
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json historial_scoring.json
+          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json historial_scoring.json historial_tarjetas.json
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
           git pull origin main --no-rebase -X ours
           git push
