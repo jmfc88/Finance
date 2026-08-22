@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<!-- VERSION: 23 (21/08/2026) - añade panel "Ajustes avanzados: comisión de
-Trade Republic" (comisión de compra/venta configurable, una vez, como ya
-existía para el % de cambio de divisa) — el campo de comisión de cada
-operación se precarga con este valor, así no hay que escribirlo cada vez.
-Si algún día Trade Republic cambia su tarifa, se actualiza aquí una sola
-vez y afecta solo a las operaciones nuevas, nunca a las ya guardadas -->
+<!-- VERSION: 24 (21/08/2026) - cada tarjeta de "Últimas operaciones" muestra
+ahora el desglose completo: precio × acciones + / − comisión = total. Antes
+la comisión se guardaba pero no aparecía en ningún sitio visible -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -550,7 +547,7 @@ function renderUltimasOperaciones(ledger) {
           <span style="font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft);">${op.tipo} · ${op.fecha}</span>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">
-          ${op.precio}$ × ${op.acciones} acc.${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}
+          ${op.precio}$ × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}
         </div>
       </div>
       <div id="gestion-op-${idx}" style="display:none; margin-top:8px; gap:6px;">
@@ -564,12 +561,7 @@ function renderUltimasOperaciones(ledger) {
 function renderResumenFiscal(ledger) {
   const ventas = ledger.filter(op => op.tipo === 'venta' && op.neto !== null);
   const totalNeto = ventas.reduce((s, op) => s + op.neto, 0);
-  const totalComisiones = ledger.reduce((s, op) => {
-    const c = op.comision !== undefined && op.comision !== null
-      ? op.comision
-      : (op.tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA);
-    return s + c;
-  }, 0);
+  const totalComisiones = ledger.reduce((s, op) => s + comisionEfectivaOp(op), 0);
   const ahorro = Math.max(totalNeto, 0) * AHORRO_RATE;
   const reinvertible = totalNeto - ahorro;
 
