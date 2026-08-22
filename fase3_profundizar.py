@@ -1,4 +1,13 @@
 """
+VERSION: 11 (23/08/2026) - añade historial_tarjetas.json: guarda el CONTENIDO
+COMPLETO de las tarjetas del cuaderno (no solo los números sueltos que ya
+guardaba historial_scoring.json), en una ventana deslizante de los últimos 5
+días con ejecución. Cada día nuevo que entra expulsa al más antiguo, sin
+borrar nada de golpe. Dentro de cada día se deduplica: si una candidata sale
+en las 6 ejecuciones con el mismo contenido, se guarda UNA vez con la lista
+de horas, posiciones y precios de cada aparición. Esto es lo que permite que
+el simulador enlace una compra con la tarjeta exacta que la motivó.
+
 VERSION: 10 (19/08/2026) - en caso de empate exacto de score tras la
 profundización, desempata por nombre de empresa A-Z (igual que fase2).
 
@@ -62,6 +71,7 @@ Entrada/salida: el mismo candidatos_rankeados.json que genera fase2_scoring.py
 — lo relee, ajusta el score de las mejores, reordena, y lo vuelve a guardar.
 """
 
+import hashlib
 import json
 import time
 import xml.etree.ElementTree as ET
@@ -73,6 +83,9 @@ import requests
 ARCHIVO = "candidatos_rankeados.json"
 HISTORICO = "historial_scoring.json"
 TOP_N_HISTORICO = 30  # cuántas candidatas se guardan cada vez en el histórico
+TARJETAS = "historial_tarjetas.json"
+TOP_N_TARJETAS = 30  # cuántas tarjetas completas se guardan por ejecución
+DIAS_VENTANA_TARJETAS = 5  # ventana deslizante: el día 6 expulsa al día 1
 MAX_ENTRADAS_HISTORICO = 20000  # límite de seguridad para que el archivo no crezca sin fin
 TOP_N_A_PROFUNDIZAR = 25  # solo las mejores, para no disparar el tiempo de ejecución
 MAX_NOTICIAS_POR_CONSULTA = 4
@@ -304,6 +317,147 @@ def guardar_historico(ranking):
     print(f"Histórico actualizado: {len(historico)} snapshots acumulados en total.")
 
 
+def _huella_tarjeta(c):
+    """Huella del CONTENIDO cualitativo de la tarjeta: lo que hace que la
+    tarjeta 'diga' algo distinto. Deliberadamente NO incluye el precio ni la
+    posición en el ranking, que cambian en cada ejecución — si los incluyera,
+    nunca se deduplicaría nada y el archivo crecería 6 veces más de lo
+    necesario. El precio y la posición de cada pasada se guardan aparte, en
+    la lista de apariciones."""
+    partes = [
+        str(round(c.get("score") or 0)),
+        str(c.get("consenso")),
+        str(c.get("tendencia_tecnica")),
+        str(c.get("tendencia_analistas")),
+        str(c.get("catalizador_resultados") is not None),
+        str((c.get("consenso_real") or {}).get("pct_comprar")),
+        str((c.get("profundizacion") or {}).get("verificado")),
+        str((c.get("profundizacion") or {}).get("ajuste")),
+        str(c.get("resumen_negocio"))[:200],
+        "|".join(sorted(n.get("titulo", "") for n in (c.get("noticias") or {}).get("titulares", []))),
+    ]
+    return hashlib.sha1("~".join(partes).encode("utf-8")).hexdigest()[:12]
+
+
+def _tarjeta_completa(c):
+    """El contenido de la tarjeta tal y como lo ve el usuario en el cuaderno.
+    Se guarda entero a propósito: el objetivo no es ahorrar bytes, es poder
+    reconstruir dentro de seis meses QUÉ decía exactamente el sistema el día
+    que se pulsó comprar."""
+    return {
+        "ticker": c.get("ticker"),
+        "nombre_empresa": c.get("nombre_empresa"),
+        "isin": c.get("isin"),
+        "sector": c.get("sector"),
+        "score": c.get("score"),
+        "consenso": c.get("consenso"),
+        "consenso_real": c.get("consenso_real"),
+        "precio_objetivo_medio": c.get("precio_objetivo_medio"),
+        "dispersion_pct": c.get("dispersion_pct"),
+        "momentum_30d_pct": c.get("momentum_30d_pct"),
+        "momentum_5d_pct": c.get("momentum_5d_pct"),
+        "fuerza_relativa_pct": c.get("fuerza_relativa_pct"),
+        "regimen_mercado": c.get("regimen_mercado"),
+        "rsi_14": c.get("rsi_14"),
+        "tendencia_tecnica": c.get("tendencia_tecnica"),
+        "sma50": c.get("sma50"),
+        "sma200": c.get("sma200"),
+        "tendencia_analistas": c.get("tendencia_analistas"),
+        "catalizador_resultados": c.get("catalizador_resultados"),
+        "cotiza_en_euros": c.get("cotiza_en_euros"),
+        "noticias": c.get("noticias"),
+        "profundizacion": c.get("profundizacion"),
+        "resumen_negocio": c.get("resumen_negocio"),
+        "version_scoring": c.get("version_scoring"),
+    }
+
+
+def guardar_tarjetas(ranking):
+    """Guarda el contenido completo de las mejores tarjetas de esta pasada en
+    una ventana deslizante de los ultimos DIAS_VENTANA_TARJETAS dias CON
+    EJECUCION (no dias naturales: si un dia no corre el bot, no cuenta y no
+    consume hueco).
+
+    Por que existe este archivo: cuando el usuario compra, han podido pasar
+    varios dias desde que vio la tarjeta que le llamo la atencion. Sin esto,
+    la tarjeta ya se habria perdido y el motivo real de la compra quedaria
+    sin registrar para siempre. Con esto, el simulador puede enlazar la
+    compra con la tarjeta exacta y guardarla ya de forma permanente."""
+    try:
+        with open(TARJETAS, "r", encoding="utf-8") as f:
+            datos = json.load(f)
+        if not isinstance(datos, dict):
+            datos = {}
+    except (FileNotFoundError, json.JSONDecodeError):
+        datos = {}
+
+    dias = datos.get("dias") or []
+    ahora = datetime.now()
+    hoy = ahora.strftime("%Y-%m-%d")
+    hora = ahora.strftime("%H:%M")
+
+    dia_actual = next((d for d in dias if d.get("fecha") == hoy), None)
+    if dia_actual is None:
+        dia_actual = {"fecha": hoy, "tarjetas": []}
+        dias.append(dia_actual)
+
+    for posicion, c in enumerate(ranking[:TOP_N_TARJETAS], start=1):
+        ticker = c.get("ticker")
+        if not ticker:
+            continue
+        huella = _huella_tarjeta(c)
+        aparicion = {
+            "hora": hora,
+            "posicion": posicion,
+            "precio": c.get("precio_actual"),
+            "score": c.get("score"),
+        }
+
+        existente = next(
+            (t for t in dia_actual["tarjetas"]
+             if t.get("ticker") == ticker and t.get("huella") == huella),
+            None,
+        )
+        if existente:
+            existente["apariciones"].append(aparicion)
+            # La tarjeta guardada se refresca a la ultima version vista: el
+            # contenido cualitativo es el mismo (misma huella), pero el
+            # precio de dentro conviene que sea el mas reciente.
+            existente["tarjeta"] = _tarjeta_completa(c)
+        else:
+            dia_actual["tarjetas"].append({
+                "ticker": ticker,
+                "nombre_empresa": c.get("nombre_empresa"),
+                "huella": huella,
+                "apariciones": [aparicion],
+                "tarjeta": _tarjeta_completa(c),
+            })
+
+    # Ventana deslizante: ordena por fecha y se queda con los ultimos N dias.
+    # Solo se descarta el dia mas antiguo cuando entra uno nuevo por encima
+    # del limite — nunca se borra el archivo entero de golpe.
+    dias.sort(key=lambda d: d.get("fecha", ""))
+    descartados = []
+    if len(dias) > DIAS_VENTANA_TARJETAS:
+        descartados = dias[:-DIAS_VENTANA_TARJETAS]
+        dias = dias[-DIAS_VENTANA_TARJETAS:]
+
+    datos = {
+        "actualizado": ahora.isoformat(),
+        "ventana_dias": DIAS_VENTANA_TARJETAS,
+        "dias": dias,
+    }
+
+    with open(TARJETAS, "w", encoding="utf-8") as f:
+        json.dump(datos, f, indent=2, ensure_ascii=False, allow_nan=False)
+
+    total = sum(len(d["tarjetas"]) for d in dias)
+    aviso = ""
+    if descartados:
+        aviso = f" (sale de la ventana el dia {descartados[-1].get('fecha')})"
+    print(f"Tarjetas guardadas: {len(dias)} dias en ventana, {total} versiones de tarjeta{aviso}.")
+
+
 def ejecutar():
     with open(ARCHIVO, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -329,6 +483,7 @@ def ejecutar():
         json.dump(data, f, indent=2, ensure_ascii=False, allow_nan=False)
 
     guardar_historico(nuevo_ranking)
+    guardar_tarjetas(nuevo_ranking)
 
     print(f"Profundización completa: {len(a_profundizar)} candidatas revisadas con búsquedas adicionales.")
 
