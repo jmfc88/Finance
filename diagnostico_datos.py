@@ -1,126 +1,155 @@
 """
-VERSION: 1 (23/08/2026) - script de diagnostico de un solo uso.
+VERSION: 2 (23/08/2026) - segunda ronda del diagnostico.
 
-POR QUE EXISTE: el 22/08/2026 se descubrio que en candidatos_rankeados.json
-las 107 candidatas europeas (de 141 totales) tenian sma50, sma200, rsi_14,
-momentum_30d y momentum_5d todos a null, mientras que las 34 de EEUU,
-Australia y Canada los tenian correctos. El reparto era perfecto por mercado:
-.PA, .MI, .MC, .AS, .HE, .LS, .BR y .L fallaban TODAS; sin sufijo, .AX y .TO
-funcionaban TODAS.
+QUE DESCUBRIO LA RONDA 1 (ejecutada el 22/08 a las 23:41 UTC):
+las tres formas de pedir el historico funcionan con TODAS las europeas,
+8 de 8, incluida SCYR.MC. Asi que la forma de pedirlo NO es el problema.
+Tambien salio que yf.download() esta roto entero bajo pandas 3.0.5
+("The truth value of a Series is ambiguous"), con europeas y americanas
+por igual — no usar download() en este proyecto.
 
-Efecto real: 19 de las 30 tarjetas del cuaderno se estaban puntuando sin
-ningun dato de precio, y ademas salian etiquetadas como tendencia "mixta"
-en vez de "sin datos", porque las comparaciones contra NaN dan siempre False
-y el codigo caia en el else.
+LA PISTA QUE QUEDA: el diagnostico pedia el historico sobre un objeto
+Ticker RECIEN CREADO. fase2 no hace eso: sobre el MISMO objeto llama
+antes a .info, luego a .calendar, luego a .recommendations, y solo
+despues a .history(). Hay un fallo conocido de yfinance por el que unas
+llamadas envenenan a las siguientes sobre el mismo objeto.
 
-Este script NO arregla nada. Solo prueba varias formas de pedir el historico
-a Yahoo y dice cual funciona, para arreglar la de verdad con datos y no a
-ojo. Se ejecuta una vez desde la pestana Actions y se lee la salida.
+QUE PRUEBA ESTE SCRIPT: exactamente esa hipotesis. Reproduce el orden de
+llamadas de fase2 y lo compara con el objeto limpio. Si la hipotesis es
+correcta, la prueba B fallara en las europeas y la A funcionara — y
+entonces el arreglo es de una linea.
 
-COMO USARLO: subir al repo, ir a Actions -> "Diagnostico de datos" ->
-Run workflow, y mirar el resumen que sale al terminar.
+COMO USARLO: subir al repo y lanzar "Diagnostico de datos" desde Actions.
 """
 
 import time
-from datetime import date, timedelta
 
-import pandas as pd
 import yfinance as yf
 
-# Una muestra de cada mercado: los que fallan y los que funcionan, para poder
-# comparar. Si un metodo arregla los europeos pero rompe los americanos, hay
-# que verlo aqui antes de tocar fase2.
 TICKERS_PRUEBA = [
-    ("SCYR.MC", "Espana - Sacyr (operacion real cerrada)"),
-    ("ITX.MC", "Espana - Inditex"),
+    ("SCYR.MC", "Espana - Sacyr"),
     ("AI.PA", "Francia - Air Liquide"),
     ("LDO.MI", "Italia - Leonardo"),
     ("ASML.AS", "Holanda - ASML"),
-    ("ANET", "EEUU - Arista (ESTE FUNCIONA HOY)"),
-    ("^STOXX50E", "Indice EuroStoxx50 (lo necesita el regimen de mercado)"),
-    ("^GSPC", "Indice S&P500 (lo necesita el regimen de mercado)"),
+    ("ANET", "EEUU - Arista (control, este funciona)"),
+    ("^STOXX50E", "Indice EuroStoxx50"),
 ]
 
 
 def resumen(hist):
-    """Distingue los tres casos que importan, que NO son lo mismo:
-    - vacio: Yahoo no devolvio ninguna fila
-    - solo NaN: devolvio filas pero sin precios (el fallo que tenemos ahora,
-      y el mas traicionero porque el codigo no se entera)
-    - ok: filas con precios de verdad"""
     if hist is None or len(hist) == 0:
-        return "VACIO (0 filas)"
+        return "VACIO"
     if "Close" not in hist.columns:
-        return f"SIN COLUMNA Close ({len(hist)} filas)"
+        return "SIN COLUMNA Close"
     validos = hist["Close"].notna().sum()
     if validos == 0:
-        return f"SOLO NaN ({len(hist)} filas, 0 precios) <-- el fallo actual"
-    return f"OK ({len(hist)} filas, {validos} precios, ultimo {round(float(hist['Close'].dropna().iloc[-1]), 2)})"
+        return f"SOLO NaN ({len(hist)} filas, 0 precios)  <-- EL FALLO"
+    return f"OK ({validos} precios)"
 
 
-def metodo_actual(ticker):
+def a_limpio(ticker):
+    """Objeto nuevo, el historico es lo primero que se le pide."""
     return yf.Ticker(ticker).history(period="220d")
 
 
-def metodo_periodo_estandar(ticker):
-    """'1y' es un periodo de los que Yahoo lista como validos; '220d' es un
-    formato libre que yfinance acepta pero que Yahoo puede rechazar segun
-    el mercado."""
-    return yf.Ticker(ticker).history(period="1y")
+def b_orden_de_fase2(ticker):
+    """El orden EXACTO de evaluar() en fase2_scoring.py."""
+    t = yf.Ticker(ticker)
+    _ = t.info
+    try:
+        _ = t.calendar
+    except Exception:
+        pass
+    try:
+        _ = t.recommendations
+    except Exception:
+        pass
+    return t.history(period="220d")
 
 
-def metodo_fechas_explicitas(ticker):
-    fin = date.today()
-    ini = fin - timedelta(days=400)
-    return yf.Ticker(ticker).history(start=ini.isoformat(), end=fin.isoformat())
+def c_solo_info_antes(ticker):
+    """Para saber cual de las tres llamadas previas es la culpable."""
+    t = yf.Ticker(ticker)
+    _ = t.info
+    return t.history(period="220d")
 
 
-def metodo_download(ticker):
-    return yf.download(ticker, period="1y", progress=False, auto_adjust=True)
+def d_solo_calendar_antes(ticker):
+    t = yf.Ticker(ticker)
+    try:
+        _ = t.calendar
+    except Exception:
+        pass
+    return t.history(period="220d")
 
 
-def metodo_download_sin_ajustar(ticker):
-    return yf.download(ticker, period="1y", progress=False, auto_adjust=False)
+def e_solo_recomendaciones_antes(ticker):
+    t = yf.Ticker(ticker)
+    try:
+        _ = t.recommendations
+    except Exception:
+        pass
+    return t.history(period="220d")
 
 
-METODOS = [
-    ("1. history(period='220d')  [el actual]", metodo_actual),
-    ("2. history(period='1y')", metodo_periodo_estandar),
-    ("3. history(start=, end=)", metodo_fechas_explicitas),
-    ("4. download(period='1y')", metodo_download),
-    ("5. download(auto_adjust=False)", metodo_download_sin_ajustar),
+def f_arreglo_objeto_aparte(ticker):
+    """EL ARREGLO PROPUESTO: hacer todo lo de fase2 sobre un objeto y pedir
+    el historico sobre OTRO objeto nuevo. Si esto funciona donde falla la
+    prueba B, el arreglo en fase2 es cambiar una sola linea."""
+    t = yf.Ticker(ticker)
+    _ = t.info
+    try:
+        _ = t.calendar
+    except Exception:
+        pass
+    try:
+        _ = t.recommendations
+    except Exception:
+        pass
+    return yf.Ticker(ticker).history(period="220d")  # objeto nuevo solo para el historico
+
+
+PRUEBAS = [
+    ("A. objeto limpio (asi lo pedia el diagnostico 1)", a_limpio),
+    ("B. orden de fase2: info + calendar + recomendaciones", b_orden_de_fase2),
+    ("C. solo .info antes", c_solo_info_antes),
+    ("D. solo .calendar antes", d_solo_calendar_antes),
+    ("E. solo .recommendations antes", e_solo_recomendaciones_antes),
+    ("F. ARREGLO: objeto aparte solo para el historico", f_arreglo_objeto_aparte),
 ]
 
 
 def ejecutar():
-    print(f"yfinance instalado: {yf.__version__}")
-    print(f"pandas instalado:   {pd.__version__}")
+    print(f"yfinance {yf.__version__}")
     print("=" * 78)
+    resultados = {}
 
-    tabla = {}
-    for etiqueta, funcion in METODOS:
+    for etiqueta, funcion in PRUEBAS:
         print(f"\n### {etiqueta}")
-        tabla[etiqueta] = {}
+        resultados[etiqueta] = {}
         for ticker, descripcion in TICKERS_PRUEBA:
             try:
                 r = resumen(funcion(ticker))
             except Exception as e:
-                r = f"EXCEPCION: {type(e).__name__}: {str(e)[:70]}"
-            tabla[etiqueta][ticker] = r
-            print(f"  {ticker:12} {descripcion:52} {r}")
-            time.sleep(1.5)  # misma pausa que usa fase2, para no falsear el resultado
+                r = f"EXCEPCION: {type(e).__name__}: {str(e)[:60]}"
+            resultados[etiqueta][ticker] = r
+            print(f"  {ticker:12} {descripcion:40} {r}")
+            time.sleep(1.5)
 
     print("\n" + "=" * 78)
-    print("RESUMEN: cuantos de los 8 devuelven precios de verdad")
+    print("RESUMEN (cuantos de los 6 traen precios)")
     print("=" * 78)
-    for etiqueta in tabla:
-        buenos = sum(1 for v in tabla[etiqueta].values() if v.startswith("OK"))
-        print(f"  {buenos}/8   {etiqueta}")
+    for etiqueta in resultados:
+        buenos = sum(1 for v in resultados[etiqueta].values() if v.startswith("OK"))
+        print(f"  {buenos}/6   {etiqueta}")
 
-    print("\nQUE HACER CON ESTO: el metodo con mas OK es el que hay que poner")
-    print("en fase2_scoring.py. Si NINGUNO arregla los europeos, el problema no")
-    print("es la forma de llamar sino la fuente, y toca buscar otra distinta")
-    print("de Yahoo para Europa.")
+    print("\nCOMO LEERLO:")
+    print("  - Si B falla y A funciona -> confirmado: una llamada previa")
+    print("    envenena el historico. C, D y E dicen cual de las tres.")
+    print("  - Si F funciona -> el arreglo es pedir el historico sobre un")
+    print("    objeto Ticker nuevo, y es un cambio de una linea en fase2.")
+    print("  - Si B funciona en todas -> la causa no esta aqui, y hay que")
+    print("    mirar la carga total de peticiones de una ejecucion entera.")
 
 
 if __name__ == "__main__":
