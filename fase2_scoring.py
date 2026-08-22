@@ -1,4 +1,19 @@
 """
+VERSION: 32 (23/08/2026) - ARREGLO CRITICO descubierto al auditar los datos
+reales del repo: las 107 candidatas europeas de 141 (y 19 de las 30 que se
+ven en el cuaderno) no tenian NINGUN dato de precio. Yahoo devolvia filas con
+todos los cierres a NaN para .PA .MI .MC .AS .HE .LS .BR y .L, mientras que
+EEUU, .AX y .TO funcionaban. Peor aun, el sistema no se enteraba: como NaN no
+es mayor ni menor que nada, las comparaciones daban False y esas acciones
+salian etiquetadas como tendencia "mixta", indistinguibles de una candidata
+con datos completos. Tres cambios: (1) historico_util() prueba tres formas de
+pedir el historico y comprueba que vengan precios de verdad; (2)
+tendencia_tecnica() devuelve None en vez de inventarse "mixta"; (3) una
+candidata sin datos de precio se descarta con motivo explicito en vez de
+competir a ciegas en el ranking. Tambien corrige estado_indice(), que exigia
+mas de 200 sesiones sobre un periodo de 220 dias naturales (~148 sesiones) y
+por tanto habria dejado el regimen de mercado SIEMPRE en "desconocido".
+
 VERSION: 31 (23/08/2026) - tres mejoras adoptadas del proyecto abierto
 RyanJHamby/stock-screener, todas dentro del mismo presupuesto de 100 puntos
 (el maximo teorico NO cambia):
@@ -125,7 +140,7 @@ DIAS_MINIMOS_ANTES_DE_RESULTADOS = 5
 PRECIO_MAXIMO = 200  # criterio de Jose Manuel: nada de fracciones, nada por encima de ~200€
 PRECIO_MINIMO = 0.05  # excluye solo penny stocks casi a cero, no acciones baratas en general
 PAUSA_ENTRE_PETICIONES = 1.5
-VERSION_SCORING = 31
+VERSION_SCORING = 32
 
 # Indices de referencia para el regimen de mercado y la fuerza relativa.
 # Cada candidata se compara con el indice de SU mercado: no tiene sentido
@@ -266,6 +281,41 @@ def calcular_rsi(cierres, periodo=14):
         return None
 
 
+def historico_util(ticker_obj, ticker):
+    """Pide el historico de precios y NO SE FIA del resultado.
+
+    Descubierto el 22/08/2026: para las acciones europeas (.PA .MI .MC .AS
+    .HE .LS .BR .L) Yahoo devolvia filas pero con TODOS los cierres a NaN.
+    Como NaN no es mayor ni menor que nada, todas las comparaciones daban
+    False y el sistema etiquetaba esas acciones como tendencia "mixta" en
+    vez de reconocer que no tenia datos. 107 de 141 candidatas, y 19 de las
+    30 que se ven en el cuaderno, se estaban puntuando a ciegas sin que
+    nada lo indicara.
+
+    Ahora se prueban varias formas de pedirlo y se comprueba que de verdad
+    vengan precios. Devuelve (hist, metodo) o (None, None) si ninguna
+    funciona — y None significa None, no se disfraza de dato."""
+    intentos = [
+        ("periodo_220d", lambda: ticker_obj.history(period="220d")),
+        ("periodo_1y", lambda: ticker_obj.history(period="1y")),
+        ("fechas_explicitas", lambda: ticker_obj.history(
+            start=(datetime.now() - timedelta(days=400)).strftime("%Y-%m-%d"),
+            end=datetime.now().strftime("%Y-%m-%d"))),
+    ]
+    for nombre, intento in intentos:
+        try:
+            hist = intento()
+        except Exception:
+            continue
+        if hist is None or len(hist) == 0 or "Close" not in hist.columns:
+            continue
+        # Lo importante: que haya precios de verdad, no solo filas
+        hist = hist[hist["Close"].notna()]
+        if len(hist) >= 30:
+            return hist, nombre
+    return None, None
+
+
 def tendencia_tecnica(hist, precio_actual):
     """Compara el precio actual con sus medias de 50 y 200 sesiones.
     Antes exigía el orden encadenado precio > sma50 > sma200 (cruce dorado
@@ -280,6 +330,14 @@ def tendencia_tecnica(hist, precio_actual):
             return None, None, None
         sma50 = round(hist["Close"].rolling(50).mean().iloc[-1], 2)
         sma200 = round(hist["Close"].rolling(200).mean().iloc[-1], 2) if len(hist) >= 200 else None
+
+        # Si la media sale NaN no hay tendencia que valga: devolver "mixta"
+        # aqui seria inventarse una etiqueta. Es justo lo que pasaba con las
+        # europeas hasta el 22/08/2026.
+        if sma50 != sma50:  # NaN
+            return None, None, None
+        if sma200 is not None and sma200 != sma200:
+            sma200 = None
 
         if sma200 is not None:
             if precio_actual > sma50 and precio_actual > sma200:
@@ -594,8 +652,12 @@ def estado_indice(simbolo):
 
     resultado = ("desconocido", None)
     try:
-        hist = yf.Ticker(simbolo).history(period="220d")
-        if len(hist) > 200:
+        obj = yf.Ticker(simbolo)
+        hist, _ = historico_util(obj, simbolo)
+        # 220 dias naturales son solo ~148 sesiones, asi que exigir >200
+        # dejaba el regimen SIEMPRE en "desconocido" y esta mejora no habria
+        # hecho nada. historico_util prueba tambien 1 año y fechas explicitas.
+        if hist is not None and len(hist) > 200:
             cierres = hist["Close"]
             actual = cierres.iloc[-1]
             sma50 = cierres.rolling(50).mean().iloc[-1]
@@ -778,7 +840,13 @@ def evaluar(ticker):
             return {"ticker": ticker, "descartado": True,
                     "motivo": f"{consenso_real['pct_vender']}% de los analistas recomienda vender - discrepancia real, se evita"}
 
-        hist = t.history(period="220d")  # suficiente para SMA200, RSI y momentum de 30 días
+        hist, metodo_datos = historico_util(t, ticker)
+        if hist is None:
+            # Antes esto seguia adelante en silencio y la candidata competia
+            # en el ranking sin ningun dato tecnico, aparentando normalidad.
+            return {"ticker": ticker, "descartado": True,
+                    "motivo": "Sin datos de precio utilizables en Yahoo - no se puede evaluar"}
+
         momentum_30d = None
         if len(hist) > 22:
             momentum_30d = round((hist["Close"].iloc[-1] / hist["Close"].iloc[-22] - 1) * 100, 1)
@@ -845,6 +913,7 @@ def evaluar(ticker):
             "regimen_mercado": regimen,
             "indice_referencia": indice,
             "version_scoring": VERSION_SCORING,
+            "metodo_datos": metodo_datos,
             "catalizador_resultados": catalizador,
             "consenso_real": consenso_real,
             "cotiza_en_euros": cotiza_en_euros,
