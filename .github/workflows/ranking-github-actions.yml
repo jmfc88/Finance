@@ -1,7 +1,11 @@
-# VERSION: 14 (23/08/2026) - añade historial_tarjetas.json al git add: es la
-# ventana deslizante de 5 días con el contenido completo de las tarjetas, que
-# el simulador necesita leer para enlazar una compra con la tarjeta que la
-# motivó. Sin esta línea el archivo se genera en la ejecución pero se pierde.
+# VERSION: 14 (23/08/2026) - dos cambios: (1) añade historial_tarjetas.json,
+# la ventana deslizante de 5 días con el contenido completo de las tarjetas,
+# que el simulador necesita para enlazar una compra con la tarjeta que la
+# motivó; sin esto el archivo se genera en la ejecución y se pierde al acabar.
+# (2) el git add ya no falla si un archivo todavía no existe: antes bastaba
+# con que faltara UNO (por ejemplo el primer día, antes de que fase3 lo
+# hubiera creado) para que git devolviera error 128 y NO se subiera nada, ni
+# siquiera el ranking. Ahora se comprueba archivo por archivo.
 # VERSION: 13 (11/08/2026) - añade historial_scoring.json al git add, para
 # que el histórico acumulado de puntuaciones (nuevo en fase3) se guarde de
 # verdad en el repo cada vez
@@ -47,7 +51,9 @@ jobs:
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json historial_scoring.json historial_tarjetas.json
+          for f in candidatos_fase1.json candidatos_rankeados.json universo_tickers.json universo_por_indice.json historial_scoring.json historial_tarjetas.json; do
+            if [ -f "$f" ]; then git add "$f"; else echo "aviso: $f todavia no existe, se omite"; fi
+          done
           git diff --staged --quiet || git commit -m "actualiza ranking de candidatas"
           git pull origin main --no-rebase -X ours
           git push
