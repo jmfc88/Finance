@@ -1,23 +1,46 @@
-// VERSION: 7 (21/08/2026) - añade comisión de compra/venta CONFIGURABLE
-// (obtenerComisionCompraConfigurada/obtenerComisionVentaConfigurada), para
-// precargar el campo del registro con el valor correcto sin tener que
-// escribirlo cada vez. Las constantes COMISION_COMPRA/VENTA se quedan
-// como respaldo fijo histórico, solo para operaciones antiguas guardadas
-// antes de que existiera el campo "comisión" — no se tocan nunca.
+/* VERSION: 9 (22/08/2026) - CORRECCIÓN CRÍTICA DE VERDAD: se detectó el
+archivo subido a GitHub sin saltos de línea (copia-pega en vez de "Upload
+files"), lo que en JavaScript comenta sin querer TODO el código que viene
+detrás del primer comentario de una línea — el archivo entero quedaba sin
+ninguna función definida. Se han eliminado TODOS los comentarios de una
+sola línea del archivo y se han convertido a bloque, que termina siempre
+en su propio cierre pase lo que pase con los saltos de línea. Probado de
+verdad: simulando la pérdida completa de saltos de línea, todas las
+funciones (cargarLedger, guardarLedger, recalcularFIFO, comisionEfectivaOp,
+totalOperacion, etc.) se mantienen definidas. SUBE ESTE ARCHIVO SIEMPRE
+CON "UPLOAD FILES", NUNCA COPIA-PEGA.
 
-// VERSION: 6 (21/08/2026) - calcularNetoVenta() usa ahora la comisión real
-// guardada en cada operación (compra y venta), en vez de asumir siempre la
-// constante global — con respaldo a la constante para operaciones antiguas
-// que no tengan ese dato todavía.
+VERSION: 8 (21/08/2026) - añade comisionEfectivaOp() y totalOperacion(),
+compartidas entre simulador.html e historial.html, para mostrar el
+desglose completo en cada tarjeta (precio × acciones + / − comisión =
+total) — antes la comisión se guardaba pero no se veía en ningún sitio.
 
-// VERSION: 5 (05/08/2026) - CORRECCIÓN CRÍTICA: cargarLedger() ya no deja que
-// la copia de GitHub borre sin más lo que hay en local — ahora FUSIONA
-// ambas (sin duplicar) y sube la fusión de vuelta si hacía falta. Antes,
-// si un dispositivo guardaba algo local antes de tener el token puesto,
-// una recarga posterior con GitHub desactualizado podía borrar esos datos.
+VERSION: 7 (21/08/2026) - añade comisión de compra/venta CONFIGURABLE
+(obtenerComisionCompraConfigurada/obtenerComisionVentaConfigurada), para
+precargar el campo del registro con el valor correcto sin tener que
+escribirlo cada vez. Las constantes COMISION_COMPRA/VENTA se quedan
+como respaldo fijo histórico, solo para operaciones antiguas guardadas
+antes de que existiera el campo "comisión" — no se tocan nunca.
 
-const COMISION_COMPRA = 1.0; // histórico fijo — respaldo SOLO para operaciones
-const COMISION_VENTA = 1.0;  // antiguas guardadas antes de que existiera el campo "comisión"; no tocar
+VERSION: 6 (21/08/2026) - calcularNetoVenta() usa ahora la comisión real
+guardada en cada operación (compra y venta), en vez de asumir siempre la
+constante global — con respaldo a la constante para operaciones antiguas
+que no tengan ese dato todavía.
+
+VERSION: 5 (05/08/2026) - CORRECCIÓN CRÍTICA: cargarLedger() ya no deja que
+la copia de GitHub borre sin más lo que hay en local — ahora FUSIONA
+ambas (sin duplicar) y sube la fusión de vuelta si hacía falta. Antes,
+si un dispositivo guardaba algo local antes de tener el token puesto,
+una recarga posterior con GitHub desactualizado podía borrar esos datos.
+
+NOTA DE SEGURIDAD: este archivo ya no usa comentarios de una sola línea
+en ningún sitio, a propósito — todos son de bloque, autoprotegidos. */
+
+/* COMISION_COMPRA y COMISION_VENTA: histórico fijo — respaldo SOLO para
+operaciones antiguas guardadas antes de que existiera el campo "comisión";
+no tocar nunca. */
+const COMISION_COMPRA = 1.0;
+const COMISION_VENTA = 1.0;
 
 function obtenerComisionCompraConfigurada() {
   try {
@@ -43,10 +66,11 @@ function guardarComisionVentaConfigurada(valor) {
 
 const TAX_RATE = 0.19;
 const AHORRO_RATE = 0.10;
-const COSTE_FX_PCT_DEFECTO = 1.2; // % estimado de coste de cambio de divisa
-// (Trade Republic no lo publica como línea aparte, va dentro del margen de
-// ejecución; fuentes externas lo sitúan entre 0,14% y 0,5-1% según el caso.
-// Se usa 1% por defecto como colchón de seguridad, ajustable por el usuario.)
+const COSTE_FX_PCT_DEFECTO = 1.2;
+/* % estimado de coste de cambio de divisa (Trade Republic no lo publica
+como línea aparte, va dentro del margen de ejecución; fuentes externas lo
+sitúan entre 0,14% y 0,5-1% según el caso. Se usa 1% por defecto como
+colchón de seguridad, ajustable por el usuario.) */
 
 function obtenerCosteFXConfigurado() {
   try {
@@ -76,7 +100,7 @@ function guardarTokenConfigurado(token) {
 }
 
 function claveOperacion(op) {
-  // Identifica una operación de forma única, para poder fusionar sin duplicar
+  /* Identifica una operación de forma única, para poder fusionar sin duplicar */
   return `${op.tipo}|${op.ticker}|${op.fecha}|${op.precio}|${op.acciones}`;
 }
 
@@ -102,26 +126,26 @@ async function cargarLedger() {
         const fusionado = fusionarLedgers(local, remoto);
         recalcularFIFO(fusionado);
         try { localStorage.setItem('ledger-operaciones', JSON.stringify(fusionado)); } catch (e) { /* no pasa nada */ }
-        // Si local tenía algo que GitHub no tenía todavía, subimos la fusión
-        // para que quede sincronizado — así ningún dispositivo pierde datos.
+        /* Si local tenía algo que GitHub no tenía todavía, subimos la fusión
+        para que quede sincronizado — así ningún dispositivo pierde datos. */
         if (fusionado.length !== remoto.length) {
           await guardarLedger(fusionado);
         }
         return fusionado;
       }
-      // 404 = todavía no existe el archivo en el repo (normal la primera vez), sigue con lo local
+      /* 404 = todavía no existe el archivo en el repo (normal la primera vez), sigue con lo local */
     } catch (e) { /* sin conexión: sigue con la copia local de respaldo */ }
   }
   return local;
 }
 
 async function guardarLedger(ledger) {
-  // Copia local siempre, rápida y funciona sin conexión
+  /* Copia local siempre, rápida y funciona sin conexión */
   try { localStorage.setItem('ledger-operaciones', JSON.stringify(ledger)); } catch (e) { console.error('No se pudo guardar local', e); }
 
   const repo = obtenerRepoConfigurado();
   const token = obtenerTokenConfigurado();
-  if (!repo || !token) return; // sin sincronización configurada, se queda solo en local
+  if (!repo || !token) return; /* sin sincronización configurada, se queda solo en local */
 
   try {
     const contenidoBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(ledger, null, 2))));
@@ -148,6 +172,18 @@ async function guardarLedger(ledger) {
   } catch (e) {
     console.error('No se pudo sincronizar con GitHub, se queda guardado solo en local', e);
   }
+}
+
+function comisionEfectivaOp(op) {
+  return op.comision !== undefined && op.comision !== null
+    ? op.comision
+    : (op.tipo === 'venta' ? COMISION_VENTA : COMISION_COMPRA);
+}
+
+function totalOperacion(op) {
+  const bruto = op.precio * op.acciones;
+  const comision = comisionEfectivaOp(op);
+  return op.tipo === 'compra' ? bruto + comision : bruto - comision;
 }
 
 function calcularNetoVenta(compra, venta, acciones, comisionCompra, comisionVenta) {
