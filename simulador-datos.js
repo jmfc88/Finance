@@ -1,3 +1,13 @@
+/* VERSION: 10 (23/08/2026) - enlace entre el cuaderno y el simulador. Nuevo:
+cargarTarjetasDisponibles() lee historial_tarjetas.json del repo (la ventana
+deslizante de 5 dias que genera fase3) y devuelve las tarjetas listas para
+elegir al registrar una compra; guardarEnlaceTarjeta() escribe el enlace en
+tarjetas_compras.json, que NO se borra nunca — ahi queda para siempre que
+decia el sistema el dia que se compro, junto a la posicion en el ranking y
+los dias que pasaron entre la tarjeta y la compra. guardarArchivoRepo() se
+ha extraido de guardarLedger() para no repetir la misma subida a GitHub dos
+veces. TODOS los comentarios siguen siendo de bloque, por lo de la v9. */
+
 /* VERSION: 9 (22/08/2026) - CORRECCIÓN CRÍTICA DE VERDAD: se detectó el
 archivo subido a GitHub sin saltos de línea (copia-pega en vez de "Upload
 files"), lo que en JavaScript comenta sin querer TODO el código que viene
@@ -139,39 +149,48 @@ async function cargarLedger() {
   return local;
 }
 
-async function guardarLedger(ledger) {
-  /* Copia local siempre, rápida y funciona sin conexión */
-  try { localStorage.setItem('ledger-operaciones', JSON.stringify(ledger)); } catch (e) { console.error('No se pudo guardar local', e); }
-
+/* Sube cualquier archivo JSON al repo. Extraido de guardarLedger() en la v10
+porque ahora hay dos archivos que subir (ledger.json y tarjetas_compras.json)
+y no tiene sentido tener el mismo bloque de codigo duplicado. */
+async function guardarArchivoRepo(ruta, contenido, mensaje) {
   const repo = obtenerRepoConfigurado();
   const token = obtenerTokenConfigurado();
-  if (!repo || !token) return; /* sin sincronización configurada, se queda solo en local */
+  if (!repo || !token) return false; /* sin sincronizacion configurada, se queda solo en local */
 
   try {
-    const contenidoBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(ledger, null, 2))));
+    const contenidoBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(contenido, null, 2))));
     const cabeceras = { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' };
 
     let sha = null;
-    const actual = await fetch(`https://api.github.com/repos/${repo}/contents/${LEDGER_PATH}`, { headers: cabeceras });
+    const actual = await fetch(`https://api.github.com/repos/${repo}/contents/${ruta}`, { headers: cabeceras });
     if (actual.ok) {
       const data = await actual.json();
       sha = data.sha;
     }
 
-    const cuerpo = { message: 'actualiza ledger de operaciones', content: contenidoBase64 };
+    const cuerpo = { message: mensaje, content: contenidoBase64 };
     if (sha) cuerpo.sha = sha;
 
-    const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${LEDGER_PATH}`, {
+    const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${ruta}`, {
       method: 'PUT',
       headers: cabeceras,
       body: JSON.stringify(cuerpo),
     });
     if (!resp.ok) {
-      console.error('No se pudo sincronizar con GitHub (revisa el token/permisos). Se queda guardado en local.', await resp.text());
+      console.error(`No se pudo subir ${ruta} a GitHub (revisa el token/permisos). Se queda guardado en local.`, await resp.text());
+      return false;
     }
+    return true;
   } catch (e) {
-    console.error('No se pudo sincronizar con GitHub, se queda guardado solo en local', e);
+    console.error(`No se pudo subir ${ruta} a GitHub, se queda guardado solo en local`, e);
+    return false;
   }
+}
+
+async function guardarLedger(ledger) {
+  /* Copia local siempre, rápida y funciona sin conexión */
+  try { localStorage.setItem('ledger-operaciones', JSON.stringify(ledger)); } catch (e) { console.error('No se pudo guardar local', e); }
+  await guardarArchivoRepo(LEDGER_PATH, ledger, 'actualiza ledger de operaciones');
 }
 
 function comisionEfectivaOp(op) {
@@ -220,4 +239,162 @@ function recalcularFIFO(ledger) {
     venta.neto = neto !== null ? Number(neto.toFixed(2)) : null;
   });
   return ledger;
+}
+
+
+/* ==========================================================================
+   ENLACE CUADERNO <-> SIMULADOR  (v10)
+   --------------------------------------------------------------------------
+   historial_tarjetas.json  = ventana deslizante de 5 dias, la genera fase3 en
+                              cada ejecucion. Es TEMPORAL: lo de hace 6 dias ya
+                              no esta.
+   tarjetas_compras.json    = PERMANENTE. Cuando se registra una compra, la
+                              tarjeta elegida se copia aqui y ya no se borra
+                              nunca. Es el unico sitio donde queda constancia
+                              de que decia el sistema el dia de la compra.
+   ========================================================================== */
+
+const TARJETAS_PATH = 'historial_tarjetas.json';
+const COMPRAS_TARJETAS_PATH = 'tarjetas_compras.json';
+
+/* Aplana la ventana de 5 dias en una lista plana ordenada de mas reciente a
+mas antigua, lista para pintar en el desplegable. Cada elemento es una version
+concreta de una tarjeta: si una candidata cambio de contenido a media manana,
+apareceran las dos versiones y se podra elegir la que se vio. */
+async function cargarTarjetasDisponibles() {
+  const repo = obtenerRepoConfigurado();
+  if (!repo) return [];
+
+  try {
+    const resp = await fetch(`https://raw.githubusercontent.com/${repo}/main/${TARJETAS_PATH}?t=${Date.now()}`, { cache: 'no-store' });
+    if (!resp.ok) return []; /* 404 = fase3 todavia no ha corrido con la v11 */
+    const datos = await resp.json();
+
+    const lista = [];
+    (datos.dias || []).forEach(dia => {
+      (dia.tarjetas || []).forEach(t => {
+        const apariciones = t.apariciones || [];
+        const posiciones = apariciones.map(a => a.posicion).filter(p => p != null);
+        const scores = apariciones.map(a => a.score).filter(x => x != null);
+        lista.push({
+          fecha: dia.fecha,
+          ticker: t.ticker,
+          nombre: t.nombre_empresa || t.ticker,
+          huella: t.huella,
+          apariciones: apariciones,
+          hora_primera: apariciones.length ? apariciones[0].hora : null,
+          hora_ultima: apariciones.length ? apariciones[apariciones.length - 1].hora : null,
+          mejor_posicion: posiciones.length ? Math.min.apply(null, posiciones) : null,
+          score: scores.length ? scores[scores.length - 1] : (t.tarjeta || {}).score,
+          tarjeta: t.tarjeta || {},
+        });
+      });
+    });
+
+    lista.sort((a, b) => {
+      if (a.fecha !== b.fecha) return a.fecha < b.fecha ? 1 : -1;
+      return (a.mejor_posicion || 999) - (b.mejor_posicion || 999);
+    });
+    return lista;
+  } catch (e) {
+    console.error('No se pudieron cargar las tarjetas del cuaderno', e);
+    return [];
+  }
+}
+
+/* Normaliza un ticker para comparar: Trade Republic y Yahoo Finance no siempre
+usan el mismo sufijo de mercado (FM en Toronto puede ser FM.TO en Yahoo), asi
+que para preseleccionar se compara solo la raiz, antes del punto. */
+function raizTicker(ticker) {
+  return (ticker || '').toUpperCase().split('.')[0].trim();
+}
+
+/* Devuelve el indice de la tarjeta que MEJOR encaja con lo que se esta
+registrando, o -1 si ninguna encaja. Solo preselecciona; la ultima palabra
+siempre la tiene la persona, porque el emparejamiento automatico por ticker
+falla justo en los casos de empresas con varias cotizaciones. */
+function sugerirTarjeta(listaTarjetas, ticker, nombre) {
+  const raiz = raizTicker(ticker);
+  const nombreLimpio = (nombre || '').toLowerCase().trim();
+
+  let mejor = -1;
+  listaTarjetas.forEach((t, i) => {
+    if (mejor !== -1) return; /* la lista ya viene ordenada por reciente, el primero que encaje vale */
+    const coincideTicker = raiz && raizTicker(t.ticker) === raiz;
+    const coincideNombre = nombreLimpio.length > 3 && (t.nombre || '').toLowerCase().includes(nombreLimpio);
+    if (coincideTicker || coincideNombre) mejor = i;
+  });
+  return mejor;
+}
+
+function diasEntre(fechaTarjeta, fechaCompra) {
+  try {
+    const a = new Date(fechaTarjeta + 'T00:00:00');
+    const b = new Date(fechaCompra + 'T00:00:00');
+    return Math.round((b - a) / 86400000);
+  } catch (e) { return null; }
+}
+
+async function cargarTarjetasCompras() {
+  let local = [];
+  try {
+    const guardado = localStorage.getItem('tarjetas-compras');
+    local = guardado ? JSON.parse(guardado) : [];
+  } catch (e) { /* no pasa nada */ }
+
+  const repo = obtenerRepoConfigurado();
+  if (repo) {
+    try {
+      const resp = await fetch(`https://raw.githubusercontent.com/${repo}/main/${COMPRAS_TARJETAS_PATH}?t=${Date.now()}`, { cache: 'no-store' });
+      if (resp.ok) {
+        const remoto = await resp.json();
+        /* Fusion sin duplicar: la clave de operacion identifica cada compra */
+        const mapa = new Map();
+        [].concat(local, remoto).forEach(e => mapa.set(e.clave_operacion, e));
+        const fusionado = Array.from(mapa.values());
+        try { localStorage.setItem('tarjetas-compras', JSON.stringify(fusionado)); } catch (e) { /* no pasa nada */ }
+        return fusionado;
+      }
+    } catch (e) { /* sin conexion: sigue con la copia local */ }
+  }
+  return local;
+}
+
+/* Guarda de forma PERMANENTE el enlace entre una compra y la tarjeta que la
+motivo. Se llama una sola vez, justo al registrar la compra. */
+async function guardarEnlaceTarjeta(operacion, tarjetaElegida) {
+  if (!tarjetaElegida) return null;
+
+  const registros = await cargarTarjetasCompras();
+  const clave = claveOperacion(operacion);
+  if (registros.some(r => r.clave_operacion === clave)) return null; /* ya estaba enlazada */
+
+  const entrada = {
+    clave_operacion: clave,
+    ticker: operacion.ticker,
+    nombre: operacion.nombre || tarjetaElegida.nombre,
+    isin: operacion.isin || null,
+    fecha_compra: operacion.fecha,
+    precio_compra: operacion.precio,
+    acciones: operacion.acciones,
+    comision: operacion.comision,
+    tarjeta_fecha: tarjetaElegida.fecha,
+    tarjeta_hora_primera: tarjetaElegida.hora_primera,
+    tarjeta_hora_ultima: tarjetaElegida.hora_ultima,
+    /* Dos datos que salen gratis y valen mucho al analizar despues: en que
+    puesto del ranking estaba, y cuanto se tardo en decidir desde que salio */
+    posicion_ranking: tarjetaElegida.mejor_posicion,
+    dias_desde_tarjeta: diasEntre(tarjetaElegida.fecha, operacion.fecha),
+    score_tarjeta: tarjetaElegida.score,
+    precio_en_tarjeta: (tarjetaElegida.tarjeta || {}).precio_actual,
+    version_scoring: (tarjetaElegida.tarjeta || {}).version_scoring || null,
+    apariciones: tarjetaElegida.apariciones,
+    registrado: new Date().toISOString(),
+    tarjeta: tarjetaElegida.tarjeta,
+  };
+
+  registros.push(entrada);
+  try { localStorage.setItem('tarjetas-compras', JSON.stringify(registros)); } catch (e) { console.error('No se pudo guardar local', e); }
+  await guardarArchivoRepo(COMPRAS_TARJETAS_PATH, registros, `enlaza tarjeta del cuaderno con la compra de ${operacion.ticker}`);
+  return entrada;
 }
