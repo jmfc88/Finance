@@ -1,4 +1,10 @@
 """
+VERSION: 12 (23/08/2026) - guarda tambien en la tarjeta los campos nuevos de
+fase2 v33 (liquidez, volumen relativo, volatilidad, sesiones hasta el stop,
+distancia al maximo de 52 semanas y metodo_datos). Sin esto se calcularian
+pero no quedarian registrados al enlazar una compra, que es justo para lo que
+sirven a largo plazo.
+
 VERSION: 11 (23/08/2026) - añade historial_tarjetas.json: guarda el CONTENIDO
 COMPLETO de las tarjetas del cuaderno (no solo los números sueltos que ya
 guardaba historial_scoring.json), en una ventana deslizante de los últimos 5
@@ -357,6 +363,12 @@ def _tarjeta_completa(c):
         "momentum_30d_pct": c.get("momentum_30d_pct"),
         "momentum_5d_pct": c.get("momentum_5d_pct"),
         "fuerza_relativa_pct": c.get("fuerza_relativa_pct"),
+        "liquidez_dia": c.get("liquidez_dia"),
+        "volumen_relativo": c.get("volumen_relativo"),
+        "volatilidad_diaria_pct": c.get("volatilidad_diaria_pct"),
+        "sesiones_hasta_stop": c.get("sesiones_hasta_stop"),
+        "distancia_max_52s_pct": c.get("distancia_max_52s_pct"),
+        "metodo_datos": c.get("metodo_datos"),
         "regimen_mercado": c.get("regimen_mercado"),
         "rsi_14": c.get("rsi_14"),
         "tendencia_tecnica": c.get("tendencia_tecnica"),
