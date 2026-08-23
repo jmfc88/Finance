@@ -1,0 +1,40 @@
+# VERSION: 1 (23/08/2026) - simulacion en paralelo. Abre operaciones ficticias
+# desde el ranking y reconstruye que habria pasado con las reglas del bot real.
+# NO toca ledger.json ni posiciones.json: solo escribe simulacion_operaciones.json
+# y simulacion_informe.md. Corre una vez al dia, despues del ranking de la manana.
+name: Simulacion en paralelo
+
+on:
+  schedule:
+    - cron: '30 6 * * 1-5'   # 08:30 hora de Espana, de lunes a viernes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  simular:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install yfinance pandas
+
+      - name: Ejecutar simulacion
+        run: python simulacion.py
+
+      - name: Guardar resultados
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          for f in simulacion_operaciones.json simulacion_informe.md; do
+            if [ -f "$f" ]; then git add "$f"; else echo "aviso: $f todavia no existe, se omite"; fi
+          done
+          git diff --staged --quiet || git commit -m "actualiza simulacion en paralelo"
+          git pull origin main --no-rebase -X ours
+          git push
