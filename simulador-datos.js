@@ -1,3 +1,11 @@
+/* VERSION: 11 (23/08/2026) - aviso de la regla antiaplicacion (art. 33.5 f
+LIRPF). Si se vende con PERDIDA y se recompra el MISMO valor dentro de los dos
+meses anteriores o posteriores, Hacienda NO deja deducir esa perdida: queda
+aparcada hasta que se vendan tambien las nuevas acciones. Es una trampa facil
+de pisar sin enterarse, asi que ahora se avisa en la tarjeta de la venta y,
+sobre todo, al ir a registrar una compra del mismo ticker dentro del plazo.
+Un ticker DISTINTO no se ve afectado. */
+
 /* VERSION: 10 (23/08/2026) - enlace entre el cuaderno y el simulador. Nuevo:
 cargarTarjetasDisponibles() lee historial_tarjetas.json del repo (la ventana
 deslizante de 5 dias que genera fase3) y devuelve las tarjetas listas para
@@ -397,4 +405,78 @@ async function guardarEnlaceTarjeta(operacion, tarjetaElegida) {
   try { localStorage.setItem('tarjetas-compras', JSON.stringify(registros)); } catch (e) { console.error('No se pudo guardar local', e); }
   await guardarArchivoRepo(COMPRAS_TARJETAS_PATH, registros, `enlaza tarjeta del cuaderno con la compra de ${operacion.ticker}`);
   return entrada;
+}
+
+
+/* ==========================================================================
+   REGLA ANTIAPLICACION - art. 33.5 f) LIRPF                      (v11)
+   --------------------------------------------------------------------------
+   Vender con perdida y recomprar valores homogeneos (el mismo valor) dentro
+   de los DOS MESES anteriores o posteriores bloquea la deduccion de esa
+   perdida. No se pierde para siempre: queda aparcada hasta que se vendan las
+   acciones recompradas. Pero descoloca la planificacion fiscal del año.
+   ========================================================================== */
+
+function sumarMeses(fechaISO, meses) {
+  const d = new Date(fechaISO + 'T00:00:00');
+  const diaOriginal = d.getDate();
+  d.setMonth(d.getMonth() + meses);
+  /* Si el mes destino es mas corto (31 de agosto + 2 meses), JS se pasa al mes
+  siguiente. Se corrige al ultimo dia del mes que toca. */
+  if (d.getDate() !== diaOriginal) d.setDate(0);
+  return d;
+}
+
+function formatearFecha(d) {
+  return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+}
+
+/* Devuelve las ventas con perdida cuyo plazo de dos meses sigue abierto. */
+function perdidasBloqueantes(ledger, fechaReferencia) {
+  const hoy = fechaReferencia ? new Date(fechaReferencia + 'T00:00:00') : new Date();
+  const lista = [];
+  (ledger || []).forEach(op => {
+    if (op.tipo !== 'venta' || op.neto === null || op.neto === undefined) return;
+    if (op.neto >= 0) return; /* solo las perdidas estan afectadas */
+    const fin = sumarMeses(op.fecha, 2);
+    if (fin >= hoy) {
+      lista.push({ ticker: op.ticker, nombre: op.nombre, fecha: op.fecha,
+                   perdida: op.neto, fin: fin, finTexto: formatearFecha(fin) });
+    }
+  });
+  return lista;
+}
+
+/* Aviso para la tarjeta de una VENTA concreta. */
+function avisoVentaConPerdida(op) {
+  if (op.tipo !== 'venta' || op.neto === null || op.neto === undefined || op.neto >= 0) return null;
+  const fin = sumarMeses(op.fecha, 2);
+  const vigente = fin >= new Date();
+  return {
+    vigente: vigente,
+    finTexto: formatearFecha(fin),
+    texto: vigente
+      ? `No recompres ${op.ticker} antes del ${formatearFecha(fin)} o Hacienda no te deja deducir esta pérdida (art. 33.5 LIRPF). Otro valor distinto no tiene ese problema.`
+      : `Plazo de recompra cumplido el ${formatearFecha(fin)}: ya puedes volver a comprar ${op.ticker} sin perder la deducción.`,
+  };
+}
+
+/* Aviso al ir a registrar una COMPRA: ¿este ticker viene de una perdida
+reciente? Es el momento en que de verdad sirve saberlo. */
+function avisoCompraBloqueada(ledger, ticker, fechaCompra) {
+  if (!ticker) return null;
+  const raiz = raizTicker(ticker);
+  const bloqueantes = perdidasBloqueantes(ledger, fechaCompra);
+  const encontrada = bloqueantes.find(b => raizTicker(b.ticker) === raiz);
+  if (!encontrada) return null;
+  return {
+    ticker: encontrada.ticker,
+    perdida: encontrada.perdida,
+    fechaVenta: encontrada.fecha,
+    finTexto: encontrada.finTexto,
+    texto: `Vendiste ${encontrada.ticker} el ${formatearFecha(new Date(encontrada.fecha + 'T00:00:00'))} `
+         + `con ${encontrada.perdida}€ de pérdida. Si recompras antes del ${encontrada.finTexto}, `
+         + `esa pérdida NO se puede deducir este año (art. 33.5 LIRPF): queda aparcada hasta que `
+         + `vendas también estas acciones nuevas. Con un ticker distinto no pasa.`,
+  };
 }
