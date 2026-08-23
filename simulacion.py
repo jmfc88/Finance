@@ -1,4 +1,12 @@
 """
+VERSION: 7 (23/08/2026) - guarda tambien los cuatro factores mas pesados del
+score que faltaban: potencial hasta el objetivo, dispersion, consenso real y
+tendencia de analistas. Sin ellos el historico podria decir SI el score
+ordena bien, pero no QUE factor falla — y esa es justo la pregunta que Jose
+Manuel quiere que respondan los datos en vez de mi opinion. Con esto, cuando
+haya unas decenas de operaciones cerradas se podra cruzar cada factor por
+separado contra el resultado real.
+
 VERSION: 6 (23/08/2026) - VARIANTES EN PARALELO. Jose Manuel pregunto cuanto
 conviene subir el stop cuando empieza a ganar. En vez de contestar con una
 opinion, cada operacion se evalua con VARIAS reglas a la vez sobre exactamente
@@ -236,9 +244,17 @@ def abrir_operaciones(ranking, operaciones):
                 "score": c.get("score"),
                 "version_scoring": c.get("version_scoring"),
                 "consenso": c.get("consenso"),
+                # Los cuatro factores mas pesados del score, guardados para
+                # poder evaluarlos uno a uno contra el resultado real.
+                "precio_objetivo_medio": c.get("precio_objetivo_medio"),
+                "potencial_pct": (round((c["precio_objetivo_medio"] / c["precio_actual"] - 1) * 100, 1)
+                                  if c.get("precio_objetivo_medio") and c.get("precio_actual") else None),
+                "dispersion_pct": c.get("dispersion_pct"),
+                "consenso_real": c.get("consenso_real"),
+                "tendencia_analistas": c.get("tendencia_analistas"),
+                "rsi_14": c.get("rsi_14"),
                 "momentum_30d_pct": c.get("momentum_30d_pct"),
                 "fuerza_relativa_pct": c.get("fuerza_relativa_pct"),
-                "rsi_14": c.get("rsi_14"),
                 "tendencia_tecnica": c.get("tendencia_tecnica"),
                 "regimen_mercado": c.get("regimen_mercado"),
                 "liquidez_dia": c.get("liquidez_dia"),
