@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- VERSION: 24 (23/08/2026) - enseña las métricas que fase2 v33 ya venía
+calculando pero que no se veían en ninguna parte: fuerza relativa frente al
+índice, liquidez, volumen relativo, volatilidad diaria con las sesiones que
+tardaría el ruido en tocar el stop, y distancia al máximo de 52 semanas.
+Sin estos campos las mejoras del scoring existían pero no ayudaban a decidir,
+que era justamente para lo que estaban pensadas. -->
 <!-- VERSION: 23 (11/08/2026) - restaura el caso "unas horas" (la ventana del
 catalizador volvió a 0-4 días); el texto de momentum ahora distingue si un
 movimiento fuerte sigue activo o ya se ha calmado, usando momentum_5d -->
@@ -382,6 +388,51 @@ function textoRSI(rsi) {
   return { texto: `ritmo normal (${rsi})`, clase: '' };
 }
 
+/* ---- Métricas nuevas de fase2 v33, en lenguaje llano (v24) ---- */
+
+function fmtFuerzaRelativa(c) {
+  if (c.fuerza_relativa_pct === null || c.fuerza_relativa_pct === undefined) return { texto: '—', clase: '' };
+  const v = c.fuerza_relativa_pct;
+  const ind = c.indice_referencia === '^STOXX50E' ? 'EuroStoxx50' : 'S&P500';
+  if (v >= 5) return { texto: `+${v} pp mejor que el ${ind}`, clase: 'pos' };
+  if (v <= -5) return { texto: `${v} pp peor que el ${ind}`, clase: 'neg' };
+  return { texto: `${v > 0 ? '+' : ''}${v} pp, en línea con el ${ind}`, clase: '' };
+}
+
+function fmtLiquidez(c) {
+  const v = c.liquidez_dia;
+  if (v === null || v === undefined) return { texto: '—', clase: '' };
+  const legible = v >= 1e6 ? `${(v / 1e6).toFixed(1)}M` : `${Math.round(v / 1000)}k`;
+  if (v >= 2e6) return { texto: `${legible} al día, entrar y salir sale barato`, clase: 'pos' };
+  if (v >= 5e5) return { texto: `${legible} al día, aceptable`, clase: '' };
+  return { texto: `${legible} al día, poco negociada: la horquilla te costará`, clase: 'neg' };
+}
+
+function fmtVolumenRelativo(c) {
+  const v = c.volumen_relativo;
+  if (v === null || v === undefined) return { texto: '—', clase: '' };
+  if (v >= 1.5) return { texto: `x${v}, el movimiento viene con dinero detrás`, clase: 'pos' };
+  if (v >= 0.9) return { texto: `x${v}, volumen normal`, clase: '' };
+  return { texto: `x${v}, se mueve con poco volumen: menos fiable`, clase: 'neg' };
+}
+
+function fmtVolatilidad(c) {
+  const v = c.volatilidad_diaria_pct;
+  if (v === null || v === undefined) return { texto: '—', clase: '' };
+  const ses = c.sesiones_hasta_stop;
+  const cola = ses ? ` · el stop del -8% se toca por puro ruido en ~${ses} ${ses === 1 ? 'sesión' : 'sesiones'}` : '';
+  if (v <= 2.5) return { texto: `${v}% diario, tranquila${cola}`, clase: 'pos' };
+  if (v <= 4) return { texto: `${v}% diario, movida${cola}`, clase: '' };
+  return { texto: `${v}% diario, muy movida${cola}`, clase: 'neg' };
+}
+
+function fmtMaximo52(c) {
+  const v = c.distancia_max_52s_pct;
+  if (v === null || v === undefined) return { texto: '—', clase: '' };
+  if (v >= -3) return { texto: `${v}%, pegada a máximos del año`, clase: '' };
+  return { texto: `${v}% del máximo del año`, clase: '' };
+}
+
 function renderTarjeta(c, esTop) {
   const scoreClass = c.score >= 0 ? 'pos' : 'neg';
   const potencial = (c.precio_objetivo_medio && c.precio_actual)
@@ -393,6 +444,11 @@ function renderTarjeta(c, esTop) {
   const momentum = textoMomentum(c.momentum_30d_pct, c.momentum_5d_pct);
   const tecnica = textoTendenciaTecnica(c.tendencia_tecnica);
   const rsi = textoRSI(c.rsi_14);
+  const fr = fmtFuerzaRelativa(c);
+  const liq = fmtLiquidez(c);
+  const volrel = fmtVolumenRelativo(c);
+  const vola = fmtVolatilidad(c);
+  const max52 = fmtMaximo52(c);
   return `
     <div class="card ${esTop ? 'top' : ''}">
       ${esTop ? '<div class="badge-top">MEJOR PUNTUADA</div>' : ''}
@@ -419,251 +475,12 @@ function renderTarjeta(c, esTop) {
         <div><span class="label term" data-tip="Cuánto discrepan los analistas sobre el precio objetivo">dispersión:</span> ${c.dispersion_pct ?? '—'}%</div>
         <div><span class="label term" data-tip="Compara el precio actual con su media de las últimas 50 y 200 sesiones">tendencia técnica:</span> <span class="${tecnica.clase}">${tecnica.texto}</span></div>
         <div><span class="label term" data-tip="Mide si el precio ha subido o bajado demasiado rápido últimamente">ritmo (RSI):</span> <span class="${rsi.clase}">${rsi.texto}</span></div>
+        <div><span class="label term" data-tip="Cuánto lo ha hecho mejor o peor que el índice de su mercado en el último mes. Subir un 5% no es lo mismo con el índice plano que con el índice subiendo un 12%">fuerza relativa:</span> <span class="${fr.clase}">${fr.texto}</span></div>
+        <div><span class="label term" data-tip="Dinero que se negocia al día. Cuanto menos, mayor es la diferencia entre el precio al que se compra y al que se vende, y esa diferencia te la comes al entrar y al salir">liquidez:</span> <span class="${liq.clase}">${liq.texto}</span></div>
+        <div><span class="label term" data-tip="Volumen de los últimos 5 días frente a la media del mes. El volumen no dice si va a subir: dice si el movimiento que ya ha ocurrido es real o es ruido">volumen relativo:</span> <span class="${volrel.clase}">${volrel.texto}</span></div>
+        <div><span class="label term" data-tip="Cuánto se mueve al día de media. Sirve para saber si el stop-loss fijo tiene margen o saltará por simple vaivén, sin que la tesis de compra haya fallado">volatilidad:</span> <span class="${vola.clase}">${vola.texto}</span></div>
+        <div><span class="label term" data-tip="A qué distancia está del precio más alto de las últimas 52 semanas. Solo informativo: la evidencia sobre este dato está dividida, así que NO suma ni resta puntos">máximo 52 semanas:</span> <span class="${max52.clase}">${max52.texto}</span></div>
       </div>
       ${c.resumen_negocio ? `<div class="resumen">${c.resumen_negocio}</div>` : ''}
       ${c.noticias && c.noticias.titulares && c.noticias.titulares.length > 0 ? `
-        <div style="margin-top:10px; font-family: ui-monospace, monospace; font-size:11.5px;">
-          <span class="label term" data-tip="Sentimiento de titulares recientes de Yahoo Finance y Google News, por palabras clave">noticias:</span>
-          <span class="${c.noticias.sentimiento_total > 0 ? 'pos' : (c.noticias.sentimiento_total < 0 ? 'neg' : '')}">${c.noticias.sentimiento_total > 0 ? 'tono positivo' : (c.noticias.sentimiento_total < 0 ? 'tono negativo' : 'tono neutro')}</span>
-          <ul style="margin:4px 0 0; padding-left:18px; color:var(--ink-soft);">
-            ${c.noticias.titulares.map(t => `<li>${t.titulo} <span style="font-size:10px;">(${t.fuente})</span></li>`).join('')}
-          </ul>
-        </div>
-      ` : ''}
-      ${c.profundizacion ? `
-        <div style="margin-top:10px; font-family: ui-monospace, monospace; font-size:11.5px;">
-          <span class="label term" data-tip="Segunda pasada: búsquedas más específicas (analistas, previsión) solo para las mejores candidatas — confirma o contradice lo que ya decía el score">profundización:</span>
-          ${c.profundizacion.verificado
-            ? '<span class="pos">✓ verificado — coincide con la puntuación</span>'
-            : `<span class="neg">⚠ contradice la puntuación (${c.profundizacion.ajuste} puntos)</span>`}
-          ${c.profundizacion.titulares_adicionales && c.profundizacion.titulares_adicionales.length > 0 ? `
-            <ul style="margin:4px 0 0; padding-left:18px; color:var(--ink-soft);">
-              ${c.profundizacion.titulares_adicionales.map(t => `<li>${t.titulo} <span style="font-size:10px;">(${t.fuente})</span></li>`).join('')}
-            </ul>
-          ` : ''}
-        </div>
-      ` : ''}
-      <button onclick="copiarDatos(this, '${datosCopiar.replace(/'/g, "\\'")}')" style="margin-top:10px; font-size:12px;">Copiar datos para el simulador</button>
-    </div>
-  `;
-}
-
-async function copiarDatos(boton, texto) {
-  try {
-    await navigator.clipboard.writeText(texto);
-    const original = boton.textContent;
-    boton.textContent = '✓ Copiado';
-    setTimeout(() => { boton.textContent = original; }, 1500);
-  } catch (e) {
-    alert('No se pudo copiar automáticamente. Datos: ' + texto);
-  }
-}
-
-function renderDescartadas(lista) {
-  if (!lista || lista.length === 0) return '';
-  const items = lista.map(d => `<div class="descarte">${d.ticker}: ${d.motivo}</div>`).join('');
-  return `
-    <details>
-      <summary>Ver descartadas (${lista.length})</summary>
-      ${items}
-    </details>
-  `;
-}
-
-async function consultarUltimoLanzamiento(repo) {
-  const div = document.getElementById('fecha-lanzamiento');
-  try {
-    const resp = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/ranking-github-actions.yml/runs?per_page=1`);
-    if (!resp.ok) { div.style.display = 'none'; return; }
-    const data = await resp.json();
-    const run = data.workflow_runs && data.workflow_runs[0];
-    if (!run) { div.style.display = 'none'; return; }
-
-    const lanzado = formatearFecha(run.run_started_at || run.created_at);
-    const esAutomatico = run.event === 'schedule';
-    let texto = esAutomatico ? `última ejecución automática: ${lanzado}` : `última vez que le diste tú: ${lanzado}`;
-    div.className = 'sub';
-
-    if (run.status === 'completed') {
-      texto += ` · terminó: ${formatearFecha(run.updated_at)}`;
-      if (run.conclusion === 'success') {
-        texto += ' ✅';
-      } else {
-        texto += ` ❌ (${run.conclusion || 'falló'} — revisa el log en Actions antes de fiarte del ranking)`;
-        div.style.color = 'var(--brick)';
-      }
-    } else if (run.status === 'in_progress' || run.status === 'queued') {
-      texto += ' · todavía en marcha...';
-    }
-    div.textContent = texto;
-    div.style.display = 'block';
-  } catch (e) {
-    div.style.display = 'none'; // si falla, no pasa nada, simplemente no se muestra
-  }
-}
-
-async function traerLista() {
-  const repo = document.getElementById('input-repo').value.trim();
-  const contenido = document.getElementById('contenido');
-  if (!repo || !repo.includes('/')) {
-    contenido.innerHTML = '<div class="estado">Falta el repositorio. Formato: usuario/repositorio</div>';
-    return;
-  }
-  await guardarConfig(repo);
-
-  // Enlace directo a la página de GitHub Actions para lanzar el workflow
-  // con tu propia sesión — nada de claves guardadas en el móvil.
-  const linkActions = document.getElementById('link-actions');
-  linkActions.href = `https://github.com/${repo}/actions/workflows/ranking-github-actions.yml`;
-  linkActions.style.display = 'inline-block';
-
-  consultarUltimoLanzamiento(repo);
-
-  if (tasaUSDEUR === null) await obtenerTasaCambio();
-  contenido.innerHTML = '<div class="estado">Cargando ranking...</div>';
-
-  const url = `https://raw.githubusercontent.com/${repo}/main/candidatos_rankeados.json?t=${Date.now()}`;
-
-  let resp = null;
-  for (let intento = 1; intento <= 3; intento++) {
-    try {
-      resp = await fetch(url, { cache: 'no-store' });
-      break;
-    } catch (e) {
-      if (intento < 3) {
-        contenido.innerHTML = `<div class="estado">Fallo de conexión, reintentando (${intento}/3)...</div>`;
-        await new Promise(r => setTimeout(r, 1200));
-      }
-    }
-  }
-
-  if (!resp) {
-    contenido.innerHTML = '<div class="estado">No se pudo conectar con GitHub tras 3 intentos. Comprueba tu conexión y pulsa "Traer lista" de nuevo.</div>';
-    return;
-  }
-
-  try {
-    if (!resp.ok) {
-      contenido.innerHTML = `<div class="estado">No se encontró candidatos_rankeados.json en ese repo (${resp.status}). Revisa que el nombre sea correcto y que el bot ya haya corrido al menos una vez.</div>`;
-      return;
-    }
-    const data = await resp.json();
-    document.getElementById('fecha-actualizacion').textContent = 'última actualización del bot: ' + formatearFecha(data.generado);
-
-    if (!data.ranking || data.ranking.length === 0) {
-      contenido.innerHTML = '<div class="estado">Sin candidatas válidas ahora mismo.</div>' + renderDescartadas(data.descartados);
-      return;
-    }
-
-    const LIMITE_INICIAL = 25; // coincide con las que la Fase 3 profundiza de verdad
-    const primeras = data.ranking.slice(0, LIMITE_INICIAL);
-    const resto = data.ranking.slice(LIMITE_INICIAL);
-
-    const tarjetas = primeras.map((c, i) => renderTarjeta(c, i === 0)).join('');
-    const botonMas = resto.length > 0
-      ? `<button id="btn-ver-mas" onclick="verMasCandidatas()" style="width:100%; margin:8px 0 16px;">Ver ${resto.length} candidatas más</button>`
-      : '';
-
-    contenido.innerHTML = tarjetas + botonMas + '<div id="resto-candidatas"></div>' + renderDescartadas(data.descartados);
-
-    window._restoCandidatas = resto; // se guarda para pintarlo al pulsar el botón, sin volver a pedir el archivo
-  } catch (e) {
-    contenido.innerHTML = '<div class="estado">Se recibió una respuesta pero no se pudo interpretar. Vuelve a intentarlo.</div>';
-  }
-}
-
-function verMasCandidatas() {
-  const resto = window._restoCandidatas || [];
-  document.getElementById('resto-candidatas').innerHTML = resto.map(c => renderTarjeta(c, false)).join('');
-  document.getElementById('btn-ver-mas').remove();
-}
-
-const NIVELES = [
-  { nivel: 1, desde: 0,     posiciones: 1 },
-  { nivel: 2, desde: 500,   posiciones: 2 },
-  { nivel: 3, desde: 1000,  posiciones: 3 },
-  { nivel: 4, desde: 2000,  posiciones: 4 },
-  { nivel: 5, desde: 4000,  posiciones: 5 },
-];
-
-function calcularProgreso(capital) {
-  let actual = NIVELES[0];
-  let siguiente = null;
-  for (let i = 0; i < NIVELES.length; i++) {
-    if (capital >= NIVELES[i].desde) {
-      actual = NIVELES[i];
-      siguiente = NIVELES[i + 1] || null;
-    }
-  }
-  if (!siguiente) {
-    return { actual, siguiente: null, porcentaje: 100 };
-  }
-  const rango = siguiente.desde - actual.desde;
-  const avance = capital - actual.desde;
-  const porcentaje = Math.max(0, Math.min(100, (avance / rango) * 100));
-  return { actual, siguiente, porcentaje };
-}
-
-function renderProgreso(capital) {
-  const { actual, siguiente, porcentaje } = calcularProgreso(capital);
-  document.getElementById('nivel-actual').textContent = `nivel ${actual.nivel} · ${actual.posiciones} posición${actual.posiciones > 1 ? 'es' : ''}`;
-  document.getElementById('barra-progreso').style.width = porcentaje.toFixed(0) + '%';
-
-  if (siguiente) {
-    const falta = (siguiente.desde - capital).toFixed(2);
-    document.getElementById('detalle-progreso').textContent =
-      `${capital}€ · te faltan ${falta}€ para el nivel ${siguiente.nivel} (${siguiente.posiciones} posiciones)`;
-  } else {
-    document.getElementById('detalle-progreso').textContent =
-      `${capital}€ · nivel máximo definido alcanzado, puedes seguir escalando posiciones con criterio propio`;
-  }
-}
-
-async function cargarCapitalGuardado() {
-  try {
-    const valor = localStorage.getItem('capital-actual');
-    if (valor) {
-      const capital = parseFloat(valor);
-      document.getElementById('input-capital').value = capital;
-      renderProgreso(capital);
-      return;
-    }
-  } catch (e) { /* el navegador bloquea el guardado, no pasa nada grave */ }
-  renderProgreso(200); // valor inicial por defecto, tus 200€ de arranque
-}
-
-async function guardarCapital() {
-  const valor = parseFloat(document.getElementById('input-capital').value);
-  if (isNaN(valor) || valor < 0) return;
-  try { localStorage.setItem('capital-actual', String(valor)); } catch (e) { console.error('No se pudo guardar el capital', e); }
-  renderProgreso(valor);
-}
-
-document.getElementById('btn-cargar').addEventListener('click', traerLista);
-document.getElementById('btn-guardar-capital').addEventListener('click', guardarCapital);
-cargarConfigGuardada();
-cargarCapitalGuardado();
-obtenerTasaCambio();
-
-// Tooltips tocables: delegación de eventos porque las tarjetas se generan dinámicamente
-const tooltip = document.getElementById('tooltip');
-document.addEventListener('click', (e) => {
-  const term = e.target.closest('.term');
-  if (term) {
-    tooltip.textContent = term.dataset.tip;
-    const rect = term.getBoundingClientRect();
-    tooltip.style.display = 'block';
-    const arriba = rect.top > 100; // si hay sitio arriba, lo ponemos arriba del término
-    tooltip.style.top = arriba ? (rect.top - tooltip.offsetHeight - 8) + 'px' : (rect.bottom + 8) + 'px';
-    let izquierda = rect.left;
-    if (izquierda + 260 > window.innerWidth) izquierda = window.innerWidth - 270;
-    tooltip.style.left = Math.max(8, izquierda) + 'px';
-    e.stopPropagation();
-  } else {
-    tooltip.style.display = 'none';
-  }
-});
-</script>
-
-</body>
-</html>
+        <div style="margin-top:10px; font-family: ui-monospace
