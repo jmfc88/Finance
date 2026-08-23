@@ -1,6 +1,26 @@
 """
+VERSION: 11 (23/08/2026) - baja el riesgo por decision de Jose Manuel: con
+poco patrimonio, perder un 12,5% por operacion es demasiado. Nuevos niveles:
+
+  -5,0%  [CUIDADO]  aviso informativo, no hay que hacer nada
+  -6,5%  [PIENSA]   aviso de decision
+  -8,0%  [VENDE]    stop-loss real
+
+Antes eran -7,5% / -10% / -12,5%. El aviso de cierre de mercado (Metodo 4)
+baja tambien de -7,5% a -5%, para que acompane al primer nivel.
+
+NOTA sobre el -12,5% anterior: en la practica nunca llego a aplicarse. El
+trailing del 8% arranca desde el precio de compra y bot.py se queda siempre
+con el stop mas protector, asi que el stop efectivo del dia 1 ya era -8%.
+Este cambio no endurece la venta: la deja donde ya estaba de hecho, y lo que
+cambia de verdad son los dos avisos, que ahora llegan antes.
+
+AVISO SOBRE EL RUIDO: a -5% un valor de volatilidad normal (2% diario) toca
+ese nivel por puro vaiven cada pocas sesiones. El [CUIDADO] esta pensado como
+informacion, NO como senal de venta. La venta sigue siendo solo el -8%.
+
 VERSION: 10 (20/08/2026) - añade el Método 4: aviso al CIERRE de mercado si
-la posición sigue por debajo del -7,5% (usa el "marketState" de Yahoo, así
+la posición sigue por debajo del -5% (usa el "marketState" de Yahoo, así
 no hace falta programar a mano el horario de cada bolsa), y un único
 recordatorio a la siguiente APERTURA si cerró en pérdida el día anterior.
 
@@ -12,8 +32,8 @@ fiable). También envuelto en try/except el propio yf.Ticker().info por si
 Yahoo cae del todo, no solo si devuelve precio vacío.
 
 VERSION: 8 (06/08/2026) - añade avisos tempranos de pérdida: -7,5%
-"[CUIDADO]" y -10% "[PIENSA]", antes del stop-loss real (normalmente
--12,5%, que ya existía como "[VENDE]"). Cada nivel avisa una sola vez,
+"[CUIDADO]" y -6,5% "[PIENSA]", antes del stop-loss real (-8%, que ya
+existía como "[VENDE]"). Cada nivel avisa una sola vez,
 misma fórmula que los presets del simulador (comisiones + cambio de
 divisa incluidos), para que los tres niveles sean consistentes entre sí.
 
@@ -77,7 +97,7 @@ def guardar_posiciones(posiciones):
         json.dump(posiciones, f, indent=2, ensure_ascii=False)
 
 
-def calcular_stop_loss_inicial(precio_compra, acciones, cambio_divisa, pct=12.5):
+def calcular_stop_loss_inicial(precio_compra, acciones, cambio_divisa, pct=8.0):
     """Mismo cálculo que el simulador: pérdida máxima X% sobre lo invertido,
     comisiones y coste de cambio de divisa incluidos. Se usa como valor de
     referencia automático al detectar una posición nueva — el usuario puede
@@ -147,7 +167,7 @@ def reconciliar_con_ledger(posiciones):
         notificar(
             f"[NUEVA POSICIÓN] {ticker}",
             f"Detectada en el ledger, no estaba en la vigilancia. Precio de compra: {precio_compra}€, "
-            f"{datos['acciones']} acciones. Stop-loss inicial puesto por defecto (preset 12,5%) en "
+            f"{datos['acciones']} acciones. Stop-loss inicial puesto por defecto (preset 8%) en "
             f"{stop_inicial}€ — revísalo y ajústalo si querías otro nivel.",
             urgente=False,
         )
@@ -278,12 +298,12 @@ def procesar_posicion(pos):
     stop_inicial = pos.get("stop_loss_inicial", stop_anterior)
     cambio_divisa = pos.get("cambio_divisa", False) or moneda != "EUR"
 
-    # --- Método 3: avisos tempranos de pérdida (-7,5% y -10%), antes del
-    # stop-loss real (normalmente -12,5%). Cada nivel avisa una sola vez. ---
+    # --- Método 3: avisos tempranos de pérdida (-5% y -6,5%), antes del
+    # stop-loss real (-8%). Cada nivel avisa una sola vez. ---
     avisos_disparados = set(pos.get("avisos_perdida_disparados", []))
     niveles_aviso_perdida = [
-        (7.5, "[CUIDADO]", "está bajando. Nada urgente todavía, solo un ojo."),
-        (10.0, "[PIENSA]", "ya llevas aproximadamente un -10% sobre lo invertido. Piensa si vender ahora o esperar a ver si se recupera."),
+        (5.0, "[CUIDADO]", "está bajando. Es solo información: a este nivel el vaivén normal del día ya llega, así que no hay nada que hacer todavía."),
+        (6.5, "[PIENSA]", "ya llevas aproximadamente un -6,5% sobre lo invertido. Piensa si vender ahora o esperar a ver si se recupera. La venta automática está en el -8%."),
     ]
     for pct, etiqueta, texto in niveles_aviso_perdida:
         if pct in avisos_disparados:
@@ -311,11 +331,11 @@ def procesar_posicion(pos):
     hoy = datetime.now().date().isoformat()
 
     if market_state == "CLOSED":
-        umbral_cierre = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, 7.5)
+        umbral_cierre = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, 5.0)
         if precio_actual <= umbral_cierre and pos.get("ultimo_cierre_notificado") != hoy:
             notificar(
                 f"[CIERRE MERCADO] {pos['ticker']}",
-                f"Tu inversión en {pos['ticker']} ha cerrado el mercado por debajo del -7,5% "
+                f"Tu inversión en {pos['ticker']} ha cerrado el mercado por debajo del -5% "
                 f"(precio actual: {precio_actual}€). Estate pendiente en la próxima apertura.",
                 urgente=False,
             )
@@ -326,7 +346,7 @@ def procesar_posicion(pos):
         # haber cerrado en pérdida — un único recordatorio, luego se apaga.
         notificar(
             f"[RECORDATORIO] {pos['ticker']} — mercado abierto de nuevo",
-            f"Ayer cerró en pérdida significativa (por debajo del -7,5%). Precio actual: {precio_actual}€. "
+            f"Ayer cerró en pérdida significativa (por debajo del -5%). Precio actual: {precio_actual}€. "
             f"Al loro con esta posición ahora que vuelve a cotizar.",
             urgente=False,
         )
