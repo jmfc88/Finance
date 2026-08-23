@@ -1,4 +1,37 @@
 """
+VERSION: 33 (23/08/2026) - cuatro metricas nuevas sacadas del historico que YA
+se descargaba y se tiraba (la columna Volume). Coste: cero peticiones extra a
+Yahoo, que importa porque las peticiones son el punto fragil del sistema.
+
+Las tres primeras son penalizaciones o multiplicadores, nunca sumas, asi que
+el maximo teorico SIGUE SIENDO 100 y ningun factor existente se diluye:
+
+(1) LIQUIDEZ (penalizacion, 0 cuando esta bien). Euros negociados al dia.
+    Con 200-500 EUR y acciones enteras, la horquilla entre compra y venta es
+    un coste real que puede triplicar al euro de comision, y el sistema no lo
+    miraba en absoluto. Por debajo del minimo se descarta.
+
+(2) VOLUMEN RELATIVO (multiplicador del momentum, nunca sube de 1,0). El
+    volumen no dice si va a subir: dice si la subida que YA ha pasado es de
+    verdad. Una subida del 6% con el triple de volumen es dinero entrando;
+    la misma con la mitad del volumen es que casi nadie ha comprado. Por eso
+    multiplica al momentum en vez de sumar aparte — no es otra opinion que
+    coincide, es una prueba sobre la calidad de una senal que ya teniamos.
+    Solo se aplica cuando hay un movimiento que confirmar (momentum > 5%);
+    a un valor tranquilo no se le exige volumen.
+
+(3) VOLATILIDAD (penalizacion, 0 cuando esta bien). No toca el stop-loss,
+    que se queda fijo como quiere Jose Manuel. Sirve para lo contrario: un
+    valor que se mueve un 4% diario alcanza el -12,5% por puro ruido en unas
+    pocas sesiones, asi que la penalizacion avisa de que ese valor no encaja
+    con ese stop, sin cambiar el stop.
+
+(4) DISTANCIA AL MAXIMO DE 52 SEMANAS: SIN PUNTOS, solo informativo en la
+    tarjeta. George y Hwang (2004) lo documentaron como predictor, pero
+    replicas posteriores lo encuentran positivo en 1980-2000 y NEGATIVO en
+    2001-2014. Con la evidencia partida no se apuestan puntos del ranking:
+    se ensena el dato y decide la persona.
+
 VERSION: 32 (23/08/2026) - ARREGLO CRITICO descubierto al auditar los datos
 reales del repo: las 107 candidatas europeas de 141 (y 19 de las 30 que se
 ven en el cuaderno) no tenian NINGUN dato de precio. Yahoo devolvia filas con
@@ -140,7 +173,7 @@ DIAS_MINIMOS_ANTES_DE_RESULTADOS = 5
 PRECIO_MAXIMO = 200  # criterio de Jose Manuel: nada de fracciones, nada por encima de ~200€
 PRECIO_MINIMO = 0.05  # excluye solo penny stocks casi a cero, no acciones baratas en general
 PAUSA_ENTRE_PETICIONES = 1.5
-VERSION_SCORING = 32
+VERSION_SCORING = 33
 
 # Indices de referencia para el regimen de mercado y la fuerza relativa.
 # Cada candidata se compara con el indice de SU mercado: no tiene sentido
@@ -148,6 +181,17 @@ VERSION_SCORING = 32
 INDICE_EURO = "^STOXX50E"
 INDICE_USA = "^GSPC"
 PENALIZACION_REGIMEN = {"favorable": 0.0, "neutro": -3.0, "adverso": -8.0}
+
+# Liquidez: por debajo del minimo se descarta (no se puede entrar ni salir sin
+# mover el precio). Entre el minimo y el comodo, penalizacion proporcional.
+LIQUIDEZ_MINIMA = 100_000    # moneda local negociada al dia
+LIQUIDEZ_COMODA = 2_000_000  # a partir de aqui, penalizacion cero
+PENALIZACION_LIQUIDEZ_MAX = -8.0
+
+# Volatilidad: a partir de la comoda empieza a penalizar; en la extrema, tope.
+VOLATILIDAD_COMODA = 2.5   # % de desviacion tipica diaria
+VOLATILIDAD_EXTREMA = 5.0
+PENALIZACION_VOLATILIDAD_MAX = -6.0
 
 
 def traducir(texto):
@@ -742,7 +786,99 @@ def puntos_fuerza_relativa(fuerza_relativa):
     return round(4.0 * proporcion if proporcion >= 0 else 2.0 * proporcion, 2)
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None):
+def metricas_de_volumen(hist):
+    """Saca liquidez, volumen relativo, volatilidad y distancia al maximo de
+    52 semanas del historico que YA se ha descargado. Cero peticiones extra.
+
+    Devuelve un diccionario con None en lo que no se pueda calcular; None
+    significa "no se sabe" y nunca se penaliza por no saber."""
+    r = {"liquidez_dia": None, "volumen_relativo": None,
+         "volatilidad_diaria_pct": None, "distancia_max_52s_pct": None,
+         "sesiones_hasta_stop": None}
+    if hist is None or len(hist) < 25 or "Close" not in hist.columns:
+        return r
+
+    cierres = hist["Close"]
+
+    # --- Liquidez: mediana, no media, para que un solo dia raro de volumen
+    # (una entrada en indice, un dividendo) no haga parecer liquido algo que
+    # no lo es el resto del mes ---
+    if "Volume" in hist.columns:
+        negociado = (cierres * hist["Volume"]).tail(20).dropna()
+        if len(negociado) >= 10:
+            r["liquidez_dia"] = float(negociado.median())
+
+        vol5 = hist["Volume"].tail(5).mean()
+        vol20 = hist["Volume"].tail(20).mean()
+        if vol20 and vol20 > 0 and vol5 == vol5:
+            r["volumen_relativo"] = round(float(vol5 / vol20), 2)
+
+    # --- Volatilidad diaria y cuantas sesiones tardaria el ruido en tocar el
+    # stop del -12,5%. Es una estimacion grosera (raiz del tiempo), pero da
+    # una idea util: si salen 3 sesiones, ese valor no encaja con ese stop ---
+    rend = cierres.pct_change().tail(20).dropna()
+    if len(rend) >= 10:
+        v = float(rend.std() * 100)
+        if v == v and v > 0:
+            r["volatilidad_diaria_pct"] = round(v, 2)
+            r["sesiones_hasta_stop"] = max(1, int((12.5 / v) ** 2))
+
+    # --- Distancia al maximo de 52 semanas (informativa, sin puntos) ---
+    ventana = cierres.tail(252).dropna()
+    if len(ventana) >= 60:
+        maximo = float(ventana.max())
+        actual = float(ventana.iloc[-1])
+        if maximo > 0:
+            r["distancia_max_52s_pct"] = round((actual / maximo - 1) * 100, 1)
+
+    return r
+
+
+def puntos_liquidez(liquidez_dia):
+    """Penalizacion (nunca suma). Con 200-500 EUR la horquilla entre compra y
+    venta es un coste real: en un valor muy negociado son centimos, en uno
+    poco negociado se puede comer el triple que la comision."""
+    if liquidez_dia is None:
+        return 0.0  # sin dato no se castiga
+    if liquidez_dia >= LIQUIDEZ_COMODA:
+        return 0.0
+    if liquidez_dia <= LIQUIDEZ_MINIMA:
+        return PENALIZACION_LIQUIDEZ_MAX
+    proporcion = (LIQUIDEZ_COMODA - liquidez_dia) / (LIQUIDEZ_COMODA - LIQUIDEZ_MINIMA)
+    return round(PENALIZACION_LIQUIDEZ_MAX * proporcion, 2)
+
+
+def multiplicador_volumen(volumen_relativo, momentum_30d):
+    """Multiplica los puntos de momentum. NUNCA pasa de 1,0, asi que no puede
+    subir el maximo teorico: solo rebaja el momentum que no viene respaldado
+    por volumen.
+
+    Solo se aplica cuando hay un movimiento que confirmar. A un valor tranquilo
+    no se le exige volumen extra: no ha pasado nada que confirmar."""
+    if volumen_relativo is None or momentum_30d is None or momentum_30d <= 5:
+        return 1.0
+    # 1,5 veces el volumen normal o mas = movimiento plenamente confirmado
+    # 0,5 veces o menos = el precio se movio practicamente sin operaciones
+    proporcion = min(max((volumen_relativo - 0.5) / 1.0, 0.0), 1.0)
+    return round(0.6 + 0.4 * proporcion, 3)
+
+
+def puntos_volatilidad(volatilidad_diaria_pct):
+    """Penalizacion (nunca suma). NO cambia el stop-loss fijo del -12,5%:
+    avisa de que a esa volatilidad el stop saltaria por ruido, no por que la
+    tesis de compra haya fallado."""
+    if volatilidad_diaria_pct is None:
+        return 0.0
+    if volatilidad_diaria_pct <= VOLATILIDAD_COMODA:
+        return 0.0
+    if volatilidad_diaria_pct >= VOLATILIDAD_EXTREMA:
+        return PENALIZACION_VOLATILIDAD_MAX
+    proporcion = ((volatilidad_diaria_pct - VOLATILIDAD_COMODA)
+                  / (VOLATILIDAD_EXTREMA - VOLATILIDAD_COMODA))
+    return round(PENALIZACION_VOLATILIDAD_MAX * proporcion, 2)
+
+
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None):
     """
     Score de 0 a 100 de verdad — reescalado (11/08/2026) para que la suma
     de los máximos de los 10 factores dé exactamente 100 (antes sumaban
@@ -771,8 +907,11 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     # v31: continuo en vez de escalones (ver puntos_dispersion).
     score += puntos_dispersion(dispersion_pct)
 
-    # Momentum propio de la acción (v31: continuo, máximo 8,9)
-    score += puntos_momentum(momentum_30d, momentum_5d)
+    # Momentum propio de la acción (v31: continuo, máximo 8,9), rebajado en
+    # v33 si el movimiento no viene respaldado por volumen
+    vol = vol or {}
+    score += puntos_momentum(momentum_30d, momentum_5d) * multiplicador_volumen(
+        vol.get("volumen_relativo"), momentum_30d)
 
     # Fuerza relativa frente al índice de su mercado (v31, nuevo: máx +4,0)
     score += puntos_fuerza_relativa(fuerza_relativa)
@@ -804,6 +943,11 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     # contra. El caso favorable suma 0, así que el máximo teórico sigue
     # siendo exactamente 100. Si el régimen es desconocido, no penaliza.
     score += PENALIZACION_REGIMEN.get(regimen, 0.0)
+
+    # Liquidez y volatilidad (v33): penalizaciones puras, 0 cuando todo va
+    # bien, por lo que el maximo teorico se mantiene en 100 exactos.
+    score += puntos_liquidez(vol.get("liquidez_dia"))
+    score += puntos_volatilidad(vol.get("volatilidad_diaria_pct"))
 
     return round(score, 1)
 
@@ -880,9 +1024,15 @@ def evaluar(ticker):
         if momentum_30d is not None and momentum_indice is not None:
             fuerza_relativa = round(momentum_30d - momentum_indice, 1)
 
+        vol = metricas_de_volumen(hist)
+        if vol["liquidez_dia"] is not None and vol["liquidez_dia"] < LIQUIDEZ_MINIMA:
+            return {"ticker": ticker, "descartado": True,
+                    "motivo": f"Liquidez de solo {int(vol['liquidez_dia']):,} al dia - "
+                              f"la horquilla se comeria la operacion".replace(",", ".")}
+
         score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec,
                                tendencia_analistas_valor, empujon_consenso_real, momentum_5d,
-                               fuerza_relativa, regimen)
+                               fuerza_relativa, regimen, vol)
         if catalizador:
             score += 7.7  # empujón notable pero que no domine el resto del método
 
@@ -914,6 +1064,11 @@ def evaluar(ticker):
             "indice_referencia": indice,
             "version_scoring": VERSION_SCORING,
             "metodo_datos": metodo_datos,
+            "liquidez_dia": limpio(vol["liquidez_dia"]),
+            "volumen_relativo": limpio(vol["volumen_relativo"]),
+            "volatilidad_diaria_pct": limpio(vol["volatilidad_diaria_pct"]),
+            "sesiones_hasta_stop": vol["sesiones_hasta_stop"],
+            "distancia_max_52s_pct": limpio(vol["distancia_max_52s_pct"]),
             "catalizador_resultados": catalizador,
             "consenso_real": consenso_real,
             "cotiza_en_euros": cotiza_en_euros,
