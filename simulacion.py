@@ -1,4 +1,65 @@
 """
+VERSION: 10 (23/08/2026) - INFORME DE PONDERACION. Cada 15 dias Jose Manuel
+pega el informe en el chat para decidir que pesos cambiar. Para eso hacia
+falta algo que el informe anterior no tenia: el analisis FACTOR POR FACTOR.
+
+Lo que hace: por cada factor del score (potencial, dispersion, momentum,
+fuerza relativa, RSI, volumen, volatilidad, liquidez, distancia al maximo,
+consenso, catalizador...) parte las operaciones cerradas en tres grupos
+segun el valor que tenia ese factor, y compara como acabaron. Si el grupo
+"alto" no va mejor que el "bajo", ese factor no esta prediciendo nada por
+mucho que pese 16 puntos. Y si va PEOR, esta restando en vez de sumar.
+
+Tambien marca la revision (nº1, nº2...) contando desde la primera operacion,
+para que quede claro cada cuanto toca mirarlo.
+
+El informe esta pensado para caber en un mensaje: tablas cortas, sin adornos.
+
+VERSION: 9 (23/08/2026) - el diseño completo que describio Jose Manuel.
+Cinco cambios sobre la v8:
+
+(1) LAS 30 CANDIDATAS del cuaderno, no 9 repartidas en tres franjas. El tramo
+    del ranking (1-10, 11-20, 21-30) se deduce de la posicion, asi que la
+    comparacion entre tramos se conserva y ademas se triplica la muestra.
+
+(2) 20 DIAS de plazo maximo en vez de 30.
+
+(3) LA TARJETA ENTERA se copia dentro de la operacion y NO SE BORRA NUNCA.
+    historial_tarjetas.json tiene ventana de 5 dias, asi que dentro de tres
+    meses ya no existiria la tarjeta que motivo una entrada de hoy — y esa
+    tarjeta es justo lo que hay que cruzar con el resultado para saber que
+    factores puntuan bien.
+
+(4) ESTADO DE RESULTADO en palabras, no solo un numero:
+      nefasta   - salto el stop en 5 sesiones o menos: la entrada estaba mal
+                  desde el principio, la recomendacion fallo de raiz
+      perdida   - salto el stop mas tarde: la tesis tardo en romperse
+      plano     - llego a los 20 dias sin moverse. NO es neutro: con 2 EUR de
+                  comisiones sobre 100, estar plano es perder
+      flojo     - acaba en positivo pero por debajo de los 5 EUR limpios
+      beneficio - 5 EUR limpios o mas
+      top       - 15 EUR limpios o mas
+    Distinguir "nefasta" de "perdida" importa: si una candidata con nota alta
+    sale nefasta, el problema es el scoring; si sale perdida, puede ser
+    simplemente que el mercado se giro.
+
+(5) Se guarda tambien cuantas sesiones aguanto y si llego a armar el trailing.
+
+VERSION: 8 (23/08/2026) - participaciones en vez de acciones enteras. Antes
+se exigia poder comprar al menos 1 accion entera con 100 EUR, igual que en la
+operativa real, y eso dejaba fuera TODO lo que costara mas de 100 EUR por
+accion: en la primera ejecucion se cayeron AI.PA (167), ANET (188) y DG.PA
+(119), y la franja media se quedo con UNA sola operacion.
+
+Ese filtro sesgaba la muestra hacia los valores baratos justo cuando lo que
+se quiere medir es el ranking entero. Y no hace falta: la simulacion no tiene
+que ser ejecutable, tiene que medir si el score predice la direccion del
+precio. Ahora invierte 100 EUR exactos en cada candidata, con participaciones
+fraccionadas, y ninguna se queda fuera por precio.
+
+La operativa REAL sigue siendo de acciones enteras. Esto es solo el banco de
+pruebas.
+
 VERSION: 7 (23/08/2026) - guarda tambien los cuatro factores mas pesados del
 score que faltaban: potencial hasta el objetivo, dispersion, consenso real y
 tendencia de analistas. Sin ellos el historico podria decir SI el score
@@ -139,13 +200,24 @@ CAPITAL_POR_OPERACION = 100.0   # euros ficticios, como lo planteo Jose Manuel
 COMISION_COMPRA = 1.0
 COMISION_VENTA = 1.0
 
-# Las tres franjas del ranking donde se abren operaciones. La comparacion
-# entre ellas es el resultado que de verdad interesa.
-FRANJAS = [
-    ("top", 0, 3),        # puestos 1-3
-    ("media", 9, 12),     # puestos 10-12
-    ("cola", 24, 27),     # puestos 25-27
-]
+# Se simulan TODAS las candidatas del cuaderno. El tramo (1-10, 11-20, 21-30)
+# se deduce de la posicion, y comparar los tramos entre si es lo que dira si
+# el score de verdad ordena bien.
+TOP_N_SIMULACION = 30   # se simulan TODAS las candidatas del cuaderno
+
+# El tramo se deduce de la posicion, no hace falta elegir puestos sueltos.
+def tramo_de(posicion):
+    if posicion <= 10:
+        return "1-10"
+    if posicion <= 20:
+        return "11-20"
+    return "21-30"
+
+# Umbrales de los estados, en euros limpios sobre los 100 invertidos.
+UMBRAL_TOP = 15.0
+UMBRAL_BENEFICIO = 5.0
+SESIONES_NEFASTA = 5    # stop-loss en 5 sesiones o menos = entrada mal elegida
+PLANO_MARGEN = 3.0      # +-3 EUR alrededor de cero se considera plano
 
 # Reglas de salida: las MISMAS que bot.py, para que esto mida el sistema
 # real y no un sistema parecido.
@@ -175,7 +247,7 @@ TRAILING_PCT = 5.0            # % por debajo del maximo, una vez activado
 ACTIVACION_TRAILING_PCT = 5.0 # subida necesaria para que el trailing arranque
 ESCALON_PCT = 0.05        # metodo 2: escalones de +5% desde el punto de equilibrio
 
-DIAS_MAXIMO = 30          # si no salta el stop, se cierra y se apunta igual
+DIAS_MAXIMO = 20          # si no salta el stop, se cierra y se apunta igual
 DIAS_REVISION = 7         # foto intermedia a los 7 dias
 
 # El listón real: 5 EUR limpios en el bolsillo, comisiones ya descontadas.
@@ -201,74 +273,67 @@ def guardar(ruta, datos):
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(datos, f, indent=2, ensure_ascii=False, allow_nan=False)
 
+def tarjeta_completa(c):
+    """La tarjeta tal y como la vio Jose Manuel, copiada ENTERA y para
+    siempre dentro de la operacion. historial_tarjetas.json solo guarda 5
+    dias, asi que sin esta copia la tarjeta que motivo una entrada de hoy no
+    existiria dentro de tres meses — y es justo lo que hay que cruzar con el
+    resultado para saber que factores puntuan bien y cuales sobran."""
+    campos = [
+        "ticker", "nombre_empresa", "isin", "sector", "score", "version_scoring",
+        "precio_actual", "consenso", "consenso_real", "precio_objetivo_medio",
+        "dispersion_pct", "momentum_30d_pct", "momentum_5d_pct", "fuerza_relativa_pct",
+        "regimen_mercado", "indice_referencia", "rsi_14", "tendencia_tecnica",
+        "sma50", "sma200", "tendencia_analistas", "catalizador_resultados",
+        "cotiza_en_euros", "liquidez_dia", "volumen_relativo", "volatilidad_diaria_pct",
+        "sesiones_hasta_stop", "distancia_max_52s_pct", "metodo_datos",
+        "noticias", "profundizacion", "resumen_negocio",
+    ]
+    return {k: c.get(k) for k in campos}
+
 
 def abrir_operaciones(ranking, operaciones):
-    """Abre operaciones ficticias nuevas en las tres franjas del ranking.
+    """Abre una operacion ficticia de 100 EUR sobre CADA UNA de las 30
+    candidatas del cuaderno.
 
-    No se abre una segunda operacion sobre un ticker que ya esta abierto:
-    si una candidata lleva seis dias en el top, contarla seis veces daria
-    seis resultados practicamente identicos y falsearia la estadistica
-    hacia lo que mas se repite."""
+    No se abre una segunda sobre un ticker que ya esta abierto: una candidata
+    puede quedarse una semana en el top y contarla siete veces daria siete
+    resultados casi identicos, inflando la muestra hacia lo que mas se repite
+    en vez de hacia lo que mejor funciona."""
     abiertos = {o["ticker"] for o in operaciones if o["estado"] == "abierta"}
     hoy = datetime.now().strftime("%Y-%m-%d")
     nuevas = 0
 
-    for nombre_franja, desde, hasta in FRANJAS:
-        for posicion in range(desde, hasta):
-            if posicion >= len(ranking):
-                continue
-            c = ranking[posicion]
-            ticker = c.get("ticker")
-            precio = c.get("precio_actual")
-            if not ticker or not precio or precio <= 0 or ticker in abiertos:
-                continue
+    for posicion, c in enumerate(ranking[:TOP_N_SIMULACION], start=1):
+        ticker = c.get("ticker")
+        precio = c.get("precio_actual")
+        if not ticker or not precio or precio <= 0 or ticker in abiertos:
+            continue
 
-            acciones = int(CAPITAL_POR_OPERACION // precio)
-            if acciones < 1:
-                continue  # acciones enteras, como en la operativa real
+        abiertos.add(ticker)
+        acciones = round(CAPITAL_POR_OPERACION / precio, 6)
+        pot = (round((c["precio_objetivo_medio"] / precio - 1) * 100, 1)
+               if c.get("precio_objetivo_medio") else None)
 
-            abiertos.add(ticker)
-            operaciones.append({
-                "id": f"{ticker}-{hoy}",
-                "ticker": ticker,
-                "nombre": c.get("nombre_empresa"),
-                "estado": "abierta",
-                "fecha_entrada": hoy,
-                "precio_entrada": precio,
-                "acciones": acciones,
-                "invertido": round(precio * acciones, 2),
-                # Todo lo que decia la tarjeta ese dia. Es lo que luego se
-                # cruza con el resultado para saber que factores sirven.
-                "franja": nombre_franja,
-                "posicion_ranking": posicion + 1,
-                "score": c.get("score"),
-                "version_scoring": c.get("version_scoring"),
-                "consenso": c.get("consenso"),
-                # Los cuatro factores mas pesados del score, guardados para
-                # poder evaluarlos uno a uno contra el resultado real.
-                "precio_objetivo_medio": c.get("precio_objetivo_medio"),
-                "potencial_pct": (round((c["precio_objetivo_medio"] / c["precio_actual"] - 1) * 100, 1)
-                                  if c.get("precio_objetivo_medio") and c.get("precio_actual") else None),
-                "dispersion_pct": c.get("dispersion_pct"),
-                "consenso_real": c.get("consenso_real"),
-                "tendencia_analistas": c.get("tendencia_analistas"),
-                "rsi_14": c.get("rsi_14"),
-                "momentum_30d_pct": c.get("momentum_30d_pct"),
-                "fuerza_relativa_pct": c.get("fuerza_relativa_pct"),
-                "tendencia_tecnica": c.get("tendencia_tecnica"),
-                "regimen_mercado": c.get("regimen_mercado"),
-                "liquidez_dia": c.get("liquidez_dia"),
-                "volumen_relativo": c.get("volumen_relativo"),
-                "volatilidad_diaria_pct": c.get("volatilidad_diaria_pct"),
-                "distancia_max_52s_pct": c.get("distancia_max_52s_pct"),
-                "catalizador": c.get("catalizador_resultados") is not None,
-                "cotiza_en_euros": c.get("cotiza_en_euros"),
-                "sector": c.get("sector"),
-            })
-            nuevas += 1
+        operaciones.append({
+            "id": f"{ticker}-{hoy}",
+            "ticker": ticker,
+            "nombre": c.get("nombre_empresa"),
+            "estado": "abierta",
+            "fecha_entrada": hoy,
+            "precio_entrada": precio,
+            "acciones": acciones,
+            "invertido": round(precio * acciones, 2),
+            "posicion_ranking": posicion,
+            "tramo": tramo_de(posicion),
+            "score": c.get("score"),
+            "potencial_pct": pot,
+            # La tarjeta entera, permanente
+            "tarjeta": tarjeta_completa(c),
+        })
+        nuevas += 1
 
     return nuevas
-
 
 def descargar_historico(op):
     """Una sola descarga por operacion, reutilizada por todas las variantes."""
@@ -414,12 +479,39 @@ def _recorrer(op, hist, regla):
     return None  # sigue abierta
 
 
+def clasificar(neto, sesiones, motivo, llego_al_objetivo):
+    """Traduce el resultado a una palabra. Es lo que permitira, dentro de unas
+    semanas, preguntar cosas como "¿que tienen en comun las tarjetas que
+    acabaron NEFASTAS?" en vez de mirar una nube de porcentajes.
+
+    Ojo con PLANO: no es neutro. Con 2 EUR de comisiones sobre 100 invertidos,
+    quedarse veinte dias sin moverse ES perder — y ademas ocupa una de las
+    pocas posiciones disponibles. Una candidata que acaba plana a menudo es
+    peor que una que cae rapido y libera el dinero."""
+    if neto >= UMBRAL_TOP:
+        return "top", "Ganancia grande. Esta es la que compensa a todas las demas."
+    if neto >= UMBRAL_BENEFICIO:
+        return "beneficio", f"Dejo {neto:.2f} EUR limpios: por encima del liston de los 5 EUR."
+    if neto > PLANO_MARGEN:
+        return "flojo", "Acabo en positivo pero sin llegar a los 5 EUR limpios."
+    if motivo == "plazo maximo" and abs(neto) <= PLANO_MARGEN:
+        return "plano", ("Veinte dias sin moverse. Con las comisiones esto es perder, "
+                         "y ademas tuvo bloqueada una posicion todo ese tiempo.")
+    if motivo != "plazo maximo" and sesiones <= SESIONES_NEFASTA:
+        return "nefasta", (f"El stop salto en solo {sesiones} sesion{'es' if sesiones != 1 else ''}. "
+                           "La entrada estaba mal desde el principio: aqui falla la recomendacion, "
+                           "no el mercado.")
+    return "perdida", ("Aguanto un tiempo y acabo saltando el stop. La tesis tardo en romperse; "
+                       "puede ser el mercado y no la seleccion.")
+
+
 def cerrar(op, precio_salida, fecha, sesiones, motivo, precio_7d, precio_equilibrio,
            llego_al_objetivo=False, sesiones_hasta_armar=None):
     acciones = op["acciones"]
     bruto = (precio_salida - op["precio_entrada"]) * acciones
     neto = bruto - COMISION_COMPRA - COMISION_VENTA
     invertido = op["invertido"]
+    estado, explicacion = clasificar(neto, sesiones, motivo, llego_al_objetivo)
     return {
         "precio_salida": round(float(precio_salida), 4),
         "fecha_salida": fecha.strftime("%Y-%m-%d") if hasattr(fecha, "strftime") else str(fecha),
@@ -437,17 +529,145 @@ def cerrar(op, precio_salida, fecha, sesiones, motivo, precio_7d, precio_equilib
         "llego_al_objetivo": llego_al_objetivo,
         "sesiones_hasta_equilibrio": sesiones_hasta_armar,
         "precio_equilibrio": round(precio_equilibrio, 4),
+        "estado_resultado": estado,
+        "explicacion": explicacion,
     }
+
+
+def _valor_factor(op, ruta):
+    """Saca el valor de un factor de la tarjeta guardada con la operacion."""
+    t = op.get("tarjeta") or {}
+    if ruta == "posicion_ranking":
+        return op.get("posicion_ranking")
+    if ruta == "potencial_pct":
+        return op.get("potencial_pct")
+    if ruta == "pct_strong_buy":
+        cr = t.get("consenso_real") or {}
+        return cr.get("pct_strong_buy")
+    return t.get(ruta)
+
+
+def _resumen_grupo(g):
+    if not g:
+        return None
+    media = sum(o["resultado_neto_eur"] for o in g) / len(g)
+    buenos = sum(1 for o in g if o.get("estado_resultado") in ("top", "beneficio"))
+    malos = sum(1 for o in g if o.get("estado_resultado") in ("nefasta", "perdida"))
+    return (media, buenos / len(g) * 100, malos / len(g) * 100, len(g))
+
+
+FACTORES_NUMERICOS = [
+    ("score", "score", "nota global"),
+    ("posicion_ranking", "posicion_ranking", "puesto en el ranking"),
+    ("potencial_pct", "potencial_pct", "potencial hasta objetivo"),
+    ("dispersion_pct", "dispersion_pct", "dispersion"),
+    ("pct_strong_buy", "pct_strong_buy", "% compra fuerte"),
+    ("momentum_30d_pct", "momentum_30d_pct", "momentum 30d"),
+    ("fuerza_relativa_pct", "fuerza_relativa_pct", "fuerza relativa"),
+    ("rsi_14", "rsi_14", "RSI"),
+    ("volumen_relativo", "volumen_relativo", "volumen relativo"),
+    ("volatilidad_diaria_pct", "volatilidad_diaria_pct", "volatilidad"),
+    ("liquidez_dia", "liquidez_dia", "liquidez"),
+    ("distancia_max_52s_pct", "distancia_max_52s_pct", "distancia max 52s"),
+]
+
+FACTORES_CATEGORICOS = [
+    ("consenso", "consenso", "consenso"),
+    ("tendencia_tecnica", "tendencia_tecnica", "tendencia tecnica"),
+    ("tendencia_analistas", "tendencia_analistas", "tendencia analistas"),
+    ("regimen_mercado", "regimen_mercado", "regimen de mercado"),
+]
+
+MINIMO_PARA_ANALIZAR = 15
+
+
+def informe_ponderacion(cerradas):
+    """Analisis factor por factor, pensado para pegarlo en el chat."""
+    lineas = []
+    if len(cerradas) < MINIMO_PARA_ANALIZAR:
+        lineas += ["## Analisis por factor", "",
+                   f"Solo hay {len(cerradas)} operaciones cerradas. Hacen falta al menos",
+                   f"{MINIMO_PARA_ANALIZAR} para que partir en grupos signifique algo.", ""]
+        return lineas
+
+    lineas += ["## Analisis por factor", "",
+               "Cada factor se parte en tres grupos segun su valor y se compara como",
+               "acabaron. Si el grupo ALTO no va mejor que el BAJO, ese factor no",
+               "predice; si va peor, esta restando.", "",
+               "| Factor | Grupo | Ops | Media | Buenas | Malas |",
+               "|---|---|---|---|---|---|"]
+
+    discriminacion = []
+    for clave, ruta, etiqueta in FACTORES_NUMERICOS:
+        con = [o for o in cerradas if _valor_factor(o, ruta) is not None]
+        if len(con) < MINIMO_PARA_ANALIZAR:
+            continue
+        con.sort(key=lambda o: _valor_factor(o, ruta))
+        n = len(con) // 3
+        grupos = [("bajo", con[:n]), ("medio", con[n:2 * n]), ("alto", con[2 * n:])]
+        medias = {}
+        for nombre, g in grupos:
+            r = _resumen_grupo(g)
+            if not r:
+                continue
+            medias[nombre] = r[0]
+            lineas.append(f"| {etiqueta} | {nombre} | {r[3]} | {r[0]:+.2f} EUR | {r[1]:.0f}% | {r[2]:.0f}% |")
+        if "alto" in medias and "bajo" in medias:
+            discriminacion.append((medias["alto"] - medias["bajo"], etiqueta, medias["bajo"], medias["alto"]))
+
+    for clave, ruta, etiqueta in FACTORES_CATEGORICOS:
+        grupos = {}
+        for o in cerradas:
+            v = _valor_factor(o, ruta)
+            if v is None:
+                continue
+            grupos.setdefault(str(v), []).append(o)
+        for v, g in sorted(grupos.items(), key=lambda x: -len(x[1])):
+            if len(g) < 5:
+                continue
+            r = _resumen_grupo(g)
+            lineas.append(f"| {etiqueta} | {v} | {r[3]} | {r[0]:+.2f} EUR | {r[1]:.0f}% | {r[2]:.0f}% |")
+
+    # Catalizador (booleano)
+    for valor, nombre in ((True, "con catalizador"), (False, "sin catalizador")):
+        g = [o for o in cerradas if bool((o.get("tarjeta") or {}).get("catalizador_resultados")) is valor]
+        if len(g) >= 5:
+            r = _resumen_grupo(g)
+            lineas.append(f"| catalizador | {nombre} | {r[3]} | {r[0]:+.2f} EUR | {r[1]:.0f}% | {r[2]:.0f}% |")
+
+    lineas.append("")
+    if discriminacion:
+        discriminacion.sort(reverse=True)
+        lineas += ["### Que factor separa mas", "",
+                   "Diferencia entre el grupo alto y el bajo. Positivo = mas valor",
+                   "es mejor. Negativo = el factor esta al reves y penaliza acertar.", "",
+                   "| Factor | Bajo | Alto | Diferencia |", "|---|---|---|---|"]
+        for dif, etiqueta, bajo, alto in discriminacion:
+            lineas.append(f"| {etiqueta} | {bajo:+.2f} | {alto:+.2f} | **{dif:+.2f} EUR** |")
+        lineas += ["", "Los de arriba merecen MAS peso; los de abajo, menos o al reves.", ""]
+    return lineas
 
 
 def escribir_informe(operaciones):
     cerradas = [o for o in operaciones if o["estado"] == "cerrada"]
     abiertas = [o for o in operaciones if o["estado"] == "abierta"]
 
+    # Numero de revision: una cada 15 dias desde la primera operacion, que es
+    # el ritmo al que Jose Manuel quiere ajustar la ponderacion.
+    revision, dias = 0, 0
+    if operaciones:
+        inicio = min(o["fecha_entrada"] for o in operaciones)
+        dias = (datetime.now() - datetime.strptime(inicio, "%Y-%m-%d")).days
+        revision = dias // 15
+    faltan = 15 - (dias % 15)
+
     lineas = [
         "# Simulacion en paralelo",
         "",
-        f"Actualizado: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        f"Actualizado: {datetime.now().strftime('%Y-%m-%d %H:%M')} · dia {dias} de ejecucion",
+        (f"**Revision nº{revision} disponible.** Pega este informe en el chat para decidir la ponderacion."
+         if revision >= 1 and dias % 15 <= 2 else
+         f"Proxima revision de ponderacion en {faltan} dia{'s' if faltan != 1 else ''}."),
         "",
         f"- Operaciones cerradas: **{len(cerradas)}**",
         f"- Operaciones abiertas: {len(abiertas)}",
@@ -457,17 +677,28 @@ def escribir_informe(operaciones):
     if len(cerradas) < 20:
         lineas += [
             f"> Con {len(cerradas)} operaciones cerradas todavia NO se puede concluir nada.",
-            "> Hacen falta bastantes decenas por franja para que la comparacion",
+            "> Hacen falta bastantes decenas por tramo para que la comparacion",
             "> signifique algo. Hasta entonces esto solo acumula datos.",
             "",
         ]
 
     if cerradas:
-        lineas += ["## Por franja del ranking", "",
+        lineas += ["## Como acabaron", "",
+                   "| Estado | Ops | % del total | Media |", "|---|---|---|---|"]
+        for est in ("top", "beneficio", "flojo", "plano", "perdida", "nefasta"):
+            g = [o for o in cerradas if o.get("estado_resultado") == est]
+            if not g:
+                lineas.append(f"| {est} | 0 | - | - |")
+                continue
+            media = sum(o["resultado_neto_eur"] for o in g) / len(g)
+            lineas.append(f"| {est} | {len(g)} | {len(g) / len(cerradas) * 100:.0f}% | {media:+.2f} EUR |")
+        lineas.append("")
+
+        lineas += ["## Por tramo del ranking", "",
                    "| Franja | Ops | Media neta | Con 5 EUR+ | Llegaron al suelo | Sesiones |",
                    "|---|---|---|---|---|---|"]
-        for nombre, _, _ in FRANJAS:
-            g = [o for o in cerradas if o.get("franja") == nombre]
+        for nombre in ("1-10", "11-20", "21-30"):
+            g = [o for o in cerradas if o.get("tramo") == nombre]
             if not g:
                 lineas.append(f"| {nombre} | 0 | - | - | - | - |")
                 continue
@@ -524,6 +755,8 @@ def escribir_informe(operaciones):
                    f"({exitos / len(cerradas) * 100:.0f}%)",
                    f"- Resultado acumulado ficticio: {total:+.2f} EUR "
                    f"sobre {len(cerradas)} x {CAPITAL_POR_OPERACION:.0f} EUR", ""]
+
+    lineas += informe_ponderacion(cerradas)
 
     with open(INFORME, "w", encoding="utf-8") as f:
         f.write("\n".join(lineas))
