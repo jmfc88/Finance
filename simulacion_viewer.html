@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- VERSION: 2 (23/08/2026) - adaptado al diseño completo de simulacion.py v9:
+las 30 candidatas por pasada en tres tramos (1-10, 11-20, 21-30) en vez de
+nueve sueltas, y el bloque nuevo de ESTADOS, que es la lectura que de verdad
+sirve para ajustar la ponderación: no cuánto se ganó, sino CÓMO acabó cada
+recomendación. Una nota alta que acaba "nefasta" señala un fallo del scoring;
+una que acaba "perdida" puede ser simplemente el mercado.
+
+VERSION: 1 (23/08/2026) - visor de la simulación en paralelo.
+
+Hasta ahora la simulación escribía simulacion_operaciones.json y un informe en
+markdown, que en el móvil no hay quien lo lea. Esta página lo enseña como el
+cuaderno de candidatas: posiciones ficticias abiertas con su recorrido, las
+cerradas con su resultado, la comparación entre las tres franjas del ranking
+(que es la pregunta de fondo: ¿el score ordena bien?) y la comparación entre
+las siete reglas de salida.
+
+Deliberadamente avisa cuando hay pocos datos. Con menos de 20 operaciones
+cerradas por franja, cualquier diferencia entre franjas es ruido, y una
+tabla bonita invita a sacar conclusiones que los datos no sostienen.
+
+No toca nada: solo lee del repo. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulación en paralelo</title>
+<style>
+  :root{
+    --paper:#F2EEE3;
+    --paper-line:#DCD5C2;
+    --ink:#1B2430;
+    --ink-soft:#5B6472;
+    --green:#2F5233;
+    --brick:#8C3B2E;
+    --brick-bg:#F1E3DE;
+    --gold:#B8860B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--paper-line) 28px),
+      var(--paper);
+    color:var(--ink);
+    font-family: Georgia, 'Iowan Old Style', serif;
+    min-height:100vh;
+    padding-bottom:60px;
+  }
+  header{ padding:20px 18px 12px; border-bottom:2px solid var(--ink); }
+  h1{ margin:0; font-size:22px; letter-spacing:0.02em; }
+  .sub{ font-family: ui-monospace, Menlo, monospace; font-size:12px; color:var(--ink-soft); margin-top:4px; }
+  .config{ display:flex; gap:6px; margin-top:14px; flex-wrap:wrap; }
+  .config input{
+    flex:1; min-width:150px; padding:9px 10px; border:1px solid var(--ink);
+    background:#FFFDF7; font-family: ui-monospace, Menlo, monospace; font-size:13px;
+  }
+  .config button{
+    padding:9px 16px; border:1px solid var(--ink); background:var(--ink); color:var(--paper);
+    font-family: ui-monospace, Menlo, monospace; font-size:13px; cursor:pointer;
+  }
+  main{ padding:16px 14px; }
+  section{
+    border:1px solid var(--ink); background:#FFFDF7; padding:14px;
+    margin-bottom:16px;
+  }
+  h2{ margin:0 0 4px; font-size:17px; }
+  .nota{ font-family: ui-monospace, Menlo, monospace; font-size:11.5px; color:var(--ink-soft); line-height:1.55; margin-bottom:10px; }
+  .aviso{
+    border-left:4px solid var(--gold); background:#FFFBEB;
+    padding:10px 12px; font-size:13px; line-height:1.55; margin:10px 0;
+  }
+  table{ width:100%; border-collapse:collapse; font-family: ui-monospace, Menlo, monospace; font-size:12px; }
+  th{ text-align:left; border-bottom:1.5px solid var(--ink); padding:6px 4px; font-weight:normal; color:var(--ink-soft); }
+  td{ border-bottom:1px solid var(--paper-line); padding:7px 4px; }
+  .pos{ color:var(--green); }
+  .neg{ color:var(--brick); }
+  .op{
+    border:1px solid var(--paper-line); border-left:3px solid var(--ink-soft);
+    padding:9px 11px; margin-bottom:8px; font-family: ui-monospace, Menlo, monospace; font-size:12px; line-height:1.6;
+  }
+  .op.top{ border-left-color:var(--gold); }
+  .op b{ font-family: Georgia, serif; font-size:14px; }
+  .franja{ font-size:10.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); }
+  .barra{ height:8px; background:var(--paper-line); margin-top:6px; }
+  .barra div{ height:100%; background:var(--green); }
+  .vacio{ font-family: ui-monospace, Menlo, monospace; font-size:12.5px; color:var(--ink-soft); line-height:1.6; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Simulación en paralelo</h1>
+  <div class="sub" id="estado">cargando…</div>
+  <div class="config">
+    <input id="repo" type="text" value="jmfc88/Finance">
+    <button onclick="cargar()">Traer datos</button>
+  </div>
+  <div class="sub">compras ficticias de 100&nbsp;€ — no es dinero real, solo sirve para medir si el cuaderno acierta</div>
+</header>
+
+<main id="contenido">
+  <section><div class="vacio">Cargando la simulación…</div></section>
+</main>
+
+<script>
+/* Umbral por debajo del cual NO se saca ninguna conclusión. Con pocas
+operaciones, la diferencia entre franjas es ruido y una tabla con aspecto
+serio invita a creérsela. */
+const MINIMO_POR_FRANJA = 20;
+
+function eur(v){ return (v>=0?'+':'') + v.toFixed(2) + '€'; }
+function clase(v){ return v>0 ? 'pos' : (v<0 ? 'neg' : ''); }
+
+async function cargar(){
+  const repo = document.getElementById('repo').value.trim();
+  try { localStorage.setItem('sim-repo', repo); } catch(e){}
+  const cont = document.getElementById('contenido');
+  cont.innerHTML = '<section><div class="vacio">Cargando…</div></section>';
+
+  let ops;
+  try {
+    const r = await fetch(`https://raw.githubusercontent.com/${repo}/main/simulacion_operaciones.json?t=${Date.now()}`, {cache:'no-store'});
+    if (!r.ok) {
+      cont.innerHTML = `<section><h2>Todavía no hay nada</h2><div class="vacio">
+        No se encontró <b>simulacion_operaciones.json</b> en ${repo} (${r.status}).<br><br>
+        Es normal si la simulación aún no ha corrido. Lánzala desde la pestaña
+        Actions de GitHub, en "Simulacion en paralelo".</div></section>`;
+      document.getElementById('estado').textContent = 'sin datos todavía';
+      return;
+    }
+    ops = await r.json();
+  } catch(e) {
+    cont.innerHTML = `<section><h2>No se pudo cargar</h2><div class="vacio">${e.message}</div></section>`;
+    return;
+  }
+
+  const abiertas = ops.filter(o => o.estado === 'abierta');
+  const cerradas = ops.filter(o => o.estado === 'cerrada');
+  document.getElementById('estado').textContent =
+    `${cerradas.length} cerradas · ${abiertas.length} abiertas · ${ops.length} en total`;
+
+  let html = '';
+
+  /* ---- 1. Cuánto falta para poder concluir algo ---- */
+  const porTramo = {};
+  ['1-10','11-20','21-30'].forEach(f => porTramo[f] = cerradas.filter(o => o.tramo === f).length);
+  const minimo = Math.min(...Object.values(porTramo));
+  const pct = Math.min(100, Math.round(minimo / MINIMO_POR_FRANJA * 100));
+
+  html += `<section>
+    <h2>¿Ya se puede concluir algo?</h2>
+    <div class="nota">La pregunta de fondo es si una candidata bien puntuada acaba mejor
+    que una mediocre. Para responderla hacen falta bastantes operaciones cerradas
+    en cada franja; con menos, lo que se vea es azar.</div>`;
+  if (minimo >= MINIMO_POR_FRANJA) {
+    html += `<div class="aviso"><b>Ya hay muestra suficiente.</b> Al menos ${MINIMO_POR_FRANJA}
+      operaciones cerradas en cada franja. Las tablas de abajo empiezan a significar algo,
+      aunque cuantas más, mejor.</div>`;
+  } else {
+    html += `<div class="aviso"><b>Todavía no.</b> La franja con menos datos tiene
+      ${minimo} operación${minimo===1?'':'es'} cerrada${minimo===1?'':'s'} de las ${MINIMO_POR_FRANJA}
+      que hacen falta. Lo de abajo se puede mirar por curiosidad, pero <b>no saques conclusiones
+      ni cambies nada del scoring todavía</b>.</div>
+      <div class="barra"><div style="width:${pct}%"></div></div>
+      <div class="nota" style="margin-top:6px;">puestos 1-10: ${porTramo['1-10']} · 11-20: ${porTramo['11-20']} · 21-30: ${porTramo['21-30']} cerradas</div>`;
+  }
+  html += `</section>`;
+
+  /* ---- 2. Cómo acabaron (los estados) ---- */
+  const ESTADOS = {
+    top:       ['Top',       'ganancia grande, la que compensa a las demás'],
+    beneficio: ['Beneficio', '5€ limpios o más'],
+    flojo:     ['Flojo',     'positivo pero por debajo de 5€'],
+    plano:     ['Plano',     '20 días sin moverse: con comisiones, esto es perder'],
+    perdida:   ['Pérdida',   'aguantó y acabó saltando el stop'],
+    nefasta:   ['Nefasta',   'el stop saltó en 5 sesiones o menos: falló la recomendación'],
+  };
+  if (cerradas.length) {
+    html += `<section><h2>Cómo acabaron</h2>
+      <div class="nota">Esta es la lectura que sirve para ajustar la ponderación.
+      «Nefasta» con nota alta señala un fallo del scoring; «pérdida» puede ser solo el mercado.</div>
+      <table><tr><th>Estado</th><th>Ops</th><th>%</th><th>Nota media</th></tr>`;
+    Object.keys(ESTADOS).forEach(e => {
+      const g = cerradas.filter(o => o.estado_resultado === e);
+      if (!g.length) { html += `<tr><td>${ESTADOS[e][0]}</td><td>0</td><td>—</td><td>—</td></tr>`; return; }
+      const nota = g.reduce((s,o)=>s+(o.score||0),0)/g.length;
+      const cl = (e==='top'||e==='beneficio') ? 'pos' : ((e==='nefasta'||e==='perdida') ? 'neg' : '');
+      html += `<tr><td class="${cl}">${ESTADOS[e][0]}</td><td>${g.length}</td>
+        <td>${Math.round(g.length/cerradas.length*100)}%</td><td>${nota.toFixed(1)}</td></tr>`;
+    });
+    html += `</table>
+      <div class="nota" style="margin-top:8px;">La columna «nota media» es la clave:
+      si las nefastas tienen una nota parecida a las top, el score no está distinguiendo nada.</div>
+      </section>`;
+  }
+
+  /* ---- 3. Comparación por tramo ---- */
+  if (cerradas.length) {
+    html += `<section><h2>Por tramo del ranking</h2>
+      <div class="nota">Si el score ordena bien, el tramo 1-10 debería ir claramente
+      por delante del 21-30. Si no, hay factores mal ponderados.</div>
+      <table><tr><th>Tramo</th><th>Ops</th><th>Media</th><th>Aciertos</th><th>Total</th></tr>`;
+    ['1-10','11-20','21-30'].forEach(f => {
+      const g = cerradas.filter(o => o.tramo === f);
+      if (!g.length) { html += `<tr><td>${f}</td><td>0</td><td>—</td><td>—</td><td>—</td></tr>`; return; }
+      const media = g.reduce((s,o)=>s+o.rentabilidad_neta_pct,0)/g.length;
+      const tot = g.reduce((s,o)=>s+o.resultado_neto_eur,0);
+      const ac = g.filter(o=>o.exito).length;
+      html += `<tr><td>${f}</td><td>${g.length}</td>
+        <td class="${clase(media)}">${media>=0?'+':''}${media.toFixed(2)}%</td>
+        <td>${ac}/${g.length}</td>
+        <td class="${clase(tot)}">${eur(tot)}</td></tr>`;
+    });
+    html += `</table></section>`;
+
+    /* ---- 3. Comparación de reglas de salida ---- */
+    const conVar = cerradas.filter(o => o.variantes);
+    if (conVar.length) {
+      const nombres = new Set();
+      conVar.forEach(o => Object.keys(o.variantes).forEach(n => nombres.add(n)));
+      const filas = [...nombres].map(n => {
+        const v = conVar.filter(o => o.variantes[n]).map(o => o.variantes[n]);
+        return { n, total: v.reduce((s,x)=>s+x.neto_eur,0),
+                 media: v.reduce((s,x)=>s+x.neto_pct,0)/v.length,
+                 peor: Math.min(...v.map(x=>x.neto_eur)), cuantos: v.length };
+      }).sort((a,b) => b.total - a.total);
+
+      html += `<section><h2>Reglas de salida</h2>
+        <div class="nota">Las mismas operaciones, los mismos días, distintas reglas de stop-loss.
+        Mira también «peor»: una regla que gana más pero con caídas grandes puede no compensar.</div>
+        <table><tr><th>Regla</th><th>Total</th><th>Media</th><th>Peor</th></tr>`;
+      filas.forEach(f => {
+        html += `<tr><td>${f.n}</td>
+          <td class="${clase(f.total)}">${eur(f.total)}</td>
+          <td class="${clase(f.media)}">${f.media>=0?'+':''}${f.media.toFixed(2)}%</td>
+          <td class="neg">${f.peor.toFixed(2)}€</td></tr>`;
+      });
+      html += `</table></section>`;
+    }
+
+    /* ---- 4. Operaciones cerradas ---- */
+    html += `<section><h2>Cerradas</h2>`;
+    cerradas.slice().reverse().slice(0,40).forEach(o => {
+      html += `<div class="op ${o.tramo==='1-10'?'top':''}">
+        <span class="franja">tramo ${o.tramo} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
+        <b>${o.ticker}</b> ${o.nombre ? '· ' + o.nombre : ''}<br>
+        ${o.precio_entrada} → ${o.precio_salida} en ${o.sesiones} sesiones · ${o.motivo_salida}<br>
+        <span class="${clase(o.resultado_neto_eur)}">${eur(o.resultado_neto_eur)}
+        (${o.rentabilidad_neta_pct>=0?'+':''}${o.rentabilidad_neta_pct}%)</span>
+        ${o.estado_resultado ? `<br><span class="franja">${(ESTADOS[o.estado_resultado]||[o.estado_resultado])[0]}</span>` : ''}
+      </div>`;
+    });
+    html += `</section>`;
+  }
+
+  /* ---- 5. Abiertas ---- */
+  html += `<section><h2>Abiertas</h2>`;
+  if (!abiertas.length) {
+    html += `<div class="vacio">Ninguna abierta ahora mismo. Se abren solas en cada ejecución
+      de la simulación, a partir del ranking del día.</div>`;
+  } else {
+    html += `<div class="nota">Se cierran solas cuando salta el stop o a los 30 días.</div>`;
+    abiertas.forEach(o => {
+      html += `<div class="op ${o.tramo==='1-10'?'top':''}">
+        <span class="franja">tramo ${o.tramo} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
+        <b>${o.ticker}</b> ${o.nombre ? '· ' + o.nombre : ''}<br>
+        ${o.acciones} acc. a ${o.precio_entrada} = ${o.invertido}€ · desde el ${o.fecha_entrada}
+        ${o.volatilidad_diaria_pct ? `<br>volatilidad ${o.volatilidad_diaria_pct}% diario` : ''}
+      </div>`;
+    });
+  }
+  html += `</section>`;
+
+  document.getElementById('contenido').innerHTML = html;
+}
+
+try {
+  const g = localStorage.getItem('sim-repo');
+  if (g) document.getElementById('repo').value = g;
+} catch(e) {}
+cargar();
+</script>
+
+</body>
+</html>
