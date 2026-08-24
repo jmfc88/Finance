@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<!-- VERSION: 29 (24/08/2026) - carga el JS compartido con ?v=13 en la ruta.
+
+POR QUE: el 24/08 el boton "Probar conexion" se quedaba colgado en
+"Probando..." para siempre. Los dos archivos estaban bien subidos, pero el
+navegador tenia CACHEADO el simulador-datos.js viejo: el HTML se actualizaba
+y el JS no, asi que se llamaba a una funcion que en la version cacheada no
+existia, saltaba un ReferenceError y el mensaje nunca se escribia.
+
+Un fallo silencioso mas, y de los peores: todo parece correcto en GitHub y
+en el movil no funciona. Anadiendo ?v=NN a la ruta, el navegador se ve
+obligado a descargar el archivo nuevo. HAY QUE SUBIR EL NUMERO cada vez que
+cambie simulador-datos.js, o volvera a pasar. -->
 <!-- VERSION: 28 (24/08/2026) - avisa cuando la sincronizacion falla, en vez
 de fallar en silencio. El 24/08 llego un [VENDE] de una posicion vendida tres
 dias antes: la venta estaba en el movil pero nunca subio a GitHub, y el aviso
@@ -299,7 +311,7 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script src="simulador-datos.js"></script>
+<script src="simulador-datos.js?v=13"></script>
 <script>
 function parseNumeroEs(texto) {
   // Acepta coma o punto como separador decimal (el teclado español mete
@@ -532,10 +544,24 @@ async function probarConexionSync() {
   const div = document.getElementById('sync-estado');
   div.style.display = 'block';
   div.textContent = 'Probando…';
-  const r = await probarSincronizacion();
-  div.innerHTML = r.ok
-    ? `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}</span>`
-    : `<span style="color:var(--brick);"><b>No funciona.</b> ${r.mensaje}</span>`;
+
+  /* Envuelto en try/catch a proposito: si esto falla, el boton se quedaba en
+  "Probando..." para siempre y no habia forma de saber por que. Un boton de
+  diagnostico que se cuelga en silencio es peor que no tenerlo. */
+  try {
+    if (typeof probarSincronizacion !== 'function') {
+      div.innerHTML = `<span style="color:var(--brick);"><b>El navegador tiene guardada una versión antigua.</b>
+        Cierra esta pestaña, vuelve a abrirla y prueba otra vez. Si sigue igual,
+        borra los datos de navegación de esta página.</span>`;
+      return;
+    }
+    const r = await probarSincronizacion();
+    div.innerHTML = r.ok
+      ? `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}</span>`
+      : `<span style="color:var(--brick);"><b>No funciona.</b> ${r.mensaje}</span>`;
+  } catch (e) {
+    div.innerHTML = `<span style="color:var(--brick);"><b>La prueba falló:</b> ${e.message}</span>`;
+  }
 }
 
 let editandoIndice = null;
