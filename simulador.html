@@ -1,5 +1,18 @@
 <!DOCTYPE html>
-<!-- VERSION: 26 (23/08/2026) - avisa de la regla antiaplicación (art. 33.5
+<!-- VERSION: 27 (23/08/2026) - tres arreglos encontrados al auditar el
+proyecto entero:
+
+(1) Los presets de stop-loss seguían mostrando −7,5% / −10% / −12,5% y
+    etiquetaban el −12,5% como "tu stop-loss real". Eso dejó de ser cierto
+    cuando bot.py pasó a la v11: ahora son −5% (informativo), −6,5% y −8%
+    (venta). El simulador estaba dando cifras que el bot ya no usa, que es
+    peor que no dar ninguna.
+(2) El símbolo de moneda estaba fijo en "$" aunque el valor cotizara en
+    euros: Sacyr aparecía como "4.288$". Ahora usa € salvo que el ticker
+    sea de un mercado en otra divisa.
+(3) Faltaba el enlace a la simulación en paralelo.
+
+VERSION: 26 (23/08/2026) - avisa de la regla antiaplicación (art. 33.5
 LIRPF) en dos sitios: en la tarjeta de cada venta con pérdida, con la fecha
 exacta a partir de la cual se puede recomprar sin perder la deducción; y —lo
 que de verdad importa— al ir a registrar una COMPRA de un ticker vendido con
@@ -258,6 +271,7 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
   <div class="nota" style="margin-top:0; margin-bottom:10px;">Toca una operación para ver los botones de editar y borrar.</div>
   <div id="ultimas-operaciones"></div>
   <a href="historial.html" style="display:inline-block; margin-top:8px; font-family: ui-monospace, monospace; font-size:12.5px;">Ver historial completo →</a>
+  <br><a href="simulacion_viewer.html" style="font-family: ui-monospace, monospace; font-size:13px;">Ver simulación en paralelo →</a>
 </section>
 
 <!-- GRÁFICO DE GANANCIAS -->
@@ -294,7 +308,9 @@ function calcularBreakEven() {
   const costeFX = hayCambioDivisa ? precio * (obtenerCosteFXConfigurado() / 100) : 0;
   const breakEven = precio + costeFX + (comisiones / acciones);
   div.style.display = 'block';
-  div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)}$ (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión${hayCambioDivisa ? ` y el ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : ''})`;
+  /* Esta calculadora no pide ticker, así que no hay forma de saber la moneda:
+  mejor no poner símbolo que poner uno equivocado. */
+  div.textContent = `Precio de venta break-even: ${breakEven.toFixed(4)} (a partir de aquí empiezas a ganar, antes de impuestos ya cubiertos los 2€ de comisión${hayCambioDivisa ? ` y el ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : ''})`;
 }
 
 function calcularStopLossPresets() {
@@ -307,10 +323,13 @@ function calcularStopLossPresets() {
   const importeInvertido = precio * acciones;
   const hayCambioDivisa = document.getElementById('sl-cambio-divisa').checked;
   const costeFXAbsoluto = hayCambioDivisa ? importeInvertido * (obtenerCosteFXConfigurado() / 100) : 0;
+  /* Los mismos niveles que bot.py v11. Si se cambian ahí, cambiarlos aquí:
+  tener el simulador diciendo una cosa y el bot avisando en otra es peor que
+  no tener presets. */
   const niveles = [
-    { pct: 7.5, etiqueta: '[CUIDADO] aviso suave' },
-    { pct: 10, etiqueta: '[PIENSA] piensa si vender' },
-    { pct: 12.5, etiqueta: '[VENDE] tu stop-loss real' },
+    { pct: 5, etiqueta: '[CUIDADO] solo información, el vaivén normal ya llega aquí' },
+    { pct: 6.5, etiqueta: '[PIENSA] piensa si vender' },
+    { pct: 8, etiqueta: '[VENDE] tu stop-loss real' },
   ];
 
   document.getElementById('sl-nota-fx').textContent = hayCambioDivisa ? ` + ${obtenerCosteFXConfigurado()}% estimado de cambio de divisa` : '';
@@ -318,7 +337,7 @@ function calcularStopLossPresets() {
   const filas = niveles.map(({ pct, etiqueta }) => {
     const perdidaMaxima = importeInvertido * (pct / 100);
     const precioVenta = precio - ((perdidaMaxima - comisiones - costeFXAbsoluto) / acciones);
-    return `<div>−${pct}% ${etiqueta} → <b>${precioVenta.toFixed(4)}$</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
+    return `<div>−${pct}% ${etiqueta} → <b>${precioVenta.toFixed(4)}${simboloMoneda(document.getElementById('op-ticker').value)}</b> (pierdes máximo ${perdidaMaxima.toFixed(2)}€)</div>`;
   }).join('');
 
   div.style.display = 'block';
@@ -365,7 +384,7 @@ function calcularVista() {
     const costeFX = hayCambioDivisa ? precio * (obtenerCosteFXConfigurado() / 100) : 0;
     const breakEven = precio + costeFX + ((COMISION_COMPRA + COMISION_VENTA) / acciones);
     div.style.display = 'block';
-    div.textContent = `Coste total: ${(precio * acciones + COMISION_COMPRA).toFixed(2)}€ · break-even de venta: ${breakEven.toFixed(4)}$${hayCambioDivisa ? ' (incluye cambio de divisa estimado)' : ''}`;
+    div.textContent = `Coste total: ${(precio * acciones + COMISION_COMPRA).toFixed(2)}€ · break-even de venta: ${breakEven.toFixed(4)}${simboloMoneda(document.getElementById('op-ticker').value)}${hayCambioDivisa ? ' (incluye cambio de divisa estimado)' : ''}`;
   } else {
     div.style.display = 'block';
     div.textContent = `Al confirmar, se calculará el beneficio neto contra tus compras abiertas de este ticker (FIFO).`;
@@ -485,6 +504,7 @@ function comprobarAvisoFiscalCompra() {
   caja.innerHTML = `<b>Cuidado con Hacienda.</b><br>${aviso.texto}`;
   caja.style.display = 'block';
 }
+
 
 let editandoIndice = null;
 
@@ -724,7 +744,7 @@ function renderUltimasOperaciones(ledger) {
           <span style="font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft);">${op.tipo} · ${op.fecha}</span>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">
-          ${op.precio}$ × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}${avisoFiscalTarjeta(op)}
+          ${op.precio}${simboloMoneda(op.ticker)} × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}${avisoFiscalTarjeta(op)}
         </div>
       </div>
       <div id="gestion-op-${idx}" style="display:none; margin-top:8px; gap:6px;">
@@ -771,7 +791,7 @@ function renderPosicionesAbiertas(ledger) {
           <span style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">toca para ver break-even / stop-loss ▸</span>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">
-          ${op.nombre ? op.nombre + ' · ' : ''}${op.acciones_restantes} acc. compradas a ${op.precio}$ el ${op.fecha}
+          ${op.nombre ? op.nombre + ' · ' : ''}${op.acciones_restantes} acc. compradas a ${op.precio}${simboloMoneda(op.ticker)} el ${op.fecha}
         </div>
       </div>
       <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
