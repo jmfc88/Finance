@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!-- VERSION: 28 (24/08/2026) - avisa cuando la sincronizacion falla, en vez
+de fallar en silencio. El 24/08 llego un [VENDE] de una posicion vendida tres
+dias antes: la venta estaba en el movil pero nunca subio a GitHub, y el aviso
+del fallo iba solo a la consola del navegador. Ahora sale un banner rojo en la
+propia pagina y hay un boton "Probar conexion" en Ajustes que dice
+exactamente que falla: token caducado, sin permisos, repo mal escrito...
+Un registro que no se sincroniza no es un fallo menor: deja al bot vigilando
+posiciones que ya no existen. -->
 <!-- VERSION: 27 (23/08/2026) - tres arreglos encontrados al auditar el
 proyecto entero:
 
@@ -140,6 +148,7 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
   </div>
   <div style="display:flex; gap:8px;">
     <button onclick="guardarSincronizacion()">Guardar</button>
+      <button onclick="probarConexionSync()" style="margin-left:6px;">Probar conexión</button>
     <button onclick="cargarDatosManual()" style="background:var(--green);">Cargar datos ahora</button>
   </div>
   <div class="resultado" id="sync-estado" style="display:none;"></div>
@@ -506,6 +515,29 @@ function comprobarAvisoFiscalCompra() {
 }
 
 
+/* ---- Aviso visible de fallo de sincronizacion (v28) ---- */
+
+function refrescarBannerSync() {
+  const b = document.getElementById('banner-sync');
+  if (!b) return;
+  if (!ultimoErrorSync) { b.style.display = 'none'; return; }
+  b.innerHTML = `<b>Tus operaciones NO se están subiendo a GitHub.</b><br>${ultimoErrorSync}
+    <br><br>Se han guardado en este dispositivo, así que no has perdido nada. Pero el bot
+    de stop-loss lee la copia de GitHub, y con ella desactualizada puede avisarte de
+    posiciones que ya cerraste.`;
+  b.style.display = 'block';
+}
+
+async function probarConexionSync() {
+  const div = document.getElementById('sync-estado');
+  div.style.display = 'block';
+  div.textContent = 'Probando…';
+  const r = await probarSincronizacion();
+  div.innerHTML = r.ok
+    ? `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}</span>`
+    : `<span style="color:var(--brick);"><b>No funciona.</b> ${r.mensaje}</span>`;
+}
+
 let editandoIndice = null;
 
 function pedirConfirmacion() {
@@ -623,6 +655,7 @@ async function registrarOperacion() {
 
   recalcularFIFO(ledger);
   await guardarLedger(ledger);
+  refrescarBannerSync();
   if (tarjetaElegida) {
     await guardarEnlaceTarjeta(operacion, tarjetaElegida);
   }
@@ -977,6 +1010,7 @@ async function inicializar() {
   renderUltimasOperaciones(ledger);
   renderResumenFiscal(ledger);
   await prepararTarjetas();
+  refrescarBannerSync();
 }
 
 inicializar();
