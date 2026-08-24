@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- VERSION: 3 (24/08/2026) - dos correcciones vistas en pantalla: decia que
+las posiciones se cierran "a los 30 dias" cuando desde la v9 son 20, y
+mostraba "TRAMO UNDEFINED" en las operaciones antiguas que aun llevaban el
+campo "franja". Ahora ensena tambien el importe invertido de forma destacada,
+porque el punto de esta simulacion es que TODAS sean de 100 EUR exactos: si
+alguna no lo es, se ve al instante. -->
 <!-- VERSION: 2 (23/08/2026) - adaptado al diseño completo de simulacion.py v9:
 las 30 candidatas por pasada en tres tramos (1-10, 11-20, 21-30) en vez de
 nueve sueltas, y el bloque nuevo de ESTADOS, que es la lectura que de verdad
@@ -243,7 +249,7 @@ async function cargar(){
     html += `<section><h2>Cerradas</h2>`;
     cerradas.slice().reverse().slice(0,40).forEach(o => {
       html += `<div class="op ${o.tramo==='1-10'?'top':''}">
-        <span class="franja">tramo ${o.tramo} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
+        <span class="franja">tramo ${o.tramo || o.franja || '?'} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
         <b>${o.ticker}</b> ${o.nombre ? '· ' + o.nombre : ''}<br>
         ${o.precio_entrada} → ${o.precio_salida} en ${o.sesiones} sesiones · ${o.motivo_salida}<br>
         <span class="${clase(o.resultado_neto_eur)}">${eur(o.resultado_neto_eur)}
@@ -260,12 +266,19 @@ async function cargar(){
     html += `<div class="vacio">Ninguna abierta ahora mismo. Se abren solas en cada ejecución
       de la simulación, a partir del ranking del día.</div>`;
   } else {
-    html += `<div class="nota">Se cierran solas cuando salta el stop o a los 30 días.</div>`;
+    const raras = abiertas.filter(o => Math.abs((o.invertido||0) - 100) > 0.01);
+    if (raras.length) {
+      html += `<div class="aviso"><b>${raras.length} operación${raras.length===1?'':'es'} no invierte${raras.length===1?'':'n'} 100&nbsp;€ exactos.</b>
+        Son restos de una versión antigua que compraba acciones enteras. Mezclarlas con las
+        demás estropea la comparación: ejecuta <code>reiniciar_simulacion.py</code> para
+        empezar limpio.</div>`;
+    }
+    html += `<div class="nota">Se cierran solas cuando salta el stop o a los 20 días.</div>`;
     abiertas.forEach(o => {
       html += `<div class="op ${o.tramo==='1-10'?'top':''}">
-        <span class="franja">tramo ${o.tramo} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
+        <span class="franja">tramo ${o.tramo || o.franja || '?'} · nº${o.posicion_ranking} · nota ${o.score}</span><br>
         <b>${o.ticker}</b> ${o.nombre ? '· ' + o.nombre : ''}<br>
-        ${o.acciones} acc. a ${o.precio_entrada} = ${o.invertido}€ · desde el ${o.fecha_entrada}
+        ${o.acciones} part. a ${o.precio_entrada} = <b>${(o.invertido||0).toFixed(2)}€</b> · desde el ${o.fecha_entrada}
         ${o.volatilidad_diaria_pct ? `<br>volatilidad ${o.volatilidad_diaria_pct}% diario` : ''}
       </div>`;
     });
