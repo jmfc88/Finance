@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<!-- VERSION: 11 (24/08/2026) - carga el JS compartido con ?v=13 en la ruta.
+
+POR QUE: el 24/08 el boton "Probar conexion" se quedaba colgado en
+"Probando..." para siempre. Los dos archivos estaban bien subidos, pero el
+navegador tenia CACHEADO el simulador-datos.js viejo: el HTML se actualizaba
+y el JS no, asi que se llamaba a una funcion que en la version cacheada no
+existia, saltaba un ReferenceError y el mensaje nunca se escribia.
+
+Un fallo silencioso mas, y de los peores: todo parece correcto en GitHub y
+en el movil no funciona. Anadiendo ?v=NN a la ruta, el navegador se ve
+obligado a descargar el archivo nuevo. HAY QUE SUBIR EL NUMERO cada vez que
+cambie simulador-datos.js, o volvera a pasar. -->
 <!-- VERSION: 10 (23/08/2026) - usa simboloMoneda() de simulador-datos.js en
 vez del "$" fijo, para que un valor de Madrid no aparezca como "4.288$". -->
 <!-- VERSION: 9 (23/08/2026) - RECUPERADO. La v8 que había en el repo no era
@@ -135,7 +147,7 @@ acciones + / − comisión = total) que simulador.html -->
   <div id="listado-operaciones"></div>
 </section>
 
-<script src="simulador-datos.js"></script>
+<script src="simulador-datos.js?v=13"></script>
 <script>
 /* Aviso de la regla antiaplicación en la tarjeta de una venta con pérdida.
 La lógica vive en simulador-datos.js para no duplicarla entre las dos
