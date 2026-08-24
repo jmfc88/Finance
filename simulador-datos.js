@@ -1,3 +1,10 @@
+/* VERSION: 14 (24/08/2026) - probarSincronizacion acepta el token y el repo
+como parametros. Antes leia SOLO lo guardado en localStorage, asi que si
+pegabas un token nuevo en el campo y pulsabas "Probar conexion" sin haber
+pulsado antes "Guardar", la prueba usaba el token VIEJO y decia que no valia.
+Es exactamente lo que paso el 24/08: el token era correcto y la prueba
+insistia en que estaba caducado. */
+
 /* VERSION: 13 (24/08/2026) - hace VISIBLES los fallos de sincronizacion.
 
 El 24/08 llego un aviso [VENDE] de una posicion vendida tres dias antes. La
@@ -234,9 +241,11 @@ function explicarErrorGitHub(codigo, ruta) {
 
 /* Comprueba la sincronizacion de verdad, sin escribir nada: pide el archivo
 al API con el token puesto. Sirve para saber si funciona ANTES de fiarse. */
-async function probarSincronizacion() {
-  const repo = obtenerRepoConfigurado();
-  const token = obtenerTokenConfigurado();
+async function probarSincronizacion(repoDado, tokenDado) {
+  /* Si se pasan como parametro se prueban ESOS, que es lo que el usuario
+  acaba de escribir. Sin parametros, cae en lo guardado. */
+  const repo = (repoDado || '').trim() || obtenerRepoConfigurado();
+  const token = (tokenDado || '').trim() || obtenerTokenConfigurado();
   if (!repo) return { ok: false, mensaje: 'Falta el repositorio.' };
   if (!token) return { ok: false, mensaje: 'Falta el token. Sin el, nada se sube a GitHub.' };
   try {
