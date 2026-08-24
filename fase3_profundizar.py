@@ -1,4 +1,12 @@
 """
+VERSION: 13 (24/08/2026) - ARREGLO: la tarjeta guardada no incluia
+precio_actual. Se me quedo fuera de la lista de campos de _tarjeta_completa,
+y es de los mas importantes: sin el no se puede saber a que precio estaba la
+candidata el dia que se vio, que es justo lo que hace falta para enlazar una
+compra con su tarjeta y para reconstruir la simulacion. El precio si quedaba
+en las apariciones, asi que no se ha perdido nada, pero habia que leerlo de
+otro sitio. Se anaden tambien sector y el potencial ya calculado.
+
 VERSION: 12 (23/08/2026) - guarda tambien en la tarjeta los campos nuevos de
 fase2 v33 (liquidez, volumen relativo, volatilidad, sesiones hasta el stop,
 distancia al maximo de 52 semanas y metodo_datos). Sin esto se calcularian
@@ -355,6 +363,12 @@ def _tarjeta_completa(c):
         "nombre_empresa": c.get("nombre_empresa"),
         "isin": c.get("isin"),
         "sector": c.get("sector"),
+        # precio_actual FALTABA hasta la v13. Sin el no se sabe a que precio
+        # estaba la candidata el dia de la tarjeta, que es el dato clave para
+        # cruzar la recomendacion con lo que paso despues.
+        "precio_actual": c.get("precio_actual"),
+        "potencial_pct": (round((c["precio_objetivo_medio"] / c["precio_actual"] - 1) * 100, 1)
+                          if c.get("precio_objetivo_medio") and c.get("precio_actual") else None),
         "score": c.get("score"),
         "consenso": c.get("consenso"),
         "consenso_real": c.get("consenso_real"),
