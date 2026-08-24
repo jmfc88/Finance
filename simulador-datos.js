@@ -1,3 +1,18 @@
+/* VERSION: 13 (24/08/2026) - hace VISIBLES los fallos de sincronizacion.
+
+El 24/08 llego un aviso [VENDE] de una posicion vendida tres dias antes. La
+cadena: la venta se registro bien en el movil, pero la subida a GitHub
+fallaba en silencio, ledger.json se quedo con la posicion abierta, bot.py lo
+leyo y creyo que seguia viva.
+
+El codigo de sincronizacion estaba bien. El fallo era de diseno: cuando la
+subida fallaba, el error iba solo a console.error, que en un movil no lo ve
+nadie. Se registraban operaciones durante dias creyendo que se subian.
+
+Ahora guardarArchivoRepo devuelve QUE ha fallado exactamente (401 token malo,
+403 sin permisos, 404 repo inexistente...) para poder ensenarlo en pantalla,
+y probarSincronizacion() permite comprobarlo antes de fiarse. */
+
 /* VERSION: 12 (23/08/2026) - añade simboloMoneda(), que estaba fijo en "$" y
 hacía que un valor de Madrid apareciera como "4.288$". Vive aquí para que
 simulador.html e historial.html usen exactamente el mismo criterio. */
@@ -167,7 +182,12 @@ y no tiene sentido tener el mismo bloque de codigo duplicado. */
 async function guardarArchivoRepo(ruta, contenido, mensaje) {
   const repo = obtenerRepoConfigurado();
   const token = obtenerTokenConfigurado();
-  if (!repo || !token) return false; /* sin sincronizacion configurada, se queda solo en local */
+  if (!repo || !token) {
+    ultimoErrorSync = !repo && !token ? null   /* nunca se configuro: no es un fallo */
+      : (!token ? 'Falta el token: el historial solo se guarda en este dispositivo.'
+                : 'Falta el repositorio: el historial solo se guarda en este dispositivo.');
+    return false;
+  }
 
   try {
     const contenidoBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(contenido, null, 2))));
@@ -189,13 +209,48 @@ async function guardarArchivoRepo(ruta, contenido, mensaje) {
       body: JSON.stringify(cuerpo),
     });
     if (!resp.ok) {
-      console.error(`No se pudo subir ${ruta} a GitHub (revisa el token/permisos). Se queda guardado en local.`, await resp.text());
+      ultimoErrorSync = explicarErrorGitHub(resp.status, ruta);
+      console.error(`No se pudo subir ${ruta}`, await resp.text());
       return false;
     }
+    ultimoErrorSync = null;
     return true;
   } catch (e) {
-    console.error(`No se pudo subir ${ruta} a GitHub, se queda guardado solo en local`, e);
+    ultimoErrorSync = `No se pudo conectar con GitHub (${e.message}). Guardado solo en este dispositivo.`;
     return false;
+  }
+}
+
+/* Traduce el codigo de GitHub a algo accionable. Un "401" no le dice nada a
+nadie; "el token ha caducado" si. */
+function explicarErrorGitHub(codigo, ruta) {
+  if (codigo === 401) return 'El token de GitHub no vale: caducado o mal copiado. Genera uno nuevo en Ajustes.';
+  if (codigo === 403) return 'El token no tiene permiso de escritura. Necesita el permiso "repo" (o Contents: read and write).';
+  if (codigo === 404) return 'No se encuentra el repositorio, o el token no tiene acceso a el. Revisa que ponga jmfc88/Finance.';
+  if (codigo === 409) return 'Conflicto al subir: alguien cambio el archivo a la vez. Vuelve a intentarlo.';
+  if (codigo === 422) return `GitHub rechazo el contenido de ${ruta}.`;
+  return `GitHub devolvio un error ${codigo} al subir ${ruta}.`;
+}
+
+/* Comprueba la sincronizacion de verdad, sin escribir nada: pide el archivo
+al API con el token puesto. Sirve para saber si funciona ANTES de fiarse. */
+async function probarSincronizacion() {
+  const repo = obtenerRepoConfigurado();
+  const token = obtenerTokenConfigurado();
+  if (!repo) return { ok: false, mensaje: 'Falta el repositorio.' };
+  if (!token) return { ok: false, mensaje: 'Falta el token. Sin el, nada se sube a GitHub.' };
+  try {
+    const r = await fetch(`https://api.github.com/repos/${repo}/contents/${LEDGER_PATH}`, {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+    });
+    if (r.status === 200 || r.status === 404) {
+      /* 404 aqui solo significa que ledger.json aun no existe; el token vale */
+      const permisos = r.headers.get('x-oauth-scopes');
+      return { ok: true, mensaje: `Conexion correcta con ${repo}.` + (permisos ? ` Permisos: ${permisos}` : '') };
+    }
+    return { ok: false, mensaje: explicarErrorGitHub(r.status, LEDGER_PATH) };
+  } catch (e) {
+    return { ok: false, mensaje: `No se pudo conectar: ${e.message}` };
   }
 }
 
@@ -265,6 +320,10 @@ function recalcularFIFO(ledger) {
                               nunca. Es el unico sitio donde queda constancia
                               de que decia el sistema el dia de la compra.
    ========================================================================== */
+
+/* Ultimo fallo de sincronizacion, para poder ensenarlo en pantalla en vez de
+enterrarlo en la consola. null = todo bien. */
+let ultimoErrorSync = null;
 
 const TARJETAS_PATH = 'historial_tarjetas.json';
 const COMPRAS_TARJETAS_PATH = 'tarjetas_compras.json';
