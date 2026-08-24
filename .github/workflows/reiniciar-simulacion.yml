@@ -1,0 +1,75 @@
+# VERSION: 1 (24/08/2026) - lanza reiniciar_simulacion.py UNA VEZ.
+#
+# Borra simulacion_operaciones.json y lo reconstruye desde las tarjetas
+# guardadas en historial_tarjetas.json, con 100 EUR exactos por operacion
+# y participaciones fraccionadas.
+#
+# Pide escribir REINICIAR a mano antes de hacer nada: este workflow destruye
+# el historico de la simulacion, y no seria la primera vez que un boton se
+# pulsa sin querer desde el movil.
+#
+# NO toca ledger.json, posiciones.json ni nada de la operativa real. Solo el
+# banco de pruebas.
+#
+# Se puede borrar el archivo cuando el reinicio este hecho.
+name: Reiniciar simulacion
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmacion:
+        description: 'Escribe REINICIAR para confirmar que quieres borrar el historico de la simulacion'
+        required: true
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  reiniciar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar la confirmacion
+        run: |
+          if [ "${{ github.event.inputs.confirmacion }}" != "REINICIAR" ]; then
+            echo "No se ha escrito REINICIAR. No se ha tocado nada."
+            exit 1
+          fi
+          echo "Confirmado."
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Guardar una copia de lo que habia
+        run: |
+          if [ -f simulacion_operaciones.json ]; then
+            cp simulacion_operaciones.json simulacion_operaciones_antes_del_reinicio.json
+            echo "Copia guardada por si acaso."
+          else
+            echo "No habia archivo previo."
+          fi
+
+      - name: Reconstruir
+        run: python reiniciar_simulacion.py 2>&1 | tee salida.txt
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          for f in simulacion_operaciones.json simulacion_operaciones_antes_del_reinicio.json; do
+            if [ -f "$f" ]; then git add "$f"; else echo "aviso: $f no existe, se omite"; fi
+          done
+          git diff --staged --quiet || git commit -m "reinicia la simulacion desde las tarjetas guardadas"
+          git pull origin main --no-rebase -X ours
+          git push
+
+      - name: Resumen
+        if: always()
+        run: |
+          echo '## Reinicio de la simulacion' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat salida.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
