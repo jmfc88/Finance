@@ -1,5 +1,6 @@
 """
-VERSION: 1 (23/08/2026) - diagnostico de FUENTES ALTERNATIVAS.
+VERSION: 2 (23/08/2026) - diagnostico de FUENTES ALTERNATIVAS.
+Prueba Stooq Y Alpha Vantage contra los mismos tickers.
 
 POR QUE: hoy todo el sistema depende de Yahoo Finance. El 22/08 Yahoo
 devolvio precios en blanco para las 107 candidatas europeas y el sistema no
@@ -25,6 +26,7 @@ COMO USARLO: subir al repo y lanzar "Diagnostico de fuentes" desde Actions.
 """
 
 import io
+import os
 import time
 
 import pandas as pd
@@ -45,6 +47,42 @@ CASOS = [
 ]
 
 CABECERAS = {"User-Agent": "Mozilla/5.0 (compatible; jmfc88-Finance/1.0)"}
+
+# Alpha Vantage necesita clave (gratuita, se saca en un minuto en su web) y
+# solo deja 25 peticiones AL DIA en el plan gratis. Este diagnostico gasta
+# como mucho 8, una por valor, asi que se puede lanzar sin miedo.
+# La clave se pone como secreto del repo con el nombre ALPHAVANTAGE_KEY.
+AV_KEY = os.environ.get("ALPHAVANTAGE_KEY", "").strip()
+
+
+def precio_alphavantage(ticker):
+    """Alpha Vantage usa los MISMOS sufijos que Yahoo para Europa (.MC .PA
+    .MI .AS), asi que no hace falta mapeo. Lo que esta por ver es si esos
+    valores existen en su base: su cobertura fuera de EE.UU. es mas floja
+    que la de proveedores centrados en bolsas globales."""
+    if not AV_KEY:
+        return None, "sin clave"
+    url = ("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY"
+           f"&symbol={ticker}&outputsize=compact&apikey={AV_KEY}")
+    try:
+        r = requests.get(url, headers=CABECERAS, timeout=25)
+        datos = r.json()
+    except Exception as e:
+        return None, f"error {type(e).__name__}"
+
+    # Alpha Vantage nunca devuelve error HTTP: avisa dentro del JSON
+    if "Note" in datos or "Information" in datos:
+        return None, "limite diario agotado"
+    if "Error Message" in datos:
+        return None, "simbolo no reconocido"
+    serie = datos.get("Time Series (Daily)")
+    if not serie:
+        return None, "sin datos"
+    ultima = sorted(serie.keys())[-1]
+    try:
+        return round(float(serie[ultima]["4. close"]), 4), f"{len(serie)} sesiones"
+    except Exception:
+        return None, "formato inesperado"
 
 
 def precio_yahoo(ticker):
@@ -103,6 +141,10 @@ def ejecutar():
             if ps and not encontrado:
                 encontrado = (simbolo, ps, ns)
 
+        pav, nota_av = precio_alphavantage(ticker_yahoo)
+        print(f"  AlphaV {ticker_yahoo:12} -> {'%.4f' % pav if pav else 'SIN DATOS':>12}   {nota_av}")
+        time.sleep(13)  # el plan gratis admite 5 por minuto
+
         # Lo que de verdad interesa: ¿coinciden?
         if py and encontrado:
             simbolo, ps, ns = encontrado
@@ -140,6 +182,11 @@ def ejecutar():
 
     print()
     print(f"Cobertura de Stooq: {cubiertos} de {len(resumen)} mercados probados.")
+    if not AV_KEY:
+        print()
+        print("Alpha Vantage NO se ha probado: falta el secreto ALPHAVANTAGE_KEY.")
+        print("Se saca gratis en alphavantage.co/support/#api-key y se anade en")
+        print("Settings > Secrets and variables > Actions > New repository secret.")
     print()
     print("COMO INTERPRETARLO:")
     print("  - Si Stooq cubre los mercados europeos y los precios coinciden, merece")
