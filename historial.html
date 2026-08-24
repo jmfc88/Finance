@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- VERSION: 10 (23/08/2026) - usa simboloMoneda() de simulador-datos.js en
+vez del "$" fijo, para que un valor de Madrid no aparezca como "4.288$". -->
 <!-- VERSION: 9 (23/08/2026) - RECUPERADO. La v8 que había en el repo no era
 esta página: era una copia del contenido de simulador-datos.js subida con el
 nombre equivocado, sin una sola etiqueta HTML, por lo que el enlace "Ver
@@ -177,7 +179,7 @@ function renderLedger(ledger) {
           <span style="font-family: ui-monospace, monospace; font-size:11.5px; color:var(--ink-soft);">${op.tipo} · ${op.fecha}</span>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size:12px; color:var(--ink-soft);">
-          ${op.nombre ? op.nombre + ' · ' : ''}${op.precio}$ × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}${avisoFiscalTarjeta(op)}
+          ${op.nombre ? op.nombre + ' · ' : ''}${op.precio}${simboloMoneda(op.ticker)} × ${op.acciones} acc. ${op.tipo === 'compra' ? '+' : '−'} ${comisionEfectivaOp(op)}€ comisión = <b style="color:var(--ink);">${totalOperacion(op).toFixed(2)}€</b>${op.neto !== null ? ` · neto <span class="${op.neto>=0?'pos':'neg'}">${op.neto}€</span>` : ''}${avisoFiscalTarjeta(op)}
         </div>
       </div>
       <div id="gestion-op-${idx}" style="display:none; margin-top:8px; gap:6px;">
