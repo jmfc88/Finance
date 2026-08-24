@@ -1,3 +1,7 @@
+/* VERSION: 12 (23/08/2026) - añade simboloMoneda(), que estaba fijo en "$" y
+hacía que un valor de Madrid apareciera como "4.288$". Vive aquí para que
+simulador.html e historial.html usen exactamente el mismo criterio. */
+
 /* VERSION: 11 (23/08/2026) - aviso de la regla antiaplicacion (art. 33.5 f
 LIRPF). Si se vende con PERDIDA y se recompra el MISMO valor dentro de los dos
 meses anteriores o posteriores, Hacienda NO deja deducir esa perdida: queda
@@ -479,4 +483,19 @@ function avisoCompraBloqueada(ledger, ticker, fechaCompra) {
          + `esa pérdida NO se puede deducir este año (art. 33.5 LIRPF): queda aparcada hasta que `
          + `vendas también estas acciones nuevas. Con un ticker distinto no pasa.`,
   };
+}
+
+
+/* Simbolo de moneda segun el mercado del ticker. Solo estetico: los calculos
+siempre han estado bien, pero ver "$" en un valor en euros induce a error al
+revisar operaciones pasadas. */
+function simboloMoneda(ticker) {
+  const t = (ticker || '').toUpperCase();
+  if (t.endsWith('.L')) return '\u00A3';
+  if (t.endsWith('.TO') || t.endsWith('.V')) return 'C$';
+  if (t.endsWith('.AX')) return 'A$';
+  if (t.endsWith('.T')) return '\u00A5';
+  if (t.endsWith('.SW')) return 'CHF';
+  if (t.includes('.')) return '\u20AC';   /* resto de mercados europeos */
+  return '$';                              /* sin sufijo = EE.UU. */
 }
