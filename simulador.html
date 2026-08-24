@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- VERSION: 30 (24/08/2026) - "Probar conexion" prueba lo que hay ESCRITO en
+los campos, no lo ultimo guardado. Antes, si pegabas un token nuevo y probabas
+sin pulsar "Guardar" primero, se probaba el token viejo y decia que no valia:
+el 24/08 dio "token caducado" con un token recien creado y correcto. Ahora,
+ademas, si la prueba sale bien lo guarda solo, que es lo que uno espera. -->
 <!-- VERSION: 29 (24/08/2026) - carga el JS compartido con ?v=13 en la ruta.
 
 POR QUE: el 24/08 el boton "Probar conexion" se quedaba colgado en
@@ -311,7 +316,7 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script src="simulador-datos.js?v=13"></script>
+<script src="simulador-datos.js?v=14"></script>
 <script>
 function parseNumeroEs(texto) {
   // Acepta coma o punto como separador decimal (el teclado español mete
@@ -555,10 +560,21 @@ async function probarConexionSync() {
         borra los datos de navegación de esta página.</span>`;
       return;
     }
-    const r = await probarSincronizacion();
-    div.innerHTML = r.ok
-      ? `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}</span>`
-      : `<span style="color:var(--brick);"><b>No funciona.</b> ${r.mensaje}</span>`;
+    /* Se prueba lo ESCRITO en los campos, no lo guardado: si no, probar un
+    token nuevo antes de guardarlo daba siempre el resultado del anterior. */
+    const repoEscrito = (document.getElementById('sync-repo').value || '').trim();
+    const tokenEscrito = (document.getElementById('sync-token').value || '').trim();
+    const r = await probarSincronizacion(repoEscrito, tokenEscrito);
+
+    if (r.ok) {
+      /* Si funciona se guarda solo: nadie quiere probar y luego acordarse de guardar */
+      if (repoEscrito) guardarRepoConfigurado ? guardarRepoConfigurado(repoEscrito) : localStorage.setItem('github-repo', repoEscrito);
+      if (tokenEscrito) guardarTokenConfigurado(tokenEscrito);
+      div.innerHTML = `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}<br>
+        Guardado. Pulsa "Cargar datos ahora" para traer lo que haya en GitHub.</span>`;
+    } else {
+      div.innerHTML = `<span style="color:var(--brick);"><b>No funciona.</b> ${r.mensaje}</span>`;
+    }
   } catch (e) {
     div.innerHTML = `<span style="color:var(--brick);"><b>La prueba falló:</b> ${e.message}</span>`;
   }
