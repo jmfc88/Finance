@@ -8,7 +8,8 @@
     "acciones": 8,
     "fecha": "2026-07-30",
     "acciones_restantes": 0,
-    "neto": null
+    "neto": null,
+    "comision": 1
   },
   {
     "tipo": "venta",
@@ -20,7 +21,8 @@
     "fecha": "2026-08-05",
     "cambio_divisa": true,
     "acciones_restantes": 0,
-    "neto": 17.63
+    "neto": 17.63,
+    "comision": 1
   },
   {
     "tipo": "compra",
@@ -31,7 +33,21 @@
     "acciones": 47,
     "fecha": "2026-08-05",
     "cambio_divisa": false,
-    "acciones_restantes": 47,
-    "neto": null
+    "acciones_restantes": 0,
+    "neto": null,
+    "comision": 1
+  },
+  {
+    "tipo": "venta",
+    "ticker": "SCYR.MC",
+    "nombre": "Sacyr, S.A.",
+    "isin": "",
+    "precio": 4.288,
+    "acciones": 47,
+    "fecha": "2026-08-21",
+    "cambio_divisa": false,
+    "comision": 1,
+    "acciones_restantes": 0,
+    "neto": -19.11
   }
 ]
