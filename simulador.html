@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<!-- VERSION: 32 (24/08/2026) - al elegir una tarjeta del cuaderno a mano, el
+ticker se corrige solo al que usa el sistema.
+
+POR QUE: la compra de Lottomatica se registro como "LOTTOMATICA I56", que es
+como la llama Trade Republic. bot.py usa ese texto para pedir el precio a
+Yahoo, y ese simbolo no existe alli, asi que la posicion se quedo sin
+vigilancia: ni stop-loss ni avisos. El correcto era LTMC.MI.
+
+Ahora, al seleccionar una tarjeta del desplegable, el ticker y el nombre se
+rellenan con los del cuaderno y se avisa de que se ha corregido. Solo pasa al
+elegirla A MANO: mientras se escribe no se toca nada, o seria imposible
+teclear.
+
+La opcion "no esta en el cuaderno" queda explicita para las compras hechas
+fuera del sistema: ahi no se corrige nada. -->
+<!-- VERSION: 31 (24/08/2026) - arregla un ReferenceError propio en la v30.
+Para comprobar si existia una funcion escribi "guardarRepoConfigurado ? a : b",
+pero en JavaScript nombrar una variable que no existe lanza un error en vez de
+dar falso; hay que usar typeof. El resultado: la conexion se probaba bien y
+justo despues petaba al guardar, dando "La prueba fallo" con un token
+perfectamente valido. El try/catch de la v29 hizo su trabajo y enseno el error
+en pantalla en vez de dejar el boton colgado. -->
 <!-- VERSION: 30 (24/08/2026) - "Probar conexion" prueba lo que hay ESCRITO en
 los campos, no lo ultimo guardado. Antes, si pegabas un token nuevo y probabas
 sin pulsar "Guardar" primero, se probaba el token viejo y decia que no valia:
@@ -238,7 +260,7 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
     <div class="campo" style="flex:1 1 100%;">
       <label>Tarjeta del cuaderno que llevó a esta compra</label>
       <select id="op-tarjeta" onchange="mostrarTarjetaElegida()">
-        <option value="">Sin tarjeta (compra fuera del sistema)</option>
+        <option value="">No está en el cuaderno — no toques el ticker</option>
       </select>
       <div id="detalle-tarjeta" style="display:none; margin-top:6px; padding:8px 10px; border-left:3px solid var(--gold); background:#fffbf0; font-family: ui-monospace, monospace; font-size:12px; line-height:1.55;"></div>
     </div>
@@ -432,7 +454,7 @@ async function prepararTarjetas() {
     return;
   }
 
-  sel.innerHTML = '<option value="">Sin tarjeta (compra fuera del sistema)</option>';
+  sel.innerHTML = '<option value="">No está en el cuaderno — no toques el ticker</option>';
   tarjetasDisponibles.forEach((t, i) => {
     const opt = document.createElement('option');
     opt.value = String(i);
@@ -482,6 +504,25 @@ function mostrarTarjetaElegida(esAutomatica) {
   const t = tarjetaSeleccionada();
   if (!t) { div.style.display = 'none'; return; }
 
+  /* Al elegirla A MANO, el ticker se corrige al del cuaderno. Es el que
+  necesita el bot para consultar el precio en Yahoo: Trade Republic usa sus
+  propios nombres ("LOTTOMATICA I56") que fuera de su app no existen, y con
+  uno de esos la posición se queda sin stop-loss ni avisos.
+  Al autoseleccionar NO se toca: se dispara mientras se escribe y sería
+  imposible teclear nada. */
+  let corregido = null;
+  if (!esAutomatica) {
+    const campoTicker = document.getElementById('op-ticker');
+    const anterior = (campoTicker.value || '').trim();
+    if (t.ticker && anterior.toUpperCase() !== t.ticker.toUpperCase()) {
+      corregido = { de: anterior, a: t.ticker };
+      campoTicker.value = t.ticker;
+    }
+    const campoNombre = document.getElementById('op-nombre');
+    if (t.nombre && !(campoNombre.value || '').trim()) campoNombre.value = t.nombre;
+    comprobarAvisoFiscalCompra();
+  }
+
   const c = t.tarjeta || {};
   const fechaCompra = document.getElementById('op-fecha').value || new Date().toISOString().slice(0,10);
   const dias = diasEntre(t.fecha, fechaCompra);
@@ -496,6 +537,10 @@ function mostrarTarjetaElegida(esAutomatica) {
   if (c.catalizador_resultados) lineas.push('Tenía catalizador de resultados');
   if ((c.profundizacion || {}).verificado) lineas.push('Verificada en la segunda pasada');
   if (esAutomatica) lineas.push('<i>Preseleccionada automáticamente — cámbiala si no es la correcta.</i>');
+  if (corregido) {
+    lineas.push(`<b>Ticker corregido:</b> ${corregido.de ? '<s>' + corregido.de + '</s> → ' : ''}<b>${corregido.a}</b>`);
+    lineas.push('<i>Es el que usa el bot para consultar el precio. Con otro distinto, la posición se queda sin stop-loss ni avisos.</i>');
+  }
 
   div.innerHTML = lineas.join('<br>');
   div.style.display = 'block';
@@ -568,8 +613,14 @@ async function probarConexionSync() {
 
     if (r.ok) {
       /* Si funciona se guarda solo: nadie quiere probar y luego acordarse de guardar */
-      if (repoEscrito) guardarRepoConfigurado ? guardarRepoConfigurado(repoEscrito) : localStorage.setItem('github-repo', repoEscrito);
-      if (tokenEscrito) guardarTokenConfigurado(tokenEscrito);
+      /* localStorage directo: es donde lo lee obtenerRepoConfigurado(), y no
+      hay funcion de guardado para el repo. */
+      try {
+        if (repoEscrito) localStorage.setItem('github-repo', repoEscrito);
+        if (tokenEscrito) guardarTokenConfigurado(tokenEscrito);
+      } catch (e) {
+        console.error('No se pudo guardar la configuración', e);
+      }
       div.innerHTML = `<span style="color:var(--green);"><b>Funciona.</b> ${r.mensaje}<br>
         Guardado. Pulsa "Cargar datos ahora" para traer lo que haya en GitHub.</span>`;
     } else {
