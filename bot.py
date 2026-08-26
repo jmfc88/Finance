@@ -1,9 +1,150 @@
 """
+VERSION: 22 (25/08/2026) - fuera el trailing y los escalones automaticos.
+[VENDE] es exclusivo del -8%.
+
+VERSION: 21 (25/08/2026) - dos avisos separados en el equilibrio, margen del
+2% (no 0,02%), avisos de perdida rearmables y con el precio y el porcentaje
+real dentro, y el stop del -8% ahora descuenta las comisiones como ya hacian
+los avisos de -5% y -6,5%.
+
+VERSION: 20 (25/08/2026) - FUERA los suelos automaticos.
+
+Me habia pasado de listo: programe que el bot subiera el stop-loss solo al
+tocar el equilibrio y al llegar al 7%. Pero eso no es lo que hace falta. Jose
+Manuel mueve el stop A MANO en Trade Republic, apretandolo poco a poco segun
+sube el precio, y lo que necesita del bot es que le DIGA LOS NUMEROS en el
+momento oportuno. El bot avisa; el decide y ejecuta.
+
+Asi que los avisos ahora traen la cifra concreta que poner en la aplicacion,
+y el bot ya no toca nada por su cuenta.
+
+VERSION: 19 (25/08/2026) - tres fallos que salieron al simular el bot entero
+con precios inventados, y que no se veian leyendo el codigo:
+
+  1. Si una posicion no tenia stop_loss_inicial, el respaldo usaba el stop
+     ACTUAL. Como los escalones multiplican ese valor y el stop actual sube
+     con los suelos, se componia sobre si mismo: con el precio en 27,20 el
+     stop se puso en 28,24, por ENCIMA del precio, y disparaba un [VENDE]
+     falso en cada ronda para siempre. Le pasa a cualquier posicion guardada
+     por una version antigua. Ahora se recalcula desde el precio de compra.
+
+  2. Habia DOS puntos de equilibrio distintos en el mismo bot: los escalones
+     usaban 24,70 (comision fija de 1 EUR) y los avisos 24,7487 (la comision
+     real de 1,39 con la tasa italiana). Ahora comparten el mismo.
+
+  3. Red de seguridad: el stop no puede colocarse nunca igual o por encima
+     del precio actual. Un stop asi siempre es un error de calculo, y sin
+     esta comprobacion se traduce en una orden de venta inmediata.
+
+VERSION: 18 (25/08/2026) - "[PIENSA]" pasa a "[OJO CUIDADO]"
+
+NOTA sobre el reparto de comisiones, que pregunto Jose Manuel el 25/08:
+todo esto se piensa en precio por accion, y las comisiones se reparten entre
+5 acciones o entre 17 segun lo que se compre. La formula ya lo tiene en
+cuenta, porque divide entre el numero de acciones:
+
+    equilibrio = precio_compra + (comision_compra + comision_venta) / acciones
+
+Y el resultado es menos intuitivo de lo que parece: en PORCENTAJE da
+practicamente igual. Con 200 EUR invertidos hay que subir un 1% tanto si son
+5 acciones de 40 EUR como si son 100 de 2 EUR. Con pocas acciones la comision
+por accion es alta, pero cada accion cuesta mas, y se compensa exacto.
+
+Lo que si cambia el listo es cuanto se invierte en total: 2 EUR de comision
+sobre 100 son un 2%, sobre 500 un 0,4%. Y la tasa segun el pais: sin tasa hay
+que subir un 1%, en Italia o Espana un 1,20%, en Francia un 1,30%. y el mensaje
+dice el porcentaje que se esta perdiendo, igual que el de -5%.
+
+VERSION: 17 (25/08/2026) - tres retoques pedidos el 25/08:
+  - "[CUIDADO]" pasa a "[VIGILA] estamos perdiendo un 5%". La palabra cuidado
+    no le gustaba y tiene razon: a ese nivel no hay que hacer nada, asi que
+    una etiqueta que suena a alarma es enganosa.
+  - "[POR DEBAJO]" pasa a "[EQUILIBRIO PERDIDO]", y el texto dice
+    explicitamente que la alerta de equilibrio queda rearmada.
+  - El aviso del 7% estima ademas lo que quedaria despues de Hacienda.
+
+VERSION: 16 (25/08/2026) - margen del 0,02% a los dos lados del equilibrio,
+segun la nota del 25/08. Se comprobo antes de ponerlo si un margen tan fino
+daria un goteo de avisos: con la volatilidad real de LTMC.MI (1,58% diario)
+salen unos 0,4 al dia, asi que no. Quien evita el goteo es la alternancia, no
+el ancho de la banda.
+
+VERSION: 15 (25/08/2026) - el equilibrio es una LINEA que se cruza en los dos
+sentidos, no un aviso de una sola vez. Sustituye a la escalera porcentual de
+la v14, que no era lo que Jose Manuel habia dibujado.
+
+VERSION: 14 (25/08/2026) - ESCALERA DE AVISOS sobre el punto de ganancia.
+
+Lo que pidio Jose Manuel: una vez que salta el aviso de que ya hay beneficio,
+ese aviso no debe repetirse aunque el precio cruce el umbral veinte veces el
+mismo dia. En su lugar se arman DOS avisos nuevos referidos a ese punto:
+uno si sube un paso, otro si baja un paso. Y al subir, la referencia sube con
+el precio, de modo que la escalera lo va siguiendo.
+
+SU DUDA ERA CORRECTA: pregunto si un 10% seria buen paso y la respuesta es
+que no. Con la compra de Lottomatica (equilibrio 24,749 y suelo en 24,45),
+un paso del 10% pone el aviso de bajada en 22,27, muy por debajo del
+stop-loss: saltaria antes el [VENDE] y ese aviso no llegaria jamas. De hecho
+justo al cruzar el equilibrio solo hay un 1,21% de margen hasta el suelo.
+
+Por eso el aviso de bajada NO se coloca a ciegas: si el paso lo dejaria por
+debajo del stop, se omite y se dice por que. Segun sube el precio y sube el
+stop, el margen cambia, asi que se recalcula en cada ronda.
+
+PASO_ALERTA_PCT se puede cambiar sin tocar codigo: basta con crear
+config_alertas.json en el repo con {"paso_alerta_pct": 1.5}.
+
+VERSION: 13 (24/08/2026) - SUELOS QUE NO BAJAN. Resuelve el problema que
+planteo Jose Manuel: el aviso de [EQUILIBRIO] salta una vez, pero despues el
+precio sube y baja varias veces el mismo dia, y hasta ahora eso no cambiaba
+nada. Una posicion podia estar en verde por la manana y acabar saltando el
+stop del -8% por la tarde: perdiendo dinero en una operacion que YA habia
+cubierto las comisiones.
+
+Mas avisos no era la solucion (serian decenas al dia y dejaria de leerlos).
+La solucion es que el suelo suba solo y NO VUELVA A BAJAR NUNCA:
+
+  Suelo 1 - se arma cuando el precio alcanza el punto de equilibrio.
+            El stop no vuelve a bajar del PRECIO DE COMPRA. Se pone en el
+            precio de compra y no en el equilibrio a proposito: deja algo de
+            margen para el vaiven normal del dia. Es exactamente lo que hace
+            Jose Manuel a mano ("compro a 100, llega a 105, subo el stop a
+            100 porque ya no pierdo dinero").
+
+  Suelo 2 - se arma cuando la ganancia neta llega al 7%.
+            El stop no vuelve a bajar del punto de EQUILIBRIO. A partir de
+            ahi la operacion no puede acabar en perdida pase lo que pase.
+
+Una vez armados, ni el trailing ni nada pueden bajarlos. Y el aviso de
+
+VERSION: 12 (24/08/2026) - dos avisos NUEVOS de ganancia, y un arreglo de
+fondo que hacia falta para que sean correctos.
+
+EL ARREGLO: coste_total se calculaba como acciones x precio, SIN las
+comisiones. Con la compra de Lottomatica quedo claro por que importa: 8
+acciones a 24,45 son 195,60, pero el coste real fue 196,99 porque Trade
+Republic cobro 1 EUR de comision MAS 0,39 EUR de tasa a las transacciones
+financieras (el 0,2% que aplica Italia, y que tambien aplican Espana al 0,2%
+y Francia al 0,3%). Ahora se lee la comision real de cada compra del ledger,
+asi que el punto de equilibrio sale exacto.
+
+LOS AVISOS NUEVOS, ambos una sola vez por posicion:
+
+  [EQUILIBRIO]  el precio ha alcanzado el punto a partir del cual la
+                operacion ya no pierde dinero, comisiones y tasas incluidas.
+                Es el momento de subir el stop-loss al precio de compra:
+                a partir de ahi ya no se puede perder.
+
+  [GANANCIA]    la posicion da un 7% neto sobre lo invertido, con todas las
+                comisiones ya descontadas.
+
+Con esto no hace falta poner alertas de precio a mano en Trade Republic.
+
 VERSION: 11 (23/08/2026) - baja el riesgo por decision de Jose Manuel: con
 poco patrimonio, perder un 12,5% por operacion es demasiado. Nuevos niveles:
 
-  -5,0%  [CUIDADO]  aviso informativo, no hay que hacer nada
-  -6,5%  [PIENSA]   aviso de decision
+  -5,0%  [VIGILA]   aviso informativo, no hay que hacer nada
+  -6,5%  [OJO CUIDADO] aviso de decision
   -8,0%  [VENDE]    stop-loss real
 
 Antes eran -7,5% / -10% / -12,5%. El aviso de cierre de mercado (Metodo 4)
@@ -16,7 +157,7 @@ Este cambio no endurece la venta: la deja donde ya estaba de hecho, y lo que
 cambia de verdad son los dos avisos, que ahora llegan antes.
 
 AVISO SOBRE EL RUIDO: a -5% un valor de volatilidad normal (2% diario) toca
-ese nivel por puro vaiven cada pocas sesiones. El [CUIDADO] esta pensado como
+ese nivel por puro vaiven cada pocas sesiones. El [VIGILA] esta pensado como
 informacion, NO como senal de venta. La venta sigue siendo solo el -8%.
 
 VERSION: 10 (20/08/2026) - añade el Método 4: aviso al CIERRE de mercado si
@@ -32,7 +173,7 @@ fiable). También envuelto en try/except el propio yf.Ticker().info por si
 Yahoo cae del todo, no solo si devuelve precio vacío.
 
 VERSION: 8 (06/08/2026) - añade avisos tempranos de pérdida: -7,5%
-"[CUIDADO]" y -6,5% "[PIENSA]", antes del stop-loss real (-8%, que ya
+"[VIGILA]" y -6,5% "[OJO CUIDADO]", antes del stop-loss real (-8%, que ya
 existía como "[VENDE]"). Cada nivel avisa una sola vez,
 misma fórmula que los presets del simulador (comisiones + cambio de
 divisa incluidos), para que los tres niveles sean consistentes entre sí.
@@ -54,6 +195,7 @@ Salida:   posiciones.json actualizado (nuevo stop-loss si ha subido)
 """
 
 import json
+import math
 import os
 from datetime import datetime
 
@@ -97,16 +239,68 @@ def guardar_posiciones(posiciones):
         json.dump(posiciones, f, indent=2, ensure_ascii=False)
 
 
-def calcular_stop_loss_inicial(precio_compra, acciones, cambio_divisa, pct=8.0):
+# Paso de la escalera de avisos, en % sobre el punto de referencia. Se puede
+# cambiar creando config_alertas.json en la raiz del repo:
+#     {"paso_alerta_pct": 1.5}
+# Ojo: un paso grande deja el aviso de bajada por debajo del stop-loss y ese
+# aviso no llega nunca. El sistema lo detecta y lo omite, pero conviene
+# elegirlo con cabeza.
+PASO_ALERTA_PCT = 1.0
+
+
+def cargar_config_alertas():
+    try:
+        with open("config_alertas.json", "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        valor = float(cfg.get("paso_alerta_pct", PASO_ALERTA_PCT))
+        if 0.1 <= valor <= 20:
+            return valor
+        print(f"paso_alerta_pct fuera de rango ({valor}), se usa {PASO_ALERTA_PCT}")
+    except (FileNotFoundError, json.JSONDecodeError, TypeError, ValueError):
+        pass
+    return PASO_ALERTA_PCT
+
+
+# Escalones de ganancia sobre lo invertido. Se puede alargar la lista.
+NIVELES_GANANCIA = [7, 10, 12.5, 15, 20, 25, 30]
+
+
+def cargar_margen_cruce():
+    """Margen muerto alrededor del punto de equilibrio, en %.
+
+    Evita que un precio pegado a la linea genere un aviso cada media hora.
+    Con 0 se comporta como un cruce puro, que es lo que pidio Jose Manuel;
+    el valor por defecto es pequeno a proposito, solo para filtrar el
+    temblor de los centimos.
+    """
+    try:
+        with open("config_alertas.json", "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        valor = float(cfg.get("margen_cruce_pct", 0.02))
+        if 0 <= valor <= 5:
+            return valor
+    except (FileNotFoundError, json.JSONDecodeError, TypeError, ValueError):
+        pass
+    return 0.02
+
+
+def calcular_stop_loss_inicial(precio_compra, acciones, cambio_divisa, pct=8.0,
+                               comision_compra=None):
     """Mismo cálculo que el simulador: pérdida máxima X% sobre lo invertido,
     comisiones y coste de cambio de divisa incluidos. Se usa como valor de
     referencia automático al detectar una posición nueva — el usuario puede
     ajustarlo luego editando posiciones.json si no es el preset que quería."""
-    comisiones = COMISION_COMPRA + COMISION_VENTA
+    # La base del porcentaje es lo INVERTIDO DE VERDAD, comision de compra
+    # incluida. Antes se usaba precio x acciones (160 EUR en vez de 161), y por
+    # eso un "-8%" acababa siendo un -7,95% real. Sobre poco dinero la
+    # diferencia es de centimos, pero es que el numero tiene que ser el que
+    # dice que es.
+    if comision_compra is None:
+        comision_compra = COMISION_COMPRA
     coste_fx = precio_compra * (COSTE_FX_PCT / 100) if cambio_divisa else 0
-    importe_invertido = precio_compra * acciones
-    perdida_maxima = importe_invertido * (pct / 100)
-    return round(precio_compra - ((perdida_maxima - comisiones - coste_fx) / acciones), 4)
+    invertido = precio_compra * acciones + comision_compra + coste_fx
+    perdida_maxima = invertido * (pct / 100)
+    return round((invertido + COMISION_VENTA - perdida_maxima) / acciones, 4)
 
 
 def reconciliar_con_ledger(posiciones):
@@ -132,9 +326,19 @@ def reconciliar_con_ledger(posiciones):
             continue
         t = op["ticker"]
         if t not in abiertas:
-            abiertas[t] = {"acciones": 0, "coste_total": 0, "cambio_divisa": op.get("cambio_divisa", False)}
+            abiertas[t] = {"acciones": 0, "coste_total": 0, "comision_compra": 0,
+                           "cambio_divisa": op.get("cambio_divisa", False)}
         abiertas[t]["acciones"] += op["acciones_restantes"]
         abiertas[t]["coste_total"] += op["acciones_restantes"] * op["precio"]
+        # La comision real de la compra, tal y como se registro. En las
+        # europeas incluye la tasa a las transacciones financieras, que no es
+        # despreciable: 0,39 EUR sobre una compra de 195 EUR en Italia.
+        # Se prorratea si la compra esta parcialmente vendida.
+        com = op.get("comision")
+        if com is None:
+            com = COMISION_COMPRA
+        proporcion = (op["acciones_restantes"] / op["acciones"]) if op.get("acciones") else 1
+        abiertas[t]["comision_compra"] += com * proporcion
 
     posiciones_por_ticker = {p["ticker"]: p for p in posiciones}
 
@@ -160,15 +364,17 @@ def reconciliar_con_ledger(posiciones):
             "trailing_pct": 8,
             "maximo_alcanzado": precio_compra,
             "escalon_actual": 0,
+            "comision_compra": round(datos.get("comision_compra", COMISION_COMPRA), 4),
             "avisos_perdida_disparados": [],
+            "avisos_ganancia_disparados": [],
             "ultimo_cierre_notificado": None,
             "recordatorio_apertura_pendiente": False,
         }
         notificar(
-            f"[NUEVA POSICIÓN] {ticker}",
-            f"Detectada en el ledger, no estaba en la vigilancia. Precio de compra: {precio_compra}€, "
-            f"{datos['acciones']} acciones. Stop-loss inicial puesto por defecto (preset 8%) en "
-            f"{stop_inicial}€ — revísalo y ajústalo si querías otro nivel.",
+            f"[CREA EL STOP-LOSS] {ticker}",
+            f"Pon el stop-loss en {stop_inicial}€, que es un -8% sobre lo invertido "
+            f"con las comisiones ya contadas.\n"
+            f"Compra registrada: {datos['acciones']} acciones a {precio_compra}€.",
             urgente=False,
         )
 
@@ -294,114 +500,185 @@ def procesar_posicion(pos):
         return pos, False
     precio_actual = round(precio_nativo * tasa, 4)
 
-    stop_anterior = pos.get("stop_loss_actual", 0)
-    stop_inicial = pos.get("stop_loss_inicial", stop_anterior)
+    # El respaldo NO puede ser stop_anterior: los escalones multiplican este
+    # valor, asi que si se usa el stop actual (que sube con los suelos y el
+    # trailing) el resultado se compone sobre si mismo y acaba POR ENCIMA del
+    # precio, disparando un [VENDE] falso que ademas no para nunca. Le paso a
+    # una posicion sin stop_loss_inicial, que es justo lo que tienen las
+    # guardadas por versiones antiguas. Se recalcula desde el precio de compra.
+    stop_inicial = pos.get("stop_loss_inicial")
+    if not stop_inicial:
+        stop_inicial = calcular_stop_loss_inicial(
+            pos["precio_compra"], pos["acciones"], pos.get("cambio_divisa", False))
+        pos["stop_loss_inicial"] = stop_inicial
     cambio_divisa = pos.get("cambio_divisa", False) or moneda != "EUR"
 
-    # --- Método 3: avisos tempranos de pérdida (-5% y -6,5%), antes del
-    # stop-loss real (-8%). Cada nivel avisa una sola vez. ---
+    _com_compra = pos.get("comision_compra", COMISION_COMPRA)
+    _coste_real = pos["precio_compra"] * pos["acciones"] + _com_compra
+    precio_equilibrio = round((_coste_real + COMISION_VENTA) / pos["acciones"], 4)
+    coste_real = _coste_real
+    acciones = pos["acciones"]
+
+    # --- Avisos de perdida. Cada nivel se REARMA: si el precio baja, avisa;
+    # si se recupera por encima del nivel, el aviso vuelve a quedar armado.
+    # Antes era de una sola vez, y en una sesion con altibajos eso significaba
+    # perderse la segunda caida. ---
     avisos_disparados = set(pos.get("avisos_perdida_disparados", []))
     niveles_aviso_perdida = [
-        (5.0, "[CUIDADO]", "está bajando. Es solo información: a este nivel el vaivén normal del día ya llega, así que no hay nada que hacer todavía."),
-        (6.5, "[PIENSA]", "ya llevas aproximadamente un -6,5% sobre lo invertido. Piensa si vender ahora o esperar a ver si se recupera. La venta automática está en el -8%."),
+        (5.0, "[ATENCIÓN]", "No hay nada que hacer todavía: a este nivel el vaivén normal del día ya llega."),
+        (6.5, "[OJO CUIDADO]", "Vende si no ves claro que se recupere. La venta salta en el -8%."),
     ]
-    for pct, etiqueta, texto in niveles_aviso_perdida:
-        if pct in avisos_disparados:
-            continue
-        umbral = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, pct)
+    for pct, etiqueta, _texto in niveles_aviso_perdida:
+        umbral = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, pct, _com_compra)
         if precio_actual <= umbral:
-            avisos_disparados.add(pct)
-            notificar(
-                f"{etiqueta} {pos['ticker']}",
-                f"Precio actual {precio_actual}€. {pos['ticker']} {texto}",
-                urgente=False,
-            )
+            if pct not in avisos_disparados:
+                avisos_disparados.add(pct)
+                # Tres lineas y ya. Cuanto mas corto, mas rapido se lee en una
+                # notificacion del movil, y aqui no hace falta nada mas.
+                # Se da el precio del NIVEL y la perdida EN ese nivel, no los
+                # del momento en que se detecto. El aviso puede leerse mucho
+                # despues, y entonces un "precio ahora" engaña mas que ayuda;
+                # el nivel, en cambio, sigue siendo el mismo mañana.
+                perdida_nivel = round(umbral * pos["acciones"] - COMISION_VENTA - coste_real, 2)
+                notificar(
+                    f"{etiqueta} {pos['ticker']} · -{pct}%",
+                    f"Precio: {umbral}€\n"
+                    f"Pérdida: {abs(perdida_nivel)}€",
+                    urgente=False,
+                )
+        elif pct in avisos_disparados:
+            # Se ha recuperado por encima del nivel: el aviso queda rearmado
+            avisos_disparados.discard(pct)
     pos["avisos_perdida_disparados"] = sorted(avisos_disparados)
 
-    # --- Método 4: aviso al cierre de mercado si sigues en pérdida
-    # significativa, y recordatorio a la siguiente apertura. Usa el
-    # "marketState" que da Yahoo (REGULAR/CLOSED/PRE/POST...), así no hace
-    # falta programar a mano el horario de cada bolsa (Madrid, EE.UU.,
-    # Milán... cada una cierra a una hora distinta). ---
-    market_state = ""
-    try:
-        market_state = (info.get("marketState") or "").upper()
-    except Exception:
-        pass
-    hoy = datetime.now().date().isoformat()
+    # Precios de referencia, calculados aqui porque los usan tanto los avisos
+    # de ganancia como los suelos.
 
-    if market_state == "CLOSED":
-        umbral_cierre = calcular_stop_loss_inicial(pos["precio_compra"], pos["acciones"], cambio_divisa, 5.0)
-        if precio_actual <= umbral_cierre and pos.get("ultimo_cierre_notificado") != hoy:
-            notificar(
-                f"[CIERRE MERCADO] {pos['ticker']}",
-                f"Tu inversión en {pos['ticker']} ha cerrado el mercado por debajo del -5% "
-                f"(precio actual: {precio_actual}€). Estate pendiente en la próxima apertura.",
-                urgente=False,
-            )
-            pos["ultimo_cierre_notificado"] = hoy
-            pos["recordatorio_apertura_pendiente"] = True
-    elif pos.get("recordatorio_apertura_pendiente"):
-        # El mercado ha vuelto a abrir (o está en pre-apertura) después de
-        # haber cerrado en pérdida — un único recordatorio, luego se apaga.
+    # --- Avisos de GANANCIA (v12). Evitan tener que poner alertas de precio
+    # a mano en Trade Republic. Cada uno salta una sola vez. ---
+    ganancias_disparadas = set(pos.get("avisos_ganancia_disparados", []))
+
+    # --- DOS avisos separados alrededor del equilibrio (v21) ---
+    #
+    #   equilibrio          20,25   "has llegado al equilibrio"
+    #   equilibrio + 2%     20,655  "comienzan las ganancias, mueve el stop"
+    #   equilibrio - 2%     19,845  rearma los dos de arriba
+    #
+    # El 2% se aclaro el 25/08: en el papel ponia "0'02%" y estuvo programado
+    # como 0,02% (medio centimo sobre 20,25), pero al hacer la cuenta a mano
+    # -20,25 + 20,25 x 0,02- salia 20,655, o sea el 2%. Cien veces mas.
+    #
+    # Se rearman al bajar del nivel inferior, asi que una sesion con altibajos
+    # los va disparando tantas veces como haga falta.
+    margen = cargar_margen_cruce() / 100
+    nivel_ganancias = round(precio_equilibrio * (1 + margen), 4)
+    nivel_rearme = round(precio_equilibrio * (1 - margen), 4)
+    cruzados = set(pos.get("cruces_equilibrio", []))
+
+    if "equilibrio" not in cruzados and precio_actual >= precio_equilibrio:
+        cruzados.add("equilibrio")
         notificar(
-            f"[RECORDATORIO] {pos['ticker']} — mercado abierto de nuevo",
-            f"Ayer cerró en pérdida significativa (por debajo del -5%). Precio actual: {precio_actual}€. "
-            f"Al loro con esta posición ahora que vuelve a cotizar.",
+            f"[PUNTO DE EQUILIBRIO CONSEGUIDO] {pos['ticker']}",
+            f"Punto de equilibrio conseguido en {precio_equilibrio}€, a partir de aquí "
+            f"serán ganancias reales.",
             urgente=False,
         )
-        pos["recordatorio_apertura_pendiente"] = False
 
-    # --- Método 1: trailing continuo (el de siempre) ---
-    if precio_actual > pos.get("maximo_alcanzado", pos["precio_compra"]):
-        pos["maximo_alcanzado"] = precio_actual
-    stop_trailing = round(pos.get("maximo_alcanzado", pos["precio_compra"]) * (1 - pos["trailing_pct"] / 100), 2)
+    # Precio al que, si salta el stop, quedaria 1 EUR limpio. Se redondea
+    # hacia ARRIBA para que sea 1 EUR o algo mas, nunca menos.
+    precio_stop_1eur = math.ceil((coste_real + COMISION_VENTA + 1.0) / acciones * 100) / 100
 
-    # --- Método 2: escalones de beneficio del 5% desde el punto de equilibrio ---
-    comisiones = COMISION_COMPRA + COMISION_VENTA
-    coste_fx = pos["precio_compra"] * (COSTE_FX_PCT / 100) if cambio_divisa else 0
-    precio_ganancia = pos["precio_compra"] + coste_fx + (comisiones / pos["acciones"])
+    if "ganancias" not in cruzados and precio_actual >= nivel_ganancias:
+        cruzados.add("ganancias")
+        neto = round(precio_actual * acciones - COMISION_VENTA - coste_real, 2)
+        notificar(
+            f"[COMIENZAN GANANCIAS] {pos['ticker']}",
+            f"Empiezan las ganancias en: {nivel_ganancias}€\n"
+            f"Pon el stop-loss en {precio_stop_1eur}€ y ganas al menos 1€ pase lo que pase.",
+            urgente=False,
+        )
 
-    escalon_anterior = pos.get("escalon_actual", 0)
-    escalon_nuevo = escalon_anterior
-    stop_escalones = stop_anterior
-    aviso_ganancia = None
-
-    if precio_actual > precio_ganancia:
-        escalon_calculado = int((precio_actual / precio_ganancia - 1) // 0.05)
-        if escalon_calculado > escalon_anterior:
-            escalon_nuevo = escalon_calculado
-            stop_escalones = round(stop_inicial * (1 + 0.05 * escalon_nuevo), 2)
-            aviso_ganancia = (
-                f"[GANANCIA] {pos['ticker']}: ganando ~{escalon_nuevo * 5}%",
-                f"Precio actual {precio_actual}€, un {escalon_nuevo * 5}% por encima de tu punto de "
-                f"equilibrio ({precio_ganancia:.2f}€). Tu stop-loss sube a {stop_escalones}€.",
-            )
-
-    pos["escalon_actual"] = escalon_nuevo
-
-    # El stop-loss real es siempre el MÁS PROTECTOR de los dos métodos, y nunca baja
-    nuevo_stop = max(stop_anterior, stop_trailing, stop_escalones)
-
-    if nuevo_stop > stop_anterior:
-        pos["stop_loss_actual"] = nuevo_stop
-        if aviso_ganancia:
-            notificar(aviso_ganancia[0], aviso_ganancia[1], urgente=False)
-        else:
+    if cruzados and precio_actual <= nivel_rearme:
+        if "equilibrio" in cruzados:
+            neto = round(precio_actual * acciones - COMISION_VENTA - coste_real, 2)
             notificar(
-                f"[SUBE STOP-LOSS] {pos['ticker']}",
-                f"Nuevo máximo: {precio_actual}€. Sube tu stop-loss en Trade Republic de "
-                f"{stop_anterior}€ a {nuevo_stop}€ (protege más ganancia ya conseguida).",
+                f"[PUNTO DE EQUILIBRIO PERDIDO] {pos['ticker']}",
+                f"Perdido por debajo de: {nivel_rearme}€\n"
+                f"Punto de equilibrio: {precio_equilibrio}€",
                 urgente=False,
             )
+        cruzados.clear()
+
+    pos["cruces_equilibrio"] = sorted(cruzados)
+
+    # --- Escalera de ganancias: 7%, 10%, 12,5%, 15%, 20%, 25%, 30%.
+    # Cada uno avisa una sola vez; no se rearman, porque una vez alcanzado un
+    # nivel de ganancia lo que interesa es el siguiente, no volver a oir el
+    # mismo. Los porcentajes son sobre lo invertido, comisiones incluidas. ---
+    for pct_gan in NIVELES_GANANCIA:
+        clave = f"g{pct_gan}"
+        if clave in ganancias_disparadas:
+            continue
+        precio_nivel = round((coste_real * (1 + pct_gan / 100) + COMISION_VENTA) / acciones, 4)
+        if precio_actual >= precio_nivel:
+            ganancias_disparadas.add(clave)
+            # La ganancia se calcula EN EL NIVEL, no al precio del momento: el
+            # aviso puede leerse horas despues y entonces "lo que llevas ahora"
+            # ya no es cierto, mientras que "en este nivel se ganan X" lo sigue
+            # siendo siempre.
+            neto = round(precio_nivel * acciones - COMISION_VENTA - coste_real, 2)
+            # El stop sugerido asegura 3,5 puntos menos que el nivel
+            # alcanzado: al llegar al 7% se asegura el 3,5%, al 10% el 6,5%,
+            # y asi. Eran 2 puntos y Jose Manuel prefirio dar mas juego, con
+            # buen criterio: las acciones suben y bajan todo el dia, y un stop
+            # demasiado pegado salta por puro vaiven y te saca de una posicion
+            # que iba bien. Con 3,5 puntos sigues asegurando ganancias y
+            # aguantas un retroceso normal.
+            pct_asegurado = max(pct_gan - 3.5, 0)
+            precio_stop = math.ceil(
+                (coste_real * (1 + pct_asegurado / 100) + COMISION_VENTA) / acciones * 100) / 100
+            notificar(
+                f"[GANANCIAS {pct_gan}%] {pos['ticker']}",
+                f"Precio: {precio_nivel}€\n"
+                f"Llevas ganados {neto}€\n"
+                f"Cambia el stop-loss a {precio_stop}€ (te asegura un {pct_asegurado}%)",
+                urgente=False,
+            )
+    pos["avisos_ganancia_disparados"] = sorted(ganancias_disparadas)
+
+    # --- EL STOP-LOSS ES FIJO EN EL -8% (v22) ---
+    #
+    # Aqui vivian dos sistemas que movian el stop solos: un trailing continuo
+    # al 8% por debajo del maximo, y unos escalones que lo subian cada +5% de
+    # beneficio. Los dos disparaban [VENDE] y [SUBE STOP-LOSS] por su cuenta.
+    #
+    # Fuera. Jose Manuel nunca los pidio: son restos de las primeras versiones,
+    # de antes de decidir que el bot AVISA y el decide. El problema practico
+    # era que [VENDE] llegaba tambien estando en ganancias, cuando esa etiqueta
+    # significa una sola cosa: has tocado el -8% y hay que salir.
+    #
+    # Ahora el stop del bot es el -8% y no se mueve. Cuando toca apretarlo, se
+    # lo dicen los avisos de [COMIENZAN GANANCIAS] y [GANANCIAS X%], que le dan
+    # el numero para ponerlo a mano en Trade Republic.
+    pos["stop_loss_actual"] = stop_inicial
+
 
     salto = precio_actual <= pos.get("stop_loss_actual", 0)
     if salto:
-        neto = beneficio_neto(pos["precio_compra"], precio_actual, pos["acciones"])
+        # Se calcula sobre el nivel del stop, no sobre el precio del momento:
+        # el aviso puede leerse mas tarde y el numero tiene que seguir siendo
+        # cierto. Y se dice "perdido" o "ganado" segun toque, sin llamar
+        # "beneficio" a una perdida.
+        stop = pos["stop_loss_actual"]
+        _com = pos.get("comision_compra", COMISION_COMPRA)
+        _coste = pos["precio_compra"] * pos["acciones"] + _com
+        resultado = round(stop * pos["acciones"] - COMISION_VENTA - _coste, 2)
+        pct = round(resultado / _coste * 100, 1)
+        verbo = "hemos perdido" if resultado < 0 else "hemos ganado"
         notificar(
-            f"[VENDE] {pos['ticker']} - stop-loss activado",
-            f"Precio actual: {precio_actual}€. Stop-loss: {pos['stop_loss_actual']}€. "
-            f"Beneficio neto estimado si vendes ahora: {neto}€. Ejecuta la venta en Trade Republic.",
+            f"[VENDE] {pos['ticker']}",
+            f"Precio {stop}€, {verbo} un {pct}% en esta operación, "
+            f"siendo un total de {resultado}€.",
         )
     return pos, salto
 
