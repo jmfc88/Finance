@@ -1,3 +1,7 @@
+# VERSION: 4 (27/08/2026) - cada 20 min las 24 h; el horario lo decide bot.py
+# preguntando a Yahoo si el mercado de cada accion esta abierto.
+# Medido el 27/08: con '*/15' GitHub ejecutaba 2 veces al dia de 96 pedidas.
+#
 # VERSION: 3 (26/08/2026) - corre todo el dia; el horario lo decide bot.py
 # segun el mercado de cada accion.
 #
@@ -7,24 +11,30 @@ name: Vigilancia de stop-loss
 
 on:
   schedule:
-    # Cada 15 minutos, TODO el dia, de domingo a viernes.
+    # Cada 20 minutos, las 24 horas, de domingo a viernes.
     #
-    # Antes era '*/15 13-21 * * 1-5', es decir de 15:00 a 23:00 hora espanola:
-    # el horario de Wall Street. Pero Lottomatica cotiza en Milan y cierra a
-    # las 17:30, asi que de sus siete horas y media de sesion solo se
-    # vigilaban dos y media. Una caida por la manana no la veia nadie.
+    # No hay franjas por mercado a proposito. bot.py pregunta a Yahoo si el
+    # mercado de CADA accion esta abierto (campo marketState) y, si no lo esta,
+    # sale en dos segundos sin gastar nada. Asi el horario se ajusta solo a lo
+    # que haya en cartera, sin tocar este archivo nunca mas: da igual comprar
+    # en Milan, en Nueva York o en Shenzhen.
     #
-    # No se pone una tabla de horarios por mercado porque se complica con los
-    # cambios de hora y con cada mercado nuevo. En su lugar corre siempre y es
-    # bot.py quien pregunta a Yahoo si el mercado de ESA accion esta abierto;
-    # si esta cerrado, sale en dos segundos sin hacer nada.
+    # Se probo lo contrario -recortar la franja a las horas de Milan- pero
+    # obliga a editar el cron con cada compra en otro mercado, y olvidarlo
+    # significa quedarse sin vigilancia justo cuando hace falta.
     #
-    # Se incluye el domingo porque el lunes asiatico y australiano empieza el
-    # domingo por la noche en hora UTC. El sabado no corre: no abre nadie.
+    # Los minutos 6, 26 y 46 son a proposito: casi todo el mundo programa en
+    # punto y a las :00 la cola de GitHub esta saturada. Un minuto impar tiene
+    # mas posibilidades de salir puntual.
     #
-    # El repositorio es publico, asi que los minutos de GitHub Actions no
-    # cuestan dinero.
-    - cron: '*/15 * * * 0-5'
+    # PENDIENTE DE MEDIR: el 27/08 se comprobo que con '*/15' (96 al dia)
+    # GitHub solo ejecutaba DOS. No se sabe si pedir menos ayuda. Con esta
+    # configuracion se piden 72 al dia; hay que contar cuantas salen de verdad
+    # antes de volver a tocar nada, y cambiar UNA cosa cada vez.
+    #
+    # El sabado no corre: no abre ningun mercado. El domingo si, porque el
+    # lunes asiatico y australiano empieza el domingo por la noche en UTC.
+    - cron: '6,26,46 * * * 0-5'
   workflow_dispatch: {}
 
 jobs:
