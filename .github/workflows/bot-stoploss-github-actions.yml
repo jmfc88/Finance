@@ -1,5 +1,6 @@
-# VERSION: 4 (27/08/2026) - cada 20 min las 24 h; el horario lo decide bot.py
-# preguntando a Yahoo si el mercado de cada accion esta abierto.
+# VERSION: 5 (27/08/2026) - CINCO arranques al dia, cada uno con un bucle de
+# 5h20 que mira el precio cada 20 minutos. Se le piden a GitHub 5 ejecuciones
+# en vez de 96, porque midiendo se vio que cuantas mas pide, menos ejecuta.
 # Medido el 27/08: con '*/15' GitHub ejecutaba 2 veces al dia de 96 pedidas.
 #
 # VERSION: 3 (26/08/2026) - corre todo el dia; el horario lo decide bot.py
@@ -11,31 +12,27 @@ name: Vigilancia de stop-loss
 
 on:
   schedule:
-    # Cada 20 minutos, las 24 horas, de domingo a viernes.
+    # CINCO arranques al dia, cada uno con un bucle de mas de 5 horas dentro.
+    # A las 0:06, 5:06, 10:06, 15:06 y 20:06 UTC. Entre los cinco cubren el
+    # dia entero, y cada uno mira el precio cada 20 minutos.
     #
-    # No hay franjas por mercado a proposito. bot.py pregunta a Yahoo si el
-    # mercado de CADA accion esta abierto (campo marketState) y, si no lo esta,
-    # sale en dos segundos sin gastar nada. Asi el horario se ajusta solo a lo
-    # que haya en cartera, sin tocar este archivo nunca mas: da igual comprar
-    # en Milan, en Nueva York o en Shenzhen.
+    # POR QUE TAN POCOS ARRANQUES: el 27/08 se midio que pidiendo 96 al dia
+    # GitHub ejecutaba DOS. Los workflows programados de repositorios
+    # gratuitos van los ultimos en su cola, y cuanto mas pides, mas te ignora.
+    # Con cinco al dia hay muchas mas posibilidades de que salgan todos, y el
+    # trabajo que antes hacia el cron lo hace ahora el bucle interno.
     #
-    # Se probo lo contrario -recortar la franja a las horas de Milan- pero
-    # obliga a editar el cron con cada compra en otro mercado, y olvidarlo
-    # significa quedarse sin vigilancia justo cuando hace falta.
-    #
-    # Los minutos 6, 26 y 46 son a proposito: casi todo el mundo programa en
-    # punto y a las :00 la cola de GitHub esta saturada. Un minuto impar tiene
-    # mas posibilidades de salir puntual.
-    #
-    # PENDIENTE DE MEDIR: el 27/08 se comprobo que con '*/15' (96 al dia)
-    # GitHub solo ejecutaba DOS. No se sabe si pedir menos ayuda. Con esta
-    # configuracion se piden 72 al dia; hay que contar cuantas salen de verdad
-    # antes de volver a tocar nada, y cambiar UNA cosa cada vez.
-    #
-    # El sabado no corre: no abre ningun mercado. El domingo si, porque el
-    # lunes asiatico y australiano empieza el domingo por la noche en UTC.
-    - cron: '6,26,46 * * * 0-5'
+    # El minuto 6 es a proposito: a las :00 la cola de GitHub esta saturada.
+    - cron: '6 0,5,10,15,20 * * 0-5'
   workflow_dispatch: {}
+
+# Solo una ejecucion viva a la vez. Cada una dura 5h20 y arrancan cada 5h, asi
+# que se solapan 20 minutos; sin esto, las dos escribirian en posiciones.json y
+# chocarian al hacer push. Al arrancar la nueva se cancela la vieja, que ya ha
+# cubierto su franja entera.
+concurrency:
+  group: vigilancia-stop-loss
+  cancel-in-progress: true
 
 jobs:
   vigilar-stop-loss:
@@ -53,12 +50,33 @@ jobs:
       - name: Vigilar posiciones abiertas
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: python bot.py
-
-      - name: Guardar estado de posiciones
+        # Bucle de 17 vueltas separadas 20 minutos = 5 horas y 20 minutos.
+        # Los 20 minutos de mas son el solape con el arranque siguiente: si
+        # GitHub se retrasa un poco, no queda ningun hueco sin vigilar.
+        #
+        # Un trabajo de GitHub Actions no puede pasar de 6 horas, asi que 5h20
+        # deja margen de sobra.
+        #
+        # timeout-minutes evita que un trabajo colgado se quede consumiendo la
+        # maquina hasta el limite duro.
+        #
+        # Despues de cada vuelta se guarda posiciones.json: si GitHub cancela
+        # la ejecucion a mitad, no se pierde el estado de los avisos ya
+        # mandados y no se repiten al arrancar de nuevo.
+        timeout-minutes: 330
         run: |
-          git config user.name "bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add posiciones.json
-          git diff --staged --quiet || git commit -m "actualiza stop-loss dinámico"
-          git push
+          for vuelta in $(seq 1 17); do
+            echo "--- vuelta $vuelta de 17 · $(date -u '+%H:%M UTC') ---"
+            python bot.py || echo "la vuelta $vuelta ha fallado, se sigue con la siguiente"
+            git config user.name "bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add posiciones.json 2>/dev/null || true
+            if ! git diff --staged --quiet; then
+              git commit -m "actualiza estado de vigilancia (vuelta $vuelta)"
+              git pull --rebase origin main && git push || echo "no se pudo subir, se reintenta en la siguiente vuelta"
+            fi
+            if [ "$vuelta" -lt 17 ]; then
+              echo "esperando 20 minutos..."
+              sleep 1200
+            fi
+          done
