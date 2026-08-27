@@ -1,4 +1,8 @@
 """
+VERSION: 23 (26/08/2026) - cada posicion se vigila en el horario de SU
+mercado, leyendo marketState de Yahoo. El workflow pasa a correr todo el dia y
+es el bot quien decide si toca mirar.
+
 VERSION: 22 (25/08/2026) - fuera el trailing y los escalones automaticos.
 [VENDE] es exclusivo del -8%.
 
@@ -475,8 +479,23 @@ def procesar_posicion(pos):
         info = yf.Ticker(pos["ticker"]).info
         precio_nativo = info.get("currentPrice")
         moneda = info.get("currency", "EUR")
+        estado_mercado = info.get("marketState")
     except Exception:
-        precio_nativo, moneda = None, "EUR"
+        precio_nativo, moneda, estado_mercado = None, "EUR", None
+
+    # Cada accion se vigila en el horario de SU mercado, no en el americano.
+    # El ticker ya dice donde cotiza (.MI Milan, .MC Madrid, .HK Hong Kong...)
+    # y Yahoo devuelve si ese mercado esta abierto ahora mismo, asi que no hace
+    # falta mantener una tabla de horarios ni pelearse con los cambios de hora.
+    #
+    # Esto arregla un agujero de verdad: el workflow corria de 15:00 a 23:00
+    # hora espanola, pensado para Wall Street, mientras Lottomatica cotiza en
+    # Milan y cierra a las 17:30. De las siete horas y media de sesion italiana
+    # solo se vigilaban dos y media. Una caida a las 10 de la manana no la veia
+    # nadie.
+    if estado_mercado and estado_mercado not in ("REGULAR", "PRE", "POST"):
+        print(f"{pos['ticker']}: su mercado está cerrado ({estado_mercado}), no se toca.")
+        return pos, False
 
     if not precio_nativo:
         # Yahoo Finance ha fallado (caída puntual, símbolo no encontrado esa
