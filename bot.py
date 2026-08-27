@@ -1,4 +1,19 @@
 """
+VERSION: 25 (27/08/2026) - FRANJA_CRON_UTC pasa a 24 h: el workflow ya no
+recorta horas y es este archivo quien decide, preguntando a Yahoo si el
+mercado de cada accion esta abierto. El aviso [AMPLIA EL HORARIO] se queda
+por si algun dia se vuelve a recortar la franja, pero ahora no salta nunca.
+
+VERSION: 25 (27/08/2026) - avisa si una posicion cotiza en un mercado que el
+cron del workflow no cubre. El bot no puede ampliarse el horario solo (GitHub
+no deja que el token de Actions toque .github/workflows), pero al menos ya no
+se queda vigilando a medias en silencio.
+
+VERSION: 24 (27/08/2026) - el stop inicial usa la comision real de la compra,
+no 1 EUR fijo. Y el aviso [CREA EL STOP-LOSS] respeta el horario del mercado:
+se detectaba la posicion nueva antes de comprobar si estaba abierto, asi que
+podia llegar de noche.
+
 VERSION: 23 (26/08/2026) - cada posicion se vigila en el horario de SU
 mercado, leyendo marketState de Yahoo. El workflow pasa a correr todo el dia y
 es el bot quien decide si toca mirar.
@@ -269,6 +284,53 @@ def cargar_config_alertas():
 NIVELES_GANANCIA = [7, 10, 12.5, 15, 20, 25, 30]
 
 
+# Horario de cada mercado en UTC, para avisar si el cron del workflow se queda
+# corto. Son aproximados y con margen: solo sirven para detectar un descuadre
+# grande, no para decidir si mirar o no (eso lo dice marketState de Yahoo).
+HORARIOS_MERCADO = {
+    ".MI": (7, 16), ".MC": (7, 16), ".PA": (7, 16), ".DE": (7, 16),
+    ".AS": (7, 16), ".BR": (7, 16), ".LS": (7, 16), ".HE": (7, 16),
+    ".VI": (7, 16), ".SW": (7, 16), ".L": (8, 17),
+    ".TO": (13, 21), ".SA": (13, 21),
+    ".AX": (23, 6), ".T": (0, 7), ".HK": (1, 9),
+    ".SZ": (1, 8), ".SS": (1, 8), ".NZ": (21, 4),
+}
+# Franja que cubre el cron del workflow, en UTC. Si se cambia alli, cambiar
+# aqui: sirve para que el bot detecte que una posicion nueva se ha quedado
+# fuera de vigilancia y lo diga, en vez de callarse.
+FRANJA_CRON_UTC = (0, 24)   # el workflow corre las 24 h, asi que nunca avisa
+
+
+def mercado_de(ticker):
+    for suf, horas in HORARIOS_MERCADO.items():
+        if ticker.upper().endswith(suf):
+            return suf, horas
+    return "US", (13, 21)   # sin sufijo: Estados Unidos
+
+
+def avisar_si_fuera_de_horario(posiciones):
+    """Comprueba que el cron cubre los mercados de lo que hay abierto.
+
+    El bot no puede cambiar su propio horario: GitHub no deja que el token de
+    Actions modifique archivos de .github/workflows. Asi que lo unico sensato
+    es detectarlo y decirlo, para no quedarse vigilando a ciegas sin que nadie
+    se entere.
+    """
+    ini_c, fin_c = FRANJA_CRON_UTC
+    for pos in posiciones:
+        suf, (ini, fin) = mercado_de(pos.get("ticker", ""))
+        cubierto = ini >= ini_c and fin <= fin_c if ini < fin else False
+        if not cubierto:
+            notificar(
+                f"[AMPLÍA EL HORARIO] {pos['ticker']}",
+                f"Esta posición cotiza en un mercado ({suf}) que abre de {ini}:00 a "
+                f"{fin}:00 UTC, y el bot solo corre de {ini_c}:00 a {fin_c}:00. "
+                f"Parte de su sesión queda sin vigilar. Hay que ampliar el cron en "
+                f"bot-stoploss-github-actions.yml.",
+                urgente=False,
+            )
+
+
 def cargar_margen_cruce():
     """Margen muerto alrededor del punto de equilibrio, en %.
 
@@ -357,7 +419,13 @@ def reconciliar_con_ledger(posiciones):
         if ticker in posiciones_por_ticker:
             continue
         precio_compra = round(datos["coste_total"] / datos["acciones"], 4)
-        stop_inicial = calcular_stop_loss_inicial(precio_compra, datos["acciones"], datos["cambio_divisa"])
+        # Se pasa la comision REAL de la compra. Sin esto usaba 1 EUR fijo, y
+        # en Lottomatica (1 EUR + 0,39 de tasa italiana) el stop salia en
+        # 22,734 en vez de 22,779: cuatro centimos de mas de perdida antes de
+        # que salte. Poco dinero, pero el numero tiene que ser el correcto.
+        stop_inicial = calcular_stop_loss_inicial(
+            precio_compra, datos["acciones"], datos["cambio_divisa"],
+            comision_compra=datos.get("comision_compra", COMISION_COMPRA))
         posiciones_por_ticker[ticker] = {
             "ticker": ticker,
             "precio_compra": precio_compra,
@@ -705,6 +773,7 @@ def procesar_posicion(pos):
 def ejecutar():
     posiciones = cargar_posiciones()
     posiciones = reconciliar_con_ledger(posiciones)
+    avisar_si_fuera_de_horario(posiciones)
 
     if not posiciones:
         guardar_posiciones(posiciones)  # guarda por si la reconciliación vació la lista (todo vendido)
