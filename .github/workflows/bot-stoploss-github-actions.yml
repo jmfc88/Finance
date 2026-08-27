@@ -1,10 +1,30 @@
-# VERSION: 2 (04/08/2026) - de cada 30 a cada 15 minutos, y ahora también
+# VERSION: 3 (26/08/2026) - corre todo el dia; el horario lo decide bot.py
+# segun el mercado de cada accion.
+#
+# VERSION: 2 (04/08/2026) - de cada 30 a cada 15 minutos, y ahora tambien
 # avisa (no solo actualiza en silencio) cuando el stop-loss sube
 name: Vigilancia de stop-loss
 
 on:
   schedule:
-    - cron: '*/15 13-21 * * 1-5'   # cada 15 min, horario de mercado US, lunes a viernes
+    # Cada 15 minutos, TODO el dia, de domingo a viernes.
+    #
+    # Antes era '*/15 13-21 * * 1-5', es decir de 15:00 a 23:00 hora espanola:
+    # el horario de Wall Street. Pero Lottomatica cotiza en Milan y cierra a
+    # las 17:30, asi que de sus siete horas y media de sesion solo se
+    # vigilaban dos y media. Una caida por la manana no la veia nadie.
+    #
+    # No se pone una tabla de horarios por mercado porque se complica con los
+    # cambios de hora y con cada mercado nuevo. En su lugar corre siempre y es
+    # bot.py quien pregunta a Yahoo si el mercado de ESA accion esta abierto;
+    # si esta cerrado, sale en dos segundos sin hacer nada.
+    #
+    # Se incluye el domingo porque el lunes asiatico y australiano empieza el
+    # domingo por la noche en hora UTC. El sabado no corre: no abre nadie.
+    #
+    # El repositorio es publico, asi que los minutos de GitHub Actions no
+    # cuestan dinero.
+    - cron: '*/15 * * * 0-5'
   workflow_dispatch: {}
 
 jobs:
