@@ -1,4 +1,11 @@
 """
+VERSION: 11 (26/08/2026) - la simulacion mide por fin las reglas REALES.
+Hasta ahora comparaba variantes de trailing continuo, que es lo que hacia el
+bot antes del 25/08. Ese dia se quito el trailing y se puso la escalera de
+avisos que diseño Jose Manuel en papel, asi que la simulacion estaba midiendo
+un sistema que ya no existe. Se anade "LA REAL (escalera 25/08)" como primera
+variante; las demas se quedan como comparacion.
+
 VERSION: 10 (23/08/2026) - INFORME DE PONDERACION. Cada 15 dias Jose Manuel
 pega el informe en el chat para decidir que pesos cambiar. Para eso hacia
 falta algo que el informe anterior no tenia: el analisis FACTOR POR FACTOR.
@@ -232,7 +239,18 @@ STOP_INICIAL_PCT = 8.0
 # reconstruida a partir de su tabla; las demas cambian UNA cosa cada vez para
 # que la comparacion diga algo. La pregunta que responden: ¿conviene subir el
 # stop antes o despues, y pegado o suelto?
+# NIVELES_ESCALERA: la operativa real, la que se diseño el 25/08 con Jose
+# Manuel a base de dibujos en papel. Cada pareja es (ganancia alcanzada,
+# ganancia que se asegura subiendo el stop). El hueco de 3,5 puntos lo eligio
+# el: deja sitio para el vaiven normal del dia sin renunciar a lo ganado.
+NIVELES_ESCALERA = [(7, 3.5), (10, 6.5), (12.5, 9.0), (15, 11.5),
+                    (20, 16.5), (25, 21.5), (30, 26.5)]
+# Al cruzar el equilibrio + este margen, el stop sube al precio que deja 1 EUR
+# limpio. Es el aviso de [COMIENZAN GANANCIAS].
+MARGEN_GANANCIAS_PCT = 2.0
+
 VARIANTES = [
+    {"nombre": "LA REAL (escalera 25/08)", "tipo": "escalera", "stop": 8.0},
     {"nombre": "actual (8% / +5% / 5%)",   "stop": 8.0, "activacion": 5.0, "trailing": 5.0},
     {"nombre": "trailing suelto (7%)",     "stop": 8.0, "activacion": 5.0, "trailing": 7.0},
     {"nombre": "trailing pegado (3%)",     "stop": 8.0, "activacion": 5.0, "trailing": 3.0},
@@ -379,9 +397,87 @@ def reconstruir(op, hist=None, regla=None):
     if len(hist) == 0:
         return None
     return _recorrer(op, hist, regla)
+def _recorrer_escalera(op, hist, regla):
+    """La operativa REAL, la que manda bot.py desde la v22.
+
+    El stop empieza en el -8% SOBRE LO INVERTIDO (comisiones dentro, no sobre
+    el precio a secas: no es lo mismo, y era un fallo que se corrigio el 25/08).
+    A partir de ahi solo sube, y sube en los momentos exactos en que el bot
+    manda un aviso:
+
+      - al cruzar el equilibrio + 2%  -> stop al precio que deja 1 EUR limpio
+      - al 7% de ganancia             -> stop al precio que asegura el 3,5%
+      - al 10%                        -> asegura el 6,5%
+      - ... y asi por NIVELES_ESCALERA
+
+    Aqui no hay trailing continuo ni escalones automaticos: se quitaron del bot
+    el 25/08 porque movian el stop por su cuenta y disparaban [VENDE] estando
+    en ganancias. Esta funcion replica lo que Jose Manuel hace de verdad con el
+    movil en la mano, que es lo unico que tiene sentido medir.
+    """
+    pe = op["precio_entrada"]
+    acciones = op["acciones"]
+    comisiones = COMISION_COMPRA + COMISION_VENTA
+    invertido = pe * acciones + COMISION_COMPRA
+
+    precio_equilibrio = pe + (comisiones / acciones)
+    nivel_ganancias = precio_equilibrio * (1 + MARGEN_GANANCIAS_PCT / 100)
+
+    def precio_para(ganancia_pct):
+        """Precio al que la operacion deja esa ganancia neta sobre lo invertido."""
+        return (invertido * (1 + ganancia_pct / 100) + COMISION_VENTA) / acciones
+
+    # -8% sobre lo invertido, no sobre el precio
+    stop = round((invertido * (1 - regla["stop"] / 100) + COMISION_VENTA) / acciones, 4)
+    stop_inicial = stop
+
+    precio_objetivo = pe + (OBJETIVO_LIMPIO_EUR + comisiones) / acciones
+    maximo = pe
+    precio_7d = None
+    llego_5eur = False
+    sesiones_hasta_armar = None
+    ganancias_armadas = False
+    niveles_hechos = set()
+
+    for i, (fecha, cierre) in enumerate(hist, start=1):
+        if cierre is None:
+            continue
+        maximo = max(maximo, cierre)
+        if i == 7:
+            precio_7d = cierre
+        if not llego_5eur and cierre >= precio_objetivo:
+            llego_5eur = True
+            sesiones_hasta_armar = i
+
+        # 1) Cruce del equilibrio + 2%: se asegura 1 EUR
+        if not ganancias_armadas and cierre >= nivel_ganancias:
+            ganancias_armadas = True
+            stop = max(stop, round((invertido + COMISION_VENTA + 1.0) / acciones, 4))
+
+        # 2) Escalones de ganancia
+        for alcanzado, asegurado in NIVELES_ESCALERA:
+            if alcanzado in niveles_hechos:
+                continue
+            if cierre >= precio_para(alcanzado):
+                niveles_hechos.add(alcanzado)
+                stop = max(stop, round(precio_para(asegurado), 4))
+
+        # 3) ¿Salta?
+        if cierre <= stop:
+            motivo = "stop inicial" if abs(stop - stop_inicial) < 1e-9 else "stop subido"
+            return cerrar(op, cierre, fecha, i, motivo, precio_7d, precio_equilibrio,
+                          llego_5eur, sesiones_hasta_armar)
+
+        if i >= DIAS_MAXIMO:
+            return cerrar(op, cierre, fecha, i, "plazo maximo", precio_7d, precio_equilibrio,
+                          llego_5eur, sesiones_hasta_armar)
+
+    return None
 
 
 def _recorrer(op, hist, regla):
+    if regla.get("tipo") == "escalera":
+        return _recorrer_escalera(op, hist, regla)
     pe = op["precio_entrada"]
     acciones = op["acciones"]
     comisiones = COMISION_COMPRA + COMISION_VENTA
@@ -646,7 +742,6 @@ def informe_ponderacion(cerradas):
             lineas.append(f"| {etiqueta} | {bajo:+.2f} | {alto:+.2f} | **{dif:+.2f} EUR** |")
         lineas += ["", "Los de arriba merecen MAS peso; los de abajo, menos o al reves.", ""]
     return lineas
-
 
 def escribir_informe(operaciones):
     cerradas = [o for o in operaciones if o["estado"] == "cerrada"]
