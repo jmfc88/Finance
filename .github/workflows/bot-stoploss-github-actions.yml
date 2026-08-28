@@ -1,6 +1,10 @@
-# VERSION: 5 (27/08/2026) - CINCO arranques al dia, cada uno con un bucle de
-# 5h20 que mira el precio cada 20 minutos. Se le piden a GitHub 5 ejecuciones
-# en vez de 96, porque midiendo se vio que cuantas mas pide, menos ejecuta.
+# VERSION: 6 (28/08/2026) - SEIS arranques al dia cada 4 horas exactas, con un
+# bucle de 4h07 que mira el precio cada 13 minutos. Horas y minutos poco
+# habituales a proposito, para esquivar la cola saturada de GitHub.
+#
+# VERSION: 5 (27/08/2026) - cinco arranques al dia con bucle de 5h20 cada 20
+# minutos. El bucle funciono (la ejecucion manual duro 5h20m41s en verde) pero
+# el cron seguia sin saltar.
 # Medido el 27/08: con '*/15' GitHub ejecutaba 2 veces al dia de 96 pedidas.
 #
 # VERSION: 3 (26/08/2026) - corre todo el dia; el horario lo decide bot.py
@@ -12,22 +16,23 @@ name: Vigilancia de stop-loss
 
 on:
   schedule:
-    # CINCO arranques al dia, cada uno con un bucle de mas de 5 horas dentro.
-    # A las 0:06, 5:06, 10:06, 15:06 y 20:06 UTC. Entre los cinco cubren el
-    # dia entero, y cada uno mira el precio cada 20 minutos.
+    # SEIS arranques al dia, cada 4 horas exactas, con un bucle de 4 horas
+    # dentro que mira el precio cada 13 minutos.
     #
-    # POR QUE TAN POCOS ARRANQUES: el 27/08 se midio que pidiendo 96 al dia
-    # GitHub ejecutaba DOS. Los workflows programados de repositorios
-    # gratuitos van los ultimos en su cola, y cuanto mas pides, mas te ignora.
-    # Con cinco al dia hay muchas mas posibilidades de que salgan todos, y el
-    # trabajo que antes hacia el cron lo hace ahora el bucle interno.
+    # Las horas del cron son UTC. Estas corresponden a las 02:11, 06:11,
+    # 10:11, 14:11, 18:11 y 22:11 HORA ESPANOLA en horario de verano; en
+    # invierno caen una hora antes.
     #
-    # El minuto 6 es a proposito: a las :00 la cola de GitHub esta saturada.
-    - cron: '6 0,5,10,15,20 * * 0-5'
+    # El minuto 11 y el intervalo de 13 minutos son a proposito: son numeros
+    # que casi nadie usa. A las :00, :15 o :30 la cola de GitHub esta llena de
+    # todo el mundo, y los workflows programados de repositorios gratuitos van
+    # los ultimos. El 28/08 se comprobo que ni siquiera cinco arranques al dia
+    # salian con fiabilidad.
+    - cron: '11 0,4,8,12,16,20 * * *'
   workflow_dispatch: {}
 
-# Solo una ejecucion viva a la vez. Cada una dura 5h20 y arrancan cada 5h, asi
-# que se solapan 20 minutos; sin esto, las dos escribirian en posiciones.json y
+# Solo una ejecucion viva a la vez. Cada una dura 4h07 y arrancan cada 4h, asi
+# que se solapan 7 minutos; sin esto, las dos escribirian en posiciones.json y
 # chocarian al hacer push. Al arrancar la nueva se cancela la vieja, que ya ha
 # cubierto su franja entera.
 concurrency:
@@ -50,11 +55,11 @@ jobs:
       - name: Vigilar posiciones abiertas
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        # Bucle de 17 vueltas separadas 20 minutos = 5 horas y 20 minutos.
-        # Los 20 minutos de mas son el solape con el arranque siguiente: si
+        # Bucle de 20 vueltas separadas 13 minutos = 4 horas y 7 minutos.
+        # Los 7 minutos de mas son el solape con el arranque siguiente: si
         # GitHub se retrasa un poco, no queda ningun hueco sin vigilar.
         #
-        # Un trabajo de GitHub Actions no puede pasar de 6 horas, asi que 5h20
+        # Un trabajo de GitHub Actions no puede pasar de 6 horas, asi que 4h07
         # deja margen de sobra.
         #
         # timeout-minutes evita que un trabajo colgado se quede consumiendo la
@@ -63,10 +68,10 @@ jobs:
         # Despues de cada vuelta se guarda posiciones.json: si GitHub cancela
         # la ejecucion a mitad, no se pierde el estado de los avisos ya
         # mandados y no se repiten al arrancar de nuevo.
-        timeout-minutes: 330
+        timeout-minutes: 255
         run: |
-          for vuelta in $(seq 1 17); do
-            echo "--- vuelta $vuelta de 17 · $(date -u '+%H:%M UTC') ---"
+          for vuelta in $(seq 1 20); do
+            echo "--- vuelta $vuelta de 20 · $(date -u '+%H:%M UTC') ---"
             python bot.py || echo "la vuelta $vuelta ha fallado, se sigue con la siguiente"
             git config user.name "bot"
             git config user.email "bot@users.noreply.github.com"
@@ -75,8 +80,8 @@ jobs:
               git commit -m "actualiza estado de vigilancia (vuelta $vuelta)"
               git pull --rebase origin main && git push || echo "no se pudo subir, se reintenta en la siguiente vuelta"
             fi
-            if [ "$vuelta" -lt 17 ]; then
-              echo "esperando 20 minutos..."
-              sleep 1200
+            if [ "$vuelta" -lt 20 ]; then
+              echo "esperando 13 minutos..."
+              sleep 780
             fi
           done
