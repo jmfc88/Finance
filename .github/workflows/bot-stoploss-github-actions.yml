@@ -1,6 +1,7 @@
-# VERSION: 6 (28/08/2026) - SEIS arranques al dia cada 4 horas exactas, con un
-# bucle de 4h07 que mira el precio cada 13 minutos. Horas y minutos poco
-# habituales a proposito, para esquivar la cola saturada de GitHub.
+# VERSION: 6 (28/08/2026) - SEIS arranques al dia cada 4 horas, con un bucle
+# de 4h07 que mira el precio cada 13 minutos. Se copia el formato de crons de
+# "Actualizar ranking de candidatas" (una linea por hora, minuto 11), que lleva
+# semanas funcionando sin fallar en este mismo repositorio.
 #
 # VERSION: 5 (27/08/2026) - cinco arranques al dia con bucle de 5h20 cada 20
 # minutos. El bucle funciono (la ejecucion manual duro 5h20m41s en verde) pero
@@ -16,19 +17,23 @@ name: Vigilancia de stop-loss
 
 on:
   schedule:
-    # SEIS arranques al dia, cada 4 horas exactas, con un bucle de 4 horas
-    # dentro que mira el precio cada 13 minutos.
+    # SEIS arranques al dia, cada 4 horas, con un bucle de 4h07 dentro que
+    # mira el precio cada 13 minutos.
     #
-    # Las horas del cron son UTC. Estas corresponden a las 02:11, 06:11,
-    # 10:11, 14:11, 18:11 y 22:11 HORA ESPANOLA en horario de verano; en
-    # invierno caen una hora antes.
+    # UNA LINEA POR HORA, no una sola con comas. Puede parecer lo mismo, pero
+    # es el formato exacto que usa "Actualizar ranking de candidatas", que
+    # lleva semanas ejecutandose sin fallar en este mismo repositorio. Cuando
+    # algo funciona y algo no, y no se sabe por que, se copia lo que funciona.
     #
-    # El minuto 11 y el intervalo de 13 minutos son a proposito: son numeros
-    # que casi nadie usa. A las :00, :15 o :30 la cola de GitHub esta llena de
-    # todo el mundo, y los workflows programados de repositorios gratuitos van
-    # los ultimos. El 28/08 se comprobo que ni siquiera cinco arranques al dia
-    # salian con fiabilidad.
-    - cron: '11 0,4,8,12,16,20 * * *'
+    # El minuto 11 tambien viene de ahi. A las :00, :15 o :30 la cola de
+    # GitHub esta llena y los workflows de repositorios gratuitos van los
+    # ultimos.
+    - cron: '11 0 * * *'    # 02:11 España (verano)
+    - cron: '11 4 * * *'    # 06:11 España (verano)
+    - cron: '11 8 * * *'    # 10:11 España (verano)
+    - cron: '11 12 * * *'   # 14:11 España (verano)
+    - cron: '11 16 * * *'   # 18:11 España (verano)
+    - cron: '11 20 * * *'   # 22:11 España (verano)
   workflow_dispatch: {}
 
 # Solo una ejecucion viva a la vez. Cada una dura 4h07 y arrancan cada 4h, asi
