@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- VERSION: 35 (29/08/2026) - rentabilidad del mes en curso, del ano y desde
+el inicio, sobre el capital inicial. Los periodos se calculan con la fecha de
+HOY y no con la ultima operacion: un mes sin operar tiene que ensenar 0,00%. -->
 <!-- VERSION: 34 (28/08/2026) - tramos progresivos y arrastre de perdidas
 entre anos. Aparece un desglose ano por ano cuando hay mas de uno o cuando
 quedan perdidas sin compensar. -->
@@ -343,12 +346,13 @@ la comisión se guardaba pero no aparecía en ningún sitio visible -->
 <section class="panel">
   <h2>7. Resumen fiscal acumulado</h2>
   <div class="resumen-fiscal" id="resumen-fiscal"></div>
+  <div id="rentabilidad" style="display:grid; grid-template-columns:auto 1fr; gap:6px 12px; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,.1);"></div>
   <div id="detalle-fiscal" style="display:none; margin-top:12px; padding:10px; background:rgba(0,0,0,0.03); border-radius:6px;"></div>
   <div class="nota"><b>La ganancia neta acumulada es dinero real:</b> lo que has cobrado menos lo que pagaste, comisiones incluidas. Debe coincidir con lo que veas en Trade Republic. El impuesto va aparte porque todavía no lo has pagado (se liquida en la declaración del año siguiente) y porque Hacienda compensa las ganancias con las pérdidas del año: se calcula sobre el saldo, no operación por operación. Los tramos son 19% hasta 6.000€, 21% hasta 50.000€, 23% hasta 200.000€, 27% hasta 300.000€ y 30% por encima, y se aplican de forma acumulativa: con 8.000€ de ganancia se paga el 19% de los primeros 6.000 y el 21% de los 2.000 restantes. Si un año acaba en pérdidas, ese saldo se puede compensar durante los cuatro años siguientes y así se refleja aquí. El 10% de ahorro se aparta de lo que queda tras Hacienda.</div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script src="simulador-datos.js?v=16"></script>
+<script src="simulador-datos.js?v=17"></script>
 <script>
 function parseNumeroEs(texto) {
   // Acepta coma o punto como separador decimal (el teclado español mete
@@ -909,6 +913,26 @@ function renderResumenFiscal(ledger) {
   const despuesDeImpuestos = totalNeto - impuestoEstimado;
   const ahorro = Math.max(despuesDeImpuestos, 0) * AHORRO_RATE;
   const reinvertible = despuesDeImpuestos - ahorro;
+
+  /* Rentabilidad por periodos sobre el capital inicial. El mes en curso y el
+  año se sacan de la fecha de hoy, no de la ultima operacion: si un mes no se
+  opera, tiene que verse un 0,00% y no el dato del mes anterior. */
+  const hoy = new Date();
+  const anoActual = String(hoy.getFullYear());
+  const mesActual = anoActual + '-' + String(hoy.getMonth() + 1).padStart(2, '0');
+  const rMes = rentabilidadPeriodo(ledger, mesActual + '-01', mesActual + '-31');
+  const rAno = rentabilidadPeriodo(ledger, anoActual + '-01-01', anoActual + '-12-31');
+  const rTotal = rentabilidadPeriodo(ledger, null, null);
+  const pinta = r => `<span class="${r.ganancia >= 0 ? 'pos' : 'neg'}">${r.ganancia >= 0 ? '+' : ''}${r.pct.toFixed(2)}%</span> <span style="opacity:.7;">(${r.ganancia.toFixed(2)}€ · ${r.operaciones} op.)</span>`;
+
+  document.getElementById('rentabilidad').innerHTML = `
+    <div><span class="label">Este mes:</span></div><div>${pinta(rMes)}</div>
+    <div><span class="label">Este año:</span></div><div>${pinta(rAno)}</div>
+    <div><span class="label">Desde el inicio:</span></div><div>${pinta(rTotal)}</div>
+    <div style="grid-column:1/-1; font-size:12px; opacity:.7; margin-top:4px;">
+      Sobre un capital inicial de ${rTotal.capital.toFixed(2)}€. Cámbialo en Ajustes avanzados si empezaste con otra cantidad.
+    </div>
+  `;
 
   document.getElementById('resumen-fiscal').innerHTML = `
     <div><span class="label">Ganancia neta acumulada:</span></div><div class="${totalNeto>=0?'pos':'neg'}">${totalNeto.toFixed(2)}€</div>
