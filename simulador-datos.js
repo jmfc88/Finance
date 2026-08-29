@@ -1,3 +1,15 @@
+/* VERSION: 16 (28/08/2026) - tramos progresivos de la base del ahorro
+(19/21/23/27/30%) en vez de un 19% plano. Acumulativos, como los aplica
+Hacienda: con 8.000 EUR de ganancia se paga el 19% de los primeros 6.000 y el
+21% del resto, no el 21% de todo. Hoy no cambia nada porque el saldo es de
+3,46 EUR, pero el calculo ya no se rompe si el sistema crece. */
+
+/* VERSION: 15 (28/08/2026) - el neto de cada venta ya NO descuenta el 19% de
+IRPF. Se descontaba operacion por operacion, sin compensar perdidas, y por eso
+el resumen decia -0,82 EUR cuando la cuenta real habia pasado de 200,00 a
+203,03. El impuesto se estima ahora sobre el saldo acumulado del ano, que es
+como lo calcula Hacienda. */
+
 /* VERSION: 14 (24/08/2026) - probarSincronizacion acepta el token y el repo
 como parametros. Antes leia SOLO lo guardado en localStorage, asi que si
 pegabas un token nuevo en el campo y pulsabas "Probar conexion" sin haber
@@ -108,7 +120,78 @@ function guardarComisionVentaConfigurada(valor) {
   try { localStorage.setItem('comision-venta-defecto', String(valor)); } catch (e) { console.error('No se pudo guardar la comisión de venta', e); }
 }
 
-const TAX_RATE = 0.19;
+const TAX_RATE = 0.19;   /* primer tramo, se mantiene por compatibilidad */
+
+/* Tramos de la base del ahorro del IRPF (rendimientos y ganancias de capital).
+Son acumulativos: no se aplica un unico tipo al total, sino cada tipo a la
+parte que cae dentro de su tramo. Con 8.000 EUR de ganancia no se paga el 21%
+de 8.000, sino el 19% de los primeros 6.000 y el 21% de los 2.000 restantes.
+
+Vigentes en 2026. Si Hacienda los cambia, se tocan aqui y ya esta. */
+const TRAMOS_AHORRO = [
+  { hasta: 6000,   tipo: 0.19 },
+  { hasta: 50000,  tipo: 0.21 },
+  { hasta: 200000, tipo: 0.23 },
+  { hasta: 300000, tipo: 0.27 },
+  { hasta: Infinity, tipo: 0.30 },
+];
+
+/** Agrupa las ventas cerradas por ano natural y arrastra las perdidas.
+ *
+ *  Si un ano acaba en negativo, ese saldo NO se pierde: la ley del IRPF deja
+ *  compensarlo durante los CUATRO anos siguientes. Asi que un ano malo reduce
+ *  el impuesto de los siguientes, y hay que llevar la cuenta.
+ *
+ *  Simplificacion consciente: se arrastra el saldo global en vez de seguir
+ *  cada perdida con su fecha de caducidad. Con perdidas pequenas y anos
+ *  consecutivos da lo mismo; solo se separaria si una perdida llegara a
+ *  cumplir cinco anos sin compensarse, y en ese caso el aviso lo dara el
+ *  propio resumen al ver un pendiente que no baja.
+ */
+function calcularFiscalidadPorAnos(ledger) {
+  const porAno = {};
+  ledger.filter(op => op.tipo === 'venta' && op.neto !== null).forEach(op => {
+    const ano = (op.fecha || '').slice(0, 4) || 'sin fecha';
+    porAno[ano] = (porAno[ano] || 0) + op.neto;
+  });
+
+  let pendiente = 0;   /* perdidas de anos anteriores sin compensar, en positivo */
+  const anos = [];
+  Object.keys(porAno).sort().forEach(ano => {
+    const saldo = porAno[ano];
+    const compensado = saldo > 0 ? Math.min(saldo, pendiente) : 0;
+    const base = saldo - compensado;
+    const imp = calcularImpuestoAhorro(base);
+    pendiente = pendiente - compensado + (saldo < 0 ? -saldo : 0);
+    anos.push({
+      ano, saldo, compensado, base: Math.max(base, 0),
+      impuesto: imp.total, tipoMedio: imp.tipoMedio,
+      pendienteTrasEsteAno: pendiente,
+    });
+  });
+  return anos;
+}
+
+/** Impuesto sobre una base positiva, aplicando los tramos acumulativos.
+ *  Devuelve tambien el desglose, para poder ensenar de donde sale la cifra. */
+function calcularImpuestoAhorro(base) {
+  if (!base || base <= 0) return { total: 0, desglose: [], tipoMedio: 0 };
+  let restante = base;
+  let anterior = 0;
+  let total = 0;
+  const desglose = [];
+  for (const tramo of TRAMOS_AHORRO) {
+    if (restante <= 0) break;
+    const anchura = tramo.hasta - anterior;
+    const enEsteTramo = Math.min(restante, anchura);
+    const cuota = enEsteTramo * tramo.tipo;
+    total += cuota;
+    desglose.push({ desde: anterior, hasta: tramo.hasta, importe: enEsteTramo, tipo: tramo.tipo, cuota });
+    restante -= enEsteTramo;
+    anterior = tramo.hasta;
+  }
+  return { total, desglose, tipoMedio: total / base };
+}
 const AHORRO_RATE = 0.10;
 const COSTE_FX_PCT_DEFECTO = 1.2;
 /* % estimado de coste de cambio de divisa (Trade Republic no lo publica
@@ -282,12 +365,27 @@ function totalOperacion(op) {
 }
 
 function calcularNetoVenta(compra, venta, acciones, comisionCompra, comisionVenta) {
+  /* Devuelve lo que REALMENTE entra o sale de la cuenta: precio de venta
+  menos precio de compra, menos las dos comisiones. Nada mas.
+
+  Antes descontaba aqui el 19% de IRPF, y estaba mal por dos motivos:
+
+  1. Hacienda no grava operacion por operacion, grava el saldo del ANO
+     compensando ganancias con perdidas. Con FM (+21,76) y SCYR (-19,11) el
+     calculo viejo cobraba 4,13 EUR de impuesto por FM ignorando la perdida
+     de SCYR, cuando en realidad se tributa por el saldo conjunto.
+
+  2. El resumen tiene que cuadrar con el dinero que hay en Trade Republic.
+     El impuesto no se ha pagado todavia -se liquida en la declaracion del
+     ano siguiente-, asi que restarlo aqui hacia que el resumen no cuadrara
+     nunca con el saldo real de la cuenta.
+
+  El impuesto se sigue estimando, pero en el resumen fiscal y sobre el saldo
+  acumulado, que es como funciona de verdad. */
   const cComp = comisionCompra !== undefined && comisionCompra !== null ? comisionCompra : COMISION_COMPRA;
   const cVent = comisionVenta !== undefined && comisionVenta !== null ? comisionVenta : COMISION_VENTA;
   const bruto = (venta - compra) * acciones;
-  const gananciaAntesImp = bruto - (cComp + cVent);
-  const impuesto = Math.max(gananciaAntesImp, 0) * TAX_RATE;
-  return gananciaAntesImp - impuesto;
+  return bruto - (cComp + cVent);
 }
 
 /** Recorre el ledger en orden de fecha y vuelve a emparejar ventas con
