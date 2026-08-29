@@ -1,3 +1,7 @@
+/* VERSION: 17 (29/08/2026) - rentabilidad por periodos (mes en curso, ano y
+desde el inicio) sobre el capital inicial, que es lo que se nota en la cuenta.
+El capital se configura en Ajustes avanzados; por defecto 200 EUR. */
+
 /* VERSION: 16 (28/08/2026) - tramos progresivos de la base del ahorro
 (19/21/23/27/30%) en vez de un 19% plano. Acumulativos, como los aplica
 Hacienda: con 8.000 EUR de ganancia se paga el 19% de los primeros 6.000 y el
@@ -135,6 +139,49 @@ const TRAMOS_AHORRO = [
   { hasta: 300000, tipo: 0.27 },
   { hasta: Infinity, tipo: 0.30 },
 ];
+
+const CAPITAL_INICIAL_DEFECTO = 200;
+
+function obtenerCapitalInicial() {
+  try {
+    const v = localStorage.getItem('capital-inicial');
+    return v !== null ? parseFloat(v) : CAPITAL_INICIAL_DEFECTO;
+  } catch (e) { return CAPITAL_INICIAL_DEFECTO; }
+}
+
+function guardarCapitalInicial(valor) {
+  try { localStorage.setItem('capital-inicial', String(valor)); }
+  catch (e) { console.error('No se pudo guardar el capital inicial', e); }
+}
+
+/** Rentabilidad de un periodo sobre el CAPITAL, que es lo que se nota en la
+ *  cuenta: ganancia dividida entre el dinero con el que se empezo.
+ *
+ *  Se descarto medirla sobre "lo invertido en cada operacion" porque con una
+ *  cuenta que recicla el mismo dinero ese numero engana: tres operaciones de
+ *  200 EUR suman 600 EUR invertidos, pero el dinero siempre fueron 200 y lo
+ *  que interesa saber es cuanto ha crecido.
+ */
+function rentabilidadPeriodo(ledger, desde, hasta) {
+  const capital = obtenerCapitalInicial();
+  let ganancia = 0;
+  let operaciones = 0;
+
+  ledger.filter(op => op.tipo === 'venta' && op.neto !== null).forEach(venta => {
+    const f = venta.fecha || '';
+    if (desde && f < desde) return;
+    if (hasta && f > hasta) return;
+    ganancia += venta.neto;
+    operaciones += 1;
+  });
+
+  return {
+    ganancia,
+    operaciones,
+    pct: capital > 0 ? (ganancia / capital) * 100 : null,
+    capital,
+  };
+}
 
 /** Agrupa las ventas cerradas por ano natural y arrastra las perdidas.
  *
