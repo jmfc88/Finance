@@ -1,4 +1,9 @@
 """
+VERSION: 12 (31/08/2026) - la regla POR DEFECTO pasa a ser la escalera real.
+En la v11 se anadio como variante de comparacion, pero el bucle principal
+seguia usando el trailing continuo que se elimino del bot el 25/08: las
+operaciones abiertas se evaluaban con reglas que ya no existen.
+
 VERSION: 11 (26/08/2026) - la simulacion mide por fin las reglas REALES.
 Hasta ahora comparaba variantes de trailing continuo, que es lo que hacia el
 bot antes del 25/08. Ese dia se quito el trailing y se puso la escalera de
@@ -379,8 +384,16 @@ def reconstruir(op, hist=None, regla=None):
     por un -14% la semana pasada, y en la operativa real esa posicion ya
     estaria cerrada. Mirar solo el precio final daria un resultado que
     nunca habria ocurrido."""
-    regla = regla or {"stop": STOP_INICIAL_PCT, "activacion": ACTIVACION_TRAILING_PCT,
-                      "trailing": TRAILING_PCT}
+    # La regla POR DEFECTO es la escalera real, la que manda bot.py: stop del
+    # -8%, al cruzar el equilibrio +2% se asegura 1 EUR, y en cada escalon de
+    # ganancia el stop sube para asegurar 3,5 puntos menos.
+    #
+    # Estaba puesto el trailing continuo, que es lo que hacia el bot ANTES del
+    # 25/08 y que ese dia se quito por completo. Resultado: las 45 operaciones
+    # abiertas se estaban evaluando con unas reglas que ya no existen, y la
+    # escalera solo aparecia como una variante mas de comparacion. La
+    # simulacion no estaba midiendo el sistema real.
+    regla = regla or {"tipo": "escalera", "stop": STOP_INICIAL_PCT}
     entrada = datetime.strptime(op["fecha_entrada"], "%Y-%m-%d")
     if hist is not None:
         return _recorrer(op, hist, regla)

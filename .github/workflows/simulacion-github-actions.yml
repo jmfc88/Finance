@@ -1,3 +1,6 @@
+# VERSION: 2 (31/08/2026) - cron al minuto 11 y SEIS pasadas al dia. Con
+# '30 6 * * 1-5' llevaba tres dias sin ejecutarse.
+#
 # VERSION: 1 (23/08/2026) - simulacion en paralelo. Abre operaciones ficticias
 # desde el ranking y reconstruye que habria pasado con las reglas del bot real.
 # NO toca ledger.json ni posiciones.json: solo escribe simulacion_operaciones.json
@@ -6,7 +9,33 @@ name: Simulacion en paralelo
 
 on:
   schedule:
-    - cron: '30 6 * * 1-5'   # 08:30 hora de Espana, de lunes a viernes
+    # SEIS pasadas al dia, una linea por hora y minuto 11, copiando el
+    # formato de "Actualizar ranking de candidatas", que lleva semanas
+    # ejecutandose sin fallar.
+    #
+    # Estaba en '30 6 * * 1-5' -una sola pasada, hora y minuto redondos- y el
+    # 31/08 se comprobo que llevaba TRES DIAS sin correr: el informe seguia
+    # fechado el 28. Los workflows programados de repositorios gratuitos van
+    # los ultimos en la cola de GitHub, y las horas redondas son donde mas
+    # cola hay.
+    #
+    # Seis pasadas sirven para dos cosas: si GitHub se salta una quedan cinco,
+    # y aunque la reconstruccion usa velas diarias, la del dia en curso se
+    # actualiza mientras el mercado esta abierto, asi que un stop que salta
+    # por la manana se detecta el mismo dia y no al siguiente.
+    #
+    # Correr varias veces no duplica nada: la simulacion es idempotente,
+    # reconstruye cada posicion desde su fecha de entrada con el historico
+    # completo de precios.
+    #
+    # Las horas evitan a proposito las del ranking (2,5,8,11,14,17 UTC) y las
+    # del bot de stop-loss (0,4,8,12,16,20 UTC), para no competir por la cola.
+    - cron: '11 1 * * 1-5'    # 03:11 España (verano)
+    - cron: '11 6 * * 1-5'    # 08:11 España
+    - cron: '11 9 * * 1-5'    # 11:11 España
+    - cron: '11 13 * * 1-5'   # 15:11 España
+    - cron: '11 18 * * 1-5'   # 20:11 España
+    - cron: '11 21 * * 1-5'   # 23:11 España
   workflow_dispatch: {}
 
 permissions:
