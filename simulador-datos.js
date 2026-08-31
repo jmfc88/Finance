@@ -1,3 +1,9 @@
+/* VERSION: 18 (31/08/2026) - el desplegable de tarjetas ya no repite el mismo
+valor varias veces el mismo dia. Salia una entrada por cada version guardada
+del ranking (siete al dia), asi que Lottomatica aparecia dos veces con la
+misma nota y Mota-Engil dos veces con 57 y 56,9. Ahora hay una entrada por
+valor y dia, la de mejor posicion. */
+
 /* VERSION: 17 (29/08/2026) - rentabilidad por periodos (mes en curso, ano y
 desde el inicio) sobre el capital inicial, que es lo que se nota en la cuenta.
 El capital se configura en Ajustes avanzados; por defecto 200 EUR. */
@@ -495,13 +501,24 @@ async function cargarTarjetasDisponibles() {
     if (!resp.ok) return []; /* 404 = fase3 todavia no ha corrido con la v11 */
     const datos = await resp.json();
 
-    const lista = [];
+    /* Una entrada por VALOR y DIA, no una por version guardada.
+    
+    historial_tarjetas.json guarda una version cada vez que el ranking corre
+    (siete veces al dia), y aunque deduplica por huella, basta con que el
+    score se mueva una decima -de 57,0 a 56,9- para que se guarde otra. En el
+    desplegable eso salia como dos Lottomatica seguidas con la misma nota, o
+    dos Mota-Engil con 57 y 56,9. Nada de eso ayuda a elegir: el usuario solo
+    quiere marcar QUE candidata compro.
+    
+    Se conserva la version de mejor posicion en el ranking, que es la que mas
+    probablemente vio, y se anotan cuantas veces aparecio ese dia. */
+    const porTickerYDia = new Map();
     (datos.dias || []).forEach(dia => {
       (dia.tarjetas || []).forEach(t => {
         const apariciones = t.apariciones || [];
         const posiciones = apariciones.map(a => a.posicion).filter(p => p != null);
         const scores = apariciones.map(a => a.score).filter(x => x != null);
-        lista.push({
+        const entrada = {
           fecha: dia.fecha,
           ticker: t.ticker,
           nombre: t.nombre_empresa || t.ticker,
@@ -512,9 +529,26 @@ async function cargarTarjetasDisponibles() {
           mejor_posicion: posiciones.length ? Math.min.apply(null, posiciones) : null,
           score: scores.length ? scores[scores.length - 1] : (t.tarjeta || {}).score,
           tarjeta: t.tarjeta || {},
-        });
+          veces: 1,
+        };
+        const clave = `${dia.fecha}|${t.ticker}`;
+        const previa = porTickerYDia.get(clave);
+        if (!previa) {
+          porTickerYDia.set(clave, entrada);
+        } else {
+          previa.veces += 1;
+          /* Se queda la de mejor posicion; si empatan, la de score mas alto */
+          const mejorPos = (entrada.mejor_posicion || 999) < (previa.mejor_posicion || 999);
+          const mismaPos = (entrada.mejor_posicion || 999) === (previa.mejor_posicion || 999);
+          if (mejorPos || (mismaPos && (entrada.score || 0) > (previa.score || 0))) {
+            entrada.veces = previa.veces;
+            porTickerYDia.set(clave, entrada);
+          }
+        }
       });
     });
+
+    const lista = Array.from(porTickerYDia.values());
 
     lista.sort((a, b) => {
       if (a.fecha !== b.fecha) return a.fecha < b.fecha ? 1 : -1;
