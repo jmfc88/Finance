@@ -1,4 +1,15 @@
 """
+VERSION: 34 (31/08/2026) - mide la HORQUILLA real entre compra y venta
+(bid/ask, del mismo t.info que ya se descarga, cero peticiones extra) y la
+penaliza; a partir del 2% descarta la candidata.
+
+Motivo: el 31/08 se compro Bellevue Gold con un 4% de horquilla. Trade
+Republic lo aviso en pantalla, pero el sistema no lo habia mirado. Sobre
+202,80 EUR eran 8,11 EUR de coste oculto -mas del cuadruple de las dos
+comisiones- y obligaban a que la accion subiera un 5% solo para empezar a
+ganar. El filtro de liquidez que ya existia no lo caza porque mide el dinero
+negociado al dia, que es un proxy; esto mide el coste de verdad.
+
 VERSION: 33 (23/08/2026) - cuatro metricas nuevas sacadas del historico que YA
 se descargaba y se tiraba (la columna Volume). Coste: cero peticiones extra a
 Yahoo, que importa porque las peticiones son el punto fragil del sistema.
@@ -187,6 +198,21 @@ PENALIZACION_REGIMEN = {"favorable": 0.0, "neutro": -3.0, "adverso": -8.0}
 LIQUIDEZ_MINIMA = 100_000    # moneda local negociada al dia
 LIQUIDEZ_COMODA = 2_000_000  # a partir de aqui, penalizacion cero
 PENALIZACION_LIQUIDEZ_MAX = -8.0
+
+# HORQUILLA (spread) entre el precio de compra y el de venta, en %.
+#
+# Añadido el 31/08/2026 despues de comprar Bellevue Gold con un 4% de
+# horquilla: Trade Republic lo aviso en la pantalla de confirmacion, pero el
+# sistema no lo habia mirado. Sobre 202,80 EUR eran 8,11 EUR de coste oculto,
+# mas del cuadruple de las dos comisiones juntas, y obligaba a que la accion
+# subiera un 5% solo para empezar a ganar.
+#
+# El filtro de liquidez que ya existia no lo caza: mide el dinero negociado al
+# dia, que es un PROXY de la horquilla. Aqui se mide la horquilla de verdad,
+# que es el coste que se paga.
+HORQUILLA_COMODA = 0.4    # hasta aqui, penalizacion cero
+HORQUILLA_MAXIMA = 2.0    # a partir de aqui se descarta directamente
+PENALIZACION_HORQUILLA_MAX = -10.0
 
 # Volatilidad: a partir de la comoda empieza a penalizar; en la extrema, tope.
 VOLATILIDAD_COMODA = 2.5   # % de desviacion tipica diaria
@@ -834,6 +860,45 @@ def metricas_de_volumen(hist):
     return r
 
 
+def horquilla_pct(info):
+    """Diferencia entre lo que piden los vendedores y lo que ofrecen los
+    compradores, en % sobre el precio de compra. Es el coste que se paga al
+    entrar y salir, y no aparece en ninguna comision.
+
+    Sale del mismo t.info que ya se descarga, asi que no cuesta ni una
+    peticion mas.
+
+    Devuelve None si Yahoo no da los datos o vienen a cero, que pasa a menudo
+    con el mercado cerrado. None significa "no se sabe" y nunca penaliza: es
+    preferible dejar pasar una candidata a castigarla por un hueco de datos.
+
+    LIMITACION conocida: es la horquilla del mercado principal. Si se compra
+    la misma empresa en otra bolsa (la linea alemana de una australiana, por
+    ejemplo) la horquilla real puede ser distinta. Aun asi sirve, porque un
+    valor poco negociado lo es en todas partes.
+    """
+    try:
+        bid = info.get("bid")
+        ask = info.get("ask")
+        if not bid or not ask or bid <= 0 or ask <= 0 or ask < bid:
+            return None
+        return round((ask - bid) / ask * 100, 2)
+    except Exception:
+        return None
+
+
+def puntos_horquilla(horquilla):
+    """Penalizacion pura (nunca suma), como liquidez y volatilidad."""
+    if horquilla is None:
+        return 0.0
+    if horquilla <= HORQUILLA_COMODA:
+        return 0.0
+    if horquilla >= HORQUILLA_MAXIMA:
+        return PENALIZACION_HORQUILLA_MAX
+    proporcion = (horquilla - HORQUILLA_COMODA) / (HORQUILLA_MAXIMA - HORQUILLA_COMODA)
+    return round(PENALIZACION_HORQUILLA_MAX * proporcion, 2)
+
+
 def puntos_liquidez(liquidez_dia):
     """Penalizacion (nunca suma). Con 200-500 EUR la horquilla entre compra y
     venta es un coste real: en un valor muy negociado son centimos, en uno
@@ -878,7 +943,7 @@ def puntos_volatilidad(volatilidad_diaria_pct):
     return round(PENALIZACION_VOLATILIDAD_MAX * proporcion, 2)
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None):
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None, horquilla=None):
     """
     Score de 0 a 100 de verdad — reescalado (11/08/2026) para que la suma
     de los máximos de los 10 factores dé exactamente 100 (antes sumaban
@@ -948,6 +1013,7 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     # bien, por lo que el maximo teorico se mantiene en 100 exactos.
     score += puntos_liquidez(vol.get("liquidez_dia"))
     score += puntos_volatilidad(vol.get("volatilidad_diaria_pct"))
+    score += puntos_horquilla(horquilla)
 
     return round(score, 1)
 
@@ -1024,6 +1090,17 @@ def evaluar(ticker):
         if momentum_30d is not None and momentum_indice is not None:
             fuerza_relativa = round(momentum_30d - momentum_indice, 1)
 
+        # Horquilla: se descarta antes de puntuar, porque por muy buena que
+        # sea la candidata un 2% de horquilla ya cuesta 4 EUR sobre una
+        # posicion de 200, el doble que las dos comisiones juntas.
+        horquilla = horquilla_pct(info)
+        if horquilla is not None and horquilla >= HORQUILLA_MAXIMA:
+            coste = round(200 * horquilla / 100, 2)
+            return {"ticker": ticker, "descartado": True,
+                    "motivo": f"Horquilla del {horquilla}% entre compra y venta - "
+                              f"sobre 200 EUR son {coste} EUR de coste oculto, "
+                              f"mas que las dos comisiones juntas"}
+
         vol = metricas_de_volumen(hist)
         if vol["liquidez_dia"] is not None and vol["liquidez_dia"] < LIQUIDEZ_MINIMA:
             return {"ticker": ticker, "descartado": True,
@@ -1032,7 +1109,7 @@ def evaluar(ticker):
 
         score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec,
                                tendencia_analistas_valor, empujon_consenso_real, momentum_5d,
-                               fuerza_relativa, regimen, vol)
+                               fuerza_relativa, regimen, vol, horquilla)
         if catalizador:
             score += 7.7  # empujón notable pero que no domine el resto del método
 
@@ -1064,6 +1141,8 @@ def evaluar(ticker):
             "indice_referencia": indice,
             "version_scoring": VERSION_SCORING,
             "metodo_datos": metodo_datos,
+            "horquilla_pct": limpio(horquilla),
+            "coste_horquilla_200e": limpio(round(200 * horquilla / 100, 2)) if horquilla else None,
             "liquidez_dia": limpio(vol["liquidez_dia"]),
             "volumen_relativo": limpio(vol["volumen_relativo"]),
             "volatilidad_diaria_pct": limpio(vol["volatilidad_diaria_pct"]),
