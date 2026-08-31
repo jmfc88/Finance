@@ -1,0 +1,199 @@
+[
+  {
+    "clave_operacion": "compra|I56|2026-08-24|24.45|8",
+    "ticker": "I56",
+    "nombre": "Lottomatica",
+    "isin": null,
+    "fecha_compra": "2026-08-24",
+    "precio_compra": 24.45,
+    "acciones": 8,
+    "comision": 1.39,
+    "tarjeta_fecha": "2026-08-24",
+    "tarjeta_hora_primera": "06:12",
+    "tarjeta_hora_ultima": "06:12",
+    "posicion_ranking": 1,
+    "dias_desde_tarjeta": 0,
+    "score_tarjeta": 58.6,
+    "version_scoring": 33,
+    "apariciones": [
+      {
+        "hora": "06:12",
+        "posicion": 1,
+        "precio": 24.44,
+        "score": 58.6
+      }
+    ],
+    "registrado": "2026-08-24T07:47:58.109Z",
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 58.6,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 11.4,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 31.95625,
+      "dispersion_pct": 18.3,
+      "momentum_30d_pct": 1.1,
+      "momentum_5d_pct": -0.2,
+      "fuerza_relativa_pct": -3,
+      "liquidez_dia": 13742968.516215324,
+      "volumen_relativo": 0.62,
+      "volatilidad_diaria_pct": 1.58,
+      "sesiones_hasta_stop": 62,
+      "distancia_max_52s_pct": -11.2,
+      "metodo_datos": "periodo_220d",
+      "regimen_mercado": "favorable",
+      "rsi_14": 57.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 24.87,
+      "sma200": 23.41,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "El MIB supera los 52.000 puntos; Amplifon mantiene su racha alcista - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Acciones Lottomatica Group S.p.A. - Cotizacion LTMC Borsa Italiana - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Cotización Lottomatica - LTMC - mx.advfn.com",
+            "fuente": "mx.advfn.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Acciones Lottomatica Group S.p.A. - Cotizacion LTMC Borsa Italiana - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., junto con sus filiales, opera en el mercado del juego en Italia. La compañía opera a través de los segmentos en línea, franquicias deportivas y franquicias de juegos.",
+      "version_scoring": 33
+    }
+  },
+  {
+    "clave_operacion": "compra|BGL.AX|2026-08-31|1.009|200",
+    "ticker": "BGL.AX",
+    "nombre": "Bellevue Gold Limited",
+    "isin": null,
+    "fecha_compra": "2026-08-31",
+    "precio_compra": 1.009,
+    "acciones": 200,
+    "comision": 1,
+    "tarjeta_fecha": "2026-08-30",
+    "tarjeta_hora_primera": "08:40",
+    "tarjeta_hora_ultima": "18:29",
+    "posicion_ranking": 5,
+    "dias_desde_tarjeta": 1,
+    "score_tarjeta": 53.1,
+    "precio_en_tarjeta": 1.66,
+    "version_scoring": 33,
+    "apariciones": [
+      {
+        "hora": "08:40",
+        "posicion": 5,
+        "precio": 1.66,
+        "score": 53.1
+      },
+      {
+        "hora": "10:50",
+        "posicion": 5,
+        "precio": 1.66,
+        "score": 53.1
+      },
+      {
+        "hora": "18:29",
+        "posicion": 6,
+        "precio": 1.66,
+        "score": 53.1
+      }
+    ],
+    "registrado": "2026-08-31T06:29:53.519Z",
+    "tarjeta": {
+      "ticker": "BGL.AX",
+      "nombre_empresa": "Bellevue Gold Limited",
+      "isin": null,
+      "sector": "Basic Materials",
+      "precio_actual": 1.66,
+      "potencial_pct": 6.6,
+      "score": 53.1,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 25,
+        "pct_vender": 0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 1.76875,
+      "dispersion_pct": 25,
+      "momentum_30d_pct": 37.8,
+      "momentum_5d_pct": 0,
+      "fuerza_relativa_pct": 34.1,
+      "liquidez_dia": 9246185.126872241,
+      "volumen_relativo": 1.15,
+      "volatilidad_diaria_pct": 2.95,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -16.6,
+      "metodo_datos": "periodo_220d",
+      "regimen_mercado": "favorable",
+      "rsi_14": 63.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 1.4,
+      "sma200": 1.54,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Bellevue Gold (ASX:BGL) Growth Outlook Strengthens as Production and Cash Flow Improve - Kalkine",
+            "fuente": "Kalkine",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Did A$850m Bellevue Gold Contract Just Shift Perenti's (ASX:PRN) Investment Narrative? - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Bellevue Gold (ASX:BGL): Why This Gold Stock Is Drawing Fresh Attention - Kalkine Media",
+            "fuente": "Kalkine Media",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Bellevue Gold Limited, junto con sus subsidiarias, se dedica a la exploración, desarrollo, extracción y procesamiento de propiedades de oro en Australia. La empresa tiene principalmente intereses en el proyecto de oro Bellevue ubicado al noroeste de Leinster en la región Goldfields de Australia Occidental.",
+      "version_scoring": 33
+    }
+  }
+]
