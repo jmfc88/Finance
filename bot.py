@@ -1,8 +1,12 @@
 """
+VERSION: 26 (31/08/2026) - fuera el aviso [AMPLIA EL HORARIO]. Estaba roto con
+los mercados que cruzan la medianoche (el australiano lo disparaba cada 13
+minutos diciendo que el bot "solo corre de 0:00 a 24:00") y era redundante:
+el cron ya corre las 24 horas y quien decide es marketState de Yahoo.
+
 VERSION: 25 (27/08/2026) - FRANJA_CRON_UTC pasa a 24 h: el workflow ya no
 recorta horas y es este archivo quien decide, preguntando a Yahoo si el
-mercado de cada accion esta abierto. El aviso [AMPLIA EL HORARIO] se queda
-por si algun dia se vuelve a recortar la franja, pero ahora no salta nunca.
+mercado de cada accion esta abierto.
 
 VERSION: 25 (27/08/2026) - avisa si una posicion cotiza en un mercado que el
 cron del workflow no cubre. El bot no puede ampliarse el horario solo (GitHub
@@ -287,49 +291,20 @@ NIVELES_GANANCIA = [7, 10, 12.5, 15, 20, 25, 30]
 # Horario de cada mercado en UTC, para avisar si el cron del workflow se queda
 # corto. Son aproximados y con margen: solo sirven para detectar un descuadre
 # grande, no para decidir si mirar o no (eso lo dice marketState de Yahoo).
-HORARIOS_MERCADO = {
-    ".MI": (7, 16), ".MC": (7, 16), ".PA": (7, 16), ".DE": (7, 16),
-    ".AS": (7, 16), ".BR": (7, 16), ".LS": (7, 16), ".HE": (7, 16),
-    ".VI": (7, 16), ".SW": (7, 16), ".L": (8, 17),
-    ".TO": (13, 21), ".SA": (13, 21),
-    ".AX": (23, 6), ".T": (0, 7), ".HK": (1, 9),
-    ".SZ": (1, 8), ".SS": (1, 8), ".NZ": (21, 4),
-}
-# Franja que cubre el cron del workflow, en UTC. Si se cambia alli, cambiar
-# aqui: sirve para que el bot detecte que una posicion nueva se ha quedado
-# fuera de vigilancia y lo diga, en vez de callarse.
-FRANJA_CRON_UTC = (0, 24)   # el workflow corre las 24 h, asi que nunca avisa
-
-
-def mercado_de(ticker):
-    for suf, horas in HORARIOS_MERCADO.items():
-        if ticker.upper().endswith(suf):
-            return suf, horas
-    return "US", (13, 21)   # sin sufijo: Estados Unidos
-
-
-def avisar_si_fuera_de_horario(posiciones):
-    """Comprueba que el cron cubre los mercados de lo que hay abierto.
-
-    El bot no puede cambiar su propio horario: GitHub no deja que el token de
-    Actions modifique archivos de .github/workflows. Asi que lo unico sensato
-    es detectarlo y decirlo, para no quedarse vigilando a ciegas sin que nadie
-    se entere.
-    """
-    ini_c, fin_c = FRANJA_CRON_UTC
-    for pos in posiciones:
-        suf, (ini, fin) = mercado_de(pos.get("ticker", ""))
-        cubierto = ini >= ini_c and fin <= fin_c if ini < fin else False
-        if not cubierto:
-            notificar(
-                f"[AMPLÍA EL HORARIO] {pos['ticker']}",
-                f"Esta posición cotiza en un mercado ({suf}) que abre de {ini}:00 a "
-                f"{fin}:00 UTC, y el bot solo corre de {ini_c}:00 a {fin_c}:00. "
-                f"Parte de su sesión queda sin vigilar. Hay que ampliar el cron en "
-                f"bot-stoploss-github-actions.yml.",
-                urgente=False,
-            )
-
+# NOTA (31/08/2026): aqui vivia una tabla de horarios por mercado y un aviso
+# [AMPLIA EL HORARIO] que saltaba cuando una posicion cotizaba fuera de la
+# franja del cron. Se ha quitado por dos motivos:
+#
+#   1. Estaba mal. No sabia tratar los mercados que cruzan la medianoche: el
+#      australiano abre a las 23:00 UTC y cierra a las 6:00, y la comprobacion
+#      lo daba por descubierto SIEMPRE. Con el cron corriendo las 24 horas
+#      mandaba "el bot solo corre de 0:00 a 24:00", que no tiene sentido, y lo
+#      repetia cada 13 minutos.
+#
+#   2. Ya no hace falta. El cron corre las 24 horas y quien decide si toca
+#      mirar es marketState de Yahoo, unos renglones mas abajo. La tabla era
+#      una duplicacion de esa informacion, y encima peor: hecha a mano, sin
+#      cambios de hora y desactualizandose sola.
 
 def cargar_margen_cruce():
     """Margen muerto alrededor del punto de equilibrio, en %.
@@ -773,7 +748,6 @@ def procesar_posicion(pos):
 def ejecutar():
     posiciones = cargar_posiciones()
     posiciones = reconciliar_con_ledger(posiciones)
-    avisar_si_fuera_de_horario(posiciones)
 
     if not posiciones:
         guardar_posiciones(posiciones)  # guarda por si la reconciliación vació la lista (todo vendido)
