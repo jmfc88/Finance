@@ -1,3 +1,6 @@
+# VERSION: 3 (01/09/2026) - sube tambien simulacion_estado.json, con la marca
+# de tiempo de la ultima ejecucion.
+#
 # VERSION: 2 (31/08/2026) - cron al minuto 11 y SEIS pasadas al dia. Con
 # '30 6 * * 1-5' llevaba tres dias sin ejecutarse.
 #
@@ -5,7 +8,7 @@
 # desde el ranking y reconstruye que habria pasado con las reglas del bot real.
 # NO toca ledger.json ni posiciones.json: solo escribe simulacion_operaciones.json
 # y simulacion_informe.md. Corre una vez al dia, despues del ranking de la manana.
-name: Simulación en paralelo
+name: Simulacion en paralelo
 
 on:
   schedule:
@@ -61,7 +64,10 @@ jobs:
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          for f in simulacion_operaciones.json simulacion_informe.md; do
+          # simulacion_estado.json lleva la marca de tiempo de cada pasada;
+          # sin anadirlo aqui se generaria en el runner y se perderia al
+          # terminar, y el visor nunca sabria cuando se ejecuto por ultima vez.
+          for f in simulacion_operaciones.json simulacion_informe.md simulacion_estado.json; do
             if [ -f "$f" ]; then git add "$f"; else echo "aviso: $f todavia no existe, se omite"; fi
           done
           git diff --staged --quiet || git commit -m "actualiza simulacion en paralelo"
