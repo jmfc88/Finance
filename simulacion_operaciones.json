@@ -3,7 +3,7 @@
     "id": "LTMC.MI-2026-08-23",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 24.44,
     "acciones": 4.091653,
@@ -81,13 +81,35 @@
       "version_scoring": 33,
       "precio_actual": 24.44
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 25.1732,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 1.76,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.9288,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "LDO.MI-2026-08-23",
     "ticker": "LDO.MI",
     "nombre": "Leonardo S.p.a.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 56.25,
     "acciones": 1.777778,
@@ -169,7 +191,71 @@
       "version_scoring": 32,
       "precio_actual": 56.25
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 52.83,
+    "fecha_salida": "2026-08-31",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 57.375,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "EXO.AS-2026-08-23",
@@ -2219,7 +2305,7 @@
     "id": "HIAB.HE-2026-08-23",
     "ticker": "HIAB.HE",
     "nombre": "Hiab Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 62.35,
     "acciones": 1.603849,
@@ -2285,7 +2371,29 @@
       "version_scoring": 32,
       "precio_actual": 62.35
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 64.2205,
+    "fecha_salida": "2026-08-31",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 63.597,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "UNA.AS-2026-08-23",
@@ -2912,7 +3020,7 @@
     "id": "MRL.MC-2026-08-23",
     "ticker": "MRL.MC",
     "nombre": "MERLIN PROPERTIES SOCIMI, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 14.1,
     "acciones": 7.092199,
@@ -2979,7 +3087,35 @@
       "version_scoring": 33,
       "precio_actual": 14.1
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 13.2427,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -5.74,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 14.382,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "XYZ-2026-08-23",
@@ -4906,6 +5042,240 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Oracle Corporation ofrece productos y servicios que crean, ejecutan y respaldan marcos de tecnología de la información empresarial en todo el mundo. Su oferta de software como servicio en la nube de Oracle incluye varias aplicaciones de software en la nube, incluido el ERP de planificación de recursos empresariales en la nube de Oracle Fusion, EPM de gestión del rendimiento empresarial en la nube de Oracle Fusion..."
+    }
+  },
+  {
+    "id": "EGL.LS-2026-09-01",
+    "ticker": "EGL.LS",
+    "nombre": "Mota-Engil, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 4.778,
+    "acciones": 20.929259,
+    "invertido": 100.0,
+    "posicion_ranking": 3,
+    "tramo": "1-10",
+    "score": 57.8,
+    "potencial_pct": 40.2,
+    "tarjeta": {
+      "ticker": "EGL.LS",
+      "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+      "isin": "SG1O81915033",
+      "sector": "Industrials",
+      "score": 57.8,
+      "version_scoring": 33,
+      "precio_actual": 4.778,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 3
+      },
+      "precio_objetivo_medio": 6.7,
+      "dispersion_pct": 28.1,
+      "momentum_30d_pct": 2.7,
+      "momentum_5d_pct": 2.5,
+      "fuerza_relativa_pct": 2.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 66.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.61,
+      "sma200": 4.63,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 3563661.071773529,
+      "volumen_relativo": 2.07,
+      "volatilidad_diaria_pct": 1.38,
+      "sesiones_hasta_stop": 81,
+      "distancia_max_52s_pct": -19.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Mota-Engil Said to Win Deal for US-Backed Congo Copper Rail - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Earnings call transcript: Mota-Engil posts stronger H1 2026 profit, lifts outlook - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Mota-Engil wins Congo rail concession linked to US-backed Angola corridor - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Mota-Engil, SGPS, S.A. realiza obras públicas y privadas de construcción y servicios relacionados en Europa, África y América Latina. La empresa construye diversas infraestructuras, como carreteras, autopistas, aeropuertos, puertos, presas, ferrocarriles y edificios residenciales y comerciales, así como la construcción de industrias, hospitales y en áreas especializadas, como petróleo y gas, áridos, prefabricados..."
+    }
+  },
+  {
+    "id": "JMT.LS-2026-09-01",
+    "ticker": "JMT.LS",
+    "nombre": "Jerónimo Martins, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 18.04,
+    "acciones": 5.543237,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 46.0,
+    "potencial_pct": 25.7,
+    "tarjeta": {
+      "ticker": "JMT.LS",
+      "nombre_empresa": "Jerónimo Martins, SGPS, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 46.0,
+      "version_scoring": 33,
+      "precio_actual": 18.04,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.6,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 4.5,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 22.68182,
+      "dispersion_pct": 92.1,
+      "momentum_30d_pct": 2.4,
+      "momentum_5d_pct": -0.9,
+      "fuerza_relativa_pct": 2.3,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 68.4,
+      "tendencia_tecnica": "mixta",
+      "sma50": 17.14,
+      "sma200": 19.0,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 21504896.38020897,
+      "volumen_relativo": 0.86,
+      "volatilidad_diaria_pct": 1.24,
+      "sesiones_hasta_stop": 102,
+      "distancia_max_52s_pct": -16.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Short Interest in Jeronimo Martins SGPS SA (OTCMKTS:JRONY) Rises By 67.3% - marketbeat.com",
+            "fuente": "marketbeat.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Jeronimo Martins SGPS (OTCMKTS:JRONY) Stock Price Crosses Above 50 Day Moving Average - Here's Why - marketbeat.com",
+            "fuente": "marketbeat.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Jerónimo Martins, SGPS, S.A.: Líder de la distribución en Polonia y Portugal - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Jerónimo Martins, SGPS, S.A.: Líder de la distribución en Polonia y Portugal - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Jerónimo Martins, SGPS, S.A. opera en el sector de la distribución alimentaria en Portugal, Polonia, Colombia, Eslovaquia e internacionalmente. La compañía opera a través de los segmentos Portugal Retail, Portugal Cash & Carry, Polonia Retail, Polonia Salud y Belleza y Colombia Retail."
+    }
+  },
+  {
+    "id": "SAN.PA-2026-09-01",
+    "ticker": "SAN.PA",
+    "nombre": "Sanofi",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 76.89,
+    "acciones": 1.300559,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 44.4,
+    "potencial_pct": 22.6,
+    "tarjeta": {
+      "ticker": "SAN.PA",
+      "nombre_empresa": "Sanofi",
+      "isin": "FR001400UEY9",
+      "sector": "Healthcare",
+      "score": 44.4,
+      "version_scoring": 33,
+      "precio_actual": 76.89,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 8.3,
+        "pct_vender": 0.0,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 94.2787,
+      "dispersion_pct": 43.6,
+      "momentum_30d_pct": 3.2,
+      "momentum_5d_pct": -2.3,
+      "fuerza_relativa_pct": 3.1,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 76.21,
+      "sma200": 76.28,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 108641562.8915062,
+      "volumen_relativo": 0.87,
+      "volatilidad_diaria_pct": 0.93,
+      "sesiones_hasta_stop": 179,
+      "distancia_max_52s_pct": -10.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Berenberg mantiene la recomendación de compra para Sanofi antes de la publicación de los resultados del ensayo de fase 2b de su fármaco para el asma. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sanofi to lay off 229 Blueprint Medicines staffers, close Cambridge offices following acquisition - Fierce Pharma",
+            "fuente": "Fierce Pharma",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sanofi despedirá a 229 empleados y cerrará dos instalaciones tras la adquisición de BluePrint Medicines - El Español",
+            "fuente": "El Español",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Sanofi se dedica a la investigación, desarrollo, fabricación y comercialización de soluciones terapéuticas. Proporciona inmunología e inflamación, enfermedades raras, neurología, oncología y otras vacunas."
     }
   }
 ]
