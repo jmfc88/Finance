@@ -1,4 +1,11 @@
 """
+VERSION: 14 (01/09/2026) - la clasificacion mira PRIMERO el dinero ganado y
+solo despues las sesiones. Seis operaciones que ganaron 1,00 EUR salian como
+"nefasta" y una como "perdida", porque PLANO_MARGEN (3 EUR) se trago todos los
+resultados pequenos en positivo. Con la escalera, +1,00 EUR es el resultado
+mas frecuente -es el stop que asegura 1 EUR al cruzar el equilibrio- asi que
+el fallo contaminaba casi todo el analisis.
+
 VERSION: 13 (01/09/2026) - DOS arreglos:
 
 (b) El stop se comprueba ANTES de subirlo, no despues. Dentro de una vela
@@ -624,30 +631,41 @@ def _recorrer(op, hist, regla):
 
 
 def clasificar(neto, sesiones, motivo, llego_al_objetivo):
-    """Traduce el resultado a una palabra. Es lo que permitira, dentro de unas
-    semanas, preguntar cosas como "¿que tienen en comun las tarjetas que
-    acabaron NEFASTAS?" en vez de mirar una nube de porcentajes.
+    """Traduce el resultado a una palabra, mirando PRIMERO el dinero.
 
-    Ojo con PLANO: no es neutro. Con 2 EUR de comisiones sobre 100 invertidos,
-    quedarse veinte dias sin moverse ES perder — y ademas ocupa una de las
-    pocas posiciones disponibles. Una candidata que acaba plana a menudo es
-    peor que una que cae rapido y libera el dinero."""
+    El 01/09 aparecio un fallo gordo: seis operaciones que habian GANADO 1,00
+    EUR salian etiquetadas como "nefasta" y otra como "perdida". El motivo era
+    que PLANO_MARGEN estaba en 3 EUR, asi que un +1,00 no contaba como
+    positivo y caia en la clasificacion por sesiones, que solo tiene sentido
+    para las que pierden.
+
+    Ese umbral se puso cuando el sistema llevaba trailing y un resultado de
+    exactamente +1,00 EUR no existia. Con la escalera si existe, y ademas es
+    de lo mas frecuente: es justo el stop que asegura 1 EUR al cruzar el
+    equilibrio. Llamar "nefasta" a una operacion que hizo exactamente lo que
+    se le pedia falsea todo el analisis por factores.
+
+    Ahora el orden es: si gano dinero, no puede ser nefasta ni perdida. El
+    numero de sesiones solo distingue ENTRE LAS QUE PIERDEN.
+    """
     if neto >= UMBRAL_TOP:
         return "top", "Ganancia grande. Esta es la que compensa a todas las demas."
     if neto >= UMBRAL_BENEFICIO:
         return "beneficio", f"Dejo {neto:.2f} EUR limpios: por encima del liston de los 5 EUR."
-    if neto > PLANO_MARGEN:
-        return "flojo", "Acabo en positivo pero sin llegar a los 5 EUR limpios."
+    if neto > 0.01:
+        return "flojo", (f"Acabo en positivo ({neto:.2f} EUR) pero sin llegar a los 5 EUR "
+                         "limpios. La escalera protegio la ganancia, aunque fuera pequena.")
+
+    # A partir de aqui, todas pierden o se quedan a cero.
     if motivo == "plazo maximo" and abs(neto) <= PLANO_MARGEN:
         return "plano", ("Veinte dias sin moverse. Con las comisiones esto es perder, "
                          "y ademas tuvo bloqueada una posicion todo ese tiempo.")
     if motivo != "plazo maximo" and sesiones <= SESIONES_NEFASTA:
-        return "nefasta", (f"El stop salto en solo {sesiones} sesion{'es' if sesiones != 1 else ''}. "
-                           "La entrada estaba mal desde el principio: aqui falla la recomendacion, "
-                           "no el mercado.")
-    return "perdida", ("Aguanto un tiempo y acabo saltando el stop. La tesis tardo en romperse; "
-                       "puede ser el mercado y no la seleccion.")
-
+        return "nefasta", (f"El stop salto en solo {sesiones} sesion{'es' if sesiones != 1 else ''} "
+                           f"y con perdida ({neto:.2f} EUR). La entrada estaba mal desde el "
+                           "principio: aqui falla la recomendacion, no el mercado.")
+    return "perdida", ("Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo "
+                       "en romperse; puede ser el mercado y no la seleccion.")
 
 def cerrar(op, precio_salida, fecha, sesiones, motivo, precio_7d, precio_equilibrio,
            llego_al_objetivo=False, sesiones_hasta_armar=None):
