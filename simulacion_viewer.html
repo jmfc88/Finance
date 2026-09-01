@@ -1,8 +1,8 @@
-<!DOC
-  <div id="ultima-ejecucion" style="font-size:13px; opacity:.75; margin-top:2px;"></div>TYPE html>
-<!-- VERSION: 4 (01/09/2026) - ensena la fecha de los ultimos datos bajo el
-titulo, y avisa en rojo si han pasado dos dias o mas. El 31/08 el workflow
-estuvo tres dias parado y solo se noto abriendo el informe por dentro. -->
+<!DOCTYPE html>
+<!-- VERSION: 5 (01/09/2026) - ensena la HORA de la ultima ejecucion en hora
+local, leida de simulacion_estado.json, y avisa si han pasado 6 horas o mas.
+La v4 solo tenia la fecha, que con seis pasadas al dia no dice nada.
+Ademas repara el DOCTYPE, que la v4 partio en dos al insertar el div. -->
 <!-- VERSION: 3 (24/08/2026) - dos correcciones vistas en pantalla: decia que
 las posiciones se cierran "a los 30 dias" cuando desde la v9 son 20, y
 mostraba "TRAMO UNDEFINED" en las operaciones antiguas que aun llevaban el
@@ -102,6 +102,7 @@ No toca nada: solo lee del repo. -->
 <header>
   <h1>Simulación en paralelo</h1>
   <div class="sub" id="estado">cargando…</div>
+  <div class="sub" id="ultima-ejecucion" style="opacity:.75;"></div>
   <div class="config">
     <input id="repo" type="text" value="jmfc88/Finance">
     <button onclick="cargar()">Traer datos</button>
@@ -150,19 +151,34 @@ async function cargar(){
   document.getElementById('estado').textContent =
     `${cerradas.length} cerradas · ${abiertas.length} abiertas · ${ops.length} en total`;
 
-  /* Fecha de la ultima ejecucion, sacada de la fecha de salida mas reciente o,
-  si no hay cerradas, de la entrada mas reciente. Sirve para detectar de un
-  vistazo que el workflow lleva dias parado: el 31/08 estuvo tres dias sin
-  correr y solo se noto al mirar el informe por dentro. */
-  const fechas = ops.map(o => o.fecha_salida || o.fecha_entrada).filter(Boolean).sort();
-  const ultima = fechas.length ? fechas[fechas.length - 1] : null;
+  /* Hora de la ultima ejecucion, leida de simulacion_estado.json, que
+  simulacion.py escribe en cada pasada. Las operaciones solo guardan FECHA sin
+  hora, asi que con seis pasadas al dia no servian para esto.
+
+  Se guarda en UTC y se pasa aqui a hora local: GitHub Actions corre en UTC y
+  el usuario esta en España, con una o dos horas de diferencia segun la epoca
+  del año. */
   const cab = document.getElementById('ultima-ejecucion');
-  if (cab && ultima) {
-    const dias = Math.floor((new Date() - new Date(ultima)) / 86400000);
-    const alerta = dias >= 2;
-    cab.innerHTML = `Últimos datos: <b>${ultima}</b>` +
-      (dias <= 0 ? ' (hoy)' : dias === 1 ? ' (ayer)' : ` (hace ${dias} días)`) +
-      (alerta ? ' <span style="color:var(--brick);">· ¿se ha parado el workflow?</span>' : '');
+  if (cab) {
+    try {
+      const r = await fetch(`https://raw.githubusercontent.com/${repo}/main/simulacion_estado.json?t=${Date.now()}`);
+      if (!r.ok) throw new Error('sin datos');
+      const est = await r.json();
+      const t = new Date(est.ultima_ejecucion_utc);
+      const horas = (new Date() - t) / 3600000;
+      const cuando = t.toLocaleString('es-ES', {
+        weekday: 'short', day: 'numeric', month: 'short',
+        hour: '2-digit', minute: '2-digit',
+      });
+      /* Con seis pasadas al dia, cuatro horas sin ejecutarse ya es raro. */
+      const parado = horas >= 6;
+      cab.innerHTML = `Última ejecución: <b>${cuando}</b>` +
+        (horas < 1 ? ' (hace menos de una hora)'
+                   : ` (hace ${Math.floor(horas)} h)`) +
+        (parado ? ' <span style="color:var(--brick);">· el workflow puede estar parado</span>' : '');
+    } catch (e) {
+      cab.textContent = 'No se pudo leer la hora de la última ejecución.';
+    }
   }
 
   let html = '';
