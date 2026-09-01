@@ -1,3 +1,6 @@
+# VERSION: 4 (01/09/2026) - crons al minuto 14 en vez del 11, para no pedir
+# turno a la vez que el ranking y el bot, que ya usan el 11.
+#
 # VERSION: 3 (01/09/2026) - sube tambien simulacion_estado.json, con la marca
 # de tiempo de la ultima ejecucion.
 #
@@ -12,9 +15,12 @@ name: Simulacion en paralelo
 
 on:
   schedule:
-    # SEIS pasadas al dia, una linea por hora y minuto 11, copiando el
-    # formato de "Actualizar ranking de candidatas", que lleva semanas
-    # ejecutandose sin fallar.
+    # SEIS pasadas al dia, una linea por hora y minuto 14.
+    #
+    # El minuto 14 y no el 11: el ranking y el bot de stop-loss ya usan el 11,
+    # y aunque sus horas son distintas, tener los tres workflows del mismo
+    # repositorio pidiendo turno en el mismo minuto no ayuda. Con el 14 no
+    # coinciden ni por casualidad.
     #
     # Estaba en '30 6 * * 1-5' -una sola pasada, hora y minuto redondos- y el
     # 31/08 se comprobo que llevaba TRES DIAS sin correr: el informe seguia
@@ -33,12 +39,12 @@ on:
     #
     # Las horas evitan a proposito las del ranking (2,5,8,11,14,17 UTC) y las
     # del bot de stop-loss (0,4,8,12,16,20 UTC), para no competir por la cola.
-    - cron: '11 1 * * 1-5'    # 03:11 España (verano)
-    - cron: '11 6 * * 1-5'    # 08:11 España
-    - cron: '11 9 * * 1-5'    # 11:11 España
-    - cron: '11 13 * * 1-5'   # 15:11 España
-    - cron: '11 18 * * 1-5'   # 20:11 España
-    - cron: '11 21 * * 1-5'   # 23:11 España
+    - cron: '14 1 * * 1-5'    # 03:11 España (verano)
+    - cron: '14 6 * * 1-5'    # 08:11 España
+    - cron: '14 9 * * 1-5'    # 11:11 España
+    - cron: '14 13 * * 1-5'   # 15:11 España
+    - cron: '14 18 * * 1-5'   # 20:11 España
+    - cron: '14 21 * * 1-5'   # 23:11 España
   workflow_dispatch: {}
 
 permissions:
