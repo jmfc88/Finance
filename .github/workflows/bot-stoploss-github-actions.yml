@@ -1,3 +1,6 @@
+# VERSION: 7 (01/09/2026) - crons al minuto 23. A las 08:11 UTC coincidian
+# exactamente con el ranking de candidatas, que tambien usa el minuto 11.
+#
 # VERSION: 6 (28/08/2026) - SEIS arranques al dia cada 4 horas, con un bucle
 # de 4h07 que mira el precio cada 13 minutos. Se copia el formato de crons de
 # "Actualizar ranking de candidatas" (una linea por hora, minuto 11), que lleva
@@ -25,15 +28,20 @@ on:
     # lleva semanas ejecutandose sin fallar en este mismo repositorio. Cuando
     # algo funciona y algo no, y no se sabe por que, se copia lo que funciona.
     #
-    # El minuto 11 tambien viene de ahi. A las :00, :15 o :30 la cola de
+    # El minuto 23 y no el 11: el ranking de candidatas corre a las 2, 5, 8,
+    # 11, 14 y 17 UTC en el minuto 11, asi que a las 08:11 UTC los dos
+    # workflows pedian turno EXACTAMENTE a la vez. Era el unico solape real
+    # que habia entre los tres del repositorio. Con el 23 desaparece.
+    #
+    # Sigue siendo un minuto raro a proposito: a las :00, :15 o :30 la cola de
     # GitHub esta llena y los workflows de repositorios gratuitos van los
     # ultimos.
-    - cron: '11 0 * * *'    # 02:11 España (verano)
-    - cron: '11 4 * * *'    # 06:11 España (verano)
-    - cron: '11 8 * * *'    # 10:11 España (verano)
-    - cron: '11 12 * * *'   # 14:11 España (verano)
-    - cron: '11 16 * * *'   # 18:11 España (verano)
-    - cron: '11 20 * * *'   # 22:11 España (verano)
+    - cron: '23 0 * * *'    # 02:11 España (verano)
+    - cron: '23 4 * * *'    # 06:11 España (verano)
+    - cron: '23 8 * * *'    # 10:11 España (verano)
+    - cron: '23 12 * * *'   # 14:11 España (verano)
+    - cron: '23 16 * * *'   # 18:11 España (verano)
+    - cron: '23 20 * * *'   # 22:11 España (verano)
   workflow_dispatch: {}
 
 # Solo una ejecucion viva a la vez. Cada una dura 4h07 y arrancan cada 4h, asi
