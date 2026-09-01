@@ -439,7 +439,7 @@
     "id": "URW.PA-2026-08-23",
     "ticker": "URW.PA",
     "nombre": "Unibail-Rodamco-Westfield SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 103.05,
     "acciones": 0.970403,
@@ -517,7 +517,35 @@
       "version_scoring": 33,
       "precio_actual": 103.05
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 96.7846,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -5.95,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 105.111,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "ANET-2026-08-23",
@@ -2953,7 +2981,7 @@
     "id": "FM.TO-2026-08-23",
     "ticker": "FM.TO",
     "nombre": "First Quantum Minerals Ltd.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 47.51,
     "acciones": 2.10482,
@@ -3014,7 +3042,35 @@
       "version_scoring": 32,
       "precio_actual": 47.51
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 44.6214,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -6.19,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 48.4602,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "MRL.MC-2026-08-23",
@@ -5276,6 +5332,378 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sanofi se dedica a la investigación, desarrollo, fabricación y comercialización de soluciones terapéuticas. Proporciona inmunología e inflamación, enfermedades raras, neurología, oncología y otras vacunas."
+    }
+  },
+  {
+    "id": "LTMC.MI-2026-09-01",
+    "ticker": "LTMC.MI",
+    "nombre": "Lottomatica Group S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 24.87,
+    "acciones": 4.020909,
+    "invertido": 100.0,
+    "posicion_ranking": 1,
+    "tramo": "1-10",
+    "score": 60.3,
+    "potencial_pct": 28.5,
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 60.3,
+      "version_scoring": 33,
+      "precio_actual": 24.87,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 11.4,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 31.95625,
+      "dispersion_pct": 18.3,
+      "momentum_30d_pct": 3.5,
+      "momentum_5d_pct": -1.4,
+      "fuerza_relativa_pct": 3.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 24.71,
+      "sma200": 23.59,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 12293665.88220787,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.27,
+      "sesiones_hasta_stop": 97,
+      "distancia_max_52s_pct": -9.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Compras generalizadas en Europa: Lottomatica lidera las ganancias en el MIB - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Ingresos antes de impuestos de Lottomatica Group S.P.A. – VIE:LTMC - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Cotización Lottomatica - LTMC - mx.advfn.com",
+            "fuente": "mx.advfn.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Ingresos antes de impuestos de Lottomatica Group S.P.A. – VIE:LTMC - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., junto con sus filiales, opera en el mercado del juego en Italia. La compañía opera a través de los segmentos en línea, franquicias deportivas y franquicias de juegos."
+    }
+  },
+  {
+    "id": "SHOP.TO-2026-09-01",
+    "ticker": "SHOP.TO",
+    "nombre": "Shopify Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 197.74,
+    "acciones": 0.505715,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 50.1,
+    "potencial_pct": 17.0,
+    "tarjeta": {
+      "ticker": "SHOP.TO",
+      "nombre_empresa": "Shopify Inc.",
+      "isin": "ARBCOM460341",
+      "sector": "Technology",
+      "score": 50.1,
+      "version_scoring": 33,
+      "precio_actual": 197.74,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 21.2,
+        "pct_vender": 1.9,
+        "total_analistas": 52
+      },
+      "precio_objetivo_medio": 231.3828,
+      "dispersion_pct": 27.5,
+      "momentum_30d_pct": 15.3,
+      "momentum_5d_pct": -4.8,
+      "fuerza_relativa_pct": 13.1,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 39.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 183.89,
+      "sma200": 181.78,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 406380055.7281494,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 4.61,
+      "sesiones_hasta_stop": 7,
+      "distancia_max_52s_pct": -20.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Shopify's B2B GMV Surges 76% in Q2 2026: Is the Growth Sustainable? - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Shopify Inc supera por 0,02$ las previsiones de BPA en el segundo trimestre del año - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Shopify vs Block: Which Beaten-Down Commerce Stock Has More Upside? - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Shopify ante resultados: fuerte crecimiento en GMV, pero la IA y los márgenes generan dudas - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Shopify Stock Surges After Company Issues Strong Q3 Revenue Outlook - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Shopify Inc supera por 0,02$ las previsiones de BPA en el segundo trimestre del año - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Shopify Inc., una empresa de tecnología comercial, proporciona herramientas para iniciar, escalar, comercializar y administrar negocios de varios tamaños en Canadá, Estados Unidos, Europa, Medio Oriente, África, Asia Pacífico y América Latina."
+    }
+  },
+  {
+    "id": "ZIP.AX-2026-09-01",
+    "ticker": "ZIP.AX",
+    "nombre": "Zip Co Limited",
+    "estado": "cerrada",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 2.62,
+    "acciones": 38.167939,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 47.8,
+    "potencial_pct": 64.4,
+    "tarjeta": {
+      "ticker": "ZIP.AX",
+      "nombre_empresa": "Zip Co Limited",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 47.8,
+      "version_scoring": 33,
+      "precio_actual": 2.62,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 4.30644,
+      "dispersion_pct": 66.9,
+      "momentum_30d_pct": 2.3,
+      "momentum_5d_pct": -1.5,
+      "fuerza_relativa_pct": 0.1,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 45.1,
+      "tendencia_tecnica": "mixta",
+      "sma50": 2.82,
+      "sma200": 2.58,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 48596696.67317295,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 6.45,
+      "sesiones_hasta_stop": 3,
+      "distancia_max_52s_pct": -43.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "ZIP: FY26 delivered record profitability and 27% TTV growth, with FY27 targeting 30%+ US TTV growth - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "ZIP: Record earnings, margin expansion, and robust U.S. and ANZ growth set up strong FY 2027 outlook - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Las acciones de Zip Co se disparan un 19%: ¿por qué? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Zip Co se disparan un 19%: ¿por qué? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico y cotización de ZIP: ASX:ZIP - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Zip Co appoints new company secretary to bolster ASX governance - The Globe and Mail",
+            "fuente": "The Globe and Mail",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Zip Co Limited se dedica a la provisión de soluciones de pagos, finanzas personales y finanzas minoristas digitales en Australia y Estados Unidos. La empresa ofrece productos de líneas de crédito minoristas y préstamos personales; productos minoristas a plazos; y productos a plazos Compre ahora y pague después para los consumidores."
+    },
+    "precio_salida": 2.4607,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 2.6724,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
+    }
+  },
+  {
+    "id": "EOS.AX-2026-09-01",
+    "ticker": "EOS.AX",
+    "nombre": "Electro Optic Systems Holdings Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 9.9,
+    "acciones": 10.10101,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 43.4,
+    "potencial_pct": 41.7,
+    "tarjeta": {
+      "ticker": "EOS.AX",
+      "nombre_empresa": "Electro Optic Systems Holdings Limited",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 43.4,
+      "version_scoring": 33,
+      "precio_actual": 9.9,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 4
+      },
+      "precio_objetivo_medio": 14.025,
+      "dispersion_pct": 28.0,
+      "momentum_30d_pct": 42.7,
+      "momentum_5d_pct": -6.4,
+      "fuerza_relativa_pct": 40.5,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 60.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 8.53,
+      "sma200": 8.58,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 22156848.750948906,
+      "volumen_relativo": 1.18,
+      "volatilidad_diaria_pct": 6.51,
+      "sesiones_hasta_stop": 3,
+      "distancia_max_52s_pct": -19.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "EOS: Record revenue, strong order growth, and robust outlook following MARSS acquisition - es.tradingview.com",
+            "fuente": "es.tradingview.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "La Bolsa de Australia apunta a una apertura al alza; Nueva Zelanda sube en los primeros compases de la sesión - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Electro Optic Systems presenta sus previsiones de resultados para el ejercicio 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Electro Optic Systems Holdings Limited se dedica al desarrollo, fabricación y venta de telescopios y domos, sistemas de seguimiento láser por satélite, sistemas de armas remotas y armas de alto láser."
     }
   }
 ]
