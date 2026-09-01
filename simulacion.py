@@ -1,4 +1,9 @@
 """
+VERSION: 15 (01/09/2026) - guarda simulacion_estado.json con la marca de
+tiempo UTC de la ultima ejecucion. Las operaciones solo llevan fecha sin hora,
+asi que con seis pasadas al dia no habia forma de saber cual fue la ultima ni
+si el workflow se habia parado.
+
 VERSION: 14 (01/09/2026) - la clasificacion mira PRIMERO el dinero ganado y
 solo despues las sesiones. Seis operaciones que ganaron 1,00 EUR salian como
 "nefasta" y una como "perdida", porque PLANO_MARGEN (3 EUR) se trago todos los
@@ -224,13 +229,17 @@ bot. Escribe solo en simulacion_operaciones.json y simulacion_informe.md.
 
 import json
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import yfinance as yf
 
 RANKING = "candidatos_rankeados.json"
 OPERACIONES = "simulacion_operaciones.json"
 INFORME = "simulacion_informe.md"
+# Marca de la ultima ejecucion, para que el visor pueda avisar si el workflow
+# se para. Las operaciones solo guardan FECHA, sin hora, asi que con seis
+# pasadas al dia no habia forma de saber cual fue la ultima.
+ESTADO_FILE = "simulacion_estado.json"
 
 CAPITAL_POR_OPERACION = 100.0   # euros ficticios, como lo planteo Jose Manuel
 COMISION_COMPRA = 1.0
@@ -918,6 +927,17 @@ def escribir_informe(operaciones):
                    f"sobre {len(cerradas)} x {CAPITAL_POR_OPERACION:.0f} EUR", ""]
 
     lineas += informe_ponderacion(cerradas)
+
+    # Se guarda en UTC y en formato ISO para que el navegador lo pueda pasar
+    # a hora local sin suponer nada: GitHub Actions corre en UTC y el usuario
+    # esta en España, con una o dos horas de diferencia segun la epoca.
+    with open(ESTADO_FILE, "w", encoding="utf-8") as f:
+        json.dump({
+            "ultima_ejecucion_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "operaciones_totales": len(operaciones),
+            "cerradas": sum(1 for o in operaciones if o.get("estado") != "abierta"),
+            "abiertas": sum(1 for o in operaciones if o.get("estado") == "abierta"),
+        }, f, indent=2, ensure_ascii=False)
 
     with open(INFORME, "w", encoding="utf-8") as f:
         f.write("\n".join(lineas))
