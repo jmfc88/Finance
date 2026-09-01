@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<!DOC
+  <div id="ultima-ejecucion" style="font-size:13px; opacity:.75; margin-top:2px;"></div>TYPE html>
+<!-- VERSION: 4 (01/09/2026) - ensena la fecha de los ultimos datos bajo el
+titulo, y avisa en rojo si han pasado dos dias o mas. El 31/08 el workflow
+estuvo tres dias parado y solo se noto abriendo el informe por dentro. -->
 <!-- VERSION: 3 (24/08/2026) - dos correcciones vistas en pantalla: decia que
 las posiciones se cierran "a los 30 dias" cuando desde la v9 son 20, y
 mostraba "TRAMO UNDEFINED" en las operaciones antiguas que aun llevaban el
@@ -145,6 +149,21 @@ async function cargar(){
   const cerradas = ops.filter(o => o.estado === 'cerrada');
   document.getElementById('estado').textContent =
     `${cerradas.length} cerradas · ${abiertas.length} abiertas · ${ops.length} en total`;
+
+  /* Fecha de la ultima ejecucion, sacada de la fecha de salida mas reciente o,
+  si no hay cerradas, de la entrada mas reciente. Sirve para detectar de un
+  vistazo que el workflow lleva dias parado: el 31/08 estuvo tres dias sin
+  correr y solo se noto al mirar el informe por dentro. */
+  const fechas = ops.map(o => o.fecha_salida || o.fecha_entrada).filter(Boolean).sort();
+  const ultima = fechas.length ? fechas[fechas.length - 1] : null;
+  const cab = document.getElementById('ultima-ejecucion');
+  if (cab && ultima) {
+    const dias = Math.floor((new Date() - new Date(ultima)) / 86400000);
+    const alerta = dias >= 2;
+    cab.innerHTML = `Últimos datos: <b>${ultima}</b>` +
+      (dias <= 0 ? ' (hoy)' : dias === 1 ? ' (ayer)' : ` (hace ${dias} días)`) +
+      (alerta ? ' <span style="color:var(--brick);">· ¿se ha parado el workflow?</span>' : '');
+  }
 
   let html = '';
 
