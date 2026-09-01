@@ -5,7 +5,7 @@
 # desde el ranking y reconstruye que habria pasado con las reglas del bot real.
 # NO toca ledger.json ni posiciones.json: solo escribe simulacion_operaciones.json
 # y simulacion_informe.md. Corre una vez al dia, despues del ranking de la manana.
-name: Simulacion en paralelo
+name: Simulación en paralelo
 
 on:
   schedule:
