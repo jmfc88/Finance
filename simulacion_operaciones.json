@@ -253,7 +253,7 @@
     "id": "CSC.AX-2026-08-23",
     "ticker": "CSC.AX",
     "nombre": "CAPSTONE CDI 1:1 [CSC]",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 15.57,
     "acciones": 6.422608,
@@ -319,7 +319,35 @@
       "version_scoring": 32,
       "precio_actual": 15.57
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 16.0371,
+    "fecha_salida": "2026-08-31",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 15.8814,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.86,
+        "neto_pct": 0.86,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
+    }
   },
   {
     "id": "URW.PA-2026-08-23",
@@ -409,7 +437,7 @@
     "id": "ANET-2026-08-23",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 188.65,
     "acciones": 0.530082,
@@ -491,7 +519,35 @@
       "version_scoring": 32,
       "precio_actual": 188.65
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 199.0918,
+    "fecha_salida": "2026-08-31",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.54,
+    "rentabilidad_neta_pct": 3.54,
+    "resultado_neto_eur": 3.54,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 192.423,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo pero sin llegar a los 5 EUR limpios.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.99,
+        "neto_pct": 1.99,
+        "sesiones": 5,
+        "motivo": "trailing"
+      }
+    }
   },
   {
     "id": "ITX.MC-2026-08-23",
@@ -1261,7 +1317,7 @@
     "id": "BGL.AX-2026-08-23",
     "ticker": "BGL.AX",
     "nombre": "Bellevue Gold Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 1.66,
     "acciones": 60.240964,
@@ -1333,13 +1389,47 @@
       "version_scoring": 33,
       "precio_actual": 1.66
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 1.7098,
+    "fecha_salida": "2026-08-26",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 1.6932,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.28,
+        "neto_pct": -3.28,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
+    }
   },
   {
     "id": "ORCL-2026-08-23",
     "ticker": "ORCL",
     "nombre": "Oracle Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 146.47,
     "acciones": 0.682734,
@@ -1421,7 +1511,29 @@
       "version_scoring": 32,
       "precio_actual": 146.47
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 150.8641,
+    "fecha_salida": "2026-08-28",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 149.3994,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "ABN.AS-2026-08-23",
@@ -1593,7 +1705,7 @@
     "id": "MT.AS-2026-08-23",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 62.58,
     "acciones": 1.597955,
@@ -1681,13 +1793,35 @@
       "version_scoring": 33,
       "precio_actual": 62.58
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 64.4574,
+    "fecha_salida": "2026-08-27",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 63.8316,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "ZIP.AX-2026-08-23",
     "ticker": "ZIP.AX",
     "nombre": "Zip Co Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 2.57,
     "acciones": 38.910506,
@@ -1769,7 +1903,41 @@
       "version_scoring": 32,
       "precio_actual": 2.57
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 2.6471,
+    "fecha_salida": "2026-08-26",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 2.6214,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.67,
+        "neto_pct": -3.67,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
+    }
   },
   {
     "id": "FDR.MC-2026-08-23",
@@ -2305,7 +2473,7 @@
     "id": "IAG.MC-2026-08-23",
     "ticker": "IAG.MC",
     "nombre": "International Consolidated Airlines Group S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 4.935,
     "acciones": 20.263425,
@@ -2383,7 +2551,29 @@
       "version_scoring": 33,
       "precio_actual": 4.935
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 5.083,
+    "fecha_salida": "2026-08-27",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.0337,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "DG.PA-2026-08-23",
@@ -2795,7 +2985,7 @@
     "id": "XYZ-2026-08-23",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 82.16,
     "acciones": 1.217137,
@@ -2856,7 +3046,29 @@
       "version_scoring": 32,
       "precio_actual": 82.16
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 84.6248,
+    "fecha_salida": "2026-08-31",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 83.8032,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "BVI.PA-2026-08-23",
@@ -3075,7 +3287,7 @@
     "id": "BNP.PA-2026-08-24",
     "ticker": "BNP.PA",
     "nombre": "BNP PARIBAS ACT.A",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-24",
     "precio_entrada": 106.6,
     "acciones": 0.938086,
@@ -3147,7 +3359,35 @@
       "version_scoring": 33,
       "precio_actual": 106.6
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 100.1187,
+    "fecha_salida": "2026-08-27",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 108.732,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones. La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "CAP.PA-2026-08-24",
@@ -3700,6 +3940,361 @@
       },
       "profundizacion": null,
       "resumen_negocio": "UniCredit S.p.A. ofrece servicios de banca comercial en Italia, Alemania, Europa Central y Europa del Este. La empresa ofrece soluciones minoristas, privadas y de gestión patrimonial; y soluciones para inversores institucionales."
+    }
+  },
+  {
+    "id": "A2A.MI-2026-09-01",
+    "ticker": "A2A.MI",
+    "nombre": "A2A S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 2.342,
+    "acciones": 42.698548,
+    "invertido": 100.0,
+    "posicion_ranking": 2,
+    "tramo": "1-10",
+    "score": 57.3,
+    "potencial_pct": 22.8,
+    "tarjeta": {
+      "ticker": "A2A.MI",
+      "nombre_empresa": "A2A S.p.A.",
+      "isin": "NET00AMNEOS1",
+      "sector": "Utilities",
+      "score": 57.3,
+      "version_scoring": 33,
+      "precio_actual": 2.342,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.0,
+        "pct_strong_buy": 42.9,
+        "pct_vender": 0.0,
+        "total_analistas": 7
+      },
+      "precio_objetivo_medio": 2.87714,
+      "dispersion_pct": 20.8,
+      "momentum_30d_pct": 3.5,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 1.3,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 58.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 2.31,
+      "sma200": 2.29,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 16704313.164123535,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 0.99,
+      "sesiones_hasta_stop": 159,
+      "distancia_max_52s_pct": -9.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Milán mantiene las ganancias a la espera del dato del PCE en EE. UU. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Earnings call transcript: A2A Q4 2025 shows resilient growth amid challenges - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "A2A SPA (A2A) Precio & Cotización Acciones | Negocia Ahora - Capital.com",
+            "fuente": "Capital.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "A2A S.p.A. se dedica a la producción, venta y distribución de gas y electricidad, y calefacción urbana en Italia e internacionalmente. Genera electricidad a través de plantas hidroeléctricas, termoeléctricas, fotovoltaicas y eólicas; y vende y distribuye gas."
+    }
+  },
+  {
+    "id": "STMPA.PA-2026-09-01",
+    "ticker": "STMPA.PA",
+    "nombre": "STMicroelectronics N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 43.015,
+    "acciones": 2.32477,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 50.0,
+    "potencial_pct": 54.8,
+    "tarjeta": {
+      "ticker": "STMPA.PA",
+      "nombre_empresa": "STMicroelectronics N.V.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 50.0,
+      "version_scoring": 33,
+      "precio_actual": 43.015,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 66.59912,
+      "dispersion_pct": 75.1,
+      "momentum_30d_pct": -5.0,
+      "momentum_5d_pct": 0.6,
+      "fuerza_relativa_pct": -7.2,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 33.2,
+      "tendencia_tecnica": "mixta",
+      "sma50": 52.69,
+      "sma200": 38.79,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 109676712.6140747,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 2.78,
+      "sesiones_hasta_stop": 20,
+      "distancia_max_52s_pct": -37.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Nueva alianza, nuevo rally: STMicroelectronics se dispara tras unir fuerzas con Amazon - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de STMicroelectronics suben más de un 4 %; Aquí están 20 acciones que se mueven en premercado - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "STMicroelectronics N.V.: Esperando un retorno a una fuerte tendencia - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "STMicroelectronics Posts Strong Q1 2026 Growth and Signals AI-Driven Datacenter Upside - The Globe and Mail",
+            "fuente": "The Globe and Mail",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "UBS eleva el precio objetivo de STMicroelectronics a 80 euros - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "STMicroelectronics eleva su pronóstico de centro de datos a 1 mil millones de dólares en 2026, en un contexto de caída del 89 % en el resultado neto - ActuIA",
+            "fuente": "ActuIA",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "STMicroelectronics N.V., junto con sus filiales, diseña, desarrolla, fabrica y vende productos semiconductores en Europa, Oriente Medio, África, América y Asia Pacífico. La empresa opera a través de productos analógicos, MEMS y Sensors Group (AM&S); Productos de potencia y discretos (P&D); Procesamiento Integrado (EMP); y segmentos de productos RF (D&RF)."
+    }
+  },
+  {
+    "id": "AIR.PA-2026-09-01",
+    "ticker": "AIR.PA",
+    "nombre": "Airbus SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 197.24,
+    "acciones": 0.506997,
+    "invertido": 100.0,
+    "posicion_ranking": 15,
+    "tramo": "11-20",
+    "score": 47.5,
+    "potencial_pct": 17.1,
+    "tarjeta": {
+      "ticker": "AIR.PA",
+      "nombre_empresa": "Airbus SE",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 47.5,
+      "version_scoring": 33,
+      "precio_actual": 197.24,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 4.2,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 230.95651,
+      "dispersion_pct": 42.1,
+      "momentum_30d_pct": -0.5,
+      "momentum_5d_pct": -0.3,
+      "fuerza_relativa_pct": -2.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 27.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 203.5,
+      "sma200": 188.24,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 154840235.35525513,
+      "volumen_relativo": 0.99,
+      "volatilidad_diaria_pct": 1.31,
+      "sesiones_hasta_stop": 91,
+      "distancia_max_52s_pct": -6.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Huelga en Airbus. La dirección amenaza con cancelar contratos... pero el Gobierno reacciona y le obliga a negociar con los sindicatos - Hispanidad",
+            "fuente": "Hispanidad",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "La plantilla de Airbus decide continuar con la huelga indefinida y ya planea realizar una marcha hacia el Ministerio de Industria - El Mundo",
+            "fuente": "El Mundo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "El Ejército del Aire y Airbus exhiben un Eurofighter a escala real en Las Palmas de Gran Canaria - Libertad Digital",
+            "fuente": "Libertad Digital",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Airbus caen tras recortar previsiones - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Airbus se dispara en bolsa tras presentar objetivos positivos a medio plazo - Radio Intereconomía",
+            "fuente": "Radio Intereconomía",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Airbus se dispara tras anunciar una recompra de acciones: la opinión de los analistas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Airbus SE, junto con sus filiales, se dedica al diseño, fabricación y entrega de productos, servicios y soluciones aeronáuticos y aeroespaciales en todo el mundo. Opera a través de tres segmentos: Airbus, Airbus Helicopters y Airbus Defence and Space."
+    }
+  },
+  {
+    "id": "VALMT.HE-2026-09-01",
+    "ticker": "VALMT.HE",
+    "nombre": "Valmet Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-01",
+    "precio_entrada": 28.68,
+    "acciones": 3.48675,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 44.3,
+    "potencial_pct": 8.1,
+    "tarjeta": {
+      "ticker": "VALMT.HE",
+      "nombre_empresa": "Valmet Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.3,
+      "version_scoring": 33,
+      "precio_actual": 28.68,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 0.0,
+        "pct_vender": 0.0,
+        "total_analistas": 6
+      },
+      "precio_objetivo_medio": 31.01667,
+      "dispersion_pct": 33.7,
+      "momentum_30d_pct": 8.9,
+      "momentum_5d_pct": 3.3,
+      "fuerza_relativa_pct": 6.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 70.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 24.56,
+      "sma200": 25.44,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 7476689.201813698,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 0.89,
+      "sesiones_hasta_stop": 197,
+      "distancia_max_52s_pct": -2.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Valmet sube a su nivel más alto en casi cinco meses tras superar las previsiones del segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Valmet se adjudica el contrato para una planta de condensación de gases de combustión - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Valmet caen tras descenso de pedidos en primer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Valmet sube a su nivel más alto en casi cinco meses tras superar las previsiones del segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Las acciones de Valmet caen tras descenso de pedidos en primer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
     }
   }
 ]
