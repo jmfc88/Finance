@@ -1,4 +1,21 @@
 """
+VERSION: 13 (01/09/2026) - DOS arreglos:
+
+(b) El stop se comprueba ANTES de subirlo, no despues. Dentro de una vela
+diaria no se sabe si vino antes el maximo o el minimo, y al subir el stop y
+compararlo acto seguido con el minimo del MISMO dia, una sesion que subia
+fuerte cerraba por un stop que en ese momento no existia. Ademas asi se
+parece mas a la realidad: el stop se mueve cuando se lee el aviso, no en el
+instante exacto del cruce.
+
+(a) ARREGLO: _recorrer_escalera trataba el historico
+como una lista de tuplas cuando es un DataFrame de pandas, y la ejecucion
+moria con "too many values to unpack". Se recorre con iterrows() como el
+resto, y ahora usa el MAXIMO y el MINIMO de cada sesion en vez de solo el
+cierre: un stop que salta a media manana tiene que contar aunque el precio se
+recupere antes del cierre. Con cierres, la simulacion daba resultados que
+nunca habrian ocurrido y siempre mejores de lo real.
+
 VERSION: 12 (31/08/2026) - la regla POR DEFECTO pasa a ser la escalera real.
 En la v11 se anadio como variante de comparacion, pero el bucle principal
 seguia usando el trailing continuo que se elimino del bot el 25/08: las
@@ -452,34 +469,52 @@ def _recorrer_escalera(op, hist, regla):
     ganancias_armadas = False
     niveles_hechos = set()
 
-    for i, (fecha, cierre) in enumerate(hist, start=1):
-        if cierre is None:
-            continue
-        maximo = max(maximo, cierre)
-        if i == 7:
+    # hist es un DataFrame de pandas, no una lista de tuplas: se recorre con
+    # iterrows() igual que _recorrer. Y se usan el MAXIMO y el MINIMO del dia,
+    # no solo el cierre: un stop puede saltar a media sesion y una accion que
+    # abre en 100, baja a 90 y cierra en 99 tiene que contar como que salto.
+    # Mirando solo cierres, la simulacion daria resultados que nunca habrian
+    # ocurrido, y siempre mejores de lo real.
+    for i, (fecha, fila) in enumerate(hist.iterrows(), start=1):
+        cierre = float(fila["Close"])
+        minimo_dia = float(fila["Low"]) if "Low" in hist.columns and fila["Low"] == fila["Low"] else cierre
+        maximo_dia = float(fila["High"]) if "High" in hist.columns and fila["High"] == fila["High"] else cierre
+        maximo = max(maximo, maximo_dia)
+        if i == DIAS_REVISION:
             precio_7d = cierre
-        if not llego_5eur and cierre >= precio_objetivo:
+        if not llego_5eur and maximo_dia >= precio_objetivo:
             llego_5eur = True
             sesiones_hasta_armar = i
 
-        # 1) Cruce del equilibrio + 2%: se asegura 1 EUR
-        if not ganancias_armadas and cierre >= nivel_ganancias:
+        # ORDEN IMPORTANTE: primero se comprueba si salta el stop que HABIA
+        # al empezar la sesion, y solo despues se sube.
+        #
+        # Dentro de una vela diaria no se sabe que paso antes, si el maximo o
+        # el minimo. Si se subiera el stop y acto seguido se comparara con el
+        # minimo del mismo dia, una sesion que sube a 25,60 y tuvo un minimo
+        # de 24,90 POR LA MANANA cerraria por un stop de 25,17 que en ese
+        # momento todavia no existia. Salio en la prueba del 01/09.
+        #
+        # Ademas es lo que pasa de verdad: Jose Manuel sube el stop cuando lee
+        # el aviso, no en el instante exacto en que se cruza el nivel. Asi que
+        # asumir que el stop nuevo no protege hasta la sesion siguiente es a
+        # la vez mas correcto y mas realista.
+        if minimo_dia <= stop:
+            motivo = "stop inicial" if abs(stop - stop_inicial) < 1e-9 else "stop subido"
+            return cerrar(op, stop, fecha, i, motivo, precio_7d, precio_equilibrio,
+                          llego_5eur, sesiones_hasta_armar)
+
+        # Ahora si: se sube el stop con lo que haya dado el dia.
+        if not ganancias_armadas and maximo_dia >= nivel_ganancias:
             ganancias_armadas = True
             stop = max(stop, round((invertido + COMISION_VENTA + 1.0) / acciones, 4))
 
-        # 2) Escalones de ganancia
         for alcanzado, asegurado in NIVELES_ESCALERA:
             if alcanzado in niveles_hechos:
                 continue
-            if cierre >= precio_para(alcanzado):
+            if maximo_dia >= precio_para(alcanzado):
                 niveles_hechos.add(alcanzado)
                 stop = max(stop, round(precio_para(asegurado), 4))
-
-        # 3) ¿Salta?
-        if cierre <= stop:
-            motivo = "stop inicial" if abs(stop - stop_inicial) < 1e-9 else "stop subido"
-            return cerrar(op, cierre, fecha, i, motivo, precio_7d, precio_equilibrio,
-                          llego_5eur, sesiones_hasta_armar)
 
         if i >= DIAS_MAXIMO:
             return cerrar(op, cierre, fecha, i, "plazo maximo", precio_7d, precio_equilibrio,
