@@ -4593,7 +4593,7 @@
     "id": "XYZ-2026-09-01",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 82.02,
     "acciones": 1.219215,
@@ -4681,6 +4681,34 @@
         ]
       },
       "resumen_negocio": "Block, Inc., junto con sus subsidiarias, construye ecosistemas enfocados en el comercio y productos y servicios financieros en los Estados Unidos e internacionalmente. Opera a través de dos segmentos: Square y Cash App."
+    },
+    "precio_salida": 77.0332,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 83.6604,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -6164,6 +6192,637 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Zip Co Limited se dedica a la provisión de soluciones de pagos, finanzas personales y finanzas minoristas digitales en Australia y Estados Unidos. La empresa ofrece productos de líneas de crédito minoristas y préstamos personales; productos minoristas a plazos; y productos a plazos Compre ahora y pague después para los consumidores."
+    }
+  },
+  {
+    "id": "LTMC.MI-2026-09-02",
+    "ticker": "LTMC.MI",
+    "nombre": "Lottomatica Group S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 22.16,
+    "acciones": 4.512635,
+    "invertido": 100.0,
+    "posicion_ranking": 4,
+    "tramo": "1-10",
+    "score": 52.7,
+    "potencial_pct": 44.2,
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 52.7,
+      "version_scoring": 33,
+      "precio_actual": 22.16,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 11.4,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 31.95625,
+      "dispersion_pct": 18.3,
+      "momentum_30d_pct": -7.7,
+      "momentum_5d_pct": -10.9,
+      "fuerza_relativa_pct": -6.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 33.7,
+      "tendencia_tecnica": "bajista",
+      "sma50": 24.65,
+      "sma200": 23.6,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 13140323.869045258,
+      "volumen_relativo": 1.76,
+      "volatilidad_diaria_pct": 2.71,
+      "sesiones_hasta_stop": 21,
+      "distancia_max_52s_pct": -19.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-CIRSA ENTERPRISES, S.A. El Consejo de Administración de CIRSA informa de la aprobación de un acuerdo[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-CIRSA ENTERPRISES, S.A. La Sociedad remite la presentación sobre la operación de fusión con[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El próximo gigante del juego: Cirsa se fusionará con Lottomatica - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": -1,
+        "verificado": false,
+        "ajuste": -4,
+        "titulares_adicionales": [
+          {
+            "titulo": "¿Por qué cae hoy la acción de Lottomatica? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "La italiana Lottomatica comprará la española CIRSA para crear un gigante de las apuestas respaldado por Blackstone - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "El próximo gigante del juego: Cirsa se fusionará con Lottomatica - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., junto con sus filiales, opera en el mercado del juego en Italia. La compañía opera a través de los segmentos en línea, franquicias deportivas y franquicias de juegos."
+    }
+  },
+  {
+    "id": "EDP.LS-2026-09-02",
+    "ticker": "EDP.LS",
+    "nombre": "EDP, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 4.668,
+    "acciones": 21.422451,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 49.9,
+    "potencial_pct": 10.3,
+    "tarjeta": {
+      "ticker": "EDP.LS",
+      "nombre_empresa": "EDP, S.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 49.9,
+      "version_scoring": 33,
+      "precio_actual": 4.668,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.0,
+        "pct_strong_buy": 9.1,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 5.14773,
+      "dispersion_pct": 33.3,
+      "momentum_30d_pct": 4.8,
+      "momentum_5d_pct": -0.6,
+      "fuerza_relativa_pct": 5.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 59.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.56,
+      "sma200": 4.24,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 27141522.89664316,
+      "volumen_relativo": 0.95,
+      "volatilidad_diaria_pct": 1.11,
+      "sesiones_hasta_stop": 126,
+      "distancia_max_52s_pct": -1.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "EDP Renovaveis stock gains as Lisbon market advances and investors eye growth targets - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "EDP trae de Asia al artífice de su reorganización en la zona para pilotar la estrategia y las fusiones del grupo - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Heineken, Rondo y EDP impulsan el mayor proyecto de almacenamiento térmico de la península ibérica - edp.com",
+            "fuente": "edp.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "EDPR aumenta su beneficio un 50%, hasta los 330 millones, con foco en EEUU y Europa - eleconomista.es",
+            "fuente": "eleconomista.es",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "EDP, una acción para inversores tranquilos - Renta 4 Banco",
+            "fuente": "Renta 4 Banco",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "EDP tiene potencial en su negocio pero no está barata - Estrategias de Inversión",
+            "fuente": "Estrategias de Inversión",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "EDP, S.A. se dedica a la generación, transmisión, distribución y suministro de electricidad en Portugal, España, Francia, Polonia, Rumanía, Italia, Bélgica, Reino Unido, Grecia, Colombia, Brasil, Norteamérica e internacionalmente."
+    }
+  },
+  {
+    "id": "REC.MI-2026-09-02",
+    "ticker": "REC.MI",
+    "nombre": "Recordati Industria Chimica e Farmaceutica S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 52.4,
+    "acciones": 1.908397,
+    "invertido": 100.0,
+    "posicion_ranking": 16,
+    "tramo": "11-20",
+    "score": 42.9,
+    "potencial_pct": 13.1,
+    "tarjeta": {
+      "ticker": "REC.MI",
+      "nombre_empresa": "Recordati Industria Chimica e Farmaceutica S.p.A.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 42.9,
+      "version_scoring": 33,
+      "precio_actual": 52.4,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 59.25556,
+      "dispersion_pct": 42.0,
+      "momentum_30d_pct": 0.6,
+      "momentum_5d_pct": -0.5,
+      "fuerza_relativa_pct": 1.6,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 51.95,
+      "sma200": 49.25,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 10470402.516117096,
+      "volumen_relativo": 1.98,
+      "volatilidad_diaria_pct": 0.52,
+      "sesiones_hasta_stop": 582,
+      "distancia_max_52s_pct": -1.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "Earnings call transcript: Recordati posts H1 growth, edges revenue forecast in Q2 2026 - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Recordati Industria Chimica e Farmaceutica S.p.A. 2026 Q1 - Results - Earnings Call Presentation - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Recordati confirms it's weighing CVC Capital buyout offer of $12.6B - Fierce Pharma",
+            "fuente": "Fierce Pharma",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Recordati Industria Chimica e Farmaceutica S.p.A., junto con sus filiales, investiga, desarrolla, produce y comercializa productos farmacéuticos en Italia, Estados Unidos, España, Francia, Alemania, Rusia, Ucrania, Turquía, Portugal, el norte de África e internacionalmente."
+    }
+  },
+  {
+    "id": "AMS.MC-2026-09-02",
+    "ticker": "AMS.MC",
+    "nombre": "Amadeus IT Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 56.9,
+    "acciones": 1.757469,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 41.5,
+    "potencial_pct": 20.0,
+    "tarjeta": {
+      "ticker": "AMS.MC",
+      "nombre_empresa": "Amadeus IT Group, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 41.5,
+      "version_scoring": 33,
+      "precio_actual": 56.9,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.9,
+        "pct_strong_buy": 33.3,
+        "pct_vender": 9.5,
+        "total_analistas": 21
+      },
+      "precio_objetivo_medio": 68.28143,
+      "dispersion_pct": 58.6,
+      "momentum_30d_pct": 0.7,
+      "momentum_5d_pct": -0.8,
+      "fuerza_relativa_pct": 1.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 51.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 53.69,
+      "sma200": 53.5,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 29176548.25,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 1.5,
+      "sesiones_hasta_stop": 69,
+      "distancia_max_52s_pct": -15.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "JP Morgan cree que el crecimiento de ingresos de Amadeus acelerará nuevamente en 2027 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-AMADEUS IT GROUP, S.A. La sociedad remite la información financiera del primer semestre de 2026 -[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Análisis de los últimos resultados de Amadeus - Bankinter",
+            "fuente": "Bankinter",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Amadeus IT Group, S.A., junto con sus filiales, opera como procesador de transacciones para la industria de viajes y turismo en Europa, América Central y del Sur, Oriente Medio, África y Asia Pacífico."
+    }
+  },
+  {
+    "id": "IG.MI-2026-09-02",
+    "ticker": "IG.MI",
+    "nombre": "Italgas S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 8.57,
+    "acciones": 11.668611,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 41.3,
+    "potencial_pct": 24.8,
+    "tarjeta": {
+      "ticker": "IG.MI",
+      "nombre_empresa": "Italgas S.p.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 41.3,
+      "version_scoring": 33,
+      "precio_actual": 8.57,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 6.7,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 10.69333,
+      "dispersion_pct": 19.4,
+      "momentum_30d_pct": -5.9,
+      "momentum_5d_pct": -3.1,
+      "fuerza_relativa_pct": -4.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 42.4,
+      "tendencia_tecnica": "bajista",
+      "sma50": 9.43,
+      "sma200": 9.7,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 19012827.30483818,
+      "volumen_relativo": 0.78,
+      "volatilidad_diaria_pct": 1.01,
+      "sesiones_hasta_stop": 152,
+      "distancia_max_52s_pct": -20.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Italgas dispara su beneficio en el Q1 gracias al acuerdo con 2i - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Earnings call transcript: Italgas posts strong H1 2026 growth, stock flat - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Acciones Italgas S.p.A. - Cotizacion IG Borsa Italiana - MarketScreener España - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Italgas S.p.A., together with its subsidiaries, engages in the distribution of natural gas in Italy, Greece, and Other European Union countries. It operates through Gas distribution, Water Service, and Energy Efficiency segments."
+    }
+  },
+  {
+    "id": "ASRNL.AS-2026-09-02",
+    "ticker": "ASRNL.AS",
+    "nombre": "ASR Nederland N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 72.34,
+    "acciones": 1.382361,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 41.1,
+    "potencial_pct": 2.0,
+    "tarjeta": {
+      "ticker": "ASRNL.AS",
+      "nombre_empresa": "ASR Nederland N.V.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 41.1,
+      "version_scoring": 33,
+      "precio_actual": 72.34,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 28.6,
+        "pct_vender": 0.0,
+        "total_analistas": 14
+      },
+      "precio_objetivo_medio": 73.79692,
+      "dispersion_pct": 61.9,
+      "momentum_30d_pct": 4.9,
+      "momentum_5d_pct": 3.7,
+      "fuerza_relativa_pct": 5.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 73.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 68.28,
+      "sma200": 61.22,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 27013048.145793915,
+      "volumen_relativo": 1.29,
+      "volatilidad_diaria_pct": 0.97,
+      "sesiones_hasta_stop": 166,
+      "distancia_max_52s_pct": -0.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Earnings call transcript: ASR Nederland posts record H1 2026 profit, stock steady - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "5 fondos de alto dividendo que ganan +9% en lo que va de 2025 - Finect",
+            "fuente": "Finect",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sharp Half-Year Profit Jump And Dividend Payout Could Be A Game Changer For ASR Nederland (ENXTAM:ASRNL) - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ASR Nederland N.V. ofrece productos y servicios de seguros, pensiones e hipotecas para consumidores, empresas y empleadores en los Países Bajos. La compañía opera a través de cinco segmentos: No Vida, Vida, Gestión de Activos, Distribución y Servicios, y Holding y Otros."
+    }
+  },
+  {
+    "id": "ABI.BR-2026-09-02",
+    "ticker": "ABI.BR",
+    "nombre": "Anheuser-Busch InBev SA/NV",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 67.84,
+    "acciones": 1.474057,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 40.6,
+    "potencial_pct": 20.2,
+    "tarjeta": {
+      "ticker": "ABI.BR",
+      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 40.6,
+      "version_scoring": 33,
+      "precio_actual": 67.84,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 81.55273,
+      "dispersion_pct": 46.5,
+      "momentum_30d_pct": -7.3,
+      "momentum_5d_pct": 0.2,
+      "fuerza_relativa_pct": -6.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 40.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 70.56,
+      "sma200": 64.02,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 103826937.35746765,
+      "volumen_relativo": 0.87,
+      "volatilidad_diaria_pct": 1.31,
+      "sesiones_hasta_stop": 91,
+      "distancia_max_52s_pct": -9.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "RBC eleva el precio objetivo y las previsiones de AB InBev tras unos resultados semestrales \"solidos\" - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Anheuser-Busch InBev | Brewing, Mergers, Acquisitions - britannica.com",
+            "fuente": "britannica.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Cook & Bynum Capital Management LLC Takes $33.28 Million Position in Anheuser-Busch InBev SA/NV $BUD - marketbeat.com",
+            "fuente": "marketbeat.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Anheuser-Busch InBev SA/NV produce y vende cerveza en Norteamérica, Centroamérica, Sudamérica, Europa, Medio Oriente, África y Asia Pacífico. Opera a través de los segmentos de Norteamérica, Centroamérica, Sudamérica, EMEA, Asia Pacífico y Exportaciones Globales y Holding Companies."
+    }
+  },
+  {
+    "id": "EN.PA-2026-09-02",
+    "ticker": "EN.PA",
+    "nombre": "Bouygues SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 43.93,
+    "acciones": 2.276349,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 40.6,
+    "potencial_pct": 36.6,
+    "tarjeta": {
+      "ticker": "EN.PA",
+      "nombre_empresa": "Bouygues SA",
+      "isin": "FR001400UJU6",
+      "sector": "Industrials",
+      "score": 40.6,
+      "version_scoring": 33,
+      "precio_actual": 43.93,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 33.3,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 60.0,
+      "dispersion_pct": 37.7,
+      "momentum_30d_pct": -11.0,
+      "momentum_5d_pct": -3.8,
+      "fuerza_relativa_pct": -10.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 15.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 47.32,
+      "sma200": 46.95,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 23286159.348775864,
+      "volumen_relativo": 1.42,
+      "volatilidad_diaria_pct": 1.06,
+      "sesiones_hasta_stop": 140,
+      "distancia_max_52s_pct": -17.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Bouygues Plans to Expand in US, Germany and Northern Europe - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "“Generar formas es similar a la música – intentas componer música y de repente surge la melodía”: En conversación con Kevin Roche - ArchDaily",
+            "fuente": "ArchDaily",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Bouygues-Thai construirá ONCE Wongamat, torre de lujo de 56 plantas en Pattaya - IndexBox",
+            "fuente": "IndexBox",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Bouygues SA, junto con sus filiales, opera en los sectores de la construcción, las energías y los servicios, las telecomunicaciones y los medios de comunicación en Francia e internacionalmente."
     }
   }
 ]
