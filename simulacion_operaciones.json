@@ -933,7 +933,7 @@
     "id": "AI.PA-2026-08-23",
     "ticker": "AI.PA",
     "nombre": "L'Air Liquide S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 167.12,
     "acciones": 0.598372,
@@ -999,7 +999,29 @@
       "version_scoring": 32,
       "precio_actual": 167.12
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 172.1336,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 3.63,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 170.4624,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "ENGI.PA-2026-08-23",
@@ -2737,7 +2759,7 @@
     "id": "DG.PA-2026-08-23",
     "ticker": "DG.PA",
     "nombre": "Vinci SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 119.3,
     "acciones": 0.838223,
@@ -2825,7 +2847,35 @@
       "version_scoring": 33,
       "precio_actual": 119.3
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 112.0466,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.36,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 121.686,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "BN.TO-2026-08-23",
@@ -6823,6 +6873,173 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Bouygues SA, junto con sus filiales, opera en los sectores de la construcción, las energías y los servicios, las telecomunicaciones y los medios de comunicación en Francia e internacionalmente."
+    }
+  },
+  {
+    "id": "XYZ-2026-09-02",
+    "ticker": "XYZ",
+    "nombre": "Block, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 80.81,
+    "acciones": 1.237471,
+    "invertido": 100.0,
+    "posicion_ranking": 16,
+    "tramo": "11-20",
+    "score": 44.1,
+    "potencial_pct": 21.3,
+    "tarjeta": {
+      "ticker": "XYZ",
+      "nombre_empresa": "Block, Inc.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 44.1,
+      "version_scoring": 33,
+      "precio_actual": 80.81,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.7,
+        "pct_vender": 0.0,
+        "total_analistas": 46
+      },
+      "precio_objetivo_medio": 98.04878,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": -4.5,
+      "momentum_5d_pct": -2.8,
+      "fuerza_relativa_pct": -3.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 44.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 79.98,
+      "sma200": 68.55,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 331705750.47416687,
+      "volumen_relativo": 0.97,
+      "volatilidad_diaria_pct": 2.83,
+      "sesiones_hasta_stop": 19,
+      "distancia_max_52s_pct": -4.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Block Inc. despide al 40% de su plantilla y sube 16% ¿es un nuevo paradigma? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El director de Block, Anthony Eisen, vende 1,49 millones de dólares en acciones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Block abre el acceso al Cash App Score a entidades financieras a través de la plataforma de Nova Credit - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 15,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Block eleva sus previsiones de beneficio para 2026 impulsada por el crecimiento de Cash App y la mejora de los márgenes - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Block raises annual gross profit outlook as Cash App stands out - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Block supera las expectativas de beneficios y sus acciones suben un 7% - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          }
+        ]
+      },
+      "resumen_negocio": "Block, Inc., junto con sus subsidiarias, construye ecosistemas enfocados en el comercio y productos y servicios financieros en los Estados Unidos e internacionalmente. Opera a través de dos segmentos: Square y Cash App."
+    }
+  },
+  {
+    "id": "MONC.MI-2026-09-02",
+    "ticker": "MONC.MI",
+    "nombre": "Moncler S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 46.64,
+    "acciones": 2.144082,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 42.4,
+    "potencial_pct": 31.5,
+    "tarjeta": {
+      "ticker": "MONC.MI",
+      "nombre_empresa": "Moncler S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 42.4,
+      "version_scoring": 33,
+      "precio_actual": 46.64,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 61.332,
+      "dispersion_pct": 42.9,
+      "momentum_30d_pct": -7.6,
+      "momentum_5d_pct": -2.0,
+      "fuerza_relativa_pct": -5.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 36.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 49.47,
+      "sma200": 51.62,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 41413892.05264664,
+      "volumen_relativo": 0.99,
+      "volatilidad_diaria_pct": 1.58,
+      "sesiones_hasta_stop": 62,
+      "distancia_max_52s_pct": -18.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "EXEC: Moncler Group Posts Solid 2025 Results on Strong Fourth Quarter Growth - SGB Media Online",
+            "fuente": "SGB Media Online",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Moncler galopa en el primer trimestre y eleva sus ingresos un 12 % - FashionNetwork España",
+            "fuente": "FashionNetwork España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Moncler se ve penalizada por un crecimiento decepcionante en el segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Moncler S.p.A., junto con sus filiales, se dedica a la producción y distribución de prendas de vestir, ropa infantil, calzado, gafas y otros accesorios relacionados bajo las marcas Moncler y Stone Island."
     }
   }
 ]
