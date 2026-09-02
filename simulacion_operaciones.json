@@ -5031,7 +5031,7 @@
     "id": "ORCL-2026-09-01",
     "ticker": "ORCL",
     "nombre": "Oracle Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 149.12,
     "acciones": 0.670601,
@@ -5098,6 +5098,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Oracle Corporation ofrece productos y servicios que crean, ejecutan y respaldan marcos de tecnología de la información empresarial en todo el mundo. Su oferta de software como servicio en la nube de Oracle incluye varias aplicaciones de software en la nube, incluido el ERP de planificación de recursos empresariales en la nube de Oracle Fusion, EPM de gestión del rendimiento empresarial en la nube de Oracle Fusion..."
+    },
+    "precio_salida": 140.0535,
+    "fecha_salida": "2026-09-01",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 152.1024,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -5638,7 +5666,7 @@
     "id": "EOS.AX-2026-09-01",
     "ticker": "EOS.AX",
     "nombre": "Electro Optic Systems Holdings Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 9.9,
     "acciones": 10.10101,
@@ -5704,6 +5732,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Electro Optic Systems Holdings Limited se dedica al desarrollo, fabricación y venta de telescopios y domos, sistemas de seguimiento láser por satélite, sistemas de armas remotas y armas de alto láser."
+    },
+    "precio_salida": 9.2981,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 10.098,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
