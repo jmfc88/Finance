@@ -739,7 +739,7 @@
     "id": "EDP.LS-2026-08-23",
     "ticker": "EDP.LS",
     "nombre": "EDP, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 4.618,
     "acciones": 21.654396,
@@ -827,7 +827,29 @@
       "version_scoring": 33,
       "precio_actual": 4.618
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 4.7565,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 2.21,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.7104,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "UNI.MI-2026-08-23",
@@ -5366,7 +5388,7 @@
     "id": "LTMC.MI-2026-09-01",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 24.87,
     "acciones": 4.020909,
@@ -5444,6 +5466,70 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., junto con sus filiales, opera en el mercado del juego en Italia. La compañía opera a través de los segmentos en línea, franquicias deportivas y franquicias de juegos."
+    },
+    "precio_salida": 23.3579,
+    "fecha_salida": "2026-09-02",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 25.3674,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -6005,6 +6091,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Buzzi S.p.A., junto con sus subsidiarias, fabrica, distribuye y comercializa cemento, concreto premezclado y agregados naturales. Tiene operaciones principalmente en Italia, Estados Unidos de América, Alemania, Luxemburgo, Países Bajos, Emiratos Árabes Unidos, Polonia, República Checa y Eslovaquia, Brasil, Rusia, Argelia, Eslovenia y México."
+    }
+  },
+  {
+    "id": "ZIP.AX-2026-09-02",
+    "ticker": "ZIP.AX",
+    "nombre": "Zip Co Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-02",
+    "precio_entrada": 2.43,
+    "acciones": 41.152263,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 40.9,
+    "potencial_pct": 77.2,
+    "tarjeta": {
+      "ticker": "ZIP.AX",
+      "nombre_empresa": "Zip Co Limited",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 40.9,
+      "version_scoring": 33,
+      "precio_actual": 2.43,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 4.30644,
+      "dispersion_pct": 66.9,
+      "momentum_30d_pct": -9.7,
+      "momentum_5d_pct": -7.3,
+      "fuerza_relativa_pct": -11.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 41.1,
+      "tendencia_tecnica": "bajista",
+      "sma50": 2.81,
+      "sma200": 2.57,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 48596696.67317295,
+      "volumen_relativo": 0.91,
+      "volatilidad_diaria_pct": 6.38,
+      "sesiones_hasta_stop": 3,
+      "distancia_max_52s_pct": -42.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Zip Co registra beneficio récord y prevé un crecimiento del 26% en ganancias - es.investing.com",
+            "fuente": "es.investing.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "¿Por qué cae hoy la acción de Zip Co? - es.investing.com",
+            "fuente": "es.investing.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "How Investors May Respond To Zip Co (ASX:ZIP) Earnings Beat And A$50 Million Share Buyback Plan - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Zip Co Limited se dedica a la provisión de soluciones de pagos, finanzas personales y finanzas minoristas digitales en Australia y Estados Unidos. La empresa ofrece productos de líneas de crédito minoristas y préstamos personales; productos minoristas a plazos; y productos a plazos Compre ahora y pague después para los consumidores."
     }
   }
 ]
