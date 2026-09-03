@@ -1027,7 +1027,7 @@
     "id": "ENGI.PA-2026-08-23",
     "ticker": "ENGI.PA",
     "nombre": "Engie SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 25.29,
     "acciones": 3.954132,
@@ -1115,7 +1115,35 @@
       "version_scoring": 33,
       "precio_actual": 25.29
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 23.7524,
+    "fecha_salida": "2026-09-03",
+    "sesiones": 9,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.52,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 25.7958,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 9,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "APO-2026-08-23",
@@ -7191,6 +7219,173 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Intesa Sanpaolo S.p.A. se dedica al suministro de diversos productos y servicios financieros en Italia, Europa Central y del Este, Oriente Medio y el Norte de África. Opera a través de seis segmentos: Banca dei Territori, IMI Corporate & Investment Banking, Bancos Internacionales, Gestión de Activos, Banca Privada y Seguros."
+    }
+  },
+  {
+    "id": "PUIG.MC-2026-09-03",
+    "ticker": "PUIG.MC",
+    "nombre": "Puig Brands, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-03",
+    "precio_entrada": 18.26,
+    "acciones": 5.476451,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 42.3,
+    "potencial_pct": 7.9,
+    "tarjeta": {
+      "ticker": "PUIG.MC",
+      "nombre_empresa": "Puig Brands, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 42.3,
+      "version_scoring": 33,
+      "precio_actual": 18.26,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 19.7,
+      "dispersion_pct": 47.5,
+      "momentum_30d_pct": 7.4,
+      "momentum_5d_pct": 1.0,
+      "fuerza_relativa_pct": 9.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 76.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 17.0,
+      "sma200": 16.1,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 6967222.166316032,
+      "volumen_relativo": 1.25,
+      "volatilidad_diaria_pct": 1.0,
+      "sesiones_hasta_stop": 156,
+      "distancia_max_52s_pct": -1.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-PUIG BRANDS, S.A. Convocatoria de presentación de resultados H1 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "AlphaValue/Baader Europe rebaja la calificación de Puig Brands a Add - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Estée Lauder se dispara y Puig se desploma tras la ruptura de las negociaciones de fusión - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Berenberg actualiza las estimaciones y el precio objetivo de Puig Brands tras superar las expectativas en el segundo trimestre; mantiene la recomendación de \"mantener\". - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-PUIG BRANDS, S.A. Convocatoria de presentación de resultados H1 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Puig suben. ¿Habrá fusión con Estée Lauder? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Puig Brands, S.A. opera en la industria de la belleza y la moda en Europa, Oriente Medio, África, América y Asia-Pacífico. La empresa opera a través de tres segmentos: Fragancias y Moda, Maquillaje y Cuidado de la Piel."
+    }
+  },
+  {
+    "id": "PRX.AS-2026-09-03",
+    "ticker": "PRX.AS",
+    "nombre": "Prosus N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-03",
+    "precio_entrada": 36.875,
+    "acciones": 2.711864,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 40.8,
+    "potencial_pct": 69.0,
+    "tarjeta": {
+      "ticker": "PRX.AS",
+      "nombre_empresa": "Prosus N.V.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 40.8,
+      "version_scoring": 33,
+      "precio_actual": 36.875,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 29.4,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 62.32382,
+      "dispersion_pct": 105.1,
+      "momentum_30d_pct": -11.3,
+      "momentum_5d_pct": -3.0,
+      "fuerza_relativa_pct": -9.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 45.4,
+      "tendencia_tecnica": "bajista",
+      "sma50": 38.81,
+      "sma200": 43.66,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 94545106.14014053,
+      "volumen_relativo": 1.21,
+      "volatilidad_diaria_pct": 2.02,
+      "sesiones_hasta_stop": 38,
+      "distancia_max_52s_pct": -40.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Prosus N.V. : El JP Morgan continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "5 acciones europeas de gran capitalización y crecimiento a precio de ganga - global.morningstar.com",
+            "fuente": "global.morningstar.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Prosus: recorte del beneficio por acción (2025: +0,2%, 2026: -19,9%) - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Prosus N.V. se dedica a los negocios de comercio electrónico e Internet en Asia, Europa, América Latina, América del Norte e internacionalmente. Opera plataformas de Internet, como anuncios clasificados, pagos y fintech, comercio electrónico, entrega de alimentos, tecnología educativa, comercio electrónico, empresas, tencent y otras plataformas."
     }
   }
 ]
