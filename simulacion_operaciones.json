@@ -4971,7 +4971,7 @@
     "id": "ANET-2026-09-01",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 195.69,
     "acciones": 0.511012,
@@ -5059,6 +5059,34 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. se dedica al desarrollo, marketing y venta de soluciones de redes de cliente a nube basadas en datos para entornos de inteligencia artificial, centros de datos, campus y enrutamiento en América, Europa, Medio Oriente, África y Asia-Pacífico."
+    },
+    "precio_salida": 183.7921,
+    "fecha_salida": "2026-09-03",
+    "sesiones": 2,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 199.6038,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 2 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
