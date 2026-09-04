@@ -6935,7 +6935,7 @@
     "id": "XYZ-2026-09-02",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 80.81,
     "acciones": 1.237471,
@@ -7023,6 +7023,28 @@
         ]
       },
       "resumen_negocio": "Block, Inc., junto con sus subsidiarias, construye ecosistemas enfocados en el comercio y productos y servicios financieros en los Estados Unidos e internacionalmente. Opera a través de dos segmentos: Square y Cash App."
+    },
+    "precio_salida": 83.2343,
+    "fecha_salida": "2026-09-04",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 82.4262,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
