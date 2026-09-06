@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-06T14:29:56.116950",
+  "generado": "2026-09-06T17:21:15.652555",
   "version_scoring": 33,
   "regimen_mercado": {
     "euro": {
@@ -81,79 +81,84 @@
       }
     },
     {
-      "ticker": "GALP.LS",
+      "ticker": "EDP.LS",
       "descartado": false,
-      "nombre_empresa": "Galp Energia, SGPS, S.A.",
+      "nombre_empresa": "EDP, S.A.",
       "isin": null,
-      "precio_actual": 20.52,
-      "score": 56.0,
+      "precio_actual": 4.649,
+      "score": 56.3,
       "consenso": "buy",
-      "precio_objetivo_medio": 22.4,
-      "dispersion_pct": 41.3,
-      "momentum_30d_pct": 4.7,
-      "momentum_5d_pct": -1.5,
-      "fuerza_relativa_pct": 6.4,
+      "precio_objetivo_medio": 5.14773,
+      "dispersion_pct": 33.3,
+      "momentum_30d_pct": 2.8,
+      "momentum_5d_pct": -1.0,
+      "fuerza_relativa_pct": 4.5,
       "regimen_mercado": "favorable",
       "indice_referencia": "^STOXX50E",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
       "horquilla_pct": null,
       "coste_horquilla_200e": null,
-      "liquidez_dia": 25815090.839313507,
-      "volumen_relativo": 1.39,
-      "volatilidad_diaria_pct": 1.62,
-      "sesiones_hasta_stop": 59,
-      "distancia_max_52s_pct": -6.4,
+      "liquidez_dia": 29869080.46224308,
+      "volumen_relativo": 1.21,
+      "volatilidad_diaria_pct": 1.07,
+      "sesiones_hasta_stop": 137,
+      "distancia_max_52s_pct": -1.5,
       "catalizador_resultados": null,
       "consenso_real": {
         "excluida": false,
-        "empujon": 3.7,
-        "pct_strong_buy": 27.8,
-        "pct_vender": 5.6,
-        "total_analistas": 18
+        "empujon": 3.0,
+        "pct_strong_buy": 9.1,
+        "pct_vender": 0.0,
+        "total_analistas": 22
       },
       "cotiza_en_euros": true,
       "noticias": {
         "sentimiento_total": 4,
         "titulares": [
           {
-            "titulo": "RBC eleva sus previsiones para Galp Energia antes de los resultados del segundo trimestre - MarketScreener España",
+            "titulo": "Jefferies Upgrades EDP S.A(ELCPF.US) to Buy Rating, Raises Target Price to $6.25 - moomoo.com",
+            "fuente": "moomoo.com",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "AlphaValue/Baader Europe eleva el precio objetivo de EDP ante la llegada de la temporada de otoño e invierno - MarketScreener España",
             "fuente": "MarketScreener España",
             "sentimiento": 1
           },
           {
-            "titulo": "Galp Energia SGPS (ENXTLS:GALP) Following Bacalhau Ramp Up Hopes And The Case For Value - Yahoo Finance",
-            "fuente": "Yahoo Finance",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Galp Energia SGPS S A : and TotalEnergies complete their strategic partnership in Namibia - marketscreener.com",
-            "fuente": "marketscreener.com",
-            "sentimiento": 1
+            "titulo": "EDP trae de Asia al artífice de su reorganización en la zona para pilotar las fusiones del grupo - eleconomista.es",
+            "fuente": "eleconomista.es",
+            "sentimiento": 0
           }
         ]
       },
-      "rsi_14": 48.6,
+      "rsi_14": 61.0,
       "tendencia_tecnica": "alcista",
-      "sma50": 19.86,
-      "sma200": 18.15,
+      "sma50": 4.56,
+      "sma200": 4.25,
       "tendencia_analistas": "mejorando",
-      "sector": "Energy",
-      "resumen_negocio": "Galp Energia, SGPS, S.A. opera como operador energético integrado en Portugal e internacionalmente. La empresa opera a través de cuatro segmentos: Upstream, Industrial y Midstream, Comercial y Renovables.",
+      "sector": "Utilities",
+      "resumen_negocio": "EDP, S.A. engages in the generation, transmission, distribution, and supply of electricity in Portugal, Spain, France, Poland, Romania, Italy, Belgium, the United Kingdom, Greece, Colombia, Brazil, North America, and internationally.",
       "profundizacion": {
-        "sentimiento_adicional": 1,
+        "sentimiento_adicional": 6,
         "verificado": true,
         "ajuste": 0,
         "titulares_adicionales": [
           {
-            "titulo": "RBC eleva sus previsiones para Galp Energia antes de los resultados del segundo trimestre - MarketScreener España",
+            "titulo": "La portuguesa EDP eleva sus previsiones de beneficio impulsada por la solidez de sus redes y las plusvalías por activos - MarketScreener España",
             "fuente": "MarketScreener España",
-            "sentimiento": 1
+            "sentimiento": 2
           },
           {
-            "titulo": "Elecnor, Tubacex y Galp Energía: las tres grandes apuestas de Azvalor Iberia, a examen - Bolsamania",
-            "fuente": "Bolsamania",
-            "sentimiento": 0
+            "titulo": "EDP Renewables supera las previsiones de beneficio neto gracias a menores costes - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "AlphaValue/Baader Europe eleva el precio objetivo de EDP antes de la temporada de otoño/invierno. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
           }
         ]
       }
@@ -195,8 +200,8 @@
         "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "H.I.G. Capital cierra un acuerdo para la venta de Xtera - Capital-Riesgo.es",
-            "fuente": "Capital-Riesgo.es",
+            "titulo": "H.I.G. Capital cierra un acuerdo para la venta de Xtera - Capital Riesgo",
+            "fuente": "Capital Riesgo",
             "sentimiento": 1
           },
           {
@@ -295,7 +300,7 @@
       "sma200": 158.39,
       "tendencia_analistas": "mejorando",
       "sector": "Basic Materials",
-      "resumen_negocio": "L'Air Liquide S.A. proporciona gases, tecnologías y servicios para los sectores industrial y sanitario en Europa, América, Asia Pacífico, Oriente Medio y África. Opera en los segmentos de Gas y Servicios e Ingeniería y Construcción.",
+      "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments.",
       "profundizacion": {
         "sentimiento_adicional": 0,
         "verificado": true,
@@ -362,7 +367,7 @@
       "sma200": 10.76,
       "tendencia_analistas": "mejorando",
       "sector": "Financial Services",
-      "resumen_negocio": "Banco Santander, S.A. ofrece diversos productos y servicios financieros a particulares, pequeñas y medianas empresas, grandes corporaciones y entidades públicas en todo el mundo. La compañía opera a través de cinco segmentos: banca minorista y comercial, banca de consumo digital, banca corporativa y de inversión, gestión patrimonial y seguros, y pagos.",
+      "resumen_negocio": "Banco Santander, S.A. ofrece diversos productos y servicios financieros a particulares, pequeñas y medianas empresas, grandes corporaciones y entidades públicas en todo el mundo. La compañía opera a través de cinco segmentos: banca comercial y minorista, banca de consumo digital, banca corporativa y de inversión, gestión patrimonial y seguros, y pagos.",
       "profundizacion": {
         "sentimiento_adicional": 1,
         "verificado": true,
@@ -374,97 +379,14 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Banco Santander: potencial de más del 20% para volar hasta nuevos máximos históricos - Yahoo",
-            "fuente": "Yahoo",
-            "sentimiento": 0
-          },
-          {
             "titulo": "Un Banco Santander en máximos históricos en bolsa hace añicos las previsiones de los analistas - Valencia Plaza",
             "fuente": "Valencia Plaza",
             "sentimiento": 0
-          }
-        ]
-      }
-    },
-    {
-      "ticker": "EDP.LS",
-      "descartado": false,
-      "nombre_empresa": "EDP, S.A.",
-      "isin": null,
-      "precio_actual": 4.649,
-      "score": 55.0,
-      "consenso": "buy",
-      "precio_objetivo_medio": 5.14773,
-      "dispersion_pct": 33.3,
-      "momentum_30d_pct": 2.8,
-      "momentum_5d_pct": -1.0,
-      "fuerza_relativa_pct": 4.5,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 29869080.46224308,
-      "volumen_relativo": 1.21,
-      "volatilidad_diaria_pct": 1.07,
-      "sesiones_hasta_stop": 137,
-      "distancia_max_52s_pct": -1.5,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.0,
-        "pct_strong_buy": 9.1,
-        "pct_vender": 0.0,
-        "total_analistas": 22
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "California sues Trump administration over offshore wind lease cancelation - Reuters",
-            "fuente": "Reuters",
-            "sentimiento": 2
           },
           {
-            "titulo": "AlphaValue/Baader Europe eleva el precio objetivo de EDP ante la llegada de la temporada de otoño e invierno - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "EDP trae de Asia al artífice de su reorganización en la zona para pilotar las fusiones del grupo - El Economista",
-            "fuente": "El Economista",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 61.0,
-      "tendencia_tecnica": "alcista",
-      "sma50": 4.56,
-      "sma200": 4.25,
-      "tendencia_analistas": "mejorando",
-      "sector": "Utilities",
-      "resumen_negocio": "EDP, S.A. se dedica a la generación, transmisión, distribución y suministro de electricidad en Portugal, España, Francia, Polonia, Rumanía, Italia, Bélgica, Reino Unido, Grecia, Colombia, Brasil, Norteamérica e internacionalmente.",
-      "profundizacion": {
-        "sentimiento_adicional": 6,
-        "verificado": true,
-        "ajuste": 0,
-        "titulares_adicionales": [
-          {
-            "titulo": "La portuguesa EDP eleva sus previsiones de beneficio impulsada por la solidez de sus redes y las plusvalías por activos - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "EDP Renewables supera las previsiones de beneficio neto gracias a menores costes - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "AlphaValue/Baader Europe eleva el precio objetivo de EDP antes de la temporada de otoño/invierno. - Yahoo",
+            "titulo": "Banco Santander: potencial de más del 20% para volar hasta nuevos máximos históricos - Yahoo",
             "fuente": "Yahoo",
-            "sentimiento": 1
+            "sentimiento": 0
           }
         ]
       }
@@ -516,8 +438,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Is Bellevue Gold (ASX:BGL) Entering the Gold Stocks Spotlight? - kalkinemedia.com",
-            "fuente": "kalkinemedia.com",
+            "titulo": "Is Bellevue Gold (ASX:BGL) Entering the Gold Stocks Spotlight? - Kalkine Media",
+            "fuente": "Kalkine Media",
             "sentimiento": 0
           }
         ]
@@ -595,7 +517,7 @@
       "sma200": 95.92,
       "tendencia_analistas": "mejorando",
       "sector": "Real Estate",
-      "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) opera destinos vibrantes centrados en el comercio minorista en muchas de las mejores ciudades y áreas urbanas del mundo. Esta poderosa red atrae más de 900 millones de visitas de clientes al año, respalda el crecimiento de los principales minoristas y realiza una importante contribución social y económica a las comunidades locales.",
+      "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) operates vibrant retail-anchored destinations in many of the world's best cities and urban areas. This powerful network attracts over 900 million customer visits annually, supports the growth of major retailers, and makes a significant social and economic contribution to local communities.",
       "profundizacion": {
         "sentimiento_adicional": 0,
         "verificado": true,
@@ -610,12 +532,90 @@
       }
     },
     {
+      "ticker": "SAMPO.HE",
+      "descartado": false,
+      "nombre_empresa": "Sampo Oyj",
+      "isin": null,
+      "precio_actual": 9.68,
+      "score": 52.7,
+      "consenso": "buy",
+      "precio_objetivo_medio": 10.56312,
+      "dispersion_pct": 20.9,
+      "momentum_30d_pct": 1.1,
+      "momentum_5d_pct": -1.7,
+      "fuerza_relativa_pct": 2.8,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.04,
+      "coste_horquilla_200e": 0.08,
+      "liquidez_dia": 23209790.576236725,
+      "volumen_relativo": 1.11,
+      "volatilidad_diaria_pct": 0.76,
+      "sesiones_hasta_stop": 268,
+      "distancia_max_52s_pct": -2.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Sampo eleva perspectivas para 2026 tras superar previsiones en Q2 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "3 Insurance Stocks Riding Record P And C Profits Before Pricing Pressure Builds - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué sube hoy la acción de Sampo? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 50.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.59,
+      "sma200": 9.26,
+      "tendencia_analistas": "estable",
+      "sector": "Financial Services",
+      "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom.",
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Sampo eleva perspectivas para 2026 tras superar previsiones en Q2 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Las acciones de Sampo Oyj suben tras sólidos resultados del cuarto trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      }
+    },
+    {
       "ticker": "PUB.PA",
       "descartado": false,
       "nombre_empresa": "Publicis Groupe S.A.",
       "isin": null,
       "precio_actual": 101.1,
-      "score": 53.5,
+      "score": 52.2,
       "consenso": "strong_buy",
       "precio_objetivo_medio": 110.75,
       "dispersion_pct": 47.8,
@@ -643,7 +643,7 @@
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 4,
+        "sentimiento_total": 3,
         "titulares": [
           {
             "titulo": "¿Por qué sube hoy la acción de Publicis Groupe? - Investing.com México",
@@ -651,13 +651,13 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Soitec se dispara, Publicis se adjudica la cuenta mundial de PepsiCo y el lujo se desploma - MarketScreener España",
-            "fuente": "MarketScreener España",
+            "titulo": "Cuenta global de PepsiCo: Publicis gana negocio de 1,700 millones de dólares - Revista Merca2.0",
+            "fuente": "Revista Merca2.0",
             "sentimiento": 1
           },
           {
-            "titulo": "Cuenta global de PepsiCo: Publicis gana negocio de 1,700 millones de dólares - Revista Merca2.0",
-            "fuente": "Revista Merca2.0",
+            "titulo": "Publicis Reportedly Lands Global Media Contract with PepsiCo - marketscreener.com",
+            "fuente": "marketscreener.com",
             "sentimiento": 1
           }
         ]
@@ -693,173 +693,12 @@
       }
     },
     {
-      "ticker": "ANET",
-      "descartado": false,
-      "nombre_empresa": "Arista Networks, Inc.",
-      "isin": "US0404132054",
-      "precio_actual": 193.78,
-      "score": 50.3,
-      "consenso": "strong_buy",
-      "precio_objetivo_medio": 241.03607,
-      "dispersion_pct": 56.2,
-      "momentum_30d_pct": 0.8,
-      "momentum_5d_pct": -0.8,
-      "fuerza_relativa_pct": 0.7,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 990547806.4361572,
-      "volumen_relativo": 0.77,
-      "volatilidad_diaria_pct": 3.08,
-      "sesiones_hasta_stop": 16,
-      "distancia_max_52s_pct": -7.9,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 10.8,
-        "pct_strong_buy": 25.8,
-        "pct_vender": 0.0,
-        "total_analistas": 31
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
-            "fuente": "XTB.com",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Arista Stock Is Up 40% This Year. The Guidance Raises Explain Why. - TIKR.com",
-            "fuente": "TIKR.com",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Arista Networks Inc. stock outperforms competitors on strong trading day - MarketWatch",
-            "fuente": "MarketWatch",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 43.5,
-      "tendencia_tecnica": "alcista",
-      "sma50": 182.93,
-      "sma200": 151.94,
-      "tendencia_analistas": null,
-      "sector": "Technology",
-      "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific.",
-      "profundizacion": {
-        "sentimiento_adicional": 6,
-        "verificado": true,
-        "ajuste": 0,
-        "titulares_adicionales": [
-          {
-            "titulo": "Las acciones de Arista Networks se disparan tras superar las previsiones del Q2 - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Arista Networks Stock Beats Q1 Revenue Estimates With $2.71B and Raises Full-Year Outlook - TIKR.com",
-            "fuente": "TIKR.com",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
-            "fuente": "XTB.com",
-            "sentimiento": 1
-          }
-        ]
-      }
-    },
-    {
-      "ticker": "SAMPO.HE",
-      "descartado": false,
-      "nombre_empresa": "Sampo Oyj",
-      "isin": null,
-      "precio_actual": 9.68,
-      "score": 50.1,
-      "consenso": "buy",
-      "precio_objetivo_medio": 10.56312,
-      "dispersion_pct": 20.9,
-      "momentum_30d_pct": 1.1,
-      "momentum_5d_pct": -1.7,
-      "fuerza_relativa_pct": 2.8,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.04,
-      "coste_horquilla_200e": 0.08,
-      "liquidez_dia": 23209790.576236725,
-      "volumen_relativo": 1.11,
-      "volatilidad_diaria_pct": 0.76,
-      "sesiones_hasta_stop": 268,
-      "distancia_max_52s_pct": -2.5,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.4,
-        "pct_strong_buy": 18.8,
-        "pct_vender": 0.0,
-        "total_analistas": 16
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "Sampo eleva perspectivas para 2026 tras superar previsiones en Q2 - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "¿Por qué sube hoy la acción de Sampo? - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Morgan Stanley apoya a Sampo por tecnología ante caída de prima nórdica - Investing.com México",
-            "fuente": "Investing.com México",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 50.0,
-      "tendencia_tecnica": "alcista",
-      "sma50": 9.59,
-      "sma200": 9.26,
-      "tendencia_analistas": "estable",
-      "sector": "Financial Services",
-      "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom.",
-      "profundizacion": {
-        "sentimiento_adicional": 3,
-        "verificado": true,
-        "ajuste": 0,
-        "titulares_adicionales": [
-          {
-            "titulo": "Sampo eleva perspectivas para 2026 tras superar previsiones en Q2 - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Las acciones de Sampo Oyj suben tras sólidos resultados del cuarto trimestre - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          }
-        ]
-      }
-    },
-    {
       "ticker": "INGA.AS",
       "descartado": false,
       "nombre_empresa": "ING Groep N.V.",
       "isin": "CA44989Q1054",
       "precio_actual": 32.005,
-      "score": 49.0,
+      "score": 51.6,
       "consenso": "buy",
       "precio_objetivo_medio": 32.1045,
       "dispersion_pct": 60.1,
@@ -887,7 +726,7 @@
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 3,
+        "sentimiento_total": 5,
         "titulares": [
           {
             "titulo": "Australia raises capital requirements for ING's local unit after overstating liquidity position - Reuters",
@@ -895,14 +734,14 @@
             "sentimiento": 2
           },
           {
+            "titulo": "Morgan Stanley Upgrades ING Groep to Overweight, Raises PT - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 2
+          },
+          {
             "titulo": "Australia eleva las exigencias de capital a la filial de ING tras inflar su posición de liquidez - MarketScreener España",
             "fuente": "MarketScreener España",
             "sentimiento": 1
-          },
-          {
-            "titulo": "Sanción en Australia a la filial de ING por incumplimientos materiales de liquidez - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
           }
         ]
       },
@@ -929,9 +768,170 @@
             "sentimiento": 2
           },
           {
-            "titulo": "ING gana un 11,9% más en el primer semestre y eleva previsiones de ingresos - forbes.es",
-            "fuente": "forbes.es",
+            "titulo": "ING gana un 11,9% más en el primer semestre y eleva previsiones de ingresos - Forbes España",
+            "fuente": "Forbes España",
             "sentimiento": 2
+          }
+        ]
+      }
+    },
+    {
+      "ticker": "AIR.PA",
+      "descartado": false,
+      "nombre_empresa": "Airbus SE",
+      "isin": null,
+      "precio_actual": 198.96,
+      "score": 49.5,
+      "consenso": "buy",
+      "precio_objetivo_medio": 230.95651,
+      "dispersion_pct": 42.1,
+      "momentum_30d_pct": -6.3,
+      "momentum_5d_pct": -2.0,
+      "fuerza_relativa_pct": -4.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 149503688.0181656,
+      "volumen_relativo": 1.21,
+      "volatilidad_diaria_pct": 1.06,
+      "sesiones_hasta_stop": 140,
+      "distancia_max_52s_pct": -8.0,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 4.2,
+        "total_analistas": 24
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Airbus Finds Quality Issues on A330neo Jet, Slowing Output - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Airbus y sindicatos alcanzan un preacuerdo tras la mediación del Ministerio de Industria - El Confidencial",
+            "fuente": "El Confidencial",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El Gobierno se abre a intervenir en el conflicto laboral de Airbus ante los posibles retrasos en el rearme de Europa - El Mundo",
+            "fuente": "El Mundo",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "rsi_14": 21.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 203.93,
+      "sma200": 188.14,
+      "tendencia_analistas": "mejorando",
+      "sector": "Industrials",
+      "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space.",
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Airbus caen tras recortar previsiones - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Airbus se dispara en bolsa tras presentar objetivos positivos a medio plazo - Radio Intereconomía",
+            "fuente": "Radio Intereconomía",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Deutsche Bank resta impacto a la huelga en Airbus y ve al grupo superando sus objetivos - finanzas.com",
+            "fuente": "finanzas.com",
+            "sentimiento": 1
+          }
+        ]
+      }
+    },
+    {
+      "ticker": "GALP.LS",
+      "descartado": false,
+      "nombre_empresa": "Galp Energia, SGPS, S.A.",
+      "isin": null,
+      "precio_actual": 20.52,
+      "score": 48.2,
+      "consenso": "buy",
+      "precio_objetivo_medio": 22.34444,
+      "dispersion_pct": 41.3,
+      "momentum_30d_pct": 4.7,
+      "momentum_5d_pct": -1.5,
+      "fuerza_relativa_pct": 6.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 25815090.839313507,
+      "volumen_relativo": 1.39,
+      "volatilidad_diaria_pct": 1.62,
+      "sesiones_hasta_stop": 59,
+      "distancia_max_52s_pct": -6.4,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 27.8,
+        "pct_vender": 5.6,
+        "total_analistas": 18
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "RBC eleva sus previsiones para Galp Energia antes de los resultados del segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Galp Energia SGPS (ENXTLS:GALP) Following Bacalhau Ramp Up Hopes And The Case For Value - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Galp Energia SGPS S A : and TotalEnergies complete their strategic partnership in Namibia - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 48.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 19.86,
+      "sma200": 18.15,
+      "tendencia_analistas": null,
+      "sector": "Energy",
+      "resumen_negocio": "Galp Energia, SGPS, S.A. opera como operador energético integrado en Portugal e internacionalmente. La empresa opera a través de cuatro segmentos: Upstream, Industrial y Midstream, Comercial y Renovables.",
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "RBC eleva sus previsiones para Galp Energia antes de los resultados del segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Elecnor, Tubacex y Galp Energía: las tres grandes apuestas de Azvalor Iberia, a examen - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 0
           }
         ]
       }
@@ -995,12 +995,95 @@
       "sma200": 53.89,
       "tendencia_analistas": "mejorando",
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally.",
+      "resumen_negocio": "Industria de Diseño Textil, S.A., junto con sus filiales, se dedica a la venta minorista y distribución online de ropa, calzado, complementos y productos para el hogar en España, resto de Europa, América, Asia e internacionalmente.",
       "profundizacion": {
         "sentimiento_adicional": 0,
         "verificado": true,
         "ajuste": 0,
         "titulares_adicionales": []
+      }
+    },
+    {
+      "ticker": "ANET",
+      "descartado": false,
+      "nombre_empresa": "Arista Networks, Inc.",
+      "isin": "US0404132054",
+      "precio_actual": 193.78,
+      "score": 47.9,
+      "consenso": "strong_buy",
+      "precio_objetivo_medio": 241.03607,
+      "dispersion_pct": 56.2,
+      "momentum_30d_pct": 0.8,
+      "momentum_5d_pct": -0.8,
+      "fuerza_relativa_pct": 0.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.77,
+      "coste_horquilla_200e": 1.54,
+      "liquidez_dia": 990547806.4361572,
+      "volumen_relativo": 0.77,
+      "volatilidad_diaria_pct": 3.08,
+      "sesiones_hasta_stop": 16,
+      "distancia_max_52s_pct": -7.9,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 10.8,
+        "pct_strong_buy": 25.8,
+        "pct_vender": 0.0,
+        "total_analistas": 31
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Stock Is Up 40% This Year. The Guidance Raises Explain Why. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks Inc. stock outperforms competitors on strong trading day - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 43.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 182.93,
+      "sma200": 151.94,
+      "tendencia_analistas": null,
+      "sector": "Technology",
+      "resumen_negocio": "Arista Networks, Inc. se dedica al desarrollo, marketing y venta de soluciones de redes de cliente a nube basadas en datos para entornos de inteligencia artificial, centros de datos, campus y enrutamiento en América, Europa, Medio Oriente, África y Asia-Pacífico.",
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Arista Networks se disparan tras superar las previsiones del Q2 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Arista Networks Stock Beats Q1 Revenue Estimates With $2.71B and Raises Full-Year Outlook - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
       }
     },
     {
@@ -1133,8 +1216,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Dupilumab llega a España para pacientes con EPOC no controlada e inflamación tipo 2 - immedicohospitalario.es",
-            "fuente": "immedicohospitalario.es",
+            "titulo": "Dupilumab llega a España para pacientes con EPOC no controlada e inflamación tipo 2 - IM Médico",
+            "fuente": "IM Médico",
             "sentimiento": 0
           }
         ]
@@ -1157,8 +1240,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Sanofi mejora previsiones para 2026 tras subir un 16% sus ventas en el segundo trimestre - El Economista",
-            "fuente": "El Economista",
+            "titulo": "Sanofi mejora previsiones para 2026 tras subir un 16% sus ventas en el segundo trimestre - eleconomista.es",
+            "fuente": "eleconomista.es",
             "sentimiento": 1
           },
           {
@@ -1170,84 +1253,84 @@
       }
     },
     {
-      "ticker": "AIR.PA",
+      "ticker": "APO",
       "descartado": false,
-      "nombre_empresa": "Airbus SE",
-      "isin": null,
-      "precio_actual": 198.96,
-      "score": 46.9,
+      "nombre_empresa": "Apollo Global Management, Inc.",
+      "isin": "US03769M1062",
+      "precio_actual": 133.67,
+      "score": 46.0,
       "consenso": "buy",
-      "precio_objetivo_medio": 230.95651,
-      "dispersion_pct": 42.1,
-      "momentum_30d_pct": -6.3,
-      "momentum_5d_pct": -2.0,
-      "fuerza_relativa_pct": -4.6,
+      "precio_objetivo_medio": 153.05263,
+      "dispersion_pct": 33.1,
+      "momentum_30d_pct": 4.9,
+      "momentum_5d_pct": -1.0,
+      "fuerza_relativa_pct": 4.8,
       "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
+      "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 149503688.0181656,
-      "volumen_relativo": 1.21,
-      "volatilidad_diaria_pct": 1.06,
-      "sesiones_hasta_stop": 140,
-      "distancia_max_52s_pct": -8.0,
+      "horquilla_pct": 0.1,
+      "coste_horquilla_200e": 0.2,
+      "liquidez_dia": 347442907.5286865,
+      "volumen_relativo": 0.74,
+      "volatilidad_diaria_pct": 2.51,
+      "sesiones_hasta_stop": 24,
+      "distancia_max_52s_pct": -11.4,
       "catalizador_resultados": null,
       "consenso_real": {
         "excluida": false,
-        "empujon": 3.8,
-        "pct_strong_buy": 29.2,
-        "pct_vender": 4.2,
-        "total_analistas": 24
+        "empujon": 3.4,
+        "pct_strong_buy": 19.0,
+        "pct_vender": 0.0,
+        "total_analistas": 21
       },
-      "cotiza_en_euros": true,
+      "cotiza_en_euros": false,
       "noticias": {
-        "sentimiento_total": 1,
+        "sentimiento_total": -1,
         "titulares": [
           {
-            "titulo": "Airbus Finds Quality Issues on A330neo Jet, Slowing Output - Bloomberg.com",
-            "fuente": "Bloomberg.com",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Airbus y sindicatos alcanzan un preacuerdo tras la mediación del Ministerio de Industria - elconfidencial.com",
-            "fuente": "elconfidencial.com",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "El Gobierno se abre a intervenir en el conflicto laboral de Airbus ante los posibles retrasos en el rearme de Europa - El Mundo",
-            "fuente": "El Mundo",
+            "titulo": "Las acciones de Apollo caen por preocupaciones sobre Brightspeed - Investing.com España",
+            "fuente": "Investing.com España",
             "sentimiento": -1
+          },
+          {
+            "titulo": "Apollo Global invertirá 500 millones USD en Cumberland Farms antes de su salida a Bolsa - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Apollo prevé que los rendimientos de bonos de EE.UU. subirán por la guerra con Irán y los aranceles - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 0
           }
         ]
       },
-      "rsi_14": 21.8,
-      "tendencia_tecnica": "mixta",
-      "sma50": 203.93,
-      "sma200": 188.14,
+      "rsi_14": 49.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 126.59,
+      "sma200": 126.76,
       "tendencia_analistas": "mejorando",
-      "sector": "Industrials",
-      "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space.",
+      "sector": "Financial Services",
+      "resumen_negocio": "Apollo Global Management, Inc. es una firma de capital privado que se especializa en inversiones en crédito, capital privado, infraestructura, secundaria y mercados inmobiliarios.",
       "profundizacion": {
-        "sentimiento_adicional": 1,
+        "sentimiento_adicional": 3,
         "verificado": true,
         "ajuste": 0,
         "titulares_adicionales": [
           {
-            "titulo": "Las acciones de Airbus caen tras recortar previsiones - XTB.com",
-            "fuente": "XTB.com",
-            "sentimiento": -2
+            "titulo": "Resultados del Q1 2026 de Apollo: Los activos bajo gestión superan $1 billón, ingresos por comisiones récord. - es.qz.com",
+            "fuente": "es.qz.com",
+            "sentimiento": 2
           },
           {
-            "titulo": "Airbus se dispara en bolsa tras presentar objetivos positivos a medio plazo - Radio Intereconomía",
-            "fuente": "Radio Intereconomía",
+            "titulo": "easyJet sube un 14% tras la oferta de Apollo de 7.700 millones de dólares - Investing.com España",
+            "fuente": "Investing.com España",
             "sentimiento": 1
           },
           {
-            "titulo": "Deutsche Bank resta impacto a la huelga en Airbus y ve al grupo superando sus objetivos - Finanzas.com",
-            "fuente": "Finanzas.com",
-            "sentimiento": 1
+            "titulo": "Apollo Global Management Slid 3% Last Week. Here’s Why Analysts Think It Could Pass $200 - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
           }
         ]
       }
@@ -1406,8 +1489,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Precio de BNP Paribas SA(BNP), noticias y previsiones - Admirals",
-            "fuente": "Admirals",
+            "titulo": "Precio de BNP Paribas SA(BNP), noticias y previsiones - admiralmarkets.com",
+            "fuente": "admiralmarkets.com",
             "sentimiento": 0
           },
           {
@@ -1477,7 +1560,7 @@
       "sma200": 66.06,
       "tendencia_analistas": "estable",
       "sector": "Healthcare",
-      "resumen_negocio": "Laboratorios Farmacéuticos Rovi, S.A. fabrica, comercializa y comercializa productos farmacéuticos en España, la Unión Europea, países de la OCDE e internacionalmente. La empresa ofrece productos recetados, incluidos Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler y Volutsa.",
+      "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa.",
       "profundizacion": {
         "sentimiento_adicional": 0,
         "verificado": true,
@@ -1528,8 +1611,8 @@
         "sentimiento_total": 1,
         "titulares": [
           {
-            "titulo": "Unilever PLC : Receives a Buy rating from JP Morgan - marketscreener.com",
-            "fuente": "marketscreener.com",
+            "titulo": "Unilever stock steadies as investors eye brand sales and beauty partnership - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
             "sentimiento": 1
           },
           {
@@ -1550,7 +1633,7 @@
       "sma200": 53.02,
       "tendencia_analistas": "estable",
       "sector": "Consumer Defensive",
-      "resumen_negocio": "Unilever PLC opera como una empresa de bienes de consumo de rápido movimiento en Asia Pacífico, África, América y Europa. Opera a través de cuatro segmentos: Belleza y Bienestar, Cuidado Personal, Cuidado del Hogar y Alimentos.",
+      "resumen_negocio": "Unilever PLC operates as a fast-moving consumer goods company in the Asia Pacific, Africa, the Americas, and Europe. It operates through four segments: Beauty & Wellbeing, Personal Care, Home Care, and Foods.",
       "profundizacion": {
         "sentimiento_adicional": 5,
         "verificado": true,
@@ -1633,7 +1716,7 @@
       "sma200": 123.22,
       "tendencia_analistas": "mejorando",
       "sector": "Industrials",
-      "resumen_negocio": "Vinci SA, junto con sus filiales, se dedica a negocios de concesiones, energía y construcción en Francia e internacionalmente. Opera a través de los segmentos de Concesiones, Soluciones Energéticas y Construcción.",
+      "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments.",
       "profundizacion": {
         "sentimiento_adicional": 2,
         "verificado": true,
@@ -1694,7 +1777,7 @@
         "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "AXA SA registra beneficios récord en 2025 por sólidos márgenes en P&C e ingresos por inversiones - Investing.com España",
+            "titulo": "Informe de resultados: AXA registra un fuerte crecimiento en el primer semestre de 2026 - Investing.com España",
             "fuente": "Investing.com España",
             "sentimiento": 2
           },
@@ -1716,7 +1799,7 @@
       "sma200": 39.69,
       "tendencia_analistas": "estable",
       "sector": "Financial Services",
-      "resumen_negocio": "AXA SA, a través de sus filiales, ofrece seguros, gestión de activos y servicios bancarios en todo el mundo. La compañía opera en los segmentos de Francia, Europa, AXA XL, Asia, África y EME-LATAM, y Transversal y otros.",
+      "resumen_negocio": "AXA SA, through its subsidiaries, provides insurance, asset management, and banking services worldwide. The company operates through France, Europe, AXA XL, Asia, Africa & EME-LATAM, and Transversal & Other segments.",
       "profundizacion": {
         "sentimiento_adicional": 0,
         "verificado": true,
@@ -1782,8 +1865,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Engie convierte Tarifa en su gran 'hub' de baterías en España con más de 1.000 MWh de capacidad - El Economista",
-            "fuente": "El Economista",
+            "titulo": "Engie convierte Tarifa en su gran 'hub' de baterías en España con más de 1.000 MWh de capacidad - eleconomista.es",
+            "fuente": "eleconomista.es",
             "sentimiento": 0
           }
         ]
@@ -1860,8 +1943,8 @@
             "sentimiento": 2
           },
           {
-            "titulo": "AkzoNobel y Axalta llegan a un acuerdo para su fusión - AutoRevista",
-            "fuente": "AutoRevista",
+            "titulo": "AkzoNobel y Axalta llegan a un acuerdo para su fusión - auto-revista.com",
+            "fuente": "auto-revista.com",
             "sentimiento": 1
           }
         ]
@@ -1897,65 +1980,126 @@
       }
     },
     {
-      "ticker": "XYZ",
+      "ticker": "BN.TO",
       "descartado": false,
-      "nombre_empresa": "Block, Inc.",
+      "nombre_empresa": "Brookfield Corporation",
       "isin": null,
-      "precio_actual": 82.76,
-      "score": 44.4,
+      "precio_actual": 55.71,
+      "score": 44.2,
       "consenso": "buy",
-      "precio_objetivo_medio": 98.04878,
-      "dispersion_pct": 66.7,
-      "momentum_30d_pct": 4.7,
-      "momentum_5d_pct": -1.0,
-      "fuerza_relativa_pct": 4.6,
+      "precio_objetivo_medio": 76.3858,
+      "dispersion_pct": 16.4,
+      "momentum_30d_pct": -9.7,
+      "momentum_5d_pct": -3.0,
+      "fuerza_relativa_pct": -9.8,
       "regimen_mercado": "favorable",
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.52,
-      "coste_horquilla_200e": 1.04,
-      "liquidez_dia": 310056174.38468933,
-      "volumen_relativo": 1.1,
-      "volatilidad_diaria_pct": 2.68,
-      "sesiones_hasta_stop": 21,
-      "distancia_max_52s_pct": -2.5,
+      "horquilla_pct": 0.34,
+      "coste_horquilla_200e": 0.68,
+      "liquidez_dia": 186615758.52088928,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 1.35,
+      "sesiones_hasta_stop": 85,
+      "distancia_max_52s_pct": -17.7,
       "catalizador_resultados": null,
       "consenso_real": {
         "excluida": false,
-        "empujon": 6.9,
-        "pct_strong_buy": 21.7,
-        "pct_vender": 0.0,
-        "total_analistas": 46
+        "empujon": 8.6,
+        "pct_strong_buy": 45.5,
+        "pct_vender": 9.1,
+        "total_analistas": 11
       },
       "cotiza_en_euros": false,
       "noticias": {
-        "sentimiento_total": 0,
+        "sentimiento_total": 1,
         "titulares": [
           {
-            "titulo": "Director de Block Anthony Eisen vende acciones de NASDAQ:XYZ por 1,46 millones de dólares - Investing.com España",
+            "titulo": "Las acciones de Brookfield caen tras decepcionar con sus resultados del 2T - Investing.com España",
             "fuente": "Investing.com España",
-            "sentimiento": 0
+            "sentimiento": -2
           },
           {
-            "titulo": "Block se alía con Nova Credit para ofrecer su indicador Cash App Score a entidades financieras - MarketScreener España",
+            "titulo": "RBC prevé un sólido crecimiento del beneficio y recompras de acciones en Brookfield - MarketScreener España",
             "fuente": "MarketScreener España",
-            "sentimiento": 0
+            "sentimiento": 2
           },
           {
-            "titulo": "Cathie Wood Buys $82M of Rocket Lab and Block as ARK Rotates Out of Palantir - CryptoRank",
-            "fuente": "CryptoRank",
-            "sentimiento": 0
+            "titulo": "Brookfield, socio de Amancio Ortega en Reino Unido, gana 100 millones en España con más de 300 filiales - Economía Digital",
+            "fuente": "Economía Digital",
+            "sentimiento": 1
           }
         ]
       },
-      "rsi_14": 55.7,
-      "tendencia_tecnica": "alcista",
-      "sma50": 80.34,
-      "sma200": 68.79,
-      "tendencia_analistas": "mejorando",
+      "rsi_14": 25.2,
+      "tendencia_tecnica": "bajista",
+      "sma50": 59.82,
+      "sma200": 61.24,
+      "tendencia_analistas": null,
+      "sector": "Financial Services",
+      "resumen_negocio": "Brookfield Corporation es un administrador de activos múltiples centrado en bienes raíces, crédito, energía renovable y transición, infraestructura, capital de riesgo y capital privado, incluido capital de crecimiento e inversiones de crecimiento emergente."
+    },
+    {
+      "ticker": "CAP.PA",
+      "descartado": false,
+      "nombre_empresa": "Capgemini SE",
+      "isin": null,
+      "precio_actual": 106.4,
+      "score": 43.7,
+      "consenso": "buy",
+      "precio_objetivo_medio": 140.50764,
+      "dispersion_pct": 66.0,
+      "momentum_30d_pct": -2.6,
+      "momentum_5d_pct": -2.8,
+      "fuerza_relativa_pct": -0.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 40679176.9597168,
+      "volumen_relativo": 1.43,
+      "volatilidad_diaria_pct": 2.21,
+      "sesiones_hasta_stop": 31,
+      "distancia_max_52s_pct": -27.7,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 17.6,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "CCOO logra un preacuerdo en el ERE de Capgemini sustentado en la voluntariedad, la antigüedad y la protección social - ccoo-servicios.es",
+            "fuente": "ccoo-servicios.es",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Capgemini stock holds steady as investors eye latest revenue growth - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Capgemini upgrades its 2026 outlook - Capgemini",
+            "fuente": "Capgemini",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 50.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 100.51,
+      "sma200": 108.99,
+      "tendencia_analistas": "estable",
       "sector": "Technology",
-      "resumen_negocio": "Block, Inc., junto con sus subsidiarias, construye ecosistemas enfocados en el comercio y productos y servicios financieros en los Estados Unidos e internacionalmente. Opera a través de dos segmentos: Square y Cash App."
+      "resumen_negocio": "Capgemini SE, junto con sus subsidiarias, brinda servicios de consultoría, transformación digital, tecnología e ingeniería principalmente en América del Norte, Francia, Reino Unido, Irlanda, el resto de Europa, Asia-Pacífico y América Latina."
     },
     {
       "ticker": "BVI.PA",
@@ -1994,18 +2138,18 @@
         "sentimiento_total": 2,
         "titulares": [
           {
-            "titulo": "Las acciones de Bureau Veritas suben tras venta de unidad por 470 millones - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          },
-          {
             "titulo": "Bureau Veritas eleva sus objetivos tras un buen primer semestre - MarketScreener España",
             "fuente": "MarketScreener España",
             "sentimiento": 1
           },
           {
-            "titulo": "Bureau Veritas realiza una emisión de bonos de 700 millones de EUR - MarketScreener España",
-            "fuente": "MarketScreener España",
+            "titulo": "Las acciones de Bureau Veritas suben tras venta de unidad por 470 millones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Convenio Colectivo Bureau Veritas Inspección y Testing SLU, Bureau Veritas Solutions SA e Instituto de la Calidad SAU - ccoo-servicios.es",
+            "fuente": "ccoo-servicios.es",
             "sentimiento": 0
           }
         ]
@@ -2016,7 +2160,7 @@
       "sma200": 26.48,
       "tendencia_analistas": "estable",
       "sector": "Industrials",
-      "resumen_negocio": "Bureau Veritas SA provides laboratory testing, inspection, and certification services. It operates through six segments: Marine & Offshore; Agri-Food & Commodities; Industry; Buildings & Infrastructure; Certification; and Consumer Products services."
+      "resumen_negocio": "Bureau Veritas SA brinda servicios de pruebas, inspección y certificación de laboratorio. Opera a través de seis segmentos: Marino y Offshore; Agroalimentación y Materias Primas; Industria; Edificios e Infraestructura; Proceso de dar un título; y servicios de Productos de Consumo."
     },
     {
       "ticker": "EOS.AX",
@@ -2298,8 +2442,8 @@
         "sentimiento_total": 5,
         "titulares": [
           {
-            "titulo": "J.P. Morgan Maintains LEGRAND SA(LGRVF.US) With Buy Rating, Raises Target Price to $230.22 - Moomoo",
-            "fuente": "Moomoo",
+            "titulo": "J.P. Morgan Maintains LEGRAND SA(LGRVF.US) With Buy Rating, Raises Target Price to $230.22 - moomoo.com",
+            "fuente": "moomoo.com",
             "sentimiento": 2
           },
           {
@@ -2381,7 +2525,7 @@
       "sma200": 31.67,
       "tendencia_analistas": "estable",
       "sector": "Financial Services",
-      "resumen_negocio": "ABN AMRO Bank N.V. provides various banking products and financial services to retail, private, and corporate banking clients in the Netherlands, rest of Europe, the United States, Asia, and internationally."
+      "resumen_negocio": "ABN AMRO Bank N.V. ofrece diversos productos bancarios y servicios financieros a clientes de banca minorista, privada y corporativa en los Países Bajos, el resto de Europa, los Estados Unidos, Asia e internacionalmente."
     },
     {
       "ticker": "EN.PA",
@@ -2445,67 +2589,6 @@
       "resumen_negocio": "Bouygues SA, together with its subsidiaries, operates in the construction, energies and services, telecom, and media sectors in France and internationally. It operates through Colas, Bouygues Construction, Bouygues Immobilier, Equans, Bouygues Telecom, TF1, and Other segments."
     },
     {
-      "ticker": "CAP.PA",
-      "descartado": false,
-      "nombre_empresa": "Capgemini SE",
-      "isin": null,
-      "precio_actual": 106.4,
-      "score": 42.4,
-      "consenso": "buy",
-      "precio_objetivo_medio": 140.50764,
-      "dispersion_pct": 66.0,
-      "momentum_30d_pct": -2.6,
-      "momentum_5d_pct": -2.8,
-      "fuerza_relativa_pct": -0.9,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 40679176.9597168,
-      "volumen_relativo": 1.43,
-      "volatilidad_diaria_pct": 2.21,
-      "sesiones_hasta_stop": 31,
-      "distancia_max_52s_pct": -27.7,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.3,
-        "pct_strong_buy": 17.6,
-        "pct_vender": 0.0,
-        "total_analistas": 17
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "CCOO logra un preacuerdo en el ERE de Capgemini sustentado en la voluntariedad, la antigüedad y la protección social - ccoo-servicios.es",
-            "fuente": "ccoo-servicios.es",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Capgemini stock holds steady as investors eye latest revenue growth - AD HOC NEWS",
-            "fuente": "AD HOC NEWS",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Capgemini upgrades its 2026 outlook - Capgemini",
-            "fuente": "Capgemini",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 50.5,
-      "tendencia_tecnica": "mixta",
-      "sma50": 100.51,
-      "sma200": 108.99,
-      "tendencia_analistas": "estable",
-      "sector": "Technology",
-      "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
-    },
-    {
       "ticker": "IBS.LS",
       "descartado": false,
       "nombre_empresa": "Ibersol, S.G.P.S., S.A.",
@@ -2563,7 +2646,7 @@
       "sma200": 10.08,
       "tendencia_analistas": null,
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Ibersol, S.G.P.S., S.A., through its subsidiaries, operates a network of restaurants in Portugal, Spain, and Angola. The company operates through Restaurants; Counters; Concessions, Travel, and Catering; and Other segments."
+      "resumen_negocio": "Ibersol, S.G.P.S., S.A., a través de sus filiales, opera una red de restaurantes en Portugal, España y Angola. La empresa opera a través de Restaurantes; Contadores; Concesiones, Viajes y Catering; y Otros segmentos."
     },
     {
       "ticker": "STMPA.PA",
@@ -2663,13 +2746,13 @@
         "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "JP Morgan cree que el crecimiento de ingresos de Amadeus acelerará nuevamente en 2027 - MarketScreener España",
-            "fuente": "MarketScreener España",
+            "titulo": "HECHOS RELEVANTES.-AMADEUS IT GROUP, S.A. La sociedad remite la información financiera del primer semestre de 2026 -[...] - Bolsamania",
+            "fuente": "Bolsamania",
             "sentimiento": 1
           },
           {
-            "titulo": "HECHOS RELEVANTES.-AMADEUS IT GROUP, S.A. La sociedad remite la información financiera del primer semestre de 2026 -[...] - Bolsamania",
-            "fuente": "Bolsamania",
+            "titulo": "JP Morgan cree que el crecimiento de ingresos de Amadeus acelerará nuevamente en 2027 - MarketScreener España",
+            "fuente": "MarketScreener España",
             "sentimiento": 1
           },
           {
@@ -2685,7 +2768,68 @@
       "sma200": 53.48,
       "tendencia_analistas": "estable",
       "sector": "Technology",
-      "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+      "resumen_negocio": "Amadeus IT Group, S.A., junto con sus filiales, opera como procesador de transacciones para la industria de viajes y turismo en Europa, América Central y del Sur, Oriente Medio, África y Asia Pacífico."
+    },
+    {
+      "ticker": "XYZ",
+      "descartado": false,
+      "nombre_empresa": "Block, Inc.",
+      "isin": null,
+      "precio_actual": 82.76,
+      "score": 41.4,
+      "consenso": "buy",
+      "precio_objetivo_medio": 98.04878,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": 4.7,
+      "momentum_5d_pct": -1.0,
+      "fuerza_relativa_pct": 4.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 1.0,
+      "coste_horquilla_200e": 2.0,
+      "liquidez_dia": 310056174.38468933,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 2.68,
+      "sesiones_hasta_stop": 21,
+      "distancia_max_52s_pct": -2.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.7,
+        "pct_vender": 0.0,
+        "total_analistas": 46
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Director de Block Anthony Eisen vende acciones de NASDAQ:XYZ por 1,46 millones de dólares - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Block se alía con Nova Credit para ofrecer su indicador Cash App Score a entidades financieras - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Cathie Wood Buys $82M of Rocket Lab and Block as ARK Rotates Out of Palantir - CryptoRank",
+            "fuente": "CryptoRank",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 55.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 80.34,
+      "sma200": 68.79,
+      "tendencia_analistas": "mejorando",
+      "sector": "Technology",
+      "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
     },
     {
       "ticker": "AMP.MI",
@@ -2746,7 +2890,7 @@
       "sma200": 11.4,
       "tendencia_analistas": "mejorando",
       "sector": "Healthcare",
-      "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+      "resumen_negocio": "Amplifon S.p.A. distribuye soluciones auditivas y la adaptación de productos personalizados que ayudan a las personas a redescubrir diversas emociones del sonido en Europa, Oriente Medio, África, América y Asia Pacífico."
     },
     {
       "ticker": "PRX.AS",
@@ -2973,8 +3117,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Moncler cierra ejercicio en plano y contrayendo beneficios un -2 por ciento - FashionUnited",
-            "fuente": "FashionUnited",
+            "titulo": "Moncler cierra ejercicio en plano y contrayendo beneficios un -2 por ciento - fashionunited.es",
+            "fuente": "fashionunited.es",
             "sentimiento": 1
           },
           {
@@ -2990,7 +3134,7 @@
       "sma200": 51.53,
       "tendencia_analistas": "mejorando",
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Moncler S.p.A., junto con sus filiales, se dedica a la producción y distribución de prendas de vestir, ropa infantil, calzado, gafas y otros accesorios relacionados bajo las marcas Moncler y Stone Island."
+      "resumen_negocio": "Moncler S.p.A., together with its subsidiaries, engages in the production and distribution of garments, children's clothing, footwear, eyewear and other related accessories under the Moncler and Stone Island brands."
     },
     {
       "ticker": "TTE.PA",
@@ -3051,7 +3195,7 @@
       "sma200": 68.35,
       "tendencia_analistas": "empeorando",
       "sector": "Energy",
-      "resumen_negocio": "TotalEnergies SE, una empresa energética integrada, produce y comercializa petróleo y biocombustibles, gas natural, biogás e hidrógeno con bajas emisiones de carbono, energías renovables y electricidad en Francia, Estados Unidos, Europa, África e internacionalmente."
+      "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
     },
     {
       "ticker": "PUIG.MC",
@@ -3112,7 +3256,7 @@
       "sma200": 16.12,
       "tendencia_analistas": "estable",
       "sector": "Consumer Defensive",
-      "resumen_negocio": "Puig Brands, S.A. opera en la industria de la belleza y la moda en Europa, Oriente Medio, África, América y Asia-Pacífico. La empresa opera a través de tres segmentos: Fragancias y Moda, Maquillaje y Cuidado de la Piel."
+      "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
     },
     {
       "ticker": "BMED.MI",
@@ -3176,6 +3320,67 @@
       "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
     },
     {
+      "ticker": "ORCL",
+      "descartado": false,
+      "nombre_empresa": "Oracle Corporation",
+      "isin": null,
+      "precio_actual": 158.78,
+      "score": 40.4,
+      "consenso": "buy",
+      "precio_objetivo_medio": 242.04619,
+      "dispersion_pct": 263.6,
+      "momentum_30d_pct": 10.7,
+      "momentum_5d_pct": 5.3,
+      "fuerza_relativa_pct": 10.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.03,
+      "coste_horquilla_200e": 0.06,
+      "liquidez_dia": 3245058739.2951965,
+      "volumen_relativo": 1.01,
+      "volatilidad_diaria_pct": 3.17,
+      "sesiones_hasta_stop": 15,
+      "distancia_max_52s_pct": -43.4,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.6,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 2.3,
+        "total_analistas": 44
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Oracle sube antes de resultados: la nube, su cartera récord y el gasto en IA ponen a ORCL en el foco - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué sube hoy la acción de Oracle? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Oracle: Market's Mispricing Is Starting To Unwind (NYSE:ORCL) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 61.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 139.75,
+      "sma200": 167.92,
+      "tendencia_analistas": "estable",
+      "sector": "Technology",
+      "resumen_negocio": "Oracle Corporation offers products and services that build, run and support enterprise information technology frameworks worldwide. Its Oracle cloud software as a service offering includes various cloud software applications, including Oracle Fusion cloud enterprise resource planning ERP, Oracle Fusion cloud enterprise performance management EPM, Oracle Fusion cloud supply chain and manufacturing management SCM..."
+    },
+    {
       "ticker": "DSFIR.AS",
       "descartado": false,
       "nombre_empresa": "DSM-Firmenich AG",
@@ -3209,7 +3414,7 @@
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 6,
+        "sentimiento_total": 5,
         "titulares": [
           {
             "titulo": "DSM-Firmenich supera estimaciones gracias al fuerte crecimiento en fragancias - Investing.com España",
@@ -3234,7 +3439,68 @@
       "sma200": 70.45,
       "tendencia_analistas": "estable",
       "sector": "Basic Materials",
-      "resumen_negocio": "DSM-Firmenich AG ofrece soluciones de nutrición, salud y belleza en Suiza, Países Bajos, resto de Europa, Oriente Medio y África, América del Norte, América Latina, China y el resto de Asia."
+      "resumen_negocio": "DSM-Firmenich AG provides nutrition, health, and beauty solutions in Switzerland, the Netherlands, rest of Europe, the Middle East and Africa, North America, Latin America, China, and rest of Asia."
+    },
+    {
+      "ticker": "ENI.MI",
+      "descartado": false,
+      "nombre_empresa": "Eni S.p.A.",
+      "isin": "NET000PLEN01",
+      "precio_actual": 23.075,
+      "score": 40.2,
+      "consenso": "buy",
+      "precio_objetivo_medio": 25.45,
+      "dispersion_pct": 57.9,
+      "momentum_30d_pct": -1.4,
+      "momentum_5d_pct": 1.3,
+      "fuerza_relativa_pct": 0.3,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.48,
+      "coste_horquilla_200e": 0.96,
+      "liquidez_dia": 171977252.15648842,
+      "volumen_relativo": 1.16,
+      "volatilidad_diaria_pct": 1.57,
+      "sesiones_hasta_stop": 63,
+      "distancia_max_52s_pct": -6.2,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 13.6,
+        "pct_vender": 4.5,
+        "total_analistas": 22
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Eni busca superar 1 millón de barriles diarios en Venezuela con gran expansión petrolera - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Chevron y Eni lideran ola de acuerdos para impulsar la producción petrolera en Venezuela - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Eni Expands Low-Carbon Mobility Through BMW Biofuel Alliance - Eastern Progress",
+            "fuente": "Eastern Progress",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 42.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 22.6,
+      "sma200": 20.52,
+      "tendencia_analistas": "estable",
+      "sector": "Energy",
+      "resumen_negocio": "Eni S.p.A. operates as an integrated energy company in Italy, Other European Union, Rest of Europe, the United States, Asia, Africa, and internationally. The company engages in exploration, development, extracting, manufacturing, trading, and marketing crude oil and natural gas, oil-based fuels, chemical products, and gas-fired power, as well as energy products from renewable sources."
     },
     {
       "ticker": "FM.TO",
@@ -3244,7 +3510,7 @@
       "precio_actual": 44.58,
       "score": 39.9,
       "consenso": "buy",
-      "precio_objetivo_medio": 48.2683,
+      "precio_objetivo_medio": 48.261322,
       "dispersion_pct": 33.4,
       "momentum_30d_pct": 6.1,
       "momentum_5d_pct": -6.7,
@@ -3400,8 +3666,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "IAG sees growing investor focus as Citi flags bullish airline data - Proactive financial news",
-            "fuente": "Proactive financial news",
+            "titulo": "IAG sees growing investor focus as Citi flags bullish airline data - proactiveinvestors.com",
+            "fuente": "proactiveinvestors.com",
             "sentimiento": 1
           },
           {
@@ -3481,272 +3747,6 @@
       "resumen_negocio": "Jerónimo Martins, SGPS, S.A. operates in the food distribution sector in Portugal, Poland, Colombia, Slovakia, and internationally. The company operates through Portugal Retail, Portugal Cash & Carry, Poland Retail, Poland Health and Beauty, and Colombia Retail segments."
     },
     {
-      "ticker": "ORCL",
-      "descartado": false,
-      "nombre_empresa": "Oracle Corporation",
-      "isin": null,
-      "precio_actual": 158.78,
-      "score": 39.1,
-      "consenso": "buy",
-      "precio_objetivo_medio": 242.04619,
-      "dispersion_pct": 263.6,
-      "momentum_30d_pct": 10.7,
-      "momentum_5d_pct": 5.3,
-      "fuerza_relativa_pct": 10.6,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.03,
-      "coste_horquilla_200e": 0.06,
-      "liquidez_dia": 3245058739.2951965,
-      "volumen_relativo": 1.01,
-      "volatilidad_diaria_pct": 3.17,
-      "sesiones_hasta_stop": 15,
-      "distancia_max_52s_pct": -43.4,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 6.6,
-        "pct_strong_buy": 18.2,
-        "pct_vender": 2.3,
-        "total_analistas": 44
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 4,
-        "titulares": [
-          {
-            "titulo": "Oracle sube antes de resultados: la nube, su cartera récord y el gasto en IA ponen a ORCL en el foco - Benzinga España",
-            "fuente": "Benzinga España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "¿Por qué sube hoy la acción de Oracle? - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Oracle: Market's Mispricing Is Starting To Unwind (NYSE:ORCL) - Seeking Alpha",
-            "fuente": "Seeking Alpha",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 61.5,
-      "tendencia_tecnica": "mixta",
-      "sma50": 139.75,
-      "sma200": 167.92,
-      "tendencia_analistas": "estable",
-      "sector": "Technology",
-      "resumen_negocio": "Oracle Corporation ofrece productos y servicios que crean, ejecutan y respaldan marcos de tecnología de la información empresarial en todo el mundo. Su oferta de software como servicio en la nube de Oracle incluye varias aplicaciones de software en la nube, incluido el ERP de planificación de recursos empresariales en la nube de Oracle Fusion, EPM de gestión del rendimiento empresarial en la nube de Oracle Fusion..."
-    },
-    {
-      "ticker": "ENI.MI",
-      "descartado": false,
-      "nombre_empresa": "Eni S.p.A.",
-      "isin": "NET000PLEN01",
-      "precio_actual": 23.075,
-      "score": 38.9,
-      "consenso": "buy",
-      "precio_objetivo_medio": 25.45,
-      "dispersion_pct": 57.9,
-      "momentum_30d_pct": -1.4,
-      "momentum_5d_pct": 1.3,
-      "fuerza_relativa_pct": 0.3,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.48,
-      "coste_horquilla_200e": 0.96,
-      "liquidez_dia": 171977252.15648842,
-      "volumen_relativo": 1.16,
-      "volatilidad_diaria_pct": 1.57,
-      "sesiones_hasta_stop": 63,
-      "distancia_max_52s_pct": -6.2,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 0,
-        "pct_strong_buy": 13.6,
-        "pct_vender": 4.5,
-        "total_analistas": 22
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "Eni busca superar 1 millón de barriles diarios en Venezuela con gran expansión petrolera - Bloomberg.com",
-            "fuente": "Bloomberg.com",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Chevron y Eni lideran ola de acuerdos para impulsar la producción petrolera en Venezuela - Yahoo",
-            "fuente": "Yahoo",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Polo de baterías en Brindisi: Eni acelera su transición energética - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 42.5,
-      "tendencia_tecnica": "alcista",
-      "sma50": 22.6,
-      "sma200": 20.52,
-      "tendencia_analistas": "estable",
-      "sector": "Energy",
-      "resumen_negocio": "Eni S.p.A. operates as an integrated energy company in Italy, Other European Union, Rest of Europe, the United States, Asia, Africa, and internationally. The company engages in exploration, development, extracting, manufacturing, trading, and marketing crude oil and natural gas, oil-based fuels, chemical products, and gas-fired power, as well as energy products from renewable sources."
-    },
-    {
-      "ticker": "BN.TO",
-      "descartado": false,
-      "nombre_empresa": "Brookfield Corporation",
-      "isin": null,
-      "precio_actual": 55.71,
-      "score": 38.8,
-      "consenso": "buy",
-      "precio_objetivo_medio": 76.39685,
-      "dispersion_pct": 16.4,
-      "momentum_30d_pct": -9.7,
-      "momentum_5d_pct": -3.0,
-      "fuerza_relativa_pct": -9.8,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.34,
-      "coste_horquilla_200e": 0.68,
-      "liquidez_dia": 186615758.52088928,
-      "volumen_relativo": 0.89,
-      "volatilidad_diaria_pct": 1.35,
-      "sesiones_hasta_stop": 85,
-      "distancia_max_52s_pct": -17.7,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 8.6,
-        "pct_strong_buy": 45.5,
-        "pct_vender": 9.1,
-        "total_analistas": 11
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "RBC prevé un sólido crecimiento del beneficio y recompras de acciones en Brookfield - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Brookfield, socio de Amancio Ortega en Reino Unido, gana 100 millones en España con más de 300 filiales - Economía Digital",
-            "fuente": "Economía Digital",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Brookfield rescatará en efectivo dos series de acciones preferentes - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 25.2,
-      "tendencia_tecnica": "bajista",
-      "sma50": 59.82,
-      "sma200": 61.24,
-      "tendencia_analistas": null,
-      "sector": "Financial Services",
-      "resumen_negocio": "Brookfield Corporation es un administrador de activos múltiples centrado en bienes raíces, crédito, energía renovable y transición, infraestructura, capital de riesgo y capital privado, incluido capital de crecimiento e inversiones de crecimiento emergente.",
-      "profundizacion": {
-        "sentimiento_adicional": -2,
-        "verificado": false,
-        "ajuste": -8,
-        "titulares_adicionales": [
-          {
-            "titulo": "Las acciones de Brookfield caen tras decepcionar con sus resultados del 2T - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": -2
-          },
-          {
-            "titulo": "¿A quién pertenece Brookfield Asset Management? Principales accionistas y últimas operaciones con información privilegiada - TIKR.com",
-            "fuente": "TIKR.com",
-            "sentimiento": 0
-          },
-          {
-            "titulo": "Transcripción del informe de resultados: Brookfield Corp en el segundo trimestre de 2025 muestra un aumento de ingresos y BPA por debajo de lo esperado - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 0
-          }
-        ]
-      }
-    },
-    {
-      "ticker": "ARES",
-      "descartado": false,
-      "nombre_empresa": "Ares Management Corporation",
-      "isin": "US03990B1017",
-      "precio_actual": 140.15,
-      "score": 38.0,
-      "consenso": "buy",
-      "precio_objetivo_medio": 147.5,
-      "dispersion_pct": 37.7,
-      "momentum_30d_pct": 1.4,
-      "momentum_5d_pct": -1.7,
-      "fuerza_relativa_pct": 1.3,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.05,
-      "coste_horquilla_200e": 0.1,
-      "liquidez_dia": 253817711.18240356,
-      "volumen_relativo": 0.92,
-      "volatilidad_diaria_pct": 2.15,
-      "sesiones_hasta_stop": 33,
-      "distancia_max_52s_pct": -19.0,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.5,
-        "pct_strong_buy": 22.2,
-        "pct_vender": 0.0,
-        "total_analistas": 18
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 1,
-        "titulares": [
-          {
-            "titulo": "Ares raises $4 billion for Japan logistics fund in unit's largest fundraise - Reuters",
-            "fuente": "Reuters",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Ares Management: Resilient Business Model Reflected In Valuation (Downgrade) (NYSE:ARES) - Seeking Alpha",
-            "fuente": "Seeking Alpha",
-            "sentimiento": -1
-          },
-          {
-            "titulo": "Ares Management Corporation cierra el fondo Japan Logistics Development Partners V LP - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 47.5,
-      "tendencia_tecnica": "alcista",
-      "sma50": 131.04,
-      "sma200": 131.39,
-      "tendencia_analistas": null,
-      "sector": "Financial Services",
-      "resumen_negocio": "Ares Management Corporation operates as an alternative asset manager. Its Direct Lending Group segment provides financing solutions to small-to-medium sized companies. The company's Private Equity Group segment specializes in early venture, turnaround, mid venture, late venture, recapitalization, growth capital, middle market, mezzanine, distressed and growth buyouts."
-    },
-    {
       "ticker": "EL.PA",
       "descartado": false,
       "nombre_empresa": "EssilorLuxottica Société anonyme",
@@ -3793,8 +3793,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "EssilorLuxottica (ENXTPA:EL) Stock Looks Cheap Relative To Fair Value - webull.com",
-            "fuente": "webull.com",
+            "titulo": "EssilorLuxottica stock slips as investors eye governance tensions and rich valuation - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
             "sentimiento": 0
           }
         ]
@@ -3927,68 +3927,7 @@
       "sma200": 49.26,
       "tendencia_analistas": null,
       "sector": "Healthcare",
-      "resumen_negocio": "Recordati Industria Chimica e Farmaceutica S.p.A., junto con sus filiales, investiga, desarrolla, produce y comercializa productos farmacéuticos en Italia, Estados Unidos, España, Francia, Alemania, Rusia, Ucrania, Turquía, Portugal, el norte de África e internacionalmente."
-    },
-    {
-      "ticker": "ABI.BR",
-      "descartado": false,
-      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
-      "isin": null,
-      "precio_actual": 69.04,
-      "score": 37.1,
-      "consenso": "buy",
-      "precio_objetivo_medio": 81.26891,
-      "dispersion_pct": 46.2,
-      "momentum_30d_pct": -6.0,
-      "momentum_5d_pct": 1.1,
-      "fuerza_relativa_pct": -4.3,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 105046584.59745407,
-      "volumen_relativo": 0.92,
-      "volatilidad_diaria_pct": 1.32,
-      "sesiones_hasta_stop": 90,
-      "distancia_max_52s_pct": -8.2,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.4,
-        "pct_strong_buy": 20.0,
-        "pct_vender": 0.0,
-        "total_analistas": 25
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 4,
-        "titulares": [
-          {
-            "titulo": "AB InBev Q2 EPS beats $1.11 estimate on strong sales - scanx.trade",
-            "fuente": "scanx.trade",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "AB InBev retrocede por tomas de beneficios tras el segundo trimestre - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Anheuser-Busch InBev SA/NV : Gets a Buy rating from JP Morgan - marketscreener.com",
-            "fuente": "marketscreener.com",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 65.9,
-      "tendencia_tecnica": "mixta",
-      "sma50": 70.36,
-      "sma200": 64.19,
-      "tendencia_analistas": "empeorando",
-      "sector": "Consumer Defensive",
-      "resumen_negocio": "Anheuser-Busch InBev SA/NV produce y vende cerveza en Norteamérica, Centroamérica, Sudamérica, Europa, Medio Oriente, África y Asia Pacífico. Opera a través de los segmentos de Norteamérica, Centroamérica, Sudamérica, EMEA, Asia Pacífico y Exportaciones Globales y Holding Companies."
+      "resumen_negocio": "Recordati Industria Chimica e Farmaceutica S.p.A., together with its subsidiaries, researches, develops, produces, and sells pharmaceuticals in Italy, the United States, Spain, France, Germany, Russia, Ukraine, Turkey, Portugal, North Africa, and internationally."
     },
     {
       "ticker": "METSO.HE",
@@ -4049,7 +3988,7 @@
       "sma200": 15.6,
       "tendencia_analistas": null,
       "sector": "Industrials",
-      "resumen_negocio": "Metso Oyj ofrece tecnologías, soluciones integrales y servicios para las industrias de agregados, procesamiento de minerales y refinación de metales en Europa, América del Norte y Central, América del Sur, Asia Pacífico, Gran China, África, Medio Oriente e India."
+      "resumen_negocio": "Metso Oyj provides technologies, end-to-end solutions, and services for the aggregates, minerals processing, and metals refining industries in Europe, North and Central America, South America, the Asia Pacific, Greater China, Africa, the Middle East, and India."
     },
     {
       "ticker": "SPM.MI",
@@ -4110,7 +4049,7 @@
       "sma200": 3.65,
       "tendencia_analistas": "mejorando",
       "sector": "Energy",
-      "resumen_negocio": "Saipem SpA provides energy and infrastructure solutions worldwide. It operates through Asset Based Services, Offshore Drilling, and Energy Carriers segments. The company offers development of subsea fields and pipelaying; installation and lifting of offshore structures; engages in engineering, implementation, installation, maintenance, modification, and decommissioning activities, as well as offshore engineering and..."
+      "resumen_negocio": "Saipem SpA ofrece soluciones de energía e infraestructura en todo el mundo. Opera a través de los segmentos de servicios basados ​​en activos, perforación costa afuera y transportadores de energía."
     },
     {
       "ticker": "IDR.MC",
@@ -4276,13 +4215,13 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Noticias de Intesa Sanpaolo Spa - Bolsamania",
-            "fuente": "Bolsamania",
+            "titulo": "Intesa Sanpaolo nombra a Gregorio De Felice presidente de Eurizon - fundssociety.com",
+            "fuente": "fundssociety.com",
             "sentimiento": 0
           },
           {
-            "titulo": "Intesa Sanpaolo nombra a Gregorio De Felice presidente de Eurizon - Funds Society",
-            "fuente": "Funds Society",
+            "titulo": "Intesa Sanpaolo planea extender su modelo de wealth management en España - FundsPeople España",
+            "fuente": "FundsPeople España",
             "sentimiento": 0
           }
         ]
@@ -4294,6 +4233,67 @@
       "tendencia_analistas": "empeorando",
       "sector": "Financial Services",
       "resumen_negocio": "Intesa Sanpaolo S.p.A. engages in the provision of various financial products and services in Italy, Central/Eastern Europe, the Middle East, and North Africa. It operates through six segments: Banca dei Territori, IMI Corporate & Investment Banking, International Banks, Asset Management, Private Banking, and Insurance."
+    },
+    {
+      "ticker": "ABI.BR",
+      "descartado": false,
+      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
+      "isin": null,
+      "precio_actual": 69.04,
+      "score": 35.8,
+      "consenso": "buy",
+      "precio_objetivo_medio": 81.26891,
+      "dispersion_pct": 46.2,
+      "momentum_30d_pct": -6.0,
+      "momentum_5d_pct": 1.1,
+      "fuerza_relativa_pct": -4.3,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 105046584.59745407,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 1.32,
+      "sesiones_hasta_stop": 90,
+      "distancia_max_52s_pct": -8.2,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "AB InBev retrocede por tomas de beneficios tras el segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV : Gets a Buy rating from JP Morgan - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "AB InBev Leverages Premiumization and Digital Platforms for Growth - Eastern Progress",
+            "fuente": "Eastern Progress",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 65.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 70.36,
+      "sma200": 64.19,
+      "tendencia_analistas": "empeorando",
+      "sector": "Consumer Defensive",
+      "resumen_negocio": "Anheuser-Busch InBev SA/NV produce y vende cerveza en Norteamérica, Centroamérica, Sudamérica, Europa, Medio Oriente, África y Asia Pacífico. Opera a través de los segmentos de Norteamérica, Centroamérica, Sudamérica, EMEA, Asia Pacífico y Exportaciones Globales y Holding Companies."
     },
     {
       "ticker": "ORA.PA",
@@ -4332,18 +4332,18 @@
         "sentimiento_total": 0,
         "titulares": [
           {
+            "titulo": "Cotización de ORANGE: Acciones e información - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 0
+          },
+          {
             "titulo": "Mejores tarifas móviles de Orange SEPTIEMBRE 2026 septiembre - Blog de Orange",
             "fuente": "Blog de Orange",
             "sentimiento": 0
           },
           {
-            "titulo": "Qué sabemos del cartel publicitario de Orange colocado en la AP-7 que muestra un mapa del “Gran Marruecos” - newtral.es",
-            "fuente": "newtral.es",
-            "sentimiento": 0
-          },
-          {
-            "titulo": "Las acciones de Orange alcanzan su máximo en 16 años tras sus resultados y nuevos objetivos - Yahoo",
-            "fuente": "Yahoo",
+            "titulo": "Qué sabemos del cartel publicitario de Orange colocado en la AP-7 que muestra un mapa del “Gran Marruecos” - Newtral",
+            "fuente": "Newtral",
             "sentimiento": 0
           }
         ]
@@ -4451,7 +4451,7 @@
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 8,
+        "sentimiento_total": 7,
         "titulares": [
           {
             "titulo": "Las acciones de Neste suben un 2,5% tras la mejora de Goldman Sachs - Investing.com España",
@@ -4476,7 +4476,7 @@
       "sma200": 25.28,
       "tendencia_analistas": "mejorando",
       "sector": "Energy",
-      "resumen_negocio": "Neste Oyj, junto con sus filiales, proporciona diésel renovable y combustible de aviación sostenible en Finlandia, otros países nórdicos, la Cuenca Báltica, otros países europeos, Estados Unidos e internacionalmente."
+      "resumen_negocio": "Neste Oyj, together with its subsidiaries, provides renewable diesel and sustainable aviation fuel in Finland, other Nordic countries, Baltic Rim, other European countries, the United States, and internationally."
     },
     {
       "ticker": "EDPR.LS",
@@ -4540,6 +4540,67 @@
       "resumen_negocio": "EDP ​​Renovables, S.A. desarrolla su actividad en el negocio de las energías renovables en Europa, Norteamérica, Sudamérica y Asia Pacífico. La empresa participa en la planificación, construcción, operación y mantenimiento de plantas de generación de energía utilizando fuentes de energía renovables, incluidas la energía eólica y solar."
     },
     {
+      "ticker": "GNRC",
+      "descartado": false,
+      "nombre_empresa": "Generac Holdings Inc.",
+      "isin": "US3687361044",
+      "precio_actual": 187.35,
+      "score": 35.3,
+      "consenso": "buy",
+      "precio_objetivo_medio": 283.875,
+      "dispersion_pct": 58.9,
+      "momentum_30d_pct": -11.3,
+      "momentum_5d_pct": 1.9,
+      "fuerza_relativa_pct": -11.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.32,
+      "coste_horquilla_200e": 0.64,
+      "liquidez_dia": 176212550.23727417,
+      "volumen_relativo": 0.91,
+      "volatilidad_diaria_pct": 2.81,
+      "sesiones_hasta_stop": 19,
+      "distancia_max_52s_pct": -36.6,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.0,
+        "pct_strong_buy": 9.5,
+        "pct_vender": 0.0,
+        "total_analistas": 21
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "CINCO ganancias del +25% en marzo: PRONTO llegará una nueva lista de acciones seleccionadas por IA para abril - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Generac Holdings Inc. stock outperforms competitors on strong trading day - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El auge de los centros de datos en EE. UU. impulsa la actividad de toda la cadena de suministro industrial - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 21.7,
+      "tendencia_tecnica": "bajista",
+      "sma50": 216.54,
+      "sma200": 208.5,
+      "tendencia_analistas": null,
+      "sector": "Industrials",
+      "resumen_negocio": "Generac Holdings Inc. diseña, fabrica y distribuye productos y soluciones de tecnología energética en todo el mundo. La empresa ofrece generadores de reserva automáticos residenciales, interruptores de transferencia automática, generadores de reserva domésticos con motor refrigerado por aire y generadores de motor refrigerados por líquido; Mobile Link, un sistema de monitoreo remoto para generadores de respaldo..."
+    },
+    {
       "ticker": "BESI.AS",
       "descartado": false,
       "nombre_empresa": "BE Semiconductor Industries N.V.",
@@ -4599,6 +4660,67 @@
       "tendencia_analistas": "mejorando",
       "sector": "Technology",
       "resumen_negocio": "BE Semiconductor Industries N.V. desarrolla, fabrica, comercializa, vende y da servicio a equipos de ensamblaje de semiconductores para las industrias de semiconductores y electrónica en los Países Bajos, Suiza, Austria, Singapur, Malasia e internacionalmente."
+    },
+    {
+      "ticker": "F",
+      "descartado": false,
+      "nombre_empresa": "Ford Motor Company",
+      "isin": null,
+      "precio_actual": 14.62,
+      "score": 34.8,
+      "consenso": "buy",
+      "precio_objetivo_medio": 15.85368,
+      "dispersion_pct": 81.8,
+      "momentum_30d_pct": 7.2,
+      "momentum_5d_pct": 5.3,
+      "fuerza_relativa_pct": 7.1,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.07,
+      "coste_horquilla_200e": 0.14,
+      "liquidez_dia": 565487637.6895428,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 2.04,
+      "sesiones_hasta_stop": 37,
+      "distancia_max_52s_pct": -15.3,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 14.3,
+        "pct_vender": 4.8,
+        "total_analistas": 21
+      },
+      "cotiza_en_euros": false,
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Las ventas de Ford en Estados Unidos caen un 10,3% en agosto - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Ford se une a la competencia por el nuevo contrato de camiones tácticos del Ejército de EE.UU. - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Ford Motor (F)’s Defence Bid Could Add a New Growth Avenue - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 58.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 14.02,
+      "sma200": 13.23,
+      "tendencia_analistas": "mejorando",
+      "sector": "Consumer Cyclical",
+      "resumen_negocio": "Ford Motor Company develops, delivers, and services Ford trucks, sport utility vehicles, commercial vans and cars, and Lincoln luxury vehicles in the United States, Canada, the United Kingdom, Mexico, and internationally."
     },
     {
       "ticker": "SGO.PA",
@@ -4720,7 +4842,68 @@
       "sma200": 32.73,
       "tendencia_analistas": null,
       "sector": "Industrials",
-      "resumen_negocio": "Avio S.p.A. diseña, desarrolla, produce e integra lanzadores espaciales en Italia y en el extranjero. La empresa dedicada al diseño, desarrollo y producción de sistemas de propulsión sólida y líquida para lanzadores; diseño, desarrollo y producción de sistemas de propulsión sólida para misiles tácticos; desarrollo, integración y suministro de lanzadores espaciales ligeros completos; investigación y desarrollo de..."
+      "resumen_negocio": "Avio S.p.A. designs, develops, produces, and integrates space launchers in Italy and internationally. The company involved in the design, development, and production of solid and liquid propulsion systems for launchers; design, development, and production of solid propulsion systems for tactical missiles; development, integration, and supply of complete light space launchers; research and development of new..."
+    },
+    {
+      "ticker": "STERV.HE",
+      "descartado": false,
+      "nombre_empresa": "Stora Enso Oyj",
+      "isin": null,
+      "precio_actual": 10.18,
+      "score": 34.5,
+      "consenso": "buy",
+      "precio_objetivo_medio": 11.24333,
+      "dispersion_pct": 68.8,
+      "momentum_30d_pct": 4.3,
+      "momentum_5d_pct": 0.7,
+      "fuerza_relativa_pct": 6.0,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.05,
+      "coste_horquilla_200e": 0.1,
+      "liquidez_dia": 11740304.348821163,
+      "volumen_relativo": 1.12,
+      "volatilidad_diaria_pct": 1.13,
+      "sesiones_hasta_stop": 123,
+      "distancia_max_52s_pct": -14.2,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 6.2,
+        "pct_vender": 6.2,
+        "total_analistas": 16
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": -1,
+        "titulares": [
+          {
+            "titulo": "Stora Enso stock holds firm as capacity cuts reshape its sawmill footprint - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Stora Enso no alcanza las expectativas de beneficios del segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Galeria de Cross-Laminated Timber (CLT) - 12 - archdaily.com",
+            "fuente": "archdaily.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 78.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.67,
+      "sma200": 10.03,
+      "tendencia_analistas": null,
+      "sector": "Consumer Cyclical",
+      "resumen_negocio": "Stora Enso Oyj ofrece soluciones renovables para las industrias de embalaje, biomateriales, construcciones de madera y papel en Finlandia e internacionalmente. Opera a través de los segmentos de Materiales de embalaje, Soluciones de embalaje, Biomateriales, Productos de madera, Bosques y otros."
     },
     {
       "ticker": "ZIP.AX",
@@ -4891,8 +5074,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Edenred y Naciones Unidas se alían para combatir el hambre en el mundo - Compromiso RSE",
-            "fuente": "Compromiso RSE",
+            "titulo": "Edenred y Naciones Unidas se alían para combatir el hambre en el mundo - compromisorse.com",
+            "fuente": "compromisorse.com",
             "sentimiento": 0
           }
         ]
@@ -4903,7 +5086,7 @@
       "sma200": 20.57,
       "tendencia_analistas": "estable",
       "sector": "Financial Services",
-      "resumen_negocio": "Edenred SE opera como una plataforma digital de servicios y pagos para empresas, empleados y comerciantes de todo el mundo. Ofrece soluciones de beneficios para empleados, incluido Ticket Restaurant, una solución que permite a los empleados tomarse un tiempo para almorzar en un comerciante asociado; Ticket Alimentación, que permite a los usuarios pagar sus compras en tiendas y supermercados; Edenred Regalo, un bono..."
+      "resumen_negocio": "Edenred SE operates as a digital platform for services and payments for companies, employees, and merchants worldwide. It offers employee benefit solutions, including Ticket Restaurant, a solution that allows employees to take time out for lunch at a partner merchant; Ticket Alimentación, which allows users to pay for groceries in stores and supermarkets; Edenred Regalo, a gift voucher; Ticket CESU, a human services..."
     },
     {
       "ticker": "WKL.AS",
@@ -4964,7 +5147,7 @@
       "sma200": 68.22,
       "tendencia_analistas": "estable",
       "sector": "Industrials",
-      "resumen_negocio": "Wolters Kluwer N.V. proporciona información, soluciones de software y servicios para profesionales en los Países Bajos, el resto de Europa, Estados Unidos, Canadá, Asia Pacífico e internacionalmente."
+      "resumen_negocio": "Wolters Kluwer N.V. provides information, software solutions, and services for professionals in the Netherlands, rest of Europe, the United States, Canada, the Asia Pacific, and internationally."
     },
     {
       "ticker": "HER.MI",
@@ -5013,8 +5196,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "De la colaboración entre la Gobernación y el Grupo Hera - vaticanstate.va",
-            "fuente": "vaticanstate.va",
+            "titulo": "De la colaboración entre la Gobernación y el Grupo Hera - Vaticanstate",
+            "fuente": "Vaticanstate",
             "sentimiento": 0
           }
         ]
@@ -5026,67 +5209,6 @@
       "tendencia_analistas": null,
       "sector": "Utilities",
       "resumen_negocio": "Hera S.p.A., una empresa de servicios públicos, se dedica a los negocios de gestión de residuos, servicios de agua y energía en Italia. Participa en la venta y distribución de metano y gas natural, así como en el negocio de calefacción urbana y gestión de calefacción; generación, distribución y venta de electricidad; servicios de acueducto, potabilización y alcantarillado relacionados con el ciclo del agua..."
-    },
-    {
-      "ticker": "ENEL.MI",
-      "descartado": false,
-      "nombre_empresa": "Enel SpA",
-      "isin": "CL0002266774",
-      "precio_actual": 9.066,
-      "score": 33.7,
-      "consenso": "buy",
-      "precio_objetivo_medio": 10.26818,
-      "dispersion_pct": 36.4,
-      "momentum_30d_pct": -9.1,
-      "momentum_5d_pct": -4.2,
-      "fuerza_relativa_pct": -7.4,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.54,
-      "coste_horquilla_200e": 1.08,
-      "liquidez_dia": 147590829.02562714,
-      "volumen_relativo": 1.42,
-      "volatilidad_diaria_pct": 0.95,
-      "sesiones_hasta_stop": 172,
-      "distancia_max_52s_pct": -9.7,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 0,
-        "pct_strong_buy": 8.7,
-        "pct_vender": 8.7,
-        "total_analistas": 23
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 2,
-        "titulares": [
-          {
-            "titulo": "Plan Estratégico 2026-2028: crecimiento y credibilidad - Enel Group",
-            "fuente": "Enel Group",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Enel (ENLAY) Upgraded to Buy: Here's What You Should Know - Eastern Progress",
-            "fuente": "Eastern Progress",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Enel intenta evitar la revocación de su concesión en la ciudad brasileña de Sao Paulo - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 27.7,
-      "tendencia_tecnica": "bajista",
-      "sma50": 9.72,
-      "sma200": 9.28,
-      "tendencia_analistas": null,
-      "sector": "Utilities",
-      "resumen_negocio": "Enel SpA operates as an integrated operator in the electricity and gas industries worldwide. The company operates through the Thermal Generation and Trading, Enel Green Power, Enel Grids, and End-User Markets segments."
     },
     {
       "ticker": "OUT1V.HE",
@@ -5150,189 +5272,6 @@
       "resumen_negocio": "Outokumpu Oyj produce y vende diversos productos de acero inoxidable en Finlandia, Alemania, Italia, Reino Unido, otros países europeos, América del Norte, Asia-Pacífico e internacionalmente."
     },
     {
-      "ticker": "F",
-      "descartado": false,
-      "nombre_empresa": "Ford Motor Company",
-      "isin": null,
-      "precio_actual": 14.62,
-      "score": 33.5,
-      "consenso": "buy",
-      "precio_objetivo_medio": 15.85368,
-      "dispersion_pct": 81.8,
-      "momentum_30d_pct": 7.2,
-      "momentum_5d_pct": 5.3,
-      "fuerza_relativa_pct": 7.1,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.14,
-      "coste_horquilla_200e": 0.28,
-      "liquidez_dia": 565487637.6895428,
-      "volumen_relativo": 1.13,
-      "volatilidad_diaria_pct": 2.04,
-      "sesiones_hasta_stop": 37,
-      "distancia_max_52s_pct": -15.3,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 0,
-        "pct_strong_buy": 14.3,
-        "pct_vender": 4.8,
-        "total_analistas": 21
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 0,
-        "titulares": [
-          {
-            "titulo": "Las ventas de Ford en Estados Unidos caen un 10,3% en agosto - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": -1
-          },
-          {
-            "titulo": "Ford se une a la competencia por el nuevo contrato de camiones tácticos del Ejército de EE.UU. - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Desde 25.950 €: por fin Ford desvela el nombre de su eléctrico barato 'anti Tesla' - Híbridos y Eléctricos",
-            "fuente": "Híbridos y Eléctricos",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 58.8,
-      "tendencia_tecnica": "alcista",
-      "sma50": 14.02,
-      "sma200": 13.23,
-      "tendencia_analistas": "mejorando",
-      "sector": "Consumer Cyclical",
-      "resumen_negocio": "Ford Motor Company desarrolla, entrega y da servicio a camionetas Ford, vehículos utilitarios deportivos, camionetas y automóviles comerciales y vehículos de lujo Lincoln en los Estados Unidos, Canadá, el Reino Unido, México e internacionalmente."
-    },
-    {
-      "ticker": "STERV.HE",
-      "descartado": false,
-      "nombre_empresa": "Stora Enso Oyj",
-      "isin": null,
-      "precio_actual": 10.18,
-      "score": 33.2,
-      "consenso": "buy",
-      "precio_objetivo_medio": 11.24333,
-      "dispersion_pct": 68.8,
-      "momentum_30d_pct": 4.3,
-      "momentum_5d_pct": 0.7,
-      "fuerza_relativa_pct": 6.0,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.05,
-      "coste_horquilla_200e": 0.1,
-      "liquidez_dia": 11740304.348821163,
-      "volumen_relativo": 1.12,
-      "volatilidad_diaria_pct": 1.13,
-      "sesiones_hasta_stop": 123,
-      "distancia_max_52s_pct": -14.2,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 0,
-        "pct_strong_buy": 6.2,
-        "pct_vender": 6.2,
-        "total_analistas": 16
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": -2,
-        "titulares": [
-          {
-            "titulo": "JPMorgan cuts Stora Enso stock price target on weak outlook - Investing.com",
-            "fuente": "Investing.com",
-            "sentimiento": -2
-          },
-          {
-            "titulo": "Stora Enso no alcanza las expectativas de beneficios del segundo trimestre - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 0
-          },
-          {
-            "titulo": "Galeria de Cross-Laminated Timber (CLT) - 12 - archdaily.com",
-            "fuente": "archdaily.com",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 78.9,
-      "tendencia_tecnica": "alcista",
-      "sma50": 9.67,
-      "sma200": 10.03,
-      "tendencia_analistas": null,
-      "sector": "Consumer Cyclical",
-      "resumen_negocio": "Stora Enso Oyj provides renewable solutions for the packaging, biomaterials, wooden constructions, and paper industries in Finland and internationally. It operates through Packaging Materials, Packaging Solutions, Biomaterials, Wood Products, Forest, and Other segments."
-    },
-    {
-      "ticker": "GNRC",
-      "descartado": false,
-      "nombre_empresa": "Generac Holdings Inc.",
-      "isin": "US3687361044",
-      "precio_actual": 187.35,
-      "score": 33.0,
-      "consenso": "buy",
-      "precio_objetivo_medio": 283.875,
-      "dispersion_pct": 58.9,
-      "momentum_30d_pct": -11.3,
-      "momentum_5d_pct": 1.9,
-      "fuerza_relativa_pct": -11.4,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.76,
-      "coste_horquilla_200e": 1.52,
-      "liquidez_dia": 176212550.23727417,
-      "volumen_relativo": 0.91,
-      "volatilidad_diaria_pct": 2.81,
-      "sesiones_hasta_stop": 19,
-      "distancia_max_52s_pct": -36.6,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 3.0,
-        "pct_strong_buy": 9.5,
-        "pct_vender": 0.0,
-        "total_analistas": 21
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 2,
-        "titulares": [
-          {
-            "titulo": "CINCO ganancias del +25% en marzo: PRONTO llegará una nueva lista de acciones seleccionadas por IA para abril - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Generac Holdings Inc. stock outperforms competitors on strong trading day - MarketWatch",
-            "fuente": "MarketWatch",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "El auge de los centros de datos en EE. UU. impulsa la actividad de toda la cadena de suministro industrial - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 21.7,
-      "tendencia_tecnica": "bajista",
-      "sma50": 216.54,
-      "sma200": 208.5,
-      "tendencia_analistas": null,
-      "sector": "Industrials",
-      "resumen_negocio": "Generac Holdings Inc. diseña, fabrica y distribuye productos y soluciones de tecnología energética en todo el mundo. La empresa ofrece generadores de reserva automáticos residenciales, interruptores de transferencia automática, generadores de reserva domésticos con motor refrigerado por aire y generadores de motor refrigerados por líquido; Mobile Link, un sistema de monitoreo remoto para generadores de respaldo..."
-    },
-    {
       "ticker": "AGN.AS",
       "descartado": false,
       "nombre_empresa": "Aegon Ltd.",
@@ -5379,8 +5318,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Aegon Asset Management - Funds Society",
-            "fuente": "Funds Society",
+            "titulo": "Aegon Asset Management - fundssociety.com",
+            "fuente": "fundssociety.com",
             "sentimiento": 0
           }
         ]
@@ -5391,7 +5330,68 @@
       "sma200": 6.73,
       "tendencia_analistas": "empeorando",
       "sector": "Financial Services",
-      "resumen_negocio": "Aegon Ltd. ofrece servicios de seguros en América, los Países Bajos, el Reino Unido e internacionalmente. Ofrece planes de jubilación, fondos mutuos y productos vinculados a fondos de inversión; y anualidades, seguros de vida y de salud."
+      "resumen_negocio": "Aegon Ltd. provides insurance services in the Americas, the Netherlands, the United Kingdom, and internationally. It offers retirement plans, mutual funds, and unit-linked products; and annuities, life, and health insurance."
+    },
+    {
+      "ticker": "ENEL.MI",
+      "descartado": false,
+      "nombre_empresa": "Enel SpA",
+      "isin": "CL0002266774",
+      "precio_actual": 9.066,
+      "score": 32.4,
+      "consenso": "buy",
+      "precio_objetivo_medio": 10.26818,
+      "dispersion_pct": 36.4,
+      "momentum_30d_pct": -9.1,
+      "momentum_5d_pct": -4.2,
+      "fuerza_relativa_pct": -7.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.54,
+      "coste_horquilla_200e": 1.08,
+      "liquidez_dia": 147590829.02562714,
+      "volumen_relativo": 1.42,
+      "volatilidad_diaria_pct": 0.95,
+      "sesiones_hasta_stop": 172,
+      "distancia_max_52s_pct": -9.7,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 8.7,
+        "pct_vender": 8.7,
+        "total_analistas": 23
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Plan Estratégico 2026-2028: crecimiento y credibilidad - Enel Group",
+            "fuente": "Enel Group",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Enel intenta evitar la revocación de su concesión en la ciudad brasileña de Sao Paulo - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Venta de Enel Green Power India: tres ofertas por 280 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 27.7,
+      "tendencia_tecnica": "bajista",
+      "sma50": 9.72,
+      "sma200": 9.28,
+      "tendencia_analistas": null,
+      "sector": "Utilities",
+      "resumen_negocio": "Enel SpA operates as an integrated operator in the electricity and gas industries worldwide. The company operates through the Thermal Generation and Trading, Enel Green Power, Enel Grids, and End-User Markets segments."
     },
     {
       "ticker": "AC.PA",
@@ -5452,7 +5452,7 @@
       "sma200": 45.21,
       "tendencia_analistas": "empeorando",
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Accor SA opera una cadena de hoteles en todo el mundo. La empresa opera a través de Premium, Midscale y Economy; y segmentos de lujo y estilo de vida. Su segmento Premium, Midscale y Economy incluye las marcas Ibis, Novotel, Mercure, Swissôtel, Mövenpick y Pullman que operan en Europa y el norte de África, Medio Oriente, África, Asia-Pacífico, América y China."
+      "resumen_negocio": "Accor SA operates a chain of hotels worldwide. The company operates through Premium, Midscale and Economy; and Luxury & Lifestyle segments. Its Premium, Midscale and Economy segment includes the Ibis, Novotel, Mercure, Swissôtel, Mövenpick, and Pullman brands operating in Europe and North Africa, the Middle East, Africa, the Asia-Pacific, the Americas, and China."
     },
     {
       "ticker": "TIETO.HE",
@@ -5513,7 +5513,7 @@
       "sma200": 18.58,
       "tendencia_analistas": null,
       "sector": "Technology",
-      "resumen_negocio": "Tieto Oyj opera como una empresa de software e ingeniería digital en Noruega, Suecia, Finlandia e internacionalmente. Opera a través de cuatro segmentos: Tieto Tech Consulting, Tieto Banktech, Tieto Caretech y Tieto Indtech Services."
+      "resumen_negocio": "Tieto Oyj operates as a software and digital engineering company in Norway, Sweden, Finland, and internationally. It operates through four segments: Tieto Tech Consulting, Tieto Banktech, Tieto Caretech, and Tieto Indtech Services."
     },
     {
       "ticker": "STM",
@@ -5532,8 +5532,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.15,
-      "coste_horquilla_200e": 0.3,
+      "horquilla_pct": 0.29,
+      "coste_horquilla_200e": 0.58,
       "liquidez_dia": 356409771.00982666,
       "volumen_relativo": 0.97,
       "volatilidad_diaria_pct": 2.55,
@@ -5574,7 +5574,68 @@
       "sma200": 45.23,
       "tendencia_analistas": "estable",
       "sector": "Technology",
-      "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+      "resumen_negocio": "STMicroelectronics N.V., junto con sus filiales, diseña, desarrolla, fabrica y vende productos semiconductores en Europa, Oriente Medio, África, América y Asia Pacífico. La empresa opera a través de productos analógicos, MEMS y Sensors Group (AM&S); Productos de potencia y discretos (P&D); Procesamiento Integrado (EMP); y segmentos de productos RF (D&RF)."
+    },
+    {
+      "ticker": "BKT.MC",
+      "descartado": false,
+      "nombre_empresa": "Bankinter, S.A.",
+      "isin": null,
+      "precio_actual": 16.87,
+      "score": 30.3,
+      "consenso": "buy",
+      "precio_objetivo_medio": 16.35591,
+      "dispersion_pct": 84.5,
+      "momentum_30d_pct": 2.6,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": 4.3,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.47,
+      "coste_horquilla_200e": 0.94,
+      "liquidez_dia": 13750520.46515274,
+      "volumen_relativo": 1.27,
+      "volatilidad_diaria_pct": 0.91,
+      "sesiones_hasta_stop": 187,
+      "distancia_max_52s_pct": -0.5,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 18.2,
+        "total_analistas": 22
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "Bankinter reports 12% increase in profit to 605 million euros, driven by growth in customer business, greater diversification and strong profitability - Bankinter",
+            "fuente": "Bankinter",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Bankinter reports a profit of 291 million euros in the first quarter of 2026, up 8%, with growth across all business lines and continued expansion of its customer franchise - Bankinter",
+            "fuente": "Bankinter",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Bankinter invierte en Twinco Capital, ‘fintech’ especializada en financiación integral de la cadena de suministro - Bankinter",
+            "fuente": "Bankinter",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "rsi_14": 53.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 16.01,
+      "sma200": 14.35,
+      "tendencia_analistas": "estable",
+      "sector": "Financial Services",
+      "resumen_negocio": "Bankinter, S.A. provides various banking products and services to individuals, corporates, and small- and medium-sized enterprises in Spain, Luxembourg, Portugal, and Ireland. The company operates through Commercial Banking, Corporate Banking, BKCF Spain, BK Portugal, BK Ireland, and Other Businesses segments."
     },
     {
       "ticker": "DSY.PA",
@@ -5618,8 +5679,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Dassault Systèmes reduce un 78% sus emisiones operativas y convierte los gemelos virtuales en una herramienta clave para descarbonizar la industria - industrytalks.es",
-            "fuente": "industrytalks.es",
+            "titulo": "Dassault Systèmes reduce un 78% sus emisiones operativas y convierte los gemelos virtuales en una herramienta clave para descarbonizar la industria - Industry Talks",
+            "fuente": "Industry Talks",
             "sentimiento": 0
           },
           {
@@ -5635,7 +5696,7 @@
       "sma200": 20.15,
       "tendencia_analistas": null,
       "sector": "Technology",
-      "resumen_negocio": "Dassault Systèmes SE ofrece soluciones y servicios de software en todo el mundo. La empresa ofrece aplicaciones de modelado 3D, como SOLIDWORKS, CATIA, GEOVIA y BIOVIA; aplicaciones sociales y colaborativas, incluidas 3DEXCITE, CENTRIC PLM y ENOVIA; y aplicaciones de simulación que comprenden SIMULIA, DELMIA, 3DVIA."
+      "resumen_negocio": "Dassault Systèmes SE provides software solutions and services worldwide. The company offers 3D modeling applications, such as SOLIDWORKS, CATIA, GEOVIA, and BIOVIA; social and collaborative applications, including 3DEXCITE, CENTRIC PLM, and ENOVIA; and simulation applications comprising SIMULIA, DELMIA, 3DVIA."
     },
     {
       "ticker": "NTGY.MC",
@@ -5757,7 +5818,7 @@
       "sma200": 16.86,
       "tendencia_analistas": "estable",
       "sector": "Financial Services",
-      "resumen_negocio": "Crédit Agricole S.A. ofrece productos y servicios de banca minorista y corporativa, seguros y banca de inversión en Francia, Italia, el resto de la Unión Europea, el resto de Europa, América del Norte, América Central y del Sur, África, Medio Oriente, Asia Pacífico y Japón."
+      "resumen_negocio": "Crédit Agricole S.A. provides retail and corporate banking, insurance, and investment banking products and services in France, Italy, rest of the European Union, rest of Europe, North America, Central and South America, Africa, the Middle East, the Asia Pacific, and Japan."
     },
     {
       "ticker": "BN.PA",
@@ -5801,8 +5862,8 @@
             "sentimiento": 1
           },
           {
-            "titulo": "Mastellone mejora su calificación crediticia tras el ingreso de Arcor y Danone - agroempresario.com",
-            "fuente": "agroempresario.com",
+            "titulo": "Mastellone mejora su calificación crediticia tras el ingreso de Arcor y Danone - Agroempresario",
+            "fuente": "Agroempresario",
             "sentimiento": 1
           },
           {
@@ -5818,68 +5879,7 @@
       "sma200": 68.35,
       "tendencia_analistas": null,
       "sector": "Consumer Defensive",
-      "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
-    },
-    {
-      "ticker": "BKT.MC",
-      "descartado": false,
-      "nombre_empresa": "Bankinter, S.A.",
-      "isin": null,
-      "precio_actual": 16.87,
-      "score": 29.0,
-      "consenso": "buy",
-      "precio_objetivo_medio": 16.35591,
-      "dispersion_pct": 84.5,
-      "momentum_30d_pct": 2.6,
-      "momentum_5d_pct": 1.2,
-      "fuerza_relativa_pct": 4.3,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.47,
-      "coste_horquilla_200e": 0.94,
-      "liquidez_dia": 13750520.46515274,
-      "volumen_relativo": 1.27,
-      "volatilidad_diaria_pct": 0.91,
-      "sesiones_hasta_stop": 187,
-      "distancia_max_52s_pct": -0.5,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": -5.2,
-        "pct_strong_buy": 18.2,
-        "pct_vender": 18.2,
-        "total_analistas": 22
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 4,
-        "titulares": [
-          {
-            "titulo": "Bankinter reports a profit of 291 million euros in the first quarter of 2026, up 8%, with growth across all business lines and continued expansion of its customer franchise - Bankinter",
-            "fuente": "Bankinter",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Bankinter invierte en Twinco Capital, ‘fintech’ especializada en financiación integral de la cadena de suministro - Bankinter",
-            "fuente": "Bankinter",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Bankinter Investment and Plenium Partners sell to Galp 351 MW of wind assets from the alternative investment vehicles Helia II, III and IV - Bankinter",
-            "fuente": "Bankinter",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 53.1,
-      "tendencia_tecnica": "alcista",
-      "sma50": 16.01,
-      "sma200": 14.35,
-      "tendencia_analistas": "estable",
-      "sector": "Financial Services",
-      "resumen_negocio": "Bankinter, S.A. provides various banking products and services to individuals, corporates, and small- and medium-sized enterprises in Spain, Luxembourg, Portugal, and Ireland. The company operates through Commercial Banking, Corporate Banking, BKCF Spain, BK Portugal, BK Ireland, and Other Businesses segments."
+      "resumen_negocio": "Danone S.A. opera en la industria de alimentos y bebidas en Europa, Ucrania, América del Norte, China, Norte de Asia, Oceanía, América Latina, resto de Asia, África, Turquía, Medio Oriente y la Comunidad de Estados Independientes."
     },
     {
       "ticker": "RED.MC",
@@ -5940,7 +5940,7 @@
       "sma200": 14.63,
       "tendencia_analistas": "estable",
       "sector": "Utilities",
-      "resumen_negocio": "Redeia Corporación, S.A., a través de sus filiales, se dedica a la gestión de la red española de transporte eléctrico en España e internacionalmente. La empresa opera a través de tres segmentos: Gestión y Operación de Infraestructura Eléctrica Doméstica; Gestión y Operación de Infraestructura Eléctrica Internacional; y Telecomunicaciones."
+      "resumen_negocio": "Redeia Corporación, S.A., through with its subsidiaries, engages in the management of the Spanish electricity transport network in Spain and internationally. The company operates through three segments: Management and Operation of Domestic Electricity Infrastructure; Management and Operation of International Electricity Infrastructure; and Telecommunications."
     },
     {
       "ticker": "CCL",
@@ -5959,8 +5959,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.04,
-      "coste_horquilla_200e": 0.08,
+      "horquilla_pct": 0.08,
+      "coste_horquilla_200e": 0.16,
       "liquidez_dia": 435931340.435791,
       "volumen_relativo": 1.25,
       "volatilidad_diaria_pct": 2.07,
@@ -6001,7 +6001,7 @@
       "sma200": 27.51,
       "tendencia_analistas": "estable",
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+      "resumen_negocio": "Carnival Corporation Ltd., una compañía de cruceros, ofrece servicios de viajes de placer. La compañía opera a través de cuatro segmentos: operaciones de cruceros en América del Norte, operaciones de cruceros en Europa, soporte de cruceros y tours y otros."
     },
     {
       "ticker": "TEP.PA",
@@ -6050,8 +6050,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Chile: huelga de trabajadores de Teleperformance supera un mes sin acuerdo - latamgremial.com",
-            "fuente": "latamgremial.com",
+            "titulo": "Teleperformance SE presenta sus resultados financieros del primer semestre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
             "sentimiento": 0
           }
         ]
@@ -6062,68 +6062,7 @@
       "sma200": 56.1,
       "tendencia_analistas": null,
       "sector": "Industrials",
-      "resumen_negocio": "Teleperformance SE, together with its subsidiaries, operates as a digital business services company in France and internationally. The company operates in Core Services and Specialized Services segments."
-    },
-    {
-      "ticker": "CPR.MI",
-      "descartado": false,
-      "nombre_empresa": "Davide Campari-Milano N.V.",
-      "isin": null,
-      "precio_actual": 5.772,
-      "score": 27.8,
-      "consenso": "buy",
-      "precio_objetivo_medio": 7.03333,
-      "dispersion_pct": 103.8,
-      "momentum_30d_pct": -2.2,
-      "momentum_5d_pct": -0.3,
-      "fuerza_relativa_pct": -0.5,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 1.0,
-      "coste_horquilla_200e": 2.0,
-      "liquidez_dia": 23700210.125357628,
-      "volumen_relativo": 1.08,
-      "volatilidad_diaria_pct": 1.21,
-      "sesiones_hasta_stop": 106,
-      "distancia_max_52s_pct": -13.0,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 0,
-        "pct_strong_buy": 14.3,
-        "pct_vender": 4.8,
-        "total_analistas": 21
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 4,
-        "titulares": [
-          {
-            "titulo": "Campari eleva sus previsiones de beneficio para 2026 impulsada por los aranceles y supera las estimaciones del primer semestre - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 3
-          },
-          {
-            "titulo": "Campari supera las expectativas gracias a Aperol y a los mercados emergentes - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Campari rinde homenaje a Milán con el lanzamiento de la nueva e icónica botella inspirada en su hogar - Comunicae",
-            "fuente": "Comunicae",
-            "sentimiento": -1
-          }
-        ]
-      },
-      "rsi_14": 43.5,
-      "tendencia_tecnica": "mixta",
-      "sma50": 5.75,
-      "sma200": 5.84,
-      "tendencia_analistas": null,
-      "sector": "Consumer Defensive",
-      "resumen_negocio": "Davide Campari-Milano N.V., junto con sus filiales, comercializa bebidas alcohólicas y no alcohólicas en América, Europa, Medio Oriente, África y Asia-Pacífico. Ofrece una gama de productos que incluyen aperitivos, vodka, whisky, ron, agave, coñac y champagne bajo las marcas Aperol, Campari, Picon, Cynar, Sarti Rosa, Campari Soda, Crodino, Aperol Spritz RTE, Wild Turkey, Appleton Estate, Wray and Nephew, The..."
+      "resumen_negocio": "Tele Performance SE, junto con sus filiales, opera como una empresa de servicios empresariales digitales en Francia e internacionalmente. La empresa opera en los segmentos de Servicios Básicos y Servicios Especializados."
     },
     {
       "ticker": "ORNBV.HE",
@@ -6167,8 +6106,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Orion y Shilpa Medicare amplían su alianza para desarrollar y suministrar un biosimilar de nivolumab en Europa - businesswire.com",
-            "fuente": "businesswire.com",
+            "titulo": "Orion y Shilpa Medicare amplían su alianza para desarrollar y suministrar un biosimilar de nivolumab en Europa - Business Wire",
+            "fuente": "Business Wire",
             "sentimiento": 0
           },
           {
@@ -6184,7 +6123,129 @@
       "sma200": 69.69,
       "tendencia_analistas": "estable",
       "sector": "Healthcare",
-      "resumen_negocio": "Orion Oyj desarrolla, fabrica y comercializa productos farmacéuticos humanos y veterinarios e ingredientes farmacéuticos activos (API) en Finlandia, Escandinavia, el resto de Europa, América del Norte e internacionalmente."
+      "resumen_negocio": "Orion Oyj develops, manufactures, and markets human and veterinary pharmaceuticals and active pharmaceutical ingredients (APIs) in Finland, Scandinavia, rest of Europe, North America, and internationally."
+    },
+    {
+      "ticker": "CPR.MI",
+      "descartado": false,
+      "nombre_empresa": "Davide Campari-Milano N.V.",
+      "isin": null,
+      "precio_actual": 5.772,
+      "score": 26.5,
+      "consenso": "buy",
+      "precio_objetivo_medio": 7.03333,
+      "dispersion_pct": 103.8,
+      "momentum_30d_pct": -2.2,
+      "momentum_5d_pct": -0.3,
+      "fuerza_relativa_pct": -0.5,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 1.0,
+      "coste_horquilla_200e": 2.0,
+      "liquidez_dia": 23700210.125357628,
+      "volumen_relativo": 1.08,
+      "volatilidad_diaria_pct": 1.21,
+      "sesiones_hasta_stop": 106,
+      "distancia_max_52s_pct": -13.0,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 14.3,
+        "pct_vender": 4.8,
+        "total_analistas": 21
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Campari eleva sus previsiones de beneficio para 2026 impulsada por los aranceles y supera las estimaciones del primer semestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Campari supera las expectativas gracias a Aperol y a los mercados emergentes - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Campari rinde homenaje a Milán con el lanzamiento de la nueva e icónica botella inspirada en su hogar - comunicae.es",
+            "fuente": "comunicae.es",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "rsi_14": 43.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 5.75,
+      "sma200": 5.84,
+      "tendencia_analistas": null,
+      "sector": "Consumer Defensive",
+      "resumen_negocio": "Davide Campari-Milano N.V., together with its subsidiaries, trades in alcoholic and non-alcoholic beverages in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    {
+      "ticker": "AD.AS",
+      "descartado": false,
+      "nombre_empresa": "Koninklijke Ahold Delhaize N.V.",
+      "isin": null,
+      "precio_actual": 31.66,
+      "score": 26.2,
+      "consenso": "buy",
+      "precio_objetivo_medio": 38.57611,
+      "dispersion_pct": 82.8,
+      "momentum_30d_pct": -5.4,
+      "momentum_5d_pct": 3.6,
+      "fuerza_relativa_pct": -3.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 82002520.5052681,
+      "volumen_relativo": 1.11,
+      "volatilidad_diaria_pct": 1.28,
+      "sesiones_hasta_stop": 95,
+      "distancia_max_52s_pct": -23.0,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 15.8,
+        "pct_vender": 10.5,
+        "total_analistas": 19
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": -1,
+        "titulares": [
+          {
+            "titulo": "Amazon y Walmart quedan bajo investigación del Departamento de Justicia por precios de carne de vacuno - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Ahold Delhaize: Why Valuation Matters So Much (Rating Upgrade) (OTCMKTS:ADRNY) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las bolsas de valores de Holanda cerraron con caídas; el AEX perdió un 0.40% - Investing.com México",
+            "fuente": "Investing.com México",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 50.0,
+      "tendencia_tecnica": "bajista",
+      "sma50": 33.38,
+      "sma200": 35.58,
+      "tendencia_analistas": "mejorando",
+      "sector": "Consumer Defensive",
+      "resumen_negocio": "Koninklijke Ahold Delhaize N.V. opera tiendas minoristas de alimentos y comercio electrónico en los Países Bajos, Estados Unidos e internacionalmente. Las tiendas de la empresa ofrecen productos agrícolas, lácteos, cárnicos, delicatessen, panadería, mariscos y productos congelados; comestibles, cerveza y vino; flores, alimentos para mascotas, cuidados de salud y belleza, utensilios de cocina y utensilios de cocina..."
     },
     {
       "ticker": "AENA.MC",
@@ -6294,8 +6355,8 @@
             "sentimiento": 2
           },
           {
-            "titulo": "La finlandesa Kone anuncia la compra de TK Elevator por 29.400 millones de euros - El Economista",
-            "fuente": "El Economista",
+            "titulo": "La finlandesa Kone anuncia la compra de TK Elevator por 29.400 millones de euros - eleconomista.es",
+            "fuente": "eleconomista.es",
             "sentimiento": 1
           }
         ]
@@ -6306,7 +6367,68 @@
       "sma200": 54.67,
       "tendencia_analistas": null,
       "sector": "Industrials",
-      "resumen_negocio": "KONE Oyj, junto con sus filiales, se dedica al negocio de ascensores y escaleras mecánicas en todo el mundo. La empresa ofrece ascensores, escaleras mecánicas, puertas automáticas para edificios y soluciones integradas de control de acceso, así como soluciones de mantenimiento y modernización."
+      "resumen_negocio": "KONE Oyj, together with its subsidiaries, engages in the elevator and escalator business worldwide. The company provides elevators, escalators, automatic building doors, and integrated access control solutions, as well as maintenance and modernization solutions."
+    },
+    {
+      "ticker": "RNO.PA",
+      "descartado": false,
+      "nombre_empresa": "Renault SA",
+      "isin": null,
+      "precio_actual": 29.14,
+      "score": 24.9,
+      "consenso": "buy",
+      "precio_objetivo_medio": 38.53684,
+      "dispersion_pct": 173.2,
+      "momentum_30d_pct": 3.3,
+      "momentum_5d_pct": -1.0,
+      "fuerza_relativa_pct": 5.0,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": null,
+      "coste_horquilla_200e": null,
+      "liquidez_dia": 35269426.982587814,
+      "volumen_relativo": 1.35,
+      "volatilidad_diaria_pct": 2.32,
+      "sesiones_hasta_stop": 28,
+      "distancia_max_52s_pct": -16.2,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 15.0,
+        "pct_vender": 10.0,
+        "total_analistas": 20
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Renault, Thales unveil military vehicle partnership - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Renault SA: Half-year report on the liquidity contract - H1 2026 - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Renault Scénic E-Tech 2027: 642 km, batería LFP y 24 minutos para recargar - Movilidad Eléctrica",
+            "fuente": "Movilidad Eléctrica",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 54.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 27.39,
+      "sma200": 28.86,
+      "tendencia_analistas": "empeorando",
+      "sector": "Consumer Cyclical",
+      "resumen_negocio": "Renault SA engages in the design, manufacture, sale, repair, maintenance, and leasing of motor vehicles in Europe, Eurasia, Africa, the Middle East, the Asia Pacific, and the Americas."
     },
     {
       "ticker": "BX",
@@ -6314,7 +6436,7 @@
       "nombre_empresa": "Blackstone Inc.",
       "isin": null,
       "precio_actual": 136.15,
-      "score": 25.1,
+      "score": 24.8,
       "consenso": "buy",
       "precio_objetivo_medio": 144.04762,
       "dispersion_pct": 54.6,
@@ -6325,8 +6447,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.44,
-      "coste_horquilla_200e": 0.88,
+      "horquilla_pct": 0.48,
+      "coste_horquilla_200e": 0.96,
       "liquidez_dia": 468295881.0684204,
       "volumen_relativo": 0.96,
       "volatilidad_diaria_pct": 2.2,
@@ -6367,68 +6489,7 @@
       "sma200": 128.53,
       "tendencia_analistas": "empeorando",
       "sector": "Financial Services",
-      "resumen_negocio": "Blackstone Inc. is an alternative asset management firm specializing in private equity, venture capital, real estate, hedge fund solutions, credit, secondary funds of funds, public debt and equity and multi-asset class strategies."
-    },
-    {
-      "ticker": "AD.AS",
-      "descartado": false,
-      "nombre_empresa": "Koninklijke Ahold Delhaize N.V.",
-      "isin": null,
-      "precio_actual": 31.66,
-      "score": 24.9,
-      "consenso": "buy",
-      "precio_objetivo_medio": 38.57611,
-      "dispersion_pct": 82.8,
-      "momentum_30d_pct": -5.4,
-      "momentum_5d_pct": 3.6,
-      "fuerza_relativa_pct": -3.7,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 82002520.5052681,
-      "volumen_relativo": 1.11,
-      "volatilidad_diaria_pct": 1.28,
-      "sesiones_hasta_stop": 95,
-      "distancia_max_52s_pct": -23.0,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": -5.2,
-        "pct_strong_buy": 15.8,
-        "pct_vender": 10.5,
-        "total_analistas": 19
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": -2,
-        "titulares": [
-          {
-            "titulo": "Amazon y Walmart quedan bajo investigación del Departamento de Justicia por precios de carne de vacuno - bloomberglinea.com",
-            "fuente": "bloomberglinea.com",
-            "sentimiento": -2
-          },
-          {
-            "titulo": "Las bolsas de valores de Holanda cerraron con caídas; el AEX perdió un 0.40% - Investing.com México",
-            "fuente": "Investing.com México",
-            "sentimiento": 0
-          },
-          {
-            "titulo": "Los Mejores Valores de Dividendo Europeos para Septiembre 2024 - Morningstar",
-            "fuente": "Morningstar",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 50.0,
-      "tendencia_tecnica": "bajista",
-      "sma50": 33.38,
-      "sma200": 35.58,
-      "tendencia_analistas": "mejorando",
-      "sector": "Consumer Defensive",
-      "resumen_negocio": "Koninklijke Ahold Delhaize N.V. operates retail food stores and e-commerce in the Netherlands, the United States, and internationally. The company's stores offer produce, dairy, meat, deli, bakery, seafood, and frozen products; grocery, beer, and wine; floral, pet food, health and beauty care, kitchen and cookware, gardening tools, general merchandise articles, electronics, newspapers and magazines, and tobacco..."
+      "resumen_negocio": "Blackstone Inc. es una empresa de gestión de activos alternativos que se especializa en capital privado, capital de riesgo, bienes raíces, soluciones de fondos de cobertura, crédito, fondos de fondos secundarios, deuda pública y acciones y estrategias de clases de activos múltiples."
     },
     {
       "ticker": "BC.MI",
@@ -6467,13 +6528,13 @@
         "sentimiento_total": 2,
         "titulares": [
           {
-            "titulo": "Cucinelli reafirma su objetivo de crecimiento y rechaza las acusaciones de su actividad en Rusia - FashionNetwork France",
-            "fuente": "FashionNetwork France",
+            "titulo": "Deutsche Bank inicia cobertura de Brunello Cucinelli con \"compra\" y prevé un crecimiento del BPA del 15% - Investing.com España",
+            "fuente": "Investing.com España",
             "sentimiento": 1
           },
           {
-            "titulo": "¿Por qué sube hoy la acción de Brunello Cucinelli? - Investing.com México",
-            "fuente": "Investing.com México",
+            "titulo": "Cucinelli reafirma su objetivo de crecimiento y rechaza las acusaciones de su actividad en Rusia - FashionNetwork France",
+            "fuente": "FashionNetwork France",
             "sentimiento": 1
           },
           {
@@ -6489,68 +6550,68 @@
       "sma200": 84.25,
       "tendencia_analistas": null,
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Brunello Cucinelli S.p.A., junto con sus filiales, se dedica a la producción y venta de prendas de vestir, accesorios y productos de estilo de vida en Italia, Europa, Estados Unidos y Asia."
+      "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia."
     },
     {
-      "ticker": "RNO.PA",
+      "ticker": "REP.MC",
       "descartado": false,
-      "nombre_empresa": "Renault SA",
+      "nombre_empresa": "Repsol, S.A.",
       "isin": null,
-      "precio_actual": 29.14,
-      "score": 23.6,
+      "precio_actual": 27.74,
+      "score": 23.9,
       "consenso": "buy",
-      "precio_objetivo_medio": 38.53684,
-      "dispersion_pct": 173.2,
-      "momentum_30d_pct": 3.3,
-      "momentum_5d_pct": -1.0,
-      "fuerza_relativa_pct": 5.0,
+      "precio_objetivo_medio": 27.50909,
+      "dispersion_pct": 94.9,
+      "momentum_30d_pct": 9.0,
+      "momentum_5d_pct": 4.3,
+      "fuerza_relativa_pct": 10.7,
       "regimen_mercado": "favorable",
       "indice_referencia": "^STOXX50E",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": null,
-      "coste_horquilla_200e": null,
-      "liquidez_dia": 35269426.982587814,
-      "volumen_relativo": 1.35,
-      "volatilidad_diaria_pct": 2.32,
-      "sesiones_hasta_stop": 28,
-      "distancia_max_52s_pct": -16.2,
+      "horquilla_pct": 1.26,
+      "coste_horquilla_200e": 2.52,
+      "liquidez_dia": 61427422.569698334,
+      "volumen_relativo": 1.22,
+      "volatilidad_diaria_pct": 1.71,
+      "sesiones_hasta_stop": 53,
+      "distancia_max_52s_pct": -2.1,
       "catalizador_resultados": null,
       "consenso_real": {
         "excluida": false,
         "empujon": -5.2,
-        "pct_strong_buy": 15.0,
-        "pct_vender": 10.0,
-        "total_analistas": 20
+        "pct_strong_buy": 13.0,
+        "pct_vender": 13.0,
+        "total_analistas": 23
       },
       "cotiza_en_euros": true,
       "noticias": {
-        "sentimiento_total": 2,
+        "sentimiento_total": 4,
         "titulares": [
           {
-            "titulo": "Renault, Thales unveil military vehicle partnership - Reuters",
-            "fuente": "Reuters",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Renault SA: Half-year report on the liquidity contract - H1 2026 - Yahoo Finance",
-            "fuente": "Yahoo Finance",
+            "titulo": "HECHOS RELEVANTES.-REPSOL, S.A. Operaciones realizadas por Repsol, S.A. al amparo de su Programa de Recompra de acciones[...] - Bolsamania",
+            "fuente": "Bolsamania",
             "sentimiento": 1
           },
           {
-            "titulo": "Renault Korea's sales drop 34 pct in August on weak demand - Yonhap News Agency",
-            "fuente": "Yonhap News Agency",
-            "sentimiento": -1
+            "titulo": "RBC eleva el precio objetivo y las estimaciones para Repsol ante las mayores expectativas de margen de refinación. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Repsol se disparan tras la escalada en Ormuz - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
           }
         ]
       },
-      "rsi_14": 54.3,
+      "rsi_14": 56.1,
       "tendencia_tecnica": "alcista",
-      "sma50": 27.39,
-      "sma200": 28.86,
-      "tendencia_analistas": "empeorando",
-      "sector": "Consumer Cyclical",
-      "resumen_negocio": "Renault SA se dedica al diseño, fabricación, venta, reparación, mantenimiento y arrendamiento de vehículos de motor en Europa, Eurasia, África, Medio Oriente, Asia Pacífico y América."
+      "sma50": 25.41,
+      "sma200": 20.63,
+      "tendencia_analistas": "estable",
+      "sector": "Energy",
+      "resumen_negocio": "Repsol, S.A. opera como empresa multienergética en España, Perú, Estados Unidos, Portugal e internacionalmente. El segmento Upstream se dedica a la exploración, desarrollo y producción de reservas de petróleo crudo y gas natural; y desarrollo de soluciones geológicas bajas en carbono."
     },
     {
       "ticker": "GLE.PA",
@@ -6611,7 +6672,7 @@
       "sma200": 70.51,
       "tendencia_analistas": "empeorando",
       "sector": "Financial Services",
-      "resumen_negocio": "Société Générale Société anonyme ofrece servicios bancarios y financieros a particulares, empresas y clientes institucionales en Europa e internacionalmente. Opera a través de la banca minorista, la banca privada y los seguros franceses; Servicios internacionales de venta minorista, movilidad y arrendamiento; y Banca Global y Soluciones para Inversores."
+      "resumen_negocio": "Société Générale Société anonyme ofrece servicios bancarios y financieros a particulares, empresas y clientes institucionales en Europa e internacionalmente. Opera a través de la banca minorista, la banca privada y los seguros franceses; Servicios de venta minorista, movilidad y arrendamiento internacional; y Banca Global y Soluciones para Inversores."
     },
     {
       "ticker": "CVNA",
@@ -6630,8 +6691,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.32,
-      "coste_horquilla_200e": 0.64,
+      "horquilla_pct": 0.39,
+      "coste_horquilla_200e": 0.78,
       "liquidez_dia": 506733420.99609375,
       "volumen_relativo": 0.71,
       "volatilidad_diaria_pct": 3.81,
@@ -6672,129 +6733,7 @@
       "sma200": 73.03,
       "tendencia_analistas": "estable",
       "sector": "Consumer Cyclical",
-      "resumen_negocio": "Carvana Co., junto con sus filiales, opera una plataforma de comercio electrónico para la compra y venta de automóviles usados. Proporciona adquisición, inspección y reacondicionamiento de vehículos, búsqueda y experiencia de compra en línea, financiación, productos complementarios, red logística y experiencia de cumplimiento distintiva, y servicios de atención al cliente postventa."
-    },
-    {
-      "ticker": "REP.MC",
-      "descartado": false,
-      "nombre_empresa": "Repsol, S.A.",
-      "isin": null,
-      "precio_actual": 27.74,
-      "score": 22.6,
-      "consenso": "buy",
-      "precio_objetivo_medio": 27.50909,
-      "dispersion_pct": 94.9,
-      "momentum_30d_pct": 9.0,
-      "momentum_5d_pct": 4.3,
-      "fuerza_relativa_pct": 10.7,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 1.26,
-      "coste_horquilla_200e": 2.52,
-      "liquidez_dia": 61427422.569698334,
-      "volumen_relativo": 1.22,
-      "volatilidad_diaria_pct": 1.71,
-      "sesiones_hasta_stop": 53,
-      "distancia_max_52s_pct": -2.1,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": -5.2,
-        "pct_strong_buy": 13.0,
-        "pct_vender": 13.0,
-        "total_analistas": 23
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 3,
-        "titulares": [
-          {
-            "titulo": "HECHOS RELEVANTES.-REPSOL, S.A. Operaciones realizadas por Repsol, S.A. al amparo de su Programa de Recompra de acciones[...] - Bolsamania",
-            "fuente": "Bolsamania",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "RBC eleva el precio objetivo y las estimaciones para Repsol ante las mayores expectativas de margen de refinación. - Yahoo",
-            "fuente": "Yahoo",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "Repsol (REPYY) Upgraded to Buy: Here's Why - Yahoo Finance",
-            "fuente": "Yahoo Finance",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 56.1,
-      "tendencia_tecnica": "alcista",
-      "sma50": 25.41,
-      "sma200": 20.63,
-      "tendencia_analistas": "estable",
-      "sector": "Energy",
-      "resumen_negocio": "Repsol, S.A. opera como empresa multienergética en España, Perú, Estados Unidos, Portugal e internacionalmente. El segmento Upstream se dedica a la exploración, desarrollo y producción de reservas de petróleo crudo y gas natural; y desarrollo de soluciones geológicas bajas en carbono."
-    },
-    {
-      "ticker": "PLTR",
-      "descartado": false,
-      "nombre_empresa": "Palantir Technologies Inc.",
-      "isin": null,
-      "precio_actual": 174.33,
-      "score": 22.0,
-      "consenso": "buy",
-      "precio_objetivo_medio": 191.68,
-      "dispersion_pct": 218.8,
-      "momentum_30d_pct": 11.8,
-      "momentum_5d_pct": -6.4,
-      "fuerza_relativa_pct": 11.7,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^GSPC",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 1.66,
-      "coste_horquilla_200e": 3.32,
-      "liquidez_dia": 5490312687.767792,
-      "volumen_relativo": 0.94,
-      "volatilidad_diaria_pct": 3.4,
-      "sesiones_hasta_stop": 13,
-      "distancia_max_52s_pct": -15.9,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": 2.8,
-        "pct_strong_buy": 3.1,
-        "pct_vender": 6.2,
-        "total_analistas": 32
-      },
-      "cotiza_en_euros": false,
-      "noticias": {
-        "sentimiento_total": 6,
-        "titulares": [
-          {
-            "titulo": "Palantir Jumped 7.7% on an Expanded PwC Alliance as Globant Launched a Salesforce AI Pod. Which Services Model Scales Better? - Yahoo Finance",
-            "fuente": "Yahoo Finance",
-            "sentimiento": 2
-          },
-          {
-            "titulo": "Snowflake, CrowdStrike y Palantir: las 3 acciones de IA que buscan ganar terreno más allá de los chips - Benzinga España",
-            "fuente": "Benzinga España",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "PwC and Palantir Expand Strategic Alliance to Help Organizations Scale Enterprise AI - investors.palantir.com",
-            "fuente": "investors.palantir.com",
-            "sentimiento": 1
-          }
-        ]
-      },
-      "rsi_14": 51.3,
-      "tendencia_tecnica": "alcista",
-      "sma50": 149.89,
-      "sma200": 151.37,
-      "tendencia_analistas": "estable",
-      "sector": "Technology",
-      "resumen_negocio": "Palantir Technologies Inc. construye e implementa plataformas de software para que la comunidad de inteligencia ayude en investigaciones y operaciones antiterroristas en los Estados Unidos, el Reino Unido e internacionalmente."
+      "resumen_negocio": "Carvana Co., together with its subsidiaries, operates an e-commerce platform for buying and selling used cars. It provides vehicle acquisition, inspection and reconditioning, online search and shopping experience, financing, complementary products, logistics network and distinctive fulfillment experience, and post-sale customer support services."
     },
     {
       "ticker": "PRY.MI",
@@ -6874,8 +6813,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.03,
-      "coste_horquilla_200e": 0.06,
+      "horquilla_pct": 0.15,
+      "coste_horquilla_200e": 0.3,
       "liquidez_dia": 600671362.6914978,
       "volumen_relativo": 0.6,
       "volatilidad_diaria_pct": 4.8,
@@ -6894,8 +6833,8 @@
         "sentimiento_total": 2,
         "titulares": [
           {
-            "titulo": "ChatGPT, Reddit y Roblox enfrentan mayor control de la UE tras superar los 45 millones de usuarios - bloomberglinea.com",
-            "fuente": "bloomberglinea.com",
+            "titulo": "ChatGPT, Reddit y Roblox enfrentan mayor control de la UE tras superar los 45 millones de usuarios - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
             "sentimiento": 2
           },
           {
@@ -6916,7 +6855,7 @@
       "sma200": 174.54,
       "tendencia_analistas": "estable",
       "sector": "Communication Services",
-      "resumen_negocio": "Reddit, Inc. opera una comunidad digital en los Estados Unidos e internacionalmente. La plataforma de la empresa permite al usuario entablar conversaciones, explorar pasiones, investigar nuevos pasatiempos, intercambiar bienes y servicios, crear nuevas comunidades y experiencias, compartir risas y encontrar pertenencia."
+      "resumen_negocio": "Reddit, Inc. operates a digital community in the United States and internationally. The company's platform enables user to engage in conversations, explore passions, research new hobbies, exchange goods and services, create new communities and experiences, share laughs, and find belonging."
     },
     {
       "ticker": "ENG.MC",
@@ -7021,13 +6960,13 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Carrefour Express alcanza los 35 supermercados en Baleares con una apertura en Palma - Emprendedores",
-            "fuente": "Emprendedores",
+            "titulo": "Carrefour abrirá en España 750 nuevas tiendas de pequeño formato hasta 2030 para paliar el declive del hipermercado - El Periódico",
+            "fuente": "El Periódico",
             "sentimiento": 0
           },
           {
-            "titulo": "Informe de resultados: Carrefour registra sólidas ventas en el primer semestre de 2026 - Investing.com España",
-            "fuente": "Investing.com España",
+            "titulo": "Acciones de Carrefour: análisis financiero, Plan 2030 y cómo invertir en 2026 - Rankia",
+            "fuente": "Rankia",
             "sentimiento": 0
           }
         ]
@@ -7038,7 +6977,7 @@
       "sma200": 14.82,
       "tendencia_analistas": null,
       "sector": "Consumer Defensive",
-      "resumen_negocio": "Carrefour SA operates as a food retailer in France, Spain, Belgium, Poland, Romania, Brazil, Argentina, the Middle East, Africa, Asia, and internationally. The company operates hypermarkets, supermarkets, convenience stores, club stores, and cash and carry stores; soft discount stores; and e-commerce sites."
+      "resumen_negocio": "Carrefour SA opera como minorista de alimentos en Francia, España, Bélgica, Polonia, Rumania, Brasil, Argentina, Medio Oriente, África, Asia e internacionalmente. La empresa opera hipermercados, supermercados, tiendas de conveniencia, tiendas club y tiendas cash and carry; tiendas de descuentos suaves; y sitios de comercio electrónico."
     },
     {
       "ticker": "CLNX.MC",
@@ -7077,13 +7016,13 @@
         "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "HECHOS RELEVANTES.-CELLNEX TELECOM, S.A. La Sociedad remite información relativa a la ejecución de su programa de[...] - Bolsamania",
-            "fuente": "Bolsamania",
+            "titulo": "Las acciones de Cellnex se disparan un 5%. ¿Qué está ocurriendo? - XTB.com",
+            "fuente": "XTB.com",
             "sentimiento": 1
           },
           {
-            "titulo": "Las acciones de Cellnex se disparan un 5%. ¿Qué está ocurriendo? - XTB.com",
-            "fuente": "XTB.com",
+            "titulo": "HECHOS RELEVANTES.-CELLNEX TELECOM, S.A. La Sociedad remite información relativa a la ejecución de su programa de[...] - Bolsamania",
+            "fuente": "Bolsamania",
             "sentimiento": 1
           },
           {
@@ -7099,7 +7038,7 @@
       "sma200": 27.08,
       "tendencia_analistas": "estable",
       "sector": "Real Estate",
-      "resumen_negocio": "Cellnex Telecom, S.A. se dedica a la gestión de infraestructuras de telecomunicaciones terrestres en Francia, Italia, Reino Unido, España, Polonia, Países Bajos, Portugal, Suiza, Dinamarca, Suecia, Irlanda y Austria."
+      "resumen_negocio": "Cellnex Telecom, S.A. engages in the management of terrestrial telecommunications infrastructures in France, Italy, the United Kingdom, Spain, Poland, the Netherlands, Portugal, Switzerland, Denmark, Sweden, Ireland, and Austria."
     },
     {
       "ticker": "FER.MC",
@@ -7160,7 +7099,7 @@
       "sma200": 57.12,
       "tendencia_analistas": "estable",
       "sector": "Industrials",
-      "resumen_negocio": "Ferrovial N.V., junto con sus filiales, se dedica al desarrollo, construcción y operación de autopistas y aeropuertos en Estados Unidos, Polonia, España, Reino Unido, Canadá e internacionalmente."
+      "resumen_negocio": "Ferrovial N.V., together with its subsidiaries, engages in the development, construction, and operation of highways and airports in the United States, Poland, Spain, the United Kingdom, Canada, and internationally."
     },
     {
       "ticker": "RENE.LS",
@@ -7209,8 +7148,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Las bolsas de valores de Portugal cerraron con subidas; el PSI ganó un 0.14% - Investing.com México",
-            "fuente": "Investing.com México",
+            "titulo": "La Unión Europea renueva a H2med como “Proyecto de Interés Común” (PCI) - enagas.es",
+            "fuente": "enagas.es",
             "sentimiento": 0
           }
         ]
@@ -7221,7 +7160,7 @@
       "sma200": 3.51,
       "tendencia_analistas": "estable",
       "sector": "Utilities",
-      "resumen_negocio": "REN - Redes Energéticas Nacionais, SGPS, S.A., junto con sus filiales, se dedica al transporte de electricidad y gas natural en Portugal. La empresa opera en dos segmentos, Electricidad y Gas; y Telecomunicaciones."
+      "resumen_negocio": "REN - Redes Energéticas Nacionais, SGPS, S.A., together with its subsidiaries, engages in the transmission of electricity and natural gas in Portugal. The company operates in two segments, Electricity and Gas; and Telecommunications."
     },
     {
       "ticker": "KPN.AS",
@@ -7282,68 +7221,68 @@
       "sma200": 4.21,
       "tendencia_analistas": "estable",
       "sector": "Communication Services",
-      "resumen_negocio": "Koninklijke KPN N.V. ofrece servicios de telecomunicaciones y tecnología de la información (TI) en los Países Bajos. La compañía opera a través de los segmentos de Consumo, Negocios, Mayorista y Redes, y Operaciones y TI."
+      "resumen_negocio": "Koninklijke KPN N.V. provides telecommunications and information technology (IT) services in the Netherlands. The company operates through Consumer, Business, Wholesale and Network, and Operations & IT segments."
     },
     {
-      "ticker": "UPM.HE",
+      "ticker": "PLTR",
       "descartado": false,
-      "nombre_empresa": "UPM-Kymmene Oyj",
+      "nombre_empresa": "Palantir Technologies Inc.",
       "isin": null,
-      "precio_actual": 24.24,
-      "score": 18.7,
+      "precio_actual": 174.33,
+      "score": 19.4,
       "consenso": "buy",
-      "precio_objetivo_medio": 24.7,
-      "dispersion_pct": 72.4,
-      "momentum_30d_pct": 3.2,
-      "momentum_5d_pct": 1.0,
-      "fuerza_relativa_pct": 4.9,
+      "precio_objetivo_medio": 191.68,
+      "dispersion_pct": 218.8,
+      "momentum_30d_pct": 11.8,
+      "momentum_5d_pct": -6.4,
+      "fuerza_relativa_pct": 11.7,
       "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
+      "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.04,
-      "coste_horquilla_200e": 0.08,
-      "liquidez_dia": 25542266.794495583,
-      "volumen_relativo": 1.13,
-      "volatilidad_diaria_pct": 0.88,
-      "sesiones_hasta_stop": 202,
-      "distancia_max_52s_pct": -10.1,
+      "horquilla_pct": 1.66,
+      "coste_horquilla_200e": 3.32,
+      "liquidez_dia": 5490312687.767792,
+      "volumen_relativo": 0.94,
+      "volatilidad_diaria_pct": 3.4,
+      "sesiones_hasta_stop": 13,
+      "distancia_max_52s_pct": -15.9,
       "catalizador_resultados": null,
       "consenso_real": {
         "excluida": false,
-        "empujon": -9.7,
-        "pct_strong_buy": 13.3,
-        "pct_vender": 26.7,
-        "total_analistas": 15
+        "empujon": 2.8,
+        "pct_strong_buy": 3.1,
+        "pct_vender": 6.2,
+        "total_analistas": 32
       },
-      "cotiza_en_euros": true,
+      "cotiza_en_euros": false,
       "noticias": {
-        "sentimiento_total": -1,
+        "sentimiento_total": 3,
         "titulares": [
           {
-            "titulo": "¿Por qué cae hoy la acción de UPM-Kymmene? - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": -1
+            "titulo": "Snowflake, CrowdStrike y Palantir: las 3 acciones de IA que buscan ganar terreno más allá de los chips - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
           },
           {
-            "titulo": "La Comisión Europea presenta objeciones a la empresa conjunta de UPM y Sappi - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
+            "titulo": "PwC and Palantir Expand Strategic Alliance to Help Organizations Scale Enterprise AI - Palantir",
+            "fuente": "Palantir",
+            "sentimiento": 1
           },
           {
-            "titulo": "UB Finland cede un 1,6% en junio lastrado por Nokia, UPM-Kymmene y Valmet - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
+            "titulo": "Michael Burry sends a strong warning to Palantir stock investors - thestreet.com",
+            "fuente": "thestreet.com",
+            "sentimiento": 1
           }
         ]
       },
-      "rsi_14": 79.8,
-      "tendencia_tecnica": "mixta",
-      "sma50": 23.37,
-      "sma200": 24.37,
-      "tendencia_analistas": null,
-      "sector": "Basic Materials",
-      "resumen_negocio": "UPM-Kymmene Oyj, junto con sus filiales, se dedica a la bioindustria forestal en todo el mundo. Opera a través de los segmentos de Fibras UPM, Energía UPM, Materiales Adhesivos UPM, Papeles Especiales UPM, Papeles de Comunicación UPM, Madera Contrachapada UPM y Otras Operaciones."
+      "rsi_14": 51.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 149.89,
+      "sma200": 151.37,
+      "tendencia_analistas": "estable",
+      "sector": "Technology",
+      "resumen_negocio": "Palantir Technologies Inc. construye e implementa plataformas de software para que la comunidad de inteligencia ayude en investigaciones y operaciones antiterroristas en los Estados Unidos, el Reino Unido e internacionalmente."
     },
     {
       "ticker": "UMG.AS",
@@ -7465,7 +7404,129 @@
       "sma200": 67.29,
       "tendencia_analistas": "estable",
       "sector": "Consumer Defensive",
-      "resumen_negocio": "Pernod Ricard SA produce y comercializa vinos y bebidas espirituosas en todo el mundo. La empresa ofrece whisky, vodka, ginebra, ron, licores y bitters, champagne, tequila y mezcal, y aperitivos bajo las marcas 100 Pipers, Aberlour, Absolut, Absolut Elyx, Altos, ARARAT, Augier, Avion, Ballantine's, Becherovka, Beefeater, Blenders Pride, Brancott Estate, Campo Viejo, Ceder's, Chivas, Clan Campbell, Del Maguey, George."
+      "resumen_negocio": "Pernod Ricard SA produces and sells wines and spirits worldwide. The company offers whiskey, vodka, gin, rum, liqueur and bitters, champagne, tequila and mezcal, and aperitif under the brands 100 Pipers, Aberlour, Absolut, Absolut Elyx, Altos, ARARAT, Augier, Avion, Ballantine's, Becherovka, Beefeater, Blenders Pride, Brancott Estate, Campo Viejo, Ceder's, Chivas, Clan Campbell, Del Maguey, George Wyndham, Green..."
+    },
+    {
+      "ticker": "UPM.HE",
+      "descartado": false,
+      "nombre_empresa": "UPM-Kymmene Oyj",
+      "isin": null,
+      "precio_actual": 24.24,
+      "score": 16.1,
+      "consenso": "buy",
+      "precio_objetivo_medio": 24.7,
+      "dispersion_pct": 72.4,
+      "momentum_30d_pct": 3.2,
+      "momentum_5d_pct": 1.0,
+      "fuerza_relativa_pct": 4.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 0.04,
+      "coste_horquilla_200e": 0.08,
+      "liquidez_dia": 25542266.794495583,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 0.88,
+      "sesiones_hasta_stop": 202,
+      "distancia_max_52s_pct": -10.1,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -9.7,
+        "pct_strong_buy": 13.3,
+        "pct_vender": 26.7,
+        "total_analistas": 15
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": -3,
+        "titulares": [
+          {
+            "titulo": "Barclays rebaja a UPM a infraponderar y recorta su precio objetivo - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "¿Por qué cae hoy la acción de UPM-Kymmene? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "La Comisión Europea presenta objeciones a la empresa conjunta de UPM y Sappi - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 79.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.37,
+      "sma200": 24.37,
+      "tendencia_analistas": null,
+      "sector": "Basic Materials",
+      "resumen_negocio": "UPM-Kymmene Oyj, junto con sus filiales, se dedica a la bioindustria forestal en todo el mundo. Opera a través de los segmentos de Fibras UPM, Energía UPM, Materiales Adhesivos UPM, Papeles Especiales UPM, Papeles de Comunicación UPM, Madera Contrachapada UPM y Otras Operaciones."
+    },
+    {
+      "ticker": "CABK.MC",
+      "descartado": false,
+      "nombre_empresa": "CaixaBank, S.A.",
+      "isin": null,
+      "precio_actual": 13.515,
+      "score": 11.8,
+      "consenso": "buy",
+      "precio_objetivo_medio": 12.8319,
+      "dispersion_pct": 113.2,
+      "momentum_30d_pct": 4.9,
+      "momentum_5d_pct": 2.8,
+      "fuerza_relativa_pct": 6.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^STOXX50E",
+      "version_scoring": 33,
+      "metodo_datos": "periodo_220d",
+      "horquilla_pct": 1.11,
+      "coste_horquilla_200e": 2.22,
+      "liquidez_dia": 55064779.31707144,
+      "volumen_relativo": 1.19,
+      "volatilidad_diaria_pct": 1.03,
+      "sesiones_hasta_stop": 146,
+      "distancia_max_52s_pct": -0.1,
+      "catalizador_resultados": null,
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 14.3,
+        "pct_vender": 19.0,
+        "total_analistas": 21
+      },
+      "cotiza_en_euros": true,
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-CAIXABANK, S.A. La Sociedad remite información relativa a la ejecución de su Programa de recompra de[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "CaixaBank stock holds 13.52 euros after record market value - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "CaixaBank S A : moviliza 34.928 millones de euros en finanzas sostenibles en el primer semestre de 2026, un 66% más que el mismo periodo del año anterior - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "rsi_14": 67.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 12.82,
+      "sma200": 11.07,
+      "tendencia_analistas": "empeorando",
+      "sector": "Financial Services",
+      "resumen_negocio": "CaixaBank, S.A., junto con sus filiales, ofrece diversos productos y servicios bancarios para particulares y empresas en España, Portugal e internacionalmente. Opera a través de cuatro segmentos: Banca Minorista, Banca Empresarial, Banca Privada y segmentos CIB."
     },
     {
       "ticker": "NCLH",
@@ -7484,8 +7545,8 @@
       "indice_referencia": "^GSPC",
       "version_scoring": 33,
       "metodo_datos": "periodo_220d",
-      "horquilla_pct": 0.19,
-      "coste_horquilla_200e": 0.38,
+      "horquilla_pct": 0.13,
+      "coste_horquilla_200e": 0.26,
       "liquidez_dia": 228765167.25873947,
       "volumen_relativo": 1.1,
       "volatilidad_diaria_pct": 2.31,
@@ -7514,8 +7575,8 @@
             "sentimiento": 0
           },
           {
-            "titulo": "Norwegian Cruise Line ® celebra la inauguración del nuevo Great Tides Waterpark en su isla privada, Great Stirrup Cay, con un evento exclusivo de preestreno - Gaceta del Turismo -",
-            "fuente": "Gaceta del Turismo -",
+            "titulo": "Norwegian Cruise Line ® celebra la inauguración del nuevo Great Tides Waterpark en su isla privada, Great Stirrup Cay, con un evento exclusivo de preestreno - gacetadelturismo.com",
+            "fuente": "gacetadelturismo.com",
             "sentimiento": 0
           }
         ]
@@ -7527,67 +7588,6 @@
       "tendencia_analistas": "estable",
       "sector": "Consumer Cyclical",
       "resumen_negocio": "Norwegian Cruise Line Holdings Ltd., junto con sus filiales, opera como una compañía de cruceros en Norteamérica, Europa, Asia-Pacífico e internacionalmente. Ofrece itinerarios a destinos como Europa, Asia, Australia, Nueva Zelanda, América del Sur, África, Canadá, Bermudas, el Caribe y Alaska; e itinerario entre islas en Hawaii."
-    },
-    {
-      "ticker": "CABK.MC",
-      "descartado": false,
-      "nombre_empresa": "CaixaBank, S.A.",
-      "isin": null,
-      "precio_actual": 13.515,
-      "score": 10.5,
-      "consenso": "buy",
-      "precio_objetivo_medio": 12.8319,
-      "dispersion_pct": 113.2,
-      "momentum_30d_pct": 4.9,
-      "momentum_5d_pct": 2.8,
-      "fuerza_relativa_pct": 6.6,
-      "regimen_mercado": "favorable",
-      "indice_referencia": "^STOXX50E",
-      "version_scoring": 33,
-      "metodo_datos": "periodo_220d",
-      "horquilla_pct": 1.11,
-      "coste_horquilla_200e": 2.22,
-      "liquidez_dia": 55064779.31707144,
-      "volumen_relativo": 1.19,
-      "volatilidad_diaria_pct": 1.03,
-      "sesiones_hasta_stop": 146,
-      "distancia_max_52s_pct": -0.1,
-      "catalizador_resultados": null,
-      "consenso_real": {
-        "excluida": false,
-        "empujon": -5.2,
-        "pct_strong_buy": 14.3,
-        "pct_vender": 19.0,
-        "total_analistas": 21
-      },
-      "cotiza_en_euros": true,
-      "noticias": {
-        "sentimiento_total": 1,
-        "titulares": [
-          {
-            "titulo": "HECHOS RELEVANTES.-CAIXABANK, S.A. La Sociedad remite información relativa a la ejecución de su Programa de recompra de[...] - Bolsamania",
-            "fuente": "Bolsamania",
-            "sentimiento": 1
-          },
-          {
-            "titulo": "CaixaBank S A : moviliza 34.928 millones de euros en finanzas sostenibles en el primer semestre de 2026, un 66% más que el mismo periodo del año anterior - MarketScreener España",
-            "fuente": "MarketScreener España",
-            "sentimiento": 0
-          },
-          {
-            "titulo": "CaixaBank comunica la compra de 502.849 acciones propias por 6,64 millones - Investing.com España",
-            "fuente": "Investing.com España",
-            "sentimiento": 0
-          }
-        ]
-      },
-      "rsi_14": 67.1,
-      "tendencia_tecnica": "alcista",
-      "sma50": 12.82,
-      "sma200": 11.07,
-      "tendencia_analistas": "empeorando",
-      "sector": "Financial Services",
-      "resumen_negocio": "CaixaBank, S.A., together with its subsidiaries, provides various banking products and services for individuals and businesses in Spain, Portugal, and internationally. It operates through four segments: Retail Banking, Business Banking, Private Banking, and CIB segments."
     }
   ],
   "descartados": [
@@ -7612,9 +7612,9 @@
       "motivo": "Horquilla del 3.08% entre compra y venta - sobre 200 EUR son 6.16 EUR de coste oculto, mas que las dos comisiones juntas"
     },
     {
-      "ticker": "APO",
+      "ticker": "ARES",
       "descartado": true,
-      "motivo": "Horquilla del 4.81% entre compra y venta - sobre 200 EUR son 9.62 EUR de coste oculto, mas que las dos comisiones juntas"
+      "motivo": "Horquilla del 3.45% entre compra y venta - sobre 200 EUR son 6.9 EUR de coste oculto, mas que las dos comisiones juntas"
     },
     {
       "ticker": "BPE.MI",
@@ -7664,7 +7664,7 @@
     {
       "ticker": "KKR",
       "descartado": true,
-      "motivo": "Horquilla del 3.93% entre compra y venta - sobre 200 EUR son 7.86 EUR de coste oculto, mas que las dos comisiones juntas"
+      "motivo": "Horquilla del 3.02% entre compra y venta - sobre 200 EUR son 6.04 EUR de coste oculto, mas que las dos comisiones juntas"
     },
     {
       "ticker": "LTMC.MI",
