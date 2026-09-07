@@ -3713,7 +3713,7 @@
     "id": "CAP.PA-2026-08-24",
     "ticker": "CAP.PA",
     "nombre": "Capgemini SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-24",
     "precio_entrada": 110.75,
     "acciones": 0.902935,
@@ -3780,7 +3780,35 @@
       "version_scoring": 33,
       "precio_actual": 110.75
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 104.0164,
+    "fecha_salida": "2026-09-07",
+    "sesiones": 10,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -5.1,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 112.965,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 10,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "AKZA.AS-2026-08-26",
