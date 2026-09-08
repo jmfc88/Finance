@@ -5782,7 +5782,7 @@
     "id": "SHOP.TO-2026-09-01",
     "ticker": "SHOP.TO",
     "nombre": "Shopify Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 197.74,
     "acciones": 0.505715,
@@ -5870,6 +5870,34 @@
         ]
       },
       "resumen_negocio": "Shopify Inc., una empresa de tecnología comercial, proporciona herramientas para iniciar, escalar, comercializar y administrar negocios de varios tamaños en Canadá, Estados Unidos, Europa, Medio Oriente, África, Asia Pacífico y América Latina."
+    },
+    "precio_salida": 203.6722,
+    "fecha_salida": "2026-09-08",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 201.6948,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
