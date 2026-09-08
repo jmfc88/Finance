@@ -1331,7 +1331,7 @@
     "id": "IDR.MC-2026-08-23",
     "ticker": "IDR.MC",
     "nombre": "Indra Sistemas, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 61.28,
     "acciones": 1.631854,
@@ -1413,7 +1413,35 @@
       "version_scoring": 32,
       "precio_actual": 61.28
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 57.5542,
+    "fecha_salida": "2026-09-08",
+    "sesiones": 11,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -0.69,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 62.5056,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 9,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "SAMPO.HE-2026-08-23",
@@ -8887,6 +8915,84 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Azimut Holding S.p.A. ofrece soluciones de asesoramiento y gestión de activos en Italia, Europa, Oriente Medio, América y Asia-Pacífico. Ofrece mercados públicos y privados, gestión discrecional de carteras y soluciones de tokens y activos digitales; servicios de asesoramiento; banca de inversión corporativa y soluciones fintech; fondos mutuos armonizados con la directiva OICVM; fondos de inversión alternativos y..."
+    }
+  },
+  {
+    "id": "BGL.AX-2026-09-08",
+    "ticker": "BGL.AX",
+    "nombre": "Bellevue Gold Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-08",
+    "precio_entrada": 1.64,
+    "acciones": 60.97561,
+    "invertido": 100.0,
+    "posicion_ranking": 4,
+    "tramo": "1-10",
+    "score": 57.2,
+    "potencial_pct": 10.5,
+    "tarjeta": {
+      "ticker": "BGL.AX",
+      "nombre_empresa": "Bellevue Gold Limited",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 57.2,
+      "version_scoring": 33,
+      "precio_actual": 1.64,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 1.8125,
+      "dispersion_pct": 25.0,
+      "momentum_30d_pct": 6.1,
+      "momentum_5d_pct": 0.9,
+      "fuerza_relativa_pct": 6.0,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 60.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 1.44,
+      "sma200": 1.56,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 8327263.927408576,
+      "volumen_relativo": 1.14,
+      "volatilidad_diaria_pct": 2.89,
+      "sesiones_hasta_stop": 18,
+      "distancia_max_52s_pct": -17.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Bellevue Gold Issues 28,822 Ordinary Shares Following Performance Rights Conversion - Kalkine",
+            "fuente": "Kalkine",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "MA Financial Group Sticks to Its Buy Rating for Bellevue Gold Limited (BGL) - The Globe and Mail",
+            "fuente": "The Globe and Mail",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Invierta en el mercado bursátil Sydney - etoro.com",
+            "fuente": "etoro.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Bellevue Gold Limited, junto con sus subsidiarias, se dedica a la exploración, desarrollo, extracción y procesamiento de propiedades de oro en Australia. La compañía tiene intereses principalmente en el proyecto de oro Bellevue ubicado al noroeste de Leinster en la región Goldfields de Australia Occidental."
     }
   }
 ]
