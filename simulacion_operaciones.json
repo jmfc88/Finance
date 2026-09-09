@@ -261,7 +261,7 @@
     "id": "EXO.AS-2026-08-23",
     "ticker": "EXO.AS",
     "nombre": "Exor N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 71.2,
     "acciones": 1.404494,
@@ -333,7 +333,29 @@
       "version_scoring": 33,
       "precio_actual": 71.2
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 73.336,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 12,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 1.83,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 72.624,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      }
+    }
   },
   {
     "id": "CSC.AX-2026-08-23",
@@ -667,7 +689,7 @@
     "id": "ITX.MC-2026-08-23",
     "ticker": "ITX.MC",
     "nombre": null,
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 58.22,
     "acciones": 1.717623,
@@ -733,7 +755,35 @@
       "version_scoring": 32,
       "precio_actual": 58.22
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 54.6802,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 12,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -1.24,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 59.3844,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 12,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "EDP.LS-2026-08-23",
@@ -2157,7 +2207,7 @@
     "id": "FDR.MC-2026-08-23",
     "ticker": "FDR.MC",
     "nombre": "Fluidra, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 19.44,
     "acciones": 5.144033,
@@ -2245,7 +2295,35 @@
       "version_scoring": 33,
       "precio_actual": 19.44
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 18.258,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 12,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.57,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 19.8288,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 12,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "KKR-2026-08-23",
@@ -4400,7 +4478,7 @@
     "id": "STMPA.PA-2026-09-01",
     "ticker": "STMPA.PA",
     "nombre": "STMicroelectronics N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 43.015,
     "acciones": 2.32477,
@@ -4488,6 +4566,28 @@
         ]
       },
       "resumen_negocio": "STMicroelectronics N.V., junto con sus filiales, diseña, desarrolla, fabrica y vende productos semiconductores en Europa, Oriente Medio, África, América y Asia Pacífico. La empresa opera a través de productos analógicos, MEMS y Sensors Group (AM&S); Productos de potencia y discretos (P&D); Procesamiento Integrado (EMP); y segmentos de productos RF (D&RF)."
+    },
+    "precio_salida": 44.3055,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 4,
+    "precio_equilibrio": 43.8753,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -4905,7 +5005,7 @@
     "id": "MT.AS-2026-09-01",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 64.1,
     "acciones": 1.560062,
@@ -4993,6 +5093,28 @@
         ]
       },
       "resumen_negocio": "ArcelorMittal S.A., junto con sus filiales, opera como empresas siderúrgicas y mineras integradas en América, Europa, Asia y África. Ofrece productos planos semiacabados, incluidos losas; productos planos acabados que comprenden placas, bobinas y láminas laminadas en caliente y en frío, bobinas y láminas electrogalvanizadas y por inmersión en caliente, hojalata y bobinas y láminas recubiertas de colores; productos..."
+    },
+    "precio_salida": 66.023,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 65.382,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -7443,7 +7565,7 @@
     "id": "PUIG.MC-2026-09-03",
     "ticker": "PUIG.MC",
     "nombre": "Puig Brands, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 18.26,
     "acciones": 5.476451,
@@ -7531,6 +7653,34 @@
         ]
       },
       "resumen_negocio": "Puig Brands, S.A. opera en la industria de la belleza y la moda en Europa, Oriente Medio, África, América y Asia-Pacífico. La empresa opera a través de tres segmentos: Fragancias y Moda, Maquillaje y Cuidado de la Piel."
+    },
+    "precio_salida": 17.1498,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 18.6252,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -9122,6 +9272,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Grifols, S.A., junto con sus filiales, se dedica a la investigación, desarrollo, producción y comercialización de medicamentos derivados del plasma en Estados Unidos, Canadá, España, Europa e internacionalmente."
+    }
+  },
+  {
+    "id": "SHOP.TO-2026-09-09",
+    "ticker": "SHOP.TO",
+    "nombre": "Shopify Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-09",
+    "precio_entrada": 185.03,
+    "acciones": 0.540453,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 43.4,
+    "potencial_pct": 24.0,
+    "tarjeta": {
+      "ticker": "SHOP.TO",
+      "nombre_empresa": "Shopify Inc.",
+      "isin": "ARBCOM460341",
+      "sector": "Technology",
+      "score": 43.4,
+      "version_scoring": 33,
+      "precio_actual": 185.03,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 21.2,
+        "pct_vender": 1.9,
+        "total_analistas": 52
+      },
+      "precio_objetivo_medio": 229.51096,
+      "dispersion_pct": 27.5,
+      "momentum_30d_pct": -12.5,
+      "momentum_5d_pct": -9.4,
+      "fuerza_relativa_pct": -11.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 34.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 188.17,
+      "sma200": 181.7,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 355689304.4631958,
+      "volumen_relativo": 0.93,
+      "volatilidad_diaria_pct": 3.0,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -25.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Shopify vs Block: Which Beaten-Down Commerce Stock Has More Upside? - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ARK de Cathie Wood vende acciones de Shopify y compra Intellia Therapeutics - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio, gráficos, capitalización de mercado de Shopify Inc (Derivatives) (SHOP) - CoinMarketCap",
+            "fuente": "CoinMarketCap",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Shopify Inc., una empresa de tecnología comercial, proporciona herramientas para iniciar, escalar, comercializar y administrar negocios de varios tamaños en Canadá, Estados Unidos, Europa, Medio Oriente, África, Asia Pacífico y América Latina."
     }
   }
 ]
