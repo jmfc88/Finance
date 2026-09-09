@@ -6382,7 +6382,7 @@
     "id": "FM.TO-2026-09-01",
     "ticker": "FM.TO",
     "nombre": "First Quantum Minerals Ltd.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 44.3,
     "acciones": 2.257336,
@@ -6470,6 +6470,28 @@
         ]
       },
       "resumen_negocio": "First Quantum Minerals Ltd., junto con sus subsidiarias, se dedica a la exploración, desarrollo y producción de propiedades minerales. Explora principalmente en busca de productos de cobre, oro, níquel, plata y zinc."
+    },
+    "precio_salida": 45.629,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 45.186,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -9862,6 +9884,183 @@
       },
       "profundizacion": null,
       "resumen_negocio": "STMicroelectronics N.V., junto con sus filiales, diseña, desarrolla, fabrica y vende productos semiconductores en Europa, Oriente Medio, África, América y Asia Pacífico. La empresa opera a través de productos analógicos, MEMS y Sensors Group (AM&S); Productos de potencia y discretos (P&D); Procesamiento Integrado (EMP); y segmentos de productos RF (D&RF)."
+    }
+  },
+  {
+    "id": "ANET-2026-09-09",
+    "ticker": "ANET",
+    "nombre": "Arista Networks, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-09",
+    "precio_entrada": 195.43,
+    "acciones": 0.511692,
+    "invertido": 100.0,
+    "posicion_ranking": 1,
+    "tramo": "1-10",
+    "score": 57.9,
+    "potencial_pct": 23.3,
+    "tarjeta": {
+      "ticker": "ANET",
+      "nombre_empresa": "Arista Networks, Inc.",
+      "isin": "US0404132054",
+      "sector": "Technology",
+      "score": 57.9,
+      "version_scoring": 33,
+      "precio_actual": 195.43,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 10.8,
+        "pct_strong_buy": 25.8,
+        "pct_vender": 0.0,
+        "total_analistas": 31
+      },
+      "precio_objetivo_medio": 241.03607,
+      "dispersion_pct": 56.2,
+      "momentum_30d_pct": 2.0,
+      "momentum_5d_pct": 3.3,
+      "fuerza_relativa_pct": 3.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 59.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 184.31,
+      "sma200": 152.65,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 939790164.1464233,
+      "volumen_relativo": 0.68,
+      "volatilidad_diaria_pct": 2.98,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -7.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks, Inc. (ANET) - Episode 163 - Dec 20, 2025 Southwest Airlines Bwi Wing Clip (cAaM853ZdI) - Mshale",
+            "fuente": "Mshale",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks Inc. stock outperforms competitors on strong trading day - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Arista Networks se disparan tras superar las previsiones del Q2 - es.investing.com",
+            "fuente": "es.investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Arista Networks Stock Beats Q1 Revenue Estimates With $2.71B and Raises Full-Year Outlook - tikr.com",
+            "fuente": "tikr.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Arista Networks, Inc. se dedica al desarrollo, marketing y venta de soluciones de redes de cliente a nube basadas en datos para entornos de inteligencia artificial, centros de datos, campus y enrutamiento en América, Europa, Medio Oriente, África y Asia-Pacífico."
+    }
+  },
+  {
+    "id": "EGL.LS-2026-09-09",
+    "ticker": "EGL.LS",
+    "nombre": "Mota-Engil, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-09",
+    "precio_entrada": 4.916,
+    "acciones": 20.341741,
+    "invertido": 100.0,
+    "posicion_ranking": 5,
+    "tramo": "1-10",
+    "score": 54.8,
+    "potencial_pct": 36.3,
+    "tarjeta": {
+      "ticker": "EGL.LS",
+      "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+      "isin": "SG1O81915033",
+      "sector": "Industrials",
+      "score": 54.8,
+      "version_scoring": 33,
+      "precio_actual": 4.916,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 3
+      },
+      "precio_objetivo_medio": 6.7,
+      "dispersion_pct": 28.1,
+      "momentum_30d_pct": 9.7,
+      "momentum_5d_pct": 2.3,
+      "fuerza_relativa_pct": 13.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 71.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.62,
+      "sma200": 4.62,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 5103254.574400425,
+      "volumen_relativo": 1.25,
+      "volatilidad_diaria_pct": 2.06,
+      "sesiones_hasta_stop": 36,
+      "distancia_max_52s_pct": -17.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Mota-Engil Wins Deal to Operate US-Backed Congo Copper Railway - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Mota-Engil amplía su contrato en Nigeria y se adjudica un nuevo proyecto en un aeropuerto de Perú - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Mota-Engil secures $207 million contract in Mozambique - ideal-investisseur.fr",
+            "fuente": "ideal-investisseur.fr",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Acciones Mota-Engil, SGPS, S.A. - Cotizacion EGL Euronext Lisbonne - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Mota-Engil, SGPS, S.A. realiza obras públicas y privadas de construcción y servicios relacionados en Europa, África y América Latina. La empresa construye diversas infraestructuras, como carreteras, autopistas, aeropuertos, puertos, presas, ferrocarriles y edificios residenciales y comerciales, así como la construcción de industrias, hospitales y en áreas especializadas, como petróleo y gas, áridos, prefabricados..."
     }
   }
 ]
