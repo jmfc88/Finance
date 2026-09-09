@@ -6371,7 +6371,7 @@
     "id": "ZIP.AX-2026-09-02",
     "ticker": "ZIP.AX",
     "nombre": "Zip Co Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 2.43,
     "acciones": 41.152263,
@@ -6438,6 +6438,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Zip Co Limited se dedica a la provisión de soluciones de pagos, finanzas personales y finanzas minoristas digitales en Australia y Estados Unidos. La empresa ofrece productos de líneas de crédito minoristas y préstamos personales; productos minoristas a plazos; y productos a plazos Compre ahora y pague después para los consumidores."
+    },
+    "precio_salida": 2.2823,
+    "fecha_salida": "2026-09-09",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 2.4786,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
