@@ -2329,7 +2329,7 @@
     "id": "KKR-2026-08-23",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 108.48,
     "acciones": 0.921829,
@@ -2411,7 +2411,35 @@
       "version_scoring": 32,
       "precio_actual": 108.48
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 101.8844,
+    "fecha_salida": "2026-09-10",
+    "sesiones": 13,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -1.91,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 110.6496,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 13,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 12,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "SPM.MI-2026-08-23",
