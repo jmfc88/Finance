@@ -9450,7 +9450,7 @@
     "id": "SHOP.TO-2026-09-09",
     "ticker": "SHOP.TO",
     "nombre": "Shopify Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 185.03,
     "acciones": 0.540453,
@@ -9517,6 +9517,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Shopify Inc., una empresa de tecnología comercial, proporciona herramientas para iniciar, escalar, comercializar y administrar negocios de varios tamaños en Canadá, Estados Unidos, Europa, Medio Oriente, África, Asia Pacífico y América Latina."
+    },
+    "precio_salida": 173.7802,
+    "fecha_salida": "2026-09-10",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 188.7306,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -10133,6 +10161,95 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. realiza obras públicas y privadas de construcción y servicios relacionados en Europa, África y América Latina. La empresa construye diversas infraestructuras, como carreteras, autopistas, aeropuertos, puertos, presas, ferrocarriles y edificios residenciales y comerciales, así como la construcción de industrias, hospitales y en áreas especializadas, como petróleo y gas, áridos, prefabricados..."
+    }
+  },
+  {
+    "id": "ENGI.PA-2026-09-10",
+    "ticker": "ENGI.PA",
+    "nombre": "Engie SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-10",
+    "precio_entrada": 24.25,
+    "acciones": 4.123711,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 50.3,
+    "potencial_pct": 27.3,
+    "tarjeta": {
+      "ticker": "ENGI.PA",
+      "nombre_empresa": "Engie SA",
+      "isin": "FR0013215407",
+      "sector": "Utilities",
+      "score": 50.3,
+      "version_scoring": 33,
+      "precio_actual": 24.25,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.6,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 30.86111,
+      "dispersion_pct": 38.8,
+      "momentum_30d_pct": -7.7,
+      "momentum_5d_pct": 1.4,
+      "fuerza_relativa_pct": -3.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 32.5,
+      "tendencia_tecnica": "bajista",
+      "sma50": 26.07,
+      "sma200": 25.32,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 78527531.4128952,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.23,
+      "sesiones_hasta_stop": 103,
+      "distancia_max_52s_pct": -13.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "ENGIE : El Jefferies continua con un recomendación de compra - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Leading Wind Energy Solutions for a Sustainable Future - ENGIE - ENGIE.com",
+            "fuente": "ENGIE.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Egypt Signs 3-GW Windfarm Deal with ENGIE - Industrial Info Resources",
+            "fuente": "Industrial Info Resources",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Engie suben tras superar previsiones y mejorar perspectivas - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Engie’s 5.6% Dividend Yield Looks Attractive. Here’s the Catch. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Engie SA engages in renewables and decentralized and low-carbon energy networks in France, Europe, North America, Asia, the Middle East, Oceania, South America, Africa, and internationally."
     }
   }
 ]
