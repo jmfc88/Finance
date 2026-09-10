@@ -7419,7 +7419,7 @@
     "id": "MONC.MI-2026-09-02",
     "ticker": "MONC.MI",
     "nombre": "Moncler S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 46.64,
     "acciones": 2.144082,
@@ -7486,6 +7486,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Moncler S.p.A., junto con sus filiales, se dedica a la producción y distribución de prendas de vestir, ropa infantil, calzado, gafas y otros accesorios relacionados bajo las marcas Moncler y Stone Island."
+    },
+    "precio_salida": 43.8043,
+    "fecha_salida": "2026-09-10",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 47.5728,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -7954,7 +7982,7 @@
     "id": "ENGI.PA-2026-09-03",
     "ticker": "ENGI.PA",
     "nombre": "Engie SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 23.7,
     "acciones": 4.219409,
@@ -8005,6 +8033,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Engie SA participa en energías renovables y redes de energía descentralizadas y bajas en carbono en Francia, Europa, América del Norte, Asia, Medio Oriente, Oceanía, América del Sur, África e internacionalmente."
+    },
+    "precio_salida": 24.411,
+    "fecha_salida": "2026-09-10",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.174,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
