@@ -9327,7 +9327,7 @@
     "id": "BGL.AX-2026-09-08",
     "ticker": "BGL.AX",
     "nombre": "Bellevue Gold Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-08",
     "precio_entrada": 1.64,
     "acciones": 60.97561,
@@ -9399,6 +9399,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Bellevue Gold Limited, junto con sus subsidiarias, se dedica a la exploración, desarrollo, extracción y procesamiento de propiedades de oro en Australia. La compañía tiene intereses principalmente en el proyecto de oro Bellevue ubicado al noroeste de Leinster en la región Goldfields de Australia Occidental."
+    },
+    "precio_salida": 1.5403,
+    "fecha_salida": "2026-09-11",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 1.6728,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
