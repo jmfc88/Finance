@@ -6618,7 +6618,7 @@
     "id": "BZU.MI-2026-09-01",
     "ticker": "BZU.MI",
     "nombre": "Buzzi S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 40.39,
     "acciones": 2.47586,
@@ -6685,6 +6685,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Buzzi S.p.A., junto con sus subsidiarias, fabrica, distribuye y comercializa cemento, concreto premezclado y agregados naturales. Tiene operaciones principalmente en Italia, Estados Unidos de América, Alemania, Luxemburgo, Países Bajos, Emiratos Árabes Unidos, Polonia, República Checa y Eslovaquia, Brasil, Rusia, Argelia, Eslovenia y México."
+    },
+    "precio_salida": 37.9343,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.74,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 41.1978,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -9101,7 +9129,7 @@
     "id": "LR.PA-2026-09-04",
     "ticker": "LR.PA",
     "nombre": "Legrand SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-04",
     "precio_entrada": 140.9,
     "acciones": 0.709723,
@@ -9168,6 +9196,40 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Legrand SA, junto con sus filiales, fabrica, distribuye y vende infraestructuras eléctricas y digitales para edificios en Europa, América del Norte y Central, e internacionalmente."
+    },
+    "precio_salida": 132.3333,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 143.718,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.46,
+        "neto_pct": -3.46,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -9877,7 +9939,7 @@
     "id": "MT.AS-2026-09-09",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 66.24,
     "acciones": 1.509662,
@@ -9965,6 +10027,34 @@
         ]
       },
       "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
+    },
+    "precio_salida": 62.2126,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 67.5648,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -10482,7 +10572,7 @@
     "id": "ORCL-2026-09-11",
     "ticker": "ORCL",
     "nombre": "Oracle Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-11",
     "precio_entrada": 152.94,
     "acciones": 0.653851,
@@ -10574,6 +10664,34 @@
         ]
       },
       "resumen_negocio": "Oracle Corporation offers products and services that build, run and support enterprise information technology frameworks worldwide. Its Oracle cloud software as a service offering includes various cloud software applications, including Oracle Fusion cloud enterprise resource planning ERP, Oracle Fusion cloud enterprise performance management EPM, Oracle Fusion cloud supply chain and manufacturing management SCM..."
+    },
+    "precio_salida": 143.6412,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 155.9988,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -11041,6 +11159,152 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Ibersol, S.G.P.S., S.A., through its subsidiaries, operates a network of restaurants in Portugal, Spain, and Angola. The company operates through Restaurants; Counters; Concessions, Travel, and Catering; and Other segments."
+    }
+  },
+  {
+    "id": "MONC.MI-2026-09-14",
+    "ticker": "MONC.MI",
+    "nombre": "Moncler S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-14",
+    "precio_entrada": 44.23,
+    "acciones": 2.260909,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 44.0,
+    "potencial_pct": 38.2,
+    "tarjeta": {
+      "ticker": "MONC.MI",
+      "nombre_empresa": "Moncler S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 44.0,
+      "version_scoring": 33,
+      "precio_actual": 44.23,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 61.132,
+      "dispersion_pct": 42.9,
+      "momentum_30d_pct": -9.9,
+      "momentum_5d_pct": -3.5,
+      "fuerza_relativa_pct": -5.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 28.4,
+      "tendencia_tecnica": "bajista",
+      "sma50": 48.61,
+      "sma200": 51.29,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 46541545.35220337,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 1.75,
+      "sesiones_hasta_stop": 51,
+      "distancia_max_52s_pct": -22.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Informe de resultados de Moncler: el crecimiento se frena en el primer semestre de 2026 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Moncler galopa en el primer trimestre y eleva sus ingresos un 12 % - FashionNetwork España",
+            "fuente": "FashionNetwork España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Moncler stock edges lower as Q2 2026 growth slows and New York flagship opens - ad-hoc-news.de",
+            "fuente": "ad-hoc-news.de",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Moncler S.p.A., together with its subsidiaries, engages in the production and distribution of garments, children's clothing, footwear, eyewear and other related accessories under the Moncler and Stone Island brands."
+    }
+  },
+  {
+    "id": "SPM.MI-2026-09-14",
+    "ticker": "SPM.MI",
+    "nombre": "Saipem SpA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-14",
+    "precio_entrada": 4.161,
+    "acciones": 24.032684,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 43.5,
+    "potencial_pct": 18.6,
+    "tarjeta": {
+      "ticker": "SPM.MI",
+      "nombre_empresa": "Saipem SpA",
+      "isin": "IT0005495673",
+      "sector": "Energy",
+      "score": 43.5,
+      "version_scoring": 33,
+      "precio_actual": 4.161,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 27.8,
+        "pct_vender": 5.6,
+        "total_analistas": 18
+      },
+      "precio_objetivo_medio": 4.93667,
+      "dispersion_pct": 76.5,
+      "momentum_30d_pct": -8.8,
+      "momentum_5d_pct": -4.4,
+      "fuerza_relativa_pct": -4.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 26.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 4.37,
+      "sma200": 3.7,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 61871903.27584243,
+      "volumen_relativo": 0.96,
+      "volatilidad_diaria_pct": 1.15,
+      "sesiones_hasta_stop": 118,
+      "distancia_max_52s_pct": -13.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Saipem wins $350m offshore contract in Angola - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Saipem se adjudica un contrato offshore de 350 millones USD en Angola - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Saipem se adjudica un nuevo contrato offshore de 350 millones USD en Angola - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Saipem SpA provides energy and infrastructure solutions worldwide. It operates through Asset Based Services, Offshore Drilling, and Energy Carriers segments. The company offers development of subsea fields and pipelaying; installation and lifting of offshore structures; engages in engineering, implementation, installation, maintenance, modification, and decommissioning activities, as well as offshore engineering and..."
     }
   }
 ]
