@@ -2445,7 +2445,7 @@
     "id": "SPM.MI-2026-08-23",
     "ticker": "SPM.MI",
     "nombre": "Saipem SpA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 4.484,
     "acciones": 22.301517,
@@ -2533,7 +2533,35 @@
       "version_scoring": 33,
       "precio_actual": 4.484
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 4.2114,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 15,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": 0.4,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.5737,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 15,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 15,
+        "motivo": "stop-loss"
+      }
+    }
   },
   {
     "id": "HIAB.HE-2026-08-23",
@@ -4310,7 +4338,7 @@
     "id": "EDPR.LS-2026-08-27",
     "ticker": "EDPR.LS",
     "nombre": "EDP Renewables, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-27",
     "precio_entrada": 13.73,
     "acciones": 7.283321,
@@ -4377,6 +4405,70 @@
       },
       "profundizacion": null,
       "resumen_negocio": "EDP ​​Renovables, S.A. desarrolla su actividad en el negocio de las energías renovables en Europa, Norteamérica, Sudamérica y Asia Pacífico. La empresa participa en la planificación, construcción, operación y mantenimiento de plantas de generación de energía utilizando fuentes de energía renovables, incluidas la energía eólica y solar."
+    },
+    "precio_salida": 12.8952,
+    "fecha_salida": "2026-09-14",
+    "sesiones": 11,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.93,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 14.0046,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
