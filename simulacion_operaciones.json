@@ -10977,7 +10977,7 @@
     "id": "SHOP.TO-2026-09-11",
     "ticker": "SHOP.TO",
     "nombre": "Shopify Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-11",
     "precio_entrada": 178.51,
     "acciones": 0.560193,
@@ -11065,6 +11065,28 @@
         ]
       },
       "resumen_negocio": "Shopify Inc., a commerce technology company, provides tools to start, scale, market, and run a business of various sizes in Canada, the United States, Europe, the Middle East, Africa, the Asia Pacific, and Latin America."
+    },
+    "precio_salida": 183.8653,
+    "fecha_salida": "2026-09-15",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 182.0802,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -11699,6 +11721,84 @@
         ]
       },
       "resumen_negocio": "Electro Optic Systems Holdings Limited engages in the development, manufacture, and sale of telescopes and dome enclosures, laser satellite tracking systems, remote weapon systems, and high laser weapon."
+    }
+  },
+  {
+    "id": "FBK.MI-2026-09-15",
+    "ticker": "FBK.MI",
+    "nombre": "FinecoBank Banca Fineco S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-15",
+    "precio_entrada": 22.68,
+    "acciones": 4.409171,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 45.5,
+    "potencial_pct": 19.4,
+    "tarjeta": {
+      "ticker": "FBK.MI",
+      "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 45.5,
+      "version_scoring": 33,
+      "precio_actual": 22.68,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 27.08667,
+      "dispersion_pct": 23.9,
+      "momentum_30d_pct": -5.8,
+      "momentum_5d_pct": -2.3,
+      "fuerza_relativa_pct": -1.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 30.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.59,
+      "sma200": 21.28,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25894940.870718956,
+      "volumen_relativo": 0.99,
+      "volatilidad_diaria_pct": 1.19,
+      "sesiones_hasta_stop": 110,
+      "distancia_max_52s_pct": -8.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Earnings call transcript: FinecoBank posts strong H1 2026 growth, stock edges up - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Italy's Fineco exceeds quarterly profit, revenue forecasts - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Cotización de Cboe IT 40: Acciones e información - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
     }
   }
 ]
