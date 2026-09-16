@@ -8753,7 +8753,7 @@
     "id": "XYZ-2026-09-04",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-04",
     "precio_entrada": 82.665,
     "acciones": 1.209702,
@@ -8841,6 +8841,34 @@
         ]
       },
       "resumen_negocio": "Block, Inc., junto con sus subsidiarias, construye ecosistemas enfocados en el comercio y productos y servicios financieros en los Estados Unidos e internacionalmente. Opera a través de dos segmentos: Square y Cash App."
+    },
+    "precio_salida": 77.639,
+    "fecha_salida": "2026-09-16",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -5.94,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 84.3183,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -12023,6 +12051,79 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Buzzi S.p.A., together with its subsidiaries, manufactures, distributes, and sells cement, ready-mix concrete, and natural aggregates. It has operations primarily in Italy, United States of America, Germany, Luxembourg, Netherlands, United Arab Emirates, Poland, Czech Republic and Slovakia, Brazil, Russia, Algeria, Slovenia, and Mexico."
+    }
+  },
+  {
+    "id": "STMPA.PA-2026-09-16",
+    "ticker": "STMPA.PA",
+    "nombre": "STMicroelectronics N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-16",
+    "precio_entrada": 42.525,
+    "acciones": 2.351558,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 42.7,
+    "potencial_pct": 58.5,
+    "tarjeta": {
+      "ticker": "STMPA.PA",
+      "nombre_empresa": "STMicroelectronics N.V.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 42.7,
+      "version_scoring": 33,
+      "precio_actual": 42.525,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 67.39453,
+      "dispersion_pct": 75.1,
+      "momentum_30d_pct": -13.3,
+      "momentum_5d_pct": -4.7,
+      "fuerza_relativa_pct": -10.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 50.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 47.92,
+      "sma200": 40.24,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 91859042.38948059,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 2.32,
+      "sesiones_hasta_stop": 28,
+      "distancia_max_52s_pct": -38.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Nueva alianza, nuevo rally: STMicroelectronics se dispara tras unir fuerzas con Amazon - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "STMicroelectronics N.V. : Recibe una recomendación de compra del AlphaValue/Baader Europe - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de STMicroelectronics suben más de un 4 %; Aquí están 20 acciones que se mueven en premercado - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
     }
   }
 ]
