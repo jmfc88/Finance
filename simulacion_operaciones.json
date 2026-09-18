@@ -9985,7 +9985,7 @@
     "id": "PUIG.MC-2026-09-09",
     "ticker": "PUIG.MC",
     "nombre": "Puig Brands, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 17.9,
     "acciones": 5.586592,
@@ -10073,6 +10073,34 @@
         ]
       },
       "resumen_negocio": "Puig Brands, S.A. opera en la industria de la belleza y la moda en Europa, Oriente Medio, África, América y Asia-Pacífico. La empresa opera a través de tres segmentos: Fragancias y Moda, Maquillaje y Cuidado de la Piel."
+    },
+    "precio_salida": 16.8117,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -6.09,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 18.258,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -12332,6 +12360,100 @@
         ]
       },
       "resumen_negocio": "Shopify Inc., a commerce technology company, provides tools to start, scale, market, and run a business of various sizes in Canada, the United States, Europe, the Middle East, Africa, the Asia Pacific, and Latin America."
+    }
+  },
+  {
+    "id": "CSC.AX-2026-09-18",
+    "ticker": "CSC.AX",
+    "nombre": "Capstone Copper Corp.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-18",
+    "precio_entrada": 14.37,
+    "acciones": 6.958942,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 49.0,
+    "potencial_pct": 24.0,
+    "tarjeta": {
+      "ticker": "CSC.AX",
+      "nombre_empresa": "Capstone Copper Corp.",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 49.0,
+      "version_scoring": 33,
+      "precio_actual": 14.37,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 9.4,
+        "pct_strong_buy": 22.2,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 17.822,
+      "dispersion_pct": 38.3,
+      "momentum_30d_pct": -7.3,
+      "momentum_5d_pct": -1.6,
+      "fuerza_relativa_pct": -6.6,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 33.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 14.64,
+      "sma200": 13.98,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 19806075.236270905,
+      "volumen_relativo": 1.58,
+      "volatilidad_diaria_pct": 3.41,
+      "sesiones_hasta_stop": 13,
+      "distancia_max_52s_pct": -18.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Capstone Copper evalúa vender mina Cozamin en México para reforzar su apuesta de crecimiento en Chile - Reporte Minero",
+            "fuente": "Reporte Minero",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Capstone Copper Has Growth Potential Through Its Various Mining Projects (TSX:CS:CA) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Why Capstone Copper (CSCCF) Is Drawing Bullish Analyst Attention Despite Near-Term Operating Noise - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Huelga en Mantoverde sacude a Capstone en Chile mientras el cobre en récords eleva la tensión laboral - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Capstone Copper Stock Surges 3.00% as Mantoverde Ramp-Up and Global Copper Demand Strengthen Growth Outlook - kalkine.ca",
+            "fuente": "kalkine.ca",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Capstone Copper Stock: Why It’s Falling Despite Strong Copper Demand - kalkine.ca",
+            "fuente": "kalkine.ca",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Capstone Copper Corp., a copper mining company, mines, explores for, and develops mineral properties in the United States, Chile, and Mexico. The company primarily explores copper, silver, gold, molybdenum, zinc, iron, cobalt, and other base metals."
     }
   }
 ]
