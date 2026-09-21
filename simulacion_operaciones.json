@@ -10712,7 +10712,7 @@
     "id": "BGL.AX-2026-09-11",
     "ticker": "BGL.AX",
     "nombre": "Bellevue Gold Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-11",
     "precio_entrada": 1.555,
     "acciones": 64.308682,
@@ -10784,6 +10784,40 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Bellevue Gold Limited, together with its subsidiaries, engages in the exploration, development, mining, and processing of gold properties in Australia. The company primarily holds interest in the Bellevue gold project located to north-west of Leinster in the Goldfields region of Western Australia."
+    },
+    "precio_salida": 1.6016,
+    "fecha_salida": "2026-09-21",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 1.5861,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.33,
+        "neto_pct": -3.33,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -12570,6 +12604,225 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    }
+  },
+  {
+    "id": "TTE.PA-2026-09-21",
+    "ticker": "TTE.PA",
+    "nombre": "TotalEnergies SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-21",
+    "precio_entrada": 79.32,
+    "acciones": 1.260716,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 42.8,
+    "potencial_pct": 6.1,
+    "tarjeta": {
+      "ticker": "TTE.PA",
+      "nombre_empresa": "TotalEnergies SE",
+      "isin": null,
+      "sector": "Energy",
+      "score": 42.8,
+      "version_scoring": 33,
+      "precio_actual": 79.32,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.5,
+        "pct_strong_buy": 30.0,
+        "pct_vender": 0.0,
+        "total_analistas": 10
+      },
+      "precio_objetivo_medio": 84.17838,
+      "dispersion_pct": 33.0,
+      "momentum_30d_pct": 2.1,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": 5.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 70.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 75.53,
+      "sma200": 69.45,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 287714822.203125,
+      "volumen_relativo": 1.27,
+      "volatilidad_diaria_pct": 1.27,
+      "sesiones_hasta_stop": 96,
+      "distancia_max_52s_pct": -1.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "TotalEnergies firma un acuerdo que allana el camino para regresar a Venezuela - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "TotalEnergies y Venezuela firman un nuevo acuerdo petrolero - Economía Digital",
+            "fuente": "Economía Digital",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Venezuela firma un nuevo acuerdo petrolero con TotalEnergies, multinacional francesa - Europa Press",
+            "fuente": "Europa Press",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
+    }
+  },
+  {
+    "id": "MT.AS-2026-09-21",
+    "ticker": "MT.AS",
+    "nombre": "ArcelorMittal S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-21",
+    "precio_entrada": 63.12,
+    "acciones": 1.584284,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 42.6,
+    "potencial_pct": 6.8,
+    "tarjeta": {
+      "ticker": "MT.AS",
+      "nombre_empresa": "ArcelorMittal S.A.",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 42.6,
+      "version_scoring": 33,
+      "precio_actual": 63.12,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 21.4,
+        "pct_vender": 0.0,
+        "total_analistas": 14
+      },
+      "precio_objetivo_medio": 67.43209,
+      "dispersion_pct": 69.3,
+      "momentum_30d_pct": 1.4,
+      "momentum_5d_pct": -2.4,
+      "fuerza_relativa_pct": 4.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 44.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 62.18,
+      "sma200": 52.42,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 90591895.17746735,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 1.74,
+      "sesiones_hasta_stop": 51,
+      "distancia_max_52s_pct": -6.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Two killed in missile strike on ArcelorMittal Ukraine plant, company says - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Informe de Sostenibilidad 2025: Safer, smarter growth - ArcelorMittal España",
+            "fuente": "ArcelorMittal España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-ARCELORMITTAL, S.A. ArcelorMittal presenta resultados correspondientes al segundo trimestre de 2026. - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
+    }
+  },
+  {
+    "id": "XYZ-2026-09-21",
+    "ticker": "XYZ",
+    "nombre": "Block, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-21",
+    "precio_entrada": 76.28,
+    "acciones": 1.31096,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 41.8,
+    "potencial_pct": 28.9,
+    "tarjeta": {
+      "ticker": "XYZ",
+      "nombre_empresa": "Block, Inc.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 41.8,
+      "version_scoring": 33,
+      "precio_actual": 76.28,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.3,
+        "pct_vender": 0.0,
+        "total_analistas": 47
+      },
+      "precio_objetivo_medio": 98.30952,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": -5.7,
+      "momentum_5d_pct": -3.7,
+      "fuerza_relativa_pct": -5.0,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 30.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 80.47,
+      "sma200": 69.49,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 284279869.21577454,
+      "volumen_relativo": 0.98,
+      "volatilidad_diaria_pct": 2.29,
+      "sesiones_hasta_stop": 29,
+      "distancia_max_52s_pct": -10.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Block, Inc. : Recibe una recomendación de compra del President Capital Management - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "H&R Block Inc. stock outperforms competitors despite losses on the day - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Director de Block, Anthony Eisen, vende acciones por 1,4 millones de dólares - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
     }
   }
 ]
