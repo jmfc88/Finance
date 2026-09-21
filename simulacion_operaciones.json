@@ -905,7 +905,7 @@
     "id": "UNI.MI-2026-08-23",
     "ticker": "UNI.MI",
     "nombre": "Unipol Assicurazioni S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 27.77,
     "acciones": 3.601008,
@@ -977,7 +977,71 @@
       "version_scoring": 33,
       "precio_actual": 27.77
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 27.59,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.65,
+    "rentabilidad_neta_pct": -2.65,
+    "resultado_neto_eur": -2.65,
+    "rentabilidad_7d_pct": 0.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 28.3254,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.65,
+        "neto_pct": -2.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "AI.PA-2026-08-23",
@@ -1315,7 +1379,7 @@
     "id": "BPE.MI-2026-08-23",
     "ticker": "BPE.MI",
     "nombre": "BPER Banca SpA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 14.0,
     "acciones": 7.142857,
@@ -1403,7 +1467,71 @@
       "version_scoring": 33,
       "precio_actual": 14.0
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 14.202,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 1.44,
+    "rentabilidad_neta_pct": -0.56,
+    "resultado_neto_eur": -0.56,
+    "rentabilidad_7d_pct": 1.46,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 14.28,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -0.56,
+        "neto_pct": -0.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "IDR.MC-2026-08-23",
@@ -1525,7 +1653,7 @@
     "id": "SAMPO.HE-2026-08-23",
     "ticker": "SAMPO.HE",
     "nombre": "Sampo Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 9.714,
     "acciones": 10.29442,
@@ -1603,7 +1731,71 @@
       "version_scoring": 33,
       "precio_actual": 9.714
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 9.438,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.84,
+    "rentabilidad_neta_pct": -4.84,
+    "resultado_neto_eur": -4.84,
+    "rentabilidad_7d_pct": 0.49,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 9.9083,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.84,
+        "neto_pct": -4.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "BGL.AX-2026-08-23",
@@ -1831,7 +2023,7 @@
     "id": "ABN.AS-2026-08-23",
     "ticker": "ABN.AS",
     "nombre": "ABN AMRO Bank N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 40.38,
     "acciones": 2.476474,
@@ -1913,13 +2105,77 @@
       "version_scoring": 32,
       "precio_actual": 40.38
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 43.43,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 7.55,
+    "rentabilidad_neta_pct": 5.55,
+    "resultado_neto_eur": 5.55,
+    "rentabilidad_7d_pct": 3.24,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 10,
+    "precio_equilibrio": 41.1876,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 5.55 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.3,
+        "neto_pct": 2.3,
+        "sesiones": 13,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 5.55,
+        "neto_pct": 5.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "KESKOB.HE-2026-08-23",
     "ticker": "KESKOB.HE",
     "nombre": "Kesko Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 21.98,
     "acciones": 4.549591,
@@ -1991,7 +2247,71 @@
       "version_scoring": 33,
       "precio_actual": 21.98
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 22.12,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.64,
+    "rentabilidad_neta_pct": -1.36,
+    "resultado_neto_eur": -1.36,
+    "rentabilidad_7d_pct": 2.18,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 22.4196,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.15,
+        "neto_pct": -4.15,
+        "sesiones": 17,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.36,
+        "neto_pct": -1.36,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "MT.AS-2026-08-23",
@@ -2689,7 +3009,7 @@
     "id": "UNA.AS-2026-08-23",
     "ticker": "UNA.AS",
     "nombre": "Unilever PLC",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 54.59,
     "acciones": 1.831837,
@@ -2777,7 +3097,71 @@
       "version_scoring": 33,
       "precio_actual": 54.59
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 54.03,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -1.03,
+    "rentabilidad_neta_pct": -3.03,
+    "resultado_neto_eur": -3.03,
+    "rentabilidad_7d_pct": 2.88,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 55.6818,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -3.03,
+        "neto_pct": -3.03,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "GALP.LS-2026-08-23",
@@ -3249,7 +3633,7 @@
     "id": "BMED.MI-2026-08-23",
     "ticker": "BMED.MI",
     "nombre": "Banca Mediolanum S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 23.9,
     "acciones": 4.1841,
@@ -3321,7 +3705,71 @@
       "version_scoring": 32,
       "precio_actual": 23.9
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 23.27,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.64,
+    "rentabilidad_neta_pct": -4.64,
+    "resultado_neto_eur": -4.64,
+    "rentabilidad_7d_pct": 0.08,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.378,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "FM.TO-2026-08-23",
@@ -3612,7 +4060,7 @@
     "id": "BVI.PA-2026-08-23",
     "ticker": "BVI.PA",
     "nombre": "Bureau Veritas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 27.55,
     "acciones": 3.629764,
@@ -3679,13 +4127,77 @@
       "version_scoring": 33,
       "precio_actual": 27.55
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 27.22,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -1.2,
+    "rentabilidad_neta_pct": -3.2,
+    "resultado_neto_eur": -3.2,
+    "rentabilidad_7d_pct": -1.31,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 28.101,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -3.2,
+        "neto_pct": -3.2,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "AMP.MI-2026-08-23",
     "ticker": "AMP.MI",
     "nombre": "Amplifon S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 11.885,
     "acciones": 8.413967,
@@ -3746,13 +4258,77 @@
       "version_scoring": 32,
       "precio_actual": 11.885
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 11.395,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -4.12,
+    "rentabilidad_neta_pct": -6.12,
+    "resultado_neto_eur": -6.12,
+    "rentabilidad_7d_pct": -0.88,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.1227,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 13,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -6.12,
+        "neto_pct": -6.12,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "SAN.MC-2026-08-23",
     "ticker": "SAN.MC",
     "nombre": "Banco Santander, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-23",
     "precio_entrada": 12.55,
     "acciones": 7.968127,
@@ -3819,7 +4395,71 @@
       "version_scoring": 33,
       "precio_actual": 12.55
     },
-    "reconstruida": true
+    "reconstruida": true,
+    "precio_salida": 12.524,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.21,
+    "rentabilidad_neta_pct": -2.21,
+    "resultado_neto_eur": -2.21,
+    "rentabilidad_7d_pct": 0.27,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.801,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.21,
+        "neto_pct": -2.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
+    }
   },
   {
     "id": "BNP.PA-2026-08-24",
@@ -12031,7 +12671,7 @@
     "id": "IG.MI-2026-09-15",
     "ticker": "IG.MI",
     "nombre": "Italgas S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-15",
     "precio_entrada": 8.172,
     "acciones": 12.236907,
@@ -12098,6 +12738,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Italgas S.p.A., together with its subsidiaries, engages in the distribution of natural gas in Italy, Greece, and Other European Union countries. It operates through Gas distribution, Water Service, and Energy Efficiency segments."
+    },
+    "precio_salida": 8.4172,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 8.3354,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -12823,6 +13485,84 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
+    }
+  },
+  {
+    "id": "BGL.AX-2026-09-21",
+    "ticker": "BGL.AX",
+    "nombre": "Bellevue Gold Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-21",
+    "precio_entrada": 1.55,
+    "acciones": 64.516129,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 52.0,
+    "potencial_pct": 19.4,
+    "tarjeta": {
+      "ticker": "BGL.AX",
+      "nombre_empresa": "Bellevue Gold Limited",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 52.0,
+      "version_scoring": 33,
+      "precio_actual": 1.55,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 1.85,
+      "dispersion_pct": 17.6,
+      "momentum_30d_pct": -6.6,
+      "momentum_5d_pct": -1.3,
+      "fuerza_relativa_pct": -5.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 43.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 1.49,
+      "sma200": 1.57,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 10132194.623627067,
+      "volumen_relativo": 1.41,
+      "volatilidad_diaria_pct": 2.76,
+      "sesiones_hasta_stop": 20,
+      "distancia_max_52s_pct": -22.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Macquarie Sticks to Its Buy Rating for Bellevue Gold Limited (BGL) - The Globe and Mail",
+            "fuente": "The Globe and Mail",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las mineras impulsan la bolsa australiana mientras la gobernadora del RBA advierte sobre los riesgos de inflación - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Lo que hay que saber sobre el cambio de índice del GDX - VanEck",
+            "fuente": "VanEck",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Bellevue Gold Limited, together with its subsidiaries, engages in the exploration, development, mining, and processing of gold properties in Australia. The company primarily holds interest in the Bellevue gold project located to north-west of Leinster in the Goldfields region of Western Australia."
     }
   }
 ]
