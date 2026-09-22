@@ -12766,7 +12766,7 @@
     "id": "INW.MI-2026-09-15",
     "ticker": "INW.MI",
     "nombre": "Infrastrutture Wireless Italiane S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-15",
     "precio_entrada": 6.465,
     "acciones": 15.467904,
@@ -12833,13 +12833,35 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Infrastrutture Wireless Italiane S.p.A. operates in the electronic communications infrastructure sector in Italy. The company builds and manages digital and shared infrastructure elements, that hosts logic, the radio equipment of mobile, fixed wireless access (FWA), and IoT markets."
+    },
+    "precio_salida": 6.659,
+    "fecha_salida": "2026-09-22",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 6.5943,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
     "id": "BZU.MI-2026-09-16",
     "ticker": "BZU.MI",
     "nombre": "Buzzi S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-16",
     "precio_entrada": 37.99,
     "acciones": 2.632272,
@@ -12911,6 +12933,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Buzzi S.p.A., together with its subsidiaries, manufactures, distributes, and sells cement, ready-mix concrete, and natural aggregates. It has operations primarily in Italy, United States of America, Germany, Luxembourg, Netherlands, United Arab Emirates, Poland, Czech Republic and Slovakia, Brazil, Russia, Algeria, Slovenia, and Mexico."
+    },
+    "precio_salida": 35.6802,
+    "fecha_salida": "2026-09-22",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 38.7498,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -13896,6 +13946,84 @@
         ]
       },
       "resumen_negocio": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally."
+    }
+  },
+  {
+    "id": "BVI.PA-2026-09-22",
+    "ticker": "BVI.PA",
+    "nombre": "Bureau Veritas SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-22",
+    "precio_entrada": 27.59,
+    "acciones": 3.624502,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 44.7,
+    "potencial_pct": 17.6,
+    "tarjeta": {
+      "ticker": "BVI.PA",
+      "nombre_empresa": "Bureau Veritas SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.7,
+      "version_scoring": 33,
+      "precio_actual": 27.59,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 23.5,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 32.43765,
+      "dispersion_pct": 37.5,
+      "momentum_30d_pct": -0.9,
+      "momentum_5d_pct": -0.7,
+      "fuerza_relativa_pct": 0.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 56.1,
+      "tendencia_tecnica": "mixta",
+      "sma50": 27.63,
+      "sma200": 26.57,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 22917540.646684647,
+      "volumen_relativo": 1.25,
+      "volatilidad_diaria_pct": 0.85,
+      "sesiones_hasta_stop": 216,
+      "distancia_max_52s_pct": -5.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 16,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Bureau Veritas suben tras elevar su objetivo de crecimiento - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Acciones de Bureau Veritas suben tras elevar meta de crecimiento - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Bureau Veritas eleva su objetivo de crecimiento de ingresos para - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Bureau Veritas SA provides laboratory testing, inspection, and certification services. It operates through six segments: Marine & Offshore; Agri-Food & Commodities; Industry; Buildings & Infrastructure; Certification; and Consumer Products services."
     }
   }
 ]
