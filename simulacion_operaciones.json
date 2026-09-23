@@ -12500,7 +12500,7 @@
     "id": "EOS.AX-2026-09-15",
     "ticker": "EOS.AX",
     "nombre": "Electro Optic Systems Holdings Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-15",
     "precio_entrada": 9.23,
     "acciones": 10.834236,
@@ -12587,6 +12587,64 @@
         ]
       },
       "resumen_negocio": "Electro Optic Systems Holdings Limited engages in the development, manufacture, and sale of telescopes and dome enclosures, laser satellite tracking systems, remote weapon systems, and high laser weapon."
+    },
+    "precio_salida": 10.9528,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 18.67,
+    "rentabilidad_neta_pct": 16.67,
+    "resultado_neto_eur": 16.67,
+    "rentabilidad_7d_pct": null,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 9.4146,
+    "estado_resultado": "top",
+    "explicacion": "Ganancia grande. Esta es la que compensa a todas las demas.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 16.67,
+        "neto_pct": 16.67,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 14.51,
+        "neto_pct": 14.51,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 12.06,
+        "neto_pct": 12.06,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 16.96,
+        "neto_pct": 16.96,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 14.51,
+        "neto_pct": 14.51,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 14.51,
+        "neto_pct": 14.51,
+        "sesiones": 6,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 14.51,
+        "neto_pct": 14.51,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
     }
   },
   {
