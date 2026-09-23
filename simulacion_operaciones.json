@@ -4794,7 +4794,7 @@
     "id": "ROVI.MC-2026-08-26",
     "ticker": "ROVI.MC",
     "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-26",
     "precio_entrada": 60.5,
     "acciones": 1.652893,
@@ -4861,6 +4861,70 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
+    },
+    "precio_salida": 59.5,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -1.65,
+    "rentabilidad_neta_pct": -3.65,
+    "resultado_neto_eur": -3.65,
+    "rentabilidad_7d_pct": -1.98,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 61.71,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 10,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -3.65,
+        "neto_pct": -3.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -5993,7 +6057,7 @@
     "id": "IAG.MC-2026-09-01",
     "ticker": "IAG.MC",
     "nombre": "International Consolidated Airlines Group S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 5.01,
     "acciones": 19.96008,
@@ -6071,6 +6135,34 @@
         ]
       },
       "resumen_negocio": "International Consolidated Airlines Group S.A., junto con sus subsidiarias, se dedica a la prestación de servicios de transporte de pasajeros y carga en el Atlántico Norte, América Latina, el Caribe, Europa, África, Medio Oriente, Sur de Asia, Asia Pacífico e internacionalmente."
+    },
+    "precio_salida": 5.1603,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 16,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": -4.07,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.1102,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 16,
+        "motivo": "stop subido"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 9,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -7638,7 +7730,7 @@
     "id": "EDP.LS-2026-09-02",
     "ticker": "EDP.LS",
     "nombre": "EDP, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 4.668,
     "acciones": 21.422451,
@@ -7726,6 +7818,28 @@
         ]
       },
       "resumen_negocio": "EDP, S.A. se dedica a la generación, transmisión, distribución y suministro de electricidad en Portugal, España, Francia, Polonia, Rumanía, Italia, Bélgica, Reino Unido, Grecia, Colombia, Brasil, Norteamérica e internacionalmente."
+    },
+    "precio_salida": 4.808,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 15,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 2.74,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.7614,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -8693,7 +8807,7 @@
     "id": "PRX.AS-2026-09-03",
     "ticker": "PRX.AS",
     "nombre": "Prosus N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 36.875,
     "acciones": 2.711864,
@@ -8760,6 +8874,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Prosus N.V. se dedica a los negocios de comercio electrónico e Internet en Asia, Europa, América Latina, América del Norte e internacionalmente. Opera plataformas de Internet, como anuncios clasificados, pagos y fintech, comercio electrónico, entrega de alimentos, tecnología educativa, comercio electrónico, empresas, tencent y otras plataformas."
+    },
+    "precio_salida": 37.9813,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 14,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": -2.59,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 37.6125,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -10188,7 +10324,7 @@
     "id": "AZM.MI-2026-09-07",
     "ticker": "AZM.MI",
     "nombre": "Azimut Holding S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-07",
     "precio_entrada": 38.81,
     "acciones": 2.576656,
@@ -10255,6 +10391,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Azimut Holding S.p.A. ofrece soluciones de asesoramiento y gestión de activos en Italia, Europa, Oriente Medio, América y Asia-Pacífico. Ofrece mercados públicos y privados, gestión discrecional de carteras y soluciones de tokens y activos digitales; servicios de asesoramiento; banca de inversión corporativa y soluciones fintech; fondos mutuos armonizados con la directiva OICVM; fondos de inversión alternativos y..."
+    },
+    "precio_salida": 39.9743,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 12,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 0.26,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 39.5862,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -12010,7 +12168,7 @@
     "id": "HIAB.HE-2026-09-14",
     "ticker": "HIAB.HE",
     "nombre": "Hiab Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-14",
     "precio_entrada": 62.15,
     "acciones": 1.60901,
@@ -12082,6 +12240,28 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
+    },
+    "precio_salida": 64.0145,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": 2.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 63.393,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -12651,7 +12831,7 @@
     "id": "FBK.MI-2026-09-15",
     "ticker": "FBK.MI",
     "nombre": "FinecoBank Banca Fineco S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-15",
     "precio_entrada": 22.68,
     "acciones": 4.409171,
@@ -12723,6 +12903,28 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    },
+    "precio_salida": 23.3604,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 23.1336,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -14238,6 +14440,194 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    }
+  },
+  {
+    "id": "UNA.AS-2026-09-23",
+    "ticker": "UNA.AS",
+    "nombre": "Unilever PLC",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-23",
+    "precio_entrada": 54.92,
+    "acciones": 1.82083,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 45.7,
+    "potencial_pct": 13.3,
+    "tarjeta": {
+      "ticker": "UNA.AS",
+      "nombre_empresa": "Unilever PLC",
+      "isin": "PLCTHQM00018",
+      "sector": "Consumer Defensive",
+      "score": 45.7,
+      "version_scoring": 33,
+      "precio_actual": 54.92,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 37.5,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 62.225,
+      "dispersion_pct": 34.6,
+      "momentum_30d_pct": -1.8,
+      "momentum_5d_pct": 1.1,
+      "fuerza_relativa_pct": 0.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 44.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 54.63,
+      "sma200": 53.2,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 46341833.66801643,
+      "volumen_relativo": 0.93,
+      "volatilidad_diaria_pct": 1.11,
+      "sesiones_hasta_stop": 126,
+      "distancia_max_52s_pct": -10.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Unilever PLC : El Bernstein continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Unilever PLC : Obtiene una recomendación de compra de Bernstein - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "How does climate action shape Unilever’s business growth? - Unilever Global",
+            "fuente": "Unilever Global",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Unilever PLC : Obtiene una recomendación de compra de Bernstein - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Resultados de Unilever: Crecimiento del Volumen y Expansión de Márgenes - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Unilever eleva sus previsiones anuales tras lograr unas ventas superiores a lo esperado - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Unilever PLC operates as a fast-moving consumer goods company in the Asia Pacific, Africa, the Americas, and Europe. It operates through four segments: Beauty & Wellbeing, Personal Care, Home Care, and Foods."
+    }
+  },
+  {
+    "id": "IDR.MC-2026-09-23",
+    "ticker": "IDR.MC",
+    "nombre": "Indra Sistemas, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-23",
+    "precio_entrada": 61.62,
+    "acciones": 1.62285,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 45.0,
+    "potencial_pct": 8.7,
+    "tarjeta": {
+      "ticker": "IDR.MC",
+      "nombre_empresa": "Indra Sistemas, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 45.0,
+      "version_scoring": 33,
+      "precio_actual": 61.62,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 66.99875,
+      "dispersion_pct": 70.0,
+      "momentum_30d_pct": 1.8,
+      "momentum_5d_pct": 0.2,
+      "fuerza_relativa_pct": 3.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 55.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 59.09,
+      "sma200": 54.04,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 40907639.85339546,
+      "volumen_relativo": 0.82,
+      "volatilidad_diaria_pct": 1.65,
+      "sesiones_hasta_stop": 57,
+      "distancia_max_52s_pct": -4.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Indra Sistemas S A : modernizará y evolucionará el sistema de gestión del tráfico ferroviario de Lituania para elevar la automatización y seguridad de su red - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Indra se alza con un contrato dentro del plan para modernizar el sistema de combate de las F-100 - lavozdegalicia.es",
+            "fuente": "lavozdegalicia.es",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Indra stock gains on Kansas radar investment and strong half-year figures - AD HOC NEWS",
+            "fuente": "AD HOC NEWS",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Indra Sistemas, S.A. supera las previsiones de los analistas: descubre cuáles son las previsiones del consenso para este año - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Indra suben más de un 4%: ¿qué hay detrás? - xtb.com",
+            "fuente": "xtb.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Indra se disparan tras batir expectativas - xtb.com",
+            "fuente": "xtb.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Indra Sistemas, S.A., together with its subsidiaries, provides technology services for the defense, aerospace, and advanced digital technologies sectors in Spain, Brazil, the rest of America, Italy, the rest of Europe, Asia, the Middle East, and Africa."
     }
   }
 ]
