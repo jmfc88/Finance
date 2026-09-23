@@ -10525,7 +10525,7 @@
     "id": "GRF.MC-2026-09-08",
     "ticker": "GRF.MC",
     "nombre": "Grifols, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-08",
     "precio_entrada": 9.996,
     "acciones": 10.004002,
@@ -10592,6 +10592,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Grifols, S.A., junto con sus filiales, se dedica a la investigación, desarrollo, producción y comercialización de medicamentos derivados del plasma en Estados Unidos, Canadá, España, Europa e internacionalmente."
+    },
+    "precio_salida": 9.3882,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 11,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.88,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 10.1959,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -14962,6 +14990,90 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    }
+  },
+  {
+    "id": "ROVI.MC-2026-09-23",
+    "ticker": "ROVI.MC",
+    "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-23",
+    "precio_entrada": 59.4,
+    "acciones": 1.683502,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 44.1,
+    "potencial_pct": 25.2,
+    "tarjeta": {
+      "ticker": "ROVI.MC",
+      "nombre_empresa": "Laboratorios Farmaceuticos Rovi, S.A.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 44.1,
+      "version_scoring": 33,
+      "precio_actual": 59.4,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 11.1,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 74.35556,
+      "dispersion_pct": 29.3,
+      "momentum_30d_pct": -1.8,
+      "momentum_5d_pct": 2.0,
+      "fuerza_relativa_pct": 0.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 48.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 58.49,
+      "sma200": 66.05,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 4638795.88886261,
+      "volumen_relativo": 0.93,
+      "volatilidad_diaria_pct": 0.95,
+      "sesiones_hasta_stop": 172,
+      "distancia_max_52s_pct": -29.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "ROVI: Revenue and profit surged in H1 2026, boosted by CDMO growth and a major one-time gain - tradingview.com",
+            "fuente": "tradingview.com",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Las acciones de Rovi suben en Bolsa tras duplicar su beneficio hasta los 84,4 millones - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Earnings call transcript: Rovi posts strong H1 2026 growth, stock rises 1.5% - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Laboratorios Farmacéuticos Rovi, S.A. (BME:ROVI) acaba de publicar sus resultados semestrales: esto es lo que opinan los analistas - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
     }
   }
 ]
