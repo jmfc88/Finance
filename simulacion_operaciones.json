@@ -11962,7 +11962,7 @@
     "id": "KKR-2026-09-11",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-11",
     "precio_entrada": 100.87,
     "acciones": 0.991375,
@@ -12029,6 +12029,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    },
+    "precio_salida": 94.7371,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 9,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.41,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 102.8874,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 9,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -13470,7 +13498,7 @@
     "id": "SHOP.TO-2026-09-16",
     "ticker": "SHOP.TO",
     "nombre": "Shopify Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-16",
     "precio_entrada": 184.29,
     "acciones": 0.542623,
@@ -13558,6 +13586,28 @@
         ]
       },
       "resumen_negocio": "Shopify Inc., a commerce technology company, provides tools to start, scale, market, and run a business of various sizes in Canada, the United States, Europe, the Middle East, Africa, the Asia Pacific, and Latin America."
+    },
+    "precio_salida": 204.7278,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 11.09,
+    "rentabilidad_neta_pct": 9.09,
+    "resultado_neto_eur": 9.09,
+    "rentabilidad_7d_pct": null,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 4,
+    "precio_equilibrio": 187.9758,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 9.09 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -13680,7 +13730,7 @@
     "id": "ANET-2026-09-18",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-18",
     "precio_entrada": 198.045,
     "acciones": 0.504936,
@@ -13768,6 +13818,28 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 203.9863,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 202.0059,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -15545,6 +15617,351 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BE Semiconductor Industries N.V. develops, manufactures, markets, sells, and services semiconductor assembly equipment for the semiconductor and electronics industries in the Netherlands, Switzerland, Austria, Singapore, Malaysia, and internationally."
+    }
+  },
+  {
+    "id": "SCYR.MC-2026-09-24",
+    "ticker": "SCYR.MC",
+    "nombre": "Sacyr, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 4.06,
+    "acciones": 24.630542,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 51.7,
+    "potencial_pct": 30.5,
+    "tarjeta": {
+      "ticker": "SCYR.MC",
+      "nombre_empresa": "Sacyr, S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 51.7,
+      "version_scoring": 33,
+      "precio_actual": 4.06,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.3,
+        "pct_strong_buy": 11.1,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 5.29889,
+      "dispersion_pct": 17.7,
+      "momentum_30d_pct": -6.3,
+      "momentum_5d_pct": -2.6,
+      "fuerza_relativa_pct": -3.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 30.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 4.43,
+      "sma200": 4.33,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 12346889.029138565,
+      "volumen_relativo": 0.73,
+      "volatilidad_diaria_pct": 1.28,
+      "sesiones_hasta_stop": 94,
+      "distancia_max_52s_pct": -17.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-SACYR, S.A. La sociedad remite la Presentación de Resultados correspondiente al primer semestre de 2026. - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sacyr v. Panama and the Limits of Recasting Contract Claims as Treaty Claims - Wolters Kluwer",
+            "fuente": "Wolters Kluwer",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Earnings call transcript: Sacyr lifts H1 2026 profit as stock nears 52-week high - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Sacyr suben casi un 5% y lideran el Ibex 35 tras presentar sus resultados - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Consultorio de análisis técnico : Santander, BBVA, Solaria, Inditex, Sacyr, ACS, oro... - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Las acciones de Sacyr alcanzan una valoración inédita desde 2014 tras subir cerca del 25 % - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Sacyr, S.A. engages in the development and operation of infrastructure concessions worldwide. It is involved in the infrastructure development, such as transportation, sanitation, water, and waste treatment; development of large-scale civil engineering, industrial transport infrastructure, and building projects; water treatment, purification, desalination, purification, and reuse, as well as operation and..."
+    }
+  },
+  {
+    "id": "HIAB.HE-2026-09-24",
+    "ticker": "HIAB.HE",
+    "nombre": "Hiab Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 59.65,
+    "acciones": 1.676446,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 48.5,
+    "potencial_pct": 19.7,
+    "tarjeta": {
+      "ticker": "HIAB.HE",
+      "nombre_empresa": "Hiab Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 48.5,
+      "version_scoring": 33,
+      "precio_actual": 59.65,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 5.1,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 71.4,
+      "dispersion_pct": 15.4,
+      "momentum_30d_pct": -8.4,
+      "momentum_5d_pct": -6.0,
+      "fuerza_relativa_pct": -6.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 44.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 60.96,
+      "sma200": 52.08,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 4095330.5955963135,
+      "volumen_relativo": 0.87,
+      "volatilidad_diaria_pct": 2.69,
+      "sesiones_hasta_stop": 21,
+      "distancia_max_52s_pct": -8.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": -2,
+        "titulares": [
+          {
+            "titulo": "SEB rebaja la recomendación de Hiab a mantener desde comprar y recorta el precio objetivo a 65 EUR - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Transcripción del informe de resultados: Hiab Q2 2025 registra caída en ingresos, acciones suben - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "SEB rebaja la recomendación de Hiab a mantener con un precio objetivo de 65 EUR - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Hiab Oyj (HIAB.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
+    }
+  },
+  {
+    "id": "STERV.HE-2026-09-24",
+    "ticker": "STERV.HE",
+    "nombre": "Stora Enso Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 10.535,
+    "acciones": 9.492169,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 45.7,
+    "potencial_pct": 7.9,
+    "tarjeta": {
+      "ticker": "STERV.HE",
+      "nombre_empresa": "Stora Enso Oyj",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 45.7,
+      "version_scoring": 33,
+      "precio_actual": 10.535,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 6.2,
+        "pct_vender": 6.2,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 11.36667,
+      "dispersion_pct": 50.0,
+      "momentum_30d_pct": 7.5,
+      "momentum_5d_pct": 0.1,
+      "fuerza_relativa_pct": 9.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 62.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.87,
+      "sma200": 9.96,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 13226973.244582653,
+      "volumen_relativo": 1.33,
+      "volatilidad_diaria_pct": 1.47,
+      "sesiones_hasta_stop": 72,
+      "distancia_max_52s_pct": -10.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Jefferies eleva el precio objetivo de Stora Enso hasta los 12,50 EUR y reitera su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Stora Enso estudia el cierre de su fábrica en Kristinestad - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Stora Enso Oyj nombra a Niclas Rosenlew director ejecutivo adjunto con efecto a partir del 17 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Jefferies eleva el precio objetivo de Stora Enso hasta los 12,50 EUR y reitera su recomendación de compra - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Stora Enso plans a programme to improve long-term profitability and competitiveness - Stock Titan",
+            "fuente": "Stock Titan",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Stora Enso cierra de forma permanente la serrería de Veitsiluoto y despide a 60 empleados - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Stora Enso Oyj provides renewable solutions for the packaging, biomaterials, wooden constructions, and paper industries in Finland and internationally. It operates through Packaging Materials, Packaging Solutions, Biomaterials, Wood Products, Forest, and Other segments."
+    }
+  },
+  {
+    "id": "STMPA.PA-2026-09-24",
+    "ticker": "STMPA.PA",
+    "nombre": "STMicroelectronics N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 45.23,
+    "acciones": 2.210922,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 43.1,
+    "potencial_pct": 50.7,
+    "tarjeta": {
+      "ticker": "STMPA.PA",
+      "nombre_empresa": "STMicroelectronics N.V.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 43.1,
+      "version_scoring": 33,
+      "precio_actual": 45.23,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 68.1718,
+      "dispersion_pct": 76.5,
+      "momentum_30d_pct": 7.1,
+      "momentum_5d_pct": 6.8,
+      "fuerza_relativa_pct": 9.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 51.7,
+      "tendencia_tecnica": "mixta",
+      "sma50": 45.72,
+      "sma200": 40.97,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 91668795.5894165,
+      "volumen_relativo": 1.04,
+      "volatilidad_diaria_pct": 2.74,
+      "sesiones_hasta_stop": 20,
+      "distancia_max_52s_pct": -34.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "STMicroelectronics NV (STM) Q2 2026 Earnings Call Highlights: Strong Revenue Growth Amid ... - finance.yahoo.com",
+            "fuente": "finance.yahoo.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué cae hoy la acción de STMicroelectronics? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Nueva alianza, nuevo rally: STMicroelectronics se dispara tras unir fuerzas con Amazon - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
     }
   }
 ]
