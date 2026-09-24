@@ -5032,7 +5032,7 @@
     "id": "SCYR.MC-2026-08-27",
     "ticker": "SCYR.MC",
     "nombre": "Sacyr, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-27",
     "precio_entrada": 4.308,
     "acciones": 23.212628,
@@ -5120,6 +5120,70 @@
         ]
       },
       "resumen_negocio": "Sacyr, S.A. se dedica al desarrollo y operación de concesiones de infraestructuras en todo el mundo. Participa en el desarrollo de infraestructura, como transporte, saneamiento, agua y tratamiento de residuos; desarrollo de proyectos de ingeniería civil, infraestructura de transporte industrial y construcción a gran escala; tratamiento, depuración, desalinización, depuración y reutilización de aguas, así como..."
+    },
+    "precio_salida": 4.0461,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 20,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": 0.32,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.3942,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 20,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 19,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -7.39,
+        "neto_pct": -7.39,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -6291,7 +6355,7 @@
     "id": "BNP.PA-2026-09-01",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 102.78,
     "acciones": 0.972952,
@@ -6379,6 +6443,34 @@
         ]
       },
       "resumen_negocio": "BNP Paribas SA ofrece diversos productos y servicios bancarios y financieros en Europa, Medio Oriente, África, América y Asia Pacífico. Opera a través de tres divisiones: Banca Corporativa e Institucional; Banca y Servicios Comerciales y Personales; y Servicios de Inversión y Protección."
+    },
+    "precio_salida": 96.531,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 17,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.36,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 104.8356,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 17,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -12635,7 +12727,7 @@
     "id": "STERV.HE-2026-09-14",
     "ticker": "STERV.HE",
     "nombre": "Stora Enso Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-14",
     "precio_entrada": 10.135,
     "acciones": 9.866798,
@@ -12702,6 +12794,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Stora Enso Oyj provides renewable solutions for the packaging, biomaterials, wooden constructions, and paper industries in Finland and internationally. It operates through Packaging Materials, Packaging Solutions, Biomaterials, Wood Products, Forest, and Other segments."
+    },
+    "precio_salida": 10.4391,
+    "fecha_salida": "2026-09-18",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 10.3377,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -13255,7 +13369,7 @@
     "id": "STMPA.PA-2026-09-16",
     "ticker": "STMPA.PA",
     "nombre": "STMicroelectronics N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-16",
     "precio_entrada": 42.525,
     "acciones": 2.351558,
@@ -13322,6 +13436,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 44.8788,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.54,
+    "rentabilidad_neta_pct": 3.54,
+    "resultado_neto_eur": 3.54,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 4,
+    "precio_equilibrio": 43.3755,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.54 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 4.3,
+        "neto_pct": 4.3,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -14712,7 +14854,7 @@
     "id": "HIAB.HE-2026-09-23",
     "ticker": "HIAB.HE",
     "nombre": "Hiab Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 63.7,
     "acciones": 1.569859,
@@ -14784,6 +14926,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
+    },
+    "precio_salida": 59.827,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 64.974,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -15208,6 +15378,173 @@
         ]
       },
       "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally."
+    }
+  },
+  {
+    "id": "BGL.AX-2026-09-24",
+    "ticker": "BGL.AX",
+    "nombre": "Bellevue Gold Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 1.59,
+    "acciones": 62.893082,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 49.9,
+    "potencial_pct": 17.1,
+    "tarjeta": {
+      "ticker": "BGL.AX",
+      "nombre_empresa": "Bellevue Gold Limited",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 49.9,
+      "version_scoring": 33,
+      "precio_actual": 1.59,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 1.8625,
+      "dispersion_pct": 23.5,
+      "momentum_30d_pct": -7.8,
+      "momentum_5d_pct": 1.9,
+      "fuerza_relativa_pct": -8.2,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 40.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 1.51,
+      "sma200": 1.57,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 9372960.74221301,
+      "volumen_relativo": 1.37,
+      "volatilidad_diaria_pct": 2.98,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -20.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Bellevue Gold entra en beneficios en el ejercicio 2026 con un aumento de los ingresos; sus acciones suben un 4% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Should Return To Profit Require Action From Bellevue Gold (ASX:BGL) Investors? - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Bellevue Gold Limited presenta sus resultados anuales del ejercicio cerrado a 30 de junio de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Bellevue Gold entra en beneficios en el ejercicio 2026 con un aumento de los ingresos; sus acciones suben un 4% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Bellevue Gold Limited presenta sus resultados anuales del ejercicio cerrado a 30 de junio de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Bellevue Gold identifica mineralización de oro de alta ley y reporta recursos de 2,7 millones de onzas en Australia Occidental - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Bellevue Gold Limited, together with its subsidiaries, engages in the exploration, development, mining, and processing of gold properties in Australia. It primarily holds interest in the Bellevue gold project located to north-west of Leinster in the Goldfields region of Western Australia."
+    }
+  },
+  {
+    "id": "BESI.AS-2026-09-24",
+    "ticker": "BESI.AS",
+    "nombre": "BE Semiconductor Industries N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 186.8,
+    "acciones": 0.535332,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 43.7,
+    "potencial_pct": 56.9,
+    "tarjeta": {
+      "ticker": "BESI.AS",
+      "nombre_empresa": "BE Semiconductor Industries N.V.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 43.7,
+      "version_scoring": 33,
+      "precio_actual": 186.8,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 22.7,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 293.0909,
+      "dispersion_pct": 82.3,
+      "momentum_30d_pct": -2.8,
+      "momentum_5d_pct": 2.9,
+      "fuerza_relativa_pct": 0.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 42.3,
+      "tendencia_tecnica": "bajista",
+      "sma50": 205.38,
+      "sma200": 210.64,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 70036885.19051361,
+      "volumen_relativo": 1.02,
+      "volatilidad_diaria_pct": 2.71,
+      "sesiones_hasta_stop": 21,
+      "distancia_max_52s_pct": -41.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "¿Por qué cae hoy la acción de BE Semiconductor? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "BE Semiconductor se dispara tras los rumores de compra - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué cae hoy con fuerza la acción de BE Semiconductor? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "BE Semiconductor Industries N.V. develops, manufactures, markets, sells, and services semiconductor assembly equipment for the semiconductor and electronics industries in the Netherlands, Switzerland, Austria, Singapore, Malaysia, and internationally."
     }
   }
 ]
