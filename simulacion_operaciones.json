@@ -6767,7 +6767,7 @@
     "id": "SAN.PA-2026-09-01",
     "ticker": "SAN.PA",
     "nombre": "Sanofi",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 76.89,
     "acciones": 1.300559,
@@ -6834,6 +6834,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sanofi se dedica a la investigación, desarrollo, fabricación y comercialización de soluciones terapéuticas. Proporciona inmunología e inflamación, enfermedades raras, neurología, oncología y otras vacunas."
+    },
+    "precio_salida": 72.2151,
+    "fecha_salida": "2026-09-24",
+    "sesiones": 17,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.32,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 78.4278,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 17,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 16,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -15962,6 +15990,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    }
+  },
+  {
+    "id": "KKR-2026-09-24",
+    "ticker": "KKR",
+    "nombre": "KKR & Co. Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-24",
+    "precio_entrada": 94.595,
+    "acciones": 1.057138,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 46.4,
+    "potencial_pct": 36.0,
+    "tarjeta": {
+      "ticker": "KKR",
+      "nombre_empresa": "KKR & Co. Inc.",
+      "isin": "US48251W1045",
+      "sector": "Financial Services",
+      "score": 46.4,
+      "version_scoring": 33,
+      "precio_actual": 94.595,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.8,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 128.67,
+      "dispersion_pct": 44.3,
+      "momentum_30d_pct": -12.1,
+      "momentum_5d_pct": -3.7,
+      "fuerza_relativa_pct": -12.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 20.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 103.91,
+      "sma200": 103.96,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 383710732.5897217,
+      "volumen_relativo": 0.95,
+      "volatilidad_diaria_pct": 1.89,
+      "sesiones_hasta_stop": 43,
+      "distancia_max_52s_pct": -33.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "KKR to net giant windfall from $17bn sale of USI to Aon - Financial Times",
+            "fuente": "Financial Times",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Mirastar Real Estate Investment Management Limited y KKR & Co. Inc. (NYSE: KKR) adquieren una cartera de ocho activos logísticos en el Reino Unido a Ares Real Estate Funds, de Ares Management Corporation (NYSE - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Here’s Why KKR Stock Is a Long-Term Buy With Around 100% Total Return Potential - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Here’s Why KKR Stock Is a Long-Term Buy With Around 100% Total Return Potential - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
     }
   }
 ]
