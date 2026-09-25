@@ -5327,7 +5327,7 @@
     "id": "UCG.MI-2026-08-28",
     "ticker": "UCG.MI",
     "nombre": "UniCredit S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-08-28",
     "precio_entrada": 84.71,
     "acciones": 1.180498,
@@ -5394,6 +5394,70 @@
       },
       "profundizacion": null,
       "resumen_negocio": "UniCredit S.p.A. ofrece servicios de banca comercial en Italia, Alemania, Europa Central y Europa del Este. La empresa ofrece soluciones minoristas, privadas y de gestión patrimonial; y soluciones para inversores institucionales."
+    },
+    "precio_salida": 84.24,
+    "fecha_salida": "2026-09-25",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.55,
+    "rentabilidad_neta_pct": -2.55,
+    "resultado_neto_eur": -2.55,
+    "rentabilidad_7d_pct": -0.33,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 86.4042,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.55,
+        "neto_pct": -2.55,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -16147,6 +16211,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    }
+  },
+  {
+    "id": "PUIG.MC-2026-09-25",
+    "ticker": "PUIG.MC",
+    "nombre": "Puig Brands, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-25",
+    "precio_entrada": 17.87,
+    "acciones": 5.595971,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 42.9,
+    "potencial_pct": 9.8,
+    "tarjeta": {
+      "ticker": "PUIG.MC",
+      "nombre_empresa": "Puig Brands, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 42.9,
+      "version_scoring": 33,
+      "precio_actual": 17.87,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 19.625,
+      "dispersion_pct": 47.5,
+      "momentum_30d_pct": -1.2,
+      "momentum_5d_pct": 6.0,
+      "fuerza_relativa_pct": 1.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 42.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 17.28,
+      "sma200": 16.36,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 9324667.807563782,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 1.32,
+      "sesiones_hasta_stop": 90,
+      "distancia_max_52s_pct": -3.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Acciones de Puig: Jefferies confía en el maquillaje para sostener el crecimiento - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Puig Brands se encuentra ante el reto de superar los 17,25 euros como primer nivel crítico - El Español",
+            "fuente": "El Español",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "JP Morgan mejora su previsión de ventas comparables de Puig para el tercer trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
     }
   }
 ]
