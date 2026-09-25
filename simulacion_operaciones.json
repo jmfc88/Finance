@@ -8108,7 +8108,7 @@
     "id": "AMS.MC-2026-09-02",
     "ticker": "AMS.MC",
     "nombre": "Amadeus IT Group, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 56.9,
     "acciones": 1.757469,
@@ -8175,6 +8175,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Amadeus IT Group, S.A., junto con sus filiales, opera como procesador de transacciones para la industria de viajes y turismo en Europa, América Central y del Sur, Oriente Medio, África y Asia Pacífico."
+    },
+    "precio_salida": 53.4405,
+    "fecha_salida": "2026-09-25",
+    "sesiones": 17,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.78,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 58.038,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 17,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -14084,7 +14112,7 @@
     "id": "XYZ-2026-09-21",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 76.28,
     "acciones": 1.31096,
@@ -14151,6 +14179,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
+    },
+    "precio_salida": 78.5684,
+    "fecha_salida": "2026-09-23",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 77.8056,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -16284,6 +16334,83 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    }
+  },
+  {
+    "id": "KCR.HE-2026-09-25",
+    "ticker": "KCR.HE",
+    "nombre": "Konecranes Plc",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-25",
+    "precio_entrada": 31.88,
+    "acciones": 3.136763,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 44.5,
+    "potencial_pct": 11.4,
+    "tarjeta": {
+      "ticker": "KCR.HE",
+      "nombre_empresa": "Konecranes Plc",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.5,
+      "version_scoring": 33,
+      "precio_actual": 31.88,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 4
+      },
+      "precio_objetivo_medio": 35.5,
+      "dispersion_pct": 22.6,
+      "momentum_30d_pct": 4.7,
+      "momentum_5d_pct": 10.3,
+      "fuerza_relativa_pct": 6.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 62.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 28.5,
+      "sma200": 28.5,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 7356668.811648369,
+      "volumen_relativo": 0.85,
+      "volatilidad_diaria_pct": 2.57,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": -0.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Top 20 Empresas en el mercado mundial de grúas Gantry - Spherical Insights",
+            "fuente": "Spherical Insights",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Hiab Oyj (HIAB.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Terminal de Contenedores en Génova ordena la modernización de 3 grúas RTG Noell de Konecranes - PortalPortuario",
+            "fuente": "PortalPortuario",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Konecranes Plc manufactures, sells, and services material handling products in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. It operates through three segments: Industrial Service, Industrial Equipment, and Port Solutions."
     }
   }
 ]
