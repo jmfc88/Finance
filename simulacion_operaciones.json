@@ -16267,7 +16267,7 @@
     "id": "PUIG.MC-2026-09-25",
     "ticker": "PUIG.MC",
     "nombre": "Puig Brands, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-25",
     "precio_entrada": 17.87,
     "acciones": 5.595971,
@@ -16334,6 +16334,70 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    },
+    "precio_salida": 16.7835,
+    "fecha_salida": "2026-09-25",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 18.2274,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -16630,6 +16694,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sonae, SGPS, S.A. operates a portfolio of businesses in retail, real estate, telecommunications, technology, and financial services in Portugal and internationally. The company operates through six segments: MC, Worten, Musti, Sierra, Bright Pixel, and NOS."
+    }
+  },
+  {
+    "id": "CPR.MI-2026-09-28",
+    "ticker": "CPR.MI",
+    "nombre": "Davide Campari-Milano N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-28",
+    "precio_entrada": 5.968,
+    "acciones": 16.756032,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 40.5,
+    "potencial_pct": 19.3,
+    "tarjeta": {
+      "ticker": "CPR.MI",
+      "nombre_empresa": "Davide Campari-Milano N.V.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 40.5,
+      "version_scoring": 33,
+      "precio_actual": 5.968,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 19.0,
+        "pct_vender": 4.8,
+        "total_analistas": 21
+      },
+      "precio_objetivo_medio": 7.11905,
+      "dispersion_pct": 103.8,
+      "momentum_30d_pct": 2.4,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": 4.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 64.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 5.86,
+      "sma200": 5.86,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25385560.510722637,
+      "volumen_relativo": 0.82,
+      "volatilidad_diaria_pct": 1.65,
+      "sesiones_hasta_stop": 57,
+      "distancia_max_52s_pct": -10.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Campari eleva sus previsiones de beneficio para 2026 impulsada por los aranceles y supera las estimaciones del primer semestre - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "UBS Upgrades Campari Group to Buy Rating, Raises PT - Moomoo",
+            "fuente": "Moomoo",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Las acciones de Campari reciben una mejora mientras RBC prevé recuperación y fija objetivo de 5,80€ - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Davide Campari-Milano N.V., together with its subsidiaries, trades in alcoholic and non-alcoholic beverages in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
     }
   }
 ]
