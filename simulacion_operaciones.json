@@ -7820,7 +7820,7 @@
     "id": "LTMC.MI-2026-09-02",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-02",
     "precio_entrada": 22.16,
     "acciones": 4.512635,
@@ -7908,6 +7908,58 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., junto con sus filiales, opera en el mercado del juego en Italia. La compañía opera a través de los segmentos en línea, franquicias deportivas y franquicias de juegos."
+    },
+    "precio_salida": 26.2962,
+    "fecha_salida": "2026-09-28",
+    "sesiones": 18,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 18.67,
+    "rentabilidad_neta_pct": 16.67,
+    "resultado_neto_eur": 16.67,
+    "rentabilidad_7d_pct": 23.33,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 1,
+    "precio_equilibrio": 22.6032,
+    "estado_resultado": "top",
+    "explicacion": "Ganancia grande. Esta es la que compensa a todas las demas.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 16.67,
+        "neto_pct": 16.67,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 17.31,
+        "neto_pct": 17.31,
+        "sesiones": 16,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 18.37,
+        "neto_pct": 18.37,
+        "sesiones": 9,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 17.31,
+        "neto_pct": 17.31,
+        "sesiones": 16,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 17.31,
+        "neto_pct": 17.31,
+        "sesiones": 16,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 17.31,
+        "neto_pct": 17.31,
+        "sesiones": 16,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -11578,7 +11630,7 @@
     "id": "EGL.LS-2026-09-09",
     "ticker": "EGL.LS",
     "nombre": "Mota-Engil, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 4.916,
     "acciones": 20.341741,
@@ -11655,6 +11707,34 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. realiza obras públicas y privadas de construcción y servicios relacionados en Europa, África y América Latina. La empresa construye diversas infraestructuras, como carreteras, autopistas, aeropuertos, puertos, presas, ferrocarriles y edificios residenciales y comerciales, así como la construcción de industrias, hospitales y en áreas especializadas, como petróleo y gas, áridos, prefabricados..."
+    },
+    "precio_salida": 5.1881,
+    "fecha_salida": "2026-09-28",
+    "sesiones": 13,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "rentabilidad_7d_pct": 2.01,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 10,
+    "precio_equilibrio": 5.0143,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 13,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 4.35,
+        "neto_pct": 4.35,
+        "sesiones": 13,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -12781,7 +12861,7 @@
     "id": "CAP.PA-2026-09-14",
     "ticker": "CAP.PA",
     "nombre": "Capgemini SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-14",
     "precio_entrada": 109.7,
     "acciones": 0.911577,
@@ -12869,6 +12949,34 @@
         ]
       },
       "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
+    },
+    "precio_salida": 103.0302,
+    "fecha_salida": "2026-09-28",
+    "sesiones": 10,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.28,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 111.894,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 10,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -16767,6 +16875,100 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Davide Campari-Milano N.V., together with its subsidiaries, trades in alcoholic and non-alcoholic beverages in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    }
+  },
+  {
+    "id": "XYZ-2026-09-28",
+    "ticker": "XYZ",
+    "nombre": "Block, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-28",
+    "precio_entrada": 76.42,
+    "acciones": 1.308558,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 46.1,
+    "potencial_pct": 28.6,
+    "tarjeta": {
+      "ticker": "XYZ",
+      "nombre_empresa": "Block, Inc.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 46.1,
+      "version_scoring": 33,
+      "precio_actual": 76.42,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.3,
+        "pct_vender": 0.0,
+        "total_analistas": 47
+      },
+      "precio_objetivo_medio": 98.30952,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": -8.0,
+      "momentum_5d_pct": 0.2,
+      "fuerza_relativa_pct": -8.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 28.2,
+      "tendencia_tecnica": "mixta",
+      "sma50": 80.15,
+      "sma200": 69.88,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 283531289.8349762,
+      "volumen_relativo": 0.99,
+      "volatilidad_diaria_pct": 2.37,
+      "sesiones_hasta_stop": 27,
+      "distancia_max_52s_pct": -9.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Cómo podrían reaccionar los inversores ante las acciones de Block, a medida que Square y Afterpay se expanden - simplywall.st",
+            "fuente": "simplywall.st",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Block, Inc. : Recibe una recomendación de compra del President Capital Management - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Block Inc. despide al 40% de su plantilla y sube 16% ¿es un nuevo paradigma? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 12,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Block eleva sus previsiones de beneficio para 2026 impulsada por el crecimiento de Cash App y la mejora de los márgenes - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Block raises annual gross profit outlook as Cash App stands out - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Block Stock Surges 7% After Q1 Gross Profit Hits $2.91B All-Time High - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
     }
   }
 ]
