@@ -5464,7 +5464,7 @@
     "id": "A2A.MI-2026-09-01",
     "ticker": "A2A.MI",
     "nombre": "A2A S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 2.342,
     "acciones": 42.698548,
@@ -5536,6 +5536,70 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "A2A S.p.A. se dedica a la producción, venta y distribución de gas y electricidad, y calefacción urbana en Italia e internacionalmente. Genera electricidad a través de plantas hidroeléctricas, termoeléctricas, fotovoltaicas y eólicas; y vende y distribuye gas."
+    },
+    "precio_salida": 2.252,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -3.84,
+    "rentabilidad_neta_pct": -5.84,
+    "resultado_neto_eur": -5.84,
+    "rentabilidad_7d_pct": 0.68,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 2.3888,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -5.84,
+        "neto_pct": -5.84,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -5658,7 +5722,7 @@
     "id": "AIR.PA-2026-09-01",
     "ticker": "AIR.PA",
     "nombre": "Airbus SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 197.24,
     "acciones": 0.506997,
@@ -5746,13 +5810,77 @@
         ]
       },
       "resumen_negocio": "Airbus SE, junto con sus filiales, se dedica al diseño, fabricación y entrega de productos, servicios y soluciones aeronáuticos y aeroespaciales en todo el mundo. Opera a través de tres segmentos: Airbus, Airbus Helicopters y Airbus Defence and Space."
+    },
+    "precio_salida": 192.16,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.58,
+    "rentabilidad_neta_pct": -4.58,
+    "resultado_neto_eur": -4.58,
+    "rentabilidad_7d_pct": -0.74,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 201.1848,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "VALMT.HE-2026-09-01",
     "ticker": "VALMT.HE",
     "nombre": "Valmet Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 28.68,
     "acciones": 3.48675,
@@ -5835,6 +5963,70 @@
         ]
       },
       "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
+    },
+    "precio_salida": 28.8,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.42,
+    "rentabilidad_neta_pct": -1.58,
+    "resultado_neto_eur": -1.58,
+    "rentabilidad_7d_pct": -1.6,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 29.2536,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.58,
+        "neto_pct": -1.58,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -6747,7 +6939,7 @@
     "id": "JMT.LS-2026-09-01",
     "ticker": "JMT.LS",
     "nombre": "Jerónimo Martins, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 18.04,
     "acciones": 5.543237,
@@ -6825,6 +7017,70 @@
         ]
       },
       "resumen_negocio": "Jerónimo Martins, SGPS, S.A. opera en el sector de la distribución alimentaria en Portugal, Polonia, Colombia, Eslovaquia e internacionalmente. La compañía opera a través de los segmentos Portugal Retail, Portugal Cash & Carry, Polonia Retail, Polonia Salud y Belleza y Colombia Retail."
+    },
+    "precio_salida": 18.06,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.11,
+    "rentabilidad_neta_pct": -1.89,
+    "resultado_neto_eur": -1.89,
+    "rentabilidad_7d_pct": -1.39,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 18.4008,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.89,
+        "neto_pct": -1.89,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -7424,7 +7680,7 @@
     "id": "URW.PA-2026-09-01",
     "ticker": "URW.PA",
     "nombre": "Unibail-Rodamco-Westfield SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-01",
     "precio_entrada": 96.92,
     "acciones": 1.031779,
@@ -7496,6 +7752,70 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) opera destinos vibrantes centrados en el comercio minorista en muchas de las mejores ciudades y áreas urbanas del mundo. Esta poderosa red atrae más de 900 millones de visitas de clientes al año, respalda el crecimiento de los principales minoristas y realiza una importante contribución social y económica a las comunidades locales."
+    },
+    "precio_salida": 91.44,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -5.65,
+    "rentabilidad_neta_pct": -7.65,
+    "resultado_neto_eur": -7.65,
+    "rentabilidad_7d_pct": -4.02,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 98.8584,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 10,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -7.65,
+        "neto_pct": -7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -10037,7 +10357,7 @@
     "id": "FCT.MI-2026-09-04",
     "ticker": "FCT.MI",
     "nombre": "Fincantieri S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-04",
     "precio_entrada": 12.215,
     "acciones": 8.186656,
@@ -10115,6 +10435,70 @@
         ]
       },
       "resumen_negocio": "Fincantieri S.p.A. opera en el sector de la construcción naval en todo el mundo. Opera a través de cuatro segmentos: Construcción Naval; Buques Offshore y Especializados; Submarino; y Equipos, Sistemas e Infraestructura."
+    },
+    "precio_salida": 11.4723,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 17,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": 1.06,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.4593,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 17,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.77,
+        "neto_pct": -3.77,
+        "sesiones": 14,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 15,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -10215,7 +10599,7 @@
     "id": "DG.PA-2026-09-04",
     "ticker": "DG.PA",
     "nombre": "Vinci SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-04",
     "precio_entrada": 113.95,
     "acciones": 0.877578,
@@ -10303,6 +10687,34 @@
         ]
       },
       "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments."
+    },
+    "precio_salida": 107.0218,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 17,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.94,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 116.229,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 17,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 17,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -11741,7 +12153,7 @@
     "id": "ENGI.PA-2026-09-10",
     "ticker": "ENGI.PA",
     "nombre": "Engie SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-10",
     "precio_entrada": 24.25,
     "acciones": 4.123711,
@@ -11824,6 +12236,34 @@
         ]
       },
       "resumen_negocio": "Engie SA engages in renewables and decentralized and low-carbon energy networks in France, Europe, North America, Asia, the Middle East, Oceania, South America, Africa, and internationally."
+    },
+    "precio_salida": 22.7756,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 13,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.31,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.735,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 13,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 13,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -14515,7 +14955,7 @@
     "id": "KESKOB.HE-2026-09-21",
     "ticker": "KESKOB.HE",
     "nombre": "Kesko Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 22.42,
     "acciones": 4.460303,
@@ -14587,6 +15027,28 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Kesko Oyj engages in the chain operations in Finland, Sweden, Norway, Estonia, Latvia, Lithuania, Denmark, and Poland. The company operates through Grocery Trade, Building and Technical Trade, and Car Trade divisions."
+    },
+    "precio_salida": 23.0926,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 22.8684,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -14832,7 +15294,7 @@
     "id": "INW.MI-2026-09-22",
     "ticker": "INW.MI",
     "nombre": "Infrastrutture Wireless Italiane S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-22",
     "precio_entrada": 6.63,
     "acciones": 15.082956,
@@ -14904,13 +15366,41 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Infrastrutture Wireless Italiane S.p.A. operates in the electronic communications infrastructure sector in Italy. The company builds and manages digital and shared infrastructure elements, that hosts logic, the radio equipment of mobile, fixed wireless access (FWA), and IoT markets."
+    },
+    "precio_salida": 6.2269,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 6.7626,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
     "id": "AMP.MI-2026-09-22",
     "ticker": "AMP.MI",
     "nombre": "Amplifon S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-22",
     "precio_entrada": 11.725,
     "acciones": 8.528785,
@@ -14982,6 +15472,28 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 12.0767,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 11.9595,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -17136,6 +17648,94 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Apollo Global Management, Inc. is a private equity firm specializing in investments in credit, private equity, infrastructure, secondaries and real estate markets. The firm prefers to invest in private and public markets."
+    }
+  },
+  {
+    "id": "EGL.LS-2026-09-29",
+    "ticker": "EGL.LS",
+    "nombre": "Mota-Engil, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-29",
+    "precio_entrada": 5.22,
+    "acciones": 19.157088,
+    "invertido": 100.0,
+    "posicion_ranking": 8,
+    "tramo": "1-10",
+    "score": 49.9,
+    "potencial_pct": 28.4,
+    "tarjeta": {
+      "ticker": "EGL.LS",
+      "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+      "isin": "SG1O81915033",
+      "sector": "Industrials",
+      "score": 49.9,
+      "version_scoring": 33,
+      "precio_actual": 5.22,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 3
+      },
+      "precio_objetivo_medio": 6.7,
+      "dispersion_pct": 28.1,
+      "momentum_30d_pct": 9.9,
+      "momentum_5d_pct": 1.5,
+      "fuerza_relativa_pct": 10.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 65.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.77,
+      "sma200": 4.66,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 8592897.065138578,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 2.04,
+      "sesiones_hasta_stop": 37,
+      "distancia_max_52s_pct": -3.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Mota-Engil Wins Deal to Operate US-Backed Congo Copper Railway - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Acciones Mota-Engil, SGPS, S.A. - Cotizacion EGL Euronext Lisbonne - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Acciones Mota-Engil, SGPS, S.A. - Cotizacion EGL Euronext Lisbonne - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
     }
   }
 ]
