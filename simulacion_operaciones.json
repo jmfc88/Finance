@@ -17742,7 +17742,7 @@
     "id": "FCT.MI-2026-09-29",
     "ticker": "FCT.MI",
     "nombre": "Fincantieri S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 12.285,
     "acciones": 8.140008,
@@ -17830,6 +17830,70 @@
         ]
       },
       "resumen_negocio": "Fincantieri S.p.A. operates in the shipbuilding industry worldwide. It operates through four segments: Shipbuilding; Offshore and Specialized Vessels; Underwater; and Equipment, Systems, and Infrastructure."
+    },
+    "precio_salida": 11.5381,
+    "fecha_salida": "2026-09-29",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.5307,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -18316,6 +18380,152 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space."
+    }
+  },
+  {
+    "id": "GLE.PA-2026-09-29",
+    "ticker": "GLE.PA",
+    "nombre": "Société Générale Société anonyme",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-29",
+    "precio_entrada": 70.63,
+    "acciones": 1.415829,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 43.8,
+    "potencial_pct": 27.4,
+    "tarjeta": {
+      "ticker": "GLE.PA",
+      "nombre_empresa": "Société Générale Société anonyme",
+      "isin": "CA83360C1032",
+      "sector": "Financial Services",
+      "score": 43.8,
+      "version_scoring": 33,
+      "precio_actual": 70.63,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 90.015,
+      "dispersion_pct": 33.8,
+      "momentum_30d_pct": -2.8,
+      "momentum_5d_pct": -2.2,
+      "fuerza_relativa_pct": -1.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 40.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 76.55,
+      "sma200": 71.6,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 135552509.18368912,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.73,
+      "sesiones_hasta_stop": 52,
+      "distancia_max_52s_pct": -16.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Société Générale Société anonyme (GLE.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Groupe BPCE completó la adquisición de Societe Generale Equipment Finance SA a Société Générale Société anonyme (ENXTPA:GLE). - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Perfil y datos de empresa de BRD - Groupe Société Générale S.A. (BRD.RO) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    }
+  },
+  {
+    "id": "URW.PA-2026-09-29",
+    "ticker": "URW.PA",
+    "nombre": "Unibail-Rodamco-Westfield SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-29",
+    "precio_entrada": 90.66,
+    "acciones": 1.103022,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 42.4,
+    "potencial_pct": 27.0,
+    "tarjeta": {
+      "ticker": "URW.PA",
+      "nombre_empresa": "Unibail-Rodamco-Westfield SE",
+      "isin": null,
+      "sector": "Real Estate",
+      "score": 42.4,
+      "version_scoring": 33,
+      "precio_actual": 90.66,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 115.14375,
+      "dispersion_pct": 35.0,
+      "momentum_30d_pct": -7.0,
+      "momentum_5d_pct": -4.5,
+      "fuerza_relativa_pct": -5.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 35.2,
+      "tendencia_tecnica": "bajista",
+      "sma50": 99.44,
+      "sma200": 96.48,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25806639.31597519,
+      "volumen_relativo": 0.78,
+      "volatilidad_diaria_pct": 0.99,
+      "sesiones_hasta_stop": 160,
+      "distancia_max_52s_pct": -14.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Unibail-Rodamco-Westfield SE (URW.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Splau cambia de piel: renueva 11.000 metros cuadrados para convertirse también en un gigante de la moda - lavanguardia.com",
+            "fuente": "lavanguardia.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Datos y precios históricos de acciones de Unibail-Rodamco-Westfield SE (UBLR.F) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) operates vibrant retail-anchored destinations in many of the world's best cities and urban areas. This powerful network attracts over 900 million customer visits annually, supports the growth of major retailers, and makes a significant social and economic contribution to local communities."
     }
   }
 ]
