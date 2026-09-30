@@ -15027,7 +15027,7 @@
     "id": "MT.AS-2026-09-21",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 63.12,
     "acciones": 1.584284,
@@ -15094,6 +15094,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
+    },
+    "precio_salida": 59.2823,
+    "fecha_salida": "2026-09-30",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -5.96,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 64.3824,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -16034,7 +16062,7 @@
     "id": "IDR.MC-2026-09-23",
     "ticker": "IDR.MC",
     "nombre": "Indra Sistemas, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 61.62,
     "acciones": 1.62285,
@@ -16122,6 +16150,34 @@
         ]
       },
       "resumen_negocio": "Indra Sistemas, S.A., together with its subsidiaries, provides technology services for the defense, aerospace, and advanced digital technologies sectors in Spain, Brazil, the rest of America, Italy, the rest of Europe, Asia, the Middle East, and Africa."
+    },
+    "precio_salida": 57.8735,
+    "fecha_salida": "2026-09-30",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 62.8524,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -17097,7 +17153,7 @@
     "id": "STMPA.PA-2026-09-24",
     "ticker": "STMPA.PA",
     "nombre": "STMicroelectronics N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 45.23,
     "acciones": 2.210922,
@@ -17164,6 +17220,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 46.5869,
+    "fecha_salida": "2026-09-30",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 46.1346,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -19133,6 +19211,351 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments."
+    }
+  },
+  {
+    "id": "AI.PA-2026-09-30",
+    "ticker": "AI.PA",
+    "nombre": "L'Air Liquide S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-30",
+    "precio_entrada": 170.28,
+    "acciones": 0.587268,
+    "invertido": 100.0,
+    "posicion_ranking": 6,
+    "tramo": "1-10",
+    "score": 51.6,
+    "potencial_pct": 15.3,
+    "tarjeta": {
+      "ticker": "AI.PA",
+      "nombre_empresa": "L'Air Liquide S.A.",
+      "isin": "FR0000053951",
+      "sector": "Basic Materials",
+      "score": 51.6,
+      "version_scoring": 33,
+      "precio_actual": 170.28,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 196.325,
+      "dispersion_pct": 33.3,
+      "momentum_30d_pct": -1.7,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": -0.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 169.61,
+      "sma200": 160.46,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 98532624.62649536,
+      "volumen_relativo": 0.69,
+      "volatilidad_diaria_pct": 1.01,
+      "sesiones_hasta_stop": 153,
+      "distancia_max_52s_pct": -5.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": -2,
+        "titulares": [
+          {
+            "titulo": "¿Por qué cae hoy la acción de Air Liquide? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Here’s What the Market is Missing About L’Air Liquide’s Hydrogen Upside - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Air Liquide invierte más de 170 millones EUR para un fabricante de chips en Japón - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de L'Air Liquide S.A. (AI.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    }
+  },
+  {
+    "id": "ABI.BR-2026-09-30",
+    "ticker": "ABI.BR",
+    "nombre": "Anheuser-Busch InBev SA/NV",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-30",
+    "precio_entrada": 65.56,
+    "acciones": 1.52532,
+    "invertido": 100.0,
+    "posicion_ranking": 18,
+    "tramo": "11-20",
+    "score": 48.0,
+    "potencial_pct": 26.8,
+    "tarjeta": {
+      "ticker": "ABI.BR",
+      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 48.0,
+      "version_scoring": 33,
+      "precio_actual": 65.56,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 83.157166,
+      "dispersion_pct": 43.3,
+      "momentum_30d_pct": -4.2,
+      "momentum_5d_pct": -2.8,
+      "fuerza_relativa_pct": -2.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 41.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 69.24,
+      "sma200": 65.55,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 107243777.7325058,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 1.31,
+      "sesiones_hasta_stop": 91,
+      "distancia_max_52s_pct": -12.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "AlphaValue/Baader Europe Upgrades AB InBev to Buy Rating - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV : Deutsche Bank mantiene una recomendación de compra. - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV : JP Morgan mantiene su recomendación de compra - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Anheuser-Busch InBev SA/NV (ABI.BR) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Anheuser-Busch InBev SA/NV (BUD) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Anheuser-Busch InBev Unveils Tech to Mitigate Agriculture’s Impact on the Environment - brewbound.com",
+            "fuente": "brewbound.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    }
+  },
+  {
+    "id": "PUB.PA-2026-09-30",
+    "ticker": "PUB.PA",
+    "nombre": "Publicis Groupe S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-30",
+    "precio_entrada": 94.4,
+    "acciones": 1.059322,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 46.8,
+    "potencial_pct": 19.7,
+    "tarjeta": {
+      "ticker": "PUB.PA",
+      "nombre_empresa": "Publicis Groupe S.A.",
+      "isin": null,
+      "sector": "Communication Services",
+      "score": 46.8,
+      "version_scoring": 33,
+      "precio_actual": 94.4,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 113.0,
+      "dispersion_pct": 47.8,
+      "momentum_30d_pct": -5.0,
+      "momentum_5d_pct": -3.2,
+      "fuerza_relativa_pct": -3.6,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 98.07,
+      "sma200": 83.24,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 49022697.63800812,
+      "volumen_relativo": 0.68,
+      "volatilidad_diaria_pct": 1.81,
+      "sesiones_hasta_stop": 47,
+      "distancia_max_52s_pct": -9.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Publicis eleva sus previsiones de crecimiento para 2026 tras sólidos resultados en EE.UU. y Europa - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Publicis Groupe SA (PGPEF) (H1 2026) Earnings Call Highlights: Strong Organic Growth Amidst ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Publicis Groupe fija el precio de una emisión de bonos por 500 millones de euros con vencimiento en 2030 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Publicis eleva sus previsiones de crecimiento para 2026 tras sólidos resultados en EE.UU. y Europa - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Acciones Publicis Groupe S.A. - Cotizacion PUB Euronext Paris - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Publicis Groupe S.A. (PUB.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Publicis Groupe S.A., together with its subsidiaries, provides marketing, communications, and digital business transformation services in North America, Europe, the Asia Pacific, Latin America, Africa, and the Middle East, and internationally."
+    }
+  },
+  {
+    "id": "VALMT.HE-2026-09-30",
+    "ticker": "VALMT.HE",
+    "nombre": "Valmet Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-09-30",
+    "precio_entrada": 28.16,
+    "acciones": 3.551136,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 44.2,
+    "potencial_pct": 10.7,
+    "tarjeta": {
+      "ticker": "VALMT.HE",
+      "nombre_empresa": "Valmet Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.2,
+      "version_scoring": 33,
+      "precio_actual": 28.16,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 0.0,
+        "pct_vender": 0.0,
+        "total_analistas": 6
+      },
+      "precio_objetivo_medio": 31.18333,
+      "dispersion_pct": 33.7,
+      "momentum_30d_pct": 1.0,
+      "momentum_5d_pct": 1.3,
+      "fuerza_relativa_pct": 2.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 59.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 27.05,
+      "sma200": 24.96,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 7636157.94560051,
+      "volumen_relativo": 0.77,
+      "volatilidad_diaria_pct": 0.92,
+      "sesiones_hasta_stop": 182,
+      "distancia_max_52s_pct": -1.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "Valmet sube a su nivel más alto en casi cinco meses tras superar las previsiones del segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Nordea reitera su recomendación de compra para Valmet y eleva el precio objetivo a 35 euros - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Valmet se adjudica el contrato para una planta de condensación de gases de combustión - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
     }
   }
 ]
