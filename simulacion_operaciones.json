@@ -10065,7 +10065,7 @@
     "id": "CS.PA-2026-09-03",
     "ticker": "CS.PA",
     "nombre": "AXA SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 44.21,
     "acciones": 2.261932,
@@ -10143,13 +10143,77 @@
         ]
       },
       "resumen_negocio": "AXA SA, a través de sus filiales, ofrece seguros, gestión de activos y servicios bancarios en todo el mundo. La compañía opera en los segmentos de Francia, Europa, AXA XL, Asia, África y EME-LATAM, y Transversal y otros."
+    },
+    "precio_salida": 42.09,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -4.8,
+    "rentabilidad_neta_pct": -6.8,
+    "resultado_neto_eur": -6.8,
+    "rentabilidad_7d_pct": -1.22,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 45.0942,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -6.8,
+        "neto_pct": -6.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "INGA.AS-2026-09-03",
     "ticker": "INGA.AS",
     "nombre": "ING Groep N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 31.75,
     "acciones": 3.149606,
@@ -10237,13 +10301,77 @@
         ]
       },
       "resumen_negocio": "ING Groep N.V. provides various banking products and services in the Netherlands, Belgium, Germany, rest of Europe, and internationally. The company operates through five segments: Retail Netherlands, Retail Belgium, Retail Germany, Retail Other, and Wholesale Banking."
+    },
+    "precio_salida": 30.73,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -3.21,
+    "rentabilidad_neta_pct": -5.21,
+    "resultado_neto_eur": -5.21,
+    "rentabilidad_7d_pct": 0.54,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 32.385,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "ENI.MI-2026-09-03",
     "ticker": "ENI.MI",
     "nombre": "Eni S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-03",
     "precio_entrada": 23.86,
     "acciones": 4.191115,
@@ -10331,6 +10459,70 @@
         ]
       },
       "resumen_negocio": "Eni S.p.A. operates as an integrated energy company in Italy, Other European Union, Rest of Europe, the United States, Asia, Africa, and internationally. The company engages in exploration, development, extracting, manufacturing, trading, and marketing crude oil and natural gas, oil-based fuels, chemical products, and gas-fired power, as well as energy products from renewable sources."
+    },
+    "precio_salida": 23.895,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.15,
+    "rentabilidad_neta_pct": -1.85,
+    "resultado_neto_eur": -1.85,
+    "rentabilidad_7d_pct": -0.51,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.3372,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.85,
+        "neto_pct": -1.85,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -11296,7 +11488,7 @@
     "id": "CTT.LS-2026-09-07",
     "ticker": "CTT.LS",
     "nombre": "CTT - Correios De Portugal, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-07",
     "precio_entrada": 6.49,
     "acciones": 15.40832,
@@ -11368,6 +11560,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "CTT - Correios De Portugal, S.A., together with its subsidiaries, engages in reference postal business in Portugal and internationally. The company operates through three segments: E-Commerce Solutions, Mail and Services, and Banco CTT."
+    },
+    "precio_salida": 6.0954,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 18,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -2.0,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 6.6198,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 18,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -14982,7 +15202,7 @@
     "id": "TTE.PA-2026-09-21",
     "ticker": "TTE.PA",
     "nombre": "TotalEnergies SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 79.32,
     "acciones": 1.260716,
@@ -15049,6 +15269,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
+    },
+    "precio_salida": 74.4973,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.56,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 80.9064,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -15357,7 +15605,7 @@
     "id": "SAN.MC-2026-09-21",
     "ticker": "SAN.MC",
     "nombre": "Banco Santander, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 12.752,
     "acciones": 7.841907,
@@ -15445,6 +15693,34 @@
         ]
       },
       "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments."
+    },
+    "precio_salida": 11.9767,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.32,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 13.007,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -16318,7 +16594,7 @@
     "id": "EXO.AS-2026-09-23",
     "ticker": "EXO.AS",
     "nombre": "Exor N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 72.6,
     "acciones": 1.37741,
@@ -16396,6 +16672,34 @@
         ]
       },
       "resumen_negocio": "Exor N.V. engages in the automotive, agriculture and construction, sports car, commercial vehicle, health technology, football and powertrain businesses in the Netherlands and internationally."
+    },
+    "precio_salida": 68.1859,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 74.052,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -16836,7 +17140,7 @@
     "id": "BESI.AS-2026-09-24",
     "ticker": "BESI.AS",
     "nombre": "BE Semiconductor Industries N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 186.8,
     "acciones": 0.535332,
@@ -16903,6 +17207,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BE Semiconductor Industries N.V. develops, manufactures, markets, sells, and services semiconductor assembly equipment for the semiconductor and electronics industries in the Netherlands, Switzerland, Austria, Singapore, Malaysia, and internationally."
+    },
+    "precio_salida": 192.404,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 190.536,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -17360,7 +17686,7 @@
     "id": "BNP.PA-2026-09-24",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 98.43,
     "acciones": 1.01595,
@@ -17427,6 +17753,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    },
+    "precio_salida": 92.4455,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 100.3986,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -19678,6 +20032,445 @@
         ]
       },
       "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    }
+  },
+  {
+    "id": "HUH1V.HE-2026-10-01",
+    "ticker": "HUH1V.HE",
+    "nombre": "Huhtamäki Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 27.72,
+    "acciones": 3.607504,
+    "invertido": 100.0,
+    "posicion_ranking": 11,
+    "tramo": "11-20",
+    "score": 46.4,
+    "potencial_pct": 27.2,
+    "tarjeta": {
+      "ticker": "HUH1V.HE",
+      "nombre_empresa": "Huhtamäki Oyj",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 46.4,
+      "version_scoring": 33,
+      "precio_actual": 27.72,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 10
+      },
+      "precio_objetivo_medio": 35.25,
+      "dispersion_pct": 18.8,
+      "momentum_30d_pct": -11.3,
+      "momentum_5d_pct": -6.0,
+      "fuerza_relativa_pct": -9.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 22.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 30.47,
+      "sma200": 28.28,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 5506735.020442009,
+      "volumen_relativo": 1.22,
+      "volatilidad_diaria_pct": 1.27,
+      "sesiones_hasta_stop": 96,
+      "distancia_max_52s_pct": -12.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Deutsche Bank rebaja Huhtamaki a \"mantener\" por débil demanda - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Las acciones de Huhtamaki suben con fuerza tras superar las expectativas del segundo trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Jefferies eleva el precio objetivo de Huhtamäki a 32,25 EUR (desde 31) y reitera mantener - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Huhtamäki Oyj (HUH1V.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Huhtamäki Oyj provides packaging solutions in the United States, Germany, the United Kingdom, India, Turkey, Australia, Thailand, Poland, South Africa, Spain, Finland, and internationally."
+    }
+  },
+  {
+    "id": "AMS.MC-2026-10-01",
+    "ticker": "AMS.MC",
+    "nombre": "Amadeus IT Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 52.8,
+    "acciones": 1.893939,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 44.3,
+    "potencial_pct": 30.8,
+    "tarjeta": {
+      "ticker": "AMS.MC",
+      "nombre_empresa": "Amadeus IT Group, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 44.3,
+      "version_scoring": 33,
+      "precio_actual": 52.8,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.8,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 69.06409,
+      "dispersion_pct": 60.8,
+      "momentum_30d_pct": -6.5,
+      "momentum_5d_pct": -1.9,
+      "fuerza_relativa_pct": -4.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 42.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 55.5,
+      "sma200": 52.9,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 33365932.73616028,
+      "volumen_relativo": 0.94,
+      "volatilidad_diaria_pct": 1.67,
+      "sesiones_hasta_stop": 55,
+      "distancia_max_52s_pct": -16.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-AMADEUS IT GROUP, S.A. La sociedad remite la información financiera del primer semestre de 2026 -[...] - bolsamania.com",
+            "fuente": "bolsamania.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus IT Group SA (AMADF) (H1 2026) Earnings Call Highlights: Resilient Growth Amid Middle ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus supera las previsiones de beneficio, pero recorta sus objetivos de ingresos para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Amadeus mantiene previsiones y lanza recompra tras ganar 356,9 millones - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+    }
+  },
+  {
+    "id": "CCL-2026-10-01",
+    "ticker": "CCL",
+    "nombre": "Carnival Corporation Ltd.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 24.54,
+    "acciones": 4.07498,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 43.6,
+    "potencial_pct": 38.1,
+    "tarjeta": {
+      "ticker": "CCL",
+      "nombre_empresa": "Carnival Corporation Ltd.",
+      "isin": "BMG2004J1036",
+      "sector": "Consumer Cyclical",
+      "score": 43.6,
+      "version_scoring": 33,
+      "precio_actual": 24.54,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.7,
+        "pct_vender": 0.0,
+        "total_analistas": 29
+      },
+      "precio_objetivo_medio": 33.89231,
+      "dispersion_pct": 49.8,
+      "momentum_30d_pct": 2.7,
+      "momentum_5d_pct": 12.6,
+      "fuerza_relativa_pct": 3.2,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 65.3,
+      "tendencia_tecnica": "bajista",
+      "sma50": 25.25,
+      "sma200": 27.27,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 479698143.9409256,
+      "volumen_relativo": 1.48,
+      "volatilidad_diaria_pct": 3.41,
+      "sesiones_hasta_stop": 13,
+      "distancia_max_52s_pct": -26.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "Carnival Stock Surges as 2027 Bookings Hit Records - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Cruise stocks rally as Carnival beats expectations, sees record booking for 2027 (CCL:NYSE) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Carnival Corporation Ltd. : Wells Fargo Securities mantiene una recomendación de compra. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Carnival eleva su previsión de beneficio anual ante el aumento de la demanda - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Carnival Corp supera las previsiones de ingresos del tercer trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "How Carnival’s Profit Rebound, Buyback and Fuel Cost Concerns At Carnival Corporation (CCL) Has Changed Its Investment Story - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    }
+  },
+  {
+    "id": "MRL.MC-2026-10-01",
+    "ticker": "MRL.MC",
+    "nombre": "MERLIN Properties SOCIMI, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 11.9,
+    "acciones": 8.403361,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 43.5,
+    "potencial_pct": 44.9,
+    "tarjeta": {
+      "ticker": "MRL.MC",
+      "nombre_empresa": "MERLIN Properties SOCIMI, S.A.",
+      "isin": null,
+      "sector": "Real Estate",
+      "score": 43.5,
+      "version_scoring": 33,
+      "precio_actual": 11.9,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.0,
+        "pct_strong_buy": 23.8,
+        "pct_vender": 0.0,
+        "total_analistas": 21
+      },
+      "precio_objetivo_medio": 17.24667,
+      "dispersion_pct": 53.3,
+      "momentum_30d_pct": -9.9,
+      "momentum_5d_pct": -2.0,
+      "fuerza_relativa_pct": -7.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 21.0,
+      "tendencia_tecnica": "bajista",
+      "sma50": 13.61,
+      "sma200": 14.01,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 14582575.0842309,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 1.69,
+      "sesiones_hasta_stop": 54,
+      "distancia_max_52s_pct": -24.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-MERLIN PROPERTIES, SOCIMI, S.A. MERLIN - Nombramiento por cooptación - bolsamania.com",
+            "fuente": "bolsamania.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Merlin Properties SOCIMI SA (MRPRF) (H1 2026) Earnings Call Highlights: Record Data Center ... - Yahoo Finance Singapore",
+            "fuente": "Yahoo Finance Singapore",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Is MERLIN Properties SOCIMI (BME:MRL) A Bargain Following Its Recent Share Price Slide? - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "MERLIN se anota un beneficio operativo de 180 millones y eleva su previsión para el año - Estrategias de Inversión",
+            "fuente": "Estrategias de Inversión",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Merlin gana 180 millones hasta junio, un 8% más, y eleva previsiones para 2026 - El Español",
+            "fuente": "El Español",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Merlin: Morgan Stanley eleva su valoración tras las cuentas semestrales - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "MERLIN Properties SOCIMI, S.A. is one of the largest real estate and infrastructure companies listed on the Spanish Stock Exchange. It specializes in the development, acquisition and management of commercial property in the Iberian Peninsula, mainly investing in offices, shopping centers, logistics facilities and data centers within the Core and Core Plus segments."
+    }
+  },
+  {
+    "id": "SHELL.AS-2026-10-01",
+    "ticker": "SHELL.AS",
+    "nombre": "Shell plc",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 41.67,
+    "acciones": 2.399808,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 43.4,
+    "potencial_pct": 6.3,
+    "tarjeta": {
+      "ticker": "SHELL.AS",
+      "nombre_empresa": "Shell plc",
+      "isin": "PLCTHQM00018",
+      "sector": "Energy",
+      "score": 43.4,
+      "version_scoring": 33,
+      "precio_actual": 41.67,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 0.0,
+        "pct_vender": 0.0,
+        "total_analistas": 7
+      },
+      "precio_objetivo_medio": 44.301746,
+      "dispersion_pct": 40.4,
+      "momentum_30d_pct": 3.6,
+      "momentum_5d_pct": -1.8,
+      "fuerza_relativa_pct": 5.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 51.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 40.04,
+      "sma200": 36.17,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 190787696.5416832,
+      "volumen_relativo": 0.81,
+      "volatilidad_diaria_pct": 1.17,
+      "sesiones_hasta_stop": 115,
+      "distancia_max_52s_pct": -2.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Shell dispara beneficios impulsada por la guerra en Irán y la volatilidad del crudo - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Shell PLC-ADR (NYSE:SHEL) Clears the Minervini Trend Template and High Growth Momentum Screen - ChartMill",
+            "fuente": "ChartMill",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Shell plc : El UBS se mantiene neutral - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Shell plc operates as an energy and petrochemical company in Europe, Asia, Oceania, Africa, the United States, and other parts of the Americas. It operates through the following segments: Integrated Gas, Upstream, Marketing, Chemicals and Products, and Renewables and Energy Solutions."
     }
   }
 ]
