@@ -13744,7 +13744,7 @@
     "id": "IBS.LS-2026-09-14",
     "ticker": "IBS.LS",
     "nombre": "Ibersol, S.G.P.S., S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-14",
     "precio_entrada": 10.42,
     "acciones": 9.596929,
@@ -13815,6 +13815,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Ibersol, S.G.P.S., S.A., through its subsidiaries, operates a network of restaurants in Portugal, Spain, and Angola. The company operates through Restaurants; Counters; Concessions, Travel, and Catering; and Other segments."
+    },
+    "precio_salida": 9.7865,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 13,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.13,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 10.6284,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 13,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 13,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -19286,7 +19314,7 @@
     "id": "GLE.PA-2026-09-29",
     "ticker": "GLE.PA",
     "nombre": "Société Générale Société anonyme",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 70.63,
     "acciones": 1.415829,
@@ -19353,6 +19381,34 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    },
+    "precio_salida": 66.3357,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 2,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 72.0426,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 2 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -20471,6 +20527,408 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Shell plc operates as an energy and petrochemical company in Europe, Asia, Oceania, Africa, the United States, and other parts of the Americas. It operates through the following segments: Integrated Gas, Upstream, Marketing, Chemicals and Products, and Renewables and Energy Solutions."
+    }
+  },
+  {
+    "id": "SAN.MC-2026-10-01",
+    "ticker": "SAN.MC",
+    "nombre": "Banco Santander, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 11.85,
+    "acciones": 8.438819,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 49.9,
+    "potencial_pct": 14.8,
+    "tarjeta": {
+      "ticker": "SAN.MC",
+      "nombre_empresa": "Banco Santander, S.A.",
+      "isin": "CA05973U1057",
+      "sector": "Financial Services",
+      "score": 49.9,
+      "version_scoring": 33,
+      "precio_actual": 11.85,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.5,
+        "pct_strong_buy": 30.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 13.6045,
+      "dispersion_pct": 35.4,
+      "momentum_30d_pct": -6.8,
+      "momentum_5d_pct": -5.4,
+      "fuerza_relativa_pct": -4.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 25.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 12.61,
+      "sma200": 11.07,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 220795589.13481236,
+      "volumen_relativo": 0.93,
+      "volatilidad_diaria_pct": 1.49,
+      "sesiones_hasta_stop": 70,
+      "distancia_max_52s_pct": -8.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Banco Santander SA (SAN) (Q2 2026) Earnings Call Highlights: Record Profit and Robust Customer ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "RBC ajusta el precio objetivo y las estimaciones para Banco Santander antes de la publicación de los resultados del tercer trimestre; mantiene la recomendación de \"rendimiento superior\". - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "RBC ajusta el precio objetivo y las estimaciones de Banco Santander antes de los resultados del tercer trimestre y mantiene su recomendación de sobreponderar - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Un Banco Santander en máximos históricos en bolsa hace añicos las previsiones de los analistas - Valencia Plaza",
+            "fuente": "Valencia Plaza",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "RBC actualiza sus previsiones para Banco Santander antes de la publicación de los resultados del segundo trimestre; mantiene la recomendación de \"rendimiento superior\". - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "BofA revisa el precio objetivo y las previsiones de Banco Santander ante la expectativa de unos resultados \"sólidos\" en el segundo trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments."
+    }
+  },
+  {
+    "id": "EXO.AS-2026-10-01",
+    "ticker": "EXO.AS",
+    "nombre": "Exor N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 67.95,
+    "acciones": 1.47167,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 49.1,
+    "potencial_pct": 56.0,
+    "tarjeta": {
+      "ticker": "EXO.AS",
+      "nombre_empresa": "Exor N.V.",
+      "isin": "CH1159308571",
+      "sector": "Financial Services",
+      "score": 49.1,
+      "version_scoring": 33,
+      "precio_actual": 67.95,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 5.0,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 106.0,
+      "dispersion_pct": 31.9,
+      "momentum_30d_pct": -6.8,
+      "momentum_5d_pct": -3.9,
+      "fuerza_relativa_pct": -4.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.5,
+      "tendencia_tecnica": "bajista",
+      "sma50": 70.86,
+      "sma200": 69.19,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 11949495.605194092,
+      "volumen_relativo": 1.0,
+      "volatilidad_diaria_pct": 1.75,
+      "sesiones_hasta_stop": 50,
+      "distancia_max_52s_pct": -9.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Las acciones de la Juventus se disparan tras el rechazo de Exor a la oferta de Tether - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Presentación de Exor 2025: el NAV cae un 8% por el peso de las participaciones automotrices - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Exor N.V. (ENXTAM:EXO) pone en marcha un plan de recompra de acciones por el 10% de su capital social emitido, al amparo de la autorización aprobada el 20 de mayo de 2026. - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Exor N.V. : Un legado en el Piamonte - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Exor N.V. engages in the automotive, agriculture and construction, sports car, commercial vehicle, health technology, football and powertrain businesses in the Netherlands and internationally."
+    }
+  },
+  {
+    "id": "EN.PA-2026-10-01",
+    "ticker": "EN.PA",
+    "nombre": "Bouygues SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 40.79,
+    "acciones": 2.451581,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 44.2,
+    "potencial_pct": 47.4,
+    "tarjeta": {
+      "ticker": "EN.PA",
+      "nombre_empresa": "Bouygues SA",
+      "isin": "FR001400UJU6",
+      "sector": "Industrials",
+      "score": 44.2,
+      "version_scoring": 33,
+      "precio_actual": 40.79,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 33.3,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 60.11111,
+      "dispersion_pct": 44.2,
+      "momentum_30d_pct": -7.0,
+      "momentum_5d_pct": -5.1,
+      "fuerza_relativa_pct": -4.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 24.0,
+      "tendencia_tecnica": "bajista",
+      "sma50": 45.53,
+      "sma200": 47.2,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 26066161.34739685,
+      "volumen_relativo": 0.86,
+      "volatilidad_diaria_pct": 1.25,
+      "sesiones_hasta_stop": 100,
+      "distancia_max_52s_pct": -23.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Bouygues SA : Obtiene una recomendación de compra de Berenberg Bank - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Berenberg inicia la cobertura de Bouygues con recomendación de compra tras la adquisición de SFR - es.marketscreener.com",
+            "fuente": "es.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "“Generar formas es similar a la música – intentas componer música y de repente surge la melodía”: En conversación con Kevin Roche - ArchDaily",
+            "fuente": "ArchDaily",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Bouygues SA, together with its subsidiaries, operates in the construction, energies and services, telecom, and media sectors in France and internationally. It operates through Colas, Bouygues Construction, Bouygues Immobilier, Equans, Bouygues Telecom, TF1, and Other segments."
+    }
+  },
+  {
+    "id": "AC.PA-2026-10-01",
+    "ticker": "AC.PA",
+    "nombre": "Accor SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 44.18,
+    "acciones": 2.263468,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 42.6,
+    "potencial_pct": 24.8,
+    "tarjeta": {
+      "ticker": "AC.PA",
+      "nombre_empresa": "Accor SA",
+      "isin": "FR0014003PZ3",
+      "sector": "Consumer Cyclical",
+      "score": 42.6,
+      "version_scoring": 33,
+      "precio_actual": 44.18,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 17.6,
+        "pct_vender": 5.9,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 55.12353,
+      "dispersion_pct": 70.7,
+      "momentum_30d_pct": -4.9,
+      "momentum_5d_pct": -2.3,
+      "fuerza_relativa_pct": -2.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 36.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 46.19,
+      "sma200": 45.27,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25884055.963409424,
+      "volumen_relativo": 0.83,
+      "volatilidad_diaria_pct": 1.44,
+      "sesiones_hasta_stop": 75,
+      "distancia_max_52s_pct": -14.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Accor SA (ACCYY) (H1 2026) Earnings Call Highlights: Resilient Growth Amid Geopolitical Headwinds - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Accor says Middle East conflict hit Q2 room revenue, Dubai returns to growth - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Accor gana 449 millones, casi 80 mil euros por hotel - preferente.com",
+            "fuente": "preferente.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Accor SA operates a chain of hotels worldwide. The company operates through Premium, Midscale and Economy; and Luxury & Lifestyle segments. Its Premium, Midscale and Economy segment includes the Ibis, Novotel, Mercure, Swissôtel, Mövenpick, and Pullman brands operating in Europe and North Africa, the Middle East, Africa, the Asia-Pacific, the Americas, and China."
+    }
+  },
+  {
+    "id": "TTE.PA-2026-10-01",
+    "ticker": "TTE.PA",
+    "nombre": "TotalEnergies SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-01",
+    "precio_entrada": 74.75,
+    "acciones": 1.337793,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 42.3,
+    "potencial_pct": 17.8,
+    "tarjeta": {
+      "ticker": "TTE.PA",
+      "nombre_empresa": "TotalEnergies SE",
+      "isin": "NETTOTALOIL1",
+      "sector": "Energy",
+      "score": 42.3,
+      "version_scoring": 33,
+      "precio_actual": 74.75,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 6.2,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 88.02497,
+      "dispersion_pct": 33.0,
+      "momentum_30d_pct": -3.4,
+      "momentum_5d_pct": -6.7,
+      "fuerza_relativa_pct": -0.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 76.08,
+      "sma200": 69.88,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 270762800.7588272,
+      "volumen_relativo": 0.99,
+      "volatilidad_diaria_pct": 1.32,
+      "sesiones_hasta_stop": 90,
+      "distancia_max_52s_pct": -6.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "TotalEnergies Lifts Payout as Rising Oil Prices Boost Profit - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "La francesa TotalEnergies se compromete a elevar en más de un 5% anual su dividendo hasta 2030 - El Español",
+            "fuente": "El Español",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "TotalEnergies invertirá hasta 17.000 millones al año y refuerza su apuesta eléctrica en España - eleconomista.es",
+            "fuente": "eleconomista.es",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
     }
   }
 ]
