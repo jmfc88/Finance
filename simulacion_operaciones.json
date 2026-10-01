@@ -10675,7 +10675,7 @@
     "id": "GALP.LS-2026-09-04",
     "ticker": "GALP.LS",
     "nombre": "Galp Energia, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-04",
     "precio_entrada": 20.52,
     "acciones": 4.873294,
@@ -10763,6 +10763,34 @@
         ]
       },
       "resumen_negocio": "Galp Energia, SGPS, S.A. opera como operador energético integrado en Portugal e internacionalmente. La empresa opera a través de cuatro segmentos: Upstream, Industrial y Midstream, Comercial y Renovables."
+    },
+    "precio_salida": 22.2775,
+    "fecha_salida": "2026-10-01",
+    "sesiones": 18,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 8.56,
+    "rentabilidad_neta_pct": 6.56,
+    "resultado_neto_eur": 6.56,
+    "rentabilidad_7d_pct": 7.07,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 7,
+    "precio_equilibrio": 20.9304,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 6.56 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 6.56,
+        "neto_pct": 6.56,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.23,
+        "neto_pct": 2.23,
+        "sesiones": 12,
+        "motivo": "trailing"
+      }
     }
   },
   {
