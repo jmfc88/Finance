@@ -11594,7 +11594,7 @@
     "id": "LDO.MI-2026-09-07",
     "ticker": "LDO.MI",
     "nombre": "Leonardo S.p.a.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-07",
     "precio_entrada": 50.46,
     "acciones": 1.981768,
@@ -11682,6 +11682,34 @@
         ]
       },
       "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    },
+    "precio_salida": 47.392,
+    "fecha_salida": "2026-10-02",
+    "sesiones": 19,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -0.08,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 51.4692,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 19,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 18,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -21208,6 +21236,366 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    }
+  },
+  {
+    "id": "FBK.MI-2026-10-02",
+    "ticker": "FBK.MI",
+    "nombre": "FinecoBank Banca Fineco S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-02",
+    "precio_entrada": 21.44,
+    "acciones": 4.664179,
+    "invertido": 100.0,
+    "posicion_ranking": 6,
+    "tramo": "1-10",
+    "score": 53.1,
+    "potencial_pct": 27.5,
+    "tarjeta": {
+      "ticker": "FBK.MI",
+      "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 53.1,
+      "version_scoring": 33,
+      "precio_actual": 21.44,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 27.33125,
+      "dispersion_pct": 23.9,
+      "momentum_30d_pct": -8.5,
+      "momentum_5d_pct": -1.9,
+      "fuerza_relativa_pct": -6.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 34.7,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.36,
+      "sma200": 21.44,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 34590417.670885086,
+      "volumen_relativo": 1.31,
+      "volatilidad_diaria_pct": 1.65,
+      "sesiones_hasta_stop": 57,
+      "distancia_max_52s_pct": -13.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Earnings call transcript: FinecoBank posts strong H1 2026 growth, stock edges up - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Italy's Fineco exceeds quarterly profit, revenue forecasts - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Perfil y datos de empresa de FinecoBank Banca Fineco S.p.A. (FBK.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de FinecoBank Banca Fineco S.p.A. (FBK.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    }
+  },
+  {
+    "id": "EGL.LS-2026-10-02",
+    "ticker": "EGL.LS",
+    "nombre": "Mota-Engil, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-02",
+    "precio_entrada": 5.055,
+    "acciones": 19.782394,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 49.1,
+    "potencial_pct": 32.5,
+    "tarjeta": {
+      "ticker": "EGL.LS",
+      "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+      "isin": "SG1O81915033",
+      "sector": "Industrials",
+      "score": 49.1,
+      "version_scoring": 33,
+      "precio_actual": 5.055,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 3
+      },
+      "precio_objetivo_medio": 6.7,
+      "dispersion_pct": 28.1,
+      "momentum_30d_pct": 5.9,
+      "momentum_5d_pct": -4.3,
+      "fuerza_relativa_pct": 7.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.79,
+      "sma200": 4.67,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 9292300.990056992,
+      "volumen_relativo": 0.86,
+      "volatilidad_diaria_pct": 2.12,
+      "sesiones_hasta_stop": 34,
+      "distancia_max_52s_pct": -6.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Mota-Engil Wins Deal to Operate US-Backed Congo Copper Railway - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Acciones Mota-Engil, SGPS, S.A. - Cotizacion EGL Euronext Lisbonne - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Acciones Mota-Engil, SGPS, S.A. - Cotizacion EGL Euronext Lisbonne - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    }
+  },
+  {
+    "id": "BPE.MI-2026-10-02",
+    "ticker": "BPE.MI",
+    "nombre": "BPER Banca SpA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-02",
+    "precio_entrada": 13.396,
+    "acciones": 7.464915,
+    "invertido": 100.0,
+    "posicion_ranking": 18,
+    "tramo": "11-20",
+    "score": 46.4,
+    "potencial_pct": 14.4,
+    "tarjeta": {
+      "ticker": "BPE.MI",
+      "nombre_empresa": "BPER Banca SpA",
+      "isin": "COB52PA00108",
+      "sector": "Financial Services",
+      "score": 46.4,
+      "version_scoring": 33,
+      "precio_actual": 13.396,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.0,
+        "pct_strong_buy": 36.4,
+        "pct_vender": 0.0,
+        "total_analistas": 11
+      },
+      "precio_objetivo_medio": 15.32727,
+      "dispersion_pct": 14.0,
+      "momentum_30d_pct": -6.3,
+      "momentum_5d_pct": -6.6,
+      "fuerza_relativa_pct": -4.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 30.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 14.25,
+      "sma200": 12.47,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 71569501.41589165,
+      "volumen_relativo": 1.06,
+      "volatilidad_diaria_pct": 1.4,
+      "sesiones_hasta_stop": 80,
+      "distancia_max_52s_pct": -9.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "S&P eleva a positiva la perspectiva de BPER Banca por la mejora de su eficiencia y la diversificación de ingresos - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BPER Banca SpA (BPXXY) (Q2 2026) Earnings Call Highlights: Record Profit and Raised Targets ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BPER Banca, BlackRock eleva su participación al 5% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "BPER Banca rebajada a \"mantener\" por Deutsche Bank tras sus resultados del primer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "BPER Banca, BlackRock eleva su participación al 5% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de BPER Banca SpA (BPE.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "BPER Banca SpA engages in the provision of banking products and services for individuals, and businesses and professionals in Italy and internationally. It offers current and saving accounts, loans, mortgages, insurance and social security, and digital banking and related services; cards; and investments and savings products and services."
+    }
+  },
+  {
+    "id": "INGA.AS-2026-10-02",
+    "ticker": "INGA.AS",
+    "nombre": "ING Groep N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-02",
+    "precio_entrada": 30.685,
+    "acciones": 3.258921,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 44.4,
+    "potencial_pct": 7.3,
+    "tarjeta": {
+      "ticker": "INGA.AS",
+      "nombre_empresa": "ING Groep N.V.",
+      "isin": "CA44989Q1054",
+      "sector": "Financial Services",
+      "score": 44.4,
+      "version_scoring": 33,
+      "precio_actual": 30.685,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 32.9395,
+      "dispersion_pct": 60.1,
+      "momentum_30d_pct": -3.4,
+      "momentum_5d_pct": -3.5,
+      "fuerza_relativa_pct": -1.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 38.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 30.91,
+      "sma200": 26.1,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 160514585.42273045,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.36,
+      "sesiones_hasta_stop": 84,
+      "distancia_max_52s_pct": -5.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "ING eleva su beneficio neto un 12% hasta junio y mejora sus perspectivas para 2026 y 2027 - bolsamania.com",
+            "fuente": "bolsamania.com",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "ING Groep N.V. : JP Morgan da una recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué suben hoy las acciones de ING? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 8,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "ING eleva sus previsiones para 2026 y 2027 tras superar las expectativas de beneficio trimestral - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "ING incrementa su beneficio un 11,9% en el semestre y mejora sus previsiones de ingresos - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ING gana un 11,9% más en el primer semestre y eleva previsiones de ingresos - Europa Press",
+            "fuente": "Europa Press",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "ING Groep N.V. provides various banking products and services in the Netherlands, Belgium, Germany, rest of Europe, and internationally. The company operates through five segments: Retail Netherlands, Retail Belgium, Retail Germany, Retail Other, and Wholesale Banking."
     }
   }
 ]
