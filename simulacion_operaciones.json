@@ -17561,7 +17561,7 @@
     "id": "STERV.HE-2026-09-24",
     "ticker": "STERV.HE",
     "nombre": "Stora Enso Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 10.535,
     "acciones": 9.492169,
@@ -17649,6 +17649,34 @@
         ]
       },
       "resumen_negocio": "Stora Enso Oyj provides renewable solutions for the packaging, biomaterials, wooden constructions, and paper industries in Finland and internationally. It operates through Packaging Materials, Packaging Solutions, Biomaterials, Wood Products, Forest, and Other segments."
+    },
+    "precio_salida": 9.8945,
+    "fecha_salida": "2026-10-05",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -6.22,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 10.7457,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -17750,7 +17778,7 @@
     "id": "KKR-2026-09-24",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 94.595,
     "acciones": 1.057138,
@@ -17828,6 +17856,34 @@
         ]
       },
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    },
+    "precio_salida": 88.8436,
+    "fecha_salida": "2026-10-05",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -4.99,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 96.4869,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -21982,6 +22038,95 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Prosus N.V. engages in the e-commerce and internet businesses in Asia, Europe, Latin America, North America, and internationally. It operates internet platforms, such as classifieds, payments and fintech, etail, food delivery, education technology, Etail, ventures, tencent, and other platforms."
+    }
+  },
+  {
+    "id": "BMED.MI-2026-10-05",
+    "ticker": "BMED.MI",
+    "nombre": "Banca Mediolanum S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-05",
+    "precio_entrada": 23.3,
+    "acciones": 4.291845,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 48.7,
+    "potencial_pct": 9.2,
+    "tarjeta": {
+      "ticker": "BMED.MI",
+      "nombre_empresa": "Banca Mediolanum S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 48.7,
+      "version_scoring": 33,
+      "precio_actual": 23.3,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 25.43333,
+      "dispersion_pct": 19.7,
+      "momentum_30d_pct": -1.4,
+      "momentum_5d_pct": -1.1,
+      "fuerza_relativa_pct": 0.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 53.4,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.65,
+      "sma200": 20.26,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 14365679.150190353,
+      "volumen_relativo": 1.14,
+      "volatilidad_diaria_pct": 1.5,
+      "sesiones_hasta_stop": 69,
+      "distancia_max_52s_pct": -4.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Banca Mediolanum (BNCDY) (Q2 2026) Earnings Call Highlights: Record Net Income Surges 16% on ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Banca Mediolanum acelera en el semestre y confirma sus previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - es.finance.yahoo.com",
+            "fuente": "es.finance.yahoo.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - es.finance.yahoo.com",
+            "fuente": "es.finance.yahoo.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Banca Mediolanum acelera en el semestre y confirma sus previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
     }
   }
 ]
