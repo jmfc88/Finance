@@ -19778,7 +19778,7 @@
     "id": "FCT.MI-2026-09-30",
     "ticker": "FCT.MI",
     "nombre": "Fincantieri S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 12.16,
     "acciones": 8.223684,
@@ -19866,6 +19866,28 @@
         ]
       },
       "resumen_negocio": "Fincantieri S.p.A. operates in the shipbuilding industry worldwide. It operates through four segments: Shipbuilding; Offshore and Specialized Vessels; Underwater; and Equipment, Systems, and Infrastructure."
+    },
+    "precio_salida": 12.5248,
+    "fecha_salida": "2026-10-06",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.4032,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -19945,7 +19967,7 @@
     "id": "AI.PA-2026-09-30",
     "ticker": "AI.PA",
     "nombre": "L'Air Liquide S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 170.28,
     "acciones": 0.587268,
@@ -20023,6 +20045,28 @@
         ]
       },
       "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    },
+    "precio_salida": 175.3884,
+    "fecha_salida": "2026-10-06",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 173.6856,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -22200,6 +22244,157 @@
       },
       "profundizacion": null,
       "resumen_negocio": "NexGen Energy Ltd., an exploration and development stage company, engages in the acquisition, exploration, evaluation, and development of uranium properties in Canada. The company holds a 100% interest in the Rook I project that consists of 32 contiguous mineral claims totaling an area of approximately 35,065 hectares located in the southwestern Athabasca Basin of Saskatchewan."
+    }
+  },
+  {
+    "id": "UNI.MI-2026-10-06",
+    "ticker": "UNI.MI",
+    "nombre": "Unipol Assicurazioni S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-06",
+    "precio_entrada": 26.87,
+    "acciones": 3.721623,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 50.2,
+    "potencial_pct": 17.2,
+    "tarjeta": {
+      "ticker": "UNI.MI",
+      "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+      "isin": "INE950G01023",
+      "sector": "Financial Services",
+      "score": 50.2,
+      "version_scoring": 33,
+      "precio_actual": 26.87,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 40.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 31.5,
+      "dispersion_pct": 15.5,
+      "momentum_30d_pct": -4.4,
+      "momentum_5d_pct": -1.2,
+      "fuerza_relativa_pct": -2.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 38.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 27.89,
+      "sma200": 22.75,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 27424264.35189247,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 1.66,
+      "sesiones_hasta_stop": 56,
+      "distancia_max_52s_pct": -8.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Unipol Assicurazioni SpA (UFGSY) (Q2 2026) Earnings Call Highlights: Net Profit Surges Nearly ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Bolsa de Milán: apertura vacilante, miradas puestas en las fusiones y adquisiciones, Unipol al alza y fuerte caída de Mediobanca - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Unipol - IBM",
+            "fuente": "IBM",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    }
+  },
+  {
+    "id": "BN.PA-2026-10-06",
+    "ticker": "BN.PA",
+    "nombre": "Danone S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-06",
+    "precio_entrada": 58.62,
+    "acciones": 1.705902,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 43.0,
+    "potencial_pct": 34.6,
+    "tarjeta": {
+      "ticker": "BN.PA",
+      "nombre_empresa": "Danone S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 43.0,
+      "version_scoring": 33,
+      "precio_actual": 58.62,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 22.7,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 78.93182,
+      "dispersion_pct": 57.6,
+      "momentum_30d_pct": -7.8,
+      "momentum_5d_pct": -0.2,
+      "fuerza_relativa_pct": -5.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 63.85,
+      "sma200": 66.85,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 73836820.20922852,
+      "volumen_relativo": 1.01,
+      "volatilidad_diaria_pct": 1.42,
+      "sesiones_hasta_stop": 77,
+      "distancia_max_52s_pct": -22.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Danone suben tras la mejora de calificación de Deutsche Bank - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone SA (DANOY) (H1 2026) Earnings Call Highlights: Strong Sales Growth and Strategic Expansions - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone : recomendación de compra de JP Morgan - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
     }
   }
 ]
