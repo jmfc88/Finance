@@ -20490,7 +20490,7 @@
     "id": "STMPA.PA-2026-09-30",
     "ticker": "STMPA.PA",
     "nombre": "STMicroelectronics N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 46.88,
     "acciones": 2.133106,
@@ -20578,6 +20578,58 @@
         ]
       },
       "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 49.4748,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 47.8176,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 3.38,
+        "neto_pct": 3.38,
+        "sesiones": 5,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 5.59,
+        "neto_pct": 5.59,
+        "sesiones": 5,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 3.38,
+        "neto_pct": 3.38,
+        "sesiones": 5,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 3.38,
+        "neto_pct": 3.38,
+        "sesiones": 5,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 3.38,
+        "neto_pct": 3.38,
+        "sesiones": 5,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -20856,7 +20908,7 @@
     "id": "MRL.MC-2026-10-01",
     "ticker": "MRL.MC",
     "nombre": "MERLIN Properties SOCIMI, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 11.9,
     "acciones": 8.403361,
@@ -20944,6 +20996,28 @@
         ]
       },
       "resumen_negocio": "MERLIN Properties SOCIMI, S.A. is one of the largest real estate and infrastructure companies listed on the Spanish Stock Exchange. It specializes in the development, acquisition and management of commercial property in the Iberian Peninsula, mainly investing in offices, shopping centers, logistics facilities and data centers within the Core and Core Plus segments."
+    },
+    "precio_salida": 12.257,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.138,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -21632,7 +21706,7 @@
     "id": "EGL.LS-2026-10-02",
     "ticker": "EGL.LS",
     "nombre": "Mota-Engil, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-02",
     "precio_entrada": 5.055,
     "acciones": 19.782394,
@@ -21714,6 +21788,70 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    },
+    "precio_salida": 4.7477,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.1561,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -22879,6 +23017,632 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    }
+  },
+  {
+    "id": "SAN.MC-2026-10-07",
+    "ticker": "SAN.MC",
+    "nombre": "Banco Santander, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 12.26,
+    "acciones": 8.156607,
+    "invertido": 100.0,
+    "posicion_ranking": 6,
+    "tramo": "1-10",
+    "score": 53.3,
+    "potencial_pct": 10.6,
+    "tarjeta": {
+      "ticker": "SAN.MC",
+      "nombre_empresa": "Banco Santander, S.A.",
+      "isin": "CA05973U1057",
+      "sector": "Financial Services",
+      "score": 53.3,
+      "version_scoring": 33,
+      "precio_actual": 12.26,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 28.6,
+        "pct_vender": 0.0,
+        "total_analistas": 21
+      },
+      "precio_objetivo_medio": 13.55667,
+      "dispersion_pct": 35.4,
+      "momentum_30d_pct": -5.2,
+      "momentum_5d_pct": -0.6,
+      "fuerza_relativa_pct": -1.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 37.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 12.61,
+      "sma200": 11.12,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 247575896.0978608,
+      "volumen_relativo": 1.15,
+      "volatilidad_diaria_pct": 1.93,
+      "sesiones_hasta_stop": 41,
+      "distancia_max_52s_pct": -5.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Santander Profit Beats as TSB Deal Adds Four Million Clients - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Las acciones del Santander suben tras las elecciones de Brasil - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Espaldarazo del Santander a Acciona: potencial del 25% en el Ibex 35 - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Banco Santander (BME:SAN) rentabilidad por dividendo, historial y crecimiento - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Acciones de Banco Santander prueban nuevos máximos con analistas alcistas y relevo directivo - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Banco de Sabadell (BME:SAB) - Análisis de acciones - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments."
+    }
+  },
+  {
+    "id": "LTMC.MI-2026-10-07",
+    "ticker": "LTMC.MI",
+    "nombre": "Lottomatica Group S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 24.31,
+    "acciones": 4.113534,
+    "invertido": 100.0,
+    "posicion_ranking": 8,
+    "tramo": "1-10",
+    "score": 52.4,
+    "potencial_pct": 33.3,
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 52.4,
+      "version_scoring": 33,
+      "precio_actual": 24.31,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 10.9,
+        "pct_strong_buy": 26.7,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 32.41333,
+      "dispersion_pct": 23.3,
+      "momentum_30d_pct": -7.0,
+      "momentum_5d_pct": -4.8,
+      "fuerza_relativa_pct": -3.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 20.4,
+      "tendencia_tecnica": "mixta",
+      "sma50": 25.28,
+      "sma200": 24.24,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 23602394.67765522,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 2.02,
+      "sesiones_hasta_stop": 38,
+      "distancia_max_52s_pct": -12.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Lottomatica Group SpA (LOTMY) (H1 2026) Earnings Call Highlights: Strong Online Growth and ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Lottomatica CEO Sees AI Driving Online Growth in Cirsa Deal - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Lottomatica Group adquiere acciones propias por más de 10 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Lottomatica suben un 7% tras el acuerdo con Cirsa - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Lottomatica Group S.p.A. (LTMC.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Lottomatica Group adquiere acciones propias por más de 10 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    }
+  },
+  {
+    "id": "STLAP.PA-2026-10-07",
+    "ticker": "STLAP.PA",
+    "nombre": "Stellantis N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 4.1295,
+    "acciones": 24.216007,
+    "invertido": 100.0,
+    "posicion_ranking": 13,
+    "tramo": "11-20",
+    "score": 50.9,
+    "potencial_pct": 130.1,
+    "tarjeta": {
+      "ticker": "STLAP.PA",
+      "nombre_empresa": "Stellantis N.V.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 50.9,
+      "version_scoring": 33,
+      "precio_actual": 4.1295,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 1
+      },
+      "precio_objetivo_medio": 9.5,
+      "dispersion_pct": 0.0,
+      "momentum_30d_pct": -11.5,
+      "momentum_5d_pct": 5.9,
+      "fuerza_relativa_pct": -7.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 35.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 4.48,
+      "sma200": 6.07,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 17112687.85420406,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 2.46,
+      "sesiones_hasta_stop": 25,
+      "distancia_max_52s_pct": -60.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "¿Por qué sube hoy la acción de Stellantis? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Bolsa de Milán: Stellantis se dispara junto al motor europeo tras los rumores sobre un límite de la UE a los híbridos chinos - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Stellantis: la producción en Italia sube un 28%, pero se rebajan las previsiones para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Stellantis afronta la prueba de resultados mientras crecen las rebajas de analistas - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Las acciones de Stellantis se hunden tras el aviso de Goldman sobre márgenes y beneficios - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Stellantis se hunden tras su giro estratégico - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Stellantis N.V. engages in the designing, engineering, manufacturing, distribution, and sale of automobiles and light commercial vehicles, engines, transmission systems, and mobility services worldwide."
+    }
+  },
+  {
+    "id": "BNP.PA-2026-10-07",
+    "ticker": "BNP.PA",
+    "nombre": "BNP Paribas SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 91.35,
+    "acciones": 1.094691,
+    "invertido": 100.0,
+    "posicion_ranking": 17,
+    "tramo": "11-20",
+    "score": 48.2,
+    "potencial_pct": 30.6,
+    "tarjeta": {
+      "ticker": "BNP.PA",
+      "nombre_empresa": "BNP Paribas SA",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 48.2,
+      "version_scoring": 33,
+      "precio_actual": 91.35,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 26.3,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 119.28158,
+      "dispersion_pct": 40.9,
+      "momentum_30d_pct": -9.1,
+      "momentum_5d_pct": -3.8,
+      "fuerza_relativa_pct": -5.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 29.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 101.28,
+      "sma200": 90.95,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 186364732.62956238,
+      "volumen_relativo": 1.14,
+      "volatilidad_diaria_pct": 1.79,
+      "sesiones_hasta_stop": 48,
+      "distancia_max_52s_pct": -16.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Hormel Foods Corporation : recomendación de compra de BNP Paribas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "BNP Paribas Stock Forecast | Q2 Earnings Beat Estimates - Capital.com",
+            "fuente": "Capital.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Holdings de BNP Paribas Easy € Corp Bond SRI PAB 3-5Y UCITS ETF Acc (ASRX.F) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "BNP Paribas eleva la calificación de Naturgy a \"rendimiento superior\" e impulsa su previsión de rendimiento. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ACS recibe el respaldo de Barclays y BNP Paribas: Potencial de más del 20% - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    }
+  },
+  {
+    "id": "BPE.MI-2026-10-07",
+    "ticker": "BPE.MI",
+    "nombre": "BPER Banca SpA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 13.526,
+    "acciones": 7.393169,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 46.7,
+    "potencial_pct": 13.6,
+    "tarjeta": {
+      "ticker": "BPE.MI",
+      "nombre_empresa": "BPER Banca SpA",
+      "isin": "COB52PA00108",
+      "sector": "Financial Services",
+      "score": 46.7,
+      "version_scoring": 33,
+      "precio_actual": 13.526,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.0,
+        "pct_strong_buy": 36.4,
+        "pct_vender": 0.0,
+        "total_analistas": 11
+      },
+      "precio_objetivo_medio": 15.36364,
+      "dispersion_pct": 14.0,
+      "momentum_30d_pct": -6.1,
+      "momentum_5d_pct": -4.4,
+      "fuerza_relativa_pct": -2.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 35.1,
+      "tendencia_tecnica": "mixta",
+      "sma50": 14.25,
+      "sma200": 12.52,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 73059245.9635067,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 1.7,
+      "sesiones_hasta_stop": 54,
+      "distancia_max_52s_pct": -8.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "BPER Banca SpA (BPXXY) (Q2 2026) Earnings Call Highlights: Record Profit and Raised Targets ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BPER Banca, BlackRock eleva su participación al 5% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué se dispara hoy la acción de Bper Banca? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de BPER Banca SpA (BPE.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "BPER Banca (BIT:BPE) - analisi del titolo - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "BPER Banca SpA engages in the provision of banking products and services for individuals, and businesses and professionals in Italy and internationally. It offers current and saving accounts, loans, mortgages, insurance and social security, and digital banking and related services; cards; and investments and savings products and services."
+    }
+  },
+  {
+    "id": "FDR.MC-2026-10-07",
+    "ticker": "FDR.MC",
+    "nombre": "Fluidra, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 17.18,
+    "acciones": 5.820722,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 46.1,
+    "potencial_pct": 51.5,
+    "tarjeta": {
+      "ticker": "FDR.MC",
+      "nombre_empresa": "Fluidra, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 46.1,
+      "version_scoring": 33,
+      "precio_actual": 17.18,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 26.03067,
+      "dispersion_pct": 63.2,
+      "momentum_30d_pct": -8.8,
+      "momentum_5d_pct": -2.8,
+      "fuerza_relativa_pct": -5.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 40.7,
+      "tendencia_tecnica": "bajista",
+      "sma50": 18.77,
+      "sma200": 20.28,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 5470920.857087135,
+      "volumen_relativo": 0.97,
+      "volatilidad_diaria_pct": 1.3,
+      "sesiones_hasta_stop": 92,
+      "distancia_max_52s_pct": -32.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-FLUIDRA, S.A. Información periódica sobre contrato de liquidez - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "J.P. Morgan Maintains FLUIDRA SA(FLUIF.US) With Buy Rating, Raises Target Price to $31.93 - Moomoo",
+            "fuente": "Moomoo",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Las acciones de Fluidra suben un 3% tras sorprender al mercado en su mejor trimestre - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Fluidra ganan respaldo de analistas pese al castigo en Bolsa - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Fluidra suben un 3% tras sorprender al mercado en su mejor trimestre - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-FLUIDRA, S.A. Nota de prensa de Resultados 1S 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    }
+  },
+  {
+    "id": "REC.MI-2026-10-07",
+    "ticker": "REC.MI",
+    "nombre": "Recordati Industria Chimica e Farmaceutica S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 53.0,
+    "acciones": 1.886792,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 45.3,
+    "potencial_pct": 13.4,
+    "tarjeta": {
+      "ticker": "REC.MI",
+      "nombre_empresa": "Recordati Industria Chimica e Farmaceutica S.p.A.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 45.3,
+      "version_scoring": 33,
+      "precio_actual": 53.0,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 60.1,
+      "dispersion_pct": 38.4,
+      "momentum_30d_pct": 2.0,
+      "momentum_5d_pct": 0.7,
+      "fuerza_relativa_pct": 5.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 54.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 52.53,
+      "sma200": 49.73,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 16225755.466846466,
+      "volumen_relativo": 1.09,
+      "volatilidad_diaria_pct": 0.51,
+      "sesiones_hasta_stop": 594,
+      "distancia_max_52s_pct": -0.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "The Bull Case For Recordati (BIT:REC) Could Change Following Strong H1 Earnings And Reaffirmed 2026 Guidance - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Recordati Industria Chimica e Farmaceutica S.p.A. (REC.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Recordati Industria Chimica e Farmaceutica S.p.A. 2026 Q2 - Results - Earnings Call Presentation - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Recordati Industria Chimica e Farmaceutica S.p.A., together with its subsidiaries, researches, develops, produces, and sells pharmaceuticals in Italy, the United States, Spain, France, Germany, Russia, Ukraine, Turkey, Portugal, North Africa, and internationally."
     }
   }
 ]
