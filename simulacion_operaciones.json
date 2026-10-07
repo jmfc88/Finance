@@ -12119,7 +12119,7 @@
     "id": "ITX.MC-2026-09-09",
     "ticker": "ITX.MC",
     "nombre": "Industria de Diseño Textil, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 54.14,
     "acciones": 1.847063,
@@ -12197,6 +12197,70 @@
         ]
       },
       "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally."
+    },
+    "precio_salida": 54.18,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.07,
+    "rentabilidad_neta_pct": -1.93,
+    "resultado_neto_eur": -1.93,
+    "rentabilidad_7d_pct": -4.43,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 55.2228,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.93,
+        "neto_pct": -1.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -12447,7 +12511,7 @@
     "id": "FDR.MC-2026-09-09",
     "ticker": "FDR.MC",
     "nombre": "Fluidra, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-09",
     "precio_entrada": 18.24,
     "acciones": 5.482456,
@@ -12535,6 +12599,70 @@
         ]
       },
       "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    },
+    "precio_salida": 17.31,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -5.1,
+    "rentabilidad_neta_pct": -7.1,
+    "resultado_neto_eur": -7.1,
+    "rentabilidad_7d_pct": -3.07,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 18.6048,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 16,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -7.1,
+        "neto_pct": -7.1,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -18677,7 +18805,7 @@
     "id": "LTMC.MI-2026-09-28",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-28",
     "precio_entrada": 26.11,
     "acciones": 3.82995,
@@ -18765,6 +18893,34 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    },
+    "precio_salida": 24.5225,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -6.24,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 26.6322,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -20867,7 +21023,7 @@
     "id": "SAN.MC-2026-10-01",
     "ticker": "SAN.MC",
     "nombre": "Banco Santander, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 11.85,
     "acciones": 8.438819,
@@ -20955,6 +21111,34 @@
         ]
       },
       "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments."
+    },
+    "precio_salida": 12.2055,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.087,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.48,
+        "neto_pct": 0.48,
+        "sesiones": 4,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -21269,7 +21453,7 @@
     "id": "BNP.PA-2026-10-01",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 91.54,
     "acciones": 1.092419,
@@ -21336,6 +21520,28 @@
       },
       "profundizacion": null,
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    },
+    "precio_salida": 94.2862,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 93.3708,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -21514,7 +21720,7 @@
     "id": "BPE.MI-2026-10-02",
     "ticker": "BPE.MI",
     "nombre": "BPER Banca SpA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-02",
     "precio_entrada": 13.396,
     "acciones": 7.464915,
@@ -21602,6 +21808,28 @@
         ]
       },
       "resumen_negocio": "BPER Banca SpA engages in the provision of banking products and services for individuals, and businesses and professionals in Italy and internationally. It offers current and saving accounts, loans, mortgages, insurance and social security, and digital banking and related services; cards; and investments and savings products and services."
+    },
+    "precio_salida": 13.7979,
+    "fecha_salida": "2026-10-07",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 13.6639,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -22578,6 +22806,79 @@
         ]
       },
       "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    }
+  },
+  {
+    "id": "PUIG.MC-2026-10-07",
+    "ticker": "PUIG.MC",
+    "nombre": "Puig Brands, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-07",
+    "precio_entrada": 18.2,
+    "acciones": 5.494505,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 44.2,
+    "potencial_pct": 7.6,
+    "tarjeta": {
+      "ticker": "PUIG.MC",
+      "nombre_empresa": "Puig Brands, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 44.2,
+      "version_scoring": 33,
+      "precio_actual": 18.2,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 19.57812,
+      "dispersion_pct": 37.5,
+      "momentum_30d_pct": 0.3,
+      "momentum_5d_pct": 0.6,
+      "fuerza_relativa_pct": 4.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 73.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 17.49,
+      "sma200": 16.49,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 9016395.913513184,
+      "volumen_relativo": 0.82,
+      "volatilidad_diaria_pct": 1.53,
+      "sesiones_hasta_stop": 66,
+      "distancia_max_52s_pct": -1.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Acciones de Puig: Renta 4 eleva su valoración con Isdin como catalizador - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-PUIG BRANDS, S.A. Nota de prensa sobre resultados H1 2026. - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Puig Brands SA (PUIGF) (H1 2026) Earnings Call Highlights: Record Revenues and Market Share ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
     }
   }
 ]
