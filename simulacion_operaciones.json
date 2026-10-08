@@ -16236,7 +16236,7 @@
     "id": "BVI.PA-2026-09-22",
     "ticker": "BVI.PA",
     "nombre": "Bureau Veritas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-22",
     "precio_entrada": 27.59,
     "acciones": 3.624502,
@@ -16308,6 +16308,34 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Bureau Veritas SA provides laboratory testing, inspection, and certification services. It operates through six segments: Marine & Offshore; Agri-Food & Commodities; Industry; Buildings & Infrastructure; Certification; and Consumer Products services."
+    },
+    "precio_salida": 25.9125,
+    "fecha_salida": "2026-10-08",
+    "sesiones": 12,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "rentabilidad_7d_pct": -3.59,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 28.1418,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 10,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -21403,7 +21431,7 @@
     "id": "EXO.AS-2026-10-01",
     "ticker": "EXO.AS",
     "nombre": "Exor N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 67.95,
     "acciones": 1.47167,
@@ -21481,6 +21509,28 @@
         ]
       },
       "resumen_negocio": "Exor N.V. engages in the automotive, agriculture and construction, sports car, commercial vehicle, health technology, football and powertrain businesses in the Netherlands and internationally."
+    },
+    "precio_salida": 69.9885,
+    "fecha_salida": "2026-10-08",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 69.309,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -23971,6 +24021,251 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    }
+  },
+  {
+    "id": "UNI.MI-2026-10-08",
+    "ticker": "UNI.MI",
+    "nombre": "Unipol Assicurazioni S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-08",
+    "precio_entrada": 25.99,
+    "acciones": 3.847634,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 50.7,
+    "potencial_pct": 21.2,
+    "tarjeta": {
+      "ticker": "UNI.MI",
+      "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+      "isin": "INE950G01023",
+      "sector": "Financial Services",
+      "score": 50.7,
+      "version_scoring": 33,
+      "precio_actual": 25.99,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 40.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 31.5,
+      "dispersion_pct": 15.5,
+      "momentum_30d_pct": -7.3,
+      "momentum_5d_pct": -0.3,
+      "fuerza_relativa_pct": -4.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 35.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 27.86,
+      "sma200": 22.81,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 27424264.35189247,
+      "volumen_relativo": 1.06,
+      "volatilidad_diaria_pct": 1.72,
+      "sesiones_hasta_stop": 52,
+      "distancia_max_52s_pct": -11.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Unipol Assicurazioni SpA (UFGSY) (Q2 2026) Earnings Call Highlights: Net Profit Surges Nearly ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BPER renueva sus acuerdos de bancaseguros con Unipol hasta 2036 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El consejo de Unipol lanza una ampliación de capital de 2.500 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    }
+  },
+  {
+    "id": "KCR.HE-2026-10-08",
+    "ticker": "KCR.HE",
+    "nombre": "Konecranes Plc",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-08",
+    "precio_entrada": 30.2,
+    "acciones": 3.311258,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 49.4,
+    "potencial_pct": 21.7,
+    "tarjeta": {
+      "ticker": "KCR.HE",
+      "nombre_empresa": "Konecranes Plc",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 49.4,
+      "version_scoring": 33,
+      "precio_actual": 30.2,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 4
+      },
+      "precio_objetivo_medio": 36.75,
+      "dispersion_pct": 5.6,
+      "momentum_30d_pct": 2.4,
+      "momentum_5d_pct": -0.9,
+      "fuerza_relativa_pct": 5.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 29.2,
+      "sma200": 28.64,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 7482142.1612968445,
+      "volumen_relativo": 0.73,
+      "volatilidad_diaria_pct": 2.56,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": -5.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Danske Bank raises target price for Konecranes to €36 (31), reiterates buy - BN - www.marketscreener.com",
+            "fuente": "www.marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Abrolhos Steel upgrades material handling with new Konecranes crane - Hoist",
+            "fuente": "Hoist",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Konecranes PLC anuncia la jubilación de Tomas Myntti como presidente del área de negocio de Soluciones Portuarias a finales de marzo de 2027 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Konecranes PLC anuncia la jubilación de Tomas Myntti como presidente del área de negocio de Soluciones Portuarias a finales de marzo de 2027 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Konecranes Plc manufactures, sells, and services material handling products in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. It operates through three segments: Industrial Service, Industrial Equipment, and Port Solutions."
+    }
+  },
+  {
+    "id": "HIAB.HE-2026-10-08",
+    "ticker": "HIAB.HE",
+    "nombre": "Hiab Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-08",
+    "precio_entrada": 55.5,
+    "acciones": 1.801802,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 46.3,
+    "potencial_pct": 29.0,
+    "tarjeta": {
+      "ticker": "HIAB.HE",
+      "nombre_empresa": "Hiab Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 46.3,
+      "version_scoring": 33,
+      "precio_actual": 55.5,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 5.1,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 71.6,
+      "dispersion_pct": 7.1,
+      "momentum_30d_pct": -7.8,
+      "momentum_5d_pct": -3.0,
+      "fuerza_relativa_pct": -4.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 32.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 61.08,
+      "sma200": 52.54,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 4524855.5,
+      "volumen_relativo": 0.65,
+      "volatilidad_diaria_pct": 2.92,
+      "sesiones_hasta_stop": 18,
+      "distancia_max_52s_pct": -15.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": -7,
+        "titulares": [
+          {
+            "titulo": "Hiab cae tras la rebaja de recomendación de DNB Carnegie - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "SEB rebaja la recomendación de Hiab a mantener desde comprar y recorta el precio objetivo a 65 EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "DNB Carnegie rebaja Hiab a mantener (comprar), precio objetivo de 60 EUR (75) - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Hiab Oyj (HIAB.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
     }
   }
 ]
