@@ -1,7 +1,7 @@
 # Simulacion en paralelo
 
-Actualizado: 2026-10-09 22:38 · dia 47 de ejecucion
-**Revision nº3 disponible.** Pega este informe en el chat para decidir la ponderacion.
+Actualizado: 2026-10-10 00:53 · dia 48 de ejecucion
+Proxima revision de ponderacion en 12 dias.
 
 - Operaciones cerradas: **172**
 - Operaciones abiertas: 53
