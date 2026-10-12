@@ -1,4 +1,20 @@
 """
+VERSION: 16 (12/10/2026) - dos arreglos que salieron al leer los primeros
+173 resultados:
+
+(a) COMPARACION CON EL INDICE. Los tres tramos salian en perdidas y no habia
+forma de saber si la seleccion era mala o si el mercado entero habia caido.
+Ahora cada operacion guarda cuanto se movio el indice de SU mercado en esos
+mismos dias y la diferencia. Un -2,30% con el indice en -4% es batir al
+mercado; con el indice en +3% es un desastre. Sin este dato cualquier ajuste
+de la ponderacion se hacia a ciegas.
+
+(b) La tabla de reglas de salida se ordenaba por TOTAL, y cada regla cierra
+un numero distinto de operaciones: la que aguanta mas cierra menos y acumula
+menos total aunque sea mejor por operacion. La escalera real aparecia
+penultima de siete cuando por media era la segunda. Ahora se ordena por media
+y se muestra sobre cuantas operaciones se calcula cada fila.
+
 VERSION: 15 (01/09/2026) - guarda simulacion_estado.json con la marca de
 tiempo UTC de la ultima ejecucion. Las operaciones solo llevan fecha sin hora,
 asi que con seis pasadas al dia no habia forma de saber cual fue la ultima ni
@@ -407,6 +423,75 @@ def descargar_historico(op):
     return hist if len(hist) else None
 
 
+# Indice de referencia por mercado, para saber si una operacion lo hizo bien
+# o mal EN SU CONTEXTO. Mismos indices que usa fase2 para el regimen.
+INDICE_EURO = "^STOXX50E"
+INDICE_USA = "^GSPC"
+SUFIJOS_EURO = (".MI", ".MC", ".PA", ".DE", ".AS", ".BR", ".LS", ".HE",
+                ".VI", ".F", ".BE")
+_cache_indice = {}
+
+
+def indice_de(ticker):
+    return INDICE_EURO if ticker.upper().endswith(SUFIJOS_EURO) else INDICE_USA
+
+
+def resumen_vs_indice(g):
+    """Media de la operacion, del indice y de la diferencia, para un grupo.
+
+    Solo cuenta las operaciones que tienen el dato del indice; si Yahoo no lo
+    dio para alguna, se omite en vez de inventar un cero.
+    """
+    con_dato = [o for o in g if o.get("vs_indice_pct") is not None]
+    if not con_dato:
+        return None
+    n = len(con_dato)
+    return {
+        "n": n,
+        "operacion": round(sum(o["resultado_neto_eur"] for o in con_dato) / n, 2),
+        "indice": round(sum(o["indice_pct"] for o in con_dato) / n, 2),
+        "diferencia": round(sum(o["vs_indice_pct"] for o in con_dato) / n, 2),
+        "ganan_al_indice": sum(1 for o in con_dato if o["vs_indice_pct"] > 0),
+    }
+
+
+def variacion_indice(ticker, fecha_entrada, fecha_salida):
+    """Cuanto se movio el indice de ese mercado entre las dos fechas, en %.
+
+    POR QUE HACE FALTA: el 12/10 los tres tramos de la simulacion salian en
+    perdidas y no habia forma de saber si la seleccion era mala o si
+    simplemente el mercado entero habia caido. Un -2,30% con el indice en
+    -4% es batir al mercado; con el indice en +3% es un desastre. Sin este
+    dato, cualquier ajuste de la ponderacion se hace a ciegas.
+
+    Los indices se cachean: son dos series para todas las operaciones, no
+    una descarga por operacion.
+    """
+    idx = indice_de(ticker)
+    if idx not in _cache_indice:
+        try:
+            _cache_indice[idx] = yf.Ticker(idx).history(period="1y")
+        except Exception:
+            _cache_indice[idx] = None
+    hist = _cache_indice.get(idx)
+    if hist is None or len(hist) == 0:
+        return None
+    try:
+        import pandas as pd
+        ini = pd.Timestamp(fecha_entrada).tz_localize(hist.index.tz)
+        fin = pd.Timestamp(fecha_salida).tz_localize(hist.index.tz)
+        tramo = hist.loc[(hist.index >= ini) & (hist.index <= fin)]
+        if len(tramo) < 2:
+            return None
+        a = float(tramo["Close"].iloc[0])
+        b = float(tramo["Close"].iloc[-1])
+        if a <= 0:
+            return None
+        return round((b - a) / a * 100, 2)
+    except Exception:
+        return None
+
+
 def reconstruir(op, hist=None, regla=None):
     """Reconstruye sesion a sesion lo que habria pasado desde la entrada,
     aplicando las reglas del bot real. Devuelve el resultado o None si
@@ -680,6 +765,10 @@ def cerrar(op, precio_salida, fecha, sesiones, motivo, precio_7d, precio_equilib
            llego_al_objetivo=False, sesiones_hasta_armar=None):
     acciones = op["acciones"]
     bruto = (precio_salida - op["precio_entrada"]) * acciones
+    # Variacion del indice de su mercado en el mismo periodo
+    _f_salida = fecha.strftime("%Y-%m-%d") if hasattr(fecha, "strftime") else str(fecha)[:10]
+    _idx_pct = variacion_indice(op["ticker"], op["fecha_entrada"], _f_salida)
+
     neto = bruto - COMISION_COMPRA - COMISION_VENTA
     invertido = op["invertido"]
     estado, explicacion = clasificar(neto, sesiones, motivo, llego_al_objetivo)
@@ -693,6 +782,10 @@ def cerrar(op, precio_salida, fecha, sesiones, motivo, precio_7d, precio_equilib
         "rentabilidad_bruta_pct": round(bruto / invertido * 100, 2),
         "rentabilidad_neta_pct": round(neto / invertido * 100, 2),
         "resultado_neto_eur": round(neto, 2),
+        # Cuanto se movio el indice de su mercado en esos mismos dias, y la
+        # diferencia: lo unico que dice si la operacion lo hizo bien o mal.
+        "indice_pct": _idx_pct,
+        "vs_indice_pct": (round(neto - _idx_pct, 2) if _idx_pct is not None else None),
         "rentabilidad_7d_pct": (round((precio_7d - op["precio_entrada"]) / op["precio_entrada"] * 100, 2)
                                 if precio_7d else None),
         # Exito = 5 EUR limpios o mas, que es como lo mide Jose Manuel
@@ -766,7 +859,7 @@ def informe_ponderacion(cerradas):
                "acabaron. Si el grupo ALTO no va mejor que el BAJO, ese factor no",
                "predice; si va peor, esta restando.", "",
                "| Factor | Grupo | Ops | Media | Buenas | Malas |",
-               "|---|---|---|---|---|---|"]
+               "|---|---|---|---|---|---|---|"]
 
     discriminacion = []
     for clave, ruta, etiqueta in FACTORES_NUMERICOS:
@@ -866,7 +959,7 @@ def escribir_informe(operaciones):
 
         lineas += ["## Por tramo del ranking", "",
                    "| Franja | Ops | Media neta | Con 5 EUR+ | Llegaron al suelo | Sesiones |",
-                   "|---|---|---|---|---|---|"]
+                   "|---|---|---|---|---|---|---|"]
         for nombre in ("1-10", "11-20", "21-30"):
             g = [o for o in cerradas if o.get("tramo") == nombre]
             if not g:
@@ -879,6 +972,38 @@ def escribir_informe(operaciones):
             lineas.append(f"| {nombre} | {len(g)} | {media:+.2f}% | "
                           f"{exitos}/{len(g)} ({exitos / len(g) * 100:.0f}%) | "
                           f"{armadas}/{len(g)} | {ses:.0f} |")
+
+        # --- Contra el indice de cada mercado ---
+        lineas += ["", "## Contra el indice", "",
+                   "Lo unico que dice si la seleccion vale. Perder un 2% con el indice",
+                   "cayendo un 4% es GANARLE al mercado; perderlo con el indice subiendo",
+                   "un 3% es un desastre. El numero suelto no significa nada.", "",
+                   "| Franja | Ops | Operacion | Indice | Diferencia | Ganan al indice |",
+                   "|---|---|---|---|---|---|"]
+        for nombre in ("1-10", "11-20", "21-30"):
+            g = [o for o in cerradas if o.get("tramo") == nombre]
+            r = resumen_vs_indice(g) if g else None
+            if not r:
+                lineas.append(f"| {nombre} | 0 | - | - | - | - |")
+                continue
+            lineas.append(f"| {nombre} | {r['n']} | {r['operacion']:+.2f}% | "
+                          f"{r['indice']:+.2f}% | **{r['diferencia']:+.2f}%** | "
+                          f"{r['ganan_al_indice']}/{r['n']} "
+                          f"({r['ganan_al_indice'] / r['n'] * 100:.0f}%) |")
+        rt = resumen_vs_indice(cerradas)
+        if rt:
+            lineas += ["", f"**En conjunto:** {rt['operacion']:+.2f}% de media frente a "
+                           f"{rt['indice']:+.2f}% del indice, una diferencia de "
+                           f"**{rt['diferencia']:+.2f}%**. "
+                           f"{rt['ganan_al_indice']} de {rt['n']} operaciones "
+                           f"({rt['ganan_al_indice'] / rt['n'] * 100:.0f}%) batieron a su indice.", ""]
+            if rt["diferencia"] > 0:
+                lineas += ["Las perdidas en euros son reales, pero la seleccion esta",
+                           "aportando: el mercado cayo mas. El problema esta en las reglas",
+                           "de salida y en las comisiones, no en que candidatas elige.", ""]
+            else:
+                lineas += ["La seleccion NO esta aportando: habria salido mejor comprar el",
+                           "indice. Aqui si toca revisar la ponderacion del scoring.", ""]
 
         lineas += ["", "**Como leerlo:** si la fila `top` no supera claramente a `media` y",
                    "`cola`, el score NO esta ordenando bien y hay que revisar los pesos.", ""]
@@ -896,8 +1021,8 @@ def escribir_informe(operaciones):
             lineas += ["## Comparacion de reglas de salida", "",
                        "Todas sobre las MISMAS operaciones y los mismos dias.",
                        "",
-                       "| Regla | Total | Media | Aciertos | Peor |",
-                       "|---|---|---|---|---|"]
+                       "| Regla | Media | Ops | Total | Aciertos | Peor |",
+                       "|---|---|---|---|---|---|"]
             filas = []
             for regla in VARIANTES:
                 n = regla["nombre"]
@@ -908,13 +1033,21 @@ def escribir_informe(operaciones):
                 media_v = sum(v["neto_pct"] for v in vals) / len(vals)
                 aciertos = sum(1 for v in vals if v["neto_eur"] >= OBJETIVO_LIMPIO_EUR - 0.01)
                 peor = min(v["neto_eur"] for v in vals)
-                filas.append((total_v, n, media_v, aciertos, len(vals), peor))
-            for total_v, n, media_v, aciertos, cuantos, peor in sorted(filas, reverse=True):
-                lineas.append(f"| {n} | {total_v:+.2f} EUR | {media_v:+.2f}% | "
+                filas.append((media_v, n, total_v, aciertos, len(vals), peor))
+            # Se ordena por MEDIA, no por total. Cada regla cierra un numero
+            # distinto de operaciones -una regla que aguanta mas cierra menos-
+            # asi que comparar totales es comparar manzanas con naranjas: el
+            # 12/10 la escalera real salia penultima por total cuando por
+            # media era la segunda mejor de siete.
+            for media_v, n, total_v, aciertos, cuantos, peor in sorted(filas, reverse=True):
+                lineas.append(f"| {n} | {media_v:+.2f}% | {cuantos} | {total_v:+.2f} EUR | "
                               f"{aciertos}/{cuantos} | {peor:+.2f} EUR |")
-            lineas += ["", "**Como leerlo:** la de arriba es la que mas habria ganado con tus",
-                       "propias candidatas. Mira tambien la columna `Peor`: una regla que gana",
-                       "mas pero con perdidas maximas muy grandes puede no compensar.", ""]
+            lineas += ["", "**Como leerlo:** se ordena por MEDIA por operacion, que es lo unico",
+                       "comparable: cada regla cierra un numero distinto de operaciones, asi",
+                       "que la que mas aguanta acumula menos total aunque sea mejor. La",
+                       "columna `Ops` dice sobre cuantas se calcula cada fila. Mira tambien",
+                       "`Peor`: una regla que gana mas pero con caidas grandes puede no",
+                       "compensar.", ""]
 
         total = sum(o["resultado_neto_eur"] for o in cerradas)
         media_total = sum(o["rentabilidad_neta_pct"] for o in cerradas) / len(cerradas)
