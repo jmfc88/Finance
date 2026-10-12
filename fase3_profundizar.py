@@ -1,4 +1,13 @@
 """
+VERSION: 14 (12/10/2026) - ROE SOSTENIDO. Premia a las empresas que repiten
+un ROE positivo varios ejercicios seguidos, no a las que tuvieron un buen ano
+suelto por una venta de activos. Maximo +3, que son los puntos que fase2
+reservo al bajar sus fundamentales de 10 a 7: el maximo total sigue en 100.
+
+Se calcula aqui y no en fase2 porque necesita los estados financieros, dos
+peticiones mas por empresa. Sobre las 25 mejores son 50 peticiones; sobre las
+180 candidatas de fase2 serian 360 al dia.
+
 VERSION: 13 (24/08/2026) - ARREGLO: la tarjeta guardada no incluia
 precio_actual. Se me quedo fuera de la lista de campos de _tarjeta_completa,
 y es de los mas importantes: sin el no se puede saber a que precio estaba la
@@ -93,6 +102,7 @@ from datetime import datetime
 from urllib.parse import quote
 
 import requests
+import yfinance as yf   # para el ROE sostenido (estados financieros)
 
 ARCHIVO = "candidatos_rankeados.json"
 HISTORICO = "historial_scoring.json"
@@ -244,6 +254,92 @@ def es_relevante(titulo, nombre_empresa):
     return palabras[0].lower() in titulo.lower()
 
 
+MAXIMO_ROE_SOSTENIDO = 3.0
+ANOS_ROE = 4   # cuantos ejercicios se miran hacia atras
+
+
+def roe_sostenido(ticker):
+    """ROE de los ultimos ejercicios: premia la constancia, no el pico.
+
+    Una empresa puede tener un ROE del 30% un ano por una venta de activos o
+    un ejercicio raro. Lo que distingue a un buen negocio es repetirlo. Aqui
+    se miran cuatro ejercicios y se puntua asi:
+
+    Se puntua por el PEOR ano del periodo, no por la media. La media premia
+    los picos: una empresa con un ano al 40% y tres al 1% saca una media del
+    11% y parece buena, cuando es justo lo contrario de un negocio constante.
+    Con el peor ano, esa misma empresa saca casi cero y una que repite el 9%
+    todos los anos la adelanta. Que es lo que se queria medir.
+
+      - Peor ano >=15%        -> 3,0 (el tope)
+      - Peor ano entre 0 y 15 -> proporcional
+      - Algun ano en negativo -> 0, el peor ano manda
+      - Menos de dos anos     -> 0, no se inventa nada
+
+    POR QUE AQUI Y NO EN fase2: esto necesita los estados financieros, que
+    son dos peticiones mas por empresa. En fase2 serian ~360 al dia sobre
+    180 candidatas; aqui son 50, porque solo se profundiza en las 25 mejores.
+
+    LIMITACION conocida: una candidata en el puesto 26 con un ROE sostenido
+    excelente nunca recibe estos puntos, porque fase3 no la mira. Se asume a
+    sabiendas: si no entro en las 25 primeras es que el resto del score ya
+    la dejo atras.
+    """
+    detalle = {"roes": [], "anos": 0, "media": None, "peor": None,
+               "negativos": 0, "puntos": 0.0}
+    try:
+        t = yf.Ticker(ticker)
+        fin = t.financials
+        bal = t.balance_sheet
+        if fin is None or bal is None or fin.empty or bal.empty:
+            return 0.0, detalle
+
+        def fila(df, *nombres):
+            for n in nombres:
+                if n in df.index:
+                    return df.loc[n]
+            return None
+
+        beneficio = fila(fin, "Net Income", "Net Income Common Stockholders")
+        patrimonio = fila(bal, "Stockholders Equity", "Total Stockholder Equity",
+                          "Common Stock Equity")
+        if beneficio is None or patrimonio is None:
+            return 0.0, detalle
+
+        roes = []
+        for col in list(fin.columns)[:ANOS_ROE]:
+            if col not in patrimonio.index:
+                continue
+            b, pat = beneficio.get(col), patrimonio.get(col)
+            if b is None or pat is None or pat != pat or b != b or pat <= 0:
+                continue
+            roes.append(round(float(b) / float(pat) * 100, 1))
+
+        if len(roes) < 2:
+            return 0.0, detalle   # con un solo ano no se puede hablar de constancia
+
+        negativos = sum(1 for r in roes if r <= 0)
+        media = round(sum(roes) / len(roes), 1)
+        peor = min(roes)
+        detalle.update({"roes": roes, "anos": len(roes), "media": media,
+                        "peor": peor, "negativos": negativos})
+
+        # El peor ano manda. Un solo ejercicio en perdidas deja la
+        # puntuacion a cero por mucho que los otros brillen.
+        if peor >= 15:
+            puntos = MAXIMO_ROE_SOSTENIDO
+        elif peor <= 0:
+            puntos = 0.0
+        else:
+            puntos = round(MAXIMO_ROE_SOSTENIDO * peor / 15, 2)
+
+        detalle["puntos"] = puntos
+        return puntos, detalle
+    except Exception as e:
+        print(f"  {ticker}: no se pudo calcular el ROE sostenido ({e})")
+        return 0.0, detalle
+
+
 def profundizar_candidata(candidata):
     nombre = candidata.get("nombre_empresa") or candidata["ticker"]
     consultas = [f"{nombre} analistas", f"{nombre} previsión"]
@@ -284,8 +380,15 @@ def profundizar_candidata(candidata):
         verificado = True
         ajuste = 0
 
+    # ROE sostenido: suma siempre, independientemente de las noticias.
+    puntos_roe, detalle_roe = roe_sostenido(candidata["ticker"])
+    if puntos_roe:
+        candidata["score"] = round(candidata["score"] + puntos_roe, 1)
+
+    candidata["roe_sostenido"] = detalle_roe
     candidata["profundizacion"] = {
         "sentimiento_adicional": sentimiento_adicional,
+        "puntos_roe_sostenido": puntos_roe,
         "verificado": verificado,
         "ajuste": ajuste,
         "titulares_adicionales": titulares_adicionales[:3],
