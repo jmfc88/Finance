@@ -1,4 +1,23 @@
 """
+VERSION: 35 (12/10/2026) - CALIDAD DEL NEGOCIO. Hasta ahora el score solo
+miraba el precio y lo que opinaba el mercado: ni un solo factor comprobaba si
+la empresa gana dinero. Se anaden los tres indicadores basicos de salud, que
+salen del t.info que ya se descargaba (cero peticiones extra):
+
+  ROE (max 4)              cuanto beneficio saca del dinero de los accionistas
+  Margen operativo (max 3) cuanto se queda de cada euro vendido
+  PER (max 3)              cuantos anos de beneficio se estan pagando
+
+Solo 10 puntos de 100, y los factores de mercado se reescalan a 90 para que
+el maximo siga siendo 100 exactos. El peso es bajo a proposito: estos tres
+mueven el precio a ANOS y el sistema opera a semanas, asi que sirven de
+desempate entre candidatas que ya han pasado el resto de filtros, no de
+criterio principal.
+
+Y un filtro de exclusion nuevo: margen operativo negativo descarta. Una
+empresa en perdidas puede rebotar con fuerza y colarse arriba por momentum,
+pero ese rebote no se apoya en nada.
+
 VERSION: 34 (31/08/2026) - mide la HORQUILLA real entre compra y venta
 (bid/ask, del mismo t.info que ya se descarga, cero peticiones extra) y la
 penaliza; a partir del 2% descarta la candidata.
@@ -213,6 +232,19 @@ PENALIZACION_LIQUIDEZ_MAX = -8.0
 HORQUILLA_COMODA = 0.4    # hasta aqui, penalizacion cero
 HORQUILLA_MAXIMA = 2.0    # a partir de aqui se descarta directamente
 PENALIZACION_HORQUILLA_MAX = -10.0
+
+# Reparto del score: 90 puntos para los factores de mercado (consenso,
+# momentum, potencial...) y 10 para la calidad del negocio (ROE, margen
+# operativo, PER). Antes los de mercado se llevaban los 100.
+#
+# Por que 10 y no mas: los fundamentales mueven el precio a anos y este
+# sistema opera a semanas. Son un desempate entre candidatas que ya han
+# pasado el resto de filtros, no el criterio principal.
+FACTOR_MERCADO = 0.90
+MAXIMO_FUNDAMENTALES = 7.0
+# Los 3 puntos que faltan hasta 10 los pone fase3 con el ROE sostenido, que
+# necesita los estados financieros de varios anos y por eso no se calcula
+# aqui: serian ~180 peticiones extra al dia en vez de 25.
 
 # Volatilidad: a partir de la comoda empieza a penalizar; en la extrema, tope.
 VOLATILIDAD_COMODA = 2.5   # % de desviacion tipica diaria
@@ -943,6 +975,76 @@ def puntos_volatilidad(volatilidad_diaria_pct):
     return round(PENALIZACION_VOLATILIDAD_MAX * proporcion, 2)
 
 
+def puntos_fundamentales(info):
+    """Calidad del negocio: ROE, margen operativo y PER. Maximo +7.
+
+    POR QUE SOLO 10 PUNTOS sobre 100: estos tres miden si la empresa gana
+    dinero, y eso mueve el precio a ANOS vista. El sistema opera a dias o
+    semanas, asi que no pueden decidir el ranking. Son un desempate entre
+    candidatas que ya han pasado el resto de filtros: entre dos con el mismo
+    momentum y el mismo consenso, que gane la que tiene el negocio sano.
+
+    Los tres salen del t.info que ya se descarga. Cero peticiones extra.
+
+    Devuelve tambien el detalle, para poder ensenarlo en la tarjeta: no sirve
+    de nada un numero si no se ve de donde sale.
+    """
+    detalle = {"roe_pct": None, "margen_operativo_pct": None, "per": None,
+               "puntos_roe": 0.0, "puntos_margen": 0.0, "puntos_per": 0.0}
+    total = 0.0
+
+    # --- ROE: cuanto beneficio saca del dinero de los accionistas (max 4) ---
+    roe = info.get("returnOnEquity")
+    if roe is not None:
+        roe_pct = roe * 100
+        detalle["roe_pct"] = round(roe_pct, 1)
+        # 10% es correcto, 25% es excelente. Por debajo de 5 no suma nada.
+        if roe_pct >= 25:
+            p = 2.5
+        elif roe_pct <= 5:
+            p = 0.0
+        else:
+            p = round(2.5 * (roe_pct - 5) / 20, 2)
+        detalle["puntos_roe"] = p
+        total += p
+
+    # --- Margen operativo: cuanto se queda de cada euro vendido (max 3) ---
+    margen = info.get("operatingMargins")
+    if margen is not None:
+        m_pct = margen * 100
+        detalle["margen_operativo_pct"] = round(m_pct, 1)
+        # 5% es flojo, 20% es muy bueno. Varia mucho por sector -un
+        # supermercado vive con el 3%- por eso pesa poco y nunca descarta.
+        if m_pct >= 20:
+            p = 2.0
+        elif m_pct <= 5:
+            p = 0.0
+        else:
+            p = round(2.0 * (m_pct - 5) / 15, 2)
+        detalle["puntos_margen"] = p
+        total += p
+
+    # --- PER: cuantos anos de beneficio se estan pagando (max 3) ---
+    per = info.get("trailingPE")
+    if per is not None and per > 0:
+        detalle["per"] = round(per, 1)
+        # OJO: el PER no es comparable entre sectores. Un banco a PER 8 es
+        # normal; una tecnologica a PER 8 esta tirada o rota. Por eso los
+        # tramos son anchos y el peso bajo: distinguir "barato" de "carisimo",
+        # no afinar entre 14 y 16.
+        if per <= 12:
+            p = 2.5
+        elif per >= 35:
+            p = 0.0
+        else:
+            p = round(2.5 * (35 - per) / 23, 2)
+        detalle["puntos_per"] = p
+        total += p
+
+    detalle["puntos_total"] = round(total, 2)
+    return round(total, 2), detalle
+
+
 def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None, horquilla=None):
     """
     Score de 0 a 100 de verdad — reescalado (11/08/2026) para que la suma
@@ -956,6 +1058,9 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     - Tendencia técnica (SMA50/200) y tendencia de recomendaciones (mes a mes), peso menor:
       son un empujón/freno sobre el resto, no el criterio principal.
     """
+    # Los factores de mercado se reescalan a 90 para dejar 10 a los
+    # fundamentales, de modo que el maximo teorico siga siendo 100 exactos.
+    # No cambia ninguna logica ni ningun umbral, solo la escala.
     score = 0
 
     recomendacion = (info.get("recommendationKey") or "").lower()
@@ -1014,6 +1119,10 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     score += puntos_liquidez(vol.get("liquidez_dia"))
     score += puntos_volatilidad(vol.get("volatilidad_diaria_pct"))
     score += puntos_horquilla(horquilla)
+
+    # Reescalado a 90 y hueco de 10 para la calidad del negocio.
+    score = score * FACTOR_MERCADO
+    score += puntos_fundamentales(info)[0]
 
     return round(score, 1)
 
@@ -1093,6 +1202,20 @@ def evaluar(ticker):
         # Horquilla: se descarta antes de puntuar, porque por muy buena que
         # sea la candidata un 2% de horquilla ya cuesta 4 EUR sobre una
         # posicion de 200, el doble que las dos comisiones juntas.
+        # --- Filtro de exclusion por perdidas (v35) ---
+        # Una empresa en perdidas operativas puede rebotar con fuerza y
+        # colarse arriba por momentum, pero ese rebote no se apoya en nada:
+        # es justo el tipo de entrada en la que se compra tarde y se palma.
+        # Se mira el margen OPERATIVO, no el neto: el neto se ensucia con
+        # extraordinarios -una venta de activos, un ajuste contable- y el
+        # operativo dice si el negocio en si gana o pierde dinero.
+        margen_op = info.get("operatingMargins")
+        if margen_op is not None and margen_op < 0:
+            return {"ticker": ticker, "descartado": True,
+                    "motivo": f"Margen operativo negativo ({margen_op * 100:.1f}%): "
+                              f"el negocio pierde dinero. Si ha subido, es un rebote "
+                              f"sin nada debajo"}
+
         horquilla = horquilla_pct(info)
         if horquilla is not None and horquilla >= HORQUILLA_MAXIMA:
             coste = round(200 * horquilla / 100, 2)
@@ -1110,6 +1233,7 @@ def evaluar(ticker):
         score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec,
                                tendencia_analistas_valor, empujon_consenso_real, momentum_5d,
                                fuerza_relativa, regimen, vol, horquilla)
+        _fund = puntos_fundamentales(info)
         if catalizador:
             score += 7.7  # empujón notable pero que no domine el resto del método
 
@@ -1141,6 +1265,10 @@ def evaluar(ticker):
             "indice_referencia": indice,
             "version_scoring": VERSION_SCORING,
             "metodo_datos": metodo_datos,
+            "roe_pct": limpio(_fund[1]["roe_pct"]),
+            "margen_operativo_pct": limpio(_fund[1]["margen_operativo_pct"]),
+            "per": limpio(_fund[1]["per"]),
+            "puntos_fundamentales": limpio(_fund[0]),
             "horquilla_pct": limpio(horquilla),
             "coste_horquilla_200e": limpio(round(200 * horquilla / 100, 2)) if horquilla else None,
             "liquidez_dia": limpio(vol["liquidez_dia"]),
