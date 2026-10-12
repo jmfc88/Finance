@@ -1,10 +1,10 @@
 # Simulacion en paralelo
 
-Actualizado: 2026-10-12 07:19 · dia 50 de ejecucion
+Actualizado: 2026-10-12 15:15 · dia 50 de ejecucion
 Proxima revision de ponderacion en 10 dias.
 
 - Operaciones cerradas: **173**
-- Operaciones abiertas: 53
+- Operaciones abiertas: 54
 
 ## Como acabaron
 
@@ -20,10 +20,22 @@ Proxima revision de ponderacion en 10 dias.
 ## Por tramo del ranking
 
 | Franja | Ops | Media neta | Con 5 EUR+ | Llegaron al suelo | Sesiones |
-|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | 1-10 | 43 | -2.30% | 2/43 (5%) | 8/43 | 9 |
 | 11-20 | 46 | -3.26% | 2/46 (4%) | 3/46 | 9 |
 | 21-30 | 84 | -4.31% | 1/84 (1%) | 4/84 | 10 |
+
+## Contra el indice
+
+Lo unico que dice si la seleccion vale. Perder un 2% con el indice
+cayendo un 4% es GANARLE al mercado; perderlo con el indice subiendo
+un 3% es un desastre. El numero suelto no significa nada.
+
+| Franja | Ops | Operacion | Indice | Diferencia | Ganan al indice |
+|---|---|---|---|---|---|
+| 1-10 | 0 | - | - | - | - |
+| 11-20 | 0 | - | - | - | - |
+| 21-30 | 0 | - | - | - | - |
 
 **Como leerlo:** si la fila `top` no supera claramente a `media` y
 `cola`, el score NO esta ordenando bien y hay que revisar los pesos.
@@ -36,20 +48,23 @@ Proxima revision de ponderacion en 10 dias.
 
 Todas sobre las MISMAS operaciones y los mismos dias.
 
-| Regla | Total | Media | Aciertos | Peor |
-|---|---|---|---|---|
-| trailing pegado (3%) | -169.79 EUR | -3.14% | 3/54 | -10.00 EUR |
-| arranca despues (+8%) | -189.52 EUR | -4.21% | 3/45 | -10.00 EUR |
-| actual (8% / +5% / 5%) | -189.52 EUR | -4.21% | 3/45 | -10.00 EUR |
-| arranca antes (+3%) | -206.40 EUR | -4.05% | 3/51 | -10.00 EUR |
-| trailing suelto (7%) | -212.66 EUR | -4.95% | 2/43 | -10.00 EUR |
-| sin trailing, solo stop | -224.72 EUR | -5.35% | 1/42 | -10.00 EUR |
-| LA REAL (escalera 25/08) | -610.45 EUR | -3.53% | 5/173 | -8.08 EUR |
-| stop corto (5%) | -659.56 EUR | -5.69% | 3/116 | -7.00 EUR |
+| Regla | Media | Ops | Total | Aciertos | Peor |
+|---|---|---|---|---|---|
+| trailing pegado (3%) | -3.14% | 54 | -169.79 EUR | 3/54 | -10.00 EUR |
+| LA REAL (escalera 25/08) | -3.53% | 173 | -610.45 EUR | 5/173 | -8.08 EUR |
+| arranca antes (+3%) | -4.05% | 51 | -206.40 EUR | 3/51 | -10.00 EUR |
+| arranca despues (+8%) | -4.21% | 45 | -189.52 EUR | 3/45 | -10.00 EUR |
+| actual (8% / +5% / 5%) | -4.21% | 45 | -189.52 EUR | 3/45 | -10.00 EUR |
+| trailing suelto (7%) | -4.95% | 43 | -212.66 EUR | 2/43 | -10.00 EUR |
+| sin trailing, solo stop | -5.35% | 42 | -224.72 EUR | 1/42 | -10.00 EUR |
+| stop corto (5%) | -5.69% | 116 | -659.56 EUR | 3/116 | -7.00 EUR |
 
-**Como leerlo:** la de arriba es la que mas habria ganado con tus
-propias candidatas. Mira tambien la columna `Peor`: una regla que gana
-mas pero con perdidas maximas muy grandes puede no compensar.
+**Como leerlo:** se ordena por MEDIA por operacion, que es lo unico
+comparable: cada regla cierra un numero distinto de operaciones, asi
+que la que mas aguanta acumula menos total aunque sea mejor. La
+columna `Ops` dice sobre cuantas se calcula cada fila. Mira tambien
+`Peor`: una regla que gana mas pero con caidas grandes puede no
+compensar.
 
 ## Conjunto
 
@@ -64,7 +79,7 @@ acabaron. Si el grupo ALTO no va mejor que el BAJO, ese factor no
 predice; si va peor, esta restando.
 
 | Factor | Grupo | Ops | Media | Buenas | Malas |
-|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | nota global | bajo | 57 | -3.85 EUR | 0% | 54% |
 | nota global | medio | 57 | -3.95 EUR | 4% | 67% |
 | nota global | alto | 59 | -2.81 EUR | 5% | 56% |
