@@ -14005,7 +14005,7 @@
     "id": "MONC.MI-2026-09-14",
     "ticker": "MONC.MI",
     "nombre": "Moncler S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-14",
     "precio_entrada": 44.23,
     "acciones": 2.260909,
@@ -14072,6 +14072,70 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Moncler S.p.A., together with its subsidiaries, engages in the production and distribution of garments, children's clothing, footwear, eyewear and other related accessories under the Moncler and Stone Island brands."
+    },
+    "precio_salida": 43.6,
+    "fecha_salida": "2026-10-12",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -1.42,
+    "rentabilidad_neta_pct": -3.42,
+    "resultado_neto_eur": -3.42,
+    "rentabilidad_7d_pct": 0.2,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 45.1146,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -3.42,
+        "neto_pct": -3.42,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -24734,6 +24798,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Akzo Nobel N.V. produces and sells paints and coatings worldwide. It operates through Decorative Paints and Performance Coatings segments. The company offers decorative paints, including paints, enamels, varnishes, and surface preparation products; and a range of mixing machines, color concepts and advice, and training for applicators."
+    }
+  },
+  {
+    "id": "STMPA.PA-2026-10-12",
+    "ticker": "STMPA.PA",
+    "nombre": "STMicroelectronics N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-12",
+    "precio_entrada": 46.545,
+    "acciones": 2.148458,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 41.5,
+    "potencial_pct": 48.2,
+    "tarjeta": {
+      "ticker": "STMPA.PA",
+      "nombre_empresa": "STMicroelectronics N.V.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 41.5,
+      "version_scoring": 33,
+      "precio_actual": 46.545,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 68.98304,
+      "dispersion_pct": 76.5,
+      "momentum_30d_pct": 6.9,
+      "momentum_5d_pct": -7.5,
+      "fuerza_relativa_pct": 8.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 55.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 45.46,
+      "sma200": 42.41,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 96079633.63456726,
+      "volumen_relativo": 0.96,
+      "volatilidad_diaria_pct": 3.14,
+      "sesiones_hasta_stop": 15,
+      "distancia_max_52s_pct": -32.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Nueva alianza, nuevo rally: STMicroelectronics se dispara tras unir fuerzas con Amazon - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "STMicroelectronics N.V. : El Jefferies continua con un recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "STMicro se desploma en bolsa tras una guía de ventas débil que eclipsa su promesa de aceleración en 2026 - Business Insider España",
+            "fuente": "Business Insider España",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "STMicroelectronics N.V., together with its subsidiaries, designs, develops, manufactures, and sells semiconductor products in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
     }
   }
 ]
