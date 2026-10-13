@@ -1,4 +1,13 @@
 """
+VERSION: 17 (12/10/2026) - STOP PROPORCIONAL A LA VOLATILIDAD, como variante
+para comparar. El stop fijo del -8% trata igual a un banco que se mueve un
+0,9% al dia y a una minera que se mueve un 3,8%: para uno son nueve sesiones
+de ruido, para la otra dos. Los datos lo ensenaban -el 15% de las cerradas
+mueren en una o dos sesiones, casi todas en perdida- pero no se veia porque
+no se estaba comparando contra nada. Se anaden tres anchuras (2,5x, 3x y 4x
+la volatilidad diaria) con suelo y techo. La regla real NO cambia: esto solo
+mide si merece la pena antes de tocar nada.
+
 VERSION: 16 (12/10/2026) - dos arreglos que salieron al leer los primeros
 173 resultados:
 
@@ -305,6 +314,23 @@ MARGEN_GANANCIAS_PCT = 2.0
 
 VARIANTES = [
     {"nombre": "LA REAL (escalera 25/08)", "tipo": "escalera", "stop": 8.0},
+    # --- Stop proporcional a la VOLATILIDAD de cada accion (12/10) ---
+    #
+    # El stop fijo del -8% mide cosas incomparables. En Santander, con un 0,9%
+    # de vaiven diario, un -8% son nueve sesiones de ruido: si salta, algo ha
+    # pasado de verdad. En NexGen, con un 3,8%, son dos: el stop salta por
+    # respirar. Y los datos lo ensenan -el 15% de las operaciones cerradas
+    # mueren en una o dos sesiones, casi todas en perdida.
+    #
+    # Lo que hace todo el mundo en esto es escalar el stop a la volatilidad
+    # del valor, no al capital. Se prueban tres anchuras para que decidan los
+    # datos; el suelo y el techo evitan stops absurdos en los extremos.
+    {"nombre": "escalera + stop vol x2.5", "tipo": "escalera", "stop": 8.0,
+     "stop_volatilidad": 2.5, "stop_min": 4.0, "stop_max": 14.0},
+    {"nombre": "escalera + stop vol x3", "tipo": "escalera", "stop": 8.0,
+     "stop_volatilidad": 3.0, "stop_min": 4.0, "stop_max": 14.0},
+    {"nombre": "escalera + stop vol x4", "tipo": "escalera", "stop": 8.0,
+     "stop_volatilidad": 4.0, "stop_min": 5.0, "stop_max": 18.0},
     {"nombre": "actual (8% / +5% / 5%)",   "stop": 8.0, "activacion": 5.0, "trailing": 5.0},
     {"nombre": "trailing suelto (7%)",     "stop": 8.0, "activacion": 5.0, "trailing": 7.0},
     {"nombre": "trailing pegado (3%)",     "stop": 8.0, "activacion": 5.0, "trailing": 3.0},
@@ -558,8 +584,17 @@ def _recorrer_escalera(op, hist, regla):
         """Precio al que la operacion deja esa ganancia neta sobre lo invertido."""
         return (invertido * (1 + ganancia_pct / 100) + COMISION_VENTA) / acciones
 
-    # -8% sobre lo invertido, no sobre el precio
-    stop = round((invertido * (1 - regla["stop"] / 100) + COMISION_VENTA) / acciones, 4)
+    # Anchura del stop: fija o proporcional a la volatilidad del valor.
+    pct_stop = regla["stop"]
+    if regla.get("stop_volatilidad"):
+        vol = (op.get("tarjeta") or {}).get("volatilidad_diaria_pct")
+        if vol and vol > 0:
+            pct_stop = vol * regla["stop_volatilidad"]
+            pct_stop = max(regla.get("stop_min", 4.0),
+                           min(pct_stop, regla.get("stop_max", 18.0)))
+
+    # Sobre lo invertido, no sobre el precio
+    stop = round((invertido * (1 - pct_stop / 100) + COMISION_VENTA) / acciones, 4)
     stop_inicial = stop
 
     precio_objetivo = pe + (OBJETIVO_LIMPIO_EUR + comisiones) / acciones
