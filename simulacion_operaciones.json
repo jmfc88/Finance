@@ -19175,7 +19175,7 @@
     "id": "APO-2026-09-28",
     "ticker": "APO",
     "nombre": "Apollo Global Management, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-28",
     "precio_entrada": 119.0,
     "acciones": 0.840336,
@@ -19242,6 +19242,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Apollo Global Management, Inc. is a private equity firm specializing in investments in credit, private equity, infrastructure, secondaries and real estate markets. The firm prefers to invest in private and public markets."
+    },
+    "precio_salida": 111.7648,
+    "fecha_salida": "2026-10-14",
+    "sesiones": 12,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 0.2,
+    "vs_indice_pct": -8.28,
+    "rentabilidad_7d_pct": -2.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 121.38,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.12,
+        "neto_pct": -4.12,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.59,
+        "neto_pct": -6.59,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -19705,7 +19753,7 @@
     "id": "AMP.MI-2026-09-29",
     "ticker": "AMP.MI",
     "nombre": "Amplifon S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 12.03,
     "acciones": 8.312552,
@@ -19783,6 +19831,54 @@
         ]
       },
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 12.3909,
+    "fecha_salida": "2026-10-14",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -2.06,
+    "vs_indice_pct": 3.06,
+    "rentabilidad_7d_pct": 0.08,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 8,
+    "precio_equilibrio": 12.2706,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.9,
+        "neto_pct": -4.9,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.88,
+        "neto_pct": -5.88,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.69,
+        "neto_pct": 1.69,
+        "sesiones": 11,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -22720,7 +22816,7 @@
     "id": "LR.PA-2026-10-05",
     "ticker": "LR.PA",
     "nombre": "Legrand SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-05",
     "precio_entrada": 144.55,
     "acciones": 0.691802,
@@ -22787,6 +22883,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Legrand SA, together with its subsidiaries, manufactures, distributes, and sells electrical and digital building infrastructures in Europe, North and Central America, and internationally."
+    },
+    "precio_salida": 135.7614,
+    "fecha_salida": "2026-10-14",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.83,
+    "vs_indice_pct": -7.25,
+    "rentabilidad_7d_pct": -6.36,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 147.441,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.92,
+        "neto_pct": -6.92,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -8.3,
+        "neto_pct": -8.3,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -25520,6 +25658,286 @@
         ]
       },
       "resumen_negocio": "Fincantieri S.p.A. operates in the shipbuilding industry worldwide. It operates through four segments: Shipbuilding; Offshore and Specialized Vessels; Underwater; and Equipment, Systems, and Infrastructure."
+    }
+  },
+  {
+    "id": "CCL-2026-10-14",
+    "ticker": "CCL",
+    "nombre": "Carnival Corporation Ltd.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-14",
+    "precio_entrada": 25.95,
+    "acciones": 3.853565,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 50.7,
+    "potencial_pct": 30.6,
+    "tarjeta": {
+      "ticker": "CCL",
+      "nombre_empresa": "Carnival Corporation Ltd.",
+      "isin": "BMG2004J1036",
+      "sector": "Consumer Cyclical",
+      "score": 50.7,
+      "version_scoring": 33,
+      "precio_actual": 25.95,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.7,
+        "pct_vender": 0.0,
+        "total_analistas": 29
+      },
+      "precio_objetivo_medio": 33.89231,
+      "dispersion_pct": 49.8,
+      "momentum_30d_pct": 17.4,
+      "momentum_5d_pct": -0.8,
+      "fuerza_relativa_pct": 15.4,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 74.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 25.0,
+      "sma200": 27.11,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 607312906.1403275,
+      "volumen_relativo": 0.57,
+      "volatilidad_diaria_pct": 3.49,
+      "sesiones_hasta_stop": 12,
+      "distancia_max_52s_pct": -22.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Carnival Corporation Ltd. : Wells Fargo Securities mantiene una recomendación de compra. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fuel Costs Jumped 36% and Carnival Still Posted Record Attributable Net Income. Here's What That Says About the Cruise Boom. - The Motley Fool",
+            "fuente": "The Motley Fool",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Carnival Stock Jumps 12% After Cruise Giant Posts Record Revenue - Forbes",
+            "fuente": "Forbes",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Carnival Corporation’s Q3 Earnings Beat June Guidance by $100 Million. Here’s Where Shares Could Go in the Long Run. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "How Carnival’s Profit Rebound, Buyback and Fuel Cost Concerns At Carnival Corporation (CCL) Has Changed Its Investment Story - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Carnival Stock Is Down 14% From Its 52-Week High. Here’s What Q3 Miss Tells Investors - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    }
+  },
+  {
+    "id": "ANET-2026-10-14",
+    "ticker": "ANET",
+    "nombre": "Arista Networks, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-14",
+    "precio_entrada": 196.89,
+    "acciones": 0.507898,
+    "invertido": 100.0,
+    "posicion_ranking": 17,
+    "tramo": "11-20",
+    "score": 50.3,
+    "potencial_pct": 24.5,
+    "tarjeta": {
+      "ticker": "ANET",
+      "nombre_empresa": "Arista Networks, Inc.",
+      "isin": "US0404132054",
+      "sector": "Technology",
+      "score": 50.3,
+      "version_scoring": 33,
+      "precio_actual": 196.89,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.9,
+        "pct_vender": 0.0,
+        "total_analistas": 32
+      },
+      "precio_objetivo_medio": 245.13828,
+      "dispersion_pct": 52.6,
+      "momentum_30d_pct": 2.1,
+      "momentum_5d_pct": -8.8,
+      "fuerza_relativa_pct": 0.1,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 41.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 198.99,
+      "sma200": 162.16,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 930681604.4692993,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 2.0,
+      "sesiones_hasta_stop": 39,
+      "distancia_max_52s_pct": -9.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Arista Networks, Inc. : BNP Paribas revisa su opinión y se vuelve a Neutral - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Arista Networks Stock Is Up 26% in 3 Months. Is It Still a Buy After a Third Guidance Hike? - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Arista se desploma pese a presentar sólidos resultados - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Arista Networks Stock Beats Q1 Revenue Estimates With $2.71B and Raises Full-Year Outlook - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Arista Networks supera las expectativas y brinda un nuevo respaldo al ciclo de inversión en IA. - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks Inc (ANET) (Q2 2026) Earnings Call Highlights: Record $3 Billion Quarter and ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    }
+  },
+  {
+    "id": "KKR-2026-10-14",
+    "ticker": "KKR",
+    "nombre": "KKR & Co. Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-14",
+    "precio_entrada": 85.1244,
+    "acciones": 1.174751,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 46.4,
+    "potencial_pct": 43.9,
+    "tarjeta": {
+      "ticker": "KKR",
+      "nombre_empresa": "KKR & Co. Inc.",
+      "isin": "US48251W1045",
+      "sector": "Financial Services",
+      "score": 46.4,
+      "version_scoring": 33,
+      "precio_actual": 85.1244,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.8,
+        "pct_strong_buy": 34.8,
+        "pct_vender": 0.0,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 122.47762,
+      "dispersion_pct": 71.1,
+      "momentum_30d_pct": -14.9,
+      "momentum_5d_pct": -5.1,
+      "fuerza_relativa_pct": -16.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 20.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 101.2,
+      "sma200": 101.01,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 422929968.9147949,
+      "volumen_relativo": 1.23,
+      "volatilidad_diaria_pct": 1.78,
+      "sesiones_hasta_stop": 49,
+      "distancia_max_52s_pct": -40.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "TotalEnergies expands US venture with KKR with 700 MW portfolio - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "KKR & Co. Inc. : Evercore ISI da una recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "KKR & Co. Inc. : Evercore ISI reitera su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Here’s Why KKR Stock Is a Long-Term Buy With Around 100% Total Return Potential - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de KKR & Co. Inc. (KKR) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
     }
   }
 ]
