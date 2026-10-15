@@ -25843,7 +25843,7 @@
     "id": "ANET-2026-10-14",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-14",
     "precio_entrada": 196.89,
     "acciones": 0.507898,
@@ -25932,6 +25932,90 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 184.9191,
+    "fecha_salida": "2026-10-15",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.18,
+    "vs_indice_pct": -7.9,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 200.8278,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.06,
+        "neto_pct": -6.06,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -26247,6 +26331,169 @@
       },
       "profundizacion": null,
       "resumen_negocio": "NexGen Energy Ltd., an exploration and development stage company, engages in the acquisition, exploration, evaluation, and development of uranium properties in Canada. The company holds a 100% interest in the Rook I project that consists of 32 contiguous mineral claims totaling an area of approximately 35,065 hectares located in the southwestern Athabasca Basin of Saskatchewan."
+    }
+  },
+  {
+    "id": "AC.PA-2026-10-15",
+    "ticker": "AC.PA",
+    "nombre": "Accor SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-15",
+    "precio_entrada": 45.9,
+    "acciones": 2.178649,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 47.7,
+    "potencial_pct": 20.4,
+    "tarjeta": {
+      "ticker": "AC.PA",
+      "nombre_empresa": "Accor SA",
+      "isin": "FR0014003PZ3",
+      "sector": "Consumer Cyclical",
+      "score": 47.7,
+      "version_scoring": 33,
+      "precio_actual": 45.9,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 17.6,
+        "pct_vender": 5.9,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 55.24118,
+      "dispersion_pct": 70.7,
+      "momentum_30d_pct": 0.6,
+      "momentum_5d_pct": 2.5,
+      "fuerza_relativa_pct": 2.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 50.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 45.87,
+      "sma200": 45.2,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 26426987.737846375,
+      "volumen_relativo": 0.78,
+      "volatilidad_diaria_pct": 1.47,
+      "sesiones_hasta_stop": 71,
+      "distancia_max_52s_pct": -11.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Accor says Middle East conflict hit Q2 room revenue, Dubai returns to growth - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Accor ficha a Francisco Pleguezuelos para expandirse en Iberia - Hosteltur",
+            "fuente": "Hosteltur",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Morgan Stanley sube Accor a sobreponderada por RevPAR 2027 y retorno de capital - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 1.58,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "El nuevo hotel de la francesa Accor, con cocina de autor y junto a la AP-8 en Zumaia, abre sus puertas - El Diario Vasco",
+            "fuente": "El Diario Vasco",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Accor refuerza su presencia en España con cuatro nuevas aperturas en 2026 - Revista Gran Hotel",
+            "fuente": "Revista Gran Hotel",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Accor SA operates a chain of hotels worldwide. The company operates through Premium, Midscale and Economy; and Luxury & Lifestyle segments. Its Premium, Midscale and Economy segment includes the Ibis, Novotel, Mercure, Swissôtel, Mövenpick, and Pullman brands operating in Europe and North Africa, the Middle East, Africa, the Asia-Pacific, the Americas, and China."
+    }
+  },
+  {
+    "id": "MT.AS-2026-10-15",
+    "ticker": "MT.AS",
+    "nombre": "ArcelorMittal S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-15",
+    "precio_entrada": 56.14,
+    "acciones": 1.781261,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 45.8,
+    "potencial_pct": 24.7,
+    "tarjeta": {
+      "ticker": "MT.AS",
+      "nombre_empresa": "ArcelorMittal S.A.",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 45.8,
+      "version_scoring": 33,
+      "precio_actual": 56.14,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 28.6,
+        "pct_vender": 0.0,
+        "total_analistas": 14
+      },
+      "precio_objetivo_medio": 70.03269,
+      "dispersion_pct": 53.5,
+      "momentum_30d_pct": -13.2,
+      "momentum_5d_pct": 3.5,
+      "fuerza_relativa_pct": -11.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 30.9,
+      "tendencia_tecnica": "mixta",
+      "sma50": 62.07,
+      "sma200": 54.53,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 76847561.16849518,
+      "volumen_relativo": 0.72,
+      "volatilidad_diaria_pct": 2.29,
+      "sesiones_hasta_stop": 29,
+      "distancia_max_52s_pct": -16.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "JP Morgan eleva ArcelorMittal a sobreponderar - reitera neutral para SSAB - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Informe de Sostenibilidad 2025: Safer, smarter growth - ArcelorMittal España",
+            "fuente": "ArcelorMittal España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ArcelorMittal raised to Buy at UBS on upbeat European steel price outlook (MT:NYSE) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
     }
   }
 ]
