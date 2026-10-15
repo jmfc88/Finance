@@ -21845,7 +21845,7 @@
     "id": "AC.PA-2026-10-01",
     "ticker": "AC.PA",
     "nombre": "Accor SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 44.18,
     "acciones": 2.263468,
@@ -21912,6 +21912,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Accor SA operates a chain of hotels worldwide. The company operates through Premium, Midscale and Economy; and Luxury & Lifestyle segments. Its Premium, Midscale and Economy segment includes the Ibis, Novotel, Mercure, Swissôtel, Mövenpick, and Pullman brands operating in Europe and North Africa, the Middle East, Africa, the Asia-Pacific, the Americas, and China."
+    },
+    "precio_salida": 45.5054,
+    "fecha_salida": "2026-10-15",
+    "sesiones": 10,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.66,
+    "vs_indice_pct": 1.66,
+    "rentabilidad_7d_pct": 1.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 45.0636,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -26053,6 +26095,158 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    }
+  },
+  {
+    "id": "ITX.MC-2026-10-15",
+    "ticker": "ITX.MC",
+    "nombre": "Industria de Diseño Textil, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-15",
+    "precio_entrada": 55.44,
+    "acciones": 1.803752,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 50.0,
+    "potencial_pct": 8.9,
+    "tarjeta": {
+      "ticker": "ITX.MC",
+      "nombre_empresa": "Industria de Diseño Textil, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 50.0,
+      "version_scoring": 33,
+      "precio_actual": 55.44,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 4.2,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 60.38958,
+      "dispersion_pct": 61.4,
+      "momentum_30d_pct": 5.0,
+      "momentum_5d_pct": 4.9,
+      "fuerza_relativa_pct": 6.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 66.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 55.41,
+      "sma200": 54.07,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 90688238.91478539,
+      "volumen_relativo": 0.9,
+      "volatilidad_diaria_pct": 1.16,
+      "sesiones_hasta_stop": 115,
+      "distancia_max_52s_pct": -6.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Inditex Stock Gains On Growth In Q1 Results, Q2-to-date Sales On Strong Demand - RTTNews",
+            "fuente": "RTTNews",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-INDUSTRIA DE DISEÑO TEXTIL, S.A. La sociedad remite presentación sobre los resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El Ibex 35 cae a mínimos de 11 días lastrado por Redeia Corporación e Industria de Diseño Textil - FXStreet",
+            "fuente": "FXStreet",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally."
+    }
+  },
+  {
+    "id": "NXG.AX-2026-10-15",
+    "ticker": "NXG.AX",
+    "nombre": "NexGen Energy Ltd.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-15",
+    "precio_entrada": 11.44,
+    "acciones": 8.741259,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 45.3,
+    "potencial_pct": 77.7,
+    "tarjeta": {
+      "ticker": "NXG.AX",
+      "nombre_empresa": "NexGen Energy Ltd.",
+      "isin": null,
+      "sector": "Energy",
+      "score": 45.3,
+      "version_scoring": 33,
+      "precio_actual": 11.44,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.0,
+        "pct_strong_buy": 50.0,
+        "pct_vender": 0.0,
+        "total_analistas": 6
+      },
+      "precio_objetivo_medio": 20.32918,
+      "dispersion_pct": 81.5,
+      "momentum_30d_pct": -14.9,
+      "momentum_5d_pct": -10.4,
+      "fuerza_relativa_pct": -16.7,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 27.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 13.93,
+      "sma200": 15.43,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 5812833.568116188,
+      "volumen_relativo": 1.62,
+      "volatilidad_diaria_pct": 2.59,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": -41.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "UBS Sticks to Its Buy Rating for NexGen Energy Ltd. Shs Chess Depository Interests repr 1 shs (NXG) - The Globe and Mail",
+            "fuente": "The Globe and Mail",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Perfil y datos de empresa de NEXGEN ENERGY LTD CEDEAR EACH 1 (NXED.BA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Accionistas principales de acciones de NEXGEN ENERGY LTD CEDEAR EACH 1 (NXED.BA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "NexGen Energy Ltd., an exploration and development stage company, engages in the acquisition, exploration, evaluation, and development of uranium properties in Canada. The company holds a 100% interest in the Rook I project that consists of 32 contiguous mineral claims totaling an area of approximately 35,065 hectares located in the southwestern Athabasca Basin of Saskatchewan."
     }
   }
 ]
