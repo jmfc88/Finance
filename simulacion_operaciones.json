@@ -18959,7 +18959,7 @@
     "id": "XYZ-2026-09-28",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-28",
     "precio_entrada": 76.42,
     "acciones": 1.308558,
@@ -19047,6 +19047,54 @@
         ]
       },
       "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
+    },
+    "precio_salida": 78.7126,
+    "fecha_salida": "2026-10-16",
+    "sesiones": 14,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.41,
+    "vs_indice_pct": 1.41,
+    "rentabilidad_7d_pct": -0.46,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 77.9484,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.98,
+        "neto_pct": -5.98,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.18,
+        "neto_pct": -7.18,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -26684,6 +26732,79 @@
         ]
       },
       "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia."
+    }
+  },
+  {
+    "id": "UCG.MI-2026-10-16",
+    "ticker": "UCG.MI",
+    "nombre": "UniCredit S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-16",
+    "precio_entrada": 76.33,
+    "acciones": 1.310101,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 46.3,
+    "potencial_pct": 23.9,
+    "tarjeta": {
+      "ticker": "UCG.MI",
+      "nombre_empresa": "UniCredit S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 46.3,
+      "version_scoring": 33,
+      "precio_actual": 76.33,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.1,
+        "pct_strong_buy": 38.9,
+        "pct_vender": 0.0,
+        "total_analistas": 18
+      },
+      "precio_objetivo_medio": 94.58722,
+      "dispersion_pct": 44.9,
+      "momentum_30d_pct": -8.8,
+      "momentum_5d_pct": 0.3,
+      "fuerza_relativa_pct": -7.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 28.1,
+      "tendencia_tecnica": "mixta",
+      "sma50": 82.35,
+      "sma200": 74.53,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 315689508.95918274,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 1.99,
+      "sesiones_hasta_stop": 39,
+      "distancia_max_52s_pct": -11.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "UniCredit Wins ECB Approval to Take Control of Commerzbank - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "UniCredit recibe aprobación del BCE para superar el 30% en Commerzbank - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "UniCredit sube en medio de la oleada de adquisiciones del banco. ¿Podrá seguir subiendo? - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "UniCredit S.p.A. provides commercial banking services in Italy, Germany, Central Europe, and Eastern Europe. The company offers retail, private, and wealth management solutions; and institutional investor solutions."
     }
   }
 ]
