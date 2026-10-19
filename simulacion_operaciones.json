@@ -23049,7 +23049,7 @@
     "id": "VIE.PA-2026-10-05",
     "ticker": "VIE.PA",
     "nombre": "Veolia Environnement SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-05",
     "precio_entrada": 30.73,
     "acciones": 3.254149,
@@ -23116,6 +23116,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Veolia Environnement SA designs and provides water, waste, and energy management solutions. It operates through France and Hazardous Waste Europe; Europe; Americas, Asia Pacific, Africa Middle-East; Water Technologies; and Other segments."
+    },
+    "precio_salida": 31.6519,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 10,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.56,
+    "vs_indice_pct": 2.56,
+    "rentabilidad_7d_pct": 4.43,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 31.3446,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -26286,7 +26328,7 @@
     "id": "KKR-2026-10-14",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-14",
     "precio_entrada": 85.1244,
     "acciones": 1.174751,
@@ -26370,6 +26412,48 @@
         ]
       },
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    },
+    "precio_salida": 87.6781,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.13,
+    "vs_indice_pct": 1.13,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 86.8269,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -27397,6 +27481,285 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    }
+  },
+  {
+    "id": "REN.AS-2026-10-19",
+    "ticker": "REN.AS",
+    "nombre": "RELX PLC",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-19",
+    "precio_entrada": 34.88,
+    "acciones": 2.866972,
+    "invertido": 100.0,
+    "posicion_ranking": 3,
+    "tramo": "1-10",
+    "score": 60.8,
+    "potencial_pct": 35.5,
+    "tarjeta": {
+      "ticker": "REN.AS",
+      "nombre_empresa": "RELX PLC",
+      "isin": "INE131B01039",
+      "sector": "Industrials",
+      "score": 60.8,
+      "version_scoring": 33,
+      "precio_actual": 34.88,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 2
+      },
+      "precio_objetivo_medio": 47.25,
+      "dispersion_pct": 3.2,
+      "momentum_30d_pct": 19.1,
+      "momentum_5d_pct": 6.7,
+      "fuerza_relativa_pct": 20.6,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 98.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 30.51,
+      "sma200": 29.39,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 26318711.96120262,
+      "volumen_relativo": 1.06,
+      "volatilidad_diaria_pct": 1.49,
+      "sesiones_hasta_stop": 70,
+      "distancia_max_52s_pct": -2.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "Relx sube tras superar las previsiones de beneficio en el primer semestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "RELX PLC : JP Morgan mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "RELX PLC : El Bernstein continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Relx sube tras superar las previsiones de beneficio en el primer semestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Goldman Sachs inicia cobertura de RELX con \"comprar\" y objetivo de 30 libras - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally."
+    }
+  },
+  {
+    "id": "BC.MI-2026-10-19",
+    "ticker": "BC.MI",
+    "nombre": "Brunello Cucinelli S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-19",
+    "precio_entrada": 86.3,
+    "acciones": 1.158749,
+    "invertido": 100.0,
+    "posicion_ranking": 13,
+    "tramo": "11-20",
+    "score": 52.4,
+    "potencial_pct": 15.4,
+    "tarjeta": {
+      "ticker": "BC.MI",
+      "nombre_empresa": "Brunello Cucinelli S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 52.4,
+      "version_scoring": 33,
+      "precio_actual": 86.3,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 99.57,
+      "dispersion_pct": 85.7,
+      "momentum_30d_pct": 9.2,
+      "momentum_5d_pct": 6.3,
+      "fuerza_relativa_pct": 10.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 62.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 83.05,
+      "sma200": 82.26,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 16390565.658988953,
+      "volumen_relativo": 1.53,
+      "volatilidad_diaria_pct": 1.53,
+      "sesiones_hasta_stop": 66,
+      "distancia_max_52s_pct": -14.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 11,
+        "titulares": [
+          {
+            "titulo": "Brunello Cucinelli eleva guía de crecimiento 2026 tras superar ingresos - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Brunello Cucinelli supera las expectativas en el tercer trimestre y eleva sus objetivos para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Brunello Cucinelli eleva sus previsiones para 2026 tras superar las estimaciones de ventas del tercer trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 7,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Brunello Cucinelli supera las expectativas en el tercer trimestre y eleva sus objetivos para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Brunello Cucinelli eleva sus previsiones para 2026 tras superar las estimaciones de ventas del tercer trimestre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Brunello Cucinelli eleva sus previsiones para 2026 tras superar las expectativas del tercer trimestre - FashionNetwork España",
+            "fuente": "FashionNetwork España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia."
+    }
+  },
+  {
+    "id": "AMS.MC-2026-10-19",
+    "ticker": "AMS.MC",
+    "nombre": "Amadeus IT Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-19",
+    "precio_entrada": 54.2,
+    "acciones": 1.845018,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 51.6,
+    "potencial_pct": 28.0,
+    "tarjeta": {
+      "ticker": "AMS.MC",
+      "nombre_empresa": "Amadeus IT Group, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 51.6,
+      "version_scoring": 33,
+      "precio_actual": 54.2,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.8,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 69.35091,
+      "dispersion_pct": 60.8,
+      "momentum_30d_pct": -1.4,
+      "momentum_5d_pct": 2.7,
+      "fuerza_relativa_pct": 0.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 61.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 55.08,
+      "sma200": 52.4,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 39914601.242702484,
+      "volumen_relativo": 1.3,
+      "volatilidad_diaria_pct": 1.22,
+      "sesiones_hasta_stop": 105,
+      "distancia_max_52s_pct": -14.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "El precio objetivo de Amadeus IT Group sube tras las recientes adjudicaciones de contratos por parte de Bernstein; se mantiene la recomendación de \"rendimiento superior\". - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-AMADEUS IT GROUP, S.A. La sociedad remite la información financiera del primer semestre de 2026 -[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Amadeus IT Group (BME:AMS) - Análisis de acciones - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": -1,
+        "puntos_roe_sostenido": 2.9,
+        "verificado": false,
+        "ajuste": -4,
+        "titulares_adicionales": [
+          {
+            "titulo": "Amadeus supera las previsiones de beneficios y revisa a la baja los ingresos para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Amadeus empieza a agotar la paciencia de los analistas: Oddo le recorta la valoración - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          }
+        ]
+      },
+      "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
     }
   }
 ]
