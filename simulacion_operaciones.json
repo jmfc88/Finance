@@ -16212,7 +16212,7 @@
     "id": "REN.AS-2026-09-21",
     "ticker": "REN.AS",
     "nombre": "RELX PLC",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-21",
     "precio_entrada": 29.04,
     "acciones": 3.443526,
@@ -16294,6 +16294,90 @@
         ]
       },
       "resumen_negocio": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally."
+    },
+    "precio_salida": 34.66,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 19.35,
+    "rentabilidad_neta_pct": 17.35,
+    "resultado_neto_eur": 17.35,
+    "indice_pct": -2.99,
+    "vs_indice_pct": 20.34,
+    "rentabilidad_7d_pct": 1.03,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 13,
+    "precio_equilibrio": 29.6208,
+    "estado_resultado": "top",
+    "explicacion": "Ganancia grande. Esta es la que compensa a todas las demas.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 17.35,
+        "neto_pct": 17.35,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -20101,7 +20185,7 @@
     "id": "AIR.PA-2026-09-29",
     "ticker": "AIR.PA",
     "nombre": "Airbus SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 190.48,
     "acciones": 0.52499,
@@ -20168,6 +20252,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space."
+    },
+    "precio_salida": 196.1944,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 14,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -3.03,
+    "vs_indice_pct": 4.03,
+    "rentabilidad_7d_pct": -1.69,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 194.2896,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      }
     }
   },
   {
@@ -21162,7 +21288,7 @@
     "id": "AMS.MC-2026-10-01",
     "ticker": "AMS.MC",
     "nombre": "Amadeus IT Group, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 52.8,
     "acciones": 1.893939,
@@ -21250,6 +21376,48 @@
         ]
       },
       "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+    },
+    "precio_salida": 54.384,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 12,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.75,
+    "vs_indice_pct": 1.75,
+    "rentabilidad_7d_pct": -0.0,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 53.856,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.22,
+        "neto_pct": -4.22,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.06,
+        "neto_pct": -5.06,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -22644,7 +22812,7 @@
     "id": "LDO.MI-2026-10-02",
     "ticker": "LDO.MI",
     "nombre": "Leonardo S.p.a.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-02",
     "precio_entrada": 47.39,
     "acciones": 2.11015,
@@ -22732,6 +22900,54 @@
         ]
       },
       "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    },
+    "precio_salida": 48.8117,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.75,
+    "vs_indice_pct": 2.75,
+    "rentabilidad_7d_pct": -0.88,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 48.3378,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.18,
+        "neto_pct": -6.18,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.2,
+        "neto_pct": 1.2,
+        "sesiones": 11,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -26643,7 +26859,7 @@
     "id": "BC.MI-2026-10-15",
     "ticker": "BC.MI",
     "nombre": "Brunello Cucinelli S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-15",
     "precio_entrada": 83.7,
     "acciones": 1.194743,
@@ -26732,6 +26948,48 @@
         ]
       },
       "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia."
+    },
+    "precio_salida": 86.211,
+    "fecha_salida": "2026-10-19",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.64,
+    "vs_indice_pct": 1.64,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 85.374,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
