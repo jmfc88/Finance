@@ -24384,7 +24384,7 @@
     "id": "BNP.PA-2026-10-07",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 91.35,
     "acciones": 1.094691,
@@ -24467,6 +24467,54 @@
         ]
       },
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    },
+    "precio_salida": 85.7959,
+    "fecha_salida": "2026-10-20",
+    "sesiones": 9,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -1.55,
+    "vs_indice_pct": -6.53,
+    "rentabilidad_7d_pct": -1.97,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 93.177,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 9,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.52,
+        "neto_pct": -4.52,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.42,
+        "neto_pct": -5.42,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.23,
+        "neto_pct": -7.23,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -24817,7 +24865,7 @@
     "id": "UNI.MI-2026-10-08",
     "ticker": "UNI.MI",
     "nombre": "Unipol Assicurazioni S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-08",
     "precio_entrada": 25.99,
     "acciones": 3.847634,
@@ -24889,6 +24937,54 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    },
+    "precio_salida": 24.4098,
+    "fecha_salida": "2026-10-20",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.69,
+    "vs_indice_pct": -7.39,
+    "rentabilidad_7d_pct": -4.35,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 26.5098,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.34,
+        "neto_pct": -4.34,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.21,
+        "neto_pct": -5.21,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.95,
+        "neto_pct": -6.95,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -24978,7 +25074,7 @@
     "id": "HIAB.HE-2026-10-08",
     "ticker": "HIAB.HE",
     "nombre": "Hiab Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-08",
     "precio_entrada": 55.5,
     "acciones": 1.801802,
@@ -25056,6 +25152,42 @@
         ]
       },
       "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
+    },
+    "precio_salida": 52.1256,
+    "fecha_salida": "2026-10-20",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.69,
+    "vs_indice_pct": -7.39,
+    "rentabilidad_7d_pct": -4.05,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 56.61,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -7.37,
+        "neto_pct": -7.37,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -27953,6 +28085,101 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Stellantis N.V. engages in the designing, engineering, manufacturing, distribution, and sale of automobiles and light commercial vehicles, engines, transmission systems, and mobility services worldwide."
+    }
+  },
+  {
+    "id": "KKR-2026-10-20",
+    "ticker": "KKR",
+    "nombre": "KKR & Co. Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-20",
+    "precio_entrada": 87.0,
+    "acciones": 1.149425,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 41.6,
+    "potencial_pct": 39.9,
+    "tarjeta": {
+      "ticker": "KKR",
+      "nombre_empresa": "KKR & Co. Inc.",
+      "isin": "US48251W1045",
+      "sector": "Financial Services",
+      "score": 41.6,
+      "version_scoring": 33,
+      "precio_actual": 87.0,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.8,
+        "pct_strong_buy": 34.8,
+        "pct_vender": 0.0,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 121.71571,
+      "dispersion_pct": 71.1,
+      "momentum_30d_pct": -12.0,
+      "momentum_5d_pct": -4.9,
+      "fuerza_relativa_pct": -12.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 32.0,
+      "tendencia_tecnica": "bajista",
+      "sma50": 100.21,
+      "sma200": 100.4,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 449746819.3939209,
+      "volumen_relativo": 1.51,
+      "volatilidad_diaria_pct": 1.75,
+      "sesiones_hasta_stop": 51,
+      "distancia_max_52s_pct": -38.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "KKR - Incluso con un colapso brutal del crédito KKR mantendría beneficios relevantes - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "KKR & Co. Inc. : Morgan Stanley mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "KKR & Co. Inc. : Evercore ISI da una recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "KKR se enfrenta a una posible multa de la UE por información engañosa en acuerdo de banda ancha en Italia - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Here’s Why KKR Stock Is a Long-Term Buy With Around 100% Total Return Potential - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "KKR enfrenta posible multa de la UE por información engañosa en Italia - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
     }
   }
 ]
