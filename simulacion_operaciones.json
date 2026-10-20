@@ -27594,7 +27594,7 @@
     "id": "GLE.PA-2026-10-19",
     "ticker": "GLE.PA",
     "nombre": "Société Générale Société anonyme",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-19",
     "precio_entrada": 64.47,
     "acciones": 1.551109,
@@ -27661,6 +27661,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    },
+    "precio_salida": 60.5502,
+    "fecha_salida": "2026-10-20",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.62,
+    "vs_indice_pct": -7.46,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 65.7594,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.68,
+        "neto_pct": -5.68,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.82,
+        "neto_pct": -6.82,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -28180,6 +28222,253 @@
         ]
       },
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    }
+  },
+  {
+    "id": "UNI.MI-2026-10-20",
+    "ticker": "UNI.MI",
+    "nombre": "Unipol Assicurazioni S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-20",
+    "precio_entrada": 24.98,
+    "acciones": 4.003203,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 49.6,
+    "potencial_pct": 24.8,
+    "tarjeta": {
+      "ticker": "UNI.MI",
+      "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+      "isin": "INE950G01023",
+      "sector": "Financial Services",
+      "score": 49.6,
+      "version_scoring": 33,
+      "precio_actual": 24.98,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 40.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 31.1743,
+      "dispersion_pct": 18.8,
+      "momentum_30d_pct": -11.4,
+      "momentum_5d_pct": -1.7,
+      "fuerza_relativa_pct": -7.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 33.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 27.28,
+      "sma200": 23.03,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 44962059.58895874,
+      "volumen_relativo": 1.6,
+      "volatilidad_diaria_pct": 1.66,
+      "sesiones_hasta_stop": 56,
+      "distancia_max_52s_pct": -14.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Unipol Assicurazioni SpA (UFGSY) (Q2 2026) Earnings Call Highlights: Net Profit Surges Nearly ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Intesa Sanpaolo lanza una oferta pública de adquisición por MPS, llegando a un acuerdo con Unipol. - Agenzia Nova",
+            "fuente": "Agenzia Nova",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Unipol: la autoridad italiana de la competencia autoriza la toma de control de BPER Banca - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 1.54,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": []
+      },
+      "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    }
+  },
+  {
+    "id": "AENA.MC-2026-10-20",
+    "ticker": "AENA.MC",
+    "nombre": "Aena S.M.E., S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-20",
+    "precio_entrada": 25.96,
+    "acciones": 3.85208,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 45.5,
+    "potencial_pct": 4.4,
+    "tarjeta": {
+      "ticker": "AENA.MC",
+      "nombre_empresa": "Aena S.M.E., S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 45.5,
+      "version_scoring": 33,
+      "precio_actual": 25.96,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 27.10682,
+      "dispersion_pct": 62.5,
+      "momentum_30d_pct": 0.7,
+      "momentum_5d_pct": 2.7,
+      "fuerza_relativa_pct": 4.3,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 53.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 25.8,
+      "sma200": 25.41,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 28840023.434574127,
+      "volumen_relativo": 0.85,
+      "volatilidad_diaria_pct": 1.36,
+      "sesiones_hasta_stop": 85,
+      "distancia_max_52s_pct": -6.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Aena SME SA (ANNSF) Q1 2026 Earnings Call Highlights: Strong Revenue Growth Amid Rising Expenses - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-AENA, S.M.E., S.A. Presentación de resultados del primer semestre de 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Aena reported 4.20 percent traffic growth while Aena stock trades at EUR 25.83 - ad-hoc-news.de",
+            "fuente": "ad-hoc-news.de",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 2.68,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Aena caen pese a su beneficio récord - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Aena caen pese a sus buenos resultados - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Aena gana 1.002 millones y prevé cerca del 3 % más de tráfico - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Aena S.M.E., S.A., together with its subsidiaries, engages in the management of airports in Spain, Brazil, the United Kingdom, Mexico, and Colombia. The company operates through Airports, Real Estate Services, Región de Murcia International Airport, and International segments."
+    }
+  },
+  {
+    "id": "HIAB.HE-2026-10-20",
+    "ticker": "HIAB.HE",
+    "nombre": "Hiab Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-20",
+    "precio_entrada": 52.2,
+    "acciones": 1.915709,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 40.9,
+    "potencial_pct": 30.7,
+    "tarjeta": {
+      "ticker": "HIAB.HE",
+      "nombre_empresa": "Hiab Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 40.9,
+      "version_scoring": 33,
+      "precio_actual": 52.2,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 5.1,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 68.2,
+      "dispersion_pct": 18.3,
+      "momentum_30d_pct": -17.3,
+      "momentum_5d_pct": -3.1,
+      "fuerza_relativa_pct": -13.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 26.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 59.94,
+      "sma200": 52.79,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 3790359.527610779,
+      "volumen_relativo": 0.75,
+      "volatilidad_diaria_pct": 2.46,
+      "sesiones_hasta_stop": 25,
+      "distancia_max_52s_pct": -20.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "OP Corporate Bank eleva Hiab a comprar (acumular), precio objetivo de 63 EUR - BN - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Hiab (HLSE:HIAB) Stock Still Looks Below Fair Value Following Its 168% Run - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Hiab Oyj (HIAB.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Hiab Oyj provides smart and on road load-handling solutions and services in Finland. The company provides loader cranes under HIAB, EFFER, and ARGOS brands; truck-mounted forklifts under MOFFETT and PRINCETON brands; forestry cranes under LOGLIFT brand; recycling cranes under JONSERED brand; demountable and hooklifts under MULTILIFT brand; roll-off cable hoists under GALFAB brand; tail lifts under ZEPRO, DEL, and..."
     }
   }
 ]
