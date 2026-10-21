@@ -16696,7 +16696,7 @@
     "id": "UNA.AS-2026-09-23",
     "ticker": "UNA.AS",
     "nombre": "Unilever PLC",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 54.92,
     "acciones": 1.82083,
@@ -16784,6 +16784,90 @@
         ]
       },
       "resumen_negocio": "Unilever PLC operates as a fast-moving consumer goods company in the Asia Pacific, Africa, the Americas, and Europe. It operates through four segments: Beauty & Wellbeing, Personal Care, Home Care, and Foods."
+    },
+    "precio_salida": 57.81,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 5.26,
+    "rentabilidad_neta_pct": 3.26,
+    "resultado_neto_eur": 3.26,
+    "indice_pct": -2.03,
+    "vs_indice_pct": 5.29,
+    "rentabilidad_7d_pct": -3.79,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 17,
+    "precio_equilibrio": 56.0184,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.26 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 3.26,
+        "neto_pct": 3.26,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -17130,7 +17214,7 @@
     "id": "EDP.LS-2026-09-23",
     "ticker": "EDP.LS",
     "nombre": "EDP, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 4.799,
     "acciones": 20.837675,
@@ -17218,6 +17302,90 @@
         ]
       },
       "resumen_negocio": "EDP, S.A. engages in the generation, transmission, distribution, and supply of electricity in Portugal, Spain, France, Poland, Romania, Italy, Belgium, the United Kingdom, Greece, Colombia, Brazil, North America, and internationally."
+    },
+    "precio_salida": 4.701,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.04,
+    "rentabilidad_neta_pct": -4.04,
+    "resultado_neto_eur": -4.04,
+    "indice_pct": -2.03,
+    "vs_indice_pct": -2.01,
+    "rentabilidad_7d_pct": 0.04,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.895,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 19,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.12,
+        "neto_pct": -4.12,
+        "sesiones": 19,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -17330,7 +17498,7 @@
     "id": "ROVI.MC-2026-09-23",
     "ticker": "ROVI.MC",
     "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 59.4,
     "acciones": 1.683502,
@@ -17408,13 +17576,97 @@
         ]
       },
       "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
+    },
+    "precio_salida": 58.85,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.93,
+    "rentabilidad_neta_pct": -2.93,
+    "resultado_neto_eur": -2.93,
+    "indice_pct": -2.03,
+    "vs_indice_pct": -0.9,
+    "rentabilidad_7d_pct": -3.37,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 60.588,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.93,
+        "neto_pct": -2.93,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "IAG.MC-2026-09-23",
     "ticker": "IAG.MC",
     "nombre": "International Consolidated Airlines Group S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-23",
     "precio_entrada": 5.06,
     "acciones": 19.762846,
@@ -17492,6 +17744,90 @@
         ]
       },
       "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally."
+    },
+    "precio_salida": 4.926,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.65,
+    "rentabilidad_neta_pct": -4.65,
+    "resultado_neto_eur": -4.65,
+    "indice_pct": -2.03,
+    "vs_indice_pct": -2.62,
+    "rentabilidad_7d_pct": 2.29,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.1612,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.51,
+        "neto_pct": -4.51,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.02,
+        "neto_pct": -6.02,
+        "sesiones": 15,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 19,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.65,
+        "neto_pct": -4.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -27893,7 +28229,7 @@
     "id": "AMS.MC-2026-10-19",
     "ticker": "AMS.MC",
     "nombre": "Amadeus IT Group, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-19",
     "precio_entrada": 54.2,
     "acciones": 1.845018,
@@ -27982,6 +28318,48 @@
         ]
       },
       "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+    },
+    "precio_salida": 55.826,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.44,
+    "vs_indice_pct": 0.56,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 55.284,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
