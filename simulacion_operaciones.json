@@ -26928,7 +26928,7 @@
     "id": "AMP.MI-2026-10-14",
     "ticker": "AMP.MI",
     "nombre": "Amplifon S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-14",
     "precio_entrada": 12.3,
     "acciones": 8.130081,
@@ -26995,6 +26995,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 12.669,
+    "fecha_salida": "2026-10-21",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.16,
+    "vs_indice_pct": 0.84,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 12.546,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -29046,6 +29088,186 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    }
+  },
+  {
+    "id": "IAG.MC-2026-10-21",
+    "ticker": "IAG.MC",
+    "nombre": "International Consolidated Airlines Group S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-21",
+    "precio_entrada": 4.961,
+    "acciones": 20.157226,
+    "invertido": 100.0,
+    "posicion_ranking": 4,
+    "tramo": "1-10",
+    "score": 56.5,
+    "potencial_pct": 20.9,
+    "tarjeta": {
+      "ticker": "IAG.MC",
+      "nombre_empresa": "International Consolidated Airlines Group S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 56.5,
+      "version_scoring": 33,
+      "precio_actual": 4.961,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 45.5,
+        "pct_vender": 0.0,
+        "total_analistas": 11
+      },
+      "precio_objetivo_medio": 5.99545,
+      "dispersion_pct": 22.6,
+      "momentum_30d_pct": -3.0,
+      "momentum_5d_pct": 1.7,
+      "fuerza_relativa_pct": -1.0,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 42.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 5.0,
+      "sma200": 4.82,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 19966850.26831174,
+      "volumen_relativo": 0.98,
+      "volatilidad_diaria_pct": 1.26,
+      "sesiones_hasta_stop": 98,
+      "distancia_max_52s_pct": -12.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : El JP Morgan continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-INTERNATIONAL CONSOLIDATED AIRLINES GROUP, S.A. La Sociedad remite información sobre las operaciones[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : Bernstein mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. Stock (IAG) - Quote London S.E. - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally."
+    }
+  },
+  {
+    "id": "AMS.MC-2026-10-21",
+    "ticker": "AMS.MC",
+    "nombre": "Amadeus IT Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-21",
+    "precio_entrada": 56.14,
+    "acciones": 1.781261,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 45.8,
+    "potencial_pct": 23.5,
+    "tarjeta": {
+      "ticker": "AMS.MC",
+      "nombre_empresa": "Amadeus IT Group, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 45.8,
+      "version_scoring": 33,
+      "precio_actual": 56.14,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.8,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 69.35091,
+      "dispersion_pct": 60.8,
+      "momentum_30d_pct": 2.1,
+      "momentum_5d_pct": 6.7,
+      "fuerza_relativa_pct": 4.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 71.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 55.03,
+      "sma200": 52.33,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 41546682.0280571,
+      "volumen_relativo": 1.21,
+      "volatilidad_diaria_pct": 1.53,
+      "sesiones_hasta_stop": 66,
+      "distancia_max_52s_pct": -11.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": -1,
+        "titulares": [
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus IT Group (BME:AMS) - Análisis de acciones - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "EUROPA PRESS.-AMADEUS IT GROUP, S.A. Programas de recompra de acciones, estabilización y autocartera - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": -2,
+        "puntos_roe_sostenido": 2.9,
+        "verificado": false,
+        "ajuste": -8,
+        "titulares_adicionales": [
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Jefferies recorta sus previsiones sobre Amadeus, pero su objetivo implica un potencial del 24,3 - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus IT Group (BME:AMS) - Análisis de acciones - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
     }
   }
 ]
