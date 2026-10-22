@@ -18087,7 +18087,7 @@
     "id": "SCYR.MC-2026-09-24",
     "ticker": "SCYR.MC",
     "nombre": "Sacyr, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-24",
     "precio_entrada": 4.06,
     "acciones": 24.630542,
@@ -18175,6 +18175,90 @@
         ]
       },
       "resumen_negocio": "Sacyr, S.A. engages in the development and operation of infrastructure concessions worldwide. It is involved in the infrastructure development, such as transportation, sanitation, water, and waste treatment; development of large-scale civil engineering, industrial transport infrastructure, and building projects; water treatment, purification, desalination, purification, and reuse, as well as operation and..."
+    },
+    "precio_salida": 3.982,
+    "fecha_salida": "2026-10-22",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -1.92,
+    "rentabilidad_neta_pct": -3.92,
+    "resultado_neto_eur": -3.92,
+    "indice_pct": -2.59,
+    "vs_indice_pct": -1.33,
+    "rentabilidad_7d_pct": -1.97,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.1412,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.17,
+        "neto_pct": -5.17,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 10,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -21199,7 +21283,7 @@
     "id": "PUB.PA-2026-09-30",
     "ticker": "PUB.PA",
     "nombre": "Publicis Groupe S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 94.4,
     "acciones": 1.059322,
@@ -21287,6 +21371,54 @@
         ]
       },
       "resumen_negocio": "Publicis Groupe S.A., together with its subsidiaries, provides marketing, communications, and digital business transformation services in North America, Europe, the Asia Pacific, Latin America, Africa, and the Middle East, and internationally."
+    },
+    "precio_salida": 99.625,
+    "fecha_salida": "2026-10-22",
+    "sesiones": 16,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": -2.53,
+    "vs_indice_pct": 6.06,
+    "rentabilidad_7d_pct": 3.05,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 9,
+    "precio_equilibrio": 96.288,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 16,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 16,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 16,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 16,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 4.61,
+        "neto_pct": 4.61,
+        "sesiones": 14,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -24324,7 +24456,7 @@
     "id": "PUIG.MC-2026-10-07",
     "ticker": "PUIG.MC",
     "nombre": "Puig Brands, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 18.2,
     "acciones": 5.494505,
@@ -24391,6 +24523,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    },
+    "precio_salida": 18.746,
+    "fecha_salida": "2026-10-22",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.13,
+    "vs_indice_pct": 2.13,
+    "rentabilidad_7d_pct": 7.53,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 7,
+    "precio_equilibrio": 18.564,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.41,
+        "neto_pct": 2.41,
+        "sesiones": 11,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -24946,7 +25126,7 @@
     "id": "FDR.MC-2026-10-07",
     "ticker": "FDR.MC",
     "nombre": "Fluidra, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 17.18,
     "acciones": 5.820722,
@@ -25034,6 +25214,48 @@
         ]
       },
       "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    },
+    "precio_salida": 17.6954,
+    "fecha_salida": "2026-10-22",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.13,
+    "vs_indice_pct": 2.13,
+    "rentabilidad_7d_pct": 2.97,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 17.5236,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -27899,7 +28121,7 @@
     "id": "PRX.AS-2026-10-19",
     "ticker": "PRX.AS",
     "nombre": "Prosus N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-19",
     "precio_entrada": 35.96,
     "acciones": 2.780868,
@@ -27966,6 +28188,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Prosus N.V. engages in the e-commerce and internet businesses in Asia, Europe, Latin America, North America, and internationally. It operates internet platforms, such as classifieds, payments and fintech, etail, food delivery, education technology, Etail, ventures, tencent, and other platforms."
+    },
+    "precio_salida": 33.7736,
+    "fecha_salida": "2026-10-22",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.56,
+    "vs_indice_pct": -7.52,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 36.6792,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.97,
+        "neto_pct": -4.97,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.97,
+        "neto_pct": -5.97,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.96,
+        "neto_pct": -7.96,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -29341,6 +29611,152 @@
       },
       "profundizacion": null,
       "resumen_negocio": "EDP, S.A. engages in the generation, transmission, distribution, and supply of electricity in Portugal, Spain, France, Poland, Romania, Italy, Belgium, the United Kingdom, Greece, Colombia, Brazil, North America, and internationally."
+    }
+  },
+  {
+    "id": "ROVI.MC-2026-10-22",
+    "ticker": "ROVI.MC",
+    "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-22",
+    "precio_entrada": 58.8,
+    "acciones": 1.70068,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 40.8,
+    "potencial_pct": 24.6,
+    "tarjeta": {
+      "ticker": "ROVI.MC",
+      "nombre_empresa": "Laboratorios Farmaceuticos Rovi, S.A.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 40.8,
+      "version_scoring": 33,
+      "precio_actual": 58.8,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 11.1,
+        "pct_vender": 0.0,
+        "total_analistas": 9
+      },
+      "precio_objetivo_medio": 73.24444,
+      "dispersion_pct": 29.3,
+      "momentum_30d_pct": -0.8,
+      "momentum_5d_pct": 2.1,
+      "fuerza_relativa_pct": 2.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 56.7,
+      "tendencia_tecnica": "mixta",
+      "sma50": 58.79,
+      "sma200": 65.61,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 4920489.1216983795,
+      "volumen_relativo": 0.74,
+      "volatilidad_diaria_pct": 1.5,
+      "sesiones_hasta_stop": 69,
+      "distancia_max_52s_pct": -30.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Rovi suben en Bolsa tras duplicar su beneficio hasta los 84,4 millones - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Earnings call transcript: Rovi posts strong H1 2026 growth, stock rises 1.5% - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Transacciones de personas con información privilegiada de Laboratorios Farmaceuticos Rovi SA (41L.HM) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
+    }
+  },
+  {
+    "id": "APO-2026-10-22",
+    "ticker": "APO",
+    "nombre": "Apollo Global Management, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-22",
+    "precio_entrada": 111.69,
+    "acciones": 0.895335,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 40.6,
+    "potencial_pct": 33.1,
+    "tarjeta": {
+      "ticker": "APO",
+      "nombre_empresa": "Apollo Global Management, Inc.",
+      "isin": "US03769M1062",
+      "sector": "Financial Services",
+      "score": 40.6,
+      "version_scoring": 33,
+      "precio_actual": 111.69,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 22.7,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 148.7,
+      "dispersion_pct": 36.2,
+      "momentum_30d_pct": -10.0,
+      "momentum_5d_pct": -1.5,
+      "fuerza_relativa_pct": -9.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 41.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 125.21,
+      "sma200": 123.76,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 420106252.3487091,
+      "volumen_relativo": 1.15,
+      "volatilidad_diaria_pct": 1.5,
+      "sesiones_hasta_stop": 69,
+      "distancia_max_52s_pct": -25.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Slowing Token Spend Shows Compute Demand Isn’t Unlimited - Apollo Global Management",
+            "fuente": "Apollo Global Management",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Apollo Global Management, Inc. : Autonomous Research cambia su recomendación a compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Apollo incorpora a Malka, de Ribbit Capital, a su consejo de administración - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Apollo Global Management, Inc. is a private equity firm specializing in investments in credit, private equity, infrastructure, secondaries and real estate markets. The firm prefers to invest in private and public markets."
     }
   }
 ]
