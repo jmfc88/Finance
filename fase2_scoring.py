@@ -1,4 +1,23 @@
 """
+VERSION: 36 (12/10/2026) - VWAP ANCLADO A RESULTADOS, de -5 a +5 puntos.
+
+Mide el precio medio ponderado por volumen desde los ultimos resultados, es
+decir, a cuanto compro de verdad todo el que entro desde entonces. Por encima,
+esa gente va ganando y hay poca prisa por vender; por debajo, hay accionistas
+atrapados esperando a salir en cuanto recupere, y eso frena las subidas. Es
+una lectura del POSICIONAMIENTO y ningun otro factor la mide.
+
+Anclado a resultados y no a 50 sesiones a secas: asi no duplica a la SMA50
+que ya se puntua, y coge el momento en que se renueva la tesis de la empresa.
+Si no hay fecha de resultados con al menos 10 sesiones detras, cae a 50
+sesiones.
+
+Cero peticiones extra: el historico con volumen ya estaba descargado y
+get_earnings_dates ya se llamaba para el catalizador.
+
+Los factores de mercado bajan de 90 a 85 para hacerle sitio. Maximo total:
+85 mercado + 7 fundamentales + 5 VWAP + 3 ROE sostenido (fase3) = 100.
+
 VERSION: 35 (12/10/2026) - CALIDAD DEL NEGOCIO. Hasta ahora el score solo
 miraba el precio y lo que opinaba el mercado: ni un solo factor comprobaba si
 la empresa gana dinero. Se anaden los tres indicadores basicos de salud, que
@@ -233,15 +252,19 @@ HORQUILLA_COMODA = 0.4    # hasta aqui, penalizacion cero
 HORQUILLA_MAXIMA = 2.0    # a partir de aqui se descarta directamente
 PENALIZACION_HORQUILLA_MAX = -10.0
 
-# Reparto del score: 90 puntos para los factores de mercado (consenso,
-# momentum, potencial...) y 10 para la calidad del negocio (ROE, margen
-# operativo, PER). Antes los de mercado se llevaban los 100.
+# Reparto del score:
+#   85  factores de mercado (consenso, momentum, potencial, tecnica...)
+#   10  calidad del negocio (7 aqui: ROE, margen, PER · 3 en fase3: ROE sostenido)
+#    5  VWAP anclado a resultados (de -5 a +5)
+#
+# Antes los de mercado se llevaban los 100.
 #
 # Por que 10 y no mas: los fundamentales mueven el precio a anos y este
 # sistema opera a semanas. Son un desempate entre candidatas que ya han
 # pasado el resto de filtros, no el criterio principal.
-FACTOR_MERCADO = 0.90
+FACTOR_MERCADO = 0.85
 MAXIMO_FUNDAMENTALES = 7.0
+MAXIMO_VWAP = 5.0
 # Los 3 puntos que faltan hasta 10 los pone fase3 con el ROE sostenido, que
 # necesita los estados financieros de varios anos y por eso no se calcula
 # aqui: serian ~180 peticiones extra al dia en vez de 25.
@@ -844,6 +867,81 @@ def puntos_fuerza_relativa(fuerza_relativa):
     return round(4.0 * proporcion if proporcion >= 0 else 2.0 * proporcion, 2)
 
 
+def vwap_anclado(hist, ticker_obj):
+    """VWAP anclado a los ultimos resultados publicados. De -5 a +5 puntos.
+
+    QUE MIDE, y por que no duplica a la SMA50: el VWAP es el precio medio
+    PONDERADO POR VOLUMEN desde un evento. Dicho de otro modo, el precio medio
+    al que ha comprado de verdad todo el que entro desde entonces. Si la
+    cotizacion esta por encima, la mayoria de esos compradores va ganando y
+    hay poca prisa por vender; si esta por debajo, hay gente atrapada
+    esperando a salir en cuanto recupere, y eso frena las subidas.
+
+    Es una lectura del POSICIONAMIENTO, no del precio, y ningun otro factor
+    del sistema mide eso.
+
+    Anclado a los ultimos resultados a proposito: es el momento en que se
+    renueva la tesis de una empresa y entra dinero nuevo. Un VWAP a 50
+    sesiones a secas se pareceria demasiado a la SMA50 que ya se puntua.
+
+    Si no hay fecha de resultados utilizable, se ancla a 50 sesiones: peor,
+    pero mejor que no medir nada.
+
+    Cero peticiones extra: el historico con volumen ya esta descargado y
+    get_earnings_dates ya se llama para el catalizador.
+    """
+    detalle = {"vwap": None, "distancia_pct": None, "anclaje": None, "sesiones": None}
+    try:
+        if hist is None or len(hist) < 10 or "Volume" not in hist.columns:
+            return 0.0, detalle
+
+        desde = None
+        try:
+            fechas = ticker_obj.get_earnings_dates(limit=8)
+            if fechas is not None and not fechas.empty:
+                ahora = datetime.now(fechas.index.tz) if fechas.index.tz is not None else datetime.now()
+                pasadas = fechas[fechas.index <= ahora]
+                if not pasadas.empty:
+                    candidata = pasadas.index[0]
+                    # Solo sirve si deja al menos 10 sesiones de historia:
+                    # con menos, el VWAP es casi el precio de hoy y no dice nada.
+                    tramo = hist[hist.index >= candidata]
+                    if len(tramo) >= 10:
+                        desde = candidata
+                        detalle["anclaje"] = "resultados"
+        except Exception:
+            pass
+
+        if desde is None:
+            tramo = hist.tail(50)
+            detalle["anclaje"] = "50 sesiones"
+        else:
+            tramo = hist[hist.index >= desde]
+
+        precios = (tramo["High"] + tramo["Low"] + tramo["Close"]) / 3
+        volumen = tramo["Volume"]
+        total_vol = float(volumen.sum())
+        if total_vol <= 0:
+            return 0.0, detalle
+
+        vwap = float((precios * volumen).sum() / total_vol)
+        actual = float(hist["Close"].iloc[-1])
+        if vwap <= 0:
+            return 0.0, detalle
+
+        distancia = (actual - vwap) / vwap * 100
+        detalle.update({"vwap": round(vwap, 4), "distancia_pct": round(distancia, 2),
+                        "sesiones": len(tramo)})
+
+        # +-5% de distancia es el tope. Mas alla no suma: una accion un 20%
+        # por encima de su VWAP no esta "mejor posicionada", esta estirada.
+        puntos = max(-5.0, min(5.0, distancia))
+        detalle["puntos"] = round(puntos, 2)
+        return round(puntos, 2), detalle
+    except Exception:
+        return 0.0, detalle
+
+
 def metricas_de_volumen(hist):
     """Saca liquidez, volumen relativo, volatilidad y distancia al maximo de
     52 semanas del historico que YA se ha descargado. Cero peticiones extra.
@@ -1045,7 +1143,7 @@ def puntos_fundamentales(info):
     return round(total, 2), detalle
 
 
-def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None, horquilla=None):
+def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tendencia_analistas_valor=None, empujon_consenso_real=0, momentum_5d=None, fuerza_relativa=None, regimen=None, vol=None, horquilla=None, vwap_puntos=0.0):
     """
     Score de 0 a 100 de verdad — reescalado (11/08/2026) para que la suma
     de los máximos de los 10 factores dé exactamente 100 (antes sumaban
@@ -1123,6 +1221,7 @@ def calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec=None, tende
     # Reescalado a 90 y hueco de 10 para la calidad del negocio.
     score = score * FACTOR_MERCADO
     score += puntos_fundamentales(info)[0]
+    score += vwap_puntos
 
     return round(score, 1)
 
@@ -1217,6 +1316,7 @@ def evaluar(ticker):
                               f"sin nada debajo"}
 
         horquilla = horquilla_pct(info)
+        _vwap = vwap_anclado(hist, t)
         if horquilla is not None and horquilla >= HORQUILLA_MAXIMA:
             coste = round(200 * horquilla / 100, 2)
             return {"ticker": ticker, "descartado": True,
@@ -1232,7 +1332,7 @@ def evaluar(ticker):
 
         score = calcular_score(info, momentum_30d, dispersion_pct, tendencia_tec,
                                tendencia_analistas_valor, empujon_consenso_real, momentum_5d,
-                               fuerza_relativa, regimen, vol, horquilla)
+                               fuerza_relativa, regimen, vol, horquilla, _vwap[0])
         _fund = puntos_fundamentales(info)
         if catalizador:
             score += 7.7  # empujón notable pero que no domine el resto del método
@@ -1265,6 +1365,10 @@ def evaluar(ticker):
             "indice_referencia": indice,
             "version_scoring": VERSION_SCORING,
             "metodo_datos": metodo_datos,
+            "vwap": limpio(_vwap[1]["vwap"]),
+            "vwap_distancia_pct": limpio(_vwap[1]["distancia_pct"]),
+            "vwap_anclaje": _vwap[1]["anclaje"],
+            "puntos_vwap": limpio(_vwap[0]),
             "roe_pct": limpio(_fund[1]["roe_pct"]),
             "margen_operativo_pct": limpio(_fund[1]["margen_operativo_pct"]),
             "per": limpio(_fund[1]["per"]),
