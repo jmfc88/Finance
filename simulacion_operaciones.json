@@ -27188,7 +27188,7 @@
     "id": "CCL-2026-10-14",
     "ticker": "CCL",
     "nombre": "Carnival Corporation Ltd.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-14",
     "precio_entrada": 25.95,
     "acciones": 3.853565,
@@ -27277,6 +27277,72 @@
         ]
       },
       "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    },
+    "precio_salida": 26.7285,
+    "fecha_salida": "2026-10-23",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.19,
+    "vs_indice_pct": 2.19,
+    "rentabilidad_7d_pct": -0.13,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 4,
+    "precio_equilibrio": 26.469,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.06,
+        "neto_pct": -2.06,
+        "sesiones": 7,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.05,
+        "neto_pct": 0.05,
+        "sesiones": 7,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.06,
+        "neto_pct": -2.06,
+        "sesiones": 7,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.06,
+        "neto_pct": -2.06,
+        "sesiones": 7,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -28029,7 +28095,7 @@
     "id": "MT.AS-2026-10-15",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-15",
     "precio_entrada": 56.14,
     "acciones": 1.781261,
@@ -28096,6 +28162,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
+    },
+    "precio_salida": 52.7267,
+    "fecha_salida": "2026-10-23",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.05,
+    "vs_indice_pct": -6.03,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 57.2628,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.78,
+        "neto_pct": -5.78,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.94,
+        "neto_pct": -6.94,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -29447,7 +29555,7 @@
     "id": "STLAP.PA-2026-10-20",
     "ticker": "STLAP.PA",
     "nombre": "Stellantis N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-20",
     "precio_entrada": 3.852,
     "acciones": 25.96054,
@@ -29513,6 +29621,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Stellantis N.V. engages in the designing, engineering, manufacturing, distribution, and sale of automobiles and light commercial vehicles, engines, transmission systems, and mobility services worldwide."
+    },
+    "precio_salida": 3.6178,
+    "fecha_salida": "2026-10-23",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -1.3,
+    "vs_indice_pct": -6.78,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 3.929,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.38,
+        "neto_pct": -5.38,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.45,
+        "neto_pct": -6.45,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -8.6,
+        "neto_pct": -8.6,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -31812,7 +32004,7 @@
     "id": "GMD.AX-2026-10-23",
     "ticker": "GMD.AX",
     "nombre": "Genesis Minerals Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 6.68,
     "acciones": 14.97006,
@@ -31879,6 +32071,84 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    },
+    "precio_salida": 6.2739,
+    "fecha_salida": "2026-10-23",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": null,
+    "vs_indice_pct": null,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 6.8136,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.34,
+        "neto_pct": -6.34,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.6,
+        "neto_pct": -7.6,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -32120,6 +32390,164 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Tenaris S.A., together with its subsidiaries, manufactures and supplies steel pipe products and related services for the energy industry and other industrial applications in North America, South America, Europe, the Middle East and Africa, and the Asia Pacific."
+    }
+  },
+  {
+    "id": "IG.MI-2026-10-23",
+    "ticker": "IG.MI",
+    "nombre": "Italgas S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-23",
+    "precio_entrada": 8.776,
+    "acciones": 11.394713,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 42.4,
+    "potencial_pct": 21.2,
+    "tarjeta": {
+      "ticker": "IG.MI",
+      "nombre_empresa": "Italgas S.p.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 42.4,
+      "version_scoring": 33,
+      "precio_actual": 8.776,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 6.7,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 10.63333,
+      "dispersion_pct": 19.4,
+      "momentum_30d_pct": 4.2,
+      "momentum_5d_pct": 2.0,
+      "fuerza_relativa_pct": 8.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 79.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 8.47,
+      "sma200": 9.56,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 16808158.390900612,
+      "volumen_relativo": 1.04,
+      "volatilidad_diaria_pct": 1.13,
+      "sesiones_hasta_stop": 121,
+      "distancia_max_52s_pct": -18.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Italgas dispara su beneficio en el Q1 gracias al acuerdo con 2i - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Italgas expande en Portugal con acuerdo de €120 mln en Floene - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Italgas SpA (ITGGF) (Half Year 2026) Earnings Call Highlights: Strong Revenue Growth and ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Italgas dispara su beneficio en el Q1 gracias al acuerdo con 2i - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          }
+        ]
+      },
+      "resumen_negocio": "Italgas S.p.A., together with its subsidiaries, engages in the distribution of natural gas in Italy, Greece, and Other European Union countries. It operates through Gas distribution, Water Service, and Energy Efficiency segments."
+    }
+  },
+  {
+    "id": "TTE.PA-2026-10-23",
+    "ticker": "TTE.PA",
+    "nombre": "TotalEnergies SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-23",
+    "precio_entrada": 82.06,
+    "acciones": 1.218621,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 37.4,
+    "potencial_pct": 7.3,
+    "tarjeta": {
+      "ticker": "TTE.PA",
+      "nombre_empresa": "TotalEnergies SE",
+      "isin": "NETTOTALOIL1",
+      "sector": "Energy",
+      "score": 37.4,
+      "version_scoring": 33,
+      "precio_actual": 82.06,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 13.6,
+        "pct_vender": 4.5,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 88.06174,
+      "dispersion_pct": 34.0,
+      "momentum_30d_pct": 2.4,
+      "momentum_5d_pct": 1.7,
+      "fuerza_relativa_pct": 6.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 80.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 77.5,
+      "sma200": 71.93,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 280889228.7120514,
+      "volumen_relativo": 0.88,
+      "volatilidad_diaria_pct": 1.39,
+      "sesiones_hasta_stop": 81,
+      "distancia_max_52s_pct": 0.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "TotalEnergies firma un acuerdo de empresa conjunta con Petronas y Mitsui para desarrollar áreas de almacenamiento de carbono en Malasia - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "El futuro de TotalEnergies sigue en el aire: fuera de la primera lista de la UCI para 2027 - MARCA",
+            "fuente": "MARCA",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "TotalEnergies SE : JP Morgan se mantiene neutral. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
     }
   }
 ]
