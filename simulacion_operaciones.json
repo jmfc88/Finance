@@ -32250,7 +32250,7 @@
     "id": "NTGY.MC-2026-10-23",
     "ticker": "NTGY.MC",
     "nombre": "Naturgy Energy Group, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 30.68,
     "acciones": 3.259452,
@@ -32317,6 +32317,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Naturgy Energy Group, S.A., together with its subsidiaries, engages in the supply, liquefaction, regasification, transport, storage, distribution, and sale of gas. It operates through Distribution Networks and Energy Markets segments."
+    },
+    "precio_salida": 28.8147,
+    "fecha_salida": "2026-10-23",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": null,
+    "vs_indice_pct": null,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 31.2936,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -32716,6 +32800,437 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Veolia Environnement SA designs and provides water, waste, and energy management solutions. It operates through France and Hazardous Waste Europe; Europe; Americas, Asia Pacific, Africa Middle-East; Water Technologies; and Other segments."
+    }
+  },
+  {
+    "id": "CAP.PA-2026-10-26",
+    "ticker": "CAP.PA",
+    "nombre": "Capgemini SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 123.95,
+    "acciones": 0.806777,
+    "invertido": 100.0,
+    "posicion_ranking": 18,
+    "tramo": "11-20",
+    "score": 39.5,
+    "potencial_pct": 14.5,
+    "tarjeta": {
+      "ticker": "CAP.PA",
+      "nombre_empresa": "Capgemini SE",
+      "isin": null,
+      "sector": "Technology",
+      "score": 39.5,
+      "version_scoring": 33,
+      "precio_actual": 123.95,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 17.6,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 141.97824,
+      "dispersion_pct": 66.0,
+      "momentum_30d_pct": 19.5,
+      "momentum_5d_pct": 2.1,
+      "fuerza_relativa_pct": 22.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 80.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 110.18,
+      "sma200": 104.22,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 78978754.63959503,
+      "volumen_relativo": 0.96,
+      "volatilidad_diaria_pct": 2.35,
+      "sesiones_hasta_stop": 28,
+      "distancia_max_52s_pct": -15.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Sostenibilidad en acción 2026: las nuevas reglas de la resiliencia empresarial - Capgemini",
+            "fuente": "Capgemini",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Capgemini participa en EURO-3C, una iniciativa europea que impulsa una infraestructura digital segura e interoperable - Capgemini",
+            "fuente": "Capgemini",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "AWS Summit Madrid - Capgemini",
+            "fuente": "Capgemini",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "puntos_roe_sostenido": 2.74,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Capgemini eleva su previsión de crecimiento de ingresos para 2026 tras superar estimaciones en el primer semestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Capgemini apunta a un crecimiento anual de ingresos de hasta el 7,5% para 2028 - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Capgemini se recupera impulsada por el respaldo de los analistas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
+    }
+  },
+  {
+    "id": "UNA.AS-2026-10-26",
+    "ticker": "UNA.AS",
+    "nombre": "Unilever PLC",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 59.02,
+    "acciones": 1.694341,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 39.3,
+    "potencial_pct": 5.4,
+    "tarjeta": {
+      "ticker": "UNA.AS",
+      "nombre_empresa": "Unilever PLC",
+      "isin": "PLCTHQM00018",
+      "sector": "Consumer Defensive",
+      "score": 39.3,
+      "version_scoring": 33,
+      "precio_actual": 59.02,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 8
+      },
+      "precio_objetivo_medio": 62.225,
+      "dispersion_pct": 34.6,
+      "momentum_30d_pct": 7.7,
+      "momentum_5d_pct": 0.1,
+      "fuerza_relativa_pct": 11.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 79.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 55.17,
+      "sma200": 53.42,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 52029019.50415611,
+      "volumen_relativo": 1.05,
+      "volatilidad_diaria_pct": 1.35,
+      "sesiones_hasta_stop": 86,
+      "distancia_max_52s_pct": -3.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Unilever PLC : El Bernstein continua con un recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Cadena de opciones de Unilever PLC (UL) - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Unilever Nigeria Plc presenta sus resultados del tercer trimestre y de los nueve primeros meses concluidos el 30 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Resultados de Unilever: Crecimiento del Volumen y Expansión de Márgenes - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Magnum Ice Cream, de Unilever, debuta en bolsa y alcanza valoración de US$9.200 millones - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "¿Por qué Unilever va a escindir su división de alimentación? - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Unilever PLC operates as a fast-moving consumer goods company in the Asia Pacific, Africa, the Americas, and Europe. It operates through four segments: Beauty & Wellbeing, Personal Care, Home Care, and Foods."
+    }
+  },
+  {
+    "id": "INGA.AS-2026-10-26",
+    "ticker": "INGA.AS",
+    "nombre": "ING Groep N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 28.46,
+    "acciones": 3.513703,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 38.5,
+    "potencial_pct": 20.3,
+    "tarjeta": {
+      "ticker": "INGA.AS",
+      "nombre_empresa": "ING Groep N.V.",
+      "isin": "CA44989Q1054",
+      "sector": "Financial Services",
+      "score": 38.5,
+      "version_scoring": 33,
+      "precio_actual": 28.46,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 30.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 34.2465,
+      "dispersion_pct": 57.7,
+      "momentum_30d_pct": -9.7,
+      "momentum_5d_pct": -5.3,
+      "fuerza_relativa_pct": -6.4,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 28.0,
+      "tendencia_tecnica": "mixta",
+      "sma50": 30.8,
+      "sma200": 26.61,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 189868633.4226656,
+      "volumen_relativo": 0.91,
+      "volatilidad_diaria_pct": 1.71,
+      "sesiones_hasta_stop": 53,
+      "distancia_max_52s_pct": -11.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "ING Groep N.V. : Deutsche Bank mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué suben hoy las acciones de ING? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ING Groep N.V. : recomendación de compra de JP Morgan - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 7,
+        "puntos_roe_sostenido": 1.48,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "ING eleva sus previsiones para 2026 y 2027 tras superar las expectativas de beneficio trimestral - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "ING incrementa su beneficio un 11,9% en el semestre y mejora sus previsiones de ingresos - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ING gana un 11,9% más en el primer semestre y eleva previsiones de ingresos - Europa Press",
+            "fuente": "Europa Press",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "ING Groep N.V. provides various banking products and services in the Netherlands, Belgium, Germany, rest of Europe, and internationally. The company operates through five segments: Retail Netherlands, Retail Belgium, Retail Germany, Retail Other, and Wholesale Banking."
+    }
+  },
+  {
+    "id": "PHIA.AS-2026-10-26",
+    "ticker": "PHIA.AS",
+    "nombre": "Koninklijke Philips N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 24.08,
+    "acciones": 4.152824,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 35.2,
+    "potencial_pct": 11.5,
+    "tarjeta": {
+      "ticker": "PHIA.AS",
+      "nombre_empresa": "Koninklijke Philips N.V.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 35.2,
+      "version_scoring": 33,
+      "precio_actual": 24.08,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 26.845,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": 12.2,
+      "momentum_5d_pct": 4.0,
+      "fuerza_relativa_pct": 15.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 90.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 22.36,
+      "sma200": 23.19,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 33671312.57653713,
+      "volumen_relativo": 0.83,
+      "volatilidad_diaria_pct": 1.1,
+      "sesiones_hasta_stop": 128,
+      "distancia_max_52s_pct": -9.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Philips: A Risky Turnaround Worth A 'Strong Buy' Upgrade (NYSE:PHG) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué cae hoy con fuerza la acción de Koninklijke Philips? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Philips gana batalla judicial en Países Bajos por el retiro de dispositivos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Koninklijke Philips N.V. operates as a health technology company in North America, the Greater China, and internationally. It operates through Diagnosis & Treatment, Connected Care, and Personal Health segments."
+    }
+  },
+  {
+    "id": "ANET-2026-10-26",
+    "ticker": "ANET",
+    "nombre": "Arista Networks, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 172.37,
+    "acciones": 0.580147,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 34.6,
+    "potencial_pct": 41.3,
+    "tarjeta": {
+      "ticker": "ANET",
+      "nombre_empresa": "Arista Networks, Inc.",
+      "isin": "US0404132054",
+      "sector": "Technology",
+      "score": 34.6,
+      "version_scoring": 33,
+      "precio_actual": 172.37,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.9,
+        "pct_strong_buy": 21.9,
+        "pct_vender": 0.0,
+        "total_analistas": 32
+      },
+      "precio_objetivo_medio": 243.58655,
+      "dispersion_pct": 52.6,
+      "momentum_30d_pct": -16.2,
+      "momentum_5d_pct": -2.6,
+      "fuerza_relativa_pct": -15.2,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 29.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 196.42,
+      "sma200": 163.77,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 1053382479.549408,
+      "volumen_relativo": 1.15,
+      "volatilidad_diaria_pct": 2.98,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -20.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Arista Networks, Inc. : Obtiene una recomendación de compra de TD Cowen - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks Inc. stock outperforms competitors on strong trading day - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Precio, gráficos, capitalización de mercado de Arista Networks Inc (Derivatives) (ANET) - CoinMarketCap",
+            "fuente": "CoinMarketCap",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
     }
   }
 ]
