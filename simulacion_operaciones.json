@@ -21357,7 +21357,7 @@
     "id": "ABI.BR-2026-09-30",
     "ticker": "ABI.BR",
     "nombre": "Anheuser-Busch InBev SA/NV",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 65.56,
     "acciones": 1.52532,
@@ -21445,6 +21445,54 @@
         ]
       },
       "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    },
+    "precio_salida": 72.8306,
+    "fecha_salida": "2026-10-26",
+    "sesiones": 18,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 11.09,
+    "rentabilidad_neta_pct": 9.09,
+    "resultado_neto_eur": 9.09,
+    "indice_pct": -2.54,
+    "vs_indice_pct": 11.63,
+    "rentabilidad_7d_pct": 4.73,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 9,
+    "precio_equilibrio": 66.8712,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 9.09 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 10.18,
+        "neto_pct": 10.18,
+        "sesiones": 18,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -29161,7 +29209,7 @@
     "id": "REN.AS-2026-10-19",
     "ticker": "REN.AS",
     "nombre": "RELX PLC",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-19",
     "precio_entrada": 34.88,
     "acciones": 2.866972,
@@ -29244,6 +29292,48 @@
         ]
       },
       "resumen_negocio": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally."
+    },
+    "precio_salida": 35.9264,
+    "fecha_salida": "2026-10-26",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.57,
+    "vs_indice_pct": 1.57,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 35.5776,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -31135,7 +31225,7 @@
     "id": "GALP.LS-2026-10-22",
     "ticker": "GALP.LS",
     "nombre": "Galp Energia, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 22.2,
     "acciones": 4.504505,
@@ -31214,6 +31304,90 @@
         ]
       },
       "resumen_negocio": "Galp Energia, SGPS, S.A. operates as an integrated energy operator in Portugal and internationally. The company operates through four segments: Upstream, Industrial & Midstream, Commercial, and Renewables."
+    },
+    "precio_salida": 20.8502,
+    "fecha_salida": "2026-10-26",
+    "sesiones": 2,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 0.38,
+    "vs_indice_pct": -8.46,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 22.644,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 2 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.73,
+        "neto_pct": -4.73,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.3,
+        "neto_pct": -6.3,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.75,
+        "neto_pct": -3.75,
+        "sesiones": 2,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -33231,6 +33405,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    }
+  },
+  {
+    "id": "ACS.MC-2026-10-26",
+    "ticker": "ACS.MC",
+    "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-26",
+    "precio_entrada": 89.05,
+    "acciones": 1.122965,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 37.9,
+    "potencial_pct": 50.2,
+    "tarjeta": {
+      "ticker": "ACS.MC",
+      "nombre_empresa": "ACS, Actividades de Construcción y Servicios, S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 37.9,
+      "version_scoring": 33,
+      "precio_actual": 89.05,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 133.76875,
+      "dispersion_pct": 52.9,
+      "momentum_30d_pct": -4.9,
+      "momentum_5d_pct": -1.4,
+      "fuerza_relativa_pct": -1.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 30.5,
+      "tendencia_tecnica": "bajista",
+      "sma50": 96.1,
+      "sma200": 108.88,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 34664180.35403824,
+      "volumen_relativo": 0.72,
+      "volatilidad_diaria_pct": 1.83,
+      "sesiones_hasta_stop": 46,
+      "distancia_max_52s_pct": -35.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Banco Sabadell sube el precio objetivo de ACS antes de unos resultados que prevén sólidos - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-ACS, ACTIVIDADES DE CONSTRUCCION Y SERVICIOS, S.A. La Sociedad remite Presentación de Resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Thiess (ACS) se adjudica dos contratos mineros de cinco años en Mongolia y prevé alcanzar los 800 empleados - El Español",
+            "fuente": "El Español",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
     }
   }
 ]
