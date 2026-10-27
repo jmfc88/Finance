@@ -20290,7 +20290,7 @@
     "id": "A2A.MI-2026-09-29",
     "ticker": "A2A.MI",
     "nombre": "A2A S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 2.256,
     "acciones": 44.326241,
@@ -20373,13 +20373,97 @@
         ]
       },
       "resumen_negocio": "A2A S.p.A. engages in the production, sale, and distribution of gas and electricity, and district heating in Italy and internationally. It generates electricity through hydroelectric, thermoelectric, photovoltaic, and wind plants; and sells and distributes gas."
+    },
+    "precio_salida": 2.4,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 6.38,
+    "rentabilidad_neta_pct": 4.38,
+    "resultado_neto_eur": 4.38,
+    "indice_pct": -2.9,
+    "vs_indice_pct": 7.28,
+    "rentabilidad_7d_pct": 0.62,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 12,
+    "precio_equilibrio": 2.3011,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (4.38 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 4.38,
+        "neto_pct": 4.38,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "ENGI.PA-2026-09-29",
     "ticker": "ENGI.PA",
     "nombre": "Engie SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 23.12,
     "acciones": 4.32526,
@@ -20467,6 +20551,90 @@
         ]
       },
       "resumen_negocio": "Engie SA engages in renewables and decentralized and low-carbon energy networks in France, Europe, North America, Asia, the Middle East, Oceania, South America, Africa, and internationally."
+    },
+    "precio_salida": 23.07,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.22,
+    "rentabilidad_neta_pct": -2.22,
+    "resultado_neto_eur": -2.22,
+    "indice_pct": -2.9,
+    "vs_indice_pct": 0.68,
+    "rentabilidad_7d_pct": -1.77,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 23.5824,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.22,
+        "neto_pct": -2.22,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -20605,7 +20773,7 @@
     "id": "KESKOB.HE-2026-09-29",
     "ticker": "KESKOB.HE",
     "nombre": "Kesko Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 23.0,
     "acciones": 4.347826,
@@ -20672,6 +20840,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Kesko Oyj engages in the chain operations in Finland, Sweden, Norway, Estonia, Latvia, Lithuania, Denmark, and Poland. The company operates through Grocery Trade, Building and Technical Trade, and Car Trade divisions."
+    },
+    "precio_salida": 25.22,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 9.65,
+    "rentabilidad_neta_pct": 7.65,
+    "resultado_neto_eur": 7.65,
+    "indice_pct": -2.9,
+    "vs_indice_pct": 10.55,
+    "rentabilidad_7d_pct": -0.98,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 16,
+    "precio_equilibrio": 23.46,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 7.65 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 7.65,
+        "neto_pct": 7.65,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -20989,7 +21241,7 @@
     "id": "URW.PA-2026-09-29",
     "ticker": "URW.PA",
     "nombre": "Unibail-Rodamco-Westfield SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-29",
     "precio_entrada": 90.66,
     "acciones": 1.103022,
@@ -21056,6 +21308,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) operates vibrant retail-anchored destinations in many of the world's best cities and urban areas. This powerful network attracts over 900 million customer visits annually, supports the growth of major retailers, and makes a significant social and economic contribution to local communities."
+    },
+    "precio_salida": 91.44,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.86,
+    "rentabilidad_neta_pct": -1.14,
+    "resultado_neto_eur": -1.14,
+    "indice_pct": -2.9,
+    "vs_indice_pct": 1.76,
+    "rentabilidad_7d_pct": -5.16,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 92.4732,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.14,
+        "neto_pct": -1.14,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -27061,7 +27397,7 @@
     "id": "CTT.LS-2026-10-13",
     "ticker": "CTT.LS",
     "nombre": "CTT - Correios De Portugal, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-13",
     "precio_entrada": 5.545,
     "acciones": 18.034265,
@@ -27140,6 +27476,54 @@
         ]
       },
       "resumen_negocio": "CTT - Correios De Portugal, S.A., together with its subsidiaries, engages in reference postal business in Portugal and internationally. The company operates through three segments: E-Commerce Solutions, Mail and Services, and Banco CTT."
+    },
+    "precio_salida": 5.2079,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 10,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.49,
+    "vs_indice_pct": -7.59,
+    "rentabilidad_7d_pct": -1.26,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.6559,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 10,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 10,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 10,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -33912,6 +34296,79 @@
         ]
       },
       "resumen_negocio": "Galp Energia, SGPS, S.A. operates as an integrated energy operator in Portugal and internationally. The company operates through four segments: Upstream, Industrial & Midstream, Commercial, and Renewables."
+    }
+  },
+  {
+    "id": "GMD.AX-2026-10-27",
+    "ticker": "GMD.AX",
+    "nombre": "Genesis Minerals Limited",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-27",
+    "precio_entrada": 6.43,
+    "acciones": 15.5521,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 38.5,
+    "potencial_pct": 36.6,
+    "tarjeta": {
+      "ticker": "GMD.AX",
+      "nombre_empresa": "Genesis Minerals Limited",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 38.5,
+      "version_scoring": 33,
+      "precio_actual": 6.43,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 9.8,
+        "pct_strong_buy": 16.7,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 8.78333,
+      "dispersion_pct": 42.6,
+      "momentum_30d_pct": -10.8,
+      "momentum_5d_pct": -9.3,
+      "fuerza_relativa_pct": -9.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 36.4,
+      "tendencia_tecnica": "bajista",
+      "sma50": 7.53,
+      "sma200": 6.65,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 39415833.974145174,
+      "volumen_relativo": 1.16,
+      "volatilidad_diaria_pct": 2.89,
+      "sesiones_hasta_stop": 18,
+      "distancia_max_52s_pct": -25.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Brightstar Resources captará 82 millones AUD en una colocación y Genesis Minerals tomará una participación del 5,4%; sus acciones caen un 8% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Genesis Minerals Limited : Canaccord Genuity da una recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Genesis Minerals de Australia lanza una oferta de 3.900 millones por Vault, superando a Regis - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
     }
   }
 ]
