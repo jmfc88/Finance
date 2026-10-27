@@ -31178,7 +31178,7 @@
     "id": "APO-2026-10-22",
     "ticker": "APO",
     "nombre": "Apollo Global Management, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 111.69,
     "acciones": 0.895335,
@@ -31245,6 +31245,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Apollo Global Management, Inc. is a private equity firm specializing in investments in credit, private equity, infrastructure, secondaries and real estate markets. The firm prefers to invest in private and public markets."
+    },
+    "precio_salida": 115.0407,
+    "fecha_salida": "2026-10-27",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.78,
+    "vs_indice_pct": 0.22,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 113.9238,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -34369,6 +34411,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    }
+  },
+  {
+    "id": "BX-2026-10-27",
+    "ticker": "BX",
+    "nombre": "Blackstone Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-27",
+    "precio_entrada": 119.25,
+    "acciones": 0.838574,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 39.4,
+    "potencial_pct": 16.4,
+    "tarjeta": {
+      "ticker": "BX",
+      "nombre_empresa": "Blackstone Inc.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 39.4,
+      "version_scoring": 33,
+      "precio_actual": 119.25,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 16.7,
+        "pct_vender": 0.0,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 138.77274,
+      "dispersion_pct": 43.2,
+      "momentum_30d_pct": 4.1,
+      "momentum_5d_pct": 8.1,
+      "fuerza_relativa_pct": 3.9,
+      "regimen_mercado": "favorable",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 61.3,
+      "tendencia_tecnica": "bajista",
+      "sma50": 124.11,
+      "sma200": 123.26,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 639785422.0291138,
+      "volumen_relativo": 1.09,
+      "volatilidad_diaria_pct": 2.64,
+      "sesiones_hasta_stop": 22,
+      "distancia_max_52s_pct": -24.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Ex-Blackstone Dealmaker Raises $1.9 Billion for Real Estate Bets - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Blackstone arranca un 'súpercontrato' estatal de gestión de vivienda mientras el Gobierno lo sitúa entre los \"fondos buitre\" - El Mundo",
+            "fuente": "El Mundo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Blackstone Inc. : Argus mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Blackstone Inc. is an alternative asset management firm specializing in private equity, venture capital, real estate, hedge fund solutions, credit, secondary funds of funds, public debt and equity and multi-asset class strategies."
     }
   }
 ]
