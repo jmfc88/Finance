@@ -21514,7 +21514,7 @@
     "id": "DG.PA-2026-09-30",
     "ticker": "DG.PA",
     "nombre": "Vinci SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-09-30",
     "precio_entrada": 106.6,
     "acciones": 0.938086,
@@ -21581,6 +21581,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments."
+    },
+    "precio_salida": 108.8,
+    "fecha_salida": "2026-10-28",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 2.06,
+    "rentabilidad_neta_pct": 0.06,
+    "resultado_neto_eur": 0.06,
+    "indice_pct": -1.63,
+    "vs_indice_pct": 1.69,
+    "rentabilidad_7d_pct": -0.6,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 108.732,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (0.06 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 0.06,
+        "neto_pct": 0.06,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -34651,6 +34735,174 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Unibail-Rodamco-Westfield SE (URW) operates vibrant retail-anchored destinations in many of the world's best cities and urban areas. This powerful network attracts over 900 million customer visits annually, supports the growth of major retailers, and makes a significant social and economic contribution to local communities."
+    }
+  },
+  {
+    "id": "VALMT.HE-2026-10-28",
+    "ticker": "VALMT.HE",
+    "nombre": "Valmet Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-28",
+    "precio_entrada": 29.34,
+    "acciones": 3.408316,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 44.1,
+    "potencial_pct": 7.2,
+    "tarjeta": {
+      "ticker": "VALMT.HE",
+      "nombre_empresa": "Valmet Oyj",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.1,
+      "version_scoring": 33,
+      "precio_actual": 29.34,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 0.0,
+        "pct_vender": 0.0,
+        "total_analistas": 6
+      },
+      "precio_objetivo_medio": 31.46667,
+      "dispersion_pct": 40.0,
+      "momentum_30d_pct": 5.4,
+      "momentum_5d_pct": 9.1,
+      "fuerza_relativa_pct": 8.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 74.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 27.45,
+      "sma200": 25.03,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 8048930.988351822,
+      "volumen_relativo": 0.97,
+      "volatilidad_diaria_pct": 2.6,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": 0.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Acciones de Valmet suben 6.8% por fuerte alza en pedidos del 3T - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Los pedidos de Valmet superan con creces las expectativas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Valmet se adjudica un contrato tecnológico de 100 millones EUR para una planta de pasta de papel en China - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 2.14,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Los pedidos de Valmet superan con creces las expectativas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Valmet Oyj (VALMT.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Valmet confirma sus previsiones para el ejercicio - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
+    }
+  },
+  {
+    "id": "NTGY.MC-2026-10-28",
+    "ticker": "NTGY.MC",
+    "nombre": "Naturgy Energy Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-28",
+    "precio_entrada": 30.32,
+    "acciones": 3.298153,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 40.7,
+    "potencial_pct": 2.3,
+    "tarjeta": {
+      "ticker": "NTGY.MC",
+      "nombre_empresa": "Naturgy Energy Group, S.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 40.7,
+      "version_scoring": 33,
+      "precio_actual": 30.32,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 23.5,
+        "pct_vender": 11.8,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 31.00824,
+      "dispersion_pct": 44.0,
+      "momentum_30d_pct": 4.6,
+      "momentum_5d_pct": -0.9,
+      "fuerza_relativa_pct": 7.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 55.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 29.74,
+      "sma200": 27.44,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 28673670.314144135,
+      "volumen_relativo": 1.26,
+      "volatilidad_diaria_pct": 1.02,
+      "sesiones_hasta_stop": 150,
+      "distancia_max_52s_pct": -2.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Naturgy suben tras elevar su objetivo anual - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Naturgy sube tras mejorar sus perspectivas para 2026 con sólidos resultados del primer semestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Barclays: Los buenos resultados de Naturgy Energy en el primer semestre y la mejora de sus perspectivas preparan un ejercicio fiscal 2026 más sólido. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Naturgy Energy Group, S.A., together with its subsidiaries, engages in the supply, liquefaction, regasification, transport, storage, distribution, and sale of gas. It operates through Distribution Networks and Energy Markets segments."
     }
   }
 ]
