@@ -22308,7 +22308,7 @@
     "id": "HUH1V.HE-2026-10-01",
     "ticker": "HUH1V.HE",
     "nombre": "Huhtamäki Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 27.72,
     "acciones": 3.607504,
@@ -22386,6 +22386,90 @@
         ]
       },
       "resumen_negocio": "Huhtamäki Oyj provides packaging solutions in the United States, Germany, the United Kingdom, India, Turkey, Australia, Thailand, Poland, South Africa, Spain, Finland, and internationally."
+    },
+    "precio_salida": 26.0346,
+    "fecha_salida": "2026-10-29",
+    "sesiones": 20,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 0.16,
+    "vs_indice_pct": -8.24,
+    "rentabilidad_7d_pct": -3.17,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 28.2744,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 20,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.13,
+        "neto_pct": -5.13,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 20,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -22786,7 +22870,7 @@
     "id": "SHELL.AS-2026-10-01",
     "ticker": "SHELL.AS",
     "nombre": "Shell plc",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 41.67,
     "acciones": 2.399808,
@@ -22853,6 +22937,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Shell plc operates as an energy and petrochemical company in Europe, Asia, Oceania, Africa, the United States, and other parts of the Americas. It operates through the following segments: Integrated Gas, Upstream, Marketing, Chemicals and Products, and Renewables and Energy Solutions."
+    },
+    "precio_salida": 49.225,
+    "fecha_salida": "2026-10-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 18.13,
+    "rentabilidad_neta_pct": 16.13,
+    "resultado_neto_eur": 16.13,
+    "indice_pct": 0.16,
+    "vs_indice_pct": 15.97,
+    "rentabilidad_7d_pct": 9.34,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 5,
+    "precio_equilibrio": 42.5034,
+    "estado_resultado": "top",
+    "explicacion": "Ganancia grande. Esta es la que compensa a todas las demas.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 16.13,
+        "neto_pct": 16.13,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -23087,7 +23255,7 @@
     "id": "EN.PA-2026-10-01",
     "ticker": "EN.PA",
     "nombre": "Bouygues SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-01",
     "precio_entrada": 40.79,
     "acciones": 2.451581,
@@ -23159,6 +23327,90 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Bouygues SA, together with its subsidiaries, operates in the construction, energies and services, telecom, and media sectors in France and internationally. It operates through Colas, Bouygues Construction, Bouygues Immobilier, Equans, Bouygues Telecom, TF1, and Other segments."
+    },
+    "precio_salida": 41.13,
+    "fecha_salida": "2026-10-29",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.83,
+    "rentabilidad_neta_pct": -1.17,
+    "resultado_neto_eur": -1.17,
+    "indice_pct": 0.16,
+    "vs_indice_pct": -1.33,
+    "rentabilidad_7d_pct": -0.83,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 41.6058,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 15,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 15,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -1.17,
+        "neto_pct": -1.17,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -31189,7 +31441,7 @@
     "id": "ROVI.MC-2026-10-22",
     "ticker": "ROVI.MC",
     "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 58.8,
     "acciones": 1.70068,
@@ -31256,6 +31508,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
+    },
+    "precio_salida": 60.564,
+    "fecha_salida": "2026-10-29",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.62,
+    "vs_indice_pct": -0.62,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 59.976,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.2,
+        "neto_pct": 0.2,
+        "sesiones": 5,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -33921,7 +34221,7 @@
     "id": "ACS.MC-2026-10-26",
     "ticker": "ACS.MC",
     "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-26",
     "precio_entrada": 89.05,
     "acciones": 1.122965,
@@ -33988,6 +34288,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
+    },
+    "precio_salida": 91.7215,
+    "fecha_salida": "2026-10-29",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.13,
+    "vs_indice_pct": -0.13,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 90.831,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -35290,6 +35632,101 @@
       },
       "profundizacion": null,
       "resumen_negocio": "CTT - Correios De Portugal, S.A., together with its subsidiaries, engages in reference postal business in Portugal and internationally. The company operates through three segments: E-Commerce Solutions, Mail and Services, and Banco CTT."
+    }
+  },
+  {
+    "id": "ORA.PA-2026-10-29",
+    "ticker": "ORA.PA",
+    "nombre": "Orange S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-29",
+    "precio_entrada": 14.305,
+    "acciones": 6.990563,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 43.3,
+    "potencial_pct": 32.0,
+    "tarjeta": {
+      "ticker": "ORA.PA",
+      "nombre_empresa": "Orange S.A.",
+      "isin": null,
+      "sector": "Communication Services",
+      "score": 43.3,
+      "version_scoring": 33,
+      "precio_actual": 14.305,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 6.7,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 18.8875,
+      "dispersion_pct": 50.7,
+      "momentum_30d_pct": 4.4,
+      "momentum_5d_pct": -0.4,
+      "fuerza_relativa_pct": 5.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 59.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 14.73,
+      "sma200": 16.28,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 65545220.275776386,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 1.37,
+      "sesiones_hasta_stop": 83,
+      "distancia_max_52s_pct": -21.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Orange Boosts Profit Outlook on Africa, Middle East Growth - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Berenberg: Orange se prepara para un crecimiento del flujo de caja en medio de una nueva ola de consolidación en Francia. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Orange España crece un 3,5% en ingresos, reforzado por la venta de dispositivos - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 11,
+        "puntos_roe_sostenido": 0.36,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Orange Boosts Profit Outlook on Africa, Middle East Growth - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Orange eleva sus previsiones de beneficio para 2026 y ensalza el papel del satélite para reforzar sus redes - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Orange eleva un 11% sus ingresos hasta septiembre y mejora sus previsiones para 2026 - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Orange S.A. operates as a telecommunications operator in France and internationally. The company offers mobile services, such as voice, SMS, and data; and fixed broadband and narrowband services, as well as B2B fixed solutions and network services, including voice and data services."
     }
   }
 ]
