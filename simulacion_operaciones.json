@@ -23722,7 +23722,7 @@
     "id": "FBK.MI-2026-10-02",
     "ticker": "FBK.MI",
     "nombre": "FinecoBank Banca Fineco S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-02",
     "precio_entrada": 21.44,
     "acciones": 4.664179,
@@ -23800,6 +23800,90 @@
         ]
       },
       "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    },
+    "precio_salida": 20.84,
+    "fecha_salida": "2026-10-30",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.8,
+    "rentabilidad_neta_pct": -4.8,
+    "resultado_neto_eur": -4.8,
+    "indice_pct": -1.64,
+    "vs_indice_pct": -3.16,
+    "rentabilidad_7d_pct": -1.21,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 21.8688,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.17,
+        "neto_pct": -4.17,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.0,
+        "neto_pct": -5.0,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.67,
+        "neto_pct": -6.67,
+        "sesiones": 15,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 15,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.8,
+        "neto_pct": -4.8,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -32435,7 +32519,7 @@
     "id": "AMP.MI-2026-10-22",
     "ticker": "AMP.MI",
     "nombre": "Amplifon S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 12.895,
     "acciones": 7.754944,
@@ -32502,6 +32586,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Amplifon S.p.A. distributes hearing solutions and the fitting of customized products that helps people to rediscover various emotions of sound in Europe, the Middle East, Africa, the Americas, and the Asia Pacific."
+    },
+    "precio_salida": 12.111,
+    "fecha_salida": "2026-10-30",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 0.81,
+    "vs_indice_pct": -8.89,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 13.1529,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.82,
+        "neto_pct": -6.82,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -8.18,
+        "neto_pct": -8.18,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -10.91,
+        "neto_pct": -10.91,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -34525,7 +34693,7 @@
     "id": "TPRO.MI-2026-10-26",
     "ticker": "TPRO.MI",
     "nombre": "Technoprobe S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-26",
     "precio_entrada": 25.0,
     "acciones": 4.0,
@@ -34592,13 +34760,85 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Technoprobe S.p.A., together with its subsidiaries, produces and sells electronic circuits in Italy, Asia, the United States, and rest of Europe. The company provides mechanical interfaces for electrical contacting of hybrid circuits and semiconductor devices; and engages in the design, development, and production of probe cards for testing the operation of chips."
+    },
+    "precio_salida": 25.75,
+    "fecha_salida": "2026-10-30",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.32,
+    "vs_indice_pct": 0.68,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 25.5,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -0.92,
+        "neto_pct": -0.92,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -3.05,
+        "neto_pct": -3.05,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.21,
+        "neto_pct": 1.21,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -0.92,
+        "neto_pct": -0.92,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -0.92,
+        "neto_pct": -0.92,
+        "sesiones": 4,
+        "motivo": "trailing"
+      }
     }
   },
   {
     "id": "IDR.MC-2026-10-26",
     "ticker": "IDR.MC",
     "nombre": "Indra Sistemas, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-26",
     "precio_entrada": 62.4,
     "acciones": 1.602564,
@@ -34665,6 +34905,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Indra Sistemas, S.A., together with its subsidiaries, provides technology services for the defense, aerospace, and advanced digital technologies sectors in Spain, Brazil, the rest of America, Italy, the rest of Europe, Asia, the Middle East, and Africa."
+    },
+    "precio_salida": 64.272,
+    "fecha_salida": "2026-10-30",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.32,
+    "vs_indice_pct": 0.68,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 63.648,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -36263,6 +36545,105 @@
         ]
       },
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    }
+  },
+  {
+    "id": "SAN.PA-2026-10-30",
+    "ticker": "SAN.PA",
+    "nombre": "Sanofi",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-30",
+    "precio_entrada": 79.87,
+    "acciones": 1.252035,
+    "invertido": 100.0,
+    "posicion_ranking": 6,
+    "tramo": "1-10",
+    "score": 53.3,
+    "potencial_pct": 16.9,
+    "tarjeta": {
+      "ticker": "SAN.PA",
+      "nombre_empresa": "Sanofi",
+      "isin": "FR001400UEY9",
+      "sector": "Healthcare",
+      "score": 53.3,
+      "version_scoring": 33,
+      "precio_actual": 79.87,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 8.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 93.35042,
+      "dispersion_pct": 42.9,
+      "momentum_30d_pct": 9.3,
+      "momentum_5d_pct": 7.8,
+      "fuerza_relativa_pct": 9.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 79.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 74.11,
+      "sma200": 75.13,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": {
+        "dias_desde": 0,
+        "sorpresa_pct": 25.2,
+        "variacion_pct": 4.9
+      },
+      "cotiza_en_euros": true,
+      "liquidez_dia": 139245266.01218033,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.61,
+      "sesiones_hasta_stop": 60,
+      "distancia_max_52s_pct": -0.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Sanofi supera expectativas en el tercer trimestre gracias a Dupixent y eleva previsiones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Sanofi eleva de nuevo sus objetivos, impulsada por Dupixent - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Regeneron stock gains on Q3 beat (REGN:NASDAQ) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 1.44,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Sanofi mejora previsiones para 2026 tras subir un 16% sus ventas en el segundo trimestre - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sanofi ADR supera por 2,46$ las previsiones de BPA en el tercer trimestre del año - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Análisis técnico de Atresmedia, DIA, ING, Sanofi y Tubacex - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Sanofi engages in the research, development, manufacture, and marketing of therapeutic solutions. It provides immunology and inflammation, rare diseases neurology, oncology, and other vaccines."
     }
   }
 ]
