@@ -34316,7 +34316,7 @@
     "id": "ANET-2026-10-26",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-26",
     "precio_entrada": 172.37,
     "acciones": 0.580147,
@@ -34383,6 +34383,84 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 181.9107,
+    "fecha_salida": "2026-10-30",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.54,
+    "rentabilidad_neta_pct": 3.54,
+    "resultado_neto_eur": 3.54,
+    "indice_pct": -1.0,
+    "vs_indice_pct": 4.54,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 1,
+    "precio_equilibrio": 175.8174,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.54 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 1.06,
+        "neto_pct": 1.06,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -1.11,
+        "neto_pct": -1.11,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 3.23,
+        "neto_pct": 3.23,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 1.06,
+        "neto_pct": 1.06,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 1.06,
+        "neto_pct": 1.06,
+        "sesiones": 4,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 1.06,
+        "neto_pct": 1.06,
+        "sesiones": 4,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -36644,6 +36722,190 @@
         ]
       },
       "resumen_negocio": "Sanofi engages in the research, development, manufacture, and marketing of therapeutic solutions. It provides immunology and inflammation, rare diseases neurology, oncology, and other vaccines."
+    }
+  },
+  {
+    "id": "FBK.MI-2026-10-30",
+    "ticker": "FBK.MI",
+    "nombre": "FinecoBank Banca Fineco S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-30",
+    "precio_entrada": 20.83,
+    "acciones": 4.800768,
+    "invertido": 100.0,
+    "posicion_ranking": 3,
+    "tramo": "1-10",
+    "score": 57.3,
+    "potencial_pct": 30.7,
+    "tarjeta": {
+      "ticker": "FBK.MI",
+      "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 57.3,
+      "version_scoring": 33,
+      "precio_actual": 20.83,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 27.23438,
+      "dispersion_pct": 20.8,
+      "momentum_30d_pct": -2.0,
+      "momentum_5d_pct": 1.7,
+      "fuerza_relativa_pct": -1.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 43.1,
+      "tendencia_tecnica": "bajista",
+      "sma50": 22.18,
+      "sma200": 21.39,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 35556847.56016827,
+      "volumen_relativo": 1.01,
+      "volatilidad_diaria_pct": 1.49,
+      "sesiones_hasta_stop": 70,
+      "distancia_max_52s_pct": -15.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Earnings call transcript: FinecoBank posts strong H1 2026 growth, stock edges up - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Italy's Fineco exceeds quarterly profit, revenue forecasts - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Holdings de Empire Life Global Dividend Growth Cl C (0P0000F4IY.TO) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de FinecoBank Banca Fineco S.p.A. (FBK.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    }
+  },
+  {
+    "id": "IDR.MC-2026-10-30",
+    "ticker": "IDR.MC",
+    "nombre": "Indra Sistemas, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-10-30",
+    "precio_entrada": 64.9,
+    "acciones": 1.540832,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 52.9,
+    "potencial_pct": 5.7,
+    "tarjeta": {
+      "ticker": "IDR.MC",
+      "nombre_empresa": "Indra Sistemas, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 52.9,
+      "version_scoring": 33,
+      "precio_actual": 64.9,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 68.62375,
+      "dispersion_pct": 70.0,
+      "momentum_30d_pct": 9.3,
+      "momentum_5d_pct": 8.3,
+      "fuerza_relativa_pct": 9.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 58.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 60.92,
+      "sma200": 55.39,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": {
+        "dias_desde": 2,
+        "sorpresa_pct": 24.8,
+        "variacion_pct": 2.7
+      },
+      "cotiza_en_euros": true,
+      "liquidez_dia": 38141577.77012634,
+      "volumen_relativo": 1.09,
+      "volatilidad_diaria_pct": 2.22,
+      "sesiones_hasta_stop": 31,
+      "distancia_max_52s_pct": -0.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "Indra expects stronger defence growth in 2026, backed by TESS deliveries - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Indra Sistemas S A : Group acelera la contratación en el tercer trimestre, y registra de nuevo crecimientos de doble dígito en ingresos y EBIT - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Indra toma la delantera a Telefónica por el contrato de 27 millones para instalar las 615 cámaras de videovigilancia de Badalona - El Periódico",
+            "fuente": "El Periódico",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "El beneficio de Indra Group supera las previsiones y sus acciones se disparan - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Las acciones de Indra se disparan un 4%. ¿Qué sucede? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Acciones de Indra: Bank of America eleva sus previsiones y aún ve recorrido al alza - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Indra Sistemas, S.A., together with its subsidiaries, provides technology services for the defense, aerospace, and advanced digital technologies sectors in Spain, Brazil, the rest of America, Italy, the rest of Europe, Asia, the Middle East, and Africa."
     }
   }
 ]
