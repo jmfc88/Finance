@@ -24882,7 +24882,7 @@
     "id": "BMED.MI-2026-10-05",
     "ticker": "BMED.MI",
     "nombre": "Banca Mediolanum S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-05",
     "precio_entrada": 23.3,
     "acciones": 4.291845,
@@ -24965,6 +24965,90 @@
         ]
       },
       "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
+    },
+    "precio_salida": 22.61,
+    "fecha_salida": "2026-11-02",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.96,
+    "rentabilidad_neta_pct": -4.96,
+    "resultado_neto_eur": -4.96,
+    "indice_pct": -1.09,
+    "vs_indice_pct": -3.87,
+    "rentabilidad_7d_pct": -1.5,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 23.766,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.55,
+        "neto_pct": -4.55,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.06,
+        "neto_pct": -6.06,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.96,
+        "neto_pct": -4.96,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -33717,7 +33801,7 @@
     "id": "TTE.PA-2026-10-23",
     "ticker": "TTE.PA",
     "nombre": "TotalEnergies SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 82.06,
     "acciones": 1.218621,
@@ -33784,6 +33868,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "TotalEnergies SE, an integrated energy company, produces and markets oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables, and electricity in France, the United States, Europe, Africa, and internationally."
+    },
+    "precio_salida": 84.5218,
+    "fecha_salida": "2026-11-02",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.74,
+    "vs_indice_pct": -0.74,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 83.7012,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -37361,6 +37487,101 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sonae, SGPS, S.A. operates a portfolio of businesses in retail, real estate, telecommunications, technology, and financial services in Portugal and internationally. The company operates through six segments: MC, Worten, Musti, Sierra, Bright Pixel, and NOS."
+    }
+  },
+  {
+    "id": "IDR.MC-2026-11-02",
+    "ticker": "IDR.MC",
+    "nombre": "Indra Sistemas, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-02",
+    "precio_entrada": 63.72,
+    "acciones": 1.569366,
+    "invertido": 100.0,
+    "posicion_ranking": 21,
+    "tramo": "21-30",
+    "score": 44.6,
+    "potencial_pct": 8.4,
+    "tarjeta": {
+      "ticker": "IDR.MC",
+      "nombre_empresa": "Indra Sistemas, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 44.6,
+      "version_scoring": 33,
+      "precio_actual": 63.72,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 69.09875,
+      "dispersion_pct": 70.0,
+      "momentum_30d_pct": 7.1,
+      "momentum_5d_pct": 2.1,
+      "fuerza_relativa_pct": 8.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 55.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 60.96,
+      "sma200": 55.44,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 39255989.58482742,
+      "volumen_relativo": 1.04,
+      "volatilidad_diaria_pct": 2.29,
+      "sesiones_hasta_stop": 29,
+      "distancia_max_52s_pct": -2.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Indra expects stronger defence growth in 2026, backed by TESS deliveries - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Indra Group profit beats expectations, shares jump - www.marketscreener.com",
+            "fuente": "www.marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Indra Sistemas SA (ISMAF) (Q3 2026) Earnings Call Highlights: Record EUR22. ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 8,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "El beneficio de Indra Group supera las previsiones y sus acciones se disparan - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Indra afronta el reto de convertir su cartera récord en más beneficios - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "El precio objetivo de Indra Sistemas sube después de que AlphaValue/Baader Europe constatara la resolución de sus problemas de gobernanza. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Indra Sistemas, S.A., together with its subsidiaries, provides technology services for the defense, aerospace, and advanced digital technologies sectors in Spain, Brazil, the rest of America, Italy, the rest of Europe, Asia, the Middle East, and Africa."
     }
   }
 ]
