@@ -36621,7 +36621,7 @@
     "id": "ARES-2026-10-29",
     "ticker": "ARES",
     "nombre": "Ares Management Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-29",
     "precio_entrada": 127.8475,
     "acciones": 0.782182,
@@ -36710,6 +36710,48 @@
         ]
       },
       "resumen_negocio": "Ares Management Corporation operates as an alternative asset manager. Its Direct Lending Group segment provides financing solutions to small-to-medium sized companies. The company's Private Equity Group segment specializes in early venture, turnaround, mid venture, late venture, recapitalization, growth capital, middle market, mezzanine, distressed and growth buyouts."
+    },
+    "precio_salida": 131.6829,
+    "fecha_salida": "2026-11-03",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.92,
+    "vs_indice_pct": 2.92,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 130.4044,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -38389,6 +38431,186 @@
       },
       "profundizacion": null,
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    }
+  },
+  {
+    "id": "AI.PA-2026-11-03",
+    "ticker": "AI.PA",
+    "nombre": "L'Air Liquide S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-03",
+    "precio_entrada": 182.14,
+    "acciones": 0.549028,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 50.2,
+    "potencial_pct": 10.4,
+    "tarjeta": {
+      "ticker": "AI.PA",
+      "nombre_empresa": "L'Air Liquide S.A.",
+      "isin": "FR0000053951",
+      "sector": "Basic Materials",
+      "score": 50.2,
+      "version_scoring": 33,
+      "precio_actual": 182.14,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 201.125,
+      "dispersion_pct": 32.0,
+      "momentum_30d_pct": 6.7,
+      "momentum_5d_pct": 4.4,
+      "fuerza_relativa_pct": 8.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 86.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 170.65,
+      "sma200": 164.28,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 137653320.2701645,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 0.78,
+      "sesiones_hasta_stop": 257,
+      "distancia_max_52s_pct": 0.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Air Liquide aumenta un 12 % las ventas de su negocio de electrónica y alcanza una cartera récord de inversiones - Industria Química",
+            "fuente": "Industria Química",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de L'Air Liquide S.A. (AI.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Air Liquide y Airbus compiten por convertirse en el tercer valor más influyente del CAC 40 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 2.32,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de L'Air Liquide S.A. (AI.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    }
+  },
+  {
+    "id": "SCYR.MC-2026-11-03",
+    "ticker": "SCYR.MC",
+    "nombre": "Sacyr, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-03",
+    "precio_entrada": 4.094,
+    "acciones": 24.425989,
+    "invertido": 100.0,
+    "posicion_ranking": 13,
+    "tramo": "11-20",
+    "score": 47.6,
+    "potencial_pct": 30.2,
+    "tarjeta": {
+      "ticker": "SCYR.MC",
+      "nombre_empresa": "Sacyr, S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 47.6,
+      "version_scoring": 33,
+      "precio_actual": 4.094,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 9.1,
+        "pct_strong_buy": 10.0,
+        "pct_vender": 0.0,
+        "total_analistas": 10
+      },
+      "precio_objetivo_medio": 5.329,
+      "dispersion_pct": 19.8,
+      "momentum_30d_pct": 2.9,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": 4.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 4.09,
+      "sma200": 4.35,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 8155668.000830889,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 1.48,
+      "sesiones_hasta_stop": 71,
+      "distancia_max_52s_pct": -16.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Sacyr suben tras suscribir nuevos derivados - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Manuel Manrique, presidente ejecutivo de Sacyr: “El sistema concesional chileno es el mejor del mundo (...) pero hay que mejorar, no hay que relajarse” - Diario Financiero",
+            "fuente": "Diario Financiero",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sacyr v. Panama and the Limits of Recasting Contract Claims as Treaty Claims - Wolters Kluwer",
+            "fuente": "Wolters Kluwer",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 1.64,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Sacyr: concesiones, dividendo y crecimiento para sostener una visión positiva a largo plazo - Renta 4 Banco",
+            "fuente": "Renta 4 Banco",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Consultorio de análisis técnico : Santander, BBVA, Solaria, Inditex, Sacyr, ACS, oro... - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "¿Es el momento oportuno para analizar Sacyr, S.A. (BME:SCYR)? - Simply Wall Street",
+            "fuente": "Simply Wall Street",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Sacyr, S.A. engages in the development and operation of infrastructure concessions worldwide. It is involved in the infrastructure development, such as transportation, sanitation, water, and waste treatment; development of large-scale civil engineering, industrial transport infrastructure, and building projects; water treatment, purification, desalination, purification, and reuse, as well as operation and..."
     }
   }
 ]
