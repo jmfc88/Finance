@@ -25991,7 +25991,7 @@
     "id": "LTMC.MI-2026-10-07",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 24.31,
     "acciones": 4.113534,
@@ -26079,6 +26079,90 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    },
+    "precio_salida": 27.006,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 20,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 11.09,
+    "rentabilidad_neta_pct": 9.09,
+    "resultado_neto_eur": 9.09,
+    "indice_pct": 1.34,
+    "vs_indice_pct": 7.75,
+    "rentabilidad_7d_pct": -0.82,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 18,
+    "precio_equilibrio": 24.7962,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 9.09 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 9.56,
+        "neto_pct": 9.56,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -26630,7 +26714,7 @@
     "id": "REC.MI-2026-10-07",
     "ticker": "REC.MI",
     "nombre": "Recordati Industria Chimica e Farmaceutica S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 53.0,
     "acciones": 1.886792,
@@ -26697,13 +26781,97 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Recordati Industria Chimica e Farmaceutica S.p.A., together with its subsidiaries, researches, develops, produces, and sells pharmaceuticals in Italy, the United States, Spain, France, Germany, Russia, Ukraine, Turkey, Portugal, North Africa, and internationally."
+    },
+    "precio_salida": 53.0,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 0.0,
+    "rentabilidad_neta_pct": -2.0,
+    "resultado_neto_eur": -2.0,
+    "indice_pct": 1.34,
+    "vs_indice_pct": -3.34,
+    "rentabilidad_7d_pct": -0.09,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 54.06,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.0,
+        "neto_pct": -2.0,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
     "id": "EGL.LS-2026-10-07",
     "ticker": "EGL.LS",
     "nombre": "Mota-Engil, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-07",
     "precio_entrada": 4.662,
     "acciones": 21.450021,
@@ -26785,6 +26953,90 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    },
+    "precio_salida": 4.548,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.45,
+    "rentabilidad_neta_pct": -4.45,
+    "resultado_neto_eur": -4.45,
+    "indice_pct": 1.34,
+    "vs_indice_pct": -5.79,
+    "rentabilidad_7d_pct": -0.17,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.7552,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.95,
+        "neto_pct": -4.95,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.94,
+        "neto_pct": -5.94,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.98,
+        "neto_pct": -3.98,
+        "sesiones": 11,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.45,
+        "neto_pct": -4.45,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -27853,7 +28105,7 @@
     "id": "MONC.MI-2026-10-12",
     "ticker": "MONC.MI",
     "nombre": "Moncler S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-12",
     "precio_entrada": 43.47,
     "acciones": 2.300437,
@@ -27942,6 +28194,48 @@
         ]
       },
       "resumen_negocio": "Moncler S.p.A., together with its subsidiaries, engages in the production and distribution of garments, children's clothing, footwear, eyewear and other related accessories under the Moncler and Stone Island brands."
+    },
+    "precio_salida": 44.7741,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 17,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.99,
+    "vs_indice_pct": 0.01,
+    "rentabilidad_7d_pct": -1.22,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 44.3394,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 17,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.09,
+        "neto_pct": -5.09,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      }
     }
   },
   {
@@ -31493,7 +31787,7 @@
     "id": "LDO.MI-2026-10-20",
     "ticker": "LDO.MI",
     "nombre": "Leonardo S.p.a.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-20",
     "precio_entrada": 49.185,
     "acciones": 2.03314,
@@ -31560,6 +31854,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    },
+    "precio_salida": 50.6606,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 2.31,
+    "vs_indice_pct": -1.31,
+    "rentabilidad_7d_pct": 5.34,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 50.1687,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.87,
+        "neto_pct": -4.87,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.65,
+        "neto_pct": 0.65,
+        "sesiones": 11,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -32709,7 +33051,7 @@
     "id": "HEIA.AS-2026-10-22",
     "ticker": "HEIA.AS",
     "nombre": "Heineken N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 77.9,
     "acciones": 1.283697,
@@ -32776,6 +33118,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Heineken N.V. brews and sells beer and cider in Europe, the Americas, Africa, the Middle East, and the Asia Pacific. The company also provides soft drinks. It sells its products under the Heineken, Heineken 0.0, Heineken Silver, Amstel, Moretti, Tiger, Desperados, Edelweiss, Lagunitas, Orchard Thieves, Windhoek, Dos Equis, Red Stripe, Kingfisher, Bintang, Gosser, Affligem, Mort Subite, Strongbow, Stassen, Bulmers..."
+    },
+    "precio_salida": 80.237,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 9,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 2.89,
+    "vs_indice_pct": -1.89,
+    "rentabilidad_7d_pct": 4.6,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 79.458,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -34329,7 +34713,7 @@
     "id": "VIE.PA-2026-10-23",
     "ticker": "VIE.PA",
     "nombre": "Veolia Environnement SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 32.09,
     "acciones": 3.116236,
@@ -34396,6 +34780,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Veolia Environnement SA designs and provides water, waste, and energy management solutions. It operates through France and Hazardous Waste Europe; Europe; Americas, Asia Pacific, Africa Middle-East; Water Technologies; and Other segments."
+    },
+    "precio_salida": 33.0527,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 3.21,
+    "vs_indice_pct": -2.21,
+    "rentabilidad_7d_pct": 2.68,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 32.7318,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -36453,7 +36879,7 @@
     "id": "CTT.LS-2026-10-28",
     "ticker": "CTT.LS",
     "nombre": "CTT - Correios De Portugal, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-28",
     "precio_entrada": 5.39,
     "acciones": 18.552876,
@@ -36520,6 +36946,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "CTT - Correios De Portugal, S.A., together with its subsidiaries, engages in reference postal business in Portugal and internationally. The company operates through three segments: E-Commerce Solutions, Mail and Services, and Banco CTT."
+    },
+    "precio_salida": 5.0623,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 1.54,
+    "vs_indice_pct": -9.62,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.4978,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.36,
+        "neto_pct": -4.36,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.82,
+        "neto_pct": -5.82,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -38801,6 +39311,324 @@
         ]
       },
       "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
+    }
+  },
+  {
+    "id": "EDPR.LS-2026-11-04",
+    "ticker": "EDPR.LS",
+    "nombre": "EDP Renewables, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 13.65,
+    "acciones": 7.326007,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 41.7,
+    "potencial_pct": 8.9,
+    "tarjeta": {
+      "ticker": "EDPR.LS",
+      "nombre_empresa": "EDP Renewables, S.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 41.7,
+      "version_scoring": 33,
+      "precio_actual": 13.65,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 21.7,
+        "pct_vender": 4.3,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 14.86087,
+      "dispersion_pct": 73.0,
+      "momentum_30d_pct": 8.8,
+      "momentum_5d_pct": 8.9,
+      "fuerza_relativa_pct": 9.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 70.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 12.75,
+      "sma200": 13.38,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 11000647.553870678,
+      "volumen_relativo": 1.08,
+      "volatilidad_diaria_pct": 2.19,
+      "sesiones_hasta_stop": 32,
+      "distancia_max_52s_pct": -6.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "EDP Renovaveis Lacks Structural Competitive Advantage Despite Its Strong Record - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "EDPR announces $700m Sell-down deal for a wind and solar portfolio in - EDP Global",
+            "fuente": "EDP Global",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Audax Renovables, S.A. (0EIB.IL) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Informe de resultados: EDP supera previsiones del primer semestre de 2026 y mejora su guía - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "EDPR aumenta su beneficio un 50%, hasta los 330 millones, con foco en EEUU y Europa - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "First floating wind turbine successfully installed in the French sea - EDP Global",
+            "fuente": "EDP Global",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "EDP Renewables, S.A. engages in the renewable energy business in Europe, North America, South America, and the Asia Pacific. The company is involved in the planning, construction, operation, and maintenance of power generation plants using renewable energy sources, including wind and solar power."
+    }
+  },
+  {
+    "id": "XYZ-2026-11-04",
+    "ticker": "XYZ",
+    "nombre": "Block, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 76.0,
+    "acciones": 1.315789,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 41.3,
+    "potencial_pct": 28.8,
+    "tarjeta": {
+      "ticker": "XYZ",
+      "nombre_empresa": "Block, Inc.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 41.3,
+      "version_scoring": 33,
+      "precio_actual": 76.0,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.7,
+        "pct_strong_buy": 19.1,
+        "pct_vender": 0.0,
+        "total_analistas": 47
+      },
+      "precio_objetivo_medio": 97.91119,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": -0.3,
+      "momentum_5d_pct": 1.5,
+      "fuerza_relativa_pct": 2.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 50.4,
+      "tendencia_tecnica": "mixta",
+      "sma50": 77.78,
+      "sma200": 71.25,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": {
+        "dias_desde": 1,
+        "sorpresa_pct": 10.2,
+        "variacion_pct": -0.3
+      },
+      "cotiza_en_euros": false,
+      "liquidez_dia": 386965516.67518616,
+      "volumen_relativo": 1.17,
+      "volatilidad_diaria_pct": 1.96,
+      "sesiones_hasta_stop": 40,
+      "distancia_max_52s_pct": -10.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 10,
+        "titulares": [
+          {
+            "titulo": "Block sube tras superar expectativas gracias a Cash App - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Block Inc. Profit Rises as Square Payment Volume Jumps - WSJ",
+            "fuente": "WSJ",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Block Inc. shares rise 6% after-hours as it raises full-year profit forecast - The Block",
+            "fuente": "The Block",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
+    }
+  },
+  {
+    "id": "ISP.MI-2026-11-04",
+    "ticker": "ISP.MI",
+    "nombre": "Intesa Sanpaolo S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 6.274,
+    "acciones": 15.938795,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 40.2,
+    "potencial_pct": 18.0,
+    "tarjeta": {
+      "ticker": "ISP.MI",
+      "nombre_empresa": "Intesa Sanpaolo S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 40.2,
+      "version_scoring": 33,
+      "precio_actual": 6.274,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 23.1,
+        "pct_vender": 7.7,
+        "total_analistas": 13
+      },
+      "precio_objetivo_medio": 7.40308,
+      "dispersion_pct": 25.0,
+      "momentum_30d_pct": -3.6,
+      "momentum_5d_pct": 4.7,
+      "fuerza_relativa_pct": -3.3,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 6.42,
+      "sma200": 5.97,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 264285128.61491442,
+      "volumen_relativo": 1.03,
+      "volatilidad_diaria_pct": 1.85,
+      "sesiones_hasta_stop": 45,
+      "distancia_max_52s_pct": -9.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Intesa CEO upbeat on antitrust ruling on MPS bid after strong quarter - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Intesa’s Profit Rises Just Weeks Before Paschi Bid Kicks Off - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Intesa Sanpaolo retrocede ligeramente a pesar de elevar su objetivo anual - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Intesa Sanpaolo S.p.A. engages in the provision of various financial products and services in Italy, Central/Eastern Europe, the Middle East, and North Africa. It operates through six segments: Banca dei Territori, IMI Corporate & Investment Banking, International Banks, Asset Management, Private Banking, and Insurance."
+    }
+  },
+  {
+    "id": "GRF.MC-2026-11-04",
+    "ticker": "GRF.MC",
+    "nombre": "Grifols, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 11.225,
+    "acciones": 8.908686,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 39.4,
+    "potencial_pct": 35.3,
+    "tarjeta": {
+      "ticker": "GRF.MC",
+      "nombre_empresa": "Grifols, S.A.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 39.4,
+      "version_scoring": 33,
+      "precio_actual": 11.225,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.2,
+        "pct_vender": 9.1,
+        "total_analistas": 11
+      },
+      "precio_objetivo_medio": 15.19091,
+      "dispersion_pct": 155.6,
+      "momentum_30d_pct": 13.6,
+      "momentum_5d_pct": 4.9,
+      "fuerza_relativa_pct": 13.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 84.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.99,
+      "sma200": 9.66,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 15689997.213119984,
+      "volumen_relativo": 1.24,
+      "volatilidad_diaria_pct": 1.82,
+      "sesiones_hasta_stop": 47,
+      "distancia_max_52s_pct": -3.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Grifols gana 390 millones hasta septiembre, un aumento del 28,4% - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Resultados de Grifols: los ingresos se disparan más de un 9% - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Grifols: Plasma, Profits, And Recovery Gathering Momentum (NASDAQ:GRFS) - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Grifols, S.A., together with its subsidiaries, engages in the research, development, production, and marketing of plasma-derived medicines in the United States, Canada, Spain, Europe, and internationally."
     }
   }
 ]
