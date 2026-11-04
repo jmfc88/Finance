@@ -34027,7 +34027,7 @@
     "id": "ENI.MI-2026-10-23",
     "ticker": "ENI.MI",
     "nombre": "Eni S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 27.305,
     "acciones": 3.662333,
@@ -34116,6 +34116,54 @@
         ]
       },
       "resumen_negocio": "Eni S.p.A. operates as an integrated energy company in Italy, Other European Union, Rest of Europe, the United States, Asia, Africa, and internationally. The company engages in exploration, development, extracting, manufacturing, trading, and marketing crude oil and natural gas, oil-based fuels, chemical products, and gas-fired power, as well as energy products from renewable sources."
+    },
+    "precio_salida": 25.6449,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 3.25,
+    "vs_indice_pct": -11.33,
+    "rentabilidad_7d_pct": -4.65,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 27.8511,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.27,
+        "neto_pct": -4.27,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.7,
+        "neto_pct": -5.7,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -36806,7 +36854,7 @@
     "id": "SPM.MI-2026-10-28",
     "ticker": "SPM.MI",
     "nombre": "Saipem SpA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-28",
     "precio_entrada": 4.551,
     "acciones": 21.973193,
@@ -36873,6 +36921,42 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Saipem SpA provides energy and infrastructure solutions worldwide. It operates through Asset Based Services, Offshore Drilling, and Energy Carriers segments. The company offers development of subsea fields and pipelaying; installation and lifting of offshore structures; engages in engineering, implementation, installation, maintenance, modification, and decommissioning activities, as well as offshore engineering and..."
+    },
+    "precio_salida": 4.2743,
+    "fecha_salida": "2026-11-04",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 1.59,
+    "vs_indice_pct": -9.67,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.642,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -7.12,
+        "neto_pct": -7.12,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -39629,6 +39713,320 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Grifols, S.A., together with its subsidiaries, engages in the research, development, production, and marketing of plasma-derived medicines in the United States, Canada, Spain, Europe, and internationally."
+    }
+  },
+  {
+    "id": "LTMC.MI-2026-11-04",
+    "ticker": "LTMC.MI",
+    "nombre": "Lottomatica Group S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 27.13,
+    "acciones": 3.685957,
+    "invertido": 100.0,
+    "posicion_ranking": 2,
+    "tramo": "1-10",
+    "score": 59.3,
+    "potencial_pct": 21.0,
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 59.3,
+      "version_scoring": 33,
+      "precio_actual": 27.13,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 10.9,
+        "pct_strong_buy": 26.7,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 32.81667,
+      "dispersion_pct": 23.3,
+      "momentum_30d_pct": 8.8,
+      "momentum_5d_pct": 6.4,
+      "fuerza_relativa_pct": 8.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 85.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 25.57,
+      "sma200": 24.61,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 20090377.75,
+      "volumen_relativo": 1.25,
+      "volatilidad_diaria_pct": 1.25,
+      "sesiones_hasta_stop": 100,
+      "distancia_max_52s_pct": -2.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Lottomatica's core profit rises 3%, aided by online and sports betting growth - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Lottomatica CEO Sees AI Driving Online Growth in Cirsa Deal - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-CIRSA ENTERPRISES, S.A. La Sociedad remite la presentación sobre la operación de fusión con[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 2.72,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Lottomatica suben un 7% tras el acuerdo con Cirsa - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Lottomatica Group S.p.A. presenta los resultados de los nueve primeros meses cerrados a 30 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Lottomatica-Cirsa: la \"maquina de generar caja\" seduce, pero el cambio de perfil genera dudas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    }
+  },
+  {
+    "id": "FGR.PA-2026-11-04",
+    "ticker": "FGR.PA",
+    "nombre": "Eiffage SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 104.7,
+    "acciones": 0.95511,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 40.4,
+    "potencial_pct": 48.2,
+    "tarjeta": {
+      "ticker": "FGR.PA",
+      "nombre_empresa": "Eiffage SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 40.4,
+      "version_scoring": 33,
+      "precio_actual": 104.7,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 29.4,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 155.11765,
+      "dispersion_pct": 55.1,
+      "momentum_30d_pct": 2.6,
+      "momentum_5d_pct": 4.6,
+      "fuerza_relativa_pct": 2.4,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 64.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 103.61,
+      "sma200": 121.43,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 23379181.961811066,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 1.09,
+      "sesiones_hasta_stop": 132,
+      "distancia_max_52s_pct": -25.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Eiffage SA (EFGSY) (H1 2026) Earnings Call Highlights: Record Order Book and Strategic ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "| 2025 Annual Results: Firm Growth Driven by Europe - Groupe Eiffage",
+            "fuente": "Groupe Eiffage",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Eiffage SA (FGRP.XD) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Eiffage SA, together with its subsidiaries, engages in the construction and concessions businesses in France, Germany, Europe, and internationally. It operates through five segments: Construction, Infrastructure, Energy Systems, Concessions, and Holding."
+    }
+  },
+  {
+    "id": "LDO.MI-2026-11-04",
+    "ticker": "LDO.MI",
+    "nombre": "Leonardo S.p.a.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 51.4,
+    "acciones": 1.945525,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 40.0,
+    "potencial_pct": 32.4,
+    "tarjeta": {
+      "ticker": "LDO.MI",
+      "nombre_empresa": "Leonardo S.p.a.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 40.0,
+      "version_scoring": 33,
+      "precio_actual": 51.4,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.0,
+        "pct_strong_buy": 36.8,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 68.06842,
+      "dispersion_pct": 49.1,
+      "momentum_30d_pct": 8.9,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 8.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 67.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 49.62,
+      "sma200": 53.31,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 71896160.47170067,
+      "volumen_relativo": 1.2,
+      "volatilidad_diaria_pct": 1.78,
+      "sesiones_hasta_stop": 49,
+      "distancia_max_52s_pct": -19.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "La Empresa de Defensa Leonardo Sube un 17 % en 2026. ¿Es Recomendable su Compra? - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Leonardo SpA (FMNB.SG) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Fincantieri y Leonardo refuerzan su cooperación en defensa naval - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    }
+  },
+  {
+    "id": "VIE.PA-2026-11-04",
+    "ticker": "VIE.PA",
+    "nombre": "Veolia Environnement SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-04",
+    "precio_entrada": 33.75,
+    "acciones": 2.962963,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 39.6,
+    "potencial_pct": 12.9,
+    "tarjeta": {
+      "ticker": "VIE.PA",
+      "nombre_empresa": "Veolia Environnement SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 39.6,
+      "version_scoring": 33,
+      "precio_actual": 33.75,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 15.8,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 38.11053,
+      "dispersion_pct": 51.0,
+      "momentum_30d_pct": 7.7,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 7.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 74.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 31.84,
+      "sma200": 33.36,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 45665527.62468052,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 0.8,
+      "sesiones_hasta_stop": 243,
+      "distancia_max_52s_pct": -10.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Veolia stock wins Brazil water-treatment contract from Arauco - ad-hoc-news.de",
+            "fuente": "ad-hoc-news.de",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Veolia Environnement SA (VEOEF) (H1 2026) Earnings Call Highlights: Strong Net Income Growth ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Veolia Environnement SA (4VIE.TI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Veolia Environnement SA designs and provides water, waste, and energy management solutions. It operates through France and Hazardous Waste Europe; Europe; Americas, Asia Pacific, Africa Middle-East; Water Technologies; and Other segments."
     }
   }
 ]
