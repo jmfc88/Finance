@@ -33590,7 +33590,7 @@
     "id": "ASRNL.AS-2026-10-22",
     "ticker": "ASRNL.AS",
     "nombre": "ASR Nederland N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 74.34,
     "acciones": 1.345171,
@@ -33669,6 +33669,48 @@
         ]
       },
       "resumen_negocio": "ASR Nederland N.V. provides insurance, pensions, and mortgages products and services for consumers, businesses, and employers in the Netherlands. The company operates through five segments: Non-Life, Life, Asset Management, Distribution and Services, and Holding and Other."
+    },
+    "precio_salida": 76.5702,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.31,
+    "vs_indice_pct": -0.31,
+    "rentabilidad_7d_pct": 2.21,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 75.8268,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -41386,7 +41428,7 @@
     "id": "XYZ-2026-11-04",
     "ticker": "XYZ",
     "nombre": "Block, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-04",
     "precio_entrada": 76.0,
     "acciones": 1.315789,
@@ -41457,6 +41499,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Block, Inc., together with its subsidiaries, builds ecosystems focused on commerce and financial products and services in the United States and internationally. It operates through two segments: Square and Cash App."
+    },
+    "precio_salida": 84.4284,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 11.09,
+    "rentabilidad_neta_pct": 9.09,
+    "resultado_neto_eur": 9.09,
+    "indice_pct": -3.53,
+    "vs_indice_pct": 12.62,
+    "rentabilidad_7d_pct": null,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 1,
+    "precio_equilibrio": 77.52,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 9.09 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 9.09,
+        "neto_pct": 9.09,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -43211,6 +43295,1048 @@
         ]
       },
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    }
+  },
+  {
+    "id": "AI.PA-2026-11-06",
+    "ticker": "AI.PA",
+    "nombre": "L'Air Liquide S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 186.98,
+    "acciones": 0.534817,
+    "invertido": 100.0,
+    "posicion_ranking": 6,
+    "tramo": "1-10",
+    "score": 56.3,
+    "potencial_pct": 7.9,
+    "tarjeta": {
+      "ticker": "AI.PA",
+      "nombre_empresa": "L'Air Liquide S.A.",
+      "isin": "FR0000053951",
+      "sector": "Basic Materials",
+      "score": 56.3,
+      "version_scoring": 33,
+      "precio_actual": 186.98,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 201.675,
+      "dispersion_pct": 32.0,
+      "momentum_30d_pct": 11.3,
+      "momentum_5d_pct": 3.4,
+      "fuerza_relativa_pct": 11.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 78.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 171.83,
+      "sma200": 165.0,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 145531711.95010376,
+      "volumen_relativo": 1.27,
+      "volatilidad_diaria_pct": 1.0,
+      "sesiones_hasta_stop": 157,
+      "distancia_max_52s_pct": -1.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "H1 2026 Results: with an acceleration in the second quarter, Air Liquide combines growth with continuous performance improvement - Air Liquide",
+            "fuente": "Air Liquide",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de L'Air Liquide S.A. (AIL.DE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "L'Air Liquide S.A. (AI.PA) Gráfico de rendimientos estacionales - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 2.32,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de L'Air Liquide S.A. (AI.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    }
+  },
+  {
+    "id": "ABI.BR-2026-11-06",
+    "ticker": "ABI.BR",
+    "nombre": "Anheuser-Busch InBev SA/NV",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 74.58,
+    "acciones": 1.340842,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 48.8,
+    "potencial_pct": 11.4,
+    "tarjeta": {
+      "ticker": "ABI.BR",
+      "nombre_empresa": "Anheuser-Busch InBev SA/NV",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 48.8,
+      "version_scoring": 33,
+      "precio_actual": 74.58,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 25
+      },
+      "precio_objetivo_medio": 83.06935,
+      "dispersion_pct": 40.4,
+      "momentum_30d_pct": 9.0,
+      "momentum_5d_pct": 3.6,
+      "fuerza_relativa_pct": 8.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 52.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 69.93,
+      "sma200": 67.69,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 112737232.45197296,
+      "volumen_relativo": 1.17,
+      "volatilidad_diaria_pct": 1.77,
+      "sesiones_hasta_stop": 50,
+      "distancia_max_52s_pct": -1.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV : recomendación de compra de DZ Bank - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué cae hoy la acción de Anheuser Busch InBev? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV : El RBC continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 1.3,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "ANHEUSER-BUSCH INBEV SA/NV - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV (BUD) stock price, news, quote and history - Yahoo Finance - Yahoo Finance Singapore",
+            "fuente": "Yahoo Finance Singapore",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Anheuser-Busch InBev SA/NV (BUD) Seasonal returns chart - Yahoo Finance - Yahoo Finance Singapore",
+            "fuente": "Yahoo Finance Singapore",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    }
+  },
+  {
+    "id": "BN.PA-2026-11-06",
+    "ticker": "BN.PA",
+    "nombre": "Danone S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 67.0,
+    "acciones": 1.492537,
+    "invertido": 100.0,
+    "posicion_ranking": 11,
+    "tramo": "11-20",
+    "score": 48.4,
+    "potencial_pct": 17.6,
+    "tarjeta": {
+      "ticker": "BN.PA",
+      "nombre_empresa": "Danone S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 48.4,
+      "version_scoring": 33,
+      "precio_actual": 67.0,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 27.3,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 78.79545,
+      "dispersion_pct": 57.6,
+      "momentum_30d_pct": 13.0,
+      "momentum_5d_pct": 2.3,
+      "fuerza_relativa_pct": 12.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 77.8,
+      "tendencia_tecnica": "alcista",
+      "sma50": 61.8,
+      "sma200": 65.8,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 89141624.13892174,
+      "volumen_relativo": 1.03,
+      "volatilidad_diaria_pct": 1.45,
+      "sesiones_hasta_stop": 74,
+      "distancia_max_52s_pct": -10.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Danone España dispara el beneficio tras vender sus acciones de la matriz francesa - Expansión",
+            "fuente": "Expansión",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone SA (DANOY) (H1 2026) Earnings Call Highlights: Strong Sales Growth and Strategic Expansions - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone North America’s Largest Plant in the World Continues Growth in the Shenandoah Valley - VEDP",
+            "fuente": "VEDP",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 1.08,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Danone España dispara el beneficio tras vender sus acciones de la matriz francesa - Expansión",
+            "fuente": "Expansión",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone Sees Up to €70 Million Hit From Baby Formula Recalls - Insurance Journal",
+            "fuente": "Insurance Journal",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Danone eleva su facturación a 21.176 millones hasta septiembre, un 2,9% más interanual - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
+    }
+  },
+  {
+    "id": "FDR.MC-2026-11-06",
+    "ticker": "FDR.MC",
+    "nombre": "Fluidra, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 19.21,
+    "acciones": 5.205622,
+    "invertido": 100.0,
+    "posicion_ranking": 12,
+    "tramo": "11-20",
+    "score": 47.9,
+    "potencial_pct": 34.7,
+    "tarjeta": {
+      "ticker": "FDR.MC",
+      "nombre_empresa": "Fluidra, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 47.9,
+      "version_scoring": 33,
+      "precio_actual": 19.21,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 25.872,
+      "dispersion_pct": 63.2,
+      "momentum_30d_pct": 13.0,
+      "momentum_5d_pct": 2.7,
+      "fuerza_relativa_pct": 12.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 73.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 18.16,
+      "sma200": 19.62,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 6491742.385987282,
+      "volumen_relativo": 1.22,
+      "volatilidad_diaria_pct": 1.51,
+      "sesiones_hasta_stop": 68,
+      "distancia_max_52s_pct": -24.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "El Ibex 35 rebota y se queda a las puertas de los 19.000; Amadeus, Solaria y Fluidra suben más del 4% - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-FLUIDRA, S.A. Operaciones realizadas bajo el programa de recompra entre el 24 y el 28 de agosto de 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "S&P mejora la calificación ESG de Fluidra hastalos 79 puntos, dos más que el año anterior - Fluidra",
+            "fuente": "Fluidra",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "puntos_roe_sostenido": 1.46,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Fluidra ganan respaldo de analistas pese al castigo en Bolsa - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fluidra gana un 6% más hasta septiembre y confirma sus previsiones para el año - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fluidra gana 154 millones hasta septiembre, un 5,9% menos, y acota sus previsiones para 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    }
+  },
+  {
+    "id": "ITX.MC-2026-11-06",
+    "ticker": "ITX.MC",
+    "nombre": "Industria de Diseño Textil, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 57.8,
+    "acciones": 1.730104,
+    "invertido": 100.0,
+    "posicion_ranking": 13,
+    "tramo": "11-20",
+    "score": 47.5,
+    "potencial_pct": 4.5,
+    "tarjeta": {
+      "ticker": "ITX.MC",
+      "nombre_empresa": "Industria de Diseño Textil, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 47.5,
+      "version_scoring": 33,
+      "precio_actual": 57.8,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 4.2,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 60.38958,
+      "dispersion_pct": 61.4,
+      "momentum_30d_pct": 11.1,
+      "momentum_5d_pct": 3.0,
+      "fuerza_relativa_pct": 11.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 54.36,
+      "sma200": 53.43,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 84353160.92181396,
+      "volumen_relativo": 0.96,
+      "volatilidad_diaria_pct": 1.85,
+      "sesiones_hasta_stop": 45,
+      "distancia_max_52s_pct": -3.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-INDUSTRIA DE DISEÑO TEXTIL, S.A. La sociedad remite presentación sobre los resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Inditex, entre las favoritas de Jefferies, cierra a cuatro céntimos de su récord - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-INDUSTRIA DE DISEÑO TEXTIL, S.A. La Sociedad remite convocatoria de la presentación de resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "HECHOS RELEVANTES.-INDUSTRIA DE DISEÑO TEXTIL, S.A. La Sociedad remite convocatoria de la presentación de resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally."
+    }
+  },
+  {
+    "id": "LDO.MI-2026-11-06",
+    "ticker": "LDO.MI",
+    "nombre": "Leonardo S.p.a.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 48.495,
+    "acciones": 2.062068,
+    "invertido": 100.0,
+    "posicion_ranking": 15,
+    "tramo": "11-20",
+    "score": 47.3,
+    "potencial_pct": 40.4,
+    "tarjeta": {
+      "ticker": "LDO.MI",
+      "nombre_empresa": "Leonardo S.p.a.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 47.3,
+      "version_scoring": 33,
+      "precio_actual": 48.495,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.0,
+        "pct_strong_buy": 36.8,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 68.06842,
+      "dispersion_pct": 49.1,
+      "momentum_30d_pct": 5.9,
+      "momentum_5d_pct": -6.3,
+      "fuerza_relativa_pct": 5.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 45.4,
+      "tendencia_tecnica": "bajista",
+      "sma50": 49.42,
+      "sma200": 53.23,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": {
+        "dias_desde": 2,
+        "sorpresa_pct": 12.9,
+        "variacion_pct": -6.1
+      },
+      "cotiza_en_euros": true,
+      "liquidez_dia": 69965411.48594093,
+      "volumen_relativo": 1.28,
+      "volatilidad_diaria_pct": 2.01,
+      "sesiones_hasta_stop": 38,
+      "distancia_max_52s_pct": -23.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Leonardo Profit Jumps, Lifts Order Forecast on Defense Boom - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Firm should not get crash recordings, court told - BBC",
+            "fuente": "BBC",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Leonardo S.p.a. presenta sus resultados del tercer trimestre y de los nueve primeros meses cerrados a 30 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 6,
+        "puntos_roe_sostenido": 1.68,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "La italiana Leonardo vuelve a elevar su previsión de pedidos para 2026 tras el aumento del beneficio a nueve meses - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "La italiana Leonardo vuelve a elevar su previsión de pedidos para 2026 tras el alza del beneficio hasta septiembre - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Leonardo eleva previsión de pedidos para 2026 tras sólido rendimiento - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    }
+  },
+  {
+    "id": "PUB.PA-2026-11-06",
+    "ticker": "PUB.PA",
+    "nombre": "Publicis Groupe S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 101.25,
+    "acciones": 0.987654,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 46.0,
+    "potencial_pct": 13.8,
+    "tarjeta": {
+      "ticker": "PUB.PA",
+      "nombre_empresa": "Publicis Groupe S.A.",
+      "isin": null,
+      "sector": "Communication Services",
+      "score": 46.0,
+      "version_scoring": 33,
+      "precio_actual": 101.25,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 115.1875,
+      "dispersion_pct": 50.0,
+      "momentum_30d_pct": 6.3,
+      "momentum_5d_pct": 1.1,
+      "fuerza_relativa_pct": 6.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 49.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 98.93,
+      "sma200": 85.38,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 56086614.91732025,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 1.68,
+      "sesiones_hasta_stop": 55,
+      "distancia_max_52s_pct": -3.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Frenazo para Publicis tras una rebaja de recomendación de UBS - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Acuerdo con LiveRamp podría transformar perspectivas de Publicis, dice J.P. Morgan - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Holdings y propiedad de personas con información privilegiada de Publicis Groupe S.A. (PU4.DE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 2.54,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Publicis eleva sus previsiones de crecimiento para 2026 tras sólidos resultados en EE.UU. y Europa - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Publicis Groupe S.A. (0FQI.IL) Perspectivas de analistas, precios objetivo y recomendaciones - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Acciones Publicis Groupe S.A. - Cotizacion PUB Euronext Paris - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Publicis Groupe S.A., together with its subsidiaries, provides marketing, communications, and digital business transformation services in North America, Europe, the Asia Pacific, Latin America, Africa, and the Middle East, and internationally."
+    }
+  },
+  {
+    "id": "BMED.MI-2026-11-06",
+    "ticker": "BMED.MI",
+    "nombre": "Banca Mediolanum S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 23.08,
+    "acciones": 4.332756,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 45.5,
+    "potencial_pct": 10.6,
+    "tarjeta": {
+      "ticker": "BMED.MI",
+      "nombre_empresa": "Banca Mediolanum S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 45.5,
+      "version_scoring": 33,
+      "precio_actual": 23.08,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 25.53333,
+      "dispersion_pct": 20.7,
+      "momentum_30d_pct": 1.6,
+      "momentum_5d_pct": 3.2,
+      "fuerza_relativa_pct": 1.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 56.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.14,
+      "sma200": 20.73,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 14393184.083507538,
+      "volumen_relativo": 1.02,
+      "volatilidad_diaria_pct": 1.54,
+      "sesiones_hasta_stop": 65,
+      "distancia_max_52s_pct": -5.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Banca Mediolanum S.p.A. (0RDO.IL) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Banca Mediolanum S.p.A. (0RDO.L) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Traspaso de plan de pensiones a Mediolanum: cómo hacerlo en 2026 - Rankia",
+            "fuente": "Rankia",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
+    }
+  },
+  {
+    "id": "PHIA.AS-2026-11-06",
+    "ticker": "PHIA.AS",
+    "nombre": "Koninklijke Philips N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 26.7,
+    "acciones": 3.745318,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 44.0,
+    "potencial_pct": 1.7,
+    "tarjeta": {
+      "ticker": "PHIA.AS",
+      "nombre_empresa": "Koninklijke Philips N.V.",
+      "isin": null,
+      "sector": "Healthcare",
+      "score": 44.0,
+      "version_scoring": 33,
+      "precio_actual": 26.7,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 27.145,
+      "dispersion_pct": 59.1,
+      "momentum_30d_pct": 24.3,
+      "momentum_5d_pct": 10.1,
+      "fuerza_relativa_pct": 24.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 81.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 22.72,
+      "sma200": 23.24,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": {
+        "dias_desde": 4,
+        "sorpresa_pct": 16.5,
+        "variacion_pct": 10.1
+      },
+      "cotiza_en_euros": true,
+      "liquidez_dia": 41597111.57339859,
+      "volumen_relativo": 1.69,
+      "volatilidad_diaria_pct": 2.02,
+      "sesiones_hasta_stop": 38,
+      "distancia_max_52s_pct": -2.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Koninklijke Philips NV: Q3 profitability beat, guidance unchanged; on track to deliver on its promise - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué sube hoy la acción de Koninklijke Philips? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Philips jumps 6% on strong Q3 results - Breakingthenews.net",
+            "fuente": "Breakingthenews.net",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "¿Por qué sube hoy la acción de Koninklijke Philips? - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Koninklijke Philips N.V. operates as a health technology company in North America, the Greater China, and internationally. It operates through Diagnosis & Treatment, Connected Care, and Personal Health segments."
+    }
+  },
+  {
+    "id": "PUIG.MC-2026-11-06",
+    "ticker": "PUIG.MC",
+    "nombre": "Puig Brands, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 19.73,
+    "acciones": 5.068424,
+    "invertido": 100.0,
+    "posicion_ranking": 25,
+    "tramo": "21-30",
+    "score": 42.4,
+    "potencial_pct": 5.9,
+    "tarjeta": {
+      "ticker": "PUIG.MC",
+      "nombre_empresa": "Puig Brands, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 42.4,
+      "version_scoring": 33,
+      "precio_actual": 19.73,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 20.90312,
+      "dispersion_pct": 52.5,
+      "momentum_30d_pct": 9.4,
+      "momentum_5d_pct": 2.4,
+      "fuerza_relativa_pct": 9.3,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 55.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 18.38,
+      "sma200": 16.92,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 9906276.464147568,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 1.64,
+      "sesiones_hasta_stop": 57,
+      "distancia_max_52s_pct": -1.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Puig Brands se dispara tras una recomendación de compra de Bank of America - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-PUIG BRANDS, S.A. Nota de prensa sobre resultados H1 2026. - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Puig suben: ¿cuál es su precio objetivo? - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    }
+  },
+  {
+    "id": "SAN.PA-2026-11-06",
+    "ticker": "SAN.PA",
+    "nombre": "Sanofi",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 82.22,
+    "acciones": 1.216249,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 42.1,
+    "potencial_pct": 14.5,
+    "tarjeta": {
+      "ticker": "SAN.PA",
+      "nombre_empresa": "Sanofi",
+      "isin": "FR001400UEY9",
+      "sector": "Healthcare",
+      "score": 42.1,
+      "version_scoring": 33,
+      "precio_actual": 82.22,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 8.3,
+        "pct_vender": 0.0,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 94.10478,
+      "dispersion_pct": 37.4,
+      "momentum_30d_pct": 15.9,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 15.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 82.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 74.56,
+      "sma200": 75.31,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 160300401.11697388,
+      "volumen_relativo": 1.02,
+      "volatilidad_diaria_pct": 1.8,
+      "sesiones_hasta_stop": 48,
+      "distancia_max_52s_pct": -2.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Informe de resultados: Sanofi supera las previsiones del tercer trimestre de 2026 y eleva sus perspectivas - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Sanofi : El Deutsche Bank continua con un recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Sanofi se compromete ante la UE a corregir sus mensajes sobre una vacuna rival contra la gripe para evitar una multa - EL PAÍS",
+            "fuente": "EL PAÍS",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Sanofi engages in the research, development, manufacture, and marketing of therapeutic solutions in Finland and Germany. It provides immunology and inflammation, rare diseases neurology, oncology, and other vaccines."
+    }
+  },
+  {
+    "id": "DG.PA-2026-11-06",
+    "ticker": "DG.PA",
+    "nombre": "Vinci SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-06",
+    "precio_entrada": 110.7,
+    "acciones": 0.903342,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 41.4,
+    "potencial_pct": 26.8,
+    "tarjeta": {
+      "ticker": "DG.PA",
+      "nombre_empresa": "Vinci SA",
+      "isin": "FI4000185533",
+      "sector": "Industrials",
+      "score": 41.4,
+      "version_scoring": 33,
+      "precio_actual": 110.7,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 15.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 140.35,
+      "dispersion_pct": 40.9,
+      "momentum_30d_pct": 4.6,
+      "momentum_5d_pct": 1.9,
+      "fuerza_relativa_pct": 4.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 62.7,
+      "tendencia_tecnica": "mixta",
+      "sma50": 108.98,
+      "sma200": 120.52,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 93815252.01203156,
+      "volumen_relativo": 1.27,
+      "volatilidad_diaria_pct": 1.11,
+      "sesiones_hasta_stop": 126,
+      "distancia_max_52s_pct": -19.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "VINCI 2025: Flujo de caja libre récord de 7.000 millones de euros a pesar de un modesto crecimiento de beneficios - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Las acciones de Vinci caen tras no alcanzar las previsiones de ingresos del primer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Vinci wins cooling plant contract at data center in Iberian peninsula - The Economic Times",
+            "fuente": "The Economic Times",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments."
     }
   }
 ]
