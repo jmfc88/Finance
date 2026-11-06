@@ -1,10 +1,10 @@
 # Simulacion en paralelo
 
-Actualizado: 2026-11-06 01:35 · dia 75 de ejecucion
+Actualizado: 2026-11-06 07:54 · dia 75 de ejecucion
 **Revision nº5 disponible.** Pega este informe en el chat para decidir la ponderacion.
 
 - Operaciones cerradas: **289**
-- Operaciones abiertas: 61
+- Operaciones abiertas: 62
 
 ## Como acabaron
 
