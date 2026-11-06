@@ -39593,7 +39593,7 @@
     "id": "GMD.AX-2026-11-03",
     "ticker": "GMD.AX",
     "nombre": "Genesis Minerals Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-03",
     "precio_entrada": 6.555,
     "acciones": 15.25553,
@@ -39677,6 +39677,78 @@
         ]
       },
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    },
+    "precio_salida": 6.9178,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": -2.84,
+    "vs_indice_pct": 6.37,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 6.6861,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 4.23,
+        "neto_pct": 4.23,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 6.47,
+        "neto_pct": 6.47,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 4.23,
+        "neto_pct": 4.23,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 4.23,
+        "neto_pct": 4.23,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 4.23,
+        "neto_pct": 4.23,
+        "sesiones": 3,
+        "motivo": "trailing"
+      }
     }
   },
   {
