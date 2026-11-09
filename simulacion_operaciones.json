@@ -43576,7 +43576,7 @@
     "id": "FDR.MC-2026-11-06",
     "ticker": "FDR.MC",
     "nombre": "Fluidra, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 19.21,
     "acciones": 5.205622,
@@ -43665,13 +43665,97 @@
         ]
       },
       "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    },
+    "precio_salida": 18.042,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": null,
+    "vs_indice_pct": null,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 19.5942,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.58,
+        "neto_pct": -4.58,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.1,
+        "neto_pct": -6.1,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
     "id": "ITX.MC-2026-11-06",
     "ticker": "ITX.MC",
     "nombre": "Industria de Diseño Textil, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 57.8,
     "acciones": 1.730104,
@@ -43750,6 +43834,90 @@
         ]
       },
       "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally."
+    },
+    "precio_salida": 54.2858,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": null,
+    "vs_indice_pct": null,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 58.956,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.67,
+        "neto_pct": -4.67,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.61,
+        "neto_pct": -5.61,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.47,
+        "neto_pct": -7.47,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -44124,7 +44292,7 @@
     "id": "PUIG.MC-2026-11-06",
     "ticker": "PUIG.MC",
     "nombre": "Puig Brands, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 19.73,
     "acciones": 5.068424,
@@ -44191,6 +44359,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
+    },
+    "precio_salida": 18.5304,
+    "fecha_salida": "2026-11-06",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": null,
+    "vs_indice_pct": null,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 20.1246,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.14,
+        "neto_pct": -4.14,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.97,
+        "neto_pct": -4.97,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.63,
+        "neto_pct": -6.63,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -44566,6 +44818,414 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space."
+    }
+  },
+  {
+    "id": "CCL-2026-11-09",
+    "ticker": "CCL",
+    "nombre": "Carnival Corporation Ltd.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 29.58,
+    "acciones": 3.380663,
+    "invertido": 100.0,
+    "posicion_ranking": 17,
+    "tramo": "11-20",
+    "score": 43.6,
+    "potencial_pct": 13.2,
+    "tarjeta": {
+      "ticker": "CCL",
+      "nombre_empresa": "Carnival Corporation Ltd.",
+      "isin": "BMG2004J1036",
+      "sector": "Consumer Cyclical",
+      "score": 43.6,
+      "version_scoring": 33,
+      "precio_actual": 29.58,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 30
+      },
+      "precio_objetivo_medio": 33.48889,
+      "dispersion_pct": 87.0,
+      "momentum_30d_pct": 13.8,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 18.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 65.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 25.16,
+      "sma200": 26.8,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 514042072.4647522,
+      "volumen_relativo": 1.16,
+      "volatilidad_diaria_pct": 2.99,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -11.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Perfil y datos de empresa de Carnival Corporation Ltd. (CCL.BA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "CARNIVAL CORPORATION LTD. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Carnival Corporation Ltd. (CCL.BA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Carnival Corporation’s Q3 Earnings Beat June Guidance by $100 Million. Here’s Where Shares Could Go in the Long Run. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Earnings call transcript: Carnival beats Q2 2026 estimates but shares fall - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Calificaciones, estimaciones y previsiones de analistas de Carnival Corporation Ltd. (CCL.BA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    }
+  },
+  {
+    "id": "HEIA.AS-2026-11-09",
+    "ticker": "HEIA.AS",
+    "nombre": "Heineken N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 83.58,
+    "acciones": 1.196458,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 43.5,
+    "potencial_pct": 6.8,
+    "tarjeta": {
+      "ticker": "HEIA.AS",
+      "nombre_empresa": "Heineken N.V.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 43.5,
+      "version_scoring": 33,
+      "precio_actual": 83.58,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 13.0,
+        "pct_vender": 0.0,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 89.26652,
+      "dispersion_pct": 80.0,
+      "momentum_30d_pct": 18.1,
+      "momentum_5d_pct": 5.1,
+      "fuerza_relativa_pct": 17.4,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 78.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 73.87,
+      "sma200": 71.69,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 53595458.18831253,
+      "volumen_relativo": 1.07,
+      "volatilidad_diaria_pct": 1.15,
+      "sesiones_hasta_stop": 118,
+      "distancia_max_52s_pct": -0.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Brewer Heineken Has Work to Do to Capture Growth, New Boss Says - WSJ",
+            "fuente": "WSJ",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "La cerveza vuelve a ganar terreno en México, pero Heineken advierte que algo podría salir mal - Xataka México",
+            "fuente": "Xataka México",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Heineken N.V. (HINKF) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "puntos_roe_sostenido": 1.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Heineken supera previsiones por crecimiento en Asia y África pese al débil consumo en Europa y América - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Heineken supera previsiones con un repunte de ventas en Asia y América - Bloomberg Línea",
+            "fuente": "Bloomberg Línea",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Heineken eleva sus ingresos un 9,7% en el tercer trimestre y confirma sus previsiones para 2026 - Radio Intereconomía",
+            "fuente": "Radio Intereconomía",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Heineken N.V. brews and sells beer and cider in Europe, the Americas, Africa, the Middle East, and the Asia Pacific. The company also provides soft drinks. It sells its products under the Heineken, Heineken 0.0, Heineken Silver, Amstel, Moretti, Tiger, Desperados, Edelweiss, Lagunitas, Orchard Thieves, Windhoek, Dos Equis, Red Stripe, Kingfisher, Bintang, Gosser, Affligem, Mort Subite, Strongbow, Stassen, Bulmers..."
+    }
+  },
+  {
+    "id": "ENEL.MI-2026-11-09",
+    "ticker": "ENEL.MI",
+    "nombre": "Enel SpA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 9.693,
+    "acciones": 10.316723,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 39.8,
+    "potencial_pct": 5.3,
+    "tarjeta": {
+      "ticker": "ENEL.MI",
+      "nombre_empresa": "Enel SpA",
+      "isin": "CL0002266774",
+      "sector": "Utilities",
+      "score": 39.8,
+      "version_scoring": 33,
+      "precio_actual": 9.693,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "pct_strong_buy": 8.7,
+        "pct_vender": 8.7,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 10.20455,
+      "dispersion_pct": 41.2,
+      "momentum_30d_pct": 10.7,
+      "momentum_5d_pct": 4.0,
+      "fuerza_relativa_pct": 10.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 87.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.04,
+      "sma200": 9.39,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 127073641.81308365,
+      "volumen_relativo": 1.22,
+      "volatilidad_diaria_pct": 1.11,
+      "sesiones_hasta_stop": 127,
+      "distancia_max_52s_pct": -3.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Plan Estratégico 2026-2028: crecimiento y credibilidad - Enel Group",
+            "fuente": "Enel Group",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Enel SpA (ENLAY) Q1 2026 Earnings Call Highlights: Strong Network Contributions and Cash ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Stefano Azzi - Enel Group",
+            "fuente": "Enel Group",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Enel SpA operates as an integrated operator in the electricity and gas industries worldwide. The company operates through the Thermal Generation and Trading, Enel Green Power, Enel Grids, and End-User Markets segments."
+    }
+  },
+  {
+    "id": "AAI.AX-2026-11-09",
+    "ticker": "AAI.AX",
+    "nombre": "Alcoa Corporation",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 55.94,
+    "acciones": 1.78763,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 39.3,
+    "potencial_pct": 58.9,
+    "tarjeta": {
+      "ticker": "AAI.AX",
+      "nombre_empresa": "Alcoa Corporation",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 39.3,
+      "version_scoring": 33,
+      "precio_actual": 55.94,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 4
+      },
+      "precio_objetivo_medio": 88.87304,
+      "dispersion_pct": 39.7,
+      "momentum_30d_pct": -8.9,
+      "momentum_5d_pct": 0.8,
+      "fuerza_relativa_pct": -3.9,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 38.9,
+      "tendencia_tecnica": "bajista",
+      "sma50": 61.88,
+      "sma200": 78.84,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 13785995.72781372,
+      "volumen_relativo": 0.93,
+      "volatilidad_diaria_pct": 3.29,
+      "sesiones_hasta_stop": 14,
+      "distancia_max_52s_pct": -52.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Alcoa reivindica que con el arranque ha cumplido «con una parte clave más» del acuerdo - La Voz de Galicia",
+            "fuente": "La Voz de Galicia",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Alcoa profit doubles from gains - Jamaica Gleaner",
+            "fuente": "Jamaica Gleaner",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Can Alcoa (NYSE:AA) Turn Its Latest Acquisitions Into Growth? - Kalkine Media",
+            "fuente": "Kalkine Media",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Alcoa Corporation, together with its subsidiaries, engages in the bauxite mining, alumina refining, aluminum production, and energy generation business in Australia, Brazil, Canada, Iceland, Norway, Spain, the United States, and internationally."
+    }
+  },
+  {
+    "id": "CAP.PA-2026-11-09",
+    "ticker": "CAP.PA",
+    "nombre": "Capgemini SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 126.9,
+    "acciones": 0.788022,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 38.7,
+    "potencial_pct": 18.9,
+    "tarjeta": {
+      "ticker": "CAP.PA",
+      "nombre_empresa": "Capgemini SE",
+      "isin": null,
+      "sector": "Technology",
+      "score": 38.7,
+      "version_scoring": 33,
+      "precio_actual": 126.9,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.3,
+        "pct_strong_buy": 17.6,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 150.90765,
+      "dispersion_pct": 66.0,
+      "momentum_30d_pct": 14.5,
+      "momentum_5d_pct": -0.6,
+      "fuerza_relativa_pct": 13.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 113.55,
+      "sma200": 103.83,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 76824411.3621521,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 1.91,
+      "sesiones_hasta_stop": 42,
+      "distancia_max_52s_pct": -13.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Capgemini Announces Consortium With Wavestone And Laboratoire National De Métrologie Et D?Essais To Support European Commission?s AI Office For AI Safety And Cyber Risk Assessment Of Advanced AI Models - www.marketscreener.com",
+            "fuente": "www.marketscreener.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "BofA raises Capgemini stock price target on AI momentum - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Capgemini SE (CAPMF) (H1 2026) Earnings Call Highlights: Revenue Surges 11. ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
     }
   }
 ]
