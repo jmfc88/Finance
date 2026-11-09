@@ -34371,7 +34371,7 @@
     "id": "CS.PA-2026-10-22",
     "ticker": "CS.PA",
     "nombre": "AXA SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 42.02,
     "acciones": 2.379819,
@@ -34438,6 +34438,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "AXA SA, through its subsidiaries, provides insurance, asset management, and banking services worldwide. The company operates through France, Europe, AXA XL, Asia, Africa & EME-LATAM, and Transversal & Other segments."
+    },
+    "precio_salida": 44.3458,
+    "fecha_salida": "2026-11-09",
+    "sesiones": 12,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": 3.37,
+    "vs_indice_pct": 0.16,
+    "rentabilidad_7d_pct": 2.26,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 9,
+    "precio_equilibrio": 42.8604,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 3.52,
+        "neto_pct": 3.52,
+        "sesiones": 12,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -42708,7 +42756,7 @@
     "id": "MT.AS-2026-11-05",
     "ticker": "MT.AS",
     "nombre": "ArcelorMittal S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 54.36,
     "acciones": 1.839588,
@@ -42801,6 +42849,48 @@
         ]
       },
       "resumen_negocio": "ArcelorMittal S.A., together with its subsidiaries, operates as integrated steel and mining companies in the Americas, Europe, Asia, and Africa. It offers semi-finished flat products, including slabs; finished flat products comprising plates, hot- and cold-rolled coils and sheets, hot-dipped and electro-galvanized coils and sheets, tinplate, and color coated coils and sheets; semi-finished long products, such as..."
+    },
+    "precio_salida": 55.9908,
+    "fecha_salida": "2026-11-09",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.97,
+    "vs_indice_pct": 0.03,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 55.4472,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -45226,6 +45316,320 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
+    }
+  },
+  {
+    "id": "FDR.MC-2026-11-09",
+    "ticker": "FDR.MC",
+    "nombre": "Fluidra, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 19.39,
+    "acciones": 5.157298,
+    "invertido": 100.0,
+    "posicion_ranking": 17,
+    "tramo": "11-20",
+    "score": 46.3,
+    "potencial_pct": 33.9,
+    "tarjeta": {
+      "ticker": "FDR.MC",
+      "nombre_empresa": "Fluidra, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 46.3,
+      "version_scoring": 33,
+      "precio_actual": 19.39,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 25.972,
+      "dispersion_pct": 63.2,
+      "momentum_30d_pct": 13.1,
+      "momentum_5d_pct": -0.9,
+      "fuerza_relativa_pct": 11.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 75.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 18.16,
+      "sma200": 19.6,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 6827601.588876724,
+      "volumen_relativo": 1.17,
+      "volatilidad_diaria_pct": 1.44,
+      "sesiones_hasta_stop": 75,
+      "distancia_max_52s_pct": -24.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-FLUIDRA, S.A. Operaciones realizadas bajo el programa de recompra entre el 24 y el 28 de agosto de 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "S&P mejora la calificación ESG de Fluidra hastalos 79 puntos, dos más que el año anterior - Fluidra",
+            "fuente": "Fluidra",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fluidra delivers a strong first half of 2026 and maintains positive momentum in a dynamic environment - Fluidra",
+            "fuente": "Fluidra",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 3,
+        "puntos_roe_sostenido": 1.46,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Fluidra ganan respaldo de analistas pese al castigo en Bolsa - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fluidra gana un 6% más hasta septiembre y confirma sus previsiones para el año - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Fluidra gana 154 millones hasta septiembre, un 5,9% menos, y acota sus previsiones para 2026 - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    }
+  },
+  {
+    "id": "ABN.AS-2026-11-09",
+    "ticker": "ABN.AS",
+    "nombre": "ABN AMRO Bank N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 42.61,
+    "acciones": 2.346867,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 41.8,
+    "potencial_pct": 7.9,
+    "tarjeta": {
+      "ticker": "ABN.AS",
+      "nombre_empresa": "ABN AMRO Bank N.V.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 41.8,
+      "version_scoring": 33,
+      "precio_actual": 42.61,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 45.97368,
+      "dispersion_pct": 86.2,
+      "momentum_30d_pct": 5.3,
+      "momentum_5d_pct": 6.5,
+      "fuerza_relativa_pct": 3.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 61.9,
+      "tendencia_tecnica": "alcista",
+      "sma50": 41.75,
+      "sma200": 34.75,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 68305755.03782463,
+      "volumen_relativo": 1.19,
+      "volatilidad_diaria_pct": 2.12,
+      "sesiones_hasta_stop": 34,
+      "distancia_max_52s_pct": -3.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "J.P. Morgan sube objetivos de ING y ABN Amro por tipos del BCE y comisiones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ABN AMRO posts net profit of € 781 million in Q2 2026 - ABN AMRO",
+            "fuente": "ABN AMRO",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ABN AMRO posts net profit of € 693 million in Q1 2026 - ABN AMRO",
+            "fuente": "ABN AMRO",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ABN AMRO Bank N.V. provides various banking products and financial services to retail, private, and corporate banking clients in the Netherlands, rest of Europe, the United States, Asia, and internationally."
+    }
+  },
+  {
+    "id": "LR.PA-2026-11-09",
+    "ticker": "LR.PA",
+    "nombre": "Legrand SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 134.45,
+    "acciones": 0.743771,
+    "invertido": 100.0,
+    "posicion_ranking": 27,
+    "tramo": "21-30",
+    "score": 41.7,
+    "potencial_pct": 27.5,
+    "tarjeta": {
+      "ticker": "LR.PA",
+      "nombre_empresa": "Legrand SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 41.7,
+      "version_scoring": 33,
+      "precio_actual": 134.45,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.3,
+        "pct_strong_buy": 27.8,
+        "pct_vender": 5.6,
+        "total_analistas": 18
+      },
+      "precio_objetivo_medio": 171.44444,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": -3.2,
+      "momentum_5d_pct": 1.2,
+      "fuerza_relativa_pct": -4.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 58.5,
+      "tendencia_tecnica": "bajista",
+      "sma50": 135.77,
+      "sma200": 140.23,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 91082144.08174133,
+      "volumen_relativo": 1.23,
+      "volatilidad_diaria_pct": 2.59,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": -14.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Legrand se disparan tras mejorar sus previsiones y superar expectativas en el tercer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "UBS mejora la calificación de Legrand por el crecimiento en centros de datos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "UBS upgrades Legrand stock rating on data center growth outlook By Investing.com - Investing.com India",
+            "fuente": "Investing.com India",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Legrand SA, together with its subsidiaries, manufactures, distributes, and sells electrical and digital building infrastructures in Europe, North and Central America, and internationally."
+    }
+  },
+  {
+    "id": "ITX.MC-2026-11-09",
+    "ticker": "ITX.MC",
+    "nombre": "Industria de Diseño Textil, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-09",
+    "precio_entrada": 59.3,
+    "acciones": 1.686341,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 41.4,
+    "potencial_pct": 1.8,
+    "tarjeta": {
+      "ticker": "ITX.MC",
+      "nombre_empresa": "Industria de Diseño Textil, S.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 41.4,
+      "version_scoring": 33,
+      "precio_actual": 59.3,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 4.2,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 60.38958,
+      "dispersion_pct": 61.4,
+      "momentum_30d_pct": 11.8,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 10.4,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 67.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 54.43,
+      "sma200": 53.47,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 85359562.84856224,
+      "volumen_relativo": 0.97,
+      "volatilidad_diaria_pct": 1.64,
+      "sesiones_hasta_stop": 57,
+      "distancia_max_52s_pct": -1.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "HECHOS RELEVANTES.-INDUSTRIA DE DISEÑO TEXTIL, S.A. La sociedad remite presentación sobre los resultados[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Inditex caen tras firmar máximos históricos - XTB.com",
+            "fuente": "XTB.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Inditex, entre las favoritas de Jefferies, cierra a cuatro céntimos de su récord - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally."
     }
   }
 ]
