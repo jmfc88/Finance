@@ -43344,7 +43344,7 @@
     "id": "GMD.AX-2026-11-06",
     "ticker": "GMD.AX",
     "nombre": "Genesis Minerals Limited",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 7.33,
     "acciones": 13.642565,
@@ -43433,6 +43433,72 @@
         ]
       },
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    },
+    "precio_salida": 7.5499,
+    "fecha_salida": "2026-11-11",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.95,
+    "vs_indice_pct": -0.95,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 7.4766,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -1.95,
+        "neto_pct": -1.95,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.16,
+        "neto_pct": 0.16,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -1.95,
+        "neto_pct": -1.95,
+        "sesiones": 3,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -1.95,
+        "neto_pct": -1.95,
+        "sesiones": 3,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -45267,7 +45333,7 @@
     "id": "AAI.AX-2026-11-09",
     "ticker": "AAI.AX",
     "nombre": "Alcoa Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 55.94,
     "acciones": 1.78763,
@@ -45333,6 +45399,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Alcoa Corporation, together with its subsidiaries, engages in the bauxite mining, alumina refining, aluminum production, and energy generation business in Australia, Brazil, Canada, Iceland, Norway, Spain, the United States, and internationally."
+    },
+    "precio_salida": 59.0363,
+    "fecha_salida": "2026-11-11",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.54,
+    "rentabilidad_neta_pct": 3.54,
+    "resultado_neto_eur": 3.54,
+    "indice_pct": -0.38,
+    "vs_indice_pct": 3.92,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 1,
+    "precio_equilibrio": 57.0588,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.54 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.37,
+        "neto_pct": 2.37,
+        "sesiones": 2,
+        "motivo": "trailing"
+      }
     }
   },
   {
