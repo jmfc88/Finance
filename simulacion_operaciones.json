@@ -38024,7 +38024,7 @@
     "id": "A2A.MI-2026-10-28",
     "ticker": "A2A.MI",
     "nombre": "A2A S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-28",
     "precio_entrada": 2.435,
     "acciones": 41.067762,
@@ -38108,6 +38108,54 @@
         ]
       },
       "resumen_negocio": "A2A S.p.A. engages in the production, sale, and distribution of gas and electricity, and district heating in Italy and internationally. It generates electricity through hydroelectric, thermoelectric, photovoltaic, and wind plants; and sells and distributes gas."
+    },
+    "precio_salida": 2.287,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 11,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": 3.76,
+    "vs_indice_pct": -11.84,
+    "rentabilidad_7d_pct": -0.12,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 2.4837,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -44296,7 +44344,7 @@
     "id": "LDO.MI-2026-11-06",
     "ticker": "LDO.MI",
     "nombre": "Leonardo S.p.a.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 48.495,
     "acciones": 2.062068,
@@ -44389,6 +44437,54 @@
         ]
       },
       "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally."
+    },
+    "precio_salida": 49.9499,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 4,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 3.72,
+    "vs_indice_pct": -2.72,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 49.4649,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 4,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.09,
+        "neto_pct": 1.09,
+        "sesiones": 4,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -45322,7 +45418,7 @@
     "id": "CCL-2026-11-09",
     "ticker": "CCL",
     "nombre": "Carnival Corporation Ltd.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 29.58,
     "acciones": 3.380663,
@@ -45411,6 +45507,48 @@
         ]
       },
       "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    },
+    "precio_salida": 30.4674,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.49,
+    "vs_indice_pct": 0.51,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 30.1716,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -45873,7 +46011,7 @@
     "id": "ABN.AS-2026-11-09",
     "ticker": "ABN.AS",
     "nombre": "ABN AMRO Bank N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 42.61,
     "acciones": 2.346867,
@@ -45940,6 +46078,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ABN AMRO Bank N.V. provides various banking products and financial services to retail, private, and corporate banking clients in the Netherlands, rest of Europe, the United States, Asia, and internationally."
+    },
+    "precio_salida": 43.8883,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.74,
+    "vs_indice_pct": -0.74,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 43.4622,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -46092,7 +46272,7 @@
     "id": "KKR-2026-11-09",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 98.29,
     "acciones": 1.017397,
@@ -46185,6 +46365,48 @@
         ]
       },
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    },
+    "precio_salida": 101.2387,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.49,
+    "vs_indice_pct": 0.51,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 100.2558,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -47873,6 +48095,242 @@
         ]
       },
       "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments."
+    }
+  },
+  {
+    "id": "PST.MI-2026-11-12",
+    "ticker": "PST.MI",
+    "nombre": "Poste Italiane S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-12",
+    "precio_entrada": 25.62,
+    "acciones": 3.903201,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 53.9,
+    "potencial_pct": 16.8,
+    "tarjeta": {
+      "ticker": "PST.MI",
+      "nombre_empresa": "Poste Italiane S.p.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 53.9,
+      "version_scoring": 33,
+      "precio_actual": 25.62,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 29.925,
+      "dispersion_pct": 44.6,
+      "momentum_30d_pct": 5.6,
+      "momentum_5d_pct": 3.3,
+      "fuerza_relativa_pct": 2.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 73.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 25.05,
+      "sma200": 24.57,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 55281251.6675148,
+      "volumen_relativo": 1.05,
+      "volatilidad_diaria_pct": 1.37,
+      "sesiones_hasta_stop": 83,
+      "distancia_max_52s_pct": -12.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Poste Italiane, record nine-month profit and revenue, guidance confirmed - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Futuros al alza; resultados récord para Poste Italiane - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Poste eleva beneficio e ingresos a nueve meses y confirma sus previsiones para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Poste Italiane S.p.A. provides postal, logistics, and financial and insurance products and services in Italy. The company operates through four segments: Mail, Parcels and Distribution; PostePay Services; Financial Services; and Insurance Services."
+    }
+  },
+  {
+    "id": "INGA.AS-2026-11-12",
+    "ticker": "INGA.AS",
+    "nombre": "ING Groep N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-12",
+    "precio_entrada": 30.065,
+    "acciones": 3.326127,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 42.3,
+    "potencial_pct": 15.4,
+    "tarjeta": {
+      "ticker": "INGA.AS",
+      "nombre_empresa": "ING Groep N.V.",
+      "isin": "CA44989Q1054",
+      "sector": "Financial Services",
+      "score": 42.3,
+      "version_scoring": 33,
+      "precio_actual": 30.065,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 30.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 34.7065,
+      "dispersion_pct": 63.1,
+      "momentum_30d_pct": -0.0,
+      "momentum_5d_pct": 2.9,
+      "fuerza_relativa_pct": -3.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 62.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 30.42,
+      "sma200": 26.99,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 196227461.46792316,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 1.98,
+      "sesiones_hasta_stop": 40,
+      "distancia_max_52s_pct": -6.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "ING Groep N.V. : Goldman Sachs mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ING Groep N.V. : Deutsche Bank mantiene una recomendación de compra. - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de ING Groep N.V. (INGAA.XC) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ING Groep N.V. provides various banking products and services in the Netherlands, Belgium, Germany, rest of Europe, and internationally. The company operates through five segments: Retail Netherlands, Retail Belgium, Retail Germany, Retail Other, and Wholesale Banking."
+    }
+  },
+  {
+    "id": "ACS.MC-2026-11-12",
+    "ticker": "ACS.MC",
+    "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-12",
+    "precio_entrada": 94.3,
+    "acciones": 1.060445,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 41.2,
+    "potencial_pct": 36.1,
+    "tarjeta": {
+      "ticker": "ACS.MC",
+      "nombre_empresa": "ACS, Actividades de Construcción y Servicios, S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 41.2,
+      "version_scoring": 33,
+      "precio_actual": 94.3,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 23.5,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 128.29706,
+      "dispersion_pct": 53.5,
+      "momentum_30d_pct": 4.7,
+      "momentum_5d_pct": 11.0,
+      "fuerza_relativa_pct": 1.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.1,
+      "tendencia_tecnica": "mixta",
+      "sma50": 92.65,
+      "sma200": 108.7,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 32598288.73669052,
+      "volumen_relativo": 1.16,
+      "volatilidad_diaria_pct": 2.27,
+      "sesiones_hasta_stop": 30,
+      "distancia_max_52s_pct": -31.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 7,
+        "titulares": [
+          {
+            "titulo": "El grupo ACS eleva su beneficio neto nominal y sus ventas en los nueve primeros meses - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ACS, con 789 millones de beneficio hasta septiembre, mejora su previsión para Turner - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ACS Group registra mayores ganancias netas nominales y ventas en los primeros nueve meses del año. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
     }
   }
 ]
