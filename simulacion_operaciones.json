@@ -41921,7 +41921,7 @@
     "id": "LTMC.MI-2026-11-04",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-04",
     "precio_entrada": 27.13,
     "acciones": 3.685957,
@@ -42010,6 +42010,48 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    },
+    "precio_salida": 27.9439,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 2.13,
+    "vs_indice_pct": -1.13,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 27.6726,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -43119,7 +43161,7 @@
     "id": "ARES-2026-11-05",
     "ticker": "ARES",
     "nombre": "Ares Management Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 130.85,
     "acciones": 0.764234,
@@ -43208,6 +43250,54 @@
         ]
       },
       "resumen_negocio": "Ares Management Corporation operates as an alternative asset manager. Its Direct Lending Group segment provides financing solutions to small-to-medium sized companies. The company's Private Equity Group segment specializes in early venture, turnaround, mid venture, late venture, recapitalization, growth capital, middle market, mezzanine, distressed and growth buyouts."
+    },
+    "precio_salida": 134.7755,
+    "fecha_salida": "2026-11-12",
+    "sesiones": 5,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 3.81,
+    "vs_indice_pct": -2.81,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 133.467,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 5,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.47,
+        "neto_pct": 1.47,
+        "sesiones": 5,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -48331,6 +48421,204 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
+    }
+  },
+  {
+    "id": "KKR-2026-11-12",
+    "ticker": "KKR",
+    "nombre": "KKR & Co. Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-12",
+    "precio_entrada": 97.955,
+    "acciones": 1.020877,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 54.7,
+    "potencial_pct": 23.6,
+    "tarjeta": {
+      "ticker": "KKR",
+      "nombre_empresa": "KKR & Co. Inc.",
+      "isin": "US48251W1045",
+      "sector": "Financial Services",
+      "score": 54.7,
+      "version_scoring": 33,
+      "precio_actual": 97.955,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.8,
+        "pct_strong_buy": 34.8,
+        "pct_vender": 0.0,
+        "total_analistas": 23
+      },
+      "precio_objetivo_medio": 121.09667,
+      "dispersion_pct": 60.8,
+      "momentum_30d_pct": 14.4,
+      "momentum_5d_pct": -0.4,
+      "fuerza_relativa_pct": 15.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 61.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 95.33,
+      "sma200": 97.55,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": {
+        "dias_desde": 3,
+        "sorpresa_pct": 12.5,
+        "variacion_pct": 1.5
+      },
+      "cotiza_en_euros": false,
+      "liquidez_dia": 464131840.66085815,
+      "volumen_relativo": 0.94,
+      "volatilidad_diaria_pct": 2.42,
+      "sesiones_hasta_stop": 26,
+      "distancia_max_52s_pct": -27.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "KKR & Co. Inc. : recomendación de compra de Oppenheimer - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "KKR & Co. Inc. presenta sus resultados del tercer trimestre y de los nueve primeros meses cerrados a 30 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "KKR & Co. Inc. : Autonomous Research actualiza su recomendación a compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "KKR se enfrenta a una posible multa de la UE por información engañosa en acuerdo de banda ancha en Italia - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Here’s Why KKR Stock Is a Long-Term Buy With Around 100% Total Return Potential - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "KKR adquiere el grupo de eventos en directo Superstruct - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    }
+  },
+  {
+    "id": "ABN.AS-2026-11-12",
+    "ticker": "ABN.AS",
+    "nombre": "ABN AMRO Bank N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-12",
+    "precio_entrada": 42.06,
+    "acciones": 2.377556,
+    "invertido": 100.0,
+    "posicion_ranking": 16,
+    "tramo": "11-20",
+    "score": 49.4,
+    "potencial_pct": 9.9,
+    "tarjeta": {
+      "ticker": "ABN.AS",
+      "nombre_empresa": "ABN AMRO Bank N.V.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 49.4,
+      "version_scoring": 33,
+      "precio_actual": 42.06,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 5.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 46.23684,
+      "dispersion_pct": 86.2,
+      "momentum_30d_pct": 2.7,
+      "momentum_5d_pct": 1.6,
+      "fuerza_relativa_pct": -0.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 70.3,
+      "tendencia_tecnica": "alcista",
+      "sma50": 41.78,
+      "sma200": 34.94,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": {
+        "dias_desde": 2,
+        "sorpresa_pct": 18.8,
+        "variacion_pct": -1.4
+      },
+      "cotiza_en_euros": true,
+      "liquidez_dia": 70887331.0,
+      "volumen_relativo": 1.33,
+      "volatilidad_diaria_pct": 2.14,
+      "sesiones_hasta_stop": 33,
+      "distancia_max_52s_pct": -4.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "ABN Amro Profit Jumps as Acquisition, Rates Lift Income - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ABN AMRO Bank N.V. : RBC Capital Markets reitera su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "RBC: el mensaje de ABN Amro en el tercer trimestre de 2026 sienta las bases para los objetivos de 2029; eleva su precio objetivo - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 8,
+        "puntos_roe_sostenido": 1.64,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "ABN Amro raises full-year net interest income outlook on higher rates - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "ABN Amro eleva su previsión de margen de intereses para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "J.P. Morgan sube objetivos de ING y ABN Amro por tipos del BCE y comisiones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "ABN AMRO Bank N.V. provides various banking products and financial services to retail, private, and corporate banking clients in the Netherlands, rest of Europe, the United States, Asia, and internationally."
     }
   }
 ]
