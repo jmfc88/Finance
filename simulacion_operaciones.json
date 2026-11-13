@@ -41848,7 +41848,7 @@
     "id": "GRF.MC-2026-11-04",
     "ticker": "GRF.MC",
     "nombre": "Grifols, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-04",
     "precio_entrada": 11.225,
     "acciones": 8.908686,
@@ -41915,6 +41915,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Grifols, S.A., together with its subsidiaries, engages in the research, development, production, and marketing of plasma-derived medicines in the United States, Canada, Spain, Europe, and internationally."
+    },
+    "precio_salida": 11.5617,
+    "fecha_salida": "2026-11-13",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.93,
+    "vs_indice_pct": -0.93,
+    "rentabilidad_7d_pct": 3.79,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 11.4495,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.6,
+        "neto_pct": -4.6,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -47689,7 +47731,7 @@
     "id": "ANET-2026-11-11",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-11",
     "precio_entrada": 197.165,
     "acciones": 0.507189,
@@ -47778,6 +47820,54 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 203.08,
+    "fecha_salida": "2026-11-13",
+    "sesiones": 2,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -1.16,
+    "vs_indice_pct": 2.16,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 201.1083,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 2,
+        "motivo": "stop subido"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.44,
+        "neto_pct": -2.44,
+        "sesiones": 2,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -49298,6 +49388,291 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Huhtamäki Oyj provides packaging solutions in the United States, Germany, the United Kingdom, India, Turkey, Australia, Thailand, Poland, South Africa, Spain, Finland, and internationally."
+    }
+  },
+  {
+    "id": "LR.PA-2026-11-13",
+    "ticker": "LR.PA",
+    "nombre": "Legrand SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-13",
+    "precio_entrada": 136.1,
+    "acciones": 0.734754,
+    "invertido": 100.0,
+    "posicion_ranking": 18,
+    "tramo": "11-20",
+    "score": 48.9,
+    "potencial_pct": 26.0,
+    "tarjeta": {
+      "ticker": "LR.PA",
+      "nombre_empresa": "Legrand SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 48.9,
+      "version_scoring": 33,
+      "precio_actual": 136.1,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.3,
+        "pct_strong_buy": 27.8,
+        "pct_vender": 5.6,
+        "total_analistas": 18
+      },
+      "precio_objetivo_medio": 171.44444,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": 1.8,
+      "momentum_5d_pct": 5.0,
+      "fuerza_relativa_pct": -1.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 64.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 135.8,
+      "sma200": 140.29,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 94460134.36051941,
+      "volumen_relativo": 0.81,
+      "volatilidad_diaria_pct": 2.59,
+      "sesiones_hasta_stop": 23,
+      "distancia_max_52s_pct": -13.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "UBS mejora la calificación de Legrand por el crecimiento en centros de datos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "UBS upgrades Legrand stock rating on data center growth outlook By Investing.com - Investing.com India",
+            "fuente": "Investing.com India",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Legrand: Upgraded Midterm Targets Are Achievable, but We Still See Risks to the Equity Story - Morningstar",
+            "fuente": "Morningstar",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 7,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Legrand se disparan tras mejorar sus previsiones y superar expectativas en el tercer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "UBS mejora la calificación de Legrand por el crecimiento en centros de datos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Las acciones de Legrand suben tras la mejora de recomendación de UBS - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Legrand SA, together with its subsidiaries, manufactures, distributes, and sells electrical and digital building infrastructures in Europe, North and Central America, and internationally."
+    }
+  },
+  {
+    "id": "UNI.MI-2026-11-13",
+    "ticker": "UNI.MI",
+    "nombre": "Unipol Assicurazioni S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-13",
+    "precio_entrada": 25.89,
+    "acciones": 3.862495,
+    "invertido": 100.0,
+    "posicion_ranking": 19,
+    "tramo": "11-20",
+    "score": 48.6,
+    "potencial_pct": 22.4,
+    "tarjeta": {
+      "ticker": "UNI.MI",
+      "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+      "isin": "INE950G01023",
+      "sector": "Financial Services",
+      "score": 48.6,
+      "version_scoring": 33,
+      "precio_actual": 25.89,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.2,
+        "pct_strong_buy": 40.0,
+        "pct_vender": 0.0,
+        "total_analistas": 5
+      },
+      "precio_objetivo_medio": 31.7,
+      "dispersion_pct": 17.2,
+      "momentum_30d_pct": 3.6,
+      "momentum_5d_pct": 2.5,
+      "fuerza_relativa_pct": 0.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 57.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 26.29,
+      "sma200": 23.67,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 43002256.37819576,
+      "volumen_relativo": 0.82,
+      "volatilidad_diaria_pct": 1.95,
+      "sesiones_hasta_stop": 41,
+      "distancia_max_52s_pct": -11.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Unipol eleva su beneficio en los nueve primeros meses; el patrimonio neto se mantiene estable - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Unipol obtiene un beneficio neto de 1.260 millones EUR en los nueve primeros meses y sus primas crecen un 5,3% - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Unipol Assicurazioni S.p.A. (0Q6M.IL) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 1.54,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Unipol Assicurazioni S.p.A. (UNI.VI) Perspectivas de analistas, precios objetivo y recomendaciones - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Calificaciones, estimaciones y previsiones de analistas de Unipol Assicurazioni S.p.A. (UNI.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Unipol presentará sus resultados, con una previsión de primas superior a 12.000 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    }
+  },
+  {
+    "id": "AVIO.MI-2026-11-13",
+    "ticker": "AVIO.MI",
+    "nombre": "Avio S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-13",
+    "precio_entrada": 32.94,
+    "acciones": 3.035823,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 45.0,
+    "potencial_pct": 20.1,
+    "tarjeta": {
+      "ticker": "AVIO.MI",
+      "nombre_empresa": "Avio S.p.A.",
+      "isin": "CNE0000018C0",
+      "sector": "Industrials",
+      "score": 45.0,
+      "version_scoring": 33,
+      "precio_actual": 32.94,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 4.5,
+        "pct_strong_buy": 14.3,
+        "pct_vender": 0.0,
+        "total_analistas": 7
+      },
+      "precio_objetivo_medio": 39.57143,
+      "dispersion_pct": 46.9,
+      "momentum_30d_pct": 10.7,
+      "momentum_5d_pct": 13.9,
+      "fuerza_relativa_pct": 7.3,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 52.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 29.93,
+      "sma200": 32.54,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25386927.92860222,
+      "volumen_relativo": 1.37,
+      "volatilidad_diaria_pct": 3.17,
+      "sesiones_hasta_stop": 15,
+      "distancia_max_52s_pct": -24.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "El beneficio operativo de Avio se dispara mientras el fabricante de cohetes avanza en su expansión en Estados Unidos - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Avio sube tras acuerdo con Lockheed Martin para ampliar producción de motores cohete - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Últimas notas de prensa y noticias corporativas de Avio S.p.A. (AVIOM.XC) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Avio sube tras acuerdo con Lockheed Martin para ampliar producción de motores cohete - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Avio sube tras acuerdo con Lockheed Martin para ampliar producción de cohetes - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Avio alcanza un récord histórico de pedidos - - Actualidad Aeroespacial",
+            "fuente": "- Actualidad Aeroespacial",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Avio S.p.A. designs, develops, produces, and integrates space launchers in Italy and internationally. The company involved in the design, development, and production of solid and liquid propulsion systems for launchers; design, development, and production of solid propulsion systems for tactical missiles; development, integration, and supply of complete light space launchers; research and development of new..."
     }
   }
 ]
