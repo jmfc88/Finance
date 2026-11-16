@@ -30984,7 +30984,7 @@
     "id": "BC.MI-2026-10-19",
     "ticker": "BC.MI",
     "nombre": "Brunello Cucinelli S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-19",
     "precio_entrada": 86.3,
     "acciones": 1.158749,
@@ -31073,6 +31073,90 @@
         ]
       },
       "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia."
+    },
+    "precio_salida": 90.0,
+    "fecha_salida": "2026-11-16",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 4.29,
+    "rentabilidad_neta_pct": 2.29,
+    "resultado_neto_eur": 2.29,
+    "indice_pct": 3.48,
+    "vs_indice_pct": -1.19,
+    "rentabilidad_7d_pct": -1.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 88.026,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (2.29 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.64,
+        "neto_pct": -4.64,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -3.92,
+        "neto_pct": -3.92,
+        "sesiones": 11,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 2.29,
+        "neto_pct": 2.29,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -44623,7 +44707,7 @@
     "id": "PUB.PA-2026-11-06",
     "ticker": "PUB.PA",
     "nombre": "Publicis Groupe S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 101.25,
     "acciones": 0.987654,
@@ -44712,6 +44796,48 @@
         ]
       },
       "resumen_negocio": "Publicis Groupe S.A., together with its subsidiaries, provides marketing, communications, and digital business transformation services in North America, Europe, the Asia Pacific, Latin America, Africa, and the Middle East, and internationally."
+    },
+    "precio_salida": 104.2875,
+    "fecha_salida": "2026-11-16",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 3.05,
+    "vs_indice_pct": -2.05,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 103.275,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -49745,7 +49871,7 @@
     "id": "ANET-2026-11-13",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-13",
     "precio_entrada": 197.27,
     "acciones": 0.506919,
@@ -49834,6 +49960,36 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 185.276,
+    "fecha_salida": "2026-11-16",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -1.31,
+    "vs_indice_pct": -6.77,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 201.2154,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -49907,6 +50063,79 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Ares Management Corporation operates as an alternative asset manager. Its Direct Lending Group segment provides financing solutions to small-to-medium sized companies. The company's Private Equity Group segment specializes in early venture, turnaround, mid venture, late venture, recapitalization, growth capital, middle market, mezzanine, distressed and growth buyouts."
+    }
+  },
+  {
+    "id": "PUIG.MC-2026-11-16",
+    "ticker": "PUIG.MC",
+    "nombre": "Puig Brands, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-16",
+    "precio_entrada": 20.42,
+    "acciones": 4.89716,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 40.1,
+    "potencial_pct": 2.4,
+    "tarjeta": {
+      "ticker": "PUIG.MC",
+      "nombre_empresa": "Puig Brands, S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 40.1,
+      "version_scoring": 33,
+      "precio_actual": 20.42,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 20.90312,
+      "dispersion_pct": 52.5,
+      "momentum_30d_pct": 4.3,
+      "momentum_5d_pct": 2.3,
+      "fuerza_relativa_pct": 1.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 72.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 18.61,
+      "sma200": 17.03,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 9906276.464147568,
+      "volumen_relativo": 0.88,
+      "volatilidad_diaria_pct": 1.28,
+      "sesiones_hasta_stop": 95,
+      "distancia_max_52s_pct": 0.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Spanish Beauty Company Puig Eyes 60% Revenue Growth for 2032 - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Jefferies eleva el precio objetivo de Puig, escéptico con su margen para 2032 - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Puig Brands SA (PUIGE.XD) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare."
     }
   }
 ]
