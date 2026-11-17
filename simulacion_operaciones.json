@@ -45981,7 +45981,7 @@
     "id": "AIR.PA-2026-11-06",
     "ticker": "AIR.PA",
     "nombre": "Airbus SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 196.4,
     "acciones": 0.509165,
@@ -46048,6 +46048,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space."
+    },
+    "precio_salida": 202.292,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.67,
+    "vs_indice_pct": 0.33,
+    "rentabilidad_7d_pct": 2.39,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 2,
+    "precio_equilibrio": 200.328,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.06,
+        "neto_pct": 2.06,
+        "sesiones": 6,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -49248,7 +49296,7 @@
     "id": "ACS.MC-2026-11-12",
     "ticker": "ACS.MC",
     "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 94.3,
     "acciones": 1.060445,
@@ -49315,6 +49363,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
+    },
+    "precio_salida": 88.5666,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.92,
+    "vs_indice_pct": -5.16,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 96.186,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.73,
+        "neto_pct": -5.73,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.88,
+        "neto_pct": -6.88,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -51106,6 +51196,101 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Banca Monte dei Paschi di Siena S.p.A., together with its subsidiaries, provides various banking products and services in Italy and internationally. It operates through four segments: Retail Banking, Wealth Management, Corporate Banking, and Large Corporate and Investment Banking."
+    }
+  },
+  {
+    "id": "CS.PA-2026-11-17",
+    "ticker": "CS.PA",
+    "nombre": "AXA SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-17",
+    "precio_entrada": 46.11,
+    "acciones": 2.168727,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 43.9,
+    "potencial_pct": 12.8,
+    "tarjeta": {
+      "ticker": "CS.PA",
+      "nombre_empresa": "AXA SA",
+      "isin": "FR001400UEZ6",
+      "sector": "Financial Services",
+      "score": 43.9,
+      "version_scoring": 33,
+      "precio_actual": 46.11,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.3,
+        "pct_strong_buy": 41.2,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 52.0225,
+      "dispersion_pct": 83.3,
+      "momentum_30d_pct": 8.7,
+      "momentum_5d_pct": 0.1,
+      "fuerza_relativa_pct": 7.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 72.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 43.54,
+      "sma200": 41.34,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 125111034.04302979,
+      "volumen_relativo": 0.86,
+      "volatilidad_diaria_pct": 1.62,
+      "sesiones_hasta_stop": 59,
+      "distancia_max_52s_pct": -2.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "AXA : Barclays da una recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Helvetia confía en un crecimiento sostenible apoyado en relaciones sólidas y duraderas - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Berenberg reitera su recomendación de compra en AXA con precio objetivo de 77 euros - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 2.2,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Berenberg reitera su recomendación de compra en AXA con precio objetivo de 77 euros - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Acciones de AXA: Análisis fundamental y recomendaciones - Bankinter",
+            "fuente": "Bankinter",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Previsión del precio de la acción AXA (CS/EUR) para 2026 y 2030–2040 - Traders Union",
+            "fuente": "Traders Union",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "AXA SA, through its subsidiaries, provides insurance, asset management, and banking services worldwide. The company operates through France, Europe, AXA XL, Asia, Africa & EME-LATAM, and Transversal & Other segments."
     }
   }
 ]
