@@ -41009,7 +41009,7 @@
     "id": "KPN.AS-2026-11-03",
     "ticker": "KPN.AS",
     "nombre": "Koninklijke KPN N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-03",
     "precio_entrada": 4.32,
     "acciones": 23.148148,
@@ -41076,6 +41076,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Koninklijke KPN N.V. provides telecommunications and information technology (IT) services in the Netherlands. The company operates through Consumer, Business, Wholesale and Network, and Operations & IT segments."
+    },
+    "precio_salida": 4.4496,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 10,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.78,
+    "vs_indice_pct": -0.78,
+    "rentabilidad_7d_pct": 2.15,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 4.4064,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 10,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -47918,7 +47960,7 @@
     "id": "BX-2026-11-11",
     "ticker": "BX",
     "nombre": "Blackstone Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-11",
     "precio_entrada": 122.53,
     "acciones": 0.816127,
@@ -48007,6 +48049,42 @@
         ]
       },
       "resumen_negocio": "Blackstone Inc. is an alternative asset management firm specializing in private equity, venture capital, real estate, hedge fund solutions, credit, secondary funds of funds, public debt and equity and multi-asset class strategies."
+    },
+    "precio_salida": 115.0802,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.26,
+    "vs_indice_pct": -3.82,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 124.9806,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -8.18,
+        "neto_pct": -8.18,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -50691,6 +50769,343 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Genesis Minerals Limited engages in the gold mining, project development, and exploration activities in Western Australia. Its flagship project is the Tower Hill project located in Leonora district."
+    }
+  },
+  {
+    "id": "EGL.LS-2026-11-17",
+    "ticker": "EGL.LS",
+    "nombre": "Mota-Engil, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-17",
+    "precio_entrada": 4.918,
+    "acciones": 20.333469,
+    "invertido": 100.0,
+    "posicion_ranking": 3,
+    "tramo": "1-10",
+    "score": 56.2,
+    "potencial_pct": 41.0,
+    "tarjeta": {
+      "ticker": "EGL.LS",
+      "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+      "isin": "SG1O81915033",
+      "sector": "Industrials",
+      "score": 56.2,
+      "version_scoring": 33,
+      "precio_actual": 4.918,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 3
+      },
+      "precio_objetivo_medio": 6.93333,
+      "dispersion_pct": 36.8,
+      "momentum_30d_pct": 5.2,
+      "momentum_5d_pct": 5.6,
+      "fuerza_relativa_pct": 3.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 67.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 4.8,
+      "sma200": 4.66,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 4872092.705928087,
+      "volumen_relativo": 1.27,
+      "volatilidad_diaria_pct": 2.11,
+      "sesiones_hasta_stop": 35,
+      "distancia_max_52s_pct": -8.8,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "La portuguesa Mota-Engil gana un contrato ferroviario de 1.200 millones de dólares en México - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Mota-Engil Said to Win Deal for US-Backed Congo Copper Rail - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Mota-Engil amplía su contrato en Nigeria y se adjudica un nuevo proyecto en un aeropuerto de Perú - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    }
+  },
+  {
+    "id": "AI.PA-2026-11-17",
+    "ticker": "AI.PA",
+    "nombre": "L'Air Liquide S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-17",
+    "precio_entrada": 190.06,
+    "acciones": 0.52615,
+    "invertido": 100.0,
+    "posicion_ranking": 7,
+    "tramo": "1-10",
+    "score": 53.8,
+    "potencial_pct": 6.7,
+    "tarjeta": {
+      "ticker": "AI.PA",
+      "nombre_empresa": "L'Air Liquide S.A.",
+      "isin": "FR0000053951",
+      "sector": "Basic Materials",
+      "score": 53.8,
+      "version_scoring": 33,
+      "precio_actual": 190.06,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.1,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 20
+      },
+      "precio_objetivo_medio": 202.725,
+      "dispersion_pct": 32.0,
+      "momentum_30d_pct": 9.6,
+      "momentum_5d_pct": -0.1,
+      "fuerza_relativa_pct": 7.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 80.2,
+      "tendencia_tecnica": "alcista",
+      "sma50": 174.63,
+      "sma200": 166.69,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 170625631.63269043,
+      "volumen_relativo": 0.81,
+      "volatilidad_diaria_pct": 0.99,
+      "sesiones_hasta_stop": 160,
+      "distancia_max_52s_pct": -1.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Air Liquide aumenta un 12 % las ventas de su negocio de electrónica y alcanza una cartera récord de inversiones - Industria Química",
+            "fuente": "Industria Química",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Air Liquide cae más del 2% por la debilidad del FCL en el primer semestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "H1 2026 Results: with an acceleration in the second quarter, Air Liquide combines growth with continuous performance improvement - Air Liquide",
+            "fuente": "Air Liquide",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 2.32,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de L'Air Liquide S.A. (AI.PA) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    }
+  },
+  {
+    "id": "BNP.PA-2026-11-17",
+    "ticker": "BNP.PA",
+    "nombre": "BNP Paribas SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-17",
+    "precio_entrada": 94.53,
+    "acciones": 1.057865,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 42.6,
+    "potencial_pct": 27.7,
+    "tarjeta": {
+      "ticker": "BNP.PA",
+      "nombre_empresa": "BNP Paribas SA",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 42.6,
+      "version_scoring": 33,
+      "precio_actual": 94.53,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 26.3,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 120.70842,
+      "dispersion_pct": 47.2,
+      "momentum_30d_pct": 8.2,
+      "momentum_5d_pct": -1.2,
+      "fuerza_relativa_pct": 6.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 76.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 92.85,
+      "sma200": 92.2,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 192714191.08855438,
+      "volumen_relativo": 0.63,
+      "volatilidad_diaria_pct": 1.91,
+      "sesiones_hasta_stop": 42,
+      "distancia_max_52s_pct": -13.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": -3,
+        "titulares": [
+          {
+            "titulo": "Lundbeck cae tras la rebaja de recomendación de BNP Paribas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "BNP Paribas rebaja a Lundbeck a infraponderar (neutral), precio objetivo de 52 DKK - BN - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de BNP Paribas SA (BNP.DE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "puntos_roe_sostenido": 1.62,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "BNP Paribas promete más recortes de costes tras superar previsiones de beneficio - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BNP Paribas supera previsiones de beneficios en el tercer trimestre por el auge del trading de acciones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BNP Paribas eleva la calificación de Naturgy a \"rendimiento superior\" e impulsa su previsión de rendimiento. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    }
+  },
+  {
+    "id": "BMPS.MI-2026-11-17",
+    "ticker": "BMPS.MI",
+    "nombre": "Banca Monte dei Paschi di Siena S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-17",
+    "precio_entrada": 11.404,
+    "acciones": 8.768853,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 40.2,
+    "potencial_pct": 4.2,
+    "tarjeta": {
+      "ticker": "BMPS.MI",
+      "nombre_empresa": "Banca Monte dei Paschi di Siena S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 40.2,
+      "version_scoring": 33,
+      "precio_actual": 11.404,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 2.3,
+        "pct_strong_buy": 33.3,
+        "pct_vender": 0.0,
+        "total_analistas": 6
+      },
+      "precio_objetivo_medio": 11.88333,
+      "dispersion_pct": 19.0,
+      "momentum_30d_pct": 4.2,
+      "momentum_5d_pct": -1.7,
+      "fuerza_relativa_pct": 2.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 65.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 11.37,
+      "sma200": 9.86,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 88253377.62060547,
+      "volumen_relativo": 0.7,
+      "volatilidad_diaria_pct": 1.83,
+      "sesiones_hasta_stop": 46,
+      "distancia_max_52s_pct": -5.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "Monte dei Paschi launches twin takeover bids to create €70bn Italian bank - Financial Times",
+            "fuente": "Financial Times",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Intesa mejora su oferta por Monte dei Paschi hasta 35.000 millones de euros - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Intesa Sanpaolo aprueba una ampliación de capital para la OPA sobre Monte dei Paschi - Radio Intereconomía",
+            "fuente": "Radio Intereconomía",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Banca Monte dei Paschi di Siena S.p.A., together with its subsidiaries, provides various banking products and services in Italy and internationally. It operates through four segments: Retail Banking, Wealth Management, Corporate Banking, and Large Corporate and Investment Banking."
     }
   }
 ]
