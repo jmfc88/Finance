@@ -31853,7 +31853,7 @@
     "id": "AENA.MC-2026-10-20",
     "ticker": "AENA.MC",
     "nombre": "Aena S.M.E., S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-20",
     "precio_entrada": 25.96,
     "acciones": 3.85208,
@@ -31942,6 +31942,90 @@
         ]
       },
       "resumen_negocio": "Aena S.M.E., S.A., together with its subsidiaries, engages in the management of airports in Spain, Brazil, the United Kingdom, Mexico, and Colombia. The company operates through Airports, Real Estate Services, Región de Murcia International Airport, and International segments."
+    },
+    "precio_salida": 28.94,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 11.48,
+    "rentabilidad_neta_pct": 9.48,
+    "resultado_neto_eur": 9.48,
+    "indice_pct": 2.86,
+    "vs_indice_pct": 6.62,
+    "rentabilidad_7d_pct": 4.93,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 11,
+    "precio_equilibrio": 26.4792,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 9.48 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 9.48,
+        "neto_pct": 9.48,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -32105,7 +32189,7 @@
     "id": "BNP.PA-2026-10-20",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-20",
     "precio_entrada": 86.95,
     "acciones": 1.150086,
@@ -32162,6 +32246,90 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    },
+    "precio_salida": 94.65,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 8.86,
+    "rentabilidad_neta_pct": 6.86,
+    "resultado_neto_eur": 6.86,
+    "indice_pct": 2.86,
+    "vs_indice_pct": 4.0,
+    "rentabilidad_7d_pct": 0.81,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 12,
+    "precio_equilibrio": 88.689,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 6.86 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.32,
+        "neto_pct": -4.32,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.18,
+        "neto_pct": -5.18,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.91,
+        "neto_pct": -6.91,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 6.86,
+        "neto_pct": 6.86,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -42956,7 +43124,7 @@
     "id": "ENGI.PA-2026-11-05",
     "ticker": "ENGI.PA",
     "nombre": "Engie SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 24.13,
     "acciones": 4.144219,
@@ -43045,6 +43213,48 @@
         ]
       },
       "resumen_negocio": "Engie SA engages in renewables and decentralized and low-carbon energy networks in France, Europe, North America, Asia, the Middle East, Oceania, South America, Africa, and internationally."
+    },
+    "precio_salida": 24.8539,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.05,
+    "vs_indice_pct": -0.05,
+    "rentabilidad_7d_pct": 3.9,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 24.6126,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -43937,7 +44147,7 @@
     "id": "AI.PA-2026-11-06",
     "ticker": "AI.PA",
     "nombre": "L'Air Liquide S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 186.98,
     "acciones": 0.534817,
@@ -44016,13 +44226,55 @@
         ]
       },
       "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments."
+    },
+    "precio_salida": 192.5894,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 2.05,
+    "vs_indice_pct": -1.05,
+    "rentabilidad_7d_pct": 2.56,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 190.7196,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      }
     }
   },
   {
     "id": "ABI.BR-2026-11-06",
     "ticker": "ABI.BR",
     "nombre": "Anheuser-Busch InBev SA/NV",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 74.58,
     "acciones": 1.340842,
@@ -44111,6 +44363,48 @@
         ]
       },
       "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    },
+    "precio_salida": 76.8174,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 7,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 2.05,
+    "vs_indice_pct": -1.05,
+    "rentabilidad_7d_pct": 2.6,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 76.0716,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 7,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -46981,7 +47275,7 @@
     "id": "CS.PA-2026-11-09",
     "ticker": "CS.PA",
     "nombre": "AXA SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 45.36,
     "acciones": 2.204586,
@@ -47048,6 +47342,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "AXA SA, through its subsidiaries, provides insurance, asset management, and banking services worldwide. The company operates through France, Europe, AXA XL, Asia, Africa & EME-LATAM, and Transversal & Other segments."
+    },
+    "precio_salida": 46.7208,
+    "fecha_salida": "2026-11-17",
+    "sesiones": 6,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.1,
+    "vs_indice_pct": 0.9,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 46.2672,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 6,
+        "motivo": "stop subido"
+      }
     }
   },
   {
