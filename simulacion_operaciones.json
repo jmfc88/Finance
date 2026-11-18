@@ -42782,7 +42782,7 @@
     "id": "TEN.MI-2026-11-05",
     "ticker": "TEN.MI",
     "nombre": "Tenaris S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 26.13,
     "acciones": 3.827019,
@@ -42875,6 +42875,54 @@
         ]
       },
       "resumen_negocio": "Tenaris S.A., together with its subsidiaries, manufactures and supplies steel pipe products and related services for the energy industry and other industrial applications in North America, South America, Europe, the Middle East and Africa, and the Asia Pacific."
+    },
+    "precio_salida": 26.9139,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.25,
+    "vs_indice_pct": 1.25,
+    "rentabilidad_7d_pct": 4.52,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 26.6526,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.68,
+        "neto_pct": 0.68,
+        "sesiones": 8,
+        "motivo": "trailing"
+      }
     }
   },
   {
