@@ -47855,7 +47855,7 @@
     "id": "GLE.PA-2026-11-10",
     "ticker": "GLE.PA",
     "nombre": "Société Générale Société anonyme",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-10",
     "precio_entrada": 68.03,
     "acciones": 1.46994,
@@ -47944,6 +47944,54 @@
         ]
       },
       "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    },
+    "precio_salida": 63.8938,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.74,
+    "vs_indice_pct": -5.34,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 69.3906,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.05,
+        "neto_pct": -5.05,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.06,
+        "neto_pct": -6.06,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -51834,6 +51882,437 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
+    }
+  },
+  {
+    "id": "AMS.MC-2026-11-18",
+    "ticker": "AMS.MC",
+    "nombre": "Amadeus IT Group, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 61.12,
+    "acciones": 1.636126,
+    "invertido": 100.0,
+    "posicion_ranking": 15,
+    "tramo": "11-20",
+    "score": 48.4,
+    "potencial_pct": 16.4,
+    "tarjeta": {
+      "ticker": "AMS.MC",
+      "nombre_empresa": "Amadeus IT Group, S.A.",
+      "isin": null,
+      "sector": "Technology",
+      "score": 48.4,
+      "version_scoring": 33,
+      "precio_actual": 61.12,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 27.3,
+        "pct_vender": 9.1,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 71.12818,
+      "dispersion_pct": 54.7,
+      "momentum_30d_pct": 7.9,
+      "momentum_5d_pct": -1.9,
+      "fuerza_relativa_pct": 7.4,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 67.1,
+      "tendencia_tecnica": "alcista",
+      "sma50": 56.06,
+      "sma200": 52.62,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 43113421.99351883,
+      "volumen_relativo": 1.1,
+      "volatilidad_diaria_pct": 1.63,
+      "sesiones_hasta_stop": 58,
+      "distancia_max_52s_pct": -3.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 0,
+        "titulares": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Amadeus IT Group, S.A. (AMADF) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "¿Mantendrán las acciones de Amadeus el soporte pese a las señales de sobreventa y la tendencia bajista intradía? - Traders Union",
+            "fuente": "Traders Union",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Amadeus IT Group, S.A. presenta sus resultados del tercer trimestre y de los nueve primeros meses cerrados a 30 de septiembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 2.9,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Acciones de Amadeus: por qué suben en Bolsa pese al recorte de Jefferies - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Amadeus supera las previsiones de beneficio, pero recorta sus objetivos de ingresos para 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+    }
+  },
+  {
+    "id": "LTMC.MI-2026-11-18",
+    "ticker": "LTMC.MI",
+    "nombre": "Lottomatica Group S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 25.8,
+    "acciones": 3.875969,
+    "invertido": 100.0,
+    "posicion_ranking": 23,
+    "tramo": "21-30",
+    "score": 44.6,
+    "potencial_pct": 28.2,
+    "tarjeta": {
+      "ticker": "LTMC.MI",
+      "nombre_empresa": "Lottomatica Group S.p.A.",
+      "isin": null,
+      "sector": "Consumer Cyclical",
+      "score": 44.6,
+      "version_scoring": 33,
+      "precio_actual": 25.8,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 10.7,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 33.08438,
+      "dispersion_pct": 26.7,
+      "momentum_30d_pct": 6.6,
+      "momentum_5d_pct": -8.0,
+      "fuerza_relativa_pct": 6.1,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 52.2,
+      "tendencia_tecnica": "mixta",
+      "sma50": 26.06,
+      "sma200": 24.96,
+      "tendencia_analistas": "empeorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25465551.066778183,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 1.7,
+      "sesiones_hasta_stop": 53,
+      "distancia_max_52s_pct": -9.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Lottomatica CEO Sees AI Driving Online Growth in Cirsa Deal - Bloomberg",
+            "fuente": "Bloomberg",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Lottomatica y CIRSA acuerdan su fusión - GI Español",
+            "fuente": "GI Español",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Los consejos de Lottomatica Group y Cirsa Enterprises aprueban las condiciones de su fusión transfronteriza - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": -1,
+        "puntos_roe_sostenido": 2.72,
+        "verificado": false,
+        "ajuste": -4,
+        "titulares_adicionales": [
+          {
+            "titulo": "¿Por qué cae hoy la acción de Lottomatica? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Lottomatica Group S.p.A. (LTMC.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Lottomatica-Cirsa: la \"maquina de generar caja\" seduce, pero el cambio de perfil genera dudas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    }
+  },
+  {
+    "id": "AIR.PA-2026-11-18",
+    "ticker": "AIR.PA",
+    "nombre": "Airbus SE",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 197.78,
+    "acciones": 0.505612,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 43.8,
+    "potencial_pct": 17.1,
+    "tarjeta": {
+      "ticker": "AIR.PA",
+      "nombre_empresa": "Airbus SE",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 43.8,
+      "version_scoring": 33,
+      "precio_actual": 197.78,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.8,
+        "pct_strong_buy": 29.2,
+        "pct_vender": 0.0,
+        "total_analistas": 24
+      },
+      "precio_objetivo_medio": 231.54167,
+      "dispersion_pct": 41.4,
+      "momentum_30d_pct": 2.2,
+      "momentum_5d_pct": -6.1,
+      "fuerza_relativa_pct": 1.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 51.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 195.14,
+      "sma200": 187.64,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 213666212.85905457,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 1.92,
+      "sesiones_hasta_stop": 42,
+      "distancia_max_52s_pct": -8.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Airbus aumentará capacidad en España al elevar su cartera de pedidos a 9.300 aviones - Cinco Días",
+            "fuente": "Cinco Días",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Airbus reactiva las contrataciones de nuevo personal en España - El Conciso",
+            "fuente": "El Conciso",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Indra, Airbus, GMV y EM&E captan 6.400 millones en créditos estatales - Expansión",
+            "fuente": "Expansión",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": -1,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": false,
+        "ajuste": -4,
+        "titulares_adicionales": [
+          {
+            "titulo": "Berenberg recorta su previsión de entregas de aviones comerciales Airbus para el ejercicio fiscal 2026 tras no alcanzar las expectativas en la mayoría de los indicadores del tercer trimestre. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -2
+          },
+          {
+            "titulo": "Berenberg recorta su previsión de entregas de aviones comerciales de Airbus para tras unos resultados del tercer trimestre por debajo de lo esperado en casi todas las partidas - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Bank of America eleva su objetivo de precio para Airbus tras los resultados del tercer trimestre; revisa las previsiones de BPA. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space."
+    }
+  },
+  {
+    "id": "ENGI.PA-2026-11-18",
+    "ticker": "ENGI.PA",
+    "nombre": "Engie SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 24.65,
+    "acciones": 4.056795,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 43.6,
+    "potencial_pct": 22.4,
+    "tarjeta": {
+      "ticker": "ENGI.PA",
+      "nombre_empresa": "Engie SA",
+      "isin": "FR0013215407",
+      "sector": "Utilities",
+      "score": 43.6,
+      "version_scoring": 33,
+      "precio_actual": 24.65,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.6,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 30.16111,
+      "dispersion_pct": 45.3,
+      "momentum_30d_pct": 8.0,
+      "momentum_5d_pct": -0.4,
+      "fuerza_relativa_pct": 7.5,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 66.3,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.61,
+      "sma200": 25.73,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 88332812.70079899,
+      "volumen_relativo": 0.96,
+      "volatilidad_diaria_pct": 1.2,
+      "sesiones_hasta_stop": 109,
+      "distancia_max_52s_pct": -12.3,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Bernstein mejora perspectiva de Engie por valoración y resultados - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Acuerdo entre Engie y Return para llevar a cabo tres proyectos de almacenamiento con baterías en España - Interempresas Media",
+            "fuente": "Interempresas Media",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "ENGIE reaches financial close for the 900 megawatt (MW) Gulf of Suez 3 wind farm in Egypt - American Journal of Transportation",
+            "fuente": "American Journal of Transportation",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Engie SA engages in renewables and decentralized and low-carbon energy networks in France, Europe, North America, Asia, the Middle East, Oceania, South America, Africa, and internationally."
+    }
+  },
+  {
+    "id": "RED.MC-2026-11-18",
+    "ticker": "RED.MC",
+    "nombre": "Redeia Corporación, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 16.13,
+    "acciones": 6.199628,
+    "invertido": 100.0,
+    "posicion_ranking": 30,
+    "tramo": "21-30",
+    "score": 43.4,
+    "potencial_pct": 1.9,
+    "tarjeta": {
+      "ticker": "RED.MC",
+      "nombre_empresa": "Redeia Corporación, S.A.",
+      "isin": null,
+      "sector": "Utilities",
+      "score": 43.4,
+      "version_scoring": 33,
+      "precio_actual": 16.13,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": -5.2,
+        "pct_strong_buy": 13.6,
+        "pct_vender": 13.6,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 16.43545,
+      "dispersion_pct": 43.7,
+      "momentum_30d_pct": 10.3,
+      "momentum_5d_pct": 3.1,
+      "fuerza_relativa_pct": 9.8,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 74.5,
+      "tendencia_tecnica": "alcista",
+      "sma50": 15.14,
+      "sma200": 14.85,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 18366342.042539597,
+      "volumen_relativo": 1.24,
+      "volatilidad_diaria_pct": 0.94,
+      "sesiones_hasta_stop": 176,
+      "distancia_max_52s_pct": -1.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Redeia Corporacion SA (RDEIF) Full Year 2024 Earnings Call Highlights: Record Investments and ... - Yahoo Finance",
+            "fuente": "Yahoo Finance",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Redeia Corporacion S A : Reestablecido el suministro eléctrico en La Palma - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Redeia pide agilizar las interconexiones eléctricas para aprovechar la energía renovable española - El Periódico de la Energía",
+            "fuente": "El Periódico de la Energía",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Redeia Corporación, S.A., through with its subsidiaries, engages in the management of the Spanish electricity transport network in Spain and internationally. The company operates through three segments: Management and Operation of Domestic Electricity Infrastructure; Management and Operation of International Electricity Infrastructure; and Telecommunications."
     }
   }
 ]
