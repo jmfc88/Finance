@@ -32695,7 +32695,7 @@
     "id": "AMS.MC-2026-10-21",
     "ticker": "AMS.MC",
     "nombre": "Amadeus IT Group, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-21",
     "precio_entrada": 56.14,
     "acciones": 1.781261,
@@ -32784,6 +32784,90 @@
         ]
       },
       "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific."
+    },
+    "precio_salida": 61.6,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": 9.73,
+    "rentabilidad_neta_pct": 7.73,
+    "resultado_neto_eur": 7.73,
+    "indice_pct": -0.45,
+    "vs_indice_pct": 8.18,
+    "rentabilidad_7d_pct": 1.1,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 10,
+    "precio_equilibrio": 57.2628,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 7.73 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 7.61,
+        "neto_pct": 7.61,
+        "sesiones": 20,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 7.73,
+        "neto_pct": 7.73,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -34084,7 +34168,7 @@
     "id": "JMT.LS-2026-10-22",
     "ticker": "JMT.LS",
     "nombre": "Jerónimo Martins, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 18.42,
     "acciones": 5.428882,
@@ -34151,6 +34235,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Jerónimo Martins, SGPS, S.A. operates in the food distribution sector in Portugal, Poland, Colombia, Slovakia, and internationally. The company operates through Portugal Retail, Portugal Cash & Carry, Poland Retail, Poland Health and Beauty, and Colombia Retail segments."
+    },
+    "precio_salida": 19.4395,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 19,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": 1.52,
+    "vs_indice_pct": 2.01,
+    "rentabilidad_7d_pct": 0.6,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 16,
+    "precio_equilibrio": 18.7884,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 19,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.07,
+        "neto_pct": -4.07,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.88,
+        "neto_pct": -4.88,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 19,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 3.32,
+        "neto_pct": 3.32,
+        "sesiones": 18,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -35522,7 +35654,7 @@
     "id": "IG.MI-2026-10-23",
     "ticker": "IG.MI",
     "nombre": "Italgas S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-23",
     "precio_entrada": 8.776,
     "acciones": 11.394713,
@@ -35601,6 +35733,54 @@
         ]
       },
       "resumen_negocio": "Italgas S.p.A., together with its subsidiaries, engages in the distribution of natural gas in Italy, Greece, and Other European Union countries. It operates through Gas distribution, Water Service, and Energy Efficiency segments."
+    },
+    "precio_salida": 9.0393,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 18,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 1.83,
+    "vs_indice_pct": -0.83,
+    "rentabilidad_7d_pct": 2.21,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 16,
+    "precio_equilibrio": 8.9515,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 18,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.76,
+        "neto_pct": 1.76,
+        "sesiones": 18,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -46575,7 +46755,7 @@
     "id": "CAP.PA-2026-11-09",
     "ticker": "CAP.PA",
     "nombre": "Capgemini SE",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 126.9,
     "acciones": 0.788022,
@@ -46642,6 +46822,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
+    },
+    "precio_salida": 119.1845,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -1.76,
+    "vs_indice_pct": -6.32,
+    "rentabilidad_7d_pct": -5.79,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 129.438,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.82,
+        "neto_pct": -4.82,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.79,
+        "neto_pct": -5.79,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.72,
+        "neto_pct": -7.72,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -49657,7 +49885,7 @@
     "id": "LTMC.MI-2026-11-12",
     "ticker": "LTMC.MI",
     "nombre": "Lottomatica Group S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 28.02,
     "acciones": 3.568879,
@@ -49746,6 +49974,54 @@
         ]
       },
       "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments."
+    },
+    "precio_salida": 26.3164,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -3.43,
+    "vs_indice_pct": -4.65,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 28.5804,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.09,
+        "neto_pct": -5.09,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -51412,6 +51688,152 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    }
+  },
+  {
+    "id": "PUB.PA-2026-11-18",
+    "ticker": "PUB.PA",
+    "nombre": "Publicis Groupe S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 102.05,
+    "acciones": 0.979912,
+    "invertido": 100.0,
+    "posicion_ranking": 26,
+    "tramo": "21-30",
+    "score": 44.7,
+    "potencial_pct": 13.7,
+    "tarjeta": {
+      "ticker": "PUB.PA",
+      "nombre_empresa": "Publicis Groupe S.A.",
+      "isin": null,
+      "sector": "Communication Services",
+      "score": 44.7,
+      "version_scoring": 33,
+      "precio_actual": 102.05,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.2,
+        "pct_strong_buy": 12.5,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 116.0625,
+      "dispersion_pct": 45.0,
+      "momentum_30d_pct": 1.1,
+      "momentum_5d_pct": -2.4,
+      "fuerza_relativa_pct": -0.3,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 59.0,
+      "tendencia_tecnica": "alcista",
+      "sma50": 99.59,
+      "sma200": 86.42,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 40513017.2342453,
+      "volumen_relativo": 0.71,
+      "volatilidad_diaria_pct": 1.31,
+      "sesiones_hasta_stop": 90,
+      "distancia_max_52s_pct": -3.5,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "La mirada de Publicis Groupe Argentina sobre el retail media y el desafío de pasar de la conversión al crecimiento - Insider Latam",
+            "fuente": "Insider Latam",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Publicis refuerza su oferta de inteligencia artificial con la adquisición de LiveRamp - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Ruiz-Cuevas, CEO de Groupe Publicis en España: \"Antes se tiraba la mitad de la inversión publicitaria a la basura y ahora medimos el impacto de cada euro\" - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Publicis Groupe S.A., together with its subsidiaries, provides marketing, communications, and digital business transformation services in North America, Europe, the Asia Pacific, Latin America, Africa, and the Middle East, and internationally."
+    }
+  },
+  {
+    "id": "ACS.MC-2026-11-18",
+    "ticker": "ACS.MC",
+    "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-18",
+    "precio_entrada": 89.6,
+    "acciones": 1.116071,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 43.6,
+    "potencial_pct": 43.5,
+    "tarjeta": {
+      "ticker": "ACS.MC",
+      "nombre_empresa": "ACS, Actividades de Construcción y Servicios, S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 43.6,
+      "version_scoring": 33,
+      "precio_actual": 89.6,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.5,
+        "pct_strong_buy": 23.5,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 128.53824,
+      "dispersion_pct": 53.5,
+      "momentum_30d_pct": -0.3,
+      "momentum_5d_pct": -3.6,
+      "fuerza_relativa_pct": -1.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 44.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 91.6,
+      "sma200": 108.62,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 32881433.96931839,
+      "volumen_relativo": 0.83,
+      "volatilidad_diaria_pct": 2.36,
+      "sesiones_hasta_stop": 27,
+      "distancia_max_52s_pct": -35.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 8,
+        "titulares": [
+          {
+            "titulo": "Bank of America: Los objetivos de ACS para el año fiscal 2030 indican un potencial de ganancias \"significativo\"; se mantiene la recomendación de compra. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BofA: los objetivos de ACS para 2030 apuntan a un potencial alcista 'significativo' en el beneficio; mantiene recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BofA: el plan 2030 de ACS apunta a un beneficio superior al consenso - Benzinga España",
+            "fuente": "Benzinga España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
     }
   }
 ]
