@@ -51352,7 +51352,7 @@
     "id": "ARES-2026-11-13",
     "ticker": "ARES",
     "nombre": "Ares Management Corporation",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-13",
     "precio_entrada": 133.75,
     "acciones": 0.747664,
@@ -51419,6 +51419,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Ares Management Corporation operates as an alternative asset manager. Its Direct Lending Group segment provides financing solutions to small-to-medium sized companies. The company's Private Equity Group segment specializes in early venture, turnaround, mid venture, late venture, recapitalization, growth capital, middle market, mezzanine, distressed and growth buyouts."
+    },
+    "precio_salida": 125.618,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.68,
+    "vs_indice_pct": -3.4,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 136.425,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.72,
+        "neto_pct": -6.72,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -8.06,
+        "neto_pct": -8.06,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 2,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -51498,7 +51540,7 @@
     "id": "ANET-2026-11-16",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-16",
     "precio_entrada": 186.37,
     "acciones": 0.536567,
@@ -51565,6 +51607,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 191.9611,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 3,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -2.82,
+    "vs_indice_pct": 3.82,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 190.0974,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 3,
+        "motivo": "stop subido"
+      }
     }
   },
   {
@@ -53049,6 +53133,186 @@
         ]
       },
       "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
+    }
+  },
+  {
+    "id": "PST.MI-2026-11-19",
+    "ticker": "PST.MI",
+    "nombre": "Poste Italiane S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-19",
+    "precio_entrada": 23.85,
+    "acciones": 4.192872,
+    "invertido": 100.0,
+    "posicion_ranking": 13,
+    "tramo": "11-20",
+    "score": 44.6,
+    "potencial_pct": 24.8,
+    "tarjeta": {
+      "ticker": "PST.MI",
+      "nombre_empresa": "Poste Italiane S.p.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 44.6,
+      "version_scoring": 33,
+      "precio_actual": 23.85,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 29.75625,
+      "dispersion_pct": 44.6,
+      "momentum_30d_pct": -3.2,
+      "momentum_5d_pct": -6.9,
+      "fuerza_relativa_pct": -1.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 47.8,
+      "tendencia_tecnica": "bajista",
+      "sma50": 24.92,
+      "sma200": 24.63,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 58693354.46438503,
+      "volumen_relativo": 0.92,
+      "volatilidad_diaria_pct": 1.4,
+      "sesiones_hasta_stop": 79,
+      "distancia_max_52s_pct": -18.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 4,
+        "titulares": [
+          {
+            "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Poste Italiane raises €1.25B bond to refinance TIM takeover debt - Dealroom",
+            "fuente": "Dealroom",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Poste Italiane: Pleased to report another record performance - PostEurop",
+            "fuente": "PostEurop",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Poste Italiane S.p.A. provides postal, logistics, and financial and insurance products and services in Italy. The company operates through four segments: Mail, Parcels and Distribution; PostePay Services; Financial Services; and Insurance Services."
+    }
+  },
+  {
+    "id": "SAMPO.HE-2026-11-19",
+    "ticker": "SAMPO.HE",
+    "nombre": "Sampo Oyj",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-19",
+    "precio_entrada": 9.8,
+    "acciones": 10.204082,
+    "invertido": 100.0,
+    "posicion_ranking": 14,
+    "tramo": "11-20",
+    "score": 43.1,
+    "potencial_pct": 11.3,
+    "tarjeta": {
+      "ticker": "SAMPO.HE",
+      "nombre_empresa": "Sampo Oyj",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 43.1,
+      "version_scoring": 33,
+      "precio_actual": 9.8,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 15
+      },
+      "precio_objetivo_medio": 10.91,
+      "dispersion_pct": 15.5,
+      "momentum_30d_pct": 6.7,
+      "momentum_5d_pct": -2.6,
+      "fuerza_relativa_pct": 8.2,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 60.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 9.31,
+      "sma200": 9.2,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 36268940.95702124,
+      "volumen_relativo": 1.13,
+      "volatilidad_diaria_pct": 1.23,
+      "sesiones_hasta_stop": 102,
+      "distancia_max_52s_pct": -3.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Sampo Group eleva sus perspectivas para 2026 tras sólidos resultados - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "BofA sees higher profit potential in Sampo than the company's new targets imply, reiterates Buy - marketscreener.com",
+            "fuente": "marketscreener.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Perfil y datos de empresa de Sampo Oyj (SMP0.HM) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Sampo Group eleva sus perspectivas para 2026 tras sólidos resultados - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Precio de la acción de Sampo Oyj A (SAMPO), gráfico y análisis - debelegger.nl",
+            "fuente": "debelegger.nl",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Sampo Oyj (SAMPO.HE) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom."
     }
   }
 ]
