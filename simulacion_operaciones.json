@@ -34561,7 +34561,7 @@
     "id": "SAMPO.HE-2026-10-22",
     "ticker": "SAMPO.HE",
     "nombre": "Sampo Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 9.222,
     "acciones": 10.843635,
@@ -34628,6 +34628,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom."
+    },
+    "precio_salida": 9.7324,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 20,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": 1.03,
+    "vs_indice_pct": 2.5,
+    "rentabilidad_7d_pct": 2.88,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 10,
+    "precio_equilibrio": 9.4064,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 20,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 4.92,
+        "neto_pct": 4.92,
+        "sesiones": 19,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": 4.07,
+        "neto_pct": 4.07,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -34876,7 +34960,7 @@
     "id": "INW.MI-2026-10-22",
     "ticker": "INW.MI",
     "nombre": "Infrastrutture Wireless Italiane S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-22",
     "precio_entrada": 7.38,
     "acciones": 13.550136,
@@ -34943,6 +35027,90 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Infrastrutture Wireless Italiane S.p.A. operates in the electronic communications infrastructure sector in Italy. The company builds and manages digital and shared infrastructure elements, that hosts logic, the radio equipment of mobile, fixed wireless access (FWA), and IoT markets."
+    },
+    "precio_salida": 7.36,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -0.27,
+    "rentabilidad_neta_pct": -2.27,
+    "resultado_neto_eur": -2.27,
+    "indice_pct": 1.03,
+    "vs_indice_pct": -3.3,
+    "rentabilidad_7d_pct": 0.61,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 7.5276,
+    "estado_resultado": "plano",
+    "explicacion": "Veinte dias sin moverse. Con las comisiones esto es perder, y ademas tuvo bloqueada una posicion todo ese tiempo.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -2.27,
+        "neto_pct": -2.27,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -38860,7 +39028,7 @@
     "id": "ORA.PA-2026-10-29",
     "ticker": "ORA.PA",
     "nombre": "Orange S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-29",
     "precio_entrada": 14.305,
     "acciones": 6.990563,
@@ -38949,6 +39117,54 @@
         ]
       },
       "resumen_negocio": "Orange S.A. operates as a telecommunications operator in France and internationally. The company offers mobile services, such as voice, SMS, and data; and fixed broadband and narrowband services, as well as B2B fixed solutions and network services, including voice and data services."
+    },
+    "precio_salida": 15.0968,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 15,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.54,
+    "rentabilidad_neta_pct": 3.54,
+    "resultado_neto_eur": 3.54,
+    "indice_pct": -0.92,
+    "vs_indice_pct": 4.46,
+    "rentabilidad_7d_pct": 6.01,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 5,
+    "precio_equilibrio": 14.5911,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.54 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.54,
+        "neto_pct": 3.54,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 3.92,
+        "neto_pct": 3.92,
+        "sesiones": 15,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -45877,7 +46093,7 @@
     "id": "SAN.PA-2026-11-06",
     "ticker": "SAN.PA",
     "nombre": "Sanofi",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 82.22,
     "acciones": 1.216249,
@@ -45944,6 +46160,78 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sanofi engages in the research, development, manufacture, and marketing of therapeutic solutions in Finland and Germany. It provides immunology and inflammation, rare diseases neurology, oncology, and other vaccines."
+    },
+    "precio_salida": 84.6866,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 9,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -0.34,
+    "vs_indice_pct": 1.34,
+    "rentabilidad_7d_pct": 5.28,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 4,
+    "precio_equilibrio": 83.8644,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 9,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 0.05,
+        "neto_pct": 0.05,
+        "sesiones": 9,
+        "motivo": "trailing"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -2.1,
+        "neto_pct": -2.1,
+        "sesiones": 9,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.2,
+        "neto_pct": 2.2,
+        "sesiones": 9,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 0.05,
+        "neto_pct": 0.05,
+        "sesiones": 9,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 0.05,
+        "neto_pct": 0.05,
+        "sesiones": 9,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -49553,7 +49841,7 @@
     "id": "PST.MI-2026-11-12",
     "ticker": "PST.MI",
     "nombre": "Poste Italiane S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 25.62,
     "acciones": 3.903201,
@@ -49637,13 +49925,61 @@
         ]
       },
       "resumen_negocio": "Poste Italiane S.p.A. provides postal, logistics, and financial and insurance products and services in Italy. The company operates through four segments: Mail, Parcels and Distribution; PostePay Services; Financial Services; and Insurance Services."
+    },
+    "precio_salida": 24.0623,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -3.9,
+    "vs_indice_pct": -4.18,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 26.1324,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.15,
+        "neto_pct": -4.15,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.53,
+        "neto_pct": -5.53,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
     "id": "INGA.AS-2026-11-12",
     "ticker": "INGA.AS",
     "nombre": "ING Groep N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 30.065,
     "acciones": 3.326127,
@@ -49710,6 +50046,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ING Groep N.V. provides various banking products and services in the Netherlands, Belgium, Germany, rest of Europe, and internationally. The company operates through five segments: Retail Netherlands, Retail Belgium, Retail Germany, Retail Other, and Wholesale Banking."
+    },
+    "precio_salida": 28.237,
+    "fecha_salida": "2026-11-18",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -3.82,
+    "vs_indice_pct": -4.26,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 30.6663,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.0,
+        "neto_pct": -5.0,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.0,
+        "neto_pct": -6.0,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -8.0,
+        "neto_pct": -8.0,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -52570,6 +52954,101 @@
         ]
       },
       "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions."
+    }
+  },
+  {
+    "id": "BN.PA-2026-11-19",
+    "ticker": "BN.PA",
+    "nombre": "Danone S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-19",
+    "precio_entrada": 67.54,
+    "acciones": 1.480604,
+    "invertido": 100.0,
+    "posicion_ranking": 9,
+    "tramo": "1-10",
+    "score": 52.6,
+    "potencial_pct": 16.7,
+    "tarjeta": {
+      "ticker": "BN.PA",
+      "nombre_empresa": "Danone S.A.",
+      "isin": null,
+      "sector": "Consumer Defensive",
+      "score": 52.6,
+      "version_scoring": 33,
+      "precio_actual": 67.54,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.7,
+        "pct_strong_buy": 27.3,
+        "pct_vender": 0.0,
+        "total_analistas": 22
+      },
+      "precio_objetivo_medio": 78.79545,
+      "dispersion_pct": 57.6,
+      "momentum_30d_pct": 11.1,
+      "momentum_5d_pct": -1.9,
+      "fuerza_relativa_pct": 11.7,
+      "regimen_mercado": "neutro",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 58.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 62.73,
+      "sma200": 65.9,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 104451638.1594429,
+      "volumen_relativo": 0.76,
+      "volatilidad_diaria_pct": 1.41,
+      "sesiones_hasta_stop": 78,
+      "distancia_max_52s_pct": -9.9,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Danone España dispara el beneficio tras vender sus acciones de la matriz francesa - Expansión",
+            "fuente": "Expansión",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone expands consumer insight capabilities to accelerate nutrition innovation through Southeast Asia R&I Application Lab upgrade - Macau Business",
+            "fuente": "Macau Business",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone North America’s Largest Plant in the World Continues Growth in the Shenandoah Valley - VEDP",
+            "fuente": "VEDP",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 1.08,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Danone España dispara el beneficio tras vender sus acciones de la matriz francesa - Expansión",
+            "fuente": "Expansión",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Danone Sees Up to €70 Million Hit From Baby Formula Recalls - Insurance Journal",
+            "fuente": "Insurance Journal",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Danone eleva su facturación a 21.176 millones hasta septiembre, un 2,9% más interanual - Demócrata",
+            "fuente": "Demócrata",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
     }
   }
 ]
