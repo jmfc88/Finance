@@ -1,18 +1,18 @@
 # Simulacion en paralelo
 
-Actualizado: 2026-11-19 02:35 · dia 88 de ejecucion
+Actualizado: 2026-11-19 08:43 · dia 88 de ejecucion
 Proxima revision de ponderacion en 2 dias.
 
-- Operaciones cerradas: **364**
-- Operaciones abiertas: 64
+- Operaciones cerradas: **366**
+- Operaciones abiertas: 62
 
 ## Como acabaron
 
 | Estado | Ops | % del total | Media |
 |---|---|---|---|
 | top | 4 | 1% | +16.71 EUR |
-| beneficio | 17 | 5% | +8.65 EUR |
-| flojo | 160 | 44% | +1.29 EUR |
+| beneficio | 18 | 5% | +8.53 EUR |
+| flojo | 161 | 44% | +1.29 EUR |
 | plano | 18 | 5% | -1.74 EUR |
 | perdida | 91 | 25% | -7.22 EUR |
 | nefasta | 74 | 20% | -7.34 EUR |
@@ -22,8 +22,8 @@ Proxima revision de ponderacion en 2 dias.
 | Franja | Ops | Media neta | Con 5 EUR+ | Llegaron al suelo | Sesiones |
 |---|---|---|---|---|---|---|
 | 1-10 | 69 | -1.63% | 5/69 (7%) | 14/69 | 10 |
-| 11-20 | 94 | -2.18% | 8/94 (9%) | 16/94 | 9 |
-| 21-30 | 201 | -2.46% | 8/201 (4%) | 32/201 | 9 |
+| 11-20 | 95 | -2.15% | 8/95 (8%) | 16/95 | 9 |
+| 21-30 | 202 | -2.41% | 9/202 (4%) | 33/202 | 9 |
 
 ## Contra el indice
 
@@ -34,10 +34,10 @@ un 3% es un desastre. El numero suelto no significa nada.
 | Franja | Ops | Operacion | Indice | Diferencia | Ganan al indice |
 |---|---|---|---|---|---|
 | 1-10 | 25 | -0.23% | +0.19% | **-0.41%** | 11/25 (44%) |
-| 11-20 | 44 | -0.52% | -0.04% | **-0.48%** | 24/44 (55%) |
-| 21-30 | 111 | -0.76% | -0.06% | **-0.70%** | 55/111 (50%) |
+| 11-20 | 45 | -0.49% | -0.03% | **-0.46%** | 25/45 (56%) |
+| 21-30 | 112 | -0.69% | -0.05% | **-0.64%** | 56/112 (50%) |
 
-**En conjunto:** -0.63% de media frente a -0.02% del indice, una diferencia de **-0.61%**. 90 de 180 operaciones (50%) batieron a su indice.
+**En conjunto:** -0.58% de media frente a -0.01% del indice, una diferencia de **-0.56%**. 92 de 182 operaciones (51%) batieron a su indice.
 
 La seleccion NO esta aportando: habria salido mejor comprar el
 indice. Aqui si toca revisar la ponderacion del scoring.
@@ -56,11 +56,11 @@ Todas sobre las MISMAS operaciones y los mismos dias.
 
 | Regla | Media | Ops | Total | Aciertos | Peor |
 |---|---|---|---|---|---|
-| escalera + stop vol x4 | -0.51% | 168 | -85.81 EUR | 15/168 | -10.91 EUR |
-| escalera + stop vol x2.5 | -1.20% | 186 | -222.74 EUR | 13/186 | -10.63 EUR |
-| escalera + stop vol x3 | -1.24% | 181 | -224.93 EUR | 13/181 | -12.76 EUR |
-| trailing pegado (3%) | -1.38% | 140 | -192.95 EUR | 19/140 | -10.00 EUR |
-| LA REAL (escalera 25/08) | -2.23% | 364 | -811.95 EUR | 21/364 | -8.08 EUR |
+| escalera + stop vol x4 | -0.46% | 170 | -78.24 EUR | 16/170 | -10.91 EUR |
+| escalera + stop vol x2.5 | -1.14% | 188 | -215.17 EUR | 14/188 | -10.63 EUR |
+| escalera + stop vol x3 | -1.19% | 183 | -217.36 EUR | 14/183 | -12.76 EUR |
+| trailing pegado (3%) | -1.34% | 142 | -189.81 EUR | 19/142 | -10.00 EUR |
+| LA REAL (escalera 25/08) | -2.20% | 366 | -804.38 EUR | 22/366 | -8.08 EUR |
 | arranca antes (+3%) | -2.80% | 116 | -324.42 EUR | 15/116 | -10.00 EUR |
 | actual (8% / +5% / 5%) | -2.84% | 107 | -304.04 EUR | 15/107 | -10.00 EUR |
 | arranca despues (+8%) | -3.00% | 98 | -293.91 EUR | 15/98 | -10.00 EUR |
@@ -77,9 +77,9 @@ compensar.
 
 ## Conjunto
 
-- Media neta: **-2.23%**
-- Aciertos (>= 5 EUR limpios): 21/364 (6%)
-- Resultado acumulado ficticio: -811.95 EUR sobre 364 x 100 EUR
+- Media neta: **-2.20%**
+- Aciertos (>= 5 EUR limpios): 22/366 (6%)
+- Resultado acumulado ficticio: -804.38 EUR sobre 366 x 100 EUR
 
 ## Analisis por factor
 
@@ -89,55 +89,55 @@ predice; si va peor, esta restando.
 
 | Factor | Grupo | Ops | Media | Buenas | Malas |
 |---|---|---|---|---|---|---|
-| nota global | bajo | 121 | -1.52 EUR | 4% | 34% |
-| nota global | medio | 121 | -3.17 EUR | 5% | 53% |
+| nota global | bajo | 122 | -1.45 EUR | 5% | 34% |
+| nota global | medio | 122 | -3.14 EUR | 5% | 52% |
 | nota global | alto | 122 | -2.01 EUR | 8% | 49% |
-| puesto en el ranking | bajo | 121 | -2.11 EUR | 7% | 48% |
-| puesto en el ranking | medio | 121 | -2.45 EUR | 7% | 47% |
-| puesto en el ranking | alto | 122 | -2.14 EUR | 4% | 41% |
-| potencial hasta objetivo | bajo | 121 | -2.50 EUR | 5% | 45% |
-| potencial hasta objetivo | medio | 121 | -2.35 EUR | 4% | 45% |
+| puesto en el ranking | bajo | 122 | -2.08 EUR | 7% | 48% |
+| puesto en el ranking | medio | 122 | -2.42 EUR | 7% | 47% |
+| puesto en el ranking | alto | 122 | -2.09 EUR | 5% | 41% |
+| potencial hasta objetivo | bajo | 122 | -2.42 EUR | 6% | 45% |
+| potencial hasta objetivo | medio | 122 | -2.32 EUR | 4% | 45% |
 | potencial hasta objetivo | alto | 122 | -1.85 EUR | 8% | 45% |
-| dispersion | bajo | 121 | -2.15 EUR | 7% | 48% |
-| dispersion | medio | 121 | -2.59 EUR | 5% | 46% |
-| dispersion | alto | 122 | -1.95 EUR | 6% | 42% |
-| % compra fuerte | bajo | 114 | -2.59 EUR | 4% | 46% |
-| % compra fuerte | medio | 114 | -1.83 EUR | 8% | 46% |
+| dispersion | bajo | 122 | -2.08 EUR | 7% | 48% |
+| dispersion | medio | 122 | -2.74 EUR | 4% | 48% |
+| dispersion | alto | 122 | -1.78 EUR | 7% | 40% |
+| % compra fuerte | bajo | 115 | -2.51 EUR | 4% | 45% |
+| % compra fuerte | medio | 115 | -1.81 EUR | 8% | 45% |
 | % compra fuerte | alto | 116 | -2.32 EUR | 5% | 43% |
-| momentum 30d | bajo | 121 | -2.28 EUR | 7% | 47% |
-| momentum 30d | medio | 121 | -1.95 EUR | 7% | 44% |
-| momentum 30d | alto | 122 | -2.46 EUR | 3% | 45% |
-| fuerza relativa | bajo | 121 | -2.55 EUR | 7% | 52% |
-| fuerza relativa | medio | 121 | -2.09 EUR | 6% | 42% |
+| momentum 30d | bajo | 122 | -2.25 EUR | 7% | 47% |
+| momentum 30d | medio | 122 | -1.95 EUR | 7% | 44% |
+| momentum 30d | alto | 122 | -2.39 EUR | 3% | 44% |
+| fuerza relativa | bajo | 122 | -2.52 EUR | 7% | 52% |
+| fuerza relativa | medio | 122 | -2.02 EUR | 7% | 42% |
 | fuerza relativa | alto | 122 | -2.06 EUR | 5% | 42% |
-| RSI | bajo | 121 | -2.45 EUR | 7% | 50% |
-| RSI | medio | 121 | -2.26 EUR | 7% | 47% |
-| RSI | alto | 122 | -1.98 EUR | 3% | 39% |
-| volumen relativo | bajo | 115 | -1.73 EUR | 10% | 45% |
-| volumen relativo | medio | 115 | -2.22 EUR | 3% | 41% |
+| RSI | bajo | 122 | -2.42 EUR | 7% | 49% |
+| RSI | medio | 122 | -2.39 EUR | 7% | 48% |
+| RSI | alto | 122 | -1.78 EUR | 4% | 38% |
+| volumen relativo | bajo | 116 | -1.66 EUR | 10% | 45% |
+| volumen relativo | medio | 116 | -2.19 EUR | 3% | 41% |
 | volumen relativo | alto | 117 | -2.61 EUR | 4% | 45% |
-| volatilidad | bajo | 115 | -1.90 EUR | 7% | 40% |
-| volatilidad | medio | 115 | -2.18 EUR | 7% | 44% |
+| volatilidad | bajo | 116 | -1.82 EUR | 8% | 40% |
+| volatilidad | medio | 116 | -2.16 EUR | 7% | 44% |
 | volatilidad | alto | 117 | -2.48 EUR | 3% | 47% |
-| liquidez | bajo | 115 | -2.44 EUR | 5% | 47% |
-| liquidez | medio | 115 | -2.22 EUR | 6% | 44% |
+| liquidez | bajo | 116 | -2.36 EUR | 6% | 47% |
+| liquidez | medio | 116 | -2.19 EUR | 6% | 44% |
 | liquidez | alto | 117 | -1.92 EUR | 6% | 40% |
-| distancia max 52s | bajo | 115 | -1.68 EUR | 7% | 41% |
-| distancia max 52s | medio | 115 | -2.01 EUR | 6% | 43% |
-| distancia max 52s | alto | 117 | -2.87 EUR | 4% | 47% |
-| consenso | buy | 255 | -2.17 EUR | 6% | 44% |
-| consenso | strong_buy | 109 | -2.36 EUR | 6% | 50% |
-| tendencia tecnica | alcista | 173 | -2.52 EUR | 5% | 47% |
+| distancia max 52s | bajo | 116 | -1.65 EUR | 7% | 41% |
+| distancia max 52s | medio | 116 | -2.01 EUR | 6% | 43% |
+| distancia max 52s | alto | 117 | -2.79 EUR | 5% | 47% |
+| consenso | buy | 256 | -2.16 EUR | 6% | 43% |
+| consenso | strong_buy | 110 | -2.28 EUR | 6% | 49% |
+| tendencia tecnica | alcista | 175 | -2.44 EUR | 6% | 46% |
 | tendencia tecnica | mixta | 105 | -2.41 EUR | 5% | 48% |
 | tendencia tecnica | bajista | 86 | -1.44 EUR | 8% | 40% |
-| tendencia analistas | mejorando | 167 | -2.16 EUR | 5% | 44% |
+| tendencia analistas | mejorando | 168 | -2.14 EUR | 5% | 44% |
 | tendencia analistas | estable | 121 | -2.58 EUR | 7% | 50% |
 | tendencia analistas | empeorando | 15 | -3.07 EUR | 7% | 60% |
 | regimen de mercado | neutro | 177 | -1.95 EUR | 8% | 44% |
 | regimen de mercado | favorable | 115 | -3.36 EUR | 3% | 59% |
-| regimen de mercado | adverso | 72 | -1.11 EUR | 4% | 28% |
+| regimen de mercado | adverso | 74 | -0.98 EUR | 5% | 27% |
 | catalizador | con catalizador | 13 | -0.47 EUR | 8% | 23% |
-| catalizador | sin catalizador | 351 | -2.30 EUR | 6% | 46% |
+| catalizador | sin catalizador | 353 | -2.26 EUR | 6% | 46% |
 
 ### Que factor separa mas
 
@@ -146,17 +146,17 @@ es mejor. Negativo = el factor esta al reves y penaliza acertar.
 
 | Factor | Bajo | Alto | Diferencia |
 |---|---|---|---|
-| potencial hasta objetivo | -2.50 | -1.85 | **+0.65 EUR** |
-| liquidez | -2.44 | -1.92 | **+0.52 EUR** |
-| fuerza relativa | -2.55 | -2.06 | **+0.49 EUR** |
-| RSI | -2.45 | -1.98 | **+0.47 EUR** |
-| % compra fuerte | -2.59 | -2.32 | **+0.28 EUR** |
-| dispersion | -2.15 | -1.95 | **+0.20 EUR** |
-| puesto en el ranking | -2.11 | -2.14 | **-0.03 EUR** |
-| momentum 30d | -2.28 | -2.46 | **-0.19 EUR** |
-| nota global | -1.52 | -2.01 | **-0.49 EUR** |
-| volatilidad | -1.90 | -2.48 | **-0.59 EUR** |
-| volumen relativo | -1.73 | -2.61 | **-0.88 EUR** |
-| distancia max 52s | -1.68 | -2.87 | **-1.19 EUR** |
+| RSI | -2.42 | -1.78 | **+0.64 EUR** |
+| potencial hasta objetivo | -2.42 | -1.85 | **+0.57 EUR** |
+| fuerza relativa | -2.52 | -2.06 | **+0.46 EUR** |
+| liquidez | -2.36 | -1.92 | **+0.44 EUR** |
+| dispersion | -2.08 | -1.78 | **+0.30 EUR** |
+| % compra fuerte | -2.51 | -2.32 | **+0.20 EUR** |
+| puesto en el ranking | -2.08 | -2.09 | **-0.01 EUR** |
+| momentum 30d | -2.25 | -2.39 | **-0.14 EUR** |
+| nota global | -1.45 | -2.01 | **-0.55 EUR** |
+| volatilidad | -1.82 | -2.48 | **-0.66 EUR** |
+| volumen relativo | -1.66 | -2.61 | **-0.95 EUR** |
+| distancia max 52s | -1.65 | -2.79 | **-1.14 EUR** |
 
 Los de arriba merecen MAS peso; los de abajo, menos o al reves.

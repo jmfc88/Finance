@@ -40360,7 +40360,7 @@
     "id": "SON.LS-2026-11-02",
     "ticker": "SON.LS",
     "nombre": "Sonae, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-02",
     "precio_entrada": 2.105,
     "acciones": 47.505938,
@@ -40427,6 +40427,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Sonae, SGPS, S.A. operates a portfolio of businesses in retail, real estate, telecommunications, technology, and financial services in Portugal and internationally. The company operates through six segments: MC, Worten, Musti, Sierra, Bright Pixel, and NOS."
+    },
+    "precio_salida": 2.2853,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 12,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 8.57,
+    "rentabilidad_neta_pct": 6.57,
+    "resultado_neto_eur": 6.57,
+    "indice_pct": 0.31,
+    "vs_indice_pct": 6.26,
+    "rentabilidad_7d_pct": 7.6,
+    "exito": true,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 2.1471,
+    "estado_resultado": "beneficio",
+    "explicacion": "Dejo 6.57 EUR limpios: por encima del liston de los 5 EUR.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 6.57,
+        "neto_pct": 6.57,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 6.57,
+        "neto_pct": 6.57,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 6.57,
+        "neto_pct": 6.57,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 6.57,
+        "neto_pct": 6.57,
+        "sesiones": 12,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 2.84,
+        "neto_pct": 2.84,
+        "sesiones": 4,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -44681,7 +44729,7 @@
     "id": "BN.PA-2026-11-06",
     "ticker": "BN.PA",
     "nombre": "Danone S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-06",
     "precio_entrada": 67.0,
     "acciones": 1.492537,
@@ -44770,6 +44818,54 @@
         ]
       },
       "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States."
+    },
+    "precio_salida": 69.01,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 8,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": 0.4,
+    "vs_indice_pct": 0.6,
+    "rentabilidad_7d_pct": 4.24,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 68.34,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 8,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 0.3,
+        "neto_pct": 0.3,
+        "sesiones": 8,
+        "motivo": "trailing"
+      }
     }
   },
   {
