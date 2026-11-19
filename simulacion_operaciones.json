@@ -50215,7 +50215,7 @@
     "id": "KKR-2026-11-12",
     "ticker": "KKR",
     "nombre": "KKR & Co. Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 97.955,
     "acciones": 1.020877,
@@ -50308,6 +50308,48 @@
         ]
       },
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    },
+    "precio_salida": 91.9993,
+    "fecha_salida": "2026-11-19",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.49,
+    "vs_indice_pct": -2.59,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 99.9141,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.11,
+        "neto_pct": -6.11,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.33,
+        "neto_pct": -7.33,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -53313,6 +53355,174 @@
         ]
       },
       "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom."
+    }
+  },
+  {
+    "id": "ANET-2026-11-19",
+    "ticker": "ANET",
+    "nombre": "Arista Networks, Inc.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-19",
+    "precio_entrada": 191.575,
+    "acciones": 0.521989,
+    "invertido": 100.0,
+    "posicion_ranking": 11,
+    "tramo": "11-20",
+    "score": 45.4,
+    "potencial_pct": 30.3,
+    "tarjeta": {
+      "ticker": "ANET",
+      "nombre_empresa": "Arista Networks, Inc.",
+      "isin": "US0404132054",
+      "sector": "Technology",
+      "score": 45.4,
+      "version_scoring": 33,
+      "precio_actual": 191.575,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 11.3,
+        "pct_strong_buy": 30.0,
+        "pct_vender": 0.0,
+        "total_analistas": 30
+      },
+      "precio_objetivo_medio": 249.64662,
+      "dispersion_pct": 51.2,
+      "momentum_30d_pct": 3.9,
+      "momentum_5d_pct": -7.3,
+      "fuerza_relativa_pct": 10.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 59.6,
+      "tendencia_tecnica": "mixta",
+      "sma50": 192.69,
+      "sma200": 168.39,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 1432167687.1749878,
+      "volumen_relativo": 0.79,
+      "volatilidad_diaria_pct": 5.28,
+      "sesiones_hasta_stop": 5,
+      "distancia_max_52s_pct": -11.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Arista Networks, Inc. : Barclays mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Arista Networks (NYSE:ANET): High-Growth Leadership and Momentum in Focus - ChartMill",
+            "fuente": "ChartMill",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Pronóstico de Arista Networks: la bandera alcista pone $258 en el foco - FXEmpire",
+            "fuente": "FXEmpire",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Arista Stock Is Up 40% This Year. The Guidance Raises Explain Why. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Perspectivas de analistas financieros, precios objetivo y recomendados sobre Arista Networks, Inc. (ANET) - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Arista Networks Stock Is Up 26% in 3 Months. Is It Still a Buy After a Third Guidance Hike? - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    }
+  },
+  {
+    "id": "WKL.AS-2026-11-19",
+    "ticker": "WKL.AS",
+    "nombre": "Wolters Kluwer N.V.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-19",
+    "precio_entrada": 86.32,
+    "acciones": 1.15848,
+    "invertido": 100.0,
+    "posicion_ranking": 29,
+    "tramo": "21-30",
+    "score": 38.7,
+    "potencial_pct": 11.6,
+    "tarjeta": {
+      "ticker": "WKL.AS",
+      "nombre_empresa": "Wolters Kluwer N.V.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 38.7,
+      "version_scoring": 33,
+      "precio_actual": 86.32,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.4,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 6.2,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 96.3125,
+      "dispersion_pct": 114.3,
+      "momentum_30d_pct": 1.4,
+      "momentum_5d_pct": -3.6,
+      "fuerza_relativa_pct": 2.9,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 48.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 78.85,
+      "sma200": 66.89,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 79141790.5398674,
+      "volumen_relativo": 0.8,
+      "volatilidad_diaria_pct": 2.37,
+      "sesiones_hasta_stop": 27,
+      "distancia_max_52s_pct": -6.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Wolters Kluwer and FairPlay AI announce strategic partnership to deliver AI-driven fair lending optimization capabilities - Wolters Kluwer",
+            "fuente": "Wolters Kluwer",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Legal Innovation Summit - Wolters Kluwer",
+            "fuente": "Wolters Kluwer",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Final de ejercicio: no cierres el año sin revisar esto. - Wolters Kluwer",
+            "fuente": "Wolters Kluwer",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Wolters Kluwer N.V. provides information, software solutions, and services for professionals in the Netherlands, rest of Europe, the United States, Canada, the Asia Pacific, and internationally."
     }
   }
 ]
