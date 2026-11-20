@@ -38305,7 +38305,7 @@
     "id": "VALMT.HE-2026-10-28",
     "ticker": "VALMT.HE",
     "nombre": "Valmet Oyj",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-28",
     "precio_entrada": 29.34,
     "acciones": 3.408316,
@@ -38394,6 +38394,48 @@
         ]
       },
       "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
+    },
+    "precio_salida": 27.5561,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 16,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.26,
+    "vs_indice_pct": -5.82,
+    "rentabilidad_7d_pct": -1.57,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 29.9268,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 16,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.57,
+        "neto_pct": -6.57,
+        "sesiones": 16,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.88,
+        "neto_pct": -7.88,
+        "sesiones": 16,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 16,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -40028,7 +40070,7 @@
     "id": "FBK.MI-2026-10-30",
     "ticker": "FBK.MI",
     "nombre": "FinecoBank Banca Fineco S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-30",
     "precio_entrada": 20.83,
     "acciones": 4.800768,
@@ -40107,6 +40149,78 @@
         ]
       },
       "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    },
+    "precio_salida": 21.9829,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 14,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": -1.68,
+    "vs_indice_pct": 5.21,
+    "rentabilidad_7d_pct": 9.94,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 21.2466,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 14,
+        "motivo": "stop subido"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": 3.35,
+        "neto_pct": 3.35,
+        "sesiones": 14,
+        "motivo": "trailing"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 5.57,
+        "neto_pct": 5.57,
+        "sesiones": 13,
+        "motivo": "trailing"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": 3.35,
+        "neto_pct": 3.35,
+        "sesiones": 14,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": 3.35,
+        "neto_pct": 3.35,
+        "sesiones": 14,
+        "motivo": "trailing"
+      },
+      "stop corto (5%)": {
+        "neto_eur": 3.35,
+        "neto_pct": 3.35,
+        "sesiones": 14,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -47260,7 +47374,7 @@
     "id": "FDR.MC-2026-11-09",
     "ticker": "FDR.MC",
     "nombre": "Fluidra, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-09",
     "precio_entrada": 19.39,
     "acciones": 5.157298,
@@ -47349,6 +47463,54 @@
         ]
       },
       "resumen_negocio": "Fluidra, S.A., together with its subsidiaries, designs, manufactures, distributes, and markets accessories and machinery for swimming-pools, irrigation and water treatment, and residential and commercial pool purification market worldwide."
+    },
+    "precio_salida": 18.2111,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.16,
+    "vs_indice_pct": -3.92,
+    "rentabilidad_7d_pct": -3.09,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 19.7778,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.36,
+        "neto_pct": -4.36,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.82,
+        "neto_pct": -5.82,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 8,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -48382,7 +48544,7 @@
     "id": "KCR.HE-2026-11-10",
     "ticker": "KCR.HE",
     "nombre": "Konecranes Plc",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-10",
     "precio_entrada": 29.42,
     "acciones": 3.399048,
@@ -48470,13 +48632,55 @@
         ]
       },
       "resumen_negocio": "Konecranes Plc manufactures, sells, and services material handling products in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. It operates through three segments: Industrial Service, Industrial Equipment, and Port Solutions."
+    },
+    "precio_salida": 27.6313,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.73,
+    "vs_indice_pct": -3.35,
+    "rentabilidad_7d_pct": -6.59,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 30.0084,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.51,
+        "neto_pct": -6.51,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.82,
+        "neto_pct": -7.82,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
     "id": "EDPR.LS-2026-11-10",
     "ticker": "EDPR.LS",
     "nombre": "EDP Renewables, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-10",
     "precio_entrada": 13.88,
     "acciones": 7.204611,
@@ -48565,6 +48769,48 @@
         ]
       },
       "resumen_negocio": "EDP Renewables, S.A. engages in the renewable energy business in Europe, North America, South America, and the Asia Pacific. The company is involved in the planning, construction, operation, and maintenance of power generation plants using renewable energy sources, including wind and solar power."
+    },
+    "precio_salida": 13.0361,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 7,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.73,
+    "vs_indice_pct": -3.35,
+    "rentabilidad_7d_pct": -5.19,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 14.1576,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.31,
+        "neto_pct": -6.31,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.57,
+        "neto_pct": -7.57,
+        "sesiones": 7,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 7,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -48847,7 +49093,7 @@
     "id": "SAN.MC-2026-11-11",
     "ticker": "SAN.MC",
     "nombre": "Banco Santander, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-11",
     "precio_entrada": 11.234,
     "acciones": 8.901549,
@@ -48936,13 +49182,55 @@
         ]
       },
       "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments."
+    },
+    "precio_salida": 10.551,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.71,
+    "vs_indice_pct": -2.37,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 11.4587,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.64,
+        "neto_pct": -6.64,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.97,
+        "neto_pct": -7.97,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
     "id": "BMED.MI-2026-11-11",
     "ticker": "BMED.MI",
     "nombre": "Banca Mediolanum S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-11",
     "precio_entrada": 23.38,
     "acciones": 4.27716,
@@ -49021,6 +49309,54 @@
         ]
       },
       "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
+    },
+    "precio_salida": 21.9585,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.71,
+    "vs_indice_pct": -2.37,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 23.8476,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.49,
+        "neto_pct": -4.49,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.39,
+        "neto_pct": -5.39,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.19,
+        "neto_pct": -7.19,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -50356,7 +50692,7 @@
     "id": "ABN.AS-2026-11-12",
     "ticker": "ABN.AS",
     "nombre": "ABN AMRO Bank N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 42.06,
     "acciones": 2.377556,
@@ -50449,6 +50785,48 @@
         ]
       },
       "resumen_negocio": "ABN AMRO Bank N.V. provides various banking products and financial services to retail, private, and corporate banking clients in the Netherlands, rest of Europe, the United States, Asia, and internationally."
+    },
+    "precio_salida": 39.5028,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.79,
+    "vs_indice_pct": -2.29,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 42.9012,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.4,
+        "neto_pct": -5.4,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.48,
+        "neto_pct": -6.48,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -50984,7 +51362,7 @@
     "id": "LR.PA-2026-11-13",
     "ticker": "LR.PA",
     "nombre": "Legrand SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-13",
     "precio_entrada": 136.1,
     "acciones": 0.734754,
@@ -51073,6 +51451,48 @@
         ]
       },
       "resumen_negocio": "Legrand SA, together with its subsidiaries, manufactures, distributes, and sells electrical and digital building infrastructures in Europe, North and Central America, and internationally."
+    },
+    "precio_salida": 127.8251,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 4,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.61,
+    "vs_indice_pct": -2.47,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 138.822,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 4 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.54,
+        "neto_pct": -6.54,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.85,
+        "neto_pct": -7.85,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 4,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -52487,7 +52907,7 @@
     "id": "ACS.MC-2026-11-18",
     "ticker": "ACS.MC",
     "nombre": "ACS, Actividades de Construcción y Servicios, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-18",
     "precio_entrada": 89.6,
     "acciones": 1.116071,
@@ -52554,6 +52974,48 @@
       },
       "profundizacion": null,
       "resumen_negocio": "ACS, Actividades de Construcción y Servicios, S.A. provides construction and related services in Spain, the United States, Australia, Canada, Germany, the rest of Europe, and internationally."
+    },
+    "precio_salida": 84.1523,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.04,
+    "vs_indice_pct": -6.04,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 91.392,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.96,
+        "neto_pct": -5.96,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.15,
+        "neto_pct": -7.15,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
