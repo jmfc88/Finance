@@ -42627,7 +42627,7 @@
     "id": "ISP.MI-2026-11-04",
     "ticker": "ISP.MI",
     "nombre": "Intesa Sanpaolo S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-04",
     "precio_entrada": 6.274,
     "acciones": 15.938795,
@@ -42694,6 +42694,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Intesa Sanpaolo S.p.A. engages in the provision of various financial products and services in Italy, Central/Eastern Europe, the Middle East, and North Africa. It operates through six segments: Banca dei Territori, IMI Corporate & Investment Banking, International Banks, Asset Management, Private Banking, and Insurance."
+    },
+    "precio_salida": 5.8925,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 12,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -4.19,
+    "vs_indice_pct": -3.89,
+    "rentabilidad_7d_pct": -0.18,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 6.3995,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.67,
+        "neto_pct": -4.67,
+        "sesiones": 10,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.61,
+        "neto_pct": -5.61,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.47,
+        "neto_pct": -7.47,
+        "sesiones": 12,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 12,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -43261,7 +43309,7 @@
     "id": "ROVI.MC-2026-11-05",
     "ticker": "ROVI.MC",
     "nombre": "Laboratorios Farmaceuticos Rovi, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 69.35,
     "acciones": 1.441961,
@@ -43334,6 +43382,90 @@
         "titulares_adicionales": []
       },
       "resumen_negocio": "Laboratorios Farmaceuticos Rovi, S.A. manufactures, sells, and markets pharmaceutical products in Spain, European Union, OECD countries, and internationally. The company offers prescription products, including Ameride, Bertanel, Bluxam, Enoxaparin Rovi, Calcium Vitamine D3 Rovi, Exxiv, Prinvil, Rhodogil, Glufan, Hibor, Hirobriz Breezhaler, Neparvis, Mysimba, Orvatez, Tryptizol, Ulunar Breezhaler, and Volutsa."
+    },
+    "precio_salida": 65.1335,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 11,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -3.66,
+    "vs_indice_pct": -4.42,
+    "rentabilidad_7d_pct": 0.36,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 70.737,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.76,
+        "neto_pct": -5.76,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.91,
+        "neto_pct": -6.91,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -9.21,
+        "neto_pct": -9.21,
+        "sesiones": 11,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "trailing"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 11,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -44288,7 +44420,7 @@
     "id": "IAG.MC-2026-11-05",
     "ticker": "IAG.MC",
     "nombre": "International Consolidated Airlines Group S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 5.134,
     "acciones": 19.47799,
@@ -44367,6 +44499,54 @@
         ]
       },
       "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally."
+    },
+    "precio_salida": 5.288,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 11,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 3.0,
+    "rentabilidad_neta_pct": 1.0,
+    "resultado_neto_eur": 1.0,
+    "indice_pct": -3.66,
+    "vs_indice_pct": 4.66,
+    "rentabilidad_7d_pct": 5.96,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 3,
+    "precio_equilibrio": 5.2367,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (1.00 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.25,
+        "neto_pct": -5.25,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 1.0,
+        "neto_pct": 1.0,
+        "sesiones": 11,
+        "motivo": "stop subido"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": 1.61,
+        "neto_pct": 1.61,
+        "sesiones": 9,
+        "motivo": "trailing"
+      }
     }
   },
   {
@@ -48302,7 +48482,7 @@
     "id": "UCG.MI-2026-11-10",
     "ticker": "UCG.MI",
     "nombre": "UniCredit S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-10",
     "precio_entrada": 84.12,
     "acciones": 1.188778,
@@ -48395,6 +48575,48 @@
         ]
       },
       "resumen_negocio": "UniCredit S.p.A. provides commercial banking services in Italy, Germany, Central Europe, and Eastern Europe. The company offers retail, private, and wealth management solutions; and institutional investor solutions."
+    },
+    "precio_salida": 79.0055,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 8,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.13,
+    "vs_indice_pct": -2.95,
+    "rentabilidad_7d_pct": -4.52,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 85.8024,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -6.49,
+        "neto_pct": -6.49,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.79,
+        "neto_pct": -7.79,
+        "sesiones": 8,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -49987,7 +50209,7 @@
     "id": "AKZA.AS-2026-11-12",
     "ticker": "AKZA.AS",
     "nombre": "Akzo Nobel N.V.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-12",
     "precio_entrada": 63.48,
     "acciones": 1.575299,
@@ -50076,6 +50298,54 @@
         ]
       },
       "resumen_negocio": "Akzo Nobel N.V. produces and sells paints and coatings worldwide. It operates through Decorative Paints and Performance Coatings segments. The company offers decorative paints, including paints, enamels, varnishes, and surface preparation products; and a range of mixing machines, color concepts and advice, and training for applicators."
+    },
+    "precio_salida": 59.6204,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -6.18,
+    "vs_indice_pct": -1.9,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 64.7496,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.44,
+        "neto_pct": -4.44,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.33,
+        "neto_pct": -5.33,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.11,
+        "neto_pct": -7.11,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 6,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -51499,7 +51769,7 @@
     "id": "UNI.MI-2026-11-13",
     "ticker": "UNI.MI",
     "nombre": "Unipol Assicurazioni S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-13",
     "precio_entrada": 25.89,
     "acciones": 3.862495,
@@ -51588,6 +51858,54 @@
         ]
       },
       "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments."
+    },
+    "precio_salida": 24.3159,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 5,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -6.0,
+    "vs_indice_pct": -2.08,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 26.4078,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 5 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.92,
+        "neto_pct": -4.92,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.91,
+        "neto_pct": -5.91,
+        "sesiones": 4,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.88,
+        "neto_pct": -7.88,
+        "sesiones": 5,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 5,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -52329,7 +52647,7 @@
     "id": "EGL.LS-2026-11-17",
     "ticker": "EGL.LS",
     "nombre": "Mota-Engil, SGPS, S.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-17",
     "precio_entrada": 4.918,
     "acciones": 20.333469,
@@ -52407,6 +52725,54 @@
         ]
       },
       "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics..."
+    },
+    "precio_salida": 4.619,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -3.36,
+    "vs_indice_pct": -4.72,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 5.0164,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.33,
+        "neto_pct": -5.33,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -6.39,
+        "neto_pct": -6.39,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -8.53,
+        "neto_pct": -8.53,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -53823,7 +54189,7 @@
     "id": "ANET-2026-11-19",
     "ticker": "ANET",
     "nombre": "Arista Networks, Inc.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-19",
     "precio_entrada": 191.575,
     "acciones": 0.521989,
@@ -53912,6 +54278,72 @@
         ]
       },
       "resumen_negocio": "Arista Networks, Inc. engages in the development, marketing, and sale of data-driven, client to cloud networking solutions for AI, data center, campus, and routing environments in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific."
+    },
+    "precio_salida": 179.9272,
+    "fecha_salida": "2026-11-20",
+    "sesiones": 1,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.68,
+    "vs_indice_pct": -7.4,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 195.4065,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 1 sesion y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -10.0,
+        "neto_pct": -10.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -53985,6 +54417,471 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Wolters Kluwer N.V. provides information, software solutions, and services for professionals in the Netherlands, rest of Europe, the United States, Canada, the Asia Pacific, and internationally."
+    }
+  },
+  {
+    "id": "FBK.MI-2026-11-20",
+    "ticker": "FBK.MI",
+    "nombre": "FinecoBank Banca Fineco S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-20",
+    "precio_entrada": 21.44,
+    "acciones": 4.664179,
+    "invertido": 100.0,
+    "posicion_ranking": 1,
+    "tramo": "1-10",
+    "score": 60.6,
+    "potencial_pct": 27.5,
+    "tarjeta": {
+      "ticker": "FBK.MI",
+      "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 60.6,
+      "version_scoring": 33,
+      "precio_actual": 21.44,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.6,
+        "pct_strong_buy": 31.2,
+        "pct_vender": 0.0,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 27.34062,
+      "dispersion_pct": 26.2,
+      "momentum_30d_pct": 3.9,
+      "momentum_5d_pct": -7.2,
+      "fuerza_relativa_pct": 5.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 51.2,
+      "tendencia_tecnica": "bajista",
+      "sma50": 21.85,
+      "sma200": 21.46,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 36669867.78976059,
+      "volumen_relativo": 0.62,
+      "volatilidad_diaria_pct": 1.84,
+      "sesiones_hasta_stop": 46,
+      "distancia_max_52s_pct": -13.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 6,
+        "titulares": [
+          {
+            "titulo": "FinecoBank supera previsiones de beneficios y reduce guía de costes para 2026 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Earnings call transcript: FinecoBank posts strong H1 2026 growth, stock edges up - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Italy's Fineco exceeds quarterly profit, revenue forecasts - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "FinecoBank supera previsiones de beneficios y reduce guía de costes para 2026 - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de FinecoBank Banca Fineco S.p.A. (FBK.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of..."
+    }
+  },
+  {
+    "id": "BMED.MI-2026-11-20",
+    "ticker": "BMED.MI",
+    "nombre": "Banca Mediolanum S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-20",
+    "precio_entrada": 21.56,
+    "acciones": 4.638219,
+    "invertido": 100.0,
+    "posicion_ranking": 4,
+    "tramo": "1-10",
+    "score": 52.9,
+    "potencial_pct": 21.4,
+    "tarjeta": {
+      "ticker": "BMED.MI",
+      "nombre_empresa": "Banca Mediolanum S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 52.9,
+      "version_scoring": 33,
+      "precio_actual": 21.56,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 25.0,
+        "pct_vender": 0.0,
+        "total_analistas": 12
+      },
+      "precio_objetivo_medio": 26.16667,
+      "dispersion_pct": 20.7,
+      "momentum_30d_pct": -3.5,
+      "momentum_5d_pct": -7.9,
+      "fuerza_relativa_pct": -1.7,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 39.8,
+      "tendencia_tecnica": "mixta",
+      "sma50": 23.04,
+      "sma200": 20.93,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 15181818.757676125,
+      "volumen_relativo": 0.84,
+      "volatilidad_diaria_pct": 1.78,
+      "sesiones_hasta_stop": 49,
+      "distancia_max_52s_pct": -11.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Banca Mediolanum eleva su beneficio a nueve meses y aprueba un dividendo a cuenta - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Traspaso de plan de pensiones a Mediolanum: cómo hacerlo en 2026 - Rankia",
+            "fuente": "Rankia",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Banca Mediolanum acuerda el reparto de un dividendo a cuenta, abonable el 25 de noviembre de 2026 - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Medidas de valoración y estadísticas financieras de Banca Mediolanum S.p.A. (BMED.MI) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans."
+    }
+  },
+  {
+    "id": "LR.PA-2026-11-20",
+    "ticker": "LR.PA",
+    "nombre": "Legrand SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-20",
+    "precio_entrada": 129.0,
+    "acciones": 0.775194,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 45.5,
+    "potencial_pct": 33.3,
+    "tarjeta": {
+      "ticker": "LR.PA",
+      "nombre_empresa": "Legrand SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 45.5,
+      "version_scoring": 33,
+      "precio_actual": 129.0,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.3,
+        "pct_strong_buy": 27.8,
+        "pct_vender": 5.6,
+        "total_analistas": 18
+      },
+      "precio_objetivo_medio": 172.0,
+      "dispersion_pct": 66.7,
+      "momentum_30d_pct": 4.3,
+      "momentum_5d_pct": -5.4,
+      "fuerza_relativa_pct": 6.1,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 44.0,
+      "tendencia_tecnica": "bajista",
+      "sma50": 134.89,
+      "sma200": 140.2,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 84043269.72053528,
+      "volumen_relativo": 0.61,
+      "volatilidad_diaria_pct": 2.16,
+      "sesiones_hasta_stop": 33,
+      "distancia_max_52s_pct": -18.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Las acciones de Legrand se disparan tras mejorar sus previsiones y superar expectativas en el tercer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "RBC sube Legrand por demanda de centros de datos que impulsa crecimiento - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "UBS mejora la calificación de Legrand por el crecimiento en centros de datos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Legrand se disparan tras mejorar sus previsiones y superar expectativas en el tercer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "UBS mejora la calificación de Legrand por el crecimiento en centros de datos - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Recomendaciones de los analistas en Francia: las firmas de análisis aconsejan comprar Sanofi, Legrand y TotalEnergies - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Legrand SA, together with its subsidiaries, manufactures, distributes, and sells electrical and digital building infrastructures in Europe, North and Central America, and internationally."
+    }
+  },
+  {
+    "id": "CCL-2026-11-20",
+    "ticker": "CCL",
+    "nombre": "Carnival Corporation Ltd.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-20",
+    "precio_entrada": 27.57,
+    "acciones": 3.627131,
+    "invertido": 100.0,
+    "posicion_ranking": 20,
+    "tramo": "11-20",
+    "score": 42.0,
+    "potencial_pct": 21.7,
+    "tarjeta": {
+      "ticker": "CCL",
+      "nombre_empresa": "Carnival Corporation Ltd.",
+      "isin": "BMG2004J1036",
+      "sector": "Consumer Cyclical",
+      "score": 42.0,
+      "version_scoring": 33,
+      "precio_actual": 27.57,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.8,
+        "pct_strong_buy": 20.0,
+        "pct_vender": 0.0,
+        "total_analistas": 30
+      },
+      "precio_objetivo_medio": 33.56296,
+      "dispersion_pct": 87.0,
+      "momentum_30d_pct": 1.5,
+      "momentum_5d_pct": -6.0,
+      "fuerza_relativa_pct": 9.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 45.4,
+      "tendencia_tecnica": "alcista",
+      "sma50": 26.25,
+      "sma200": 26.79,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 515800392.72060394,
+      "volumen_relativo": 0.82,
+      "volatilidad_diaria_pct": 3.46,
+      "sesiones_hasta_stop": 13,
+      "distancia_max_52s_pct": -17.2,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 5,
+        "titulares": [
+          {
+            "titulo": "Fincantieri wins Carnival contract for two next-generation cruise ships - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Carnival Remains A 'Buy' With Impressive Growth - Seeking Alpha",
+            "fuente": "Seeking Alpha",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Carnival Corp. Ltd. stock underperforms Thursday when compared to competitors - MarketWatch",
+            "fuente": "MarketWatch",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Carnival Corporation’s Q3 Earnings Beat June Guidance by $100 Million. Here’s Where Shares Could Go in the Long Run. - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Earnings call transcript: Carnival beats Q2 2026 estimates but shares fall - Investing.com",
+            "fuente": "Investing.com",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Is Carnival Stock Undervalued in 2026 at $28? Here’s What TIKR Model Says - TIKR.com",
+            "fuente": "TIKR.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Carnival Corporation Ltd., a cruise company, provides leisure travel services. The company operates through four segments: North America Cruise Operations, Europe Cruise Operations, Cruise Support, and Tour and Other."
+    }
+  },
+  {
+    "id": "ORA.PA-2026-11-20",
+    "ticker": "ORA.PA",
+    "nombre": "Orange S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-20",
+    "precio_entrada": 15.09,
+    "acciones": 6.626905,
+    "invertido": 100.0,
+    "posicion_ranking": 24,
+    "tramo": "21-30",
+    "score": 40.1,
+    "potencial_pct": 24.4,
+    "tarjeta": {
+      "ticker": "ORA.PA",
+      "nombre_empresa": "Orange S.A.",
+      "isin": "IT0005733040",
+      "sector": "Communication Services",
+      "score": 40.1,
+      "version_scoring": 33,
+      "precio_actual": 15.09,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.7,
+        "pct_strong_buy": 18.8,
+        "pct_vender": 6.2,
+        "total_analistas": 16
+      },
+      "precio_objetivo_medio": 18.77059,
+      "dispersion_pct": 50.7,
+      "momentum_30d_pct": 5.0,
+      "momentum_5d_pct": -3.4,
+      "fuerza_relativa_pct": 6.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 63.5,
+      "tendencia_tecnica": "mixta",
+      "sma50": 14.63,
+      "sma200": 16.28,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 64285863.7518692,
+      "volumen_relativo": 0.76,
+      "volatilidad_diaria_pct": 1.13,
+      "sesiones_hasta_stop": 122,
+      "distancia_max_52s_pct": -17.4,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Orange firma acuerdo para fusión con MasOrange y analiza cambio de marca - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Gráfico de rentabilidades estacionales de Orange S.A. (ORAP.XC) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Bank of America destaca el posible aumento de las previsiones para el ejercicio fiscal 2026 en los próximos resultados del tercer trimestre de Orange SA. - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 10,
+        "puntos_roe_sostenido": 0.36,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Orange Boosts Profit Outlook on Africa, Middle East Growth - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 4
+          },
+          {
+            "titulo": "Orange eleva su objetivo de beneficio operativo para 2026 tras superar previsiones en el tercer trimestre - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Orange eleva sus previsiones de beneficio para 2026 y ensalza el papel del satélite para reforzar sus redes - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          }
+        ]
+      },
+      "resumen_negocio": "Orange S.A. operates as a telecommunications operator in France and internationally. The company offers mobile services, such as voice, SMS, and data; and fixed broadband and narrowband services, as well as B2B fixed solutions and network services, including voice and data services."
     }
   }
 ]
