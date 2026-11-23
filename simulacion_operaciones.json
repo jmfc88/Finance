@@ -37168,7 +37168,7 @@
     "id": "REN.AS-2026-10-26",
     "ticker": "REN.AS",
     "nombre": "RELX PLC",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-10-26",
     "precio_entrada": 36.08,
     "acciones": 2.771619,
@@ -37256,6 +37256,90 @@
         ]
       },
       "resumen_negocio": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally."
+    },
+    "precio_salida": 35.02,
+    "fecha_salida": "2026-11-23",
+    "sesiones": 20,
+    "motivo_salida": "plazo maximo",
+    "rentabilidad_bruta_pct": -2.94,
+    "rentabilidad_neta_pct": -4.94,
+    "resultado_neto_eur": -4.94,
+    "indice_pct": -2.14,
+    "vs_indice_pct": -2.8,
+    "rentabilidad_7d_pct": 1.66,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 36.8016,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.12,
+        "neto_pct": -4.12,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -5.49,
+        "neto_pct": -5.49,
+        "sesiones": 2,
+        "motivo": "stop inicial"
+      },
+      "actual (8% / +5% / 5%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing suelto (7%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "trailing pegado (3%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca antes (+3%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "arranca despues (+8%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      },
+      "sin trailing, solo stop": {
+        "neto_eur": -4.94,
+        "neto_pct": -4.94,
+        "sesiones": 20,
+        "motivo": "plazo maximo"
+      }
     }
   },
   {
@@ -55544,6 +55628,173 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Capgemini SE, together with its subsidiaries, provides consulting, digital transformation, technology, and engineering services primarily in North America, France, the United Kingdom, Ireland, the rest of Europe, the Asia-Pacific, and Latin America."
+    }
+  },
+  {
+    "id": "AAI.AX-2026-11-23",
+    "ticker": "AAI.AX",
+    "nombre": "Alcoa Corporation",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-23",
+    "precio_entrada": 52.3,
+    "acciones": 1.912046,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 38.5,
+    "potencial_pct": 73.0,
+    "tarjeta": {
+      "ticker": "AAI.AX",
+      "nombre_empresa": "Alcoa Corporation",
+      "isin": null,
+      "sector": "Basic Materials",
+      "score": 38.5,
+      "version_scoring": 33,
+      "precio_actual": 52.3,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 0,
+        "muestra_insuficiente": true,
+        "total_analistas": 4
+      },
+      "precio_objetivo_medio": 90.45471,
+      "dispersion_pct": 30.5,
+      "momentum_30d_pct": -9.2,
+      "momentum_5d_pct": -11.5,
+      "fuerza_relativa_pct": 0.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^GSPC",
+      "rsi_14": 43.6,
+      "tendencia_tecnica": "bajista",
+      "sma50": 59.35,
+      "sma200": 77.5,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": false,
+      "liquidez_dia": 15118081.025806427,
+      "volumen_relativo": 0.89,
+      "volatilidad_diaria_pct": 3.01,
+      "sesiones_hasta_stop": 17,
+      "distancia_max_52s_pct": -55.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "Alcoa reivindica que con el arranque ha cumplido «con una parte clave más» del acuerdo - La Voz de Galicia",
+            "fuente": "La Voz de Galicia",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Alcoa asume la titularidad plena de las operaciones de San Ciprián tras adquirir la participación de su socio - Alcoa",
+            "fuente": "Alcoa",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Alcoa inicia la construcción de una planta de galio en Australia Occidental - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 1,
+        "puntos_roe_sostenido": 0.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Transcripción del informe de resultados: Alcoa supera las previsiones del segundo trimestre de 2025, las acciones suben - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "AA Stock Dips as Alcoa Cuts Aluminum Production Guidance - Barchart.com",
+            "fuente": "Barchart.com",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Acción de Alcoa Corp toca mínimos de 52 semanas en $34.77 - Investing.com México - Finanzas, Bolsa y Forex",
+            "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Alcoa Corporation, together with its subsidiaries, engages in the bauxite mining, alumina refining, aluminum production, and energy generation business in Australia, Brazil, Canada, Iceland, Norway, Spain, the United States, and internationally."
+    }
+  },
+  {
+    "id": "SON.LS-2026-11-23",
+    "ticker": "SON.LS",
+    "nombre": "Sonae, SGPS, S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-23",
+    "precio_entrada": 2.26,
+    "acciones": 44.247788,
+    "invertido": 100.0,
+    "posicion_ranking": 28,
+    "tramo": "21-30",
+    "score": 35.7,
+    "potencial_pct": 5.5,
+    "tarjeta": {
+      "ticker": "SON.LS",
+      "nombre_empresa": "Sonae, SGPS, S.A.",
+      "isin": "PTSNP0AE0008",
+      "sector": "Consumer Defensive",
+      "score": 35.7,
+      "version_scoring": 33,
+      "precio_actual": 2.26,
+      "consenso": "strong_buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 6.7,
+        "pct_strong_buy": 14.3,
+        "pct_vender": 0.0,
+        "total_analistas": 7
+      },
+      "precio_objetivo_medio": 2.38429,
+      "dispersion_pct": 107.1,
+      "momentum_30d_pct": 6.4,
+      "momentum_5d_pct": -2.8,
+      "fuerza_relativa_pct": 8.8,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 68.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 2.14,
+      "sma200": 2.0,
+      "tendencia_analistas": null,
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 2715831.977933526,
+      "volumen_relativo": 0.87,
+      "volatilidad_diaria_pct": 1.64,
+      "sesiones_hasta_stop": 58,
+      "distancia_max_52s_pct": -3.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Sonae SGPS SA (SOSSF) (Q3 2026) Earnings Call Highlights: Strong Growth, Deleveraging, and a ... By GuruFocus - Investing.com Canada",
+            "fuente": "Investing.com Canada",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Principales accionistas de Sonae SGPS SA (YSON.HA) - Yahoo Finanzas",
+            "fuente": "Yahoo Finanzas",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Sonae Sierra compra 9 supermercados de Mercadona que pertenecían al fondo israelí MDSR - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": null,
+      "resumen_negocio": "Sonae, SGPS, S.A. operates a portfolio of businesses in retail, real estate, telecommunications, technology, and financial services in Portugal and internationally. The company operates through six segments: MC, Worten, Musti, Sierra, Bright Pixel, and NOS."
     }
   }
 ]
