@@ -53032,7 +53032,7 @@
     "id": "BNP.PA-2026-11-17",
     "ticker": "BNP.PA",
     "nombre": "BNP Paribas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-17",
     "precio_entrada": 94.53,
     "acciones": 1.057865,
@@ -53121,6 +53121,54 @@
         ]
       },
       "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
+    },
+    "precio_salida": 88.7826,
+    "fecha_salida": "2026-11-25",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -5.11,
+    "vs_indice_pct": -2.97,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 96.4206,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.82,
+        "neto_pct": -4.82,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.79,
+        "neto_pct": -5.79,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -7.72,
+        "neto_pct": -7.72,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -55399,7 +55447,7 @@
     "id": "UCG.MI-2026-11-20",
     "ticker": "UCG.MI",
     "nombre": "UniCredit S.p.A.",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-20",
     "precio_entrada": 78.28,
     "acciones": 1.277466,
@@ -55488,6 +55536,48 @@
         ]
       },
       "resumen_negocio": "UniCredit S.p.A. provides commercial banking services in Italy, Germany, Central Europe, and Eastern Europe. The company offers retail, private, and wealth management solutions; and institutional investor solutions."
+    },
+    "precio_salida": 73.5206,
+    "fecha_salida": "2026-11-25",
+    "sesiones": 3,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -0.8,
+    "vs_indice_pct": -7.28,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 79.8456,
+    "estado_resultado": "nefasta",
+    "explicacion": "El stop salto en solo 3 sesiones y con perdida (-8.08 EUR). La entrada estaba mal desde el principio: aqui falla la recomendacion, no el mercado.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -5.83,
+        "neto_pct": -5.83,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 3,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -56582,6 +56672,101 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Valmet Oyj develops and supplies process technologies, automation, and services for the pulp, paper, and energy industries in North America, Latin America, EMEA, China, and Asia-Pacific."
+    }
+  },
+  {
+    "id": "IAG.MC-2026-11-25",
+    "ticker": "IAG.MC",
+    "nombre": "International Consolidated Airlines Group S.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-25",
+    "precio_entrada": 5.236,
+    "acciones": 19.098549,
+    "invertido": 100.0,
+    "posicion_ranking": 10,
+    "tramo": "1-10",
+    "score": 45.5,
+    "potencial_pct": 16.9,
+    "tarjeta": {
+      "ticker": "IAG.MC",
+      "nombre_empresa": "International Consolidated Airlines Group S.A.",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 45.5,
+      "version_scoring": 33,
+      "precio_actual": 5.236,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 8.6,
+        "pct_strong_buy": 45.5,
+        "pct_vender": 0.0,
+        "total_analistas": 11
+      },
+      "precio_objetivo_medio": 6.12273,
+      "dispersion_pct": 32.1,
+      "momentum_30d_pct": 7.3,
+      "momentum_5d_pct": -2.3,
+      "fuerza_relativa_pct": 11.3,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 54.7,
+      "tendencia_tecnica": "alcista",
+      "sma50": 5.09,
+      "sma200": 4.87,
+      "tendencia_analistas": "estable",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 25763831.388232708,
+      "volumen_relativo": 0.79,
+      "volatilidad_diaria_pct": 2.14,
+      "sesiones_hasta_stop": 34,
+      "distancia_max_52s_pct": -7.6,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : Recibe una recomendación de compra del Bernstein - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "HECHOS RELEVANTES.-INTERNATIONAL CONSOLIDATED AIRLINES GROUP, S.A. La Sociedad remite información sobre las operaciones[...] - Bolsamania",
+            "fuente": "Bolsamania",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : Gets a Buy rating from Bernstein - www.marketscreener.com",
+            "fuente": "www.marketscreener.com",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 2,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : Bernstein mantiene su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "International Consolidated Airlines Group, S.A. : El Deutsche Bank continua con su recomendación de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "International Consolidated Airlines Group S.A. (IAG.L) stock historical prices and data - Yahoo Finance Singapore",
+            "fuente": "Yahoo Finance Singapore",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally."
     }
   }
 ]
