@@ -53433,7 +53433,7 @@
     "id": "ABI.BR-2026-11-18",
     "ticker": "ABI.BR",
     "nombre": "Anheuser-Busch InBev SA/NV",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-18",
     "precio_entrada": 76.04,
     "acciones": 1.315097,
@@ -53500,6 +53500,54 @@
       },
       "profundizacion": null,
       "resumen_negocio": "Anheuser-Busch InBev SA/NV produces and sells beer in North America, Middle Americas, South America, Europe, the Middle East, Africa, and the Asia Pacific. It operates through North America, Middle Americas, South America, EMEA, Asia Pacific, and Global Export and Holding Companies segments."
+    },
+    "precio_salida": 71.4168,
+    "fecha_salida": "2026-11-26",
+    "sesiones": 6,
+    "motivo_salida": "stop inicial",
+    "rentabilidad_bruta_pct": -6.08,
+    "rentabilidad_neta_pct": -8.08,
+    "resultado_neto_eur": -8.08,
+    "indice_pct": -2.2,
+    "vs_indice_pct": -5.88,
+    "rentabilidad_7d_pct": null,
+    "exito": false,
+    "llego_al_objetivo": false,
+    "sesiones_hasta_equilibrio": null,
+    "precio_equilibrio": 77.5608,
+    "estado_resultado": "perdida",
+    "explicacion": "Aguanto un tiempo y acabo saltando el stop con perdida. La tesis tardo en romperse; puede ser el mercado y no la seleccion.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": -8.08,
+        "neto_pct": -8.08,
+        "sesiones": 6,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.22,
+        "neto_pct": -4.22,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -5.06,
+        "neto_pct": -5.06,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": -6.75,
+        "neto_pct": -6.75,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "stop corto (5%)": {
+        "neto_eur": -7.0,
+        "neto_pct": -7.0,
+        "sesiones": 1,
+        "motivo": "stop-loss"
+      }
     }
   },
   {
@@ -57145,6 +57193,286 @@
       },
       "profundizacion": null,
       "resumen_negocio": "KKR & Co. Inc. is a private equity and real estate investment firm specializing in direct and fund of fund investments. It specializes in acquisitions, leveraged buyouts, management buyouts, credit special situations, growth equity, mature, mezzanine, distressed, turnaround, lower middle market, and middle market investments."
+    }
+  },
+  {
+    "id": "BVI.PA-2026-11-26",
+    "ticker": "BVI.PA",
+    "nombre": "Bureau Veritas SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-26",
+    "precio_entrada": 32.18,
+    "acciones": 3.10752,
+    "invertido": 100.0,
+    "posicion_ranking": 1,
+    "tramo": "1-10",
+    "score": 59.1,
+    "potencial_pct": 5.6,
+    "tarjeta": {
+      "ticker": "BVI.PA",
+      "nombre_empresa": "Bureau Veritas SA",
+      "isin": null,
+      "sector": "Industrials",
+      "score": 59.1,
+      "version_scoring": 33,
+      "precio_actual": 32.18,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 7.4,
+        "pct_strong_buy": 29.4,
+        "pct_vender": 0.0,
+        "total_analistas": 17
+      },
+      "precio_objetivo_medio": 33.99471,
+      "dispersion_pct": 29.8,
+      "momentum_30d_pct": 10.7,
+      "momentum_5d_pct": 6.8,
+      "fuerza_relativa_pct": 13.0,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 72.6,
+      "tendencia_tecnica": "alcista",
+      "sma50": 28.55,
+      "sma200": 27.14,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 29511388.390842438,
+      "volumen_relativo": 1.46,
+      "volatilidad_diaria_pct": 1.74,
+      "sesiones_hasta_stop": 51,
+      "distancia_max_52s_pct": 0.0,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 3,
+        "titulares": [
+          {
+            "titulo": "¿Por qué se dispara hoy la acción de Bureau Veritas SA? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Las acciones de Bureau Veritas suben tras venta de unidad por 470 millones - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "Bureau Veritas se dispara: la opinión de los analistas sobre los rumores de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 5,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Las acciones de Bureau Veritas suben tras elevar su objetivo de crecimiento - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 3
+          },
+          {
+            "titulo": "Bureau Veritas se dispara: la opinión de los analistas sobre los rumores de compra - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 1
+          },
+          {
+            "titulo": "¿Por qué se dispara hoy la acción de Bureau Veritas SA? - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 1
+          }
+        ]
+      },
+      "resumen_negocio": "Bureau Veritas SA provides laboratory testing, inspection, and certification services. It operates through six segments: Marine & Offshore; Agri-Food & Commodities; Industry; Buildings & Infrastructure; Certification; and Consumer Products services."
+    }
+  },
+  {
+    "id": "BGN.MI-2026-11-26",
+    "ticker": "BGN.MI",
+    "nombre": "Banca Generali S.p.A.",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-26",
+    "precio_entrada": 57.2,
+    "acciones": 1.748252,
+    "invertido": 100.0,
+    "posicion_ranking": 11,
+    "tramo": "11-20",
+    "score": 47.5,
+    "potencial_pct": 25.3,
+    "tarjeta": {
+      "ticker": "BGN.MI",
+      "nombre_empresa": "Banca Generali S.p.A.",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 47.5,
+      "version_scoring": 33,
+      "precio_actual": 57.2,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 5.2,
+        "pct_strong_buy": 28.6,
+        "pct_vender": 0.0,
+        "total_analistas": 7
+      },
+      "precio_objetivo_medio": 71.68571,
+      "dispersion_pct": 20.0,
+      "momentum_30d_pct": -5.8,
+      "momentum_5d_pct": -1.5,
+      "fuerza_relativa_pct": -3.5,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 38.2,
+      "tendencia_tecnica": "bajista",
+      "sma50": 60.64,
+      "sma200": 59.21,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 16065877.435277939,
+      "volumen_relativo": 0.81,
+      "volatilidad_diaria_pct": 1.97,
+      "sesiones_hasta_stop": 40,
+      "distancia_max_52s_pct": -16.1,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 2,
+        "titulares": [
+          {
+            "titulo": "Generali says MPS bid for Banca Generali offers 'growth opportunities' - Reuters",
+            "fuente": "Reuters",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Banca Generali lanza una emisión de bonos Additional Tier 1 por 125 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Monte dei Paschi ofrece comprar Banco BPM y Banca Generali por 34.000 millones para evitar la adquisición de Intesa - El Economista",
+            "fuente": "El Economista",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 0,
+        "puntos_roe_sostenido": 3.0,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "Banca Generali lanza una emisión de bonos Additional Tier 1 por 125 millones EUR - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 0
+          },
+          {
+            "titulo": "Mediobanca lanza oferta de €6.300 millones por Banca Generali - Bloomberg.com",
+            "fuente": "Bloomberg.com",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "Banca Generali S.p.A. distributes financial products and services for high net worth, affluent and private customers through financial advisors in Italy. The company operates through Private Banking CGU (PB CGU) and Senior Partner CGU (SP CGU) segments."
+    }
+  },
+  {
+    "id": "BNP.PA-2026-11-26",
+    "ticker": "BNP.PA",
+    "nombre": "BNP Paribas SA",
+    "estado": "abierta",
+    "fecha_entrada": "2026-11-26",
+    "precio_entrada": 90.97,
+    "acciones": 1.099263,
+    "invertido": 100.0,
+    "posicion_ranking": 22,
+    "tramo": "21-30",
+    "score": 42.5,
+    "potencial_pct": 33.1,
+    "tarjeta": {
+      "ticker": "BNP.PA",
+      "nombre_empresa": "BNP Paribas SA",
+      "isin": null,
+      "sector": "Financial Services",
+      "score": 42.5,
+      "version_scoring": 33,
+      "precio_actual": 90.97,
+      "consenso": "buy",
+      "consenso_real": {
+        "excluida": false,
+        "empujon": 3.6,
+        "pct_strong_buy": 26.3,
+        "pct_vender": 0.0,
+        "total_analistas": 19
+      },
+      "precio_objetivo_medio": 121.07684,
+      "dispersion_pct": 47.2,
+      "momentum_30d_pct": 4.3,
+      "momentum_5d_pct": -1.2,
+      "fuerza_relativa_pct": 6.6,
+      "regimen_mercado": "adverso",
+      "indice_referencia": "^STOXX50E",
+      "rsi_14": 47.3,
+      "tendencia_tecnica": "bajista",
+      "sma50": 91.6,
+      "sma200": 92.33,
+      "tendencia_analistas": "mejorando",
+      "catalizador_resultados": null,
+      "cotiza_en_euros": true,
+      "liquidez_dia": 207405597.11972046,
+      "volumen_relativo": 0.94,
+      "volatilidad_diaria_pct": 1.96,
+      "sesiones_hasta_stop": 40,
+      "distancia_max_52s_pct": -16.7,
+      "metodo_datos": "periodo_220d",
+      "noticias": {
+        "sentimiento_total": 1,
+        "titulares": [
+          {
+            "titulo": "BNP Paribas sube en la lista de bancos sistémicos globales y elevará su colchón de capital - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "¿Por qué BNP Paribas rebaja la calificación de Micron? - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": -1
+          },
+          {
+            "titulo": "Perfil y datos de empresa de BNP Paribas Bank Polska SA (82MA.MU) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "profundizacion": {
+        "sentimiento_adicional": 4,
+        "puntos_roe_sostenido": 1.62,
+        "verificado": true,
+        "ajuste": 0,
+        "titulares_adicionales": [
+          {
+            "titulo": "BNP Paribas promete más recortes de costes tras superar previsiones de beneficio - MarketScreener España",
+            "fuente": "MarketScreener España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "BNP Paribas supera previsiones de beneficios en el tercer trimestre por el auge del trading de acciones - Investing.com España",
+            "fuente": "Investing.com España",
+            "sentimiento": 2
+          },
+          {
+            "titulo": "Calificaciones, estimaciones y previsiones de analistas de BNP Paribas Bank Polska SA (82MA.MU) - Yahoo",
+            "fuente": "Yahoo",
+            "sentimiento": 0
+          }
+        ]
+      },
+      "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services."
     }
   }
 ]
