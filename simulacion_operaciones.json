@@ -43882,7 +43882,7 @@
     "id": "BVI.PA-2026-11-05",
     "ticker": "BVI.PA",
     "nombre": "Bureau Veritas SA",
-    "estado": "abierta",
+    "estado": "cerrada",
     "fecha_entrada": "2026-11-05",
     "precio_entrada": 30.19,
     "acciones": 3.312355,
@@ -43971,6 +43971,48 @@
         ]
       },
       "resumen_negocio": "Bureau Veritas SA provides laboratory testing, inspection, and certification services. It operates through six segments: Marine & Offshore; Agri-Food & Commodities; Industry; Buildings & Infrastructure; Certification; and Consumer Products services."
+    },
+    "precio_salida": 31.861,
+    "fecha_salida": "2026-11-26",
+    "sesiones": 15,
+    "motivo_salida": "stop subido",
+    "rentabilidad_bruta_pct": 5.53,
+    "rentabilidad_neta_pct": 3.53,
+    "resultado_neto_eur": 3.53,
+    "indice_pct": -3.42,
+    "vs_indice_pct": 6.95,
+    "rentabilidad_7d_pct": 0.26,
+    "exito": false,
+    "llego_al_objetivo": true,
+    "sesiones_hasta_equilibrio": 14,
+    "precio_equilibrio": 30.7938,
+    "estado_resultado": "flojo",
+    "explicacion": "Acabo en positivo (3.53 EUR) pero sin llegar a los 5 EUR limpios. La escalera protegio la ganancia, aunque fuera pequena.",
+    "variantes": {
+      "LA REAL (escalera 25/08)": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      },
+      "escalera + stop vol x2.5": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x3": {
+        "neto_eur": -4.04,
+        "neto_pct": -4.04,
+        "sesiones": 1,
+        "motivo": "stop inicial"
+      },
+      "escalera + stop vol x4": {
+        "neto_eur": 3.53,
+        "neto_pct": 3.53,
+        "sesiones": 15,
+        "motivo": "stop subido"
+      }
     }
   },
   {
