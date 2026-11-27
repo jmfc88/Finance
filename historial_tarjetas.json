@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27T01:26:21.265248",
+  "actualizado": "2026-11-27T11:08:13.505328",
   "ventana_dias": 5,
   "dias": [
     {
@@ -47429,6 +47429,12 @@
               "posicion": 1,
               "precio": 32.16,
               "score": 59.2
+            },
+            {
+              "hora": "11:08",
+              "posicion": 2,
+              "precio": 31.87,
+              "score": 59.0
             }
           ],
           "tarjeta": {
@@ -47436,9 +47442,9 @@
             "nombre_empresa": "Bureau Veritas SA",
             "isin": null,
             "sector": "Industrials",
-            "precio_actual": 32.16,
-            "potencial_pct": 5.7,
-            "score": 59.2,
+            "precio_actual": 31.87,
+            "potencial_pct": 6.7,
+            "score": 59.0,
             "consenso": "buy",
             "consenso_real": {
               "excluida": false,
@@ -47449,20 +47455,20 @@
             },
             "precio_objetivo_medio": 33.99471,
             "dispersion_pct": 29.8,
-            "momentum_30d_pct": 10.1,
-            "momentum_5d_pct": 4.8,
-            "fuerza_relativa_pct": 14.5,
-            "liquidez_dia": 29511388.390842438,
-            "volumen_relativo": 1.55,
-            "volatilidad_diaria_pct": 1.74,
-            "sesiones_hasta_stop": 51,
-            "distancia_max_52s_pct": 0.0,
+            "momentum_30d_pct": 9.6,
+            "momentum_5d_pct": 7.4,
+            "fuerza_relativa_pct": 11.4,
+            "liquidez_dia": 30628613.46966362,
+            "volumen_relativo": 1.37,
+            "volatilidad_diaria_pct": 1.77,
+            "sesiones_hasta_stop": 49,
+            "distancia_max_52s_pct": -0.9,
             "metodo_datos": "periodo_220d",
             "regimen_mercado": "adverso",
-            "rsi_14": 66.4,
+            "rsi_14": 68.5,
             "tendencia_tecnica": "alcista",
-            "sma50": 28.46,
-            "sma200": 27.11,
+            "sma50": 28.64,
+            "sma200": 27.17,
             "tendencia_analistas": "mejorando",
             "catalizador_resultados": null,
             "cotiza_en_euros": true,
@@ -50064,6 +50070,2519 @@
             },
             "profundizacion": null,
             "resumen_negocio": "Industria de Diseño Textil, S.A., together with its subsidiaries, engages in the retail and online distribution of clothing, footwear, accessories, and household products in Spain, rest of Europe, the Americas, Asia, and internationally.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "FBK.MI",
+          "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+          "huella": "f9d2f3bef794",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 1,
+              "precio": 21.59,
+              "score": 62.4
+            }
+          ],
+          "tarjeta": {
+            "ticker": "FBK.MI",
+            "nombre_empresa": "FinecoBank Banca Fineco S.p.A.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 21.59,
+            "potencial_pct": 26.6,
+            "score": 62.4,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.6,
+              "pct_strong_buy": 31.2,
+              "pct_vender": 0.0,
+              "total_analistas": 16
+            },
+            "precio_objetivo_medio": 27.34062,
+            "dispersion_pct": 26.2,
+            "momentum_30d_pct": 3.4,
+            "momentum_5d_pct": 1.7,
+            "fuerza_relativa_pct": 5.2,
+            "liquidez_dia": 35262614.65764332,
+            "volumen_relativo": 0.71,
+            "volatilidad_diaria_pct": 2.28,
+            "sesiones_hasta_stop": 30,
+            "distancia_max_52s_pct": -12.6,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 39.3,
+            "tendencia_tecnica": "mixta",
+            "sma50": 21.7,
+            "sma200": 21.53,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 4,
+              "titulares": [
+                {
+                  "titulo": "Earnings call transcript: FinecoBank posts strong H1 2026 growth, stock edges up - Investing.com",
+                  "fuente": "Investing.com",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Italy's Fineco exceeds quarterly profit, revenue forecasts - Reuters",
+                  "fuente": "Reuters",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Transacciones de personas con información privilegiada de Chongqing Rural Commercial Bank Co Ltd (C3B.DU) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de FinecoBank Banca Fineco S.p.A. (FBK.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "FinecoBank Banca Fineco S.p.A. provides banking, credit, trading and investment services in Italy. It offers banking services, including current account services, payment services, mortgages, overdrafts, and personal loans, as well as debit, credit, and prepaid cards; and brokerage services comprising order execution services on behalf of customers with direct access to global equity markets, as well as trading of...",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "BMED.MI",
+          "nombre_empresa": "Banca Mediolanum S.p.A.",
+          "huella": "835ec3210f27",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 3,
+              "precio": 21.39,
+              "score": 54.3
+            }
+          ],
+          "tarjeta": {
+            "ticker": "BMED.MI",
+            "nombre_empresa": "Banca Mediolanum S.p.A.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 21.39,
+            "potencial_pct": 22.3,
+            "score": 54.3,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.6,
+              "pct_strong_buy": 25.0,
+              "pct_vender": 0.0,
+              "total_analistas": 12
+            },
+            "precio_objetivo_medio": 26.16667,
+            "dispersion_pct": 20.7,
+            "momentum_30d_pct": -3.5,
+            "momentum_5d_pct": 1.6,
+            "fuerza_relativa_pct": -1.7,
+            "liquidez_dia": 17191474.395942688,
+            "volumen_relativo": 0.73,
+            "volatilidad_diaria_pct": 1.91,
+            "sesiones_hasta_stop": 42,
+            "distancia_max_52s_pct": -10.5,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 30.4,
+            "tendencia_tecnica": "mixta",
+            "sma50": 22.4,
+            "sma200": 20.6,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 2,
+              "titulares": [
+                {
+                  "titulo": "Banca Mediolanum eleva su beneficio a nueve meses y aprueba un dividendo a cuenta - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Traspaso de plan de pensiones a Mediolanum: cómo hacerlo en 2026 - Rankia",
+                  "fuente": "Rankia",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Banca Mediolanum S.p.A. (BMED.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Banca Mediolanum S.p.A. engages in the provision of various banking products and services in Italy. It offers current accounts; deposits products; and mortgage and personal loans.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "UNI.MI",
+          "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+          "huella": "6aed86880b67",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 4,
+              "precio": 25.36,
+              "score": 53.4
+            }
+          ],
+          "tarjeta": {
+            "ticker": "UNI.MI",
+            "nombre_empresa": "Unipol Assicurazioni S.p.A.",
+            "isin": "INE950G01023",
+            "sector": "Financial Services",
+            "precio_actual": 25.36,
+            "potencial_pct": 25.8,
+            "score": 53.4,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 6.2,
+              "pct_strong_buy": 40.0,
+              "pct_vender": 0.0,
+              "total_analistas": 5
+            },
+            "precio_objetivo_medio": 31.9,
+            "dispersion_pct": 17.2,
+            "momentum_30d_pct": 0.1,
+            "momentum_5d_pct": 3.4,
+            "fuerza_relativa_pct": 1.9,
+            "liquidez_dia": 35688441.49663925,
+            "volumen_relativo": 0.72,
+            "volatilidad_diaria_pct": 2.04,
+            "sesiones_hasta_stop": 37,
+            "distancia_max_52s_pct": -13.2,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 42.0,
+            "tendencia_tecnica": "mixta",
+            "sma50": 25.68,
+            "sma200": 24.0,
+            "tendencia_analistas": null,
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Unipol eleva su beneficio en los nueve primeros meses; el patrimonio neto se mantiene estable - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Unipol obtiene un beneficio neto de 1.260 millones EUR en los nueve primeros meses y sus primas crecen un 5,3% - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Últimas notas de prensa y noticias corporativas de Unipol Assicurazioni SpA (UIPN.HM) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 1.54,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Calificaciones, estimaciones y previsiones de analistas de Unipol Assicurazioni SpA (UIPN.HM) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Unipol Assicurazioni S.p.A. (UNI.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Unipol Assicurazioni S.p.A., together with its subsidiaries, provides insurance products and services primarily in Italy. The company operates through Non-Life Insurance Business, Life Insurance Business, Banking Associates Business, and Other Business segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "LDO.MI",
+          "nombre_empresa": "Leonardo S.p.a.",
+          "huella": "87a374a8c415",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 5,
+              "precio": 52.15,
+              "score": 53.1
+            }
+          ],
+          "tarjeta": {
+            "ticker": "LDO.MI",
+            "nombre_empresa": "Leonardo S.p.a.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 52.15,
+            "potencial_pct": 28.5,
+            "score": 53.1,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 4.0,
+              "pct_strong_buy": 36.8,
+              "pct_vender": 0.0,
+              "total_analistas": 19
+            },
+            "precio_objetivo_medio": 67.01579,
+            "dispersion_pct": 40.0,
+            "momentum_30d_pct": 0.7,
+            "momentum_5d_pct": 9.0,
+            "fuerza_relativa_pct": 2.5,
+            "liquidez_dia": 83888501.06029129,
+            "volumen_relativo": 0.76,
+            "volatilidad_diaria_pct": 2.32,
+            "sesiones_hasta_stop": 28,
+            "distancia_max_52s_pct": -17.9,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 57.3,
+            "tendencia_tecnica": "mixta",
+            "sma50": 49.27,
+            "sma200": 52.9,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 6,
+              "titulares": [
+                {
+                  "titulo": "Leonardo: Record Orders, Stronger Margins, And New Catalysts Reinforce Our Buy - Seeking Alpha",
+                  "fuente": "Seeking Alpha",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Fuerza Aérea del Perú y Leonardo suscriben contrato de cara a renovar el Programa de Soporte Logístico Integral para los C-27J Spartan - Defensa.com",
+                  "fuente": "Defensa.com",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "La Empresa de Defensa Leonardo Sube un 17 % en 2026. ¿Es Recomendable su Compra? - Morningstar",
+                  "fuente": "Morningstar",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 7,
+              "puntos_roe_sostenido": 1.68,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Leonardo supera las expectativas, pero la Bolsa se queda con ganas de más - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Las acciones de Thales y Leonardo suben tras contrato de la OTAN - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Leonardo eleva previsión de pedidos para 2026 tras sólido rendimiento - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "resumen_negocio": "Leonardo S.p.a., an industrial and technological company, engages in the helicopters, defense electronics and security, cyber security and solutions, aircraft, aerostructures, and space sectors in Italy, the United Kingdom, rest of Europe, the United States of America, and internationally.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "LTMC.MI",
+          "nombre_empresa": "Lottomatica Group S.p.A.",
+          "huella": "8a5f42ecc6f1",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 6,
+              "precio": 26.58,
+              "score": 52.4
+            }
+          ],
+          "tarjeta": {
+            "ticker": "LTMC.MI",
+            "nombre_empresa": "Lottomatica Group S.p.A.",
+            "isin": null,
+            "sector": "Consumer Cyclical",
+            "precio_actual": 26.58,
+            "potencial_pct": 25.8,
+            "score": 52.4,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 10.6,
+              "pct_strong_buy": 23.5,
+              "pct_vender": 0.0,
+              "total_analistas": 17
+            },
+            "precio_objetivo_medio": 33.43235,
+            "dispersion_pct": 24.6,
+            "momentum_30d_pct": 4.0,
+            "momentum_5d_pct": 5.7,
+            "fuerza_relativa_pct": 5.8,
+            "liquidez_dia": 26478844.398916245,
+            "volumen_relativo": 0.55,
+            "volatilidad_diaria_pct": 1.92,
+            "sesiones_hasta_stop": 42,
+            "distancia_max_52s_pct": -6.4,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 39.0,
+            "tendencia_tecnica": "alcista",
+            "sma50": 25.87,
+            "sma200": 25.17,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 0,
+              "titulares": []
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 2,
+              "puntos_roe_sostenido": 2.72,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Las acciones de Lottomatica suben un 7% tras el acuerdo con Cirsa - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Lottomatica-Cirsa: la \"maquina de generar caja\" seduce, pero el cambio de perfil genera dudas - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "CIRSA y Lottomatica sellan una fusión histórica que dará lugar a uno de los mayores grupos cotizados de Juego del mundo - AZARplus",
+                  "fuente": "AZARplus",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Lottomatica Group S.p.A., together with its subsidiaries, operates in the gaming market in Italy. The company operates through Online, Sports Franchise, and Gaming Franchise segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "PST.MI",
+          "nombre_empresa": "Poste Italiane S.p.A.",
+          "huella": "afbe920f8f44",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 7,
+              "precio": 24.15,
+              "score": 51.2
+            }
+          ],
+          "tarjeta": {
+            "ticker": "PST.MI",
+            "nombre_empresa": "Poste Italiane S.p.A.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 24.15,
+            "potencial_pct": 24.1,
+            "score": 51.2,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.6,
+              "pct_strong_buy": 31.2,
+              "pct_vender": 0.0,
+              "total_analistas": 16
+            },
+            "precio_objetivo_medio": 29.98125,
+            "dispersion_pct": 44.6,
+            "momentum_30d_pct": 2.0,
+            "momentum_5d_pct": 5.8,
+            "fuerza_relativa_pct": 3.8,
+            "liquidez_dia": 61180147.493302345,
+            "volumen_relativo": 0.82,
+            "volatilidad_diaria_pct": 1.74,
+            "sesiones_hasta_stop": 51,
+            "distancia_max_52s_pct": -15.7,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 45.1,
+            "tendencia_tecnica": "bajista",
+            "sma50": 24.16,
+            "sma200": 24.22,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Poste Italiane (BIT:PST) Reports Stronger Q3 Earnings, Is The Stock Still Trading At A Discount? - Yahoo Finance",
+                  "fuente": "Yahoo Finance",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Poste Italiane lanza bonos por 1.300 millones EUR para refinanciar la OPA de canje sobre TIM - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 2,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Poste Italiane logra un beneficio y unos ingresos récord en los nueve primeros meses y confirma previsiones - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                }
+              ]
+            },
+            "resumen_negocio": "Poste Italiane S.p.A. provides postal, logistics, and financial and insurance products and services in Italy. The company operates through four segments: Mail, Parcels and Distribution; PostePay Services; Financial Services; and Insurance Services.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "EGL.LS",
+          "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+          "huella": "eb429cfe09d9",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 8,
+              "precio": 4.662,
+              "score": 50.3
+            }
+          ],
+          "tarjeta": {
+            "ticker": "EGL.LS",
+            "nombre_empresa": "Mota-Engil, SGPS, S.A.",
+            "isin": "SG1O81915033",
+            "sector": "Industrials",
+            "precio_actual": 4.662,
+            "potencial_pct": 48.7,
+            "score": 50.3,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 0,
+              "muestra_insuficiente": true,
+              "total_analistas": 3
+            },
+            "precio_objetivo_medio": 6.93333,
+            "dispersion_pct": 36.8,
+            "momentum_30d_pct": 1.0,
+            "momentum_5d_pct": 1.6,
+            "fuerza_relativa_pct": 2.8,
+            "liquidez_dia": 4666575.885435581,
+            "volumen_relativo": 0.57,
+            "volatilidad_diaria_pct": 2.26,
+            "sesiones_hasta_stop": 30,
+            "distancia_max_52s_pct": -13.5,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 52.0,
+            "tendencia_tecnica": "mixta",
+            "sma50": 4.75,
+            "sma200": 4.66,
+            "tendencia_analistas": null,
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 7,
+              "titulares": [
+                {
+                  "titulo": "La portuguesa Mota-Engil gana un contrato ferroviario de 1.200 millones de dólares en México - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Mota-Engil Said to Win Deal for US-Backed Congo Copper Rail - Bloomberg.com",
+                  "fuente": "Bloomberg.com",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Earnings call transcript: Mota-Engil posts stronger H1 2026 profit, lifts outlook - Investing.com",
+                  "fuente": "Investing.com",
+                  "sentimiento": 2
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Mota-Engil, SGPS, S.A. (EGL.LS) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Mota-Engil, SGPS, S.A. provides public and private construction works and related services in Europe, Africa, and Latin America. The company constructs various infrastructures, such as roads, motorways, airports, ports, dams, railways, and residential and commercial buildings, as well as construction of industry, hospitals, and in specialised areas, such as oil and gas, aggregates, precast, electromechanics...",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "SCYR.MC",
+          "nombre_empresa": "Sacyr, S.A.",
+          "huella": "ec96c25bee62",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 9,
+              "precio": 4.202,
+              "score": 48.9
+            }
+          ],
+          "tarjeta": {
+            "ticker": "SCYR.MC",
+            "nombre_empresa": "Sacyr, S.A.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 4.202,
+            "potencial_pct": 26.8,
+            "score": 48.9,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 9.1,
+              "pct_strong_buy": 10.0,
+              "pct_vender": 0.0,
+              "total_analistas": 10
+            },
+            "precio_objetivo_medio": 5.329,
+            "dispersion_pct": 19.8,
+            "momentum_30d_pct": 2.7,
+            "momentum_5d_pct": 3.6,
+            "fuerza_relativa_pct": 4.5,
+            "liquidez_dia": 10434975.4247756,
+            "volumen_relativo": 0.82,
+            "volatilidad_diaria_pct": 1.79,
+            "sesiones_hasta_stop": 48,
+            "distancia_max_52s_pct": -14.7,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 50.3,
+            "tendencia_tecnica": "mixta",
+            "sma50": 4.07,
+            "sma200": 4.36,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Sacyr, cerca de ganar una concesión de alta velocidad Lisboa-Oporto - Valencia Plaza",
+                  "fuente": "Valencia Plaza",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Sacyr gana el segundo tramo del 'AVE' de Portugal con una inversión de 2.800 millones - El Economista",
+                  "fuente": "El Economista",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Sacyr v. Panama and the Limits of Recasting Contract Claims as Treaty Claims - Wolters Kluwer",
+                  "fuente": "Wolters Kluwer",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 2,
+              "puntos_roe_sostenido": 1.64,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Las acciones de Sacyr suben casi un 5% y lideran el Ibex 35 tras presentar sus resultados - XTB.com",
+                  "fuente": "XTB.com",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Sacyr: concesiones, dividendo y crecimiento para sostener una visión positiva a largo plazo - Renta 4",
+                  "fuente": "Renta 4",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Consultorio de análisis técnico : Inditex, Unicaja, Grifols, Credo Technology, Sacyr, Amper, Nvidia... - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Sacyr, S.A. engages in the development and operation of infrastructure concessions worldwide. It is involved in the infrastructure development, such as transportation, sanitation, water, and waste treatment; development of large-scale civil engineering, industrial transport infrastructure, and building projects; water treatment, purification, desalination, purification, and reuse, as well as operation and...",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "AI.PA",
+          "nombre_empresa": "L'Air Liquide S.A.",
+          "huella": "4655d439e615",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 10,
+              "precio": 190.82,
+              "score": 48.8
+            }
+          ],
+          "tarjeta": {
+            "ticker": "AI.PA",
+            "nombre_empresa": "L'Air Liquide S.A.",
+            "isin": "FR0000053951",
+            "sector": "Basic Materials",
+            "precio_actual": 190.82,
+            "potencial_pct": 6.7,
+            "score": 48.8,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.1,
+              "pct_strong_buy": 25.0,
+              "pct_vender": 0.0,
+              "total_analistas": 20
+            },
+            "precio_objetivo_medio": 203.625,
+            "dispersion_pct": 32.0,
+            "momentum_30d_pct": 7.6,
+            "momentum_5d_pct": 1.7,
+            "fuerza_relativa_pct": 9.4,
+            "liquidez_dia": 180586540.73695374,
+            "volumen_relativo": 0.77,
+            "volatilidad_diaria_pct": 0.87,
+            "sesiones_hasta_stop": 206,
+            "distancia_max_52s_pct": -1.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 55.3,
+            "tendencia_tecnica": "alcista",
+            "sma50": 178.29,
+            "sma200": 168.25,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 1,
+              "titulares": [
+                {
+                  "titulo": "Air Liquide aumenta un 12 % las ventas de su negocio de electrónica y alcanza una cartera récord de inversiones - Industria Química",
+                  "fuente": "Industria Química",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de L'Air Liquide S.A. (AI.VI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Air Liquide : Obtiene una recomendación neutral de JP Morgan - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 2.32,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": []
+            },
+            "resumen_negocio": "L'Air Liquide S.A. provides gases, technologies, and services for the industrial and health sectors in Europe, the Americas, the Asia Pacific, the Middle East, and Africa. It operates in Gas & Services, and Engineering & Construction segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "IAG.MC",
+          "nombre_empresa": "International Consolidated Airlines Group S.A.",
+          "huella": "61019ce0044f",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 11,
+              "precio": 5.298,
+              "score": 48.7
+            }
+          ],
+          "tarjeta": {
+            "ticker": "IAG.MC",
+            "nombre_empresa": "International Consolidated Airlines Group S.A.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 5.298,
+            "potencial_pct": 15.6,
+            "score": 48.7,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 8.6,
+              "pct_strong_buy": 45.5,
+              "pct_vender": 0.0,
+              "total_analistas": 11
+            },
+            "precio_objetivo_medio": 6.12273,
+            "dispersion_pct": 32.1,
+            "momentum_30d_pct": 7.9,
+            "momentum_5d_pct": 1.1,
+            "fuerza_relativa_pct": 9.7,
+            "liquidez_dia": 26222139.37407303,
+            "volumen_relativo": 0.66,
+            "volatilidad_diaria_pct": 2.11,
+            "sesiones_hasta_stop": 35,
+            "distancia_max_52s_pct": -6.5,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 45.2,
+            "tendencia_tecnica": "alcista",
+            "sma50": 5.11,
+            "sma200": 4.87,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 6,
+              "titulares": [
+                {
+                  "titulo": "International Consolidated Airlines Group, S.A. : Recibe una recomendación de compra del Bernstein - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "HECHOS RELEVANTES.-INTERNATIONAL CONSOLIDATED AIRLINES GROUP, S.A. La Sociedad remite información sobre las operaciones[...] - Bolsamania",
+                  "fuente": "Bolsamania",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "International Consolidated Airlines Group, S.A. : Obtiene una recomendación de compra de RBC - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 2,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "International Consolidated Airlines Group, S.A. : Bernstein mantiene su recomendación de compra - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "International Consolidated Airlines Group, S.A. : RBC da una recomendación de compra - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Previsión del precio de la acción International Consolidated Airlines Group (IAG/EUR) para 2026 y 2030–2040 - Traders Union",
+                  "fuente": "Traders Union",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "International Consolidated Airlines Group S.A., together with its subsidiaries, engages in the provision of passenger and cargo transportation services in the North Atlantic, Latin America, the Caribbean, Europe, Africa, the Middle East, South Asia, the Asia Pacific, and internationally.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "PUIG.MC",
+          "nombre_empresa": "Puig Brands, S.A.",
+          "huella": "080cd580aab6",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 12,
+              "precio": 20.88,
+              "score": 48.6
+            }
+          ],
+          "tarjeta": {
+            "ticker": "PUIG.MC",
+            "nombre_empresa": "Puig Brands, S.A.",
+            "isin": null,
+            "sector": "Consumer Defensive",
+            "precio_actual": 20.88,
+            "potencial_pct": 4.8,
+            "score": 48.6,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.4,
+              "pct_strong_buy": 18.8,
+              "pct_vender": 0.0,
+              "total_analistas": 16
+            },
+            "precio_objetivo_medio": 21.8875,
+            "dispersion_pct": 52.4,
+            "momentum_30d_pct": 10.5,
+            "momentum_5d_pct": 6.0,
+            "fuerza_relativa_pct": 12.3,
+            "liquidez_dia": 9419141.418104172,
+            "volumen_relativo": 1.34,
+            "volatilidad_diaria_pct": 1.2,
+            "sesiones_hasta_stop": 107,
+            "distancia_max_52s_pct": -0.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 68.0,
+            "tendencia_tecnica": "alcista",
+            "sma50": 19.13,
+            "sma200": 17.22,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 6,
+              "titulares": [
+                {
+                  "titulo": "Puig sube en bolsa : JP Morgan mejora su valoración un 50% - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Spanish Beauty Company Puig Eyes 60% Revenue Growth for 2032 - Bloomberg",
+                  "fuente": "Bloomberg",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Banco Sabadell mejora el precio objetivo de la cotización de Puig Brands hasta los 23,75 euros - Valencia Plaza",
+                  "fuente": "Valencia Plaza",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 5,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Puig sube cerca de un 20% en el año y JP Morgan mejora su previsión del 3T - Economía 3",
+                  "fuente": "Economía 3",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Las acciones de Puig suben: ¿cuál es su precio objetivo? - XTB.com",
+                  "fuente": "XTB.com",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Las previsiones de Puig mejoran gracias a la solidez del negocio de fragancias de AlphaValue/Baader Europe. - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "resumen_negocio": "Puig Brands, S.A. operates in the beauty and fashion industry in Europe, the Middle East, Africa, the Americas, and the Asia-Pacific. The company operates through three segments: Fragrance and Fashion, Makeup, and Skincare.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "BGN.MI",
+          "nombre_empresa": "Banca Generali S.p.A.",
+          "huella": "0c1291a14946",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 13,
+              "precio": 57.75,
+              "score": 48.3
+            }
+          ],
+          "tarjeta": {
+            "ticker": "BGN.MI",
+            "nombre_empresa": "Banca Generali S.p.A.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 57.75,
+            "potencial_pct": 24.1,
+            "score": 48.3,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 5.2,
+              "pct_strong_buy": 28.6,
+              "pct_vender": 0.0,
+              "total_analistas": 7
+            },
+            "precio_objetivo_medio": 71.68571,
+            "dispersion_pct": 20.0,
+            "momentum_30d_pct": -4.7,
+            "momentum_5d_pct": 2.2,
+            "fuerza_relativa_pct": -2.9,
+            "liquidez_dia": 16065877.435277939,
+            "volumen_relativo": 0.67,
+            "volatilidad_diaria_pct": 1.93,
+            "sesiones_hasta_stop": 42,
+            "distancia_max_52s_pct": -15.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 38.0,
+            "tendencia_tecnica": "bajista",
+            "sma50": 60.49,
+            "sma200": 59.24,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 2,
+              "titulares": [
+                {
+                  "titulo": "Generali says MPS bid for Banca Generali offers 'growth opportunities' - Reuters",
+                  "fuente": "Reuters",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Banca Generali lanza una emisión de bonos Additional Tier 1 por 125 millones EUR - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Monte dei Paschi ofrece comprar Banco BPM y Banca Generali por 34.000 millones para evitar la adquisición de Intesa - El Economista",
+                  "fuente": "El Economista",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 3,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Banca Generali eleva su beneficio un 22% en los nueve primeros meses y mejora sus objetivos de captación - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Mediobanca lanza oferta de €6.300 millones por Banca Generali - Bloomberg.com",
+                  "fuente": "Bloomberg.com",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Banca Generali lanza una emisión de bonos AT1 de 125 millones EUR al 6,65% - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Banca Generali S.p.A. distributes financial products and services for high net worth, affluent and private customers through financial advisors in Italy. The company operates through Private Banking CGU (PB CGU) and Senior Partner CGU (SP CGU) segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "SAMPO.HE",
+          "nombre_empresa": "Sampo Oyj",
+          "huella": "f11aae2f6f5a",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 14,
+              "precio": 10.13,
+              "score": 46.7
+            }
+          ],
+          "tarjeta": {
+            "ticker": "SAMPO.HE",
+            "nombre_empresa": "Sampo Oyj",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 10.13,
+            "potencial_pct": 9.0,
+            "score": 46.7,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.4,
+              "pct_strong_buy": 20.0,
+              "pct_vender": 0.0,
+              "total_analistas": 15
+            },
+            "precio_objetivo_medio": 11.03667,
+            "dispersion_pct": 20.0,
+            "momentum_30d_pct": 7.2,
+            "momentum_5d_pct": 3.4,
+            "fuerza_relativa_pct": 9.0,
+            "liquidez_dia": 36380184.141377926,
+            "volumen_relativo": 0.83,
+            "volatilidad_diaria_pct": 1.22,
+            "sesiones_hasta_stop": 105,
+            "distancia_max_52s_pct": -0.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 64.4,
+            "tendencia_tecnica": "alcista",
+            "sma50": 9.37,
+            "sma200": 9.24,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "OP Corporate Bank eleva el precio objetivo de Sampo a 11 EUR (10,40) y reitera sobreponderar - BN - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Sampo Group eleva sus perspectivas para 2026 tras sólidos resultados - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "JP Morgan raises Sampo to overweight (neutral), price target €12 (€10.50) - www.marketscreener.com",
+                  "fuente": "www.marketscreener.com",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 2,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Sampo Group eleva sus perspectivas para 2026 tras sólidos resultados - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Sampo Group eleva perspectivas 2026 por sólidos resultados de suscripción - Investing.com México - Finanzas, Bolsa y Forex",
+                  "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Sampo Oyj (SAMPO.HE) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Sampo Oyj, together with its subsidiaries, provides non-life insurance products and services in Finland, Sweden, Norway, Denmark, Estonia, Lithuania, Latvia, Spain, Gibraltar, Germany, the Netherlands, France, and the United Kingdom.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "BN.PA",
+          "nombre_empresa": "Danone S.A.",
+          "huella": "14712093b46b",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 15,
+              "precio": 68.46,
+              "score": 46.3
+            }
+          ],
+          "tarjeta": {
+            "ticker": "BN.PA",
+            "nombre_empresa": "Danone S.A.",
+            "isin": null,
+            "sector": "Consumer Defensive",
+            "precio_actual": 68.46,
+            "potencial_pct": 14.7,
+            "score": 46.3,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.7,
+              "pct_strong_buy": 27.3,
+              "pct_vender": 0.0,
+              "total_analistas": 22
+            },
+            "precio_objetivo_medio": 78.5,
+            "dispersion_pct": 57.6,
+            "momentum_30d_pct": 6.3,
+            "momentum_5d_pct": 0.3,
+            "fuerza_relativa_pct": 8.1,
+            "liquidez_dia": 104451638.1594429,
+            "volumen_relativo": 0.78,
+            "volatilidad_diaria_pct": 1.24,
+            "sesiones_hasta_stop": 101,
+            "distancia_max_52s_pct": -7.5,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 54.2,
+            "tendencia_tecnica": "alcista",
+            "sma50": 63.61,
+            "sma200": 65.89,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Danone España dispara el beneficio tras vender sus acciones de la matriz francesa - Expansión",
+                  "fuente": "Expansión",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Danone North America’s Largest Plant in the World Continues Growth in the Shenandoah Valley | VEDP - VEDP",
+                  "fuente": "VEDP",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Agricultura multa a los gigantes de la alimentación García Carrión, Carrefour y Danone por vulnerar la Ley de la Cadena - El Español",
+                  "fuente": "El Español",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 1,
+              "puntos_roe_sostenido": 1.08,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Danone cierra 2025 con crecimiento generalizado pese a vientos cambiarios - Investing.com México - Finanzas, Bolsa y Forex",
+                  "fuente": "Investing.com México - Finanzas, Bolsa y Forex",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Danone Sees Up to €70 Million Hit From Baby Formula Recalls - Insurance Journal",
+                  "fuente": "Insurance Journal",
+                  "sentimiento": -1
+                },
+                {
+                  "titulo": "Danone eleva su facturación a 21.176 millones hasta septiembre, un 2,9% más interanual - Demócrata",
+                  "fuente": "Demócrata",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "resumen_negocio": "Danone S.A. operates in the food and beverage industry in Europe, Ukraine, North America, China, North Asia, the Oceania, Latin America, rest of Asia, Africa, Turkey, the Middle East, and the Commonwealth of Independent States.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "AZM.MI",
+          "nombre_empresa": "Azimut Holding S.p.A.",
+          "huella": "82f69b39ea03",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 16,
+              "precio": 36.84,
+              "score": 46.1
+            }
+          ],
+          "tarjeta": {
+            "ticker": "AZM.MI",
+            "nombre_empresa": "Azimut Holding S.p.A.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 36.84,
+            "potencial_pct": 15.7,
+            "score": 46.1,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 0,
+              "pct_strong_buy": 14.3,
+              "pct_vender": 0.0,
+              "total_analistas": 7
+            },
+            "precio_objetivo_medio": 42.61429,
+            "dispersion_pct": 37.7,
+            "momentum_30d_pct": 3.4,
+            "momentum_5d_pct": 4.3,
+            "fuerza_relativa_pct": 5.2,
+            "liquidez_dia": 12493892.38300705,
+            "volumen_relativo": 0.61,
+            "volatilidad_diaria_pct": 1.53,
+            "sesiones_hasta_stop": 67,
+            "distancia_max_52s_pct": -7.9,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 51.1,
+            "tendencia_tecnica": "alcista",
+            "sma50": 36.52,
+            "sma200": 35.53,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 1,
+              "titulares": [
+                {
+                  "titulo": "Azimut reaffirms strategic commitment to Sanctuary Wealth with a $250 million financing package to build partnerships in the US wealth management universe - AdvisorHub",
+                  "fuente": "AdvisorHub",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Azimut obtiene la autorización regulatoria para adquirir Yapı Kredi Portföy Yönetimi - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Azimut recibe luz verde para adquirir Yapi Kredi Portföy en Turquía - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Azimut Holding S.p.A. (AZM.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Azimut Holding S.p.A. provides asset management and advisory solutions in Italy, Europe, the Middle East, the Americas, and the Asia-Pacific. It offers public and private markets, discretionary portfolio management, and token and digital asset solutions; advisory services; corporate investment banking and fintech solutions; mutual funds harmonized with the UCITS directive; alternative investment funds and open...",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "ASRNL.AS",
+          "nombre_empresa": "ASR Nederland N.V.",
+          "huella": "4befe6fbb829",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 17,
+              "precio": 79.08,
+              "score": 45.5
+            }
+          ],
+          "tarjeta": {
+            "ticker": "ASRNL.AS",
+            "nombre_empresa": "ASR Nederland N.V.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 79.08,
+            "potencial_pct": 0.8,
+            "score": 45.5,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.7,
+              "pct_strong_buy": 33.3,
+              "pct_vender": 0.0,
+              "total_analistas": 15
+            },
+            "precio_objetivo_medio": 79.70429,
+            "dispersion_pct": 81.0,
+            "momentum_30d_pct": 4.2,
+            "momentum_5d_pct": 2.6,
+            "fuerza_relativa_pct": 6.0,
+            "liquidez_dia": 30299394.780212402,
+            "volumen_relativo": 0.88,
+            "volatilidad_diaria_pct": 1.14,
+            "sesiones_hasta_stop": 121,
+            "distancia_max_52s_pct": -1.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 54.8,
+            "tendencia_tecnica": "alcista",
+            "sma50": 75.24,
+            "sma200": 66.79,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 2,
+              "titulares": [
+                {
+                  "titulo": "ASR Nederland H1 2026 slides: record OCC, 222% solvency ratio - Investing.com",
+                  "fuente": "Investing.com",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "a.s.r. sees 9.8% increase in H1’26 operating result as net profit reaches €809m - Reinsurance News",
+                  "fuente": "Reinsurance News",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de ASR Nederland N.V. (ASRNL.AS) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 0.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de ASR Nederland N.V. (ASRNL.AS) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Medidas de valoración y estadísticas financieras de ASR Nederland N.V. (ASRNL.AS) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "ASR Nederland N.V. (ASRNL.AS) stock price, news, quote and history - Yahoo Finance Singapore",
+                  "fuente": "Yahoo Finance Singapore",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "ASR Nederland N.V. provides insurance, pensions, and mortgages products and services for consumers, businesses, and employers in the Netherlands. The company operates through five segments: Non-Life, Life, Asset Management, Distribution and Services, and Holding and Other.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "DG.PA",
+          "nombre_empresa": "Vinci SA",
+          "huella": "b102a20637a3",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 18,
+              "precio": 115.15,
+              "score": 45.5
+            }
+          ],
+          "tarjeta": {
+            "ticker": "DG.PA",
+            "nombre_empresa": "Vinci SA",
+            "isin": "FI4000185533",
+            "sector": "Industrials",
+            "precio_actual": 115.15,
+            "potencial_pct": 21.9,
+            "score": 45.5,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.2,
+              "pct_strong_buy": 15.0,
+              "pct_vender": 5.0,
+              "total_analistas": 20
+            },
+            "precio_objetivo_medio": 140.35,
+            "dispersion_pct": 40.9,
+            "momentum_30d_pct": 5.4,
+            "momentum_5d_pct": 3.7,
+            "fuerza_relativa_pct": 7.2,
+            "liquidez_dia": 89445662.24126434,
+            "volumen_relativo": 0.7,
+            "volatilidad_diaria_pct": 1.17,
+            "sesiones_hasta_stop": 114,
+            "distancia_max_52s_pct": -15.8,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 56.2,
+            "tendencia_tecnica": "mixta",
+            "sma50": 109.76,
+            "sma200": 119.78,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Las acciones de Vinci suben un 5% tras superar previsiones de beneficio y flujo de caja - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Las acciones de Vinci caen tras no alcanzar las previsiones de ingresos del primer trimestre - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": -2
+                },
+                {
+                  "titulo": "Una filial de Vinci eleva su participación en Lisea al 50% - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 3,
+              "puntos_roe_sostenido": 3.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Las acciones de Vinci suben un 5% tras superar previsiones de beneficio y flujo de caja - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Las acciones de Vinci caen tras no alcanzar las previsiones de ingresos del primer trimestre - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": -2
+                },
+                {
+                  "titulo": "Vinci gana un 7% tras registrar un flujo de caja récord en 2025 y reducir su deuda neta - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 2
+                }
+              ]
+            },
+            "resumen_negocio": "Vinci SA, together with its subsidiaries, engages in concessions, energy, and construction businesses in France and internationally. It operates through Concessions, Energy Solutions, and Construction segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "UCG.MI",
+          "nombre_empresa": "UniCredit S.p.A.",
+          "huella": "ec89c5a5d786",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 19,
+              "precio": 76.56,
+              "score": 44.9
+            }
+          ],
+          "tarjeta": {
+            "ticker": "UCG.MI",
+            "nombre_empresa": "UniCredit S.p.A.",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 76.56,
+            "potencial_pct": 30.6,
+            "score": 44.9,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 4.1,
+              "pct_strong_buy": 38.9,
+              "pct_vender": 0.0,
+              "total_analistas": 18
+            },
+            "precio_objetivo_medio": 100.02167,
+            "dispersion_pct": 31.4,
+            "momentum_30d_pct": 6.8,
+            "momentum_5d_pct": 1.7,
+            "fuerza_relativa_pct": 8.6,
+            "liquidez_dia": 330285968.0955391,
+            "volumen_relativo": 0.86,
+            "volatilidad_diaria_pct": 2.55,
+            "sesiones_hasta_stop": 24,
+            "distancia_max_52s_pct": -7.6,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 44.3,
+            "tendencia_tecnica": "alcista",
+            "sma50": 75.55,
+            "sma200": 72.61,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 2,
+              "titulares": [
+                {
+                  "titulo": "UniCredit S p A : EIB and UniCredit pledge up to €1.6bn in investments to support wind energy in Europe, starting with Fincantieri for projects in the offshore wind sector - www.marketscreener.com",
+                  "fuente": "www.marketscreener.com",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "UniCredit y el BEI acuerdan inversiones de 1.600 millones EUR en el sector eólico - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de UniCredit S.p.A. (UCG.WA) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 6,
+              "puntos_roe_sostenido": 2.04,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Unicredit supera previsiones en el tercer trimestre y eleva su guía anual - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Commerzbank eleva sus previsiones de beneficio para 2026 ante la inminente adquisición de UniCredit - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "La consejera delegada de Commerzbank eleva las previsiones de beneficio para 2026 ante la inminente absorción por UniCredit - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                }
+              ]
+            },
+            "resumen_negocio": "UniCredit S.p.A. provides commercial banking services in Italy, Germany, Central Europe, and Eastern Europe. The company offers retail, private, and wealth management solutions; and institutional investor solutions.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "MRL.MC",
+          "nombre_empresa": "MERLIN Properties SOCIMI, S.A.",
+          "huella": "01dc6356434e",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 20,
+              "precio": 11.73,
+              "score": 44.8
+            }
+          ],
+          "tarjeta": {
+            "ticker": "MRL.MC",
+            "nombre_empresa": "MERLIN Properties SOCIMI, S.A.",
+            "isin": null,
+            "sector": "Real Estate",
+            "precio_actual": 11.73,
+            "potencial_pct": 43.7,
+            "score": 44.8,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.0,
+              "pct_strong_buy": 23.8,
+              "pct_vender": 0.0,
+              "total_analistas": 21
+            },
+            "precio_objetivo_medio": 16.85619,
+            "dispersion_pct": 53.3,
+            "momentum_30d_pct": 2.9,
+            "momentum_5d_pct": 7.3,
+            "fuerza_relativa_pct": 4.7,
+            "liquidez_dia": 18674352.052603245,
+            "volumen_relativo": 0.81,
+            "volatilidad_diaria_pct": 1.91,
+            "sesiones_hasta_stop": 42,
+            "distancia_max_52s_pct": -24.2,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 55.2,
+            "tendencia_tecnica": "mixta",
+            "sma50": 11.56,
+            "sma200": 13.57,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 0,
+              "titulares": [
+                {
+                  "titulo": "Merlin Properties: nuestra opinión tras los resultados - Morningstar",
+                  "fuente": "Morningstar",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Merlin Properties SOCIMI SA (MEQA.HA) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Acciones de Merlin Properties (MRL): ¿merece la pena invertir? Cómo comprarlas - Rankia",
+                  "fuente": "Rankia",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 6,
+              "puntos_roe_sostenido": 0.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Merlin mejora sus previsiones tras elevar un 12% el beneficio operativo hasta septiembre - Cinco Días",
+                  "fuente": "Cinco Días",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Merlin gana 669,7 millones hasta septiembre, un 14,8% más, y eleva sus previsiones para 2026 - El Economista",
+                  "fuente": "El Economista",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "MERLIN Properties eleva su previsión de FFO 2026 a 340 millones de euros - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "resumen_negocio": "MERLIN Properties SOCIMI, S.A. is one of the largest real estate and infrastructure companies listed on the Spanish Stock Exchange. It specializes in the development, acquisition and management of commercial property in the Iberian Peninsula, mainly investing in offices, shopping centers, logistics facilities and data centers within the Core and Core Plus segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "URW.PA",
+          "nombre_empresa": "Unibail-Rodamco-Westfield SE",
+          "huella": "4f509ee894c8",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 21,
+              "precio": 93.26,
+              "score": 44.7
+            }
+          ],
+          "tarjeta": {
+            "ticker": "URW.PA",
+            "nombre_empresa": "Unibail-Rodamco-Westfield SE",
+            "isin": null,
+            "sector": "Real Estate",
+            "precio_actual": 93.26,
+            "potencial_pct": 19.0,
+            "score": 44.7,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 7.3,
+              "pct_strong_buy": 26.7,
+              "pct_vender": 0.0,
+              "total_analistas": 15
+            },
+            "precio_objetivo_medio": 110.95333,
+            "dispersion_pct": 21.0,
+            "momentum_30d_pct": 1.8,
+            "momentum_5d_pct": 3.6,
+            "fuerza_relativa_pct": 3.6,
+            "liquidez_dia": 25927399.69111252,
+            "volumen_relativo": 0.86,
+            "volatilidad_diaria_pct": 1.07,
+            "sesiones_hasta_stop": 136,
+            "distancia_max_52s_pct": -11.9,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 45.0,
+            "tendencia_tecnica": "mixta",
+            "sma50": 91.14,
+            "sma200": 96.76,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 1,
+              "titulares": [
+                {
+                  "titulo": "‘We’re not done’ – Westfield UTC unveils luxury wing and hints at future investment plans - Times of San Diego",
+                  "fuente": "Times of San Diego",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de Unibail-Rodamco-Westfield (1BR1.SG) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Splau nombra a Borja Esquirol Duque nuevo gerente del centro comercial - Revista Centros Comerciales",
+                  "fuente": "Revista Centros Comerciales",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 1,
+              "puntos_roe_sostenido": 0.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Unibail-Rodamco-Westfield: sus grandes centros comerciales sostienen el crecimiento de las rentas y del div... - Estrategias de Inversión",
+                  "fuente": "Estrategias de Inversión",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "resumen_negocio": "Unibail-Rodamco-Westfield (URW) operates vibrant retail-anchored destinations in many of the world's best cities and urban areas. This powerful network attracts over 900 million customer visits annually, supports the growth of major retailers, and makes a significant social and economic contribution to local communities.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "BNP.PA",
+          "nombre_empresa": "BNP Paribas SA",
+          "huella": "7deccb98c1c7",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 22,
+              "precio": 91.81,
+              "score": 44.6
+            }
+          ],
+          "tarjeta": {
+            "ticker": "BNP.PA",
+            "nombre_empresa": "BNP Paribas SA",
+            "isin": null,
+            "sector": "Financial Services",
+            "precio_actual": 91.81,
+            "potencial_pct": 31.9,
+            "score": 44.6,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.6,
+              "pct_strong_buy": 26.3,
+              "pct_vender": 0.0,
+              "total_analistas": 19
+            },
+            "precio_objetivo_medio": 121.07684,
+            "dispersion_pct": 47.2,
+            "momentum_30d_pct": 4.7,
+            "momentum_5d_pct": 2.5,
+            "fuerza_relativa_pct": 6.5,
+            "liquidez_dia": 207405597.11972046,
+            "volumen_relativo": 0.81,
+            "volatilidad_diaria_pct": 1.85,
+            "sesiones_hasta_stop": 45,
+            "distancia_max_52s_pct": -15.9,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 43.6,
+            "tendencia_tecnica": "mixta",
+            "sma50": 91.48,
+            "sma200": 92.36,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 0,
+              "titulares": [
+                {
+                  "titulo": "BNP Paribas recorta el precio objetivo de Rockwool a 199 DKK (220) y reitera neutral - BN - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": -1
+                },
+                {
+                  "titulo": "FSB Raises BNP Paribas Capital Surcharge - Briefs Finance",
+                  "fuente": "Briefs Finance",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "BNP Paribas : Deutsche Bank permanece neutral - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 1.62,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Calificaciones, estimaciones y previsiones de analistas de BNP Paribas Bank Polska SA (82MA.MU) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "ACS recibe el respaldo de Barclays y BNP Paribas: Potencial de más del 20% - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "BNP Paribas Exane inicia cobertura de eDreams con calificación de Mejor Rendimiento - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "BNP Paribas SA provides various banking and financial products and services in Europe, the Middle East, Africa, the Americas, and the Asia Pacific. It operates through three divisions: Corporate & Institutional Banking; Commercial, Personal Banking & Services; and Investment & Protection Services.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "CS.PA",
+          "nombre_empresa": "AXA SA",
+          "huella": "98ac65bd77a4",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 23,
+              "precio": 45.81,
+              "score": 44.5
+            }
+          ],
+          "tarjeta": {
+            "ticker": "CS.PA",
+            "nombre_empresa": "AXA SA",
+            "isin": "FR001400UEZ6",
+            "sector": "Financial Services",
+            "precio_actual": 45.81,
+            "potencial_pct": 14.3,
+            "score": 44.5,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 8.3,
+              "pct_strong_buy": 41.2,
+              "pct_vender": 0.0,
+              "total_analistas": 17
+            },
+            "precio_objetivo_medio": 52.36625,
+            "dispersion_pct": 83.3,
+            "momentum_30d_pct": 7.2,
+            "momentum_5d_pct": 1.5,
+            "fuerza_relativa_pct": 9.0,
+            "liquidez_dia": 118261800.7685852,
+            "volumen_relativo": 0.79,
+            "volatilidad_diaria_pct": 1.53,
+            "sesiones_hasta_stop": 66,
+            "distancia_max_52s_pct": -2.7,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 54.2,
+            "tendencia_tecnica": "alcista",
+            "sma50": 43.8,
+            "sma200": 41.7,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Berenberg destaca el 'significativo' objetivo de crecimiento de ingresos de AXA para-2029 y mantiene su recomendación de compra - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Berenberg mantiene su recomendación de compra sobre AXA - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de AXA World Fds-Switzerland Equ.N (AW45.DU) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 0,
+              "puntos_roe_sostenido": 2.2,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Acciones de AXA: Análisis fundamental y recomendaciones - Bankinter",
+                  "fuente": "Bankinter",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Noticias sobre análisis técnico de AXA - Bolsamania",
+                  "fuente": "Bolsamania",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Previsión del precio de la acción AXA (CS/EUR) para 2026 y 2030–2040 - Traders Union",
+                  "fuente": "Traders Union",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "AXA SA, through its subsidiaries, provides insurance, asset management, and banking services worldwide. The company operates through France, Europe, AXA XL, Asia, Africa & EME-LATAM, and Transversal & Other segments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "FCT.MI",
+          "nombre_empresa": "Fincantieri S.p.A.",
+          "huella": "3fc70c7c9df2",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 24,
+              "precio": 12.16,
+              "score": 42.9
+            }
+          ],
+          "tarjeta": {
+            "ticker": "FCT.MI",
+            "nombre_empresa": "Fincantieri S.p.A.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 12.16,
+            "potencial_pct": 43.7,
+            "score": 42.9,
+            "consenso": "strong_buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 6.8,
+              "pct_strong_buy": 20.0,
+              "pct_vender": 0.0,
+              "total_analistas": 10
+            },
+            "precio_objetivo_medio": 17.47,
+            "dispersion_pct": 26.7,
+            "momentum_30d_pct": -4.6,
+            "momentum_5d_pct": 12.8,
+            "fuerza_relativa_pct": -2.8,
+            "liquidez_dia": 26935181.47293949,
+            "volumen_relativo": 0.71,
+            "volatilidad_diaria_pct": 3.12,
+            "sesiones_hasta_stop": 16,
+            "distancia_max_52s_pct": -34.1,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 50.2,
+            "tendencia_tecnica": "mixta",
+            "sma50": 12.05,
+            "sma200": 12.37,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 16,
+              "titulares": [
+                {
+                  "titulo": "Fincantieri wins Carnival contract for two next-generation cruise ships - Reuters",
+                  "fuente": "Reuters",
+                  "sentimiento": 4
+                },
+                {
+                  "titulo": "Fincantieri SpA gana contrato naval de 500 millones y sube un 6% - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Bolsa de Milán: Fincantieri sube un 5% tras un contrato con la Marina y mejora la visibilidad sobre sus objetivos de pedidos - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 3
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": 3,
+              "puntos_roe_sostenido": 0.0,
+              "verificado": true,
+              "ajuste": 0,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Fincantieri SpA gana contrato naval de 500 millones y sube un 6% - Investing.com España",
+                  "fuente": "Investing.com España",
+                  "sentimiento": 3
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Fincantieri S.p.A. (FCT.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "resumen_negocio": "Fincantieri S.p.A. operates in the shipbuilding industry worldwide. It operates through four segments: Shipbuilding; Offshore and Specialized Vessels; Underwater; and Equipment, Systems, and Infrastructure.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "BC.MI",
+          "nombre_empresa": "Brunello Cucinelli S.p.A.",
+          "huella": "819300bd38f2",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 25,
+              "precio": 88.86,
+              "score": 42.3
+            }
+          ],
+          "tarjeta": {
+            "ticker": "BC.MI",
+            "nombre_empresa": "Brunello Cucinelli S.p.A.",
+            "isin": null,
+            "sector": "Consumer Cyclical",
+            "precio_actual": 88.86,
+            "potencial_pct": 12.0,
+            "score": 42.3,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.7,
+              "pct_strong_buy": 28.6,
+              "pct_vender": 4.8,
+              "total_analistas": 21
+            },
+            "precio_objetivo_medio": 99.49524,
+            "dispersion_pct": 85.7,
+            "momentum_30d_pct": 3.8,
+            "momentum_5d_pct": 3.2,
+            "fuerza_relativa_pct": 5.6,
+            "liquidez_dia": 17416721.625667572,
+            "volumen_relativo": 0.59,
+            "volatilidad_diaria_pct": 1.97,
+            "sesiones_hasta_stop": 40,
+            "distancia_max_52s_pct": -4.3,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 55.0,
+            "tendencia_tecnica": "alcista",
+            "sma50": 84.88,
+            "sma200": 82.7,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 2,
+              "titulares": [
+                {
+                  "titulo": "Brunello Cucinelli: marca de lujo sostenible con un potencial de crecimiento de hasta el 37% - Estrategias de Inversión",
+                  "fuente": "Estrategias de Inversión",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Executive Chairman Brunello Cucinelli Raises His Cashmere Empire’s 2026 Forecast - Observer",
+                  "fuente": "Observer",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Precio de acciones, noticias, cotización e historial de Brunello Cucinelli S.p.A. (BC.MI) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": null,
+            "resumen_negocio": "Brunello Cucinelli S.p.A., together with its subsidiaries, engages in the production and sale of clothing, accessories, and lifestyle products in Italy, Europe, the United States, and Asia.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "GLE.PA",
+          "nombre_empresa": "Société Générale Société anonyme",
+          "huella": "f6b2288da224",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 26,
+              "precio": 64.06,
+              "score": 42.0
+            }
+          ],
+          "tarjeta": {
+            "ticker": "GLE.PA",
+            "nombre_empresa": "Société Générale Société anonyme",
+            "isin": "CA83360C1032",
+            "sector": "Financial Services",
+            "precio_actual": 64.06,
+            "potencial_pct": 37.6,
+            "score": 42.0,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.6,
+              "pct_strong_buy": 25.0,
+              "pct_vender": 0.0,
+              "total_analistas": 20
+            },
+            "precio_objetivo_medio": 88.15,
+            "dispersion_pct": 35.5,
+            "momentum_30d_pct": 2.6,
+            "momentum_5d_pct": 3.8,
+            "fuerza_relativa_pct": 4.4,
+            "liquidez_dia": 99359486.01335144,
+            "volumen_relativo": 0.85,
+            "volatilidad_diaria_pct": 2.1,
+            "sesiones_hasta_stop": 35,
+            "distancia_max_52s_pct": -23.1,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 44.2,
+            "tendencia_tecnica": "bajista",
+            "sma50": 64.91,
+            "sma200": 69.77,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 0,
+              "titulares": [
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de Société Générale Société anonyme (GLEN.MX) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de Société Générale Société anonyme (SGE1.F) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Groupe BPCE completó la adquisición de Societe Generale Equipment Finance SA a Société Générale Société anonyme (ENXTPA:GLE). - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": null,
+            "resumen_negocio": "Société Générale Société anonyme provides banking and financial services to individuals, corporates, and institutional clients in Europe and internationally. It operates through French Retail, Private Banking and Insurance; International Retail, Mobility and Leasing Services; and Global Banking and Investor Solutions.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "WKL.AS",
+          "nombre_empresa": "Wolters Kluwer N.V.",
+          "huella": "6aa538086642",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 27,
+              "precio": 88.12,
+              "score": 41.9
+            }
+          ],
+          "tarjeta": {
+            "ticker": "WKL.AS",
+            "nombre_empresa": "Wolters Kluwer N.V.",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 88.12,
+            "potencial_pct": 9.9,
+            "score": 41.9,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.4,
+              "pct_strong_buy": 18.8,
+              "pct_vender": 6.2,
+              "total_analistas": 16
+            },
+            "precio_objetivo_medio": 96.875,
+            "dispersion_pct": 84.6,
+            "momentum_30d_pct": 4.0,
+            "momentum_5d_pct": 2.6,
+            "fuerza_relativa_pct": 5.8,
+            "liquidez_dia": 74547521.90508652,
+            "volumen_relativo": 0.71,
+            "volatilidad_diaria_pct": 2.34,
+            "sesiones_hasta_stop": 28,
+            "distancia_max_52s_pct": -4.7,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 48.0,
+            "tendencia_tecnica": "alcista",
+            "sma50": 80.98,
+            "sma200": 67.67,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 0,
+              "titulares": [
+                {
+                  "titulo": "RD 723/2026: nuevas obligaciones de información en los contratos - Wolters Kluwer",
+                  "fuente": "Wolters Kluwer",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Wolters Kluwer Slips as KBC Cuts Target Price - marketscreener.com",
+                  "fuente": "marketscreener.com",
+                  "sentimiento": -1
+                },
+                {
+                  "titulo": "Gráfico de rentabilidades estacionales de Wolters Kluwer N.V. (WKLA.XC) - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": null,
+            "resumen_negocio": "Wolters Kluwer N.V. provides information, software solutions, and services for professionals in the Netherlands, rest of Europe, the United States, Canada, the Asia Pacific, and internationally.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "SAN.MC",
+          "nombre_empresa": "Banco Santander, S.A.",
+          "huella": "edc3800638a8",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 28,
+              "precio": 10.876,
+              "score": 41.6
+            }
+          ],
+          "tarjeta": {
+            "ticker": "SAN.MC",
+            "nombre_empresa": "Banco Santander, S.A.",
+            "isin": "CA05973U1057",
+            "sector": "Financial Services",
+            "precio_actual": 10.876,
+            "potencial_pct": 26.0,
+            "score": 41.6,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.7,
+              "pct_strong_buy": 28.6,
+              "pct_vender": 0.0,
+              "total_analistas": 21
+            },
+            "precio_objetivo_medio": 13.70333,
+            "dispersion_pct": 33.2,
+            "momentum_30d_pct": 3.5,
+            "momentum_5d_pct": 5.4,
+            "fuerza_relativa_pct": 5.3,
+            "liquidez_dia": 208902368.3429613,
+            "volumen_relativo": 0.78,
+            "volatilidad_diaria_pct": 2.52,
+            "sesiones_hasta_stop": 24,
+            "distancia_max_52s_pct": -15.0,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 46.6,
+            "tendencia_tecnica": "bajista",
+            "sma50": 11.36,
+            "sma200": 11.14,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 3,
+              "titulares": [
+                {
+                  "titulo": "Las acciones de Banco Santander suben un 4%: ¿qué ocurre? - XTB.com",
+                  "fuente": "XTB.com",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "RBC eleva la valoración de Santander y BBVA y ve más potencial en el banco cántabro - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Banco Santander : RBC gives a Buy rating - marketscreener.com",
+                  "fuente": "marketscreener.com",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": null,
+            "resumen_negocio": "Banco Santander, S.A. provides various financial products and services to individuals, small and medium-sized enterprises, large corporations, and public entities worldwide. The company operates through five segments: Retail & Commercial Banking, Digital Consumer Bank, Corporate & Investment Banking, Wealth Management & Insurance, and Payments.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "AMS.MC",
+          "nombre_empresa": "Amadeus IT Group, S.A.",
+          "huella": "3b4cd8e49193",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 29,
+              "precio": 61.9,
+              "score": 41.5
+            }
+          ],
+          "tarjeta": {
+            "ticker": "AMS.MC",
+            "nombre_empresa": "Amadeus IT Group, S.A.",
+            "isin": null,
+            "sector": "Technology",
+            "precio_actual": 61.9,
+            "potencial_pct": 15.5,
+            "score": 41.5,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.6,
+              "pct_strong_buy": 26.1,
+              "pct_vender": 8.7,
+              "total_analistas": 23
+            },
+            "precio_objetivo_medio": 71.47043,
+            "dispersion_pct": 54.7,
+            "momentum_30d_pct": 8.2,
+            "momentum_5d_pct": 3.6,
+            "fuerza_relativa_pct": 10.0,
+            "liquidez_dia": 44657484.09184456,
+            "volumen_relativo": 0.67,
+            "volatilidad_diaria_pct": 1.62,
+            "sesiones_hasta_stop": 59,
+            "distancia_max_52s_pct": -2.4,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 57.3,
+            "tendencia_tecnica": "alcista",
+            "sma50": 56.89,
+            "sma200": 53.05,
+            "tendencia_analistas": "estable",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 6,
+              "titulares": [
+                {
+                  "titulo": "Amadeus meets profit expectations, reiterates 2026 guidance at lower end of range - Reuters",
+                  "fuente": "Reuters",
+                  "sentimiento": 2
+                },
+                {
+                  "titulo": "Amadeus incorpora a Rent A Car a su plataforma, un acuerdo de impacto limitado según AlphaValue - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Las acciones de Amadeus suben con el respaldo de los compradores - Traders Union",
+                  "fuente": "Traders Union",
+                  "sentimiento": 1
+                }
+              ]
+            },
+            "profundizacion": {
+              "sentimiento_adicional": -1,
+              "puntos_roe_sostenido": 2.9,
+              "verificado": false,
+              "ajuste": -4,
+              "titulares_adicionales": [
+                {
+                  "titulo": "Amadeus IT Group recorta sus previsiones para el ejercicio fiscal 2026 ante las interrupciones en Oriente Medio. - Yahoo",
+                  "fuente": "Yahoo",
+                  "sentimiento": -1
+                },
+                {
+                  "titulo": "Amadeus alcanza expectativas de beneficios y reitera previsiones para 2026 en la parte baja del rango - MarketScreener España",
+                  "fuente": "MarketScreener España",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Jefferies recorta sus previsiones sobre Amadeus, pero su objetivo implica un potencial del 24,3 - Benzinga España",
+                  "fuente": "Benzinga España",
+                  "sentimiento": -1
+                }
+              ]
+            },
+            "resumen_negocio": "Amadeus IT Group, S.A., together with its subsidiaries, operates as a transaction processor for the travel and tourism industry in Europe, Central and South America, the Middle East, Africa, and Asia Pacific.",
+            "version_scoring": 33
+          }
+        },
+        {
+          "ticker": "AIR.PA",
+          "nombre_empresa": "Airbus SE",
+          "huella": "cc58089daa18",
+          "apariciones": [
+            {
+              "hora": "11:08",
+              "posicion": 30,
+              "precio": 196.5,
+              "score": 41.1
+            }
+          ],
+          "tarjeta": {
+            "ticker": "AIR.PA",
+            "nombre_empresa": "Airbus SE",
+            "isin": null,
+            "sector": "Industrials",
+            "precio_actual": 196.5,
+            "potencial_pct": 17.8,
+            "score": 41.1,
+            "consenso": "buy",
+            "consenso_real": {
+              "excluida": false,
+              "empujon": 3.8,
+              "pct_strong_buy": 29.2,
+              "pct_vender": 0.0,
+              "total_analistas": 24
+            },
+            "precio_objetivo_medio": 231.54167,
+            "dispersion_pct": 41.4,
+            "momentum_30d_pct": 0.1,
+            "momentum_5d_pct": 3.4,
+            "fuerza_relativa_pct": 1.9,
+            "liquidez_dia": 215570980.52534485,
+            "volumen_relativo": 0.72,
+            "volatilidad_diaria_pct": 2.19,
+            "sesiones_hasta_stop": 32,
+            "distancia_max_52s_pct": -8.8,
+            "metodo_datos": "periodo_220d",
+            "regimen_mercado": "adverso",
+            "rsi_14": 39.2,
+            "tendencia_tecnica": "alcista",
+            "sma50": 194.89,
+            "sma200": 187.81,
+            "tendencia_analistas": "mejorando",
+            "catalizador_resultados": null,
+            "cotiza_en_euros": true,
+            "noticias": {
+              "sentimiento_total": 1,
+              "titulares": [
+                {
+                  "titulo": "Airbus Atlantic culmina el acuerdo de compra del Grupo MASA - Radio Intereconomía",
+                  "fuente": "Radio Intereconomía",
+                  "sentimiento": 1
+                },
+                {
+                  "titulo": "Airbus e ITP Aero pilotarán el gran programa militar del año: 10.000 millones disponibles para modernizar los Eurofighter - El Economista",
+                  "fuente": "El Economista",
+                  "sentimiento": 0
+                },
+                {
+                  "titulo": "Airbus cierra la compra de la riojana MASA, que consolidará el empleo y su actividad industrial - La Rioja",
+                  "fuente": "La Rioja",
+                  "sentimiento": 0
+                }
+              ]
+            },
+            "profundizacion": null,
+            "resumen_negocio": "Airbus SE, together with its subsidiaries, engages in the design, manufacture, and delivery of aeronautics and aerospace products, services, and solutions worldwide. It operates through three segments: Airbus, Airbus Helicopters, and Airbus Defence and Space.",
             "version_scoring": 33
           }
         }
