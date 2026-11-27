@@ -1,10 +1,10 @@
 # Simulacion en paralelo
 
-Actualizado: 2026-11-26 22:18 · dia 95 de ejecucion
-Proxima revision de ponderacion en 10 dias.
+Actualizado: 2026-11-27 01:44 · dia 96 de ejecucion
+Proxima revision de ponderacion en 9 dias.
 
 - Operaciones cerradas: **404**
-- Operaciones abiertas: 57
+- Operaciones abiertas: 59
 
 ## Como acabaron
 
